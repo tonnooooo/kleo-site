@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Gatto</title>
-<meta name="description" content="Gatto is an MCP server: connect it to Claude, ChatGPT, or Cursor and ask for Shorts and long-form YouTube videos in 4K at 60 fps. You get a link back.">
+<title>Kleo</title>
+<meta name="description" content="Kleo is an MCP server: connect it to Claude, ChatGPT, or Cursor and ask for Shorts and long-form YouTube videos in 4K at 60 fps. You get a link back.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
 /* ============================================================
-   GATTO tokens. "Gatto" is a placeholder name: find and replace it.
-   Placeholder domain: mcp.gatto.ai  → swap in your own.
+   KLEO tokens. "Kleo" is a placeholder name: find and replace it.
+   Placeholder domain: mcp.kleo.ai  → swap in your own.
    ============================================================ */
 :root{
   color-scheme:dark;
@@ -338,16 +338,14 @@ footer a{color:var(--ink-2)}
 <!-- ============ NAV ============ -->
 <nav class="nav" aria-label="Main">
   <div class="wrap">
-    <a class="brand" href="#top" aria-label="Gatto, home">
+    <a class="brand" href="#top" aria-label="Kleo, home">
       <svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true">
-        <path d="M5 12 L5 3 L13 10 Z" fill="var(--amber)"/>
-        <path d="M27 12 L27 3 L19 10 Z" fill="var(--amber)"/>
-        <rect x="4" y="9" width="24" height="20" rx="5" fill="var(--amber)"/>
-        <path d="M4 14 h24 v3.5 h-24 z" fill="var(--amber-ink)" opacity=".85"/>
-        <path d="M8 14 l3 3.5 M14 14 l3 3.5 M20 14 l3 3.5" stroke="var(--amber)" stroke-width="1.6"/>
-        <circle cx="12" cy="23" r="1.6" fill="var(--amber-ink)"/><circle cx="20" cy="23" r="1.6" fill="var(--amber-ink)"/>
+        <rect x="3" y="7" width="26" height="22" rx="5" fill="var(--amber)"/>
+        <path d="M3 12 h26 v4 H3 z" fill="var(--amber-ink)" opacity=".85"/>
+        <path d="M7 12 l3.5 4 M13 12 l3.5 4 M19 12 l3.5 4" stroke="var(--amber)" stroke-width="1.6"/>
+        <path d="M10 19 v8 M10 23 l6-4 M10 23 l6 4" stroke="var(--amber-ink)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
       </svg>
-      Gatto <span class="tag">MCP</span>
+      Kleo <span class="tag">MCP</span>
     </a>
     <div class="nav-links">
       <a href="#come">How it works</a>
@@ -356,7 +354,7 @@ footer a{color:var(--ink-2)}
       <a href="#prezzi">Pricing</a>
       <a href="#faq">FAQ</a>
     </div>
-    <a class="btn btn-primary btn-sm" href="#connetti">Connect Gatto</a>
+    <a class="btn btn-primary btn-sm" href="#connetti">Connect Kleo</a>
   </div>
 </nav>
 
@@ -366,7 +364,7 @@ footer a{color:var(--ink-2)}
     <div>
       <div class="osd"><span class="rec" aria-hidden="true"></span> REC &nbsp;3840×2160 · 60 fps · 9:16 and 16:9 · EN / IT</div>
       <h1>Ask for it in chat.<br><span class="hl">Get a 4K video back.</span></h1>
-      <p class="lede">Gatto is an MCP server. Connect it to Claude, ChatGPT, or Cursor with one URL, then ask for a Short or a long-form YouTube video in plain language. Script, voice, generated clips, edit, and a finish in 4K at 60 fps: when it's ready, you get the link.</p>
+      <p class="lede">Kleo is an MCP server. Connect it to Claude, ChatGPT, or Cursor with one URL, then ask for a Short or a long-form YouTube video in plain language. Script, voice, generated clips, edit, and a finish in 4K at 60 fps: when it's ready, you get the link.</p>
       <div class="cta-row">
         <a class="btn btn-primary" href="#connetti">Connect the MCP server</a>
         <a class="btn btn-ghost" href="#template">Browse the templates</a>
@@ -377,8 +375,8 @@ footer a{color:var(--ink-2)}
       </div>
     </div>
 
-    <div class="demo" aria-label="Example: a conversation with Gatto connected">
-      <div class="demo-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="demo-title">Claude · Gatto connected</span></div>
+    <div class="demo" aria-label="Example: a conversation with Kleo connected">
+      <div class="demo-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="demo-title">Claude · Kleo connected</span></div>
       <div class="demo-body">
         <div class="msg user">
           <span class="who">You</span>
@@ -386,10 +384,10 @@ footer a{color:var(--ink-2)}
         </div>
         <div class="msg ai">
           <span class="who">Claude</span>
-          <p>I'll use Gatto with the <em>Viral Short</em> template.</p>
+          <p>I'll use Kleo with the <em>Viral Short</em> template.</p>
           <div class="tool">
             <div class="tool-head">
-              <span class="tool-name"><b>gatto</b> · create_video</span>
+              <span class="tool-name"><b>kleo</b> · create_video</span>
               <span class="tool-state" id="toolState">running</span>
             </div>
             <pre class="tool-args">{ "template": "viral-short", "duration_s": 45, "format": "9:16",
@@ -427,13 +425,13 @@ footer a{color:var(--ink-2)}
         <div class="eyebrow">How it works</div>
         <h2>No app to learn. One URL, then you just talk.</h2>
       </div>
-      <p class="lede">Gatto has no interface of its own: it lives inside the assistant you already use. The timings below are real, for a 45-second Short.</p>
+      <p class="lede">Kleo has no interface of its own: it lives inside the assistant you already use. The timings below are real, for a 45-second Short.</p>
     </div>
     <div class="steps">
       <div class="step">
         <div class="tc">00:00</div>
         <h3>Paste one URL</h3>
-        <p>Add Gatto's address as a custom connector in Claude or ChatGPT. Nothing to install, no keys to copy. You sign in once.</p>
+        <p>Add Kleo's address as a custom connector in Claude or ChatGPT. Nothing to install, no keys to copy. You sign in once.</p>
       </div>
       <div class="step">
         <div class="tc">00:20</div>
@@ -442,13 +440,13 @@ footer a{color:var(--ink-2)}
       </div>
       <div class="step">
         <div class="tc">00:25 <small>→ 25:00</small></div>
-        <h3>Gatto gets to work</h3>
+        <h3>Kleo gets to work</h3>
         <p>It writes the script, synthesizes the voice, generates the clips, cuts the edit, then upscales everything to 3840×2160 at 60 fps. The GPU spins up only for your render.</p>
       </div>
       <div class="step">
         <div class="tc">25:00</div>
         <h3>Get the link</h3>
-        <p>MP4, subtitles, and thumbnail. While you wait, ask "how far along is it?" or have Gatto email you when it's ready.</p>
+        <p>MP4, subtitles, and thumbnail. While you wait, ask "how far along is it?" or have Kleo email you when it's ready.</p>
       </div>
     </div>
   </div>
@@ -462,7 +460,7 @@ footer a{color:var(--ink-2)}
         <div class="eyebrow">Templates</div>
         <h2>Ten formats that already work on YouTube.</h2>
       </div>
-      <p class="lede">Every template is an editing recipe: pacing, graphics, subtitles, music. You bring the idea; your assistant picks the template and Gatto runs it. The sketches show how each frame is laid out.</p>
+      <p class="lede">Every template is an editing recipe: pacing, graphics, subtitles, music. You bring the idea; your assistant picks the template and Kleo runs it. The sketches show how each frame is laid out.</p>
     </div>
     <div class="filters" role="group" aria-label="Filter templates">
       <button class="chip" data-filter="all" aria-pressed="true">All</button>
@@ -485,7 +483,7 @@ footer a{color:var(--ink-2)}
     </div>
     <div class="bts">
       <div>
-        <p class="lede">A Gatto video is a pipeline of tracks, like an editing timeline. Each track uses the best tool for its job, and the clips are generated in parallel.</p>
+        <p class="lede">A Kleo video is a pipeline of tracks, like an editing timeline. Each track uses the best tool for its job, and the clips are generated in parallel.</p>
         <ul>
           <li style="--c:var(--violet)"><span><b>Script.</b> A language model writes the hook, the outline, and the narration from your prompt, in the template's tone.</span></li>
           <li style="--c:var(--teal)"><span><b>Voice.</b> Natural speech synthesis in English or Italian; its pauses set the pace of the edit.</span></li>
@@ -510,7 +508,7 @@ footer a{color:var(--ink-2)}
 
     <div class="flow" aria-label="Path of a request">
       <div class="node"><span class="k">1 · You</span><b>Claude, ChatGPT, Cursor</b><small>Ask for the video in chat.</small></div>
-      <div class="node"><span class="k">2 · Gatto</span><b>MCP server</b><small>Receives the request, checks your account, and queues the job.</small></div>
+      <div class="node"><span class="k">2 · Kleo</span><b>MCP server</b><small>Receives the request, checks your account, and queues the job.</small></div>
       <div class="node"><span class="k">3 · Queue</span><b>Job queued</b><small>Priority by plan; check the status at any time.</small></div>
       <div class="node gpu"><span class="k">4 · Render</span><b>Ephemeral GPU</b><small>Spins up for your video and shuts down when it's done.</small></div>
       <div class="node"><span class="k">5 · Storage</span><b>Files ready</b><small>MP4, .srt, and thumbnail kept for 7 days.</small></div>
@@ -528,8 +526,9 @@ footer a{color:var(--ink-2)}
         <div class="eyebrow">Connect</div>
         <h2>One address, any assistant.</h2>
       </div>
-      <p class="lede">Gatto speaks the Model Context Protocol over Streamable HTTP with OAuth sign-in: the same address works for every client. Pick yours.</p>
+      <p class="lede">Kleo speaks the Model Context Protocol over Streamable HTTP with OAuth sign-in: the same address works for every client. Pick yours.</p>
     </div>
+    <p class="mono" id="mcpStatus" hidden style="color:var(--accent-text); margin:-24px 0 24px"></p>
     <div class="connect">
       <div class="tabs" role="tablist" aria-label="Clients">
         <button class="tab" role="tab" aria-selected="true" data-tab="claude">Claude <span class="tk">app · web</span></button>
@@ -543,45 +542,45 @@ footer a{color:var(--ink-2)}
       <div>
         <div class="panel" role="tabpanel" data-panel="claude">
           <h3>Claude (app and web)</h3>
-          <div class="url-line">Server address <code>https://mcp.gatto.ai/mcp</code> <button class="btn btn-ghost btn-sm" data-copy="https://mcp.gatto.ai/mcp">Copy</button></div>
+          <div class="url-line">Server address <code>https://mcp.kleo.ai/mcp</code> <button class="btn btn-ghost btn-sm" data-copy="https://mcp.kleo.ai/mcp">Copy</button></div>
           <ol>
             <li>Open <b>Settings → Connectors</b> and choose <b>Add custom connector</b>.</li>
-            <li>Name it <b>Gatto</b>, paste the address above, and confirm. Gatto's sign-in page opens: sign in once.</li>
-            <li>In a new chat, turn on Gatto from the tools menu and ask: <i>"Make me a 45-second Short about…"</i>.</li>
+            <li>Name it <b>Kleo</b>, paste the address above, and confirm. Kleo's sign-in page opens: sign in once.</li>
+            <li>In a new chat, turn on Kleo from the tools menu and ask: <i>"Make me a 45-second Short about…"</i>.</li>
           </ol>
           <p class="hint" style="color:var(--mute); font-size:.8125rem">Works on every Claude plan; the free plan allows one custom connector.</p>
         </div>
 
         <div class="panel" role="tabpanel" data-panel="chatgpt" hidden>
           <h3>ChatGPT</h3>
-          <div class="url-line">Server address <code>https://mcp.gatto.ai/mcp</code> <button class="btn btn-ghost btn-sm" data-copy="https://mcp.gatto.ai/mcp">Copy</button></div>
+          <div class="url-line">Server address <code>https://mcp.kleo.ai/mcp</code> <button class="btn btn-ghost btn-sm" data-copy="https://mcp.kleo.ai/mcp">Copy</button></div>
           <ol>
             <li>Open <b>Settings → Security and access</b> and turn on <b>Developer mode</b>.</li>
-            <li>In <b>Connectors</b>, choose <b>Create</b>: name it <b>Gatto</b>, paste the address, set authentication to <b>OAuth</b>, and save.</li>
-            <li>In chat, turn on Gatto from the <b>+</b> menu and ask for the video. ChatGPT asks you to confirm before it starts a render.</li>
+            <li>In <b>Connectors</b>, choose <b>Create</b>: name it <b>Kleo</b>, paste the address, set authentication to <b>OAuth</b>, and save.</li>
+            <li>In chat, turn on Kleo from the <b>+</b> menu and ask for the video. ChatGPT asks you to confirm before it starts a render.</li>
           </ol>
           <p class="hint" style="color:var(--mute); font-size:.8125rem">Requires ChatGPT Plus, Pro, Business, or Enterprise.</p>
         </div>
 
         <div class="panel" role="tabpanel" data-panel="grok" hidden>
           <h3>Grok</h3>
-          <div class="url-line">Server address <code>https://mcp.gatto.ai/mcp</code> <button class="btn btn-ghost btn-sm" data-copy="https://mcp.gatto.ai/mcp">Copy</button></div>
+          <div class="url-line">Server address <code>https://mcp.kleo.ai/mcp</code> <button class="btn btn-ghost btn-sm" data-copy="https://mcp.kleo.ai/mcp">Copy</button></div>
           <ol>
             <li>On <b>grok.com</b> or in the app, open <b>Connectors</b> and choose <b>New connector → Custom</b>.</li>
-            <li>Name it <b>Gatto</b>, paste the address, and sign in when prompted.</li>
-            <li>In chat, turn on Gatto in the connectors list and ask for the video.</li>
+            <li>Name it <b>Kleo</b>, paste the address, and sign in when prompted.</li>
+            <li>In chat, turn on Kleo in the connectors list and ask for the video.</li>
           </ol>
         </div>
 
         <div class="panel" role="tabpanel" data-panel="code" hidden>
           <h3>Claude Code</h3>
-          <div class="code"><span class="cm"># adds Gatto as a remote MCP server</span>
-claude mcp add --transport http gatto https://mcp.gatto.ai/mcp
+          <div class="code"><span class="cm"># adds Kleo as a remote MCP server</span>
+claude mcp add --transport http kleo https://mcp.kleo.ai/mcp
 <span class="cm"># then, inside the session:</span>
-/mcp   <span class="cm">→ Gatto → Authenticate</span><button class="btn btn-ghost btn-sm copy" data-copy="claude mcp add --transport http gatto https://mcp.gatto.ai/mcp">Copy</button></div>
+/mcp   <span class="cm">→ Kleo → Authenticate</span><button class="btn btn-ghost btn-sm copy" data-copy="claude mcp add --transport http kleo https://mcp.kleo.ai/mcp">Copy</button></div>
           <ol>
             <li>Run the command above once per project, or add <b>--scope user</b> to make it available everywhere.</li>
-            <li>Ask in the session: <i>"Use gatto for a 5-minute video on the history of coffee, 16:9"</i>. Claude Code polls the status until it's ready.</li>
+            <li>Ask in the session: <i>"Use kleo for a 5-minute video on the history of coffee, 16:9"</i>. Claude Code polls the status until it's ready.</li>
           </ol>
         </div>
 
@@ -590,24 +589,24 @@ claude mcp add --transport http gatto https://mcp.gatto.ai/mcp
           <p class="lede" style="font-size:.9375rem">Create or edit <code class="mono">.cursor/mcp.json</code> in the project, or <code class="mono">~/.cursor/mcp.json</code> for all projects.</p>
           <div class="code">{
   <span class="k">"mcpServers"</span>: {
-    <span class="k">"gatto"</span>: { <span class="k">"url"</span>: <span class="s">"https://mcp.gatto.ai/mcp"</span> }
+    <span class="k">"kleo"</span>: { <span class="k">"url"</span>: <span class="s">"https://mcp.kleo.ai/mcp"</span> }
   }
-}<button class="btn btn-ghost btn-sm copy" data-copy='{ "mcpServers": { "gatto": { "url": "https://mcp.gatto.ai/mcp" } } }'>Copy</button></div>
+}<button class="btn btn-ghost btn-sm copy" data-copy='{ "mcpServers": { "kleo": { "url": "https://mcp.kleo.ai/mcp" } } }'>Copy</button></div>
           <ol>
-            <li>Save the file: Cursor lists Gatto under <b>Settings → MCP</b> and opens the OAuth sign-in on first use.</li>
+            <li>Save the file: Cursor lists Kleo under <b>Settings → MCP</b> and opens the OAuth sign-in on first use.</li>
           </ol>
         </div>
 
         <div class="panel" role="tabpanel" data-panel="other" hidden>
           <h3>VS Code, Windsurf, Gemini CLI, and your own agents</h3>
-          <p class="lede" style="font-size:.9375rem">Gatto is a standard MCP server over the Streamable HTTP transport with OAuth 2.1. Any compatible client connects with the same configuration.</p>
+          <p class="lede" style="font-size:.9375rem">Kleo is a standard MCP server over the Streamable HTTP transport with OAuth 2.1. Any compatible client connects with the same configuration.</p>
           <div class="code">{
   <span class="k">"servers"</span>: {
-    <span class="k">"gatto"</span>: { <span class="k">"type"</span>: <span class="s">"http"</span>, <span class="k">"url"</span>: <span class="s">"https://mcp.gatto.ai/mcp"</span> }
+    <span class="k">"kleo"</span>: { <span class="k">"type"</span>: <span class="s">"http"</span>, <span class="k">"url"</span>: <span class="s">"https://mcp.kleo.ai/mcp"</span> }
   }
-}<button class="btn btn-ghost btn-sm copy" data-copy='{ "servers": { "gatto": { "type": "http", "url": "https://mcp.gatto.ai/mcp" } } }'>Copy</button></div>
+}<button class="btn btn-ghost btn-sm copy" data-copy='{ "servers": { "kleo": { "type": "http", "url": "https://mcp.kleo.ai/mcp" } } }'>Copy</button></div>
           <ol>
-            <li><b>Gemini CLI</b>: <code class="mono">gemini mcp add --transport http gatto https://mcp.gatto.ai/mcp</code>.</li>
+            <li><b>Gemini CLI</b>: <code class="mono">gemini mcp add --transport http kleo https://mcp.kleo.ai/mcp</code>.</li>
             <li><b>Gemini app</b>: go to <b>Settings → Connected apps → Custom apps</b> and paste the address (currently requires Google AI Pro or Ultra).</li>
             <li>For your own agent: use an MCP SDK (Python or TypeScript) with the HTTP transport, and handle the OAuth flow once.</li>
           </ol>
@@ -701,7 +700,7 @@ claude mcp add --transport http gatto https://mcp.gatto.ai/mcp
       <div>
         <details open>
           <summary>What is MCP, and why do I need it?</summary>
-          <p>The Model Context Protocol is the standard that assistants like Claude and ChatGPT use to work with external tools. Gatto is one of those tools: once connected, your assistant knows how to make videos, the same way it knows how to search the web.</p>
+          <p>The Model Context Protocol is the standard that assistants like Claude and ChatGPT use to work with external tools. Kleo is one of those tools: once connected, your assistant knows how to make videos, the same way it knows how to search the web.</p>
         </details>
         <details>
           <summary>Do I need to install anything?</summary>
@@ -723,7 +722,7 @@ claude mcp add --transport http gatto https://mcp.gatto.ai/mcp
         </details>
         <details>
           <summary>Who owns the video?</summary>
-          <p>You do. Publish it, monetize it, edit it. Gatto keeps the files for 7 days so you can download them, then deletes them.</p>
+          <p>You do. Publish it, monetize it, edit it. Kleo keeps the files for 7 days so you can download them, then deletes them.</p>
         </details>
         <details>
           <summary>Which models do you use?</summary>
@@ -759,11 +758,11 @@ claude mcp add --transport http gatto https://mcp.gatto.ai/mcp
 
 <footer>
   <div class="wrap">
-    <span>Gatto · placeholder name · a company that is an MCP server</span>
+    <span>Kleo · placeholder name · a company that is an MCP server</span>
     <div class="links">
       <a href="#connetti">Connect</a>
       <a href="#prezzi">Pricing</a>
-      <a href="mailto:ciao@gatto.ai">ciao@gatto.ai</a>
+      <a href="mailto:ciao@kleo.ai">ciao@kleo.ai</a>
       <a href="#top">Back to top</a>
     </div>
   </div>
@@ -907,6 +906,16 @@ claude mcp add --transport http gatto https://mcp.gatto.ai/mcp
     });
   });
 
+  /* ---------- live MCP address from config.json ---------- */
+  fetch('config.json', {cache:'no-store'}).then(function(r){ return r.ok ? r.json() : null; }).then(function(cfg){
+    if(!cfg || !cfg.mcp_url) return;
+    var ph = 'https://mcp.kleo.ai/mcp', live = cfg.mcp_url;
+    document.querySelectorAll('[data-copy]').forEach(function(b){ b.setAttribute('data-copy', b.getAttribute('data-copy').split(ph).join(live)); });
+    var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT), n;
+    while((n = walker.nextNode())){ if(n.nodeValue.indexOf(ph) !== -1) n.nodeValue = n.nodeValue.split(ph).join(live); }
+    var note = document.getElementById('mcpStatus'); if(note){ note.textContent = cfg.note || ''; note.hidden = !cfg.note; }
+  }).catch(function(){});
+
   /* ---------- copy ---------- */
   var toast = document.getElementById('toast'), tt;
   function say(msg){ toast.textContent = msg; toast.classList.add('show'); clearTimeout(tt); tt = setTimeout(function(){ toast.classList.remove('show'); }, 1600); }
@@ -923,7 +932,7 @@ claude mcp add --transport http gatto https://mcp.gatto.ai/mcp
     e.preventDefault();
     var email = form.email.value.trim();
     if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ hint.textContent = 'Check your email address.'; hint.className='hint'; form.email.focus(); return; }
-    try { localStorage.setItem('gatto-waitlist', email); } catch(err){}
+    try { localStorage.setItem('kleo-waitlist', email); } catch(err){}
     hint.textContent = 'You\'re on the list. We\'ll email ' + email + ' when it\'s your turn.'; hint.className = 'hint ok';
     form.reset();
   });
