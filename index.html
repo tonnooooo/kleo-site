@@ -387,7 +387,7 @@ footer a{color:var(--ink-2)}
           <p>I'll use Kleo with the <em>Viral Short</em> template.</p>
           <div class="tool">
             <div class="tool-head">
-              <span class="tool-name"><b>kleo</b> · create_video</span>
+              <span class="tool-name"><b>kleo_create_video</b></span>
               <span class="tool-state" id="toolState">running</span>
             </div>
             <pre class="tool-args">{ "template": "viral-short", "duration_s": 45, "format": "9:16",
@@ -620,12 +620,12 @@ claude mcp add --transport http kleo https://mcp.kleo.ai/mcp
         <table>
           <thead><tr><th>Tool</th><th>What it does</th><th>Responds in</th></tr></thead>
           <tbody>
-            <tr><td>list_templates</td><td>Lists the available templates with formats, lengths, and accepted parameters.</td><td>instantly</td></tr>
-            <tr><td>create_video</td><td>Starts a render from a template, prompt, and parameters. Returns a job ID immediately, so the chat never waits.</td><td>instantly · job_id</td></tr>
-            <tr><td>get_job</td><td>Job status: current track, percent complete, time remaining. Your assistant polls it whenever you ask.</td><td>instantly</td></tr>
-            <tr><td>get_result</td><td>Download links for the MP4, .srt subtitles, and thumbnail. Links stay valid for 7 days.</td><td>instantly</td></tr>
-            <tr><td>generate_thumbnail</td><td>Three thumbnail options from a video frame or a prompt.</td><td>2–3 min</td></tr>
-            <tr><td>cancel_job</td><td>Cancels a queued or running render. Credits for the unrendered portion are refunded.</td><td>instantly</td></tr>
+            <tr><td>kleo_list_templates</td><td>Lists the available templates with formats, lengths, and accepted parameters.</td><td>instantly</td></tr>
+            <tr><td>kleo_create_video</td><td>Starts a render from a template, prompt, and parameters. Returns a job ID immediately, so the chat never waits.</td><td>instantly · job_id</td></tr>
+            <tr><td>kleo_get_job</td><td>Job status: current track, percent complete, time remaining. Your assistant polls it whenever you ask.</td><td>instantly</td></tr>
+            <tr><td>kleo_get_result</td><td>Download links for the MP4, .srt subtitles, and thumbnail. Links stay valid for 7 days.</td><td>instantly</td></tr>
+            <tr><td>kleo_generate_thumbnail</td><td>Three thumbnail options from a video frame or a prompt.</td><td>2–3 min</td></tr>
+            <tr><td>kleo_cancel_job</td><td>Cancels a queued or running render. Credits for the unrendered portion are refunded.</td><td>instantly</td></tr>
           </tbody>
         </table>
       </div>
