@@ -4,14 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Kleo</title>
-<meta name="description" content="Kleo is an MCP server: connect it to Claude, ChatGPT, or Cursor and ask for Shorts and long-form YouTube videos in 4K at 60 fps. You get a link back.">
+<meta name="description" content="Kleo is an MCP server: connect it to Claude, ChatGPT, Grok, Cursor or your coding agent and ask for YouTube Shorts and videos in plain language. Rendered at 60 fps on a GPU rented only for your job; you get a link back.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
 /* ============================================================
    KLEO tokens. "Kleo" is a placeholder name: find and replace it.
-   Placeholder domain: mcp.kleo.ai  → swap in your own.
+   Placeholder address: https://mcp.kleo.ai/mcp  → replaced at load time by "mcp_url" in config.json.
+   Keep that exact string in every snippet, data-copy attribute and text node.
    ============================================================ */
 :root{
   color-scheme:dark;
@@ -362,16 +363,16 @@ footer a{color:var(--ink-2)}
 <section class="hero" id="top">
   <div class="wrap">
     <div>
-      <div class="osd"><span class="rec" aria-hidden="true"></span> REC &nbsp;3840×2160 · 60 fps · 9:16 and 16:9 · EN / IT</div>
-      <h1>Ask for it in chat.<br><span class="hl">Get a 4K video back.</span></h1>
-      <p class="lede">Kleo is an MCP server. Connect it to Claude, ChatGPT, or Cursor with one URL, then ask for a Short or a long-form YouTube video in plain language. Script, voice, generated clips, edit, and a finish in 4K at 60 fps: when it's ready, you get the link.</p>
+      <div class="osd"><span class="rec" aria-hidden="true"></span> REC &nbsp;Shorts in 4K · 16:9 in Full HD · 60 fps · EN / IT</div>
+      <h1>Ask for it in chat.<br><span class="hl">Get a finished video back.</span></h1>
+      <p class="lede">Kleo is an MCP server. Connect it to Claude, ChatGPT, Grok or Cursor with one URL, then ask for a Short or a long-form YouTube video in plain language. Storyboard, voice, animated scenes, captions and the final encode at 60 fps: when it's ready, you get the link.</p>
       <div class="cta-row">
         <a class="btn btn-primary" href="#connetti">Connect the MCP server</a>
         <a class="btn btn-ghost" href="#template">Browse the templates</a>
       </div>
       <div class="works">
         <span>Works with</span>
-        <b>Claude</b><b>ChatGPT</b><b>Grok</b><b>Gemini</b><b>Claude Code</b><b>Cursor</b><b>VS Code</b><b>Gemini CLI</b>
+        <b>Claude</b><b>ChatGPT</b><b>Grok</b><b>Claude Code</b><b>Cursor</b><b>VS Code</b><b>OpenCode</b><b>Gemini CLI</b><b>Gemini</b>
       </div>
     </div>
 
@@ -402,10 +403,10 @@ footer a{color:var(--ink-2)}
             <div class="track done"><span>Voice</span><span class="tbar" style="--c:var(--teal)"></span></div>
             <div class="track active"><span>Clips</span><span class="tbar" style="--c:var(--amber)"></span></div>
             <div class="track"><span>Edit</span><span class="tbar" style="--c:var(--rose)"></span></div>
-            <div class="track"><span>4K · 60 fps</span><span class="tbar" style="--c:var(--blue)"></span></div>
+            <div class="track"><span>Finish</span><span class="tbar" style="--c:var(--blue)"></span></div>
           </div>
           <div class="bar"><span id="renderFill"></span></div>
-          <div class="render-status" id="renderStatus">Generating clips · 6 of 9 · ~11 min left</div>
+          <div class="render-status" id="renderStatus">Drawing the scenes · 6 of 9 · ~5 min left</div>
           <div class="result" id="result" hidden>
             <span class="file">pirates-phantom-island.mp4</span>
             <span class="chip">2160p</span><span class="chip">60 fps</span><span class="chip">0:45</span><span class="chip">.srt</span><span class="chip">thumbnail</span>
@@ -425,13 +426,13 @@ footer a{color:var(--ink-2)}
         <div class="eyebrow">How it works</div>
         <h2>No app to learn. One URL, then you just talk.</h2>
       </div>
-      <p class="lede">Kleo has no interface of its own: it lives inside the assistant you already use. The timings below are real, for a 45-second Short.</p>
+      <p class="lede">Kleo has no interface of its own: it lives inside the assistant you already use. The timings below are typical for a 45-second Short.</p>
     </div>
     <div class="steps">
       <div class="step">
         <div class="tc">00:00</div>
         <h3>Paste one URL</h3>
-        <p>Add Kleo's address as a custom connector in Claude or ChatGPT. Nothing to install, no keys to copy. You sign in once.</p>
+        <p>Add Kleo's address as a custom connector in Claude, ChatGPT or Grok. Nothing to install, no keys to copy. You sign in once with your email and invite code.</p>
       </div>
       <div class="step">
         <div class="tc">00:20</div>
@@ -439,14 +440,14 @@ footer a{color:var(--ink-2)}
         <p>Describe it the way you'd brief an editor: topic, length, format, voice, tone. Your assistant picks the template and fills in the parameters.</p>
       </div>
       <div class="step">
-        <div class="tc">00:25 <small>→ 25:00</small></div>
+        <div class="tc">00:25 <small>→ ~15:00</small></div>
         <h3>Kleo gets to work</h3>
-        <p>It writes the script, synthesizes the voice, generates the clips, cuts the edit, then upscales everything to 3840×2160 at 60 fps. The GPU spins up only for your render.</p>
+        <p>It writes the storyboard, synthesizes the voice, draws every scene, cuts the edit with captions and music, then encodes at 60 fps. A GPU machine is rented only for your render and shut down right after.</p>
       </div>
       <div class="step">
-        <div class="tc">25:00</div>
+        <div class="tc">~15:00</div>
         <h3>Get the link</h3>
-        <p>MP4, subtitles, and thumbnail. While you wait, ask "how far along is it?" or have Kleo email you when it's ready.</p>
+        <p>MP4, subtitles, and thumbnail, valid for 7 days. While you wait, ask "how far along is it?" whenever you like: the chat is never blocked.</p>
       </div>
     </div>
   </div>
@@ -468,7 +469,7 @@ footer a{color:var(--ink-2)}
       <button class="chip" data-filter="9:16" aria-pressed="false">Shorts · 9:16</button>
     </div>
     <div class="grid" id="grid"></div>
-    <p class="tpl-more">Render times are estimates for a single RTX 4090, output in 4K at 60 fps. On the Studio plan's priority queue, long-form videos render across multiple GPUs in parallel.</p>
+    <p class="tpl-more">Render times are estimates on one rented GPU machine, boot included: about 10–20 minutes for a Short, up to about an hour for a long video. Shorts come out in 4K (2160×3840), 16:9 videos in Full HD (1920×1080), all at 60 fps.</p>
   </div>
 </section>
 
@@ -483,33 +484,33 @@ footer a{color:var(--ink-2)}
     </div>
     <div class="bts">
       <div>
-        <p class="lede">A Kleo video is a pipeline of tracks, like an editing timeline. Each track uses the best tool for its job, and the clips are generated in parallel.</p>
+        <p class="lede">A Kleo video is a pipeline of tracks, like an editing timeline. Each track uses the best tool for its job, and the scenes are drawn in parallel.</p>
         <ul>
-          <li style="--c:var(--violet)"><span><b>Script.</b> A language model writes the hook, the outline, and the narration from your prompt, in the template's tone.</span></li>
-          <li style="--c:var(--teal)"><span><b>Voice.</b> Natural speech synthesis in English or Italian; its pauses set the pace of the edit.</span></li>
-          <li style="--c:var(--amber)"><span><b>Clips.</b> Open video models generate the shots described in the script, one per scene.</span></li>
-          <li style="--c:var(--rose)"><span><b>Edit.</b> Cuts timed to the voice, animated subtitles, music, titles, and the template's transitions.</span></li>
-          <li style="--c:var(--blue)"><span><b>Finish.</b> Upscaling to 3840×2160, interpolation to 60 fps, then H.265 encoding, ready for YouTube.</span></li>
+          <li style="--c:var(--violet)"><span><b>Script.</b> A language model turns your prompt into a storyboard: hook, scenes, narration and on-screen text, in the template's tone. Your assistant can write it too.</span></li>
+          <li style="--c:var(--teal)"><span><b>Voice.</b> Neural speech synthesis in English or Italian. The narration sets the timing of every scene, and the captions are aligned to it word by word.</span></li>
+          <li style="--c:var(--amber)"><span><b>Clips.</b> Kleo's motion-design engine draws every scene frame by frame: big type, icons, charts, characters, all cut on the narration.</span></li>
+          <li style="--c:var(--rose)"><span><b>Edit.</b> Cuts timed to the voice, animated captions, a music bed, titles, and the template's transitions.</span></li>
+          <li style="--c:var(--blue)"><span><b>Finish.</b> Encoding at 60 fps (4K for Shorts, Full HD for 16:9), an automatic quality check, then the .srt file and the thumbnail, ready for YouTube.</span></li>
         </ul>
       </div>
       <div class="gantt" aria-label="Render times for a 45-second Short">
-        <div class="gantt-title"><span>Short · 45 s · 9:16 · 4K · 60 fps</span><span>RTX 4090 · <b>25 min</b> total</span></div>
+        <div class="gantt-title"><span>Short · 45 s · 9:16 · 4K · 60 fps</span><span>one GPU machine · <b>~15 min</b> total</span></div>
         <div class="g">
-          <div class="lab">Script<small>LLM</small></div><div class="row"><i style="--c:var(--violet); left:0%; width:4%"></i></div>
-          <div class="lab">Voice<small>TTS</small></div><div class="row"><i style="--c:var(--teal); left:4%; width:4%"></i></div>
-          <div class="lab">Clips<small>9 scenes, in parallel</small></div><div class="row"><i style="--c:var(--amber); left:8%; width:56%"></i></div>
+          <div class="lab">Script<small>storyboard</small></div><div class="row"><i style="--c:var(--violet); left:0%; width:4%"></i></div>
+          <div class="lab">Voice<small>TTS + captions</small></div><div class="row"><i style="--c:var(--teal); left:4%; width:4%"></i></div>
+          <div class="lab">Clips<small>9 scenes, drawn in parallel</small></div><div class="row"><i style="--c:var(--amber); left:8%; width:56%"></i></div>
           <div class="lab">Edit<small>ffmpeg</small></div><div class="row"><i style="--c:var(--rose); left:64%; width:12%"></i></div>
-          <div class="lab">Finish<small>4K · 60 fps · H.265</small></div><div class="row"><i style="--c:var(--blue); left:76%; width:24%"></i></div>
-          <div class="axis"><span style="left:0">0</span><span style="left:20%">5</span><span style="left:40%">10</span><span style="left:60%">15</span><span style="left:80%">20</span><span style="left:100%">25 min</span></div>
+          <div class="lab">Finish<small>encode · QA · files</small></div><div class="row"><i style="--c:var(--blue); left:76%; width:24%"></i></div>
+          <div class="axis"><span style="left:0">0</span><span style="left:20%">3</span><span style="left:40%">6</span><span style="left:60%">9</span><span style="left:80%">12</span><span style="left:100%">15 min</span></div>
         </div>
-        <p class="gantt-foot">A 5-minute long-form video in 16:9 follows the same pattern and finishes in 45–70 minutes. You pay only for the minutes the GPU is actually working.</p>
+        <p class="gantt-foot">A 5-minute video in 16:9 follows the same pattern and finishes in about 40–60 minutes; the longest templates take up to about an hour. You pay only for the minutes the machine is actually working.</p>
       </div>
     </div>
 
     <div class="flow" aria-label="Path of a request">
-      <div class="node"><span class="k">1 · You</span><b>Claude, ChatGPT, Cursor</b><small>Ask for the video in chat.</small></div>
+      <div class="node"><span class="k">1 · You</span><b>Claude, ChatGPT, Grok, Cursor</b><small>Ask for the video in chat.</small></div>
       <div class="node"><span class="k">2 · Kleo</span><b>MCP server</b><small>Receives the request, checks your account, and queues the job.</small></div>
-      <div class="node"><span class="k">3 · Queue</span><b>Job queued</b><small>Priority by plan; check the status at any time.</small></div>
+      <div class="node"><span class="k">3 · Queue</span><b>Job queued</b><small>First come, first served; check the status at any time.</small></div>
       <div class="node gpu"><span class="k">4 · Render</span><b>Ephemeral GPU</b><small>Spins up for your video and shuts down when it's done.</small></div>
       <div class="node"><span class="k">5 · Storage</span><b>Files ready</b><small>MP4, .srt, and thumbnail kept for 7 days.</small></div>
       <div class="node"><span class="k">6 · You</span><b>The link, in chat</b><small>Download it, upload it to YouTube, done.</small></div>
@@ -526,16 +527,19 @@ footer a{color:var(--ink-2)}
         <div class="eyebrow">Connect</div>
         <h2>One address, any assistant.</h2>
       </div>
-      <p class="lede">Kleo speaks the Model Context Protocol over Streamable HTTP with OAuth sign-in: the same address works for every client. Pick yours.</p>
+      <p class="lede">Kleo speaks the Model Context Protocol over Streamable HTTP with OAuth sign-in: the same address works for every client, and you sign in once with your email and invite code. Pick yours.</p>
     </div>
     <p class="mono" id="mcpStatus" hidden style="color:var(--accent-text); margin:-24px 0 24px"></p>
     <div class="connect">
       <div class="tabs" role="tablist" aria-label="Clients">
         <button class="tab" role="tab" aria-selected="true" data-tab="claude">Claude <span class="tk">app · web</span></button>
-        <button class="tab" role="tab" aria-selected="false" data-tab="chatgpt">ChatGPT <span class="tk">connectors</span></button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="chatgpt">ChatGPT <span class="tk">developer mode</span></button>
         <button class="tab" role="tab" aria-selected="false" data-tab="grok">Grok <span class="tk">connectors</span></button>
         <button class="tab" role="tab" aria-selected="false" data-tab="code">Claude Code <span class="tk">cli</span></button>
         <button class="tab" role="tab" aria-selected="false" data-tab="cursor">Cursor <span class="tk">mcp.json</span></button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="vscode">VS Code <span class="tk">mcp.json</span></button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="opencode">OpenCode <span class="tk">opencode.jsonc</span></button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="gemini">Gemini CLI <span class="tk">cli</span></button>
         <button class="tab" role="tab" aria-selected="false" data-tab="other">Other clients <span class="tk">http</span></button>
       </div>
 
@@ -545,18 +549,18 @@ footer a{color:var(--ink-2)}
           <div class="url-line">Server address <code>https://mcp.kleo.ai/mcp</code> <button class="btn btn-ghost btn-sm" data-copy="https://mcp.kleo.ai/mcp">Copy</button></div>
           <ol>
             <li>Open <b>Settings → Connectors</b> and choose <b>Add custom connector</b>.</li>
-            <li>Name it <b>Kleo</b>, paste the address above, and confirm. Kleo's sign-in page opens: sign in once.</li>
+            <li>Name it <b>Kleo</b>, paste the address above, and confirm. Kleo's sign-in page opens: enter your email and invite code.</li>
             <li>In a new chat, turn on Kleo from the tools menu and ask: <i>"Make me a 45-second Short about…"</i>.</li>
           </ol>
           <p class="hint" style="color:var(--mute); font-size:.8125rem">Works on every Claude plan; the free plan allows one custom connector.</p>
         </div>
 
         <div class="panel" role="tabpanel" data-panel="chatgpt" hidden>
-          <h3>ChatGPT</h3>
+          <h3>ChatGPT (Developer mode)</h3>
           <div class="url-line">Server address <code>https://mcp.kleo.ai/mcp</code> <button class="btn btn-ghost btn-sm" data-copy="https://mcp.kleo.ai/mcp">Copy</button></div>
           <ol>
-            <li>Open <b>Settings → Security and access</b> and turn on <b>Developer mode</b>.</li>
-            <li>In <b>Connectors</b>, choose <b>Create</b>: name it <b>Kleo</b>, paste the address, set authentication to <b>OAuth</b>, and save.</li>
+            <li>Open <b>Settings → Apps &amp; Connectors</b> (called <b>Connectors</b> in older versions), then <b>Advanced settings</b>, and turn on <b>Developer mode</b>.</li>
+            <li>Back in <b>Connectors</b>, choose <b>Create</b>: name it <b>Kleo</b>, paste the address, set authentication to <b>OAuth</b>, and save. Sign in with your email and invite code.</li>
             <li>In chat, turn on Kleo from the <b>+</b> menu and ask for the video. ChatGPT asks you to confirm before it starts a render.</li>
           </ol>
           <p class="hint" style="color:var(--mute); font-size:.8125rem">Requires ChatGPT Plus, Pro, Business, or Enterprise.</p>
@@ -566,49 +570,85 @@ footer a{color:var(--ink-2)}
           <h3>Grok</h3>
           <div class="url-line">Server address <code>https://mcp.kleo.ai/mcp</code> <button class="btn btn-ghost btn-sm" data-copy="https://mcp.kleo.ai/mcp">Copy</button></div>
           <ol>
-            <li>On <b>grok.com</b> or in the app, open <b>Connectors</b> and choose <b>New connector → Custom</b>.</li>
-            <li>Name it <b>Kleo</b>, paste the address, and sign in when prompted.</li>
+            <li>On <b>grok.com</b> or in the app, open <b>Settings → Connectors</b> and choose <b>Add connector → Custom</b>.</li>
+            <li>Name it <b>Kleo</b>, paste the address, and sign in when prompted (email and invite code).</li>
             <li>In chat, turn on Kleo in the connectors list and ask for the video.</li>
           </ol>
         </div>
 
         <div class="panel" role="tabpanel" data-panel="code" hidden>
           <h3>Claude Code</h3>
-          <div class="code"><span class="cm"># adds Kleo as a remote MCP server</span>
+          <div class="code"><span class="cm"># add Kleo once (add --scope user to have it in every project)</span>
 claude mcp add --transport http kleo https://mcp.kleo.ai/mcp
-<span class="cm"># then, inside the session:</span>
+<span class="cm"># then, inside a session:</span>
 /mcp   <span class="cm">→ Kleo → Authenticate</span><button class="btn btn-ghost btn-sm copy" data-copy="claude mcp add --transport http kleo https://mcp.kleo.ai/mcp">Copy</button></div>
           <ol>
-            <li>Run the command above once per project, or add <b>--scope user</b> to make it available everywhere.</li>
-            <li>Ask in the session: <i>"Use kleo for a 5-minute video on the history of coffee, 16:9"</i>. Claude Code polls the status until it's ready.</li>
+            <li>Run the command above, then type <b>/mcp</b> in a session, pick <b>Kleo</b> and <b>Authenticate</b>: the sign-in page opens in your browser.</li>
+            <li>Ask: <i>"Use kleo for a 5-minute video on the history of coffee, 16:9"</i>. Claude Code checks the progress for you and hands you the links.</li>
           </ol>
         </div>
 
         <div class="panel" role="tabpanel" data-panel="cursor" hidden>
           <h3>Cursor</h3>
-          <p class="lede" style="font-size:.9375rem">Create or edit <code class="mono">.cursor/mcp.json</code> in the project, or <code class="mono">~/.cursor/mcp.json</code> for all projects.</p>
+          <p class="lede" style="font-size:.9375rem">Create or edit <code class="mono">~/.cursor/mcp.json</code> (all projects) or <code class="mono">.cursor/mcp.json</code> inside one project.</p>
           <div class="code">{
   <span class="k">"mcpServers"</span>: {
     <span class="k">"kleo"</span>: { <span class="k">"url"</span>: <span class="s">"https://mcp.kleo.ai/mcp"</span> }
   }
-}<button class="btn btn-ghost btn-sm copy" data-copy='{ "mcpServers": { "kleo": { "url": "https://mcp.kleo.ai/mcp" } } }'>Copy</button></div>
+}<button class="btn btn-ghost btn-sm copy" data-copy='{&#10;  "mcpServers": {&#10;    "kleo": { "url": "https://mcp.kleo.ai/mcp" }&#10;  }&#10;}'>Copy</button></div>
           <ol>
-            <li>Save the file: Cursor lists Kleo under <b>Settings → MCP</b> and opens the OAuth sign-in on first use.</li>
+            <li>Save the file: Cursor lists Kleo under <b>Settings → MCP</b>. Click <b>Connect</b> (or use a tool once) and sign in with your email and invite code.</li>
           </ol>
         </div>
 
-        <div class="panel" role="tabpanel" data-panel="other" hidden>
-          <h3>VS Code, Windsurf, Gemini CLI, and your own agents</h3>
-          <p class="lede" style="font-size:.9375rem">Kleo is a standard MCP server over the Streamable HTTP transport with OAuth 2.1. Any compatible client connects with the same configuration.</p>
+        <div class="panel" role="tabpanel" data-panel="vscode" hidden>
+          <h3>VS Code</h3>
+          <p class="lede" style="font-size:.9375rem">Create <code class="mono">.vscode/mcp.json</code> in your workspace (or run <b>MCP: Add Server</b> from the Command Palette and paste the address).</p>
           <div class="code">{
   <span class="k">"servers"</span>: {
     <span class="k">"kleo"</span>: { <span class="k">"type"</span>: <span class="s">"http"</span>, <span class="k">"url"</span>: <span class="s">"https://mcp.kleo.ai/mcp"</span> }
   }
-}<button class="btn btn-ghost btn-sm copy" data-copy='{ "servers": { "kleo": { "type": "http", "url": "https://mcp.kleo.ai/mcp" } } }'>Copy</button></div>
+}<button class="btn btn-ghost btn-sm copy" data-copy='{&#10;  "servers": {&#10;    "kleo": { "type": "http", "url": "https://mcp.kleo.ai/mcp" }&#10;  }&#10;}'>Copy</button></div>
           <ol>
-            <li><b>Gemini CLI</b>: <code class="mono">gemini mcp add --transport http kleo https://mcp.kleo.ai/mcp</code>.</li>
-            <li><b>Gemini app</b>: go to <b>Settings → Connected apps → Custom apps</b> and paste the address (currently requires Google AI Pro or Ultra).</li>
-            <li>For your own agent: use an MCP SDK (Python or TypeScript) with the HTTP transport, and handle the OAuth flow once.</li>
+            <li>Save the file, then click <b>Start</b> above the server entry. VS Code opens the sign-in page: allow it and enter your email and invite code.</li>
+            <li>In Copilot Chat, switch to <b>Agent</b> mode: the kleo tools appear in the tools picker.</li>
+          </ol>
+        </div>
+
+        <div class="panel" role="tabpanel" data-panel="opencode" hidden>
+          <h3>OpenCode</h3>
+          <p class="lede" style="font-size:.9375rem">Add this to <code class="mono">~/.config/opencode/opencode.jsonc</code> (global) or to <code class="mono">opencode.jsonc</code> in the project, then sign in from the terminal.</p>
+          <div class="code">{
+  <span class="k">"mcp"</span>: {
+    <span class="k">"kleo"</span>: { <span class="k">"type"</span>: <span class="s">"remote"</span>, <span class="k">"url"</span>: <span class="s">"https://mcp.kleo.ai/mcp"</span>, <span class="k">"enabled"</span>: true }
+  }
+}<button class="btn btn-ghost btn-sm copy" data-copy='{&#10;  "mcp": {&#10;    "kleo": { "type": "remote", "url": "https://mcp.kleo.ai/mcp", "enabled": true }&#10;  }&#10;}'>Copy</button></div>
+          <div class="code"><span class="cm"># sign in once (opens the browser)</span>
+opencode mcp auth kleo<button class="btn btn-ghost btn-sm copy" data-copy="opencode mcp auth kleo">Copy</button></div>
+          <ol>
+            <li>Save the config, run the command above, and enter your email and invite code in the browser.</li>
+            <li>Start <b>opencode</b> and ask for the video: the kleo tools are available in every session.</li>
+          </ol>
+        </div>
+
+        <div class="panel" role="tabpanel" data-panel="gemini" hidden>
+          <h3>Gemini CLI</h3>
+          <div class="code"><span class="cm"># add Kleo (add --scope user to have it in every project)</span>
+gemini mcp add --transport http kleo https://mcp.kleo.ai/mcp<button class="btn btn-ghost btn-sm copy" data-copy="gemini mcp add --transport http kleo https://mcp.kleo.ai/mcp">Copy</button></div>
+          <ol>
+            <li>Run the command above, then start <b>gemini</b> and type <b>/mcp auth kleo</b>: the sign-in page opens in your browser.</li>
+            <li>Ask for the video in the session. <b>/mcp list</b> shows the seven kleo tools.</li>
+          </ol>
+        </div>
+
+        <div class="panel" role="tabpanel" data-panel="other" hidden>
+          <h3>Windsurf, the Gemini app, and your own agents</h3>
+          <p class="lede" style="font-size:.9375rem">Kleo is a standard MCP server over the Streamable HTTP transport with OAuth 2.1. Any compatible client connects with the same address and the same sign-in.</p>
+          <div class="url-line">Server address <code>https://mcp.kleo.ai/mcp</code> <button class="btn btn-ghost btn-sm" data-copy="https://mcp.kleo.ai/mcp">Copy</button></div>
+          <ol>
+            <li><b>Windsurf</b>: <b>Settings → MCP → Add server</b>, paste the address (its <code class="mono">mcp_config.json</code> uses the key <code class="mono">"serverUrl"</code>).</li>
+            <li><b>Gemini app</b>: <b>Settings → Connected apps → Custom apps</b>, paste the address (currently requires Google AI Pro or Ultra).</li>
+            <li>For your own agent: use an MCP SDK (Python or TypeScript) with the HTTP transport and complete the OAuth flow once.</li>
           </ol>
         </div>
       </div>
@@ -620,12 +660,13 @@ claude mcp add --transport http kleo https://mcp.kleo.ai/mcp
         <table>
           <thead><tr><th>Tool</th><th>What it does</th><th>Responds in</th></tr></thead>
           <tbody>
-            <tr><td>kleo_list_templates</td><td>Lists the available templates with formats, lengths, and accepted parameters.</td><td>instantly</td></tr>
-            <tr><td>kleo_create_video</td><td>Starts a render from a template, prompt, and parameters. Returns a job ID immediately, so the chat never waits.</td><td>instantly · job_id</td></tr>
-            <tr><td>kleo_get_job</td><td>Job status: current track, percent complete, time remaining. Your assistant polls it whenever you ask.</td><td>instantly</td></tr>
-            <tr><td>kleo_get_result</td><td>Download links for the MP4, .srt subtitles, and thumbnail. Links stay valid for 7 days.</td><td>instantly</td></tr>
-            <tr><td>kleo_generate_thumbnail</td><td>Three thumbnail options from a video frame or a prompt.</td><td>2–3 min</td></tr>
-            <tr><td>kleo_cancel_job</td><td>Cancels a queued or running render. Credits for the unrendered portion are refunded.</td><td>instantly</td></tr>
+            <tr><td>kleo_storyboard_guide</td><td>Explains how to write a storyboard (scenes, narration, visuals) so your assistant can script the video itself. Optional: skip it and Kleo plans the video from your prompt.</td><td>instantly</td></tr>
+            <tr><td>kleo_list_templates</td><td>Lists the ten templates with formats, lengths, voices and credit cost, plus the credits left on your account.</td><td>instantly</td></tr>
+            <tr><td>kleo_create_video</td><td>Starts a render from a template and your prompt (and the storyboard, if your assistant wrote one). Returns a job ID right away, so the chat never waits.</td><td>instantly · job_id</td></tr>
+            <tr><td>kleo_get_job</td><td>Progress of a render: stage, percent complete and minutes left. Without a job ID it lists your recent videos.</td><td>instantly</td></tr>
+            <tr><td>kleo_get_result</td><td>Download links for the MP4, the .srt subtitles and the thumbnail. Links stay valid for 7 days.</td><td>instantly</td></tr>
+            <tr><td>kleo_generate_thumbnail</td><td>Extra thumbnail options from a finished video or a prompt. Not available yet in the beta: every render already includes one thumbnail.</td><td>coming soon</td></tr>
+            <tr><td>kleo_cancel_job</td><td>Cancels a queued or running render and refunds the credits not yet used.</td><td>instantly</td></tr>
           </tbody>
         </table>
       </div>
@@ -645,11 +686,11 @@ claude mcp add --transport http kleo https://mcp.kleo.ai/mcp
     </div>
     <div class="plans">
       <div class="plan">
-        <div class="name"><span>Trial</span></div>
-        <div class="price">€0<small>one-time</small></div>
+        <div class="name"><span>Beta trial</span></div>
+        <div class="price">€0<small>with an invite code</small></div>
         <ul>
-          <li>1 Short in 1080p at 30 fps</li>
-          <li>All templates</li>
+          <li>10 credits: 1 per Short, 3 per video up to 5 min, +1 per extra minute</li>
+          <li>All templates, full quality</li>
           <li>No card required</li>
         </ul>
         <a class="btn btn-ghost" href="#connetti">Connect and try it</a>
@@ -708,17 +749,17 @@ claude mcp add --transport http kleo https://mcp.kleo.ai/mcp
         </details>
         <details>
           <summary>How long does it take?</summary>
-          <p>A Short in 4K at 60 fps finishes in 15–30 minutes; a 5-minute long-form video takes 45–70. The chat is never blocked: ask for the status whenever you like, or get an email when the link is ready.</p>
+          <p>A Short takes about 10–20 minutes, including the time to rent and boot the GPU machine; a long video takes up to about an hour. The chat is never blocked: ask for the status whenever you like.</p>
         </details>
         <details>
           <summary>What quality do I get?</summary>
-          <p>An MP4 at 3840×2160 and 60 fps, encoded in H.265 or H.264, plus a separate .srt subtitle file and a thumbnail. Everything is ready to upload to YouTube, with no watermark.</p>
+          <p>An MP4 at 60 fps: 2160×3840 for Shorts, 1920×1080 for 16:9 videos, H.264 with AAC audio, plus a separate .srt subtitle file and a thumbnail. Everything is ready to upload to YouTube, with no watermark.</p>
         </details>
       </div>
       <div>
         <details>
           <summary>Can I use my own voice, logo, and clips?</summary>
-          <p>On the Studio plan, yes: upload your assets from chat and the templates use them in place of the generated ones. Voice cloning requires your recorded consent.</p>
+          <p>Not yet. It is planned for the Studio plan: upload your assets from chat and the templates use them. Voice cloning will require your recorded consent.</p>
         </details>
         <details>
           <summary>Who owns the video?</summary>
@@ -726,11 +767,11 @@ claude mcp add --transport http kleo https://mcp.kleo.ai/mcp
         </details>
         <details>
           <summary>Which models do you use?</summary>
-          <p>Open models for video and images, neural speech synthesis, upscaling, and frame interpolation. Your prompts and files are never used to train anything.</p>
+          <p>A language model writes the storyboard, an open neural voice (Kokoro) narrates it in English or Italian, speech recognition aligns the captions, and Kleo's own motion-design engine draws the scenes. Your prompts and files are never used to train anything.</p>
         </details>
         <details>
           <summary>Does it work with Grok or the Gemini app?</summary>
-          <p>Yes. Grok accepts custom connectors on grok.com and in the app; the Gemini app accepts them on Google AI Pro or Ultra, and Gemini CLI accepts them everywhere. Claude, ChatGPT, Claude Code, Cursor, VS Code, and Windsurf all use the same address.</p>
+          <p>Yes. Grok accepts custom connectors on grok.com and in the app; the Gemini app accepts them on Google AI Pro or Ultra, and Gemini CLI accepts them everywhere. Claude, ChatGPT, Claude Code, Cursor, VS Code, OpenCode, and Windsurf all use the same address.</p>
         </details>
       </div>
     </div>
@@ -743,7 +784,7 @@ claude mcp add --transport http kleo https://mcp.kleo.ai/mcp
     <div>
       <div class="eyebrow">Waitlist</div>
       <h2>We'll let you know when your spot opens.</h2>
-      <p class="lede" style="margin-top:14px">We're opening access in batches to keep the queue short. Leave your email: when it's your turn, you get the server address and a trial credit.</p>
+      <p class="lede" style="margin-top:14px">We're opening access in batches to keep the queue short. Leave your email: when it's your turn, you get an invite code and 10 trial credits.</p>
     </div>
     <div class="wl">
       <!-- TODO: point the form action at an endpoint (Formspree, Tally, your own backend). For now it only saves locally. -->
@@ -777,13 +818,13 @@ claude mcp add --transport http kleo https://mcp.kleo.ai/mcp
 
   /* ---------- hero: render loop ---------- */
   var stages = [
-    {pct:6,   status:'Writing the script · hook in the first 2 seconds', track:0},
-    {pct:14,  status:'Synthesizing the voice · 44.8 kHz', track:1},
-    {pct:40,  status:'Generating clips · 3 of 9 · ~14 min left', track:2},
-    {pct:64,  status:'Generating clips · 6 of 9 · ~11 min left', track:2},
-    {pct:78,  status:'Cutting to the voice · subtitles · music', track:3},
-    {pct:94,  status:'Upscaling to 3840×2160 · interpolating to 60 fps', track:4},
-    {pct:100, status:'Done · 24 min 40 s', done:true}
+    {pct:6,   status:'Writing the storyboard · hook in the first 2 seconds', track:0},
+    {pct:14,  status:'Synthesizing the voice · aligning the captions', track:1},
+    {pct:40,  status:'Drawing the scenes · 3 of 9 · ~8 min left', track:2},
+    {pct:64,  status:'Drawing the scenes · 6 of 9 · ~5 min left', track:2},
+    {pct:78,  status:'Cutting to the voice · captions · music', track:3},
+    {pct:94,  status:'Encoding · 2160×3840 · 60 fps · quality check', track:4},
+    {pct:100, status:'Done · 14 min 20 s', done:true}
   ];
   var tracks = Array.prototype.slice.call(document.querySelectorAll('#tracks .track'));
   var fill = document.getElementById('renderFill'), pctEl = document.getElementById('renderPct'),
@@ -807,34 +848,34 @@ claude mcp add --transport http kleo https://mcp.kleo.ai/mcp
 
   /* ---------- templates + sketches ---------- */
   var T = [
-    {id:'story-documentary', name:'Story / Documentary', fmt:'16:9', dur:'5–12 min', render:'45–70 min',
+    {id:'story-documentary', name:'Story / Documentary', fmt:'16:9', dur:'5–12 min', render:'40–60 min',
      desc:'Calm narration over cinematic clips, chapter titles, and a map or date when it helps.',
      prompt:'Make an 8-minute documentary on the disappearance of the Maya, calm tone, male voice.', sk:'doc'},
-    {id:'top-10', name:'Top 10', fmt:'16:9', dur:'6–10 min', render:'50–70 min',
+    {id:'top-10', name:'Top 10', fmt:'16:9', dur:'6–10 min', render:'40–60 min',
      desc:'A countdown with a big on-screen number, one scene per entry, tight pacing, cuts on the beat.',
      prompt:'Top 10 inventions that changed the world, fast pace, countdown on screen.', sk:'top'},
-    {id:'viral-short', name:'Viral Short', fmt:'9:16', dur:'30–60 s', render:'20–30 min',
+    {id:'viral-short', name:'Viral Short', fmt:'9:16', dur:'30–60 s', render:'10–20 min',
      desc:'Hook in the first two seconds, big word-by-word subtitles, a cut every 2–3 seconds.',
      prompt:'A 45-second Short about a wild pirate fact, big subtitles, a strong hook.', sk:'short'},
-    {id:'reddit-story', name:'Reddit Story', fmt:'9:16', dur:'45–90 s', render:'25–35 min',
+    {id:'reddit-story', name:'Reddit Story', fmt:'9:16', dur:'45–90 s', render:'10–20 min',
      desc:'Post card at the top, a narrator voice, and continuous footage below that holds attention.',
      prompt:'Tell this story as a Short: [paste the post]. Female voice, satisfying background footage.', sk:'reddit'},
-    {id:'motivational', name:'Motivational', fmt:'9:16', dur:'30–90 s', render:'20–30 min',
+    {id:'motivational', name:'Motivational', fmt:'9:16', dur:'30–90 s', render:'10–20 min',
      desc:'Centered on-screen quotes, sweeping slow-motion footage, music that builds.',
      prompt:'Motivational Short about discipline, three quotes, orchestral music, end on the logo.', sk:'quote'},
     {id:'explainer', name:'Explainer / Tutorial', fmt:'16:9', dur:'4–8 min', render:'40–60 min',
      desc:'Animated diagrams that build as the voice explains, with a recap at the end.',
      prompt:'Explain how an MCP server works in 5 minutes, with animated diagrams and a hands-on example.', sk:'diagram'},
-    {id:'weekly-news', name:'News of the Week', fmt:'16:9', dur:'3–5 min', render:'30–45 min',
+    {id:'weekly-news', name:'Weekly News', fmt:'16:9', dur:'3–5 min', render:'30–50 min',
      desc:'Four stories, a lower third with headline and source, hard cuts between segments.',
      prompt:'Recap of this week\'s AI news, newscast style, 4 stories with sources.', sk:'news'},
-    {id:'cinematic-trailer', name:'Cinematic Trailer', fmt:'16:9', dur:'60–90 s', render:'30–40 min',
+    {id:'cinematic-trailer', name:'Cinematic Trailer', fmt:'16:9', dur:'60–90 s', render:'15–25 min',
      desc:'2.39:1 letterbox bars, title cards between scenes, orchestral score, silence before the title.',
      prompt:'Trailer for a movie about pirates in space, letterbox, epic score, title card at the end.', sk:'trailer'},
-    {id:'product-review', name:'Product Review', fmt:'16:9', dur:'4–6 min', render:'40–50 min',
+    {id:'product-review', name:'Product Review', fmt:'16:9', dur:'4–6 min', render:'40–60 min',
      desc:'Product front and center, pros and cons on either side, final score and verdict.',
      prompt:'Review of an imaginary €300 drone: pros and cons on screen, final score out of 10.', sk:'review'},
-    {id:'did-you-know', name:'Did You Know', fmt:'9:16', dur:'20–40 s', render:'15–25 min',
+    {id:'did-you-know', name:'Did You Know', fmt:'9:16', dur:'20–40 s', render:'10–15 min',
      desc:'One fact per scene, karaoke subtitles, a new image with every sentence.',
      prompt:'5 facts about octopuses in 30 seconds, karaoke subtitles, fast and upbeat voice.', sk:'facts'}
   ];
@@ -880,7 +921,7 @@ claude mcp add --transport http kleo https://mcp.kleo.ai/mcp
       '<div class="sketch">'+sk(t)+'<span class="fmt">'+t.fmt+'</span><span class="note">sketch · '+t.id+'</span></div>'+
       '<div class="card-body">'+
         '<h3>'+t.name+'</h3>'+
-        '<div class="meta"><span>length <b>'+t.dur+'</b></span><span>render <b>'+t.render+'</b></span><span>output <b>4K · 60 fps</b></span></div>'+
+        '<div class="meta"><span>length <b>'+t.dur+'</b></span><span>render <b>'+t.render+'</b></span><span>output <b>'+(t.fmt==='9:16' ? '4K' : 'Full HD')+' · 60 fps</b></span></div>'+
         '<p>'+t.desc+'</p>'+
         '<div class="prompt"><span class="lab">Try saying</span><q>'+t.prompt+'</q></div>'+
       '</div></article>';
