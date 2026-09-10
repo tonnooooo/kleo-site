@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Four pages, that is the whole site. Update the dates when a page really changes; a sitemap that lies about
+     freshness is worse than none. There is deliberately no robots.txt: on a github.io project site it would be
+     served at /kleo-site/robots.txt, which no crawler reads, so it would be decoration. Add one at the root the
+     day Kleo has its own domain. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://tonnooooo.github.io/kleo-site/</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://tonnooooo.github.io/kleo-site/styles.html</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tonnooooo.github.io/kleo-site/privacy.html</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://tonnooooo.github.io/kleo-site/terms.html</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+</urlset>
