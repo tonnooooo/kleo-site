@@ -109,7 +109,7 @@
       <div class="step">
         <div class="tc">00:00</div>
         <h3>Paste one URL</h3>
-        <p>Add Kleo's address as a custom connector in Claude, ChatGPT or Grok. Nothing to install, no keys to copy. You sign in once with your email and invite code.</p>
+        <p>Add Kleo's address as a custom connector in Claude, ChatGPT or Grok. Nothing to install, no keys to copy. Kleo's page opens: click <b>Start free</b> and you're back in the chat, with two Shorts on the house.</p>
       </div>
       <div class="step">
         <div class="tc">00:20</div>
@@ -204,7 +204,7 @@
         <div class="eyebrow">Connect</div>
         <h2>One address, any assistant.</h2>
       </div>
-      <p class="lede">Kleo speaks the Model Context Protocol over Streamable HTTP with OAuth sign-in: the same address works for every client, and you sign in once with your email and invite code. Pick yours.</p>
+      <p class="lede">Kleo speaks the Model Context Protocol over Streamable HTTP with OAuth: the same address works for every client, and connecting is a single button — no sign-up, no password, nothing to type. Pick yours.</p>
     </div>
     <p class="mono" id="mcpStatus" hidden style="color:var(--accent-text); margin:-24px 0 24px"></p>
     <div class="connect">
@@ -226,7 +226,7 @@
           <div class="url-line">Server address <code>https://mcp.kleo.ai/mcp</code> <button class="btn btn-ghost btn-sm" data-copy="https://mcp.kleo.ai/mcp">Copy</button></div>
           <ol>
             <li>Open <b>Settings → Connectors</b> and choose <b>Add custom connector</b>.</li>
-            <li>Name it <b>Kleo</b>, paste the address above, and confirm. Kleo's sign-in page opens: enter your email and invite code.</li>
+            <li>Name it <b>Kleo</b>, paste the address above, and confirm. Kleo's page opens: click <b>Start free</b> and you're back in Claude.</li>
             <li>In a new chat, turn on Kleo from the tools menu and ask: <i>"Make me a 45-second Short about…"</i>.</li>
           </ol>
           <p class="hint" style="color:var(--mute); font-size:.8125rem">Works on every Claude plan; the free plan allows one custom connector.</p>
@@ -237,7 +237,7 @@
           <div class="url-line">Server address <code>https://mcp.kleo.ai/mcp</code> <button class="btn btn-ghost btn-sm" data-copy="https://mcp.kleo.ai/mcp">Copy</button></div>
           <ol>
             <li>Open <b>Settings → Apps &amp; Connectors</b> (called <b>Connectors</b> in older versions), then <b>Advanced settings</b>, and turn on <b>Developer mode</b>.</li>
-            <li>Back in <b>Connectors</b>, choose <b>Create</b>: name it <b>Kleo</b>, paste the address, set authentication to <b>OAuth</b>, and save. Sign in with your email and invite code.</li>
+            <li>Back in <b>Connectors</b>, choose <b>Create</b>: name it <b>Kleo</b>, paste the address, set authentication to <b>OAuth</b>, and save. Kleo's page opens: click <b>Start free</b> and you're back in ChatGPT.</li>
             <li>In chat, turn on Kleo from the <b>+</b> menu and ask for the video. ChatGPT asks you to confirm before it starts a render.</li>
           </ol>
           <p class="hint" style="color:var(--mute); font-size:.8125rem">Requires ChatGPT Plus, Pro, Business, or Enterprise.</p>
@@ -248,7 +248,7 @@
           <div class="url-line">Server address <code>https://mcp.kleo.ai/mcp</code> <button class="btn btn-ghost btn-sm" data-copy="https://mcp.kleo.ai/mcp">Copy</button></div>
           <ol>
             <li>On <b>grok.com</b> or in the app, open <b>Settings → Connectors</b> and choose <b>Add connector → Custom</b>.</li>
-            <li>Name it <b>Kleo</b>, paste the address, and sign in when prompted (email and invite code).</li>
+            <li>Name it <b>Kleo</b>, paste the address, and confirm. Kleo's page opens: click <b>Start free</b> and you're back in Grok.</li>
             <li>In chat, turn on Kleo in the connectors list and ask for the video.</li>
           </ol>
         </div>
@@ -260,7 +260,7 @@ claude mcp add --transport http kleo https://mcp.kleo.ai/mcp
 <span class="cm"># then, inside a session:</span>
 /mcp   <span class="cm">→ Kleo → Authenticate</span><button class="btn btn-ghost btn-sm copy" data-copy="claude mcp add --transport http kleo https://mcp.kleo.ai/mcp">Copy</button></div>
           <ol>
-            <li>Run the command above, then type <b>/mcp</b> in a session, pick <b>Kleo</b> and <b>Authenticate</b>: the sign-in page opens in your browser.</li>
+            <li>Run the command above, then type <b>/mcp</b> in a session, pick <b>Kleo</b> and <b>Authenticate</b>: Kleo's page opens in your browser, click <b>Start free</b> and you're back in Claude Code.</li>
             <li>Ask: <i>"Use kleo for a 5-minute video on the history of coffee, 16:9"</i>. Claude Code checks the progress for you and hands you the links.</li>
           </ol>
         </div>
@@ -274,7 +274,7 @@ claude mcp add --transport http kleo https://mcp.kleo.ai/mcp
   }
 }<button class="btn btn-ghost btn-sm copy" data-copy='{&#10;  "mcpServers": {&#10;    "kleo": { "url": "https://mcp.kleo.ai/mcp" }&#10;  }&#10;}'>Copy</button></div>
           <ol>
-            <li>Save the file: Cursor lists Kleo under <b>Settings → MCP</b>. Click <b>Connect</b> (or use a tool once) and sign in with your email and invite code.</li>
+            <li>Save the file: Cursor lists Kleo under <b>Settings → MCP</b>. Click <b>Connect</b> (or use a tool once): Kleo's page opens, click <b>Start free</b> and you're back in Cursor.</li>
           </ol>
         </div>
 
@@ -287,23 +287,23 @@ claude mcp add --transport http kleo https://mcp.kleo.ai/mcp
   }
 }<button class="btn btn-ghost btn-sm copy" data-copy='{&#10;  "servers": {&#10;    "kleo": { "type": "http", "url": "https://mcp.kleo.ai/mcp" }&#10;  }&#10;}'>Copy</button></div>
           <ol>
-            <li>Save the file, then click <b>Start</b> above the server entry. VS Code opens the sign-in page: allow it and enter your email and invite code.</li>
+            <li>Save the file, then click <b>Start</b> above the server entry. VS Code opens Kleo's page: click <b>Start free</b> and you're back in VS Code.</li>
             <li>In Copilot Chat, switch to <b>Agent</b> mode: the kleo tools appear in the tools picker.</li>
           </ol>
         </div>
 
         <div class="panel" role="tabpanel" data-panel="opencode" hidden>
           <h3>OpenCode</h3>
-          <p class="lede" style="font-size:.9375rem">Add this to <code class="mono">~/.config/opencode/opencode.jsonc</code> (global) or to <code class="mono">opencode.jsonc</code> in the project, then sign in from the terminal.</p>
+          <p class="lede" style="font-size:.9375rem">Add this to <code class="mono">~/.config/opencode/opencode.jsonc</code> (global) or to <code class="mono">opencode.jsonc</code> in the project, then connect from the terminal.</p>
           <div class="code">{
   <span class="k">"mcp"</span>: {
     <span class="k">"kleo"</span>: { <span class="k">"type"</span>: <span class="s">"remote"</span>, <span class="k">"url"</span>: <span class="s">"https://mcp.kleo.ai/mcp"</span>, <span class="k">"enabled"</span>: true }
   }
 }<button class="btn btn-ghost btn-sm copy" data-copy='{&#10;  "mcp": {&#10;    "kleo": { "type": "remote", "url": "https://mcp.kleo.ai/mcp", "enabled": true }&#10;  }&#10;}'>Copy</button></div>
-          <div class="code"><span class="cm"># sign in once (opens the browser)</span>
+          <div class="code"><span class="cm"># connect once (opens the browser)</span>
 opencode mcp auth kleo<button class="btn btn-ghost btn-sm copy" data-copy="opencode mcp auth kleo">Copy</button></div>
           <ol>
-            <li>Save the config, run the command above, and enter your email and invite code in the browser.</li>
+            <li>Save the config and run the command above: Kleo's page opens in the browser, click <b>Start free</b> and you're back in OpenCode.</li>
             <li>Start <b>opencode</b> and ask for the video: the kleo tools are available in every session.</li>
           </ol>
         </div>
@@ -313,14 +313,14 @@ opencode mcp auth kleo<button class="btn btn-ghost btn-sm copy" data-copy="openc
           <div class="code"><span class="cm"># add Kleo (add --scope user to have it in every project)</span>
 gemini mcp add --transport http kleo https://mcp.kleo.ai/mcp<button class="btn btn-ghost btn-sm copy" data-copy="gemini mcp add --transport http kleo https://mcp.kleo.ai/mcp">Copy</button></div>
           <ol>
-            <li>Run the command above, then start <b>gemini</b> and type <b>/mcp auth kleo</b>: the sign-in page opens in your browser.</li>
-            <li>Ask for the video in the session. <b>/mcp list</b> shows the seven kleo tools.</li>
+            <li>Run the command above, then start <b>gemini</b> and type <b>/mcp auth kleo</b>: Kleo's page opens in your browser, click <b>Start free</b> and you're back in Gemini CLI.</li>
+            <li>Ask for the video in the session. <b>/mcp list</b> shows the nine kleo tools.</li>
           </ol>
         </div>
 
         <div class="panel" role="tabpanel" data-panel="other" hidden>
           <h3>Windsurf, the Gemini app, and your own agents</h3>
-          <p class="lede" style="font-size:.9375rem">Kleo is a standard MCP server over the Streamable HTTP transport with OAuth 2.1. Any compatible client connects with the same address and the same sign-in.</p>
+          <p class="lede" style="font-size:.9375rem">Kleo is a standard MCP server over the Streamable HTTP transport with OAuth 2.1. Any compatible client connects with the same address and the same one-button start.</p>
           <div class="url-line">Server address <code>https://mcp.kleo.ai/mcp</code> <button class="btn btn-ghost btn-sm" data-copy="https://mcp.kleo.ai/mcp">Copy</button></div>
           <ol>
             <li><b>Windsurf</b>: <b>Settings → MCP → Add server</b>, paste the address (its <code class="mono">mcp_config.json</code> uses the key <code class="mono">"serverUrl"</code>).</li>
@@ -345,6 +345,7 @@ gemini mcp add --transport http kleo https://mcp.kleo.ai/mcp<button class="btn b
             <tr><td>kleo_get_result</td><td>Download links for the MP4, the .srt subtitles and the thumbnail. Links stay valid for 7 days.</td><td>instantly</td></tr>
             <tr><td>kleo_generate_thumbnail</td><td>Extra thumbnail options from a finished video or a prompt. Not available yet in the beta: every render already includes one thumbnail.</td><td>coming soon</td></tr>
             <tr><td>kleo_cancel_job</td><td>Cancels a queued or running render and refunds the credits not yet used.</td><td>instantly</td></tr>
+            <tr><td>kleo_account</td><td>Shows the credits left, the link to your account page, and your Kleo key: the one string that carries the same account to another browser or another computer.</td><td>instantly</td></tr>
           </tbody>
         </table>
       </div>
@@ -358,50 +359,35 @@ gemini mcp add --transport http kleo https://mcp.kleo.ai/mcp<button class="btn b
     <div class="sec-head">
       <div>
         <div class="eyebrow">Pricing</div>
-        <h2>Pay for render minutes, not a license.</h2>
+        <h2>Two Shorts free. Then packs of credits, when they open.</h2>
       </div>
-      <div><span class="draft">Draft · indicative pricing, to be confirmed</span></div>
+      <div><span class="draft">Draft · card payments are not open yet</span></div>
     </div>
-    <div class="plans">
-      <div class="plan">
-        <div class="name"><span>Beta trial</span></div>
-        <div class="price">€0<small>with an invite code</small></div>
-        <ul>
-          <li>10 credits: 1 per Short, 3 per video up to 5 min, +1 per extra minute</li>
-          <li>All templates, full quality</li>
-          <li>No card required</li>
-        </ul>
-        <a class="btn btn-ghost" href="#connetti">Connect and try it</a>
-      </div>
+    <div class="plans two">
       <div class="plan hi">
-        <div class="name"><span>Creator</span><span class="pop">most popular</span></div>
-        <div class="price">€24<small>per month</small></div>
+        <div class="name"><span>Free</span><span class="pop">in beta</span></div>
+        <div class="price">€0<small>no sign-up, no card</small></div>
         <ul>
-          <li>20 Shorts or 6 long-form videos</li>
-          <li>4K at 60 fps, subtitles, thumbnails</li>
-          <li>Standard queue</li>
-          <li>30-day render history</li>
+          <li>2 credits, enough for 2 Shorts: 1 credit each, up to 90 seconds</li>
+          <li>Five of the ten templates: everything that fits in 90 seconds</li>
+          <li>Full quality, subtitles and thumbnail; Shorts come out in 4K at 60 fps</li>
+          <li>No email, no password, no card, nothing to type</li>
+          <li>A failed render always gives the credit back; cancelling gives back what was not rendered yet</li>
         </ul>
-        <a class="btn btn-primary" href="#lista">Join the waitlist</a>
+        <a class="btn btn-primary" href="#connetti">Connect and try it</a>
       </div>
       <div class="plan">
-        <div class="name"><span>Studio</span></div>
-        <div class="price">€79<small>per month</small></div>
+        <div class="name"><span>Credit packs</span><span class="pop">not open yet</span></div>
+        <div class="price">€5–40<small>one-off, no subscription</small></div>
         <ul>
-          <li>80 Shorts or 25 long-form videos</li>
-          <li>Priority queue, renders across multiple GPUs</li>
-          <li>Voice cloning, your own logos and clips</li>
-          <li>Team access</li>
+          <li>€5 — 10 credits</li>
+          <li>€15 — 35 credits</li>
+          <li>€40 — 100 credits</li>
+          <li>1 credit per Short up to 90 s, 3 per video up to 5 min, +1 per extra minute</li>
+          <li>Nothing is on sale yet: while Kleo is in beta the only way in is the free tier</li>
         </ul>
-        <a class="btn btn-ghost" href="#lista">Join the waitlist</a>
+        <a class="btn btn-ghost" href="#account">How the account works</a>
       </div>
-    </div>
-    <div class="payg">
-      <span class="k">Pay as you go</span>
-      <span>Short <b>€0.90</b></span>
-      <span>Long-form video up to 5 min <b>€3.50</b></span>
-      <span>Each extra minute <b>€0.60</b></span>
-      <span style="color:var(--mute); font-size:.875rem">No subscription; prepaid credits.</span>
     </div>
   </div>
 </section>
@@ -422,8 +408,16 @@ gemini mcp add --transport http kleo https://mcp.kleo.ai/mcp<button class="btn b
           <p>The Model Context Protocol is the standard that assistants like Claude and ChatGPT use to work with external tools. Kleo is one of those tools: once connected, your assistant knows how to make videos, the same way it knows how to search the web.</p>
         </details>
         <details>
+          <summary>How do I get access?</summary>
+          <p>You don't ask anyone. Paste the address into your assistant, then press <b>Start free</b> on the page that opens: there is no code to request, and the two free Shorts are on your account when you land back in the chat. While Kleo is in beta only a limited number of free accounts are handed out each day; if you arrive after today's are gone the page says so, and the button works again tomorrow.</p>
+        </details>
+        <details>
+          <summary>What do the two free Shorts include?</summary>
+          <p>Full quality, subtitles and a thumbnail; Shorts come out in 4K at 60 fps. One credit per Short up to 90 seconds, so two credits reach the five templates that fit in 90 seconds; the five long-form ones start at three credits and wait for a pack. Every video carries a small Kleo mark on screen, where a channel name would go. A failed render always gives the credits back; if you cancel one yourself you get back what had not been rendered yet, so a Short cancelled halfway through is spent.</p>
+        </details>
+        <details>
           <summary>Do I need to install anything?</summary>
-          <p>No. Paste an address into your assistant's connectors and sign in once. There are no programs, plugins, or keys to manage.</p>
+          <p>No. Paste an address into your assistant's connectors and press one button. There are no programs, plugins, keys or codes to manage.</p>
         </details>
         <details>
           <summary>How long does it take?</summary>
@@ -431,7 +425,7 @@ gemini mcp add --transport http kleo https://mcp.kleo.ai/mcp<button class="btn b
         </details>
         <details>
           <summary>What quality do I get?</summary>
-          <p>An MP4 at 60 fps: 2160×3840 for Shorts, 1920×1080 for 16:9 videos, H.264 with AAC audio, plus a separate .srt subtitle file and a thumbnail. Everything is ready to upload to YouTube, with no watermark.</p>
+          <p>An MP4 at 60 fps: 2160×3840 for Shorts, 1920×1080 for 16:9 videos, H.264 with AAC audio, plus a separate .srt subtitle file and a thumbnail. Everything is ready to upload to YouTube. There is no overlay logo, but every video does carry a small Kleo mark on screen, where a channel name would go; you cannot change it yet.</p>
         </details>
       </div>
       <div>
@@ -448,6 +442,10 @@ gemini mcp add --transport http kleo https://mcp.kleo.ai/mcp<button class="btn b
           <p>A language model writes the storyboard, an open neural voice (Kokoro) narrates it in English or Italian, speech recognition aligns the captions, and Kleo's own motion-design engine draws the scenes. Your prompts and files are never used to train anything.</p>
         </details>
         <details>
+          <summary>Can I use Kleo from Claude and ChatGPT at the same time?</summary>
+          <p>Yes. From the same browser it is the same account and the same credits, so connecting a second assistant costs you nothing and does not hand out a second free tier. From a different browser — another computer, or just a private window — it is a new account, unless you carry over your Kleo key: ask your assistant for it and it will show you.</p>
+        </details>
+        <details>
           <summary>Does it work with Grok or the Gemini app?</summary>
           <p>Yes. Grok accepts custom connectors on grok.com and in the app; the Gemini app accepts them on Google AI Pro or Ultra, and Gemini CLI accepts them everywhere. Claude, ChatGPT, Claude Code, Cursor, VS Code, OpenCode, and Windsurf all use the same address.</p>
         </details>
@@ -456,21 +454,20 @@ gemini mcp add --transport http kleo https://mcp.kleo.ai/mcp<button class="btn b
   </div>
 </section>
 
-<!-- ============ WAITLIST ============ -->
-<section class="cta" id="lista">
+<!-- ============ ACCOUNT ============ -->
+<section class="cta" id="account">
   <div class="wrap">
     <div>
-      <div class="eyebrow">Waitlist</div>
-      <h2>We'll let you know when your spot opens.</h2>
-      <p class="lede" style="margin-top:14px">We're opening access in batches to keep the queue short. Leave your email: when it's your turn, you get an invite code and 10 trial credits.</p>
+      <div class="eyebrow">Account</div>
+      <h2>There is nothing to sign up for.</h2>
+      <p class="lede" style="margin-top:14px">Paste the address into your assistant, press one button, and ask for a video. Two Shorts are on us: no email, no password, no card, no code to type. Your Kleo account lives in the browser you connected from, so when you add Kleo to a second assistant in the same browser you come back to the same credits instead of starting over.</p>
+      <p class="lede" style="margin-top:14px; font-size:.9375rem">Kleo is free while it is in beta. When your two Shorts are gone, your assistant hands you a link to your account page, which shows what is left and says plainly that card payments are not open yet. Changing browser or computer? Ask your assistant for your Kleo key and paste it on the way in.</p>
     </div>
-    <div class="wl">
-      <!-- TODO: point the form action at an endpoint (Formspree, Tally, your own backend). For now it only saves locally. -->
-      <form id="wlForm" novalidate>
-        <input type="email" name="email" placeholder="you@example.com" required aria-label="Your email">
-        <button class="btn btn-primary" type="submit">Join the waitlist</button>
-      </form>
-      <p class="hint" id="wlHint">No newsletter. One email, when it's your turn.</p>
+    <div>
+      <div class="url-line">Server address <code>https://mcp.kleo.ai/mcp</code> <button class="btn btn-ghost btn-sm" data-copy="https://mcp.kleo.ai/mcp">Copy</button></div>
+      <div class="cta-row" style="margin-top:16px">
+        <a class="btn btn-primary" href="#connetti">See the steps for my assistant</a>
+      </div>
     </div>
   </div>
 </section>
@@ -481,7 +478,7 @@ gemini mcp add --transport http kleo https://mcp.kleo.ai/mcp<button class="btn b
     <div class="links">
       <a href="#connetti">Connect</a>
       <a href="#prezzi">Pricing</a>
-      <a href="mailto:ciao@kleo.ai">ciao@kleo.ai</a>
+      <a href="mailto:kleooai@gmail.com">kleooai@gmail.com</a>
       <a href="#top">Back to top</a>
     </div>
   </div>
@@ -643,17 +640,6 @@ gemini mcp add --transport http kleo https://mcp.kleo.ai/mcp<button class="btn b
     var txt = b.getAttribute('data-copy');
     try { navigator.clipboard.writeText(txt).then(function(){ say('Copied'); }, function(){ say('Copy it by hand: ' + txt); }); }
     catch(err){ say('Copy it by hand: ' + txt); }
-  });
-
-  /* ---------- waitlist (local only, see TODO) ---------- */
-  var form = document.getElementById('wlForm'), hint = document.getElementById('wlHint');
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    var email = form.email.value.trim();
-    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ hint.textContent = 'Check your email address.'; hint.className='hint'; form.email.focus(); return; }
-    try { localStorage.setItem('kleo-waitlist', email); } catch(err){}
-    hint.textContent = 'You\'re on the list. We\'ll email ' + email + ' when it\'s your turn.'; hint.className = 'hint ok';
-    form.reset();
   });
 })();
 </script>

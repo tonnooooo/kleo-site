@@ -279,6 +279,9 @@ section + section{border-top:1px solid var(--line)}
 .draft{display:inline-flex; align-items:center; gap:8px; font-family:var(--font-mono); font-size:.7rem; letter-spacing:.1em; text-transform:uppercase; color:var(--accent-text); border:1px dashed var(--amber); border-radius:6px; padding:6px 10px}
 .plans{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px}
 @media (max-width:900px){ .plans{grid-template-columns:1fr} }
+/* two cards would leave a hole in the 3-column track, and .plans.two outranks the query above */
+.plans.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:900px){ .plans.two{grid-template-columns:1fr} }
 .plan{background:var(--bg-2); border:1px solid var(--line); border-radius:var(--r); padding:26px 24px 24px; display:grid; gap:16px; align-content:start}
 .plan.hi{border-color:var(--amber); box-shadow:0 0 0 1px var(--amber) inset}
 .plan .name{font-family:var(--font-mono); font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; color:var(--mute); display:flex; justify-content:space-between}
