@@ -1,6 +1,6 @@
 # Kleo — landing page
 
-Static single-file site for Kleo, an MCP server that renders YouTube videos and Shorts from inside Claude, ChatGPT, Grok, Claude Code, Cursor, VS Code, OpenCode and Gemini CLI. Served by GitHub Pages at https://tonnooooo.github.io/kleo-site/; no build step.
+Static single-file site for Kleo, an MCP server that renders YouTube videos and Shorts from inside Claude, ChatGPT, Grok, Claude Code, Cursor, VS Code, OpenCode and Gemini CLI. Served by GitHub Pages at https://kleooai.com/; no build step.
 
 - Edit `index.html`, push to `main`, the site updates within a few minutes.
 - The server address ships IN the markup, and `config.json` still overrides it at load time. The markup carries the live address so that a reader whose JavaScript never runs is not handed one that does not answer; the script declares the same string once as `SHIPPED` and rewrites it to `mcp_url` when the two differ. To move the server, change `config.json` only — and, when convenient, `SHIPPED` plus the markup, so the no-JavaScript path stays true. The optional `note` in `config.json` is shown above the connect tabs.

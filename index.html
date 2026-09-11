@@ -214,7 +214,7 @@
       <div>
         <div class="panel" role="tabpanel" data-panel="claude">
           <h3>Claude (app and web)</h3>
-          <div class="url-line">Server address <code>https://kleo-mcp.plural-juice.workers.dev/mcp</code> <button class="btn btn-ghost btn-sm" data-copy="https://kleo-mcp.plural-juice.workers.dev/mcp">Copy</button></div>
+          <div class="url-line">Server address <code>https://mcp.kleooai.com/mcp</code> <button class="btn btn-ghost btn-sm" data-copy="https://mcp.kleooai.com/mcp">Copy</button></div>
           <ol>
             <li>Open <b>Settings → Connectors</b> and choose <b>Add custom connector</b>.</li>
             <li>Name it <b>Kleo</b>, paste the address above, and confirm. Kleo's page opens: click <b>Start free</b> and you're back in Claude.</li>
@@ -225,7 +225,7 @@
 
         <div class="panel" role="tabpanel" data-panel="chatgpt">
           <h3>ChatGPT (Developer mode)</h3>
-          <div class="url-line">Server address <code>https://kleo-mcp.plural-juice.workers.dev/mcp</code> <button class="btn btn-ghost btn-sm" data-copy="https://kleo-mcp.plural-juice.workers.dev/mcp">Copy</button></div>
+          <div class="url-line">Server address <code>https://mcp.kleooai.com/mcp</code> <button class="btn btn-ghost btn-sm" data-copy="https://mcp.kleooai.com/mcp">Copy</button></div>
           <ol>
             <li>Open <b>Settings → Apps &amp; Connectors</b> (called <b>Connectors</b> in older versions), then <b>Advanced settings</b>, and turn on <b>Developer mode</b>.</li>
             <li>Back in <b>Connectors</b>, choose <b>Create</b>: name it <b>Kleo</b>, paste the address, set authentication to <b>OAuth</b>, and save. Kleo's page opens: click <b>Start free</b> and you're back in ChatGPT.</li>
@@ -236,7 +236,7 @@
 
         <div class="panel" role="tabpanel" data-panel="grok">
           <h3>Grok</h3>
-          <div class="url-line">Server address <code>https://kleo-mcp.plural-juice.workers.dev/mcp</code> <button class="btn btn-ghost btn-sm" data-copy="https://kleo-mcp.plural-juice.workers.dev/mcp">Copy</button></div>
+          <div class="url-line">Server address <code>https://mcp.kleooai.com/mcp</code> <button class="btn btn-ghost btn-sm" data-copy="https://mcp.kleooai.com/mcp">Copy</button></div>
           <ol>
             <li>On <b>grok.com</b> or in the app, open <b>Settings → Connectors</b> and choose <b>Add connector → Custom</b>.</li>
             <li>Name it <b>Kleo</b>, paste the address, and confirm. Kleo's page opens: click <b>Start free</b> and you're back in Grok.</li>
@@ -247,9 +247,9 @@
         <div class="panel" role="tabpanel" data-panel="code">
           <h3>Claude Code</h3>
           <div class="code"><span class="cm"># add Kleo once (add --scope user to have it in every project)</span>
-claude mcp add --transport http kleo https://kleo-mcp.plural-juice.workers.dev/mcp
+claude mcp add --transport http kleo https://mcp.kleooai.com/mcp
 <span class="cm"># then, inside a session:</span>
-/mcp   <span class="cm">→ Kleo → Authenticate</span><button class="btn btn-ghost btn-sm copy" data-copy="claude mcp add --transport http kleo https://kleo-mcp.plural-juice.workers.dev/mcp">Copy</button></div>
+/mcp   <span class="cm">→ Kleo → Authenticate</span><button class="btn btn-ghost btn-sm copy" data-copy="claude mcp add --transport http kleo https://mcp.kleooai.com/mcp">Copy</button></div>
           <ol>
             <li>Run the command above, then type <b>/mcp</b> in a session, pick <b>Kleo</b> and <b>Authenticate</b>: Kleo's page opens in your browser, click <b>Start free</b> and you're back in Claude Code.</li>
             <li>Ask: <i>Use kleo for a 5-minute video on the history of coffee, 16:9</i>. Claude Code checks the progress for you and hands you the links.</li>
@@ -261,9 +261,9 @@ claude mcp add --transport http kleo https://kleo-mcp.plural-juice.workers.dev/m
           <p class="lede" style="font-size:.9375rem">Create or edit <code class="mono">~/.cursor/mcp.json</code> (all projects) or <code class="mono">.cursor/mcp.json</code> inside one project.</p>
           <div class="code">{
   <span class="k">"mcpServers"</span>: {
-    <span class="k">"kleo"</span>: { <span class="k">"url"</span>: <span class="s">"https://kleo-mcp.plural-juice.workers.dev/mcp"</span> }
+    <span class="k">"kleo"</span>: { <span class="k">"url"</span>: <span class="s">"https://mcp.kleooai.com/mcp"</span> }
   }
-}<button class="btn btn-ghost btn-sm copy" data-copy='{&#10;  "mcpServers": {&#10;    "kleo": { "url": "https://kleo-mcp.plural-juice.workers.dev/mcp" }&#10;  }&#10;}'>Copy</button></div>
+}<button class="btn btn-ghost btn-sm copy" data-copy='{&#10;  "mcpServers": {&#10;    "kleo": { "url": "https://mcp.kleooai.com/mcp" }&#10;  }&#10;}'>Copy</button></div>
           <ol>
             <li>Save the file: Cursor lists Kleo under <b>Settings → MCP</b>. Click <b>Connect</b> (or use a tool once): Kleo's page opens, click <b>Start free</b> and you're back in Cursor.</li>
           </ol>
@@ -274,9 +274,9 @@ claude mcp add --transport http kleo https://kleo-mcp.plural-juice.workers.dev/m
           <p class="lede" style="font-size:.9375rem">Create <code class="mono">.vscode/mcp.json</code> in your workspace (or run <b>MCP: Add Server</b> from the Command Palette and paste the address).</p>
           <div class="code">{
   <span class="k">"servers"</span>: {
-    <span class="k">"kleo"</span>: { <span class="k">"type"</span>: <span class="s">"http"</span>, <span class="k">"url"</span>: <span class="s">"https://kleo-mcp.plural-juice.workers.dev/mcp"</span> }
+    <span class="k">"kleo"</span>: { <span class="k">"type"</span>: <span class="s">"http"</span>, <span class="k">"url"</span>: <span class="s">"https://mcp.kleooai.com/mcp"</span> }
   }
-}<button class="btn btn-ghost btn-sm copy" data-copy='{&#10;  "servers": {&#10;    "kleo": { "type": "http", "url": "https://kleo-mcp.plural-juice.workers.dev/mcp" }&#10;  }&#10;}'>Copy</button></div>
+}<button class="btn btn-ghost btn-sm copy" data-copy='{&#10;  "servers": {&#10;    "kleo": { "type": "http", "url": "https://mcp.kleooai.com/mcp" }&#10;  }&#10;}'>Copy</button></div>
           <ol>
             <li>Save the file, then click <b>Start</b> above the server entry. VS Code opens Kleo's page: click <b>Start free</b> and you're back in VS Code.</li>
             <li>In Copilot Chat, switch to <b>Agent</b> mode: the kleo tools appear in the tools picker.</li>
@@ -288,9 +288,9 @@ claude mcp add --transport http kleo https://kleo-mcp.plural-juice.workers.dev/m
           <p class="lede" style="font-size:.9375rem">Add this to <code class="mono">~/.config/opencode/opencode.jsonc</code> (global) or to <code class="mono">opencode.jsonc</code> in the project, then connect from the terminal.</p>
           <div class="code">{
   <span class="k">"mcp"</span>: {
-    <span class="k">"kleo"</span>: { <span class="k">"type"</span>: <span class="s">"remote"</span>, <span class="k">"url"</span>: <span class="s">"https://kleo-mcp.plural-juice.workers.dev/mcp"</span>, <span class="k">"enabled"</span>: true }
+    <span class="k">"kleo"</span>: { <span class="k">"type"</span>: <span class="s">"remote"</span>, <span class="k">"url"</span>: <span class="s">"https://mcp.kleooai.com/mcp"</span>, <span class="k">"enabled"</span>: true }
   }
-}<button class="btn btn-ghost btn-sm copy" data-copy='{&#10;  "mcp": {&#10;    "kleo": { "type": "remote", "url": "https://kleo-mcp.plural-juice.workers.dev/mcp", "enabled": true }&#10;  }&#10;}'>Copy</button></div>
+}<button class="btn btn-ghost btn-sm copy" data-copy='{&#10;  "mcp": {&#10;    "kleo": { "type": "remote", "url": "https://mcp.kleooai.com/mcp", "enabled": true }&#10;  }&#10;}'>Copy</button></div>
           <div class="code"><span class="cm"># connect once (opens the browser)</span>
 opencode mcp auth kleo<button class="btn btn-ghost btn-sm copy" data-copy="opencode mcp auth kleo">Copy</button></div>
           <ol>
@@ -302,7 +302,7 @@ opencode mcp auth kleo<button class="btn btn-ghost btn-sm copy" data-copy="openc
         <div class="panel" role="tabpanel" data-panel="gemini">
           <h3>Gemini CLI</h3>
           <div class="code"><span class="cm"># add Kleo (add --scope user to have it in every project)</span>
-gemini mcp add --transport http kleo https://kleo-mcp.plural-juice.workers.dev/mcp<button class="btn btn-ghost btn-sm copy" data-copy="gemini mcp add --transport http kleo https://kleo-mcp.plural-juice.workers.dev/mcp">Copy</button></div>
+gemini mcp add --transport http kleo https://mcp.kleooai.com/mcp<button class="btn btn-ghost btn-sm copy" data-copy="gemini mcp add --transport http kleo https://mcp.kleooai.com/mcp">Copy</button></div>
           <ol>
             <li>Run the command above, then start <b>gemini</b> and type <b>/mcp auth kleo</b>: Kleo's page opens in your browser, click <b>Start free</b> and you're back in Gemini CLI.</li>
             <li>Ask for the video in the session. <b>/mcp list</b> shows every kleo tool.</li>
@@ -312,7 +312,7 @@ gemini mcp add --transport http kleo https://kleo-mcp.plural-juice.workers.dev/m
         <div class="panel" role="tabpanel" data-panel="other">
           <h3>Windsurf, the Gemini app, and your own agents</h3>
           <p class="lede" style="font-size:.9375rem">Kleo is a standard MCP server over the Streamable HTTP transport with OAuth 2.1. Any compatible client connects with the same address and the same one-button start.</p>
-          <div class="url-line">Server address <code>https://kleo-mcp.plural-juice.workers.dev/mcp</code> <button class="btn btn-ghost btn-sm" data-copy="https://kleo-mcp.plural-juice.workers.dev/mcp">Copy</button></div>
+          <div class="url-line">Server address <code>https://mcp.kleooai.com/mcp</code> <button class="btn btn-ghost btn-sm" data-copy="https://mcp.kleooai.com/mcp">Copy</button></div>
           <ol>
             <li><b>Windsurf</b>: <b>Settings → MCP → Add server</b>, paste the address (its <code class="mono">mcp_config.json</code> uses the key <code class="mono">"serverUrl"</code>).</li>
             <li><b>Gemini app</b>: <b>Settings → Connected apps → Custom apps</b>, paste the address (currently requires Google AI Pro or Ultra).</li>
@@ -350,9 +350,9 @@ gemini mcp add --transport http kleo https://kleo-mcp.plural-juice.workers.dev/m
     <div class="sec-head">
       <div>
         <div class="eyebrow">Pricing</div>
-        <h2>Two Shorts free. Then packs of credits, when they open.</h2>
+        <h2>Two Shorts free. Top up any time.</h2>
       </div>
-      <div><span class="draft">Draft · card payments are not open yet</span></div>
+      <div><span class="draft">Live · one-off payments via Stripe</span></div>
     </div>
     <div class="plans two">
       <div class="plan hi">
@@ -367,15 +367,15 @@ gemini mcp add --transport http kleo https://kleo-mcp.plural-juice.workers.dev/m
         <a class="btn btn-primary" href="#connect">Connect and try it</a>
       </div>
       <div class="plan">
-        <div class="name"><span>Credit packs</span><span class="pop">not open yet</span></div>
+        <div class="name"><span>Credit packs</span><span class="pop">available now</span></div>
         <div class="price">€5–40<small>one-off, no subscription</small></div>
         <ul>
           <li>€5 — 10 credits · €15 — 35 · €40 — 100</li>
           <li>Length sets the price: 1 credit per Short, 3 up to 5 minutes, +1 per extra minute</li>
           <li>Kleo tells your assistant what a video costs, and what is left, every time</li>
-          <li>Not on sale yet: in beta the only way in is the free tier</li>
+          <li>Available now: connect Kleo, then buy from your account page so credits go to the right account</li>
         </ul>
-        <a class="btn btn-ghost" href="#account">How the account works</a>
+        <a class="btn btn-ghost" href="#account">Open your account to buy</a>
       </div>
     </div>
   </div>
@@ -453,7 +453,7 @@ gemini mcp add --transport http kleo https://kleo-mcp.plural-juice.workers.dev/m
       <p class="lede" style="margin-top:14px; font-size:.9375rem">When those two Shorts are gone, your assistant hands you a link to your account page. Moving to another computer? Ask it for your Kleo key and paste it on the way in.</p>
     </div>
     <div>
-      <div class="url-line">Server address <code>https://kleo-mcp.plural-juice.workers.dev/mcp</code> <button class="btn btn-ghost btn-sm" data-copy="https://kleo-mcp.plural-juice.workers.dev/mcp">Copy</button></div>
+      <div class="url-line">Server address <code>https://mcp.kleooai.com/mcp</code> <button class="btn btn-ghost btn-sm" data-copy="https://mcp.kleooai.com/mcp">Copy</button></div>
       <div class="cta-row" style="margin-top:16px">
         <a class="btn btn-primary" href="#connect">See the steps for my assistant</a>
       </div>
@@ -483,7 +483,7 @@ gemini mcp add --transport http kleo https://kleo-mcp.plural-juice.workers.dev/m
   /* The address written into the markup. config.json still overrides it at load
      time, so the server moves by editing config.json alone — but a reader whose
      JavaScript never runs now sees an address that actually answers. */
-  var SHIPPED = "https://kleo-mcp.plural-juice.workers.dev/mcp";
+  var SHIPPED = "https://mcp.kleooai.com/mcp";
 
   /* ---------- old Italian anchors, kept working ----------
      #come #connetti #prezzi #quinte were the section ids until the site went fully English. They are in links that
