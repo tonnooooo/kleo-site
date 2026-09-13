@@ -3,9 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kleo</title>
+<title>Kleo — ask for a video in chat, get it back finished</title>
 <meta name="description" content="Kleo is an MCP server: connect it to Claude, ChatGPT, Grok, Cursor or your coding agent and ask for YouTube Shorts and videos in plain language. Rendered at 60 fps on a GPU rented only for your job; you get a link back.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect x='3' y='7' width='26' height='22' rx='5' fill='%23F3B53F'/></svg>">
+<link rel="icon" href="brand/kleo-favicon.svg" type="image/svg+xml">
+<link rel="icon" href="brand/kleo-favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="brand/kleo-icon-dark-192.png">
+<meta name="theme-color" content="#0A0C10">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kleo">
+<meta property="og:title" content="Kleo — ask for a video in chat, get it back finished">
+<meta property="og:description" content="Kleo is an MCP server: connect it to Claude, ChatGPT, Grok, Cursor or your coding agent and ask for YouTube Shorts and videos in plain language. Rendered at 60 fps on a GPU rented only for your job; you get a link back.">
+<meta property="og:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta property="og:image:width" content="2400">
+<meta property="og:image:height" content="1260">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -17,11 +28,9 @@
 <nav class="nav" aria-label="Main">
   <div class="wrap">
     <a class="brand" href="#top" aria-label="Kleo, home">
-      <svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true">
-        <rect x="3" y="7" width="26" height="22" rx="5" fill="var(--amber)"/>
-        <path d="M3 12 h26 v4 H3 z" fill="var(--amber-ink)" opacity=".85"/>
-        <path d="M7 12 l3.5 4 M13 12 l3.5 4 M19 12 l3.5 4" stroke="var(--amber)" stroke-width="1.6"/>
-        <path d="M10 19 v8 M10 23 l6-4 M10 23 l6 4" stroke="var(--amber-ink)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+        <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+        <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
       </svg>
       Kleo <span class="tag">MCP</span>
     </a>
@@ -463,7 +472,13 @@ gemini mcp add --transport http kleo https://mcp.kleooai.com/mcp<button class="b
 
 <footer>
   <div class="wrap">
-    <span>Kleo · a company that is an MCP server</span>
+    <div class="foot-brand">
+      <a class="brand" href="#top" aria-label="Kleo, home"><svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+        <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+        <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+      </svg> Kleo</a>
+      <span>a company that is an MCP server</span>
+    </div>
     <div class="links">
       <a href="#connect">Connect</a>
       <a href="#pricing">Pricing</a>
@@ -690,6 +705,19 @@ gemini mcp add --transport http kleo https://mcp.kleooai.com/mcp<button class="b
     while((n = walker.nextNode())){ if(n.nodeValue.indexOf(ph) !== -1) n.nodeValue = n.nodeValue.split(ph).join(live); }
     var note = document.getElementById('mcpStatus'); if(note){ note.textContent = cfg.note || ''; note.hidden = !cfg.note; }
   }).catch(function(){});
+
+  /* ---------- reveal on scroll ---------- */
+  if (!reduce && 'IntersectionObserver' in window) {
+    var els = document.querySelectorAll('.sec-head, .step, .card, .plan, .gantt, .bts > div:first-child, .tools, .connect, .faq > div, .cta .wrap > div');
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, {rootMargin:'0px 0px -8% 0px', threshold:.08});
+    Array.prototype.forEach.call(els, function(el, i){
+      // What is already on screen is shown at once: the animation is for what scrolls in, never a gate on reading.
+      if (el.getBoundingClientRect().top < window.innerHeight) return;
+      el.setAttribute('data-reveal',''); el.style.setProperty('--d', ((i % 4) * 70) + 'ms'); io.observe(el);
+    });
+  }
 
   /* ---------- copy ---------- */
   var toast = document.getElementById('toast'), tt;

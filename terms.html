@@ -5,7 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Terms · Kleo</title>
 <meta name="description" content="The deal: Kleo is free while in beta, two Shorts to start, you own what you make, files last 7 days, and nothing is promised that cannot be kept.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect x='3' y='7' width='26' height='22' rx='5' fill='%23F3B53F'/></svg>">
+<link rel="icon" href="brand/kleo-favicon.svg" type="image/svg+xml">
+<link rel="icon" href="brand/kleo-favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="brand/kleo-icon-dark-192.png">
+<meta name="theme-color" content="#0A0C10">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kleo">
+<meta property="og:title" content="Terms · Kleo">
+<meta property="og:description" content="The deal: Kleo is free while in beta, two Shorts to start, you own what you make, files last 7 days, and nothing is promised that cannot be kept.">
+<meta property="og:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta property="og:image:width" content="2400">
+<meta property="og:image:height" content="1260">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -13,7 +24,7 @@
 <style>
   /* Same document layout as privacy.html, kept in the page on purpose: these two are the pages that must still
      render correctly on the day somebody restructures the landing page's stylesheet. */
-  .doc-nav{border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--bg);z-index:10}
+  .doc-nav{position:sticky;top:0;background:color-mix(in srgb, var(--bg) 80%, transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);z-index:10}
   .doc-nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:16px;padding-bottom:16px}
   .doc-nav .brand{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-weight:800;
     font-size:20px;letter-spacing:-.02em;color:var(--ink);text-decoration:none}
@@ -49,11 +60,9 @@
 <nav class="doc-nav" aria-label="Main">
   <div class="wrap">
     <a class="brand" href="index.html" aria-label="Kleo, home">
-      <svg width="26" height="26" viewBox="0 0 32 32" aria-hidden="true">
-        <rect x="3" y="7" width="26" height="22" rx="5" fill="var(--amber)"/>
-        <path d="M3 12 h26 v4 H3 z" fill="var(--amber-ink)" opacity=".85"/>
-        <path d="M7 12 l3.5 4 M13 12 l3.5 4 M19 12 l3.5 4" stroke="var(--amber)" stroke-width="1.6"/>
-        <path d="M10 19 v8 M10 23 l6-4 M10 23 l6 4" stroke="var(--amber-ink)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+        <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+        <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
       </svg>
       Kleo <span class="tag">MCP</span>
     </a>
@@ -143,7 +152,13 @@
 
 <footer>
   <div class="wrap">
-    <span>Kleo · a company that is an MCP server</span>
+    <div class="foot-brand">
+      <a class="brand" href="index.html" aria-label="Kleo, home"><svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+        <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+        <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+      </svg> Kleo</a>
+      <span>a company that is an MCP server</span>
+    </div>
     <div class="links">
       <a href="index.html">Home</a>
       <a href="styles.html">Styles</a>
