@@ -40,7 +40,7 @@
 <section class="hero" id="top">
   <div class="wrap">
     <div>
-      <div class="osd"><span class="rec" aria-hidden="true"></span> REC &nbsp;Shorts in 4K · 16:9 in Full HD · 60 fps · EN / IT</div>
+      <div class="osd"><span class="rec" aria-hidden="true"></span> REC &nbsp;Shorts and 16:9 in 4K · 60 fps · EN / IT</div>
       <h1>Ask for it in chat.<br><span class="hl">Get a finished video back.</span></h1>
       <p class="lede">Kleo is an MCP server. Connect it to Claude, ChatGPT, Grok or Cursor with one URL, then ask for a Short or a long-form YouTube video in plain language. When it is ready, you get the link.</p>
       <div class="cta-row">
@@ -166,7 +166,7 @@
           <li style="--c:var(--teal)"><span><b>Voice.</b> Neural speech synthesis in English or Italian. The narration sets the timing of every scene, and the captions are aligned to it word by word.</span></li>
           <li style="--c:var(--amber)"><span><b>Clips.</b> In cartoon and realistic the pictures are generated for your topic, and the engine cuts and moves them on the narration with the big type over the top. In cyber it draws every frame itself — icons, charts, kinetic type; in stickman, the character.</span></li>
           <li style="--c:var(--rose)"><span><b>Edit.</b> Cuts timed to the voice, animated captions, a music bed, titles, and the template's transitions.</span></li>
-          <li style="--c:var(--blue)"><span><b>Finish.</b> Encoding at 60 fps (4K for Shorts, Full HD for 16:9), an automatic quality check, then the .srt file and the thumbnail, ready for YouTube.</span></li>
+          <li style="--c:var(--blue)"><span><b>Finish.</b> Encoding at 60 fps in 4K, Shorts and 16:9 alike, an automatic quality check, then the .srt file and the thumbnail, ready for YouTube.</span></li>
         </ul>
       </div>
       <div class="gantt" role="figure" aria-label="Render times for a 45-second Short">
@@ -330,7 +330,7 @@ gemini mcp add --transport http kleo https://mcp.kleooai.com/mcp<button class="b
           <tbody>
             <tr><td>kleo_storyboard_guide</td><td>Teaches your assistant how to write the video before it asks for one: the look, the world it is drawn in, what must never appear, and one accent colour per part of the story.</td></tr>
             <tr><td>kleo_list_templates</td><td>The ten templates with their formats, lengths, voices and cost, and the credits left on your account.</td></tr>
-            <tr><td>kleo_create_video</td><td>Starts the render, in one of four looks: <strong>cartoon</strong>, <strong>realistic</strong>, <strong>cyber</strong> or <strong>stickman</strong>. Comes back with a video number straight away, so the chat never waits.</td></tr>
+            <tr><td>kleo_create_video</td><td>Starts the render, in one of five looks: <strong>cartoon</strong>, <strong>realistic</strong>, <strong>cyber</strong> , <strong>explainer</strong> or <strong>stickman</strong>. Comes back with a video number straight away, so the chat never waits.</td></tr>
             <tr><td>kleo_wait_for_video</td><td>Holds the line while it renders and hands over the links the moment it is ready.</td></tr>
             <tr><td>kleo_get_job</td><td>Where the render is up to: stage, percent, minutes left. Without a video number it lists your recent videos.</td></tr>
             <tr><td>kleo_get_result</td><td>The links: MP4, .srt subtitles and thumbnail. Good for 7 days.</td></tr>
