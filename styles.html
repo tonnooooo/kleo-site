@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Styles · Kleo</title>
-<meta name="description" content="Kleo renders the same idea in four looks: cartoon, realistic, cyber and stickman. Every scene is cut into shots and the pictures are drawn for your topic.">
+<meta name="description" content="Kleo renders the same idea in four looks: cartoon, realistic, cinema and stickman. Every scene is cut into shots and the pictures are drawn for your topic.">
 <link rel="icon" href="brand/kleo-favicon.svg" type="image/svg+xml">
 <link rel="icon" href="brand/kleo-favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="brand/kleo-icon-dark-192.png">
@@ -12,7 +12,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Kleo">
 <meta property="og:title" content="Styles · Kleo">
-<meta property="og:description" content="Kleo renders the same idea in four looks: cartoon, realistic, cyber and stickman. Every scene is cut into shots and the pictures are drawn for your topic.">
+<meta property="og:description" content="Kleo renders the same idea in four looks: cartoon, realistic, cinema and stickman. Every scene is cut into shots and the pictures are drawn for your topic.">
 <meta property="og:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
 <meta property="og:image:width" content="2400">
 <meta property="og:image:height" content="1260">
@@ -35,7 +35,7 @@
   .styles-hero::before{transition:filter 1.2s, opacity 1.2s}
   .styles-hero[data-tint="cartoon"]::before{filter:blur(60px) hue-rotate(-8deg) saturate(1.3)}
   .styles-hero[data-tint="realistic"]::before{filter:blur(60px) hue-rotate(150deg) saturate(.9)}
-  .styles-hero[data-tint="cyber"]::before{filter:blur(60px) hue-rotate(220deg) saturate(1.2)}
+  .styles-hero[data-tint="cinema"]::before{filter:blur(60px) hue-rotate(200deg) saturate(1.1)}
   .styles-hero[data-tint="stickman"]::before{filter:blur(60px) saturate(0) opacity(.7)}
   .osd{margin:0 0 24px}
   @media (max-width:900px){ .styles-hero .wrap{grid-template-columns:1fr;gap:24px} }
@@ -144,7 +144,7 @@
       <div class="looks" role="list">
         <a class="look" role="listitem" href="#cartoon" data-look="cartoon" style="--c:var(--amber)"><i></i>Cartoon</a>
         <a class="look" role="listitem" href="#realistic" data-look="realistic" style="--c:var(--teal)"><i></i>Realistic</a>
-        <a class="look" role="listitem" href="#cyber" data-look="cyber" style="--c:var(--violet)"><i></i>Cyber</a>
+        <a class="look" role="listitem" href="#cinema" data-look="cinema" style="--c:var(--blue)"><i></i>Cinema</a>
         <a class="look" role="listitem" href="#stickman" data-look="stickman" style="--c:var(--ink)"><i></i>Stickman</a>
       </div>
     </div>
@@ -195,24 +195,25 @@
       </div>
     </article>
 
-    <article class="style-row" id="cyber" style="--c:var(--violet)">
+    <article class="style-row" id="cinema" style="--c:var(--blue)">
       <div class="style-media">
-        <video src="samples/cyber.mp4" poster="samples/cyber.jpg" muted loop playsinline preload="none"
-               controls aria-label="Cyber sample: motion design with icons and big type"></video>
+        <video src="samples/cinema.mp4" poster="samples/cinema.jpg" muted loop playsinline preload="none"
+               controls aria-label="Cinema sample: the WiFi Pineapple seized at Perth Airport"></video>
         <span class="style-live" aria-hidden="true"><i></i>Playing</span>
       </div>
       <div>
         <div class="style-n">03 · look</div>
-        <div class="style-name"><h2>Cyber</h2><button class="style-arg" data-copy='style: "cyber"' aria-label="Copy the cyber style argument">style: "cyber"</button></div>
-        <p class="style-lead">No pictures at all: pure motion design. Dark screen, glowing vector icons, timelines,
-          counters and type that slams in on the beat. This is the look Kleo was born from, and it still explains a
-          technical idea better than any photograph.</p>
+        <div class="style-name"><h2>Cinema</h2><button class="style-arg" data-copy='style: "cinema"' aria-label="Copy the cinema style argument">style: "cinema"</button></div>
+        <p class="style-lead">One hero visual per beat, drawn in glowing line art on near-black with drifting light
+          streaks and corner brackets. A chapter label, kinetic type that slams in on the word, a title lockup with
+          the keyword in the chapter's accent, and white captions with one word in green. Every beat is a hard cut
+          anchored to a spoken word: 25 shots in 26 seconds, none longer than 1.7 s.</p>
         <ul class="style-facts">
-          <li><b>Best for</b><span>Tech, security, AI, code, how-it-works explainers</span></li>
+          <li><b>Best for</b><span>Tech, security, gadgets, news stories with a number in them</span></li>
           <li><b>Format</b><span>9:16 and 16:9</span></li>
-          <li><b>Pictures</b><span>None, everything is drawn live</span></li>
+          <li><b>Pictures</b><span>None, 5–8 beats per scene drawn live</span></li>
         </ul>
-        <p class="style-say">“Explain how a relay attack steals a car, cyber style, 45 seconds.”</p>
+        <p class="style-say">“Police pulled a WiFi Pineapple out of a passenger's bag: make it a 25-second Short, cinema style.”</p>
       </div>
     </article>
 
