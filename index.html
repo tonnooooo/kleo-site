@@ -23,6 +23,7 @@
 <link rel="stylesheet" href="site.css">
 </head>
 <body>
+<div class="progress" id="progress" aria-hidden="true"></div>
 
 <!-- ============ NAV ============ -->
 <nav class="nav" aria-label="Main">
@@ -49,7 +50,7 @@
 <section class="hero" id="top">
   <div class="wrap">
     <div>
-      <div class="osd"><span class="rec" aria-hidden="true"></span> REC &nbsp;4K · 60 fps<span class="osd-more"> · Shorts and 16:9 · EN / IT</span></div>
+      <div class="osd"><span class="rec" aria-hidden="true"></span> REC <span class="tcode" id="tcode" aria-hidden="true">00:00:00:00</span> · 4K · 60 fps<span class="osd-more"> · Shorts and 16:9 · EN / IT</span></div>
       <h1>Ask in chat.<br><span class="hl">Get the video.</span></h1>
       <p class="lede">Kleo is an MCP server. Connect it to Claude, ChatGPT, Grok or Cursor with one URL and ask for a Short or a YouTube video in plain words. Kleo writes it, voices it, draws it and renders it in 4K. You get the link.</p>
       <div class="cta-row">
@@ -63,7 +64,7 @@
     </div>
 
     <div class="demo" role="figure" aria-label="Example: a conversation with Kleo connected">
-      <div class="demo-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="demo-title">Claude · Kleo connected</span></div>
+      <div class="demo-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="demo-title">Claude · Kleo connected<span class="clock" id="demoClock" hidden></span></span></div>
       <div class="demo-body">
         <div class="msg user">
           <span class="who">You</span>
@@ -737,9 +738,53 @@ gemini mcp add --transport http kleo https://mcp.kleooai.com/mcp<button class="b
   document.addEventListener('click', function(e){
     var b = e.target.closest && e.target.closest('[data-copy]'); if(!b) return;
     var txt = b.getAttribute('data-copy');
-    try { navigator.clipboard.writeText(txt).then(function(){ say('Copied'); }, function(){ say('Copy it by hand: ' + txt); }); }
+    function ok(){ say('Copied'); if (b.tagName === 'BUTTON' && !b.dataset.was) { b.dataset.was = b.textContent; b.textContent = 'Copied ✓'; setTimeout(function(){ b.textContent = b.dataset.was; delete b.dataset.was; }, 1500); } }
+    try { navigator.clipboard.writeText(txt).then(ok, function(){ say('Copy it by hand: ' + txt); }); }
     catch(err){ say('Copy it by hand: ' + txt); }
   });
+
+  /* ---------- the small things ---------- */
+  // a hairline at the top that fills as you read
+  var prog = document.getElementById('progress');
+  function onScroll(){ var h = document.documentElement.scrollHeight - window.innerHeight; prog.style.setProperty('--p', h > 0 ? Math.min(1, window.scrollY / h) : 0); }
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  // the REC line carries a real camera timecode, counting frames at 60 fps since you arrived
+  var tcode = document.getElementById('tcode'), t0 = performance.now();
+  function pad(n){ return (n < 10 ? '0' : '') + n; }
+  function tick(now){
+    var f = Math.floor((now - t0) / 1000 * 60);
+    tcode.textContent = pad(Math.floor(f / 216000) % 24) + ':' + pad(Math.floor(f / 3600) % 60) + ':' + pad(Math.floor(f / 60) % 60) + ':' + pad(f % 60);
+    requestAnimationFrame(tick);
+  }
+  if (!reduce) requestAnimationFrame(tick);
+
+  // the chat window shows your clock, like a real one would
+  var clock = document.getElementById('demoClock');
+  function setClock(){ var d = new Date(); clock.textContent = pad(d.getHours()) + ':' + pad(d.getMinutes()); clock.hidden = false; }
+  setClock(); setInterval(setClock, 20000);
+
+  // the numbers under the hero count up to their value
+  if (!reduce) Array.prototype.forEach.call(document.querySelectorAll('.stats dd'), function(dd){
+    var tpl = dd.textContent, parts = tpl.split(/(\d+)/), start;
+    function frame(now){
+      if (!start) start = now;
+      var k = Math.min(1, (now - start) / 1100), e = 1 - Math.pow(1 - k, 3);
+      dd.textContent = parts.map(function(x, i){ return i % 2 ? Math.round(parseInt(x, 10) * e) : x; }).join('');
+      if (k < 1) requestAnimationFrame(frame); else dd.textContent = tpl;
+    }
+    setTimeout(function(){ requestAnimationFrame(frame); }, 500);
+  });
+
+  // a warm spot follows the pointer across cards
+  Array.prototype.forEach.call(document.querySelectorAll('.card, .plan, .panel, .gantt'), function(el){
+    el.classList.add('glow-host');
+    el.addEventListener('pointermove', function(e){ var r = el.getBoundingClientRect(); el.style.setProperty('--mx', (e.clientX - r.left) + 'px'); el.style.setProperty('--my', (e.clientY - r.top) + 'px'); });
+  });
+
+  // when you leave the tab, the title waits for you
+  var title = document.title;
+  document.addEventListener('visibilitychange', function(){ document.title = document.hidden ? '▶ Your video is waiting · Kleo' : title; });
 })();
 </script>
 </body>

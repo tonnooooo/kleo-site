@@ -147,7 +147,7 @@ section + section{border-top:1px solid var(--line)}
 @keyframes blink{50%{opacity:.25}}
 @media (max-width:520px){ .osd-more{display:none} }
 @media (prefers-reduced-motion: reduce){ .osd .rec{animation:none} }
-.hero h1 .hl{
+h1 .hl{
   background:linear-gradient(92deg, var(--hl-a) 0%, var(--hl-b) 55%, var(--hl-c) 110%);
   -webkit-background-clip:text; background-clip:text; color:transparent;
 }
@@ -386,3 +386,23 @@ footer a:hover{color:var(--ink)}
 .toast.show{opacity:1; transform:translateX(-50%) translateY(0)}
 .foot-brand{display:flex; align-items:center; gap:14px; flex-wrap:wrap}
 .foot-brand > span{color:var(--mute)}
+
+/* ---------- the small things ---------- */
+/* a hairline that fills as you read */
+.progress{position:fixed; top:0; left:0; width:100%; height:2px; z-index:40; pointer-events:none; transform-origin:0 50%; transform:scaleX(var(--p,0)); background:linear-gradient(90deg, var(--hl-c), var(--amber)); box-shadow:0 0 8px var(--glow)}
+/* the mark plays when you reach for it */
+.brand svg path{transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+.brand:hover svg path:last-child{transform:translateX(9px)}
+/* a warm spot that follows the pointer across a card */
+.glow-host{position:relative}
+.glow-host::after{content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none; opacity:0; transition:opacity .4s; z-index:0;
+  background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%), color-mix(in srgb, var(--amber) 13%, transparent), transparent 65%)}
+.glow-host:hover::after{opacity:1}
+/* the sketches drift like the real Ken Burns when you hover a recipe */
+.sk-img{transform-box:fill-box; transform-origin:center; transition:transform 1.6s cubic-bezier(.2,.7,.2,1)}
+.card:hover .sk-img{transform:scale(1.045)}
+/* a camera timecode in the REC line */
+.osd .tcode{font-variant-numeric:tabular-nums; color:var(--ink-2)}
+.demo-title .clock{color:var(--mute)}
+.demo-title .clock::before{content:" · "}
+@media (prefers-reduced-motion: reduce){ .brand svg path, .sk-img{transition:none} }

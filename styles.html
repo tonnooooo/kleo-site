@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Styles · Kleo</title>
-<meta name="description" content="Kleo renders the same idea in five looks: cartoon, realistic, cyber, explainer and stickman. Every scene is cut into shots and the pictures are drawn for your topic.">
+<meta name="description" content="Kleo renders the same idea in four looks: cartoon, realistic, cyber and stickman. Every scene is cut into shots and the pictures are drawn for your topic.">
 <link rel="icon" href="brand/kleo-favicon.svg" type="image/svg+xml">
 <link rel="icon" href="brand/kleo-favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="brand/kleo-icon-dark-192.png">
@@ -12,7 +12,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Kleo">
 <meta property="og:title" content="Styles · Kleo">
-<meta property="og:description" content="Kleo renders the same idea in five looks: cartoon, realistic, cyber, explainer and stickman. Every scene is cut into shots and the pictures are drawn for your topic.">
+<meta property="og:description" content="Kleo renders the same idea in four looks: cartoon, realistic, cyber and stickman. Every scene is cut into shots and the pictures are drawn for your topic.">
 <meta property="og:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
 <meta property="og:image:width" content="2400">
 <meta property="og:image:height" content="1260">
@@ -22,36 +22,94 @@
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="site.css">
 <style>
-  .styles-hero{padding:120px 0 40px}
-  .styles-hero h1{font-family:var(--font-display);font-size:clamp(38px,6vw,68px);line-height:1.02;letter-spacing:-.02em;margin:0 0 16px}
-  .styles-hero p{max-width:60ch;color:var(--ink-2);font-size:18px;margin:0}
-  .style-row{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:36px;align-items:start;
-    padding:36px 0;border-top:1px solid var(--line)}
-  .style-row:first-of-type{border-top:0}
-  .style-media{position:relative;border-radius:var(--r);overflow:hidden;background:var(--bg-3);border:1px solid var(--line);aspect-ratio:9/16}
-  .style-media video,.style-media img{width:100%;height:100%;object-fit:cover;display:block}
-  .style-media.wide{aspect-ratio:16/9}
-  .style-soon{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:24px;
-    color:var(--mute);font-family:var(--font-mono);font-size:13px;line-height:1.7}
-  .style-name{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:0 0 6px}
-  .style-name h2{font-family:var(--font-display);font-size:32px;letter-spacing:-.01em;margin:0}
-  .style-arg{font-family:var(--font-mono);font-size:13px;color:var(--amber-ink);background:var(--amber);
-    padding:4px 10px;border-radius:999px;white-space:nowrap}
-  .style-lead{color:var(--ink-2);font-size:17px;line-height:1.65;max-width:62ch;margin:0 0 18px}
-  .style-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin:0 0 18px;padding:0;list-style:none}
-  .style-facts li{background:var(--bg-2);border:1px solid var(--line);border-radius:var(--r-s);padding:12px 14px}
-  .style-facts b{display:block;font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:var(--mute);margin-bottom:4px;font-weight:600}
-  .style-facts span{font-size:15px;color:var(--ink)}
-  .style-say{font-family:var(--font-mono);font-size:14px;background:var(--bg-3);border:1px solid var(--line);
-    border-left:3px solid var(--amber);border-radius:var(--r-s);padding:12px 14px;color:var(--ink-2);max-width:62ch}
-  .shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:22px 0 0}
-  .shot{background:var(--bg-2);border:1px solid var(--line);border-radius:var(--r-s);padding:14px}
-  .shot b{display:block;font-family:var(--font-mono);font-size:12px;color:var(--amber);margin-bottom:6px}
-  .shot span{font-size:14px;color:var(--ink-2);line-height:1.5}
-  @media (max-width:860px){ .style-row{grid-template-columns:1fr;gap:20px} .style-media{max-width:320px} }
+  /* ---- hero ---- */
+  .styles-hero{padding:104px 0 56px}
+  .styles-hero .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:48px;align-items:end}
+  .styles-hero h1{font-size:clamp(2.8rem,5.5vw,4.5rem)}
+  .styles-hero p{color:var(--ink-2);font-size:1.125rem;line-height:1.6;max-width:56ch;margin:0;text-wrap:pretty}
+  .looks{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+  .look{display:inline-flex;align-items:center;gap:9px;padding:9px 14px 9px 11px;border-radius:999px;border:1px solid var(--line-2);
+    background:var(--glass);color:var(--ink-2);font:500 .9375rem var(--font-body);cursor:pointer;transition:.25s}
+  .look i{width:9px;height:9px;border-radius:50%;background:var(--c);box-shadow:0 0 10px var(--c)}
+  .look:hover,.look.on{color:var(--ink);border-color:color-mix(in srgb, var(--c) 60%, var(--line-2));background:var(--glass-2)}
+  .styles-hero::before{transition:filter 1.2s, opacity 1.2s}
+  .styles-hero[data-tint="cartoon"]::before{filter:blur(60px) hue-rotate(-8deg) saturate(1.3)}
+  .styles-hero[data-tint="realistic"]::before{filter:blur(60px) hue-rotate(150deg) saturate(.9)}
+  .styles-hero[data-tint="cyber"]::before{filter:blur(60px) hue-rotate(220deg) saturate(1.2)}
+  .styles-hero[data-tint="stickman"]::before{filter:blur(60px) saturate(0) opacity(.7)}
+  .osd{margin:0 0 24px}
+  @media (max-width:900px){ .styles-hero .wrap{grid-template-columns:1fr;gap:24px} }
+
+  /* ---- one look per row ---- */
+  .style-row{display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr);gap:56px;align-items:center;padding:72px 0;border-top:1px solid var(--line);scroll-margin-top:96px}
+  .style-row:first-of-type{border-top:0;padding-top:24px}
+  .style-row:nth-child(even){grid-template-columns:minmax(0,1fr) minmax(0,320px)}
+  .style-row:nth-child(even) .style-media{order:2}
+  .style-media{position:relative;border-radius:30px;overflow:hidden;background:#000;border:1px solid var(--line-2);aspect-ratio:9/16;box-shadow:var(--shadow);
+    transform:perspective(1200px) rotateY(var(--ry,0deg));transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+  .style-row:nth-child(odd) .style-media{--ry:6deg}
+  .style-row:nth-child(even) .style-media{--ry:-6deg}
+  .style-row:hover .style-media{--ry:0deg}
+  .style-media::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;box-shadow:0 1px 0 rgba(255,255,255,.18) inset, 0 0 0 1px rgba(0,0,0,.4) inset}
+  .style-media video{width:100%;height:100%;object-fit:cover;display:block}
+  .style-live{position:absolute;top:14px;left:14px;display:inline-flex;align-items:center;gap:7px;padding:5px 10px 5px 8px;border-radius:999px;
+    background:rgba(0,0,0,.55);backdrop-filter:blur(8px);color:#fff;font:500 .66rem/1 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;opacity:0;transition:opacity .3s;pointer-events:none}
+  .style-live i{width:7px;height:7px;border-radius:50%;background:var(--rose);box-shadow:0 0 8px var(--rose);animation:blink 1.4s steps(2) infinite}
+  .style-media.playing .style-live{opacity:1}
+  .style-n{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.18em;color:var(--mute);display:flex;align-items:center;gap:14px;margin-bottom:18px}
+  .style-n::after{content:"";width:22px;height:1px;background:var(--c, var(--amber))}
+  .style-name{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:0 0 14px}
+  .style-name h2{font-size:clamp(2rem,3.6vw,2.8rem)}
+  .style-arg{font:500 .78rem var(--font-mono);color:var(--amber-ink);background:var(--amber);border:0;padding:6px 12px;border-radius:999px;white-space:nowrap;cursor:pointer;transition:.2s;box-shadow:0 6px 18px var(--glow)}
+  .style-arg:hover{transform:translateY(-1px);filter:brightness(1.05)}
+  .style-lead{color:var(--ink-2);font-size:1.0625rem;line-height:1.65;max-width:58ch;margin:0 0 22px;text-wrap:pretty}
+  .style-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin:0 0 22px;padding:0;list-style:none;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .style-facts li{padding:14px 18px 14px 0;border-right:1px solid var(--line)}
+  .style-facts li + li{padding-left:18px}
+  .style-facts li:last-child{border-right:0}
+  .style-facts b{display:block;font:500 .66rem var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-bottom:6px}
+  .style-facts span{font-size:.9375rem;color:var(--ink)}
+  .style-say{font-family:var(--font-mono);font-size:.8125rem;line-height:1.55;background:var(--bg-2);border:1px solid var(--line);
+    border-left:3px solid var(--c, var(--amber));border-radius:var(--r-s);padding:12px 16px;color:var(--ink-2);max-width:60ch;margin:0}
+  @media (max-width:860px){
+    .style-row,.style-row:nth-child(even){grid-template-columns:1fr;gap:28px;padding:48px 0}
+    .style-row:nth-child(even) .style-media{order:0}
+    .style-media{max-width:300px;--ry:0deg !important}
+    .style-facts{grid-template-columns:1fr}
+    .style-facts li{border-right:0;border-bottom:1px solid var(--line);padding:12px 0}
+    .style-facts li + li{padding-left:0}
+    .style-facts li:last-child{border-bottom:0}
+  }
+
+  /* ---- how a scene is built: a line that plays ---- */
+  .scene{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:48px;align-items:start}
+  @media (max-width:900px){ .scene{grid-template-columns:1fr} }
+  .line{font-family:var(--font-display);font-weight:700;font-size:clamp(1.5rem,2.6vw,2.1rem);line-height:1.3;letter-spacing:-.02em;margin:0;text-wrap:pretty}
+  .line .w{color:var(--mute);transition:color .18s}
+  .line .w.said{color:var(--ink)}
+  .line .w.now{color:var(--amber)}
+  .line .w.cut{text-decoration:underline;text-decoration-color:color-mix(in srgb, var(--amber) 50%, transparent);text-underline-offset:6px;text-decoration-thickness:2px}
+  .line-foot{margin-top:18px;font:500 .72rem var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mute);display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+  .line-foot button{font:inherit;color:var(--ink-2);background:var(--glass);border:1px solid var(--line-2);border-radius:999px;padding:7px 12px;cursor:pointer;letter-spacing:inherit;text-transform:inherit}
+  .line-foot button:hover{color:var(--ink);border-color:var(--ink-2)}
+  .shots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0}
+  .shot{background:var(--bg-2);border:1px solid var(--line);border-radius:var(--r-s);padding:16px;display:grid;gap:8px;align-content:start;transition:border-color .3s, transform .5s cubic-bezier(.2,.7,.2,1), box-shadow .3s}
+  .shot .frame{aspect-ratio:9/12;border-radius:8px;background:var(--bg-3);border:1px dashed var(--line-2);position:relative;overflow:hidden}
+  .shot .frame svg{position:absolute;inset:0;width:100%;height:100%;opacity:.55;transition:opacity .4s, transform 3s linear;transform:scale(1)}
+  .shot.on .frame svg{opacity:1;transform:scale(1.12) translate(2%,-2%)}
+  .shot.on{border-color:color-mix(in srgb, var(--amber) 55%, var(--line-2));transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.35), 0 0 0 1px color-mix(in srgb, var(--amber) 20%, transparent)}
+  .shot b{font:500 .68rem var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+  .shot.on b{color:var(--accent-text)}
+  .shot span{font-size:.875rem;color:var(--ink-2);line-height:1.5}
+  .shot .cutword{font:500 .68rem var(--font-mono);color:var(--mute);letter-spacing:.06em}
+  .shot .cutword::before{content:"cut on “"} .shot .cutword::after{content:"”"}
+  @media (max-width:600px){ .shots{grid-template-columns:1fr} .shot .frame{display:none} }
+  .scene-foot{color:var(--mute);font-size:.9375rem;margin:28px 0 0;max-width:62ch}
+  @media (prefers-reduced-motion: reduce){ .style-media{transition:none;transform:none} .shot .frame svg{transition:none} .style-live i{animation:none} }
 </style>
 </head>
 <body>
+<div class="progress" id="progress" aria-hidden="true"></div>
 
 <nav class="nav" aria-label="Main">
   <div class="wrap">
@@ -73,25 +131,38 @@
   </div>
 </nav>
 
-<section class="styles-hero">
+<section class="styles-hero" id="top">
   <div class="wrap">
-    <h1>Four looks.<br>Your topic, not a template.</h1>
-    <p>Kleo does not paste your words onto a fixed background. It reads what the video is about, writes the shots,
-      and draws a picture for each one. Pirates get beaches, ships and sand. Space gets rockets and stations.
-      Ask for a style by name, or say nothing and Kleo picks the one that fits.</p>
+    <div>
+      <div class="osd"><span class="rec" aria-hidden="true"></span> REC · four looks · one engine</div>
+      <h1>Four looks.<br><span class="hl">Your topic,</span><br>not a template.</h1>
+    </div>
+    <div>
+      <p>Kleo does not paste your words onto a fixed background. It reads what the video is about, writes the shots,
+        and draws a picture for each one. Pirates get beaches, ships and sand. Space gets rockets and stations.
+        Ask for a look by name, or say nothing and Kleo picks the one that fits.</p>
+      <div class="looks" role="list">
+        <a class="look" role="listitem" href="#cartoon" data-look="cartoon" style="--c:var(--amber)"><i></i>Cartoon</a>
+        <a class="look" role="listitem" href="#realistic" data-look="realistic" style="--c:var(--teal)"><i></i>Realistic</a>
+        <a class="look" role="listitem" href="#cyber" data-look="cyber" style="--c:var(--violet)"><i></i>Cyber</a>
+        <a class="look" role="listitem" href="#stickman" data-look="stickman" style="--c:var(--ink)"><i></i>Stickman</a>
+      </div>
+    </div>
   </div>
 </section>
 
 <section>
   <div class="wrap">
 
-    <article class="style-row">
+    <article class="style-row" id="cartoon" style="--c:var(--amber)">
       <div class="style-media">
         <video src="samples/cartoon.mp4" poster="samples/cartoon.jpg" muted loop playsinline preload="none"
                controls aria-label="Cartoon sample: a pirate story"></video>
+        <span class="style-live" aria-hidden="true"><i></i>Playing</span>
       </div>
       <div>
-        <div class="style-name"><h2>Cartoon</h2><span class="style-arg">style: "cartoon"</span></div>
+        <div class="style-n">01 · look</div>
+        <div class="style-name"><h2>Cartoon</h2><button class="style-arg" data-copy='style: "cartoon"' aria-label="Copy the cartoon style argument">style: "cartoon"</button></div>
         <p class="style-lead">Illustrations drawn for your story, full screen, one per shot. Bold outlines, warm
           colour, big rounded lettering with the key word picked out. The camera drifts slowly across each picture
           and cuts to the next one on the word that matters.</p>
@@ -104,13 +175,15 @@
       </div>
     </article>
 
-    <article class="style-row">
+    <article class="style-row" id="realistic" style="--c:var(--teal)">
       <div class="style-media">
         <video src="samples/realistic.mp4" poster="samples/realistic.jpg" muted loop playsinline preload="none"
                controls aria-label="Realistic sample: life on the space station"></video>
+        <span class="style-live" aria-hidden="true"><i></i>Playing</span>
       </div>
       <div>
-        <div class="style-name"><h2>Realistic</h2><span class="style-arg">style: "realistic"</span></div>
+        <div class="style-n">02 · look</div>
+        <div class="style-name"><h2>Realistic</h2><button class="style-arg" data-copy='style: "realistic"' aria-label="Copy the realistic style argument">style: "realistic"</button></div>
         <p class="style-lead">The same shape with a cinematic photo look: 35 mm light, real depth, condensed
           uppercase titles with an accent underline. It reads like a documentary trailer rather than a cartoon.</p>
         <ul class="style-facts">
@@ -122,13 +195,15 @@
       </div>
     </article>
 
-    <article class="style-row">
+    <article class="style-row" id="cyber" style="--c:var(--violet)">
       <div class="style-media">
         <video src="samples/cyber.mp4" poster="samples/cyber.jpg" muted loop playsinline preload="none"
                controls aria-label="Cyber sample: motion design with icons and big type"></video>
+        <span class="style-live" aria-hidden="true"><i></i>Playing</span>
       </div>
       <div>
-        <div class="style-name"><h2>Cyber</h2><span class="style-arg">style: "cyber"</span></div>
+        <div class="style-n">03 · look</div>
+        <div class="style-name"><h2>Cyber</h2><button class="style-arg" data-copy='style: "cyber"' aria-label="Copy the cyber style argument">style: "cyber"</button></div>
         <p class="style-lead">No pictures at all: pure motion design. Dark screen, glowing vector icons, timelines,
           counters and type that slams in on the beat. This is the look Kleo was born from, and it still explains a
           technical idea better than any photograph.</p>
@@ -141,13 +216,15 @@
       </div>
     </article>
 
-    <article class="style-row">
+    <article class="style-row" id="stickman" style="--c:var(--ink)">
       <div class="style-media">
         <video src="samples/stickman.mp4" poster="samples/stickman.jpg" muted loop playsinline preload="none"
                controls aria-label="Stickman sample: how thieves steal a car without the key"></video>
+        <span class="style-live" aria-hidden="true"><i></i>Playing</span>
       </div>
       <div>
-        <div class="style-name"><h2>Stickman</h2><span class="style-arg">style: "stickman"</span></div>
+        <div class="style-n">04 · look</div>
+        <div class="style-name"><h2>Stickman</h2><button class="style-arg" data-copy='style: "stickman"' aria-label="Copy the stickman style argument">style: "stickman"</button></div>
         <p class="style-lead">A hand-drawn figure acts the story out, prop by prop. Deliberately plain, deliberately
           funny, and unmistakable in a feed full of stock footage. Vertical only, and only when you ask for it.</p>
         <ul class="style-facts">
@@ -162,20 +239,29 @@
   </div>
 </section>
 
-<section>
+<section id="scene">
   <div class="wrap">
-    <h2 style="font-family:var(--font-display);font-size:32px;margin:48px 0 10px">How a scene is built</h2>
-    <p style="color:var(--ink-2);max-width:64ch;margin:0 0 6px">Cartoon and realistic videos are not slideshows.
-      Each narrated line becomes a scene, and each scene is cut into two to four shots. Kleo writes a description
-      for every shot, draws it, and times the cut to a word you actually hear.</p>
-    <div class="shots">
-      <div class="shot"><b>01 · the line</b><span>“Captain Mara buried her treasure on Skull Beach in 1720.”</span></div>
-      <div class="shot"><b>02 · shot one</b><span>The captain burying a chest on a golden beach at sunset.</span></div>
-      <div class="shot"><b>03 · shot two</b><span>She walks away along the shoreline. Cuts on “never came back”.</span></div>
-      <div class="shot"><b>04 · shot three</b><span>The same beach at night, empty. Cuts on “nobody knows”.</span></div>
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">05</span>How a scene is built</div>
+        <h2>Not a slideshow.<br>A line, cut into shots.</h2>
+      </div>
+      <p class="lede">Each narrated line becomes a scene, and each scene is cut into two to four shots. Kleo writes a
+        description for every shot, draws it, and times the cut to a word you actually hear. Watch the line below.</p>
     </div>
-    <p style="color:var(--mute);font-size:15px;margin:22px 0 60px">The same character is described the same way in
-      every shot, so the captain still looks like the captain three pictures later.</p>
+    <div class="scene">
+      <div>
+        <p class="line" id="line" aria-label="Captain Mara buried her treasure on Skull Beach in 1720. She never came back, and nobody knows why."></p>
+        <div class="line-foot"><span>narration · 9 s</span><button type="button" id="replay">↻ Play it again</button></div>
+      </div>
+      <div class="shots" id="shots" aria-label="The three shots of this scene">
+        <div class="shot" data-from="0"><div class="frame" aria-hidden="true"><svg viewBox="0 0 90 120" aria-hidden="true"><circle cx="45" cy="52" r="13" fill="var(--amber)" opacity=".9"/><path d="M0 78 Q45 70 90 78 V120 H0Z" fill="var(--amber-soft)"/><path d="M0 78 Q45 70 90 78" stroke="var(--amber)" stroke-width="1.2" fill="none" opacity=".7"/><rect x="38" y="84" width="16" height="10" rx="2" fill="var(--ink)" opacity=".8"/><path d="M38 84 q8 -6 16 0" stroke="var(--ink)" stroke-width="1.5" fill="none" opacity=".8"/></svg></div><b>shot 01</b><span>The captain burying a chest on a golden beach at sunset.</span><em class="cutword">Captain</em></div>
+        <div class="shot" data-from="11"><div class="frame" aria-hidden="true"><svg viewBox="0 0 90 120" aria-hidden="true"><circle cx="18" cy="62" r="9" fill="var(--amber)" opacity=".6"/><path d="M0 80 Q45 74 90 80 V120 H0Z" fill="var(--amber-soft)"/><path d="M0 80 Q45 74 90 80" stroke="var(--amber)" stroke-width="1.2" fill="none" opacity=".7"/><g stroke="var(--ink)" stroke-width="1.8" stroke-linecap="round" fill="none" opacity=".85"><circle cx="64" cy="64" r="3.5"/><path d="M64 68 v12 M64 74 l-5 6 M64 74 l5 5 M64 80 l-4 9 M64 80 l5 8"/></g></svg></div><b>shot 02</b><span>She walks away along the shoreline, the chest gone.</span><em class="cutword">never</em></div>
+        <div class="shot" data-from="15"><div class="frame" aria-hidden="true"><svg viewBox="0 0 90 120" aria-hidden="true"><path d="M52 32 a12 12 0 1 0 10 18 a9 9 0 1 1 -10 -18z" fill="var(--ink)" opacity=".8"/><g fill="var(--ink)" opacity=".5"><circle cx="20" cy="28" r="1.2"/><circle cx="30" cy="48" r="1"/><circle cx="74" cy="24" r="1.3"/><circle cx="80" cy="56" r=".9"/></g><path d="M0 80 Q45 74 90 80 V120 H0Z" fill="var(--line)"/><path d="M0 80 Q45 74 90 80" stroke="var(--ink-2)" stroke-width="1" fill="none" opacity=".5"/></svg></div><b>shot 03</b><span>The same beach at night, empty.</span><em class="cutword">nobody</em></div>
+      </div>
+    </div>
+    <p class="scene-foot">The same character is described the same way in every shot, so the captain still looks like
+      the captain three pictures later.</p>
   </div>
 </section>
 
@@ -197,5 +283,83 @@
   </div>
 </footer>
 
+<div class="toast" id="toast" role="status" aria-live="polite">Copied</div>
+
+<script>
+(function(){
+  'use strict';
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* the hairline that fills as you read */
+  var prog = document.getElementById('progress');
+  function onScroll(){ var h = document.documentElement.scrollHeight - window.innerHeight; prog.style.setProperty('--p', h > 0 ? Math.min(1, window.scrollY / h) : 0); }
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  /* the hero takes the colour of the look you point at */
+  var hero = document.querySelector('.styles-hero');
+  Array.prototype.forEach.call(document.querySelectorAll('.look'), function(l){
+    l.addEventListener('pointerenter', function(){ hero.setAttribute('data-tint', l.getAttribute('data-look')); });
+    l.addEventListener('pointerleave', function(){ hero.removeAttribute('data-tint'); });
+  });
+
+  /* a sample plays by itself while it is in front of you, and stops when it is not */
+  var medias = Array.prototype.slice.call(document.querySelectorAll('.style-media'));
+  if ('IntersectionObserver' in window && !reduce) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        var v = en.target.querySelector('video');
+        if (en.intersectionRatio >= .6) { var p = v.play(); if (p && p.catch) p.catch(function(){}); }
+        else v.pause();
+      });
+    }, {threshold:[0, .6]});
+    medias.forEach(function(m){
+      var v = m.querySelector('video');
+      v.addEventListener('play', function(){ m.classList.add('playing'); });
+      v.addEventListener('pause', function(){ m.classList.remove('playing'); });
+      io.observe(m);
+    });
+  }
+
+  /* the line plays: words light up as they are said, and the shots cut on their word */
+  var TEXT = 'Captain Mara buried her treasure on Skull Beach in 1720. She never came back, and nobody knows why.';
+  var words = TEXT.split(' '), line = document.getElementById('line'), shots = Array.prototype.slice.call(document.querySelectorAll('#shots .shot'));
+  var cuts = shots.map(function(s){ return parseInt(s.getAttribute('data-from'), 10); });
+  line.innerHTML = words.map(function(w, i){ return '<span class="w' + (cuts.indexOf(i) > 0 ? ' cut' : '') + '">' + w + '</span>'; }).join(' ');
+  var spans = Array.prototype.slice.call(line.querySelectorAll('.w')), timer, at = -1;
+  function paint(i){
+    spans.forEach(function(s, j){ s.classList.toggle('said', j < i); s.classList.toggle('now', j === i); });
+    var k = 0; cuts.forEach(function(c, n){ if (i >= c) k = n; });
+    shots.forEach(function(s, n){ s.classList.toggle('on', i >= 0 && n === k); });
+  }
+  function play(){
+    clearTimeout(timer); at = -1;
+    if (reduce) { paint(words.length - 1); return; }   // no motion: the line already said, the last shot on screen
+    (function step(){
+      at += 1; paint(at);
+      if (at < words.length) timer = setTimeout(step, /[.,]$/.test(words[at]) ? 720 : 380);
+      else timer = setTimeout(function(){ paint(-1); shots.forEach(function(s){ s.classList.remove('on'); }); }, 2400);
+    })();
+  }
+  document.getElementById('replay').addEventListener('click', play);
+  var scene = document.getElementById('scene'), played = false;
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function(en){ if (en[0].isIntersecting && !played) { played = true; play(); } }, {threshold:.35}).observe(scene);
+  } else play();
+
+  /* copy */
+  var toast = document.getElementById('toast'), tt;
+  function say(msg){ toast.textContent = msg; toast.classList.add('show'); clearTimeout(tt); tt = setTimeout(function(){ toast.classList.remove('show'); }, 1600); }
+  document.addEventListener('click', function(e){
+    var b = e.target.closest && e.target.closest('[data-copy]'); if(!b) return;
+    var txt = b.getAttribute('data-copy');
+    function ok(){ say('Copied — paste it in your request'); if (!b.dataset.was) { b.dataset.was = b.textContent; b.textContent = 'copied ✓'; setTimeout(function(){ b.textContent = b.dataset.was; delete b.dataset.was; }, 1500); } }
+    try { navigator.clipboard.writeText(txt).then(ok, function(){ say('Copy it by hand: ' + txt); }); }
+    catch(err){ say('Copy it by hand: ' + txt); }
+  });
+
+  var title = document.title;
+  document.addEventListener('visibilitychange', function(){ document.title = document.hidden ? '▶ Four looks are waiting · Kleo' : title; });
+})();
+</script>
 </body>
 </html>
