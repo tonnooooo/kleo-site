@@ -145,7 +145,7 @@
       <button class="chip" data-filter="9:16" aria-pressed="false">Shorts · 9:16</button>
     </div>
     <div class="grid" id="grid"></div>
-    <p class="tpl-more">Render times are estimates from the moment the machine is rented, the download of the renderer included: about 15–25 minutes for a Short, about 50 minutes for a 5-minute video, up to about two hours for the longest ones. Shorts come out in 4K (2160×3840)(1920×1080), all at 60 fps.</p>
+    <p class="tpl-more">Render times are estimates from the moment the machine is rented, the download of the renderer included: about 15–25 minutes for a Short, about 50 minutes for a 5-minute video, up to about two hours for the longest ones. Shorts come out in 4K (2160×3840) and 16:9 videos in 4K (3840×2160), all at 60 fps.</p>
   </div>
 </section>
 
@@ -609,7 +609,7 @@ gemini mcp add --transport http kleo https://mcp.kleooai.com/mcp<button class="b
       '<div class="sketch">'+sk(t)+'<span class="fmt">'+t.fmt+(t.alt ? ' · '+t.alt : '')+'</span></div>'+
       '<div class="card-body">'+
         '<h3>'+t.name+'</h3>'+
-        '<div class="meta"><span>length <b>'+t.dur+'</b></span><span>output <b>'+(t.fmt==='9:16' ? '4K' : 'Full HD')+' · 60 fps</b></span></div>'+
+        '<div class="meta"><span>length <b>'+t.dur+'</b></span><span>output <b>'+'4K'+' · 60 fps</b></span></div>'+
         '<p>'+t.desc+'</p>'+
         '<div class="prompt"><span class="lab">Try saying</span><q>'+t.prompt+'</q></div>'+
       '</div></article>';
