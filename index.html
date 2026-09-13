@@ -21,6 +21,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="site.css">
+<script>try{var t=localStorage.getItem("kleo-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 </head>
 <body>
 <div class="progress" id="progress" aria-hidden="true"></div>
@@ -42,6 +43,10 @@
       <a href="#engine">Behind the scenes</a>
       <a href="#pricing">Pricing</a>
     </div>
+    <button class="theme" id="themeBtn" type="button" aria-label="Switch theme">
+      <svg class="moon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+      <svg class="sun" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
     <a class="btn btn-primary btn-sm" href="#connect">Connect Kleo</a>
   </div>
 </nav>
@@ -63,27 +68,19 @@
       </div>
     </div>
 
-    <div class="demo" role="figure" aria-label="Example: a conversation with Kleo connected">
-      <div class="demo-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="demo-title">Claude · Kleo connected<span class="clock" id="demoClock" hidden></span></span></div>
-      <div class="demo-body">
-        <div class="msg user">
-          <span class="who">You</span>
-          <p>Make me a Short about pirates who find an island that isn't on any map. 45 seconds, Italian voice, big subtitles.</p>
-        </div>
-        <div class="msg ai">
-          <span class="who">Claude</span>
-          <p>I'll use Kleo with the <em>Viral Short</em> template.</p>
-          <div class="tool">
-            <div class="tool-head">
-              <span class="tool-name"><b>kleo_create_video</b></span>
-              <span class="tool-state" id="toolState">running</span>
-            </div>
-            <pre class="tool-args">{ "template": "viral-short", "duration_s": 45, "format": "9:16", "language": "it",
-  "prompt": "Pirates find an island missing from every map" }</pre>
-          </div>
-        </div>
+    <div class="stage" role="figure" aria-label="Example: the request in Claude, and the Short Kleo sent back">
+      <div class="phone">
+        <video id="heroVideo" src="samples/cartoon.mp4" poster="samples/cartoon.jpg" muted loop playsinline preload="metadata" aria-label="The Short Kleo rendered: the pirate treasure nobody came back for"></video>
+        <span class="phone-tag">the Short it sent back · 0:40</span>
+      </div>
+      <div class="float float-a">
+        <span class="who">You · in Claude<span class="clock" id="demoClock" hidden></span></span>
+        <p>Make me a 40-second Short about the pirate treasure nobody came back for. Cartoon look, big subtitles.</p>
+      </div>
+      <div class="float float-b">
+        <div class="tool-head"><span class="tool-name"><b>kleo_create_video</b></span><span class="tool-state" id="toolState">running</span></div>
         <div class="render" id="render">
-          <div class="render-head"><span>job <b>gt_7f3k</b> · RTX 4090 · ephemeral</span><b id="renderPct">64%</b></div>
+          <div class="render-head"><span>job <b>gt_7f3k</b> · RTX 4090</span><b id="renderPct">64%</b></div>
           <div class="tracks" id="tracks">
             <div class="track done"><span>Script</span><span class="tbar" style="--c:var(--violet)"></span></div>
             <div class="track done"><span>Voice</span><span class="tbar" style="--c:var(--teal)"></span></div>
@@ -94,8 +91,8 @@
           <div class="bar"><span id="renderFill"></span></div>
           <div class="render-status" id="renderStatus">Drawing the scenes · 6 of 9 · ~5 min left</div>
           <div class="result" id="result" hidden>
-            <span class="file">pirates-phantom-island.mp4</span>
-            <span class="chip">2160p</span><span class="chip">60 fps</span><span class="chip">0:45</span><span class="chip">.srt</span><span class="chip">thumbnail</span>
+            <span class="file">pirate-treasure.mp4</span>
+            <span class="chip">4K</span><span class="chip">60 fps</span><span class="chip">0:40</span><span class="chip">.srt</span>
             <span class="dl">Download</span>
           </div>
         </div>
@@ -109,6 +106,11 @@
       <div><dt>Recipes · looks</dt><dd>10 · 5</dd></div>
       <div><dt>To begin</dt><dd>2 Shorts free</dd></div>
     </dl>
+  </div>
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track" id="ticker">
+      <span>Top 10 inventions that changed the world</span><span>A 45-second Short about a wild pirate fact</span><span>Explain how a relay attack steals a car</span><span>Recap of this week's AI news, 4 stories</span><span>Un documentario di 8 minuti sulla scomparsa dei Maya</span><span>Motivational Short about discipline</span><span>Review of an imaginary €300 drone</span><span>5 facts about octopuses in 30 seconds</span><span>Trailer for a film about pirates in space</span><span>Tell this story as a Short: [the post]</span>
+    </div>
   </div>
 </section>
 
@@ -151,12 +153,45 @@
   </div>
 </section>
 
+<!-- ============ TRY ============ -->
+<section id="try">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">02</span>Try a request</div>
+        <h2>Type what you'd ask.<br>See what Kleo plans.</h2>
+      </div>
+      <p class="lede">A preview of the plan, worked out here in your browser as you type: template, look, length and price. The real storyboard is written by the model once the render starts.</p>
+    </div>
+    <div class="try">
+      <div class="try-in">
+        <label class="try-lab" for="tryText">Your request</label>
+        <textarea id="tryText" rows="3" spellcheck="false" autocomplete="off">Make me a 45-second Short about a pirate crew that finds an island missing from every map, Italian voice, big subtitles</textarea>
+        <div class="try-chips" aria-label="Examples">
+          <button type="button" class="chip" data-try="Top 10 inventions that changed the world, fast pace, 8 minutes">Top 10</button>
+          <button type="button" class="chip" data-try="Explain how a relay attack steals a car, cyber style, 45 seconds">Cyber Short</button>
+          <button type="button" class="chip" data-try="A 6-minute documentary on the disappearance of the Maya, calm tone, male voice">Documentary</button>
+          <button type="button" class="chip" data-try="Recensione di un drone da 300 euro, 5 minuti, pro e contro sullo schermo">In italiano</button>
+          <button type="button" class="chip" data-try="5 facts about octopuses in 30 seconds, upbeat voice">Did you know</button>
+        </div>
+      </div>
+      <div class="try-out">
+        <div class="tool">
+          <div class="tool-head"><span class="tool-name"><b>kleo_create_video</b></span><span class="tool-state">preview</span></div>
+          <pre class="tool-args" id="tryArgs"></pre>
+        </div>
+        <dl class="plan-out" id="tryPlan"></dl>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ TEMPLATES ============ -->
 <section id="template">
   <div class="wrap">
     <div class="sec-head">
       <div>
-        <div class="eyebrow"><span class="n">02</span>Templates</div>
+        <div class="eyebrow"><span class="n">03</span>Templates</div>
         <h2>Ten recipes.<br>You bring the idea.</h2>
       </div>
       <p class="lede">A template is an editing recipe: pacing, layout, subtitles, music. Your assistant picks the one that fits what you asked for. Kleo has no stock footage — every scene is drawn or generated for your topic, then cut on the narration. The sketches show how each frame is laid out.</p>
@@ -176,7 +211,7 @@
   <div class="wrap">
     <div class="sec-head">
       <div>
-        <div class="eyebrow"><span class="n">03</span>Behind the scenes</div>
+        <div class="eyebrow"><span class="n">04</span>Behind the scenes</div>
         <h2>Five tracks. One GPU, rented only for you.</h2>
       </div>
     </div>
@@ -214,7 +249,7 @@
   <div class="wrap">
     <div class="sec-head">
       <div>
-        <div class="eyebrow"><span class="n">04</span>Connect</div>
+        <div class="eyebrow"><span class="n">05</span>Connect</div>
         <h2>One address, any assistant.</h2>
       </div>
       <p class="lede">Kleo speaks the Model Context Protocol over Streamable HTTP with OAuth: the same address works for every client, and connecting is a single button — no sign-up, no password, nothing to type. Pick yours.</p>
@@ -371,10 +406,18 @@ gemini mcp add --transport http kleo https://mcp.kleooai.com/mcp<button class="b
   <div class="wrap">
     <div class="sec-head">
       <div>
-        <div class="eyebrow"><span class="n">05</span>Pricing</div>
+        <div class="eyebrow"><span class="n">06</span>Pricing</div>
         <h2>Two Shorts free. Top up any time.</h2>
       </div>
       <div><span class="draft">Live · one-off payments via Stripe</span></div>
+    </div>
+    <div class="calc" role="group" aria-label="What does a video cost">
+      <div class="calc-head">
+        <span class="calc-q">What does a video cost?</span>
+        <output id="calcOut" for="calcRange" aria-live="polite"></output>
+      </div>
+      <input type="range" id="calcRange" min="20" max="720" step="5" value="45" aria-label="Video length in seconds">
+      <div class="calc-marks"><span>20 s</span><span>90 s · Short</span><span>5 min</span><span>12 min</span></div>
     </div>
     <div class="plans two">
       <div class="plan hi">
@@ -408,7 +451,7 @@ gemini mcp add --transport http kleo https://mcp.kleooai.com/mcp<button class="b
   <div class="wrap">
     <div class="sec-head">
       <div>
-        <div class="eyebrow"><span class="n">06</span>Frequently asked questions</div>
+        <div class="eyebrow"><span class="n">07</span>Frequently asked questions</div>
         <h2>The questions everyone asks.</h2>
       </div>
     </div>
@@ -469,7 +512,7 @@ gemini mcp add --transport http kleo https://mcp.kleooai.com/mcp<button class="b
 <section class="cta" id="account">
   <div class="wrap">
     <div>
-      <div class="eyebrow"><span class="n">07</span>Account</div>
+      <div class="eyebrow"><span class="n">08</span>Account</div>
       <h2>There is nothing to sign up for.</h2>
       <p class="lede" style="margin-top:14px">Paste the address into your assistant, press one button, ask for a video. Two Shorts are on us — no email, no password, no card, no code to type. The account lives in the browser you connected from, so a second assistant in the same browser lands on the same credits.</p>
       <p class="lede" style="margin-top:14px; font-size:.9375rem">When those two Shorts are gone, your assistant hands you a link to your account page. Moving to another computer? Ask it for your Kleo key and paste it on the way in.</p>
@@ -500,6 +543,7 @@ gemini mcp add --transport http kleo https://mcp.kleooai.com/mcp<button class="b
       <a href="#top">Back to top</a>
     </div>
   </div>
+  <div class="wrap foot-sig"><div class="foot-word" aria-hidden="true"></div></div>
 </footer>
 
 <div class="toast" id="toast" role="status" aria-live="polite">Copied</div>
@@ -742,6 +786,117 @@ gemini mcp add --transport http kleo https://mcp.kleooai.com/mcp<button class="b
     try { navigator.clipboard.writeText(txt).then(ok, function(){ say('Copy it by hand: ' + txt); }); }
     catch(err){ say('Copy it by hand: ' + txt); }
   });
+
+  /* ---------- theme ---------- */
+  var root = document.documentElement, themeBtn = document.getElementById('themeBtn');
+  function themeNow(){ return root.getAttribute('data-theme') || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); }
+  themeBtn.addEventListener('click', function(){
+    var next = themeNow() === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('kleo-theme', next); } catch(e){}
+  });
+
+  /* ---------- the Short in the hero plays only while you can see it ---------- */
+  var hv = document.getElementById('heroVideo');
+  if (hv && 'IntersectionObserver' in window && !reduce) {
+    new IntersectionObserver(function(en){ if (en[0].isIntersecting) { var p = hv.play(); if (p && p.catch) p.catch(function(){}); } else hv.pause(); }, {threshold:.4}).observe(hv);
+  }
+
+  /* ---------- try a request: the deterministic half of the planner, in the page ----------
+     Same spirit as the server: the template is a stated prior, the look is decided by the words, a named look wins. */
+  var TPL = [
+    ['top-10',            'Top 10',              '16:9', 420, /\btop\s?\d+|countdown|classifica|ranking|\bbest \d+/],
+    ['reddit-story',      'Reddit Story',        '9:16',  60, /reddit|aita\b|as a short: |the post\]|racconta questa|\bpost\b/],
+    ['did-you-know',      'Did You Know',        '9:16',  30, /\bfacts?\b|did you know|lo sapevi|curiosit/],
+    ['motivational',      'Motivational',        '9:16',  45, /motivat|discipline|disciplina|mindset|\bquote|citazion/],
+    ['cinematic-trailer', 'Cinematic Trailer',   '16:9',  75, /trailer|teaser/],
+    ['product-review',    'Product Review',      '16:9', 300, /review|recension|unboxing|pros and cons|pro e contro/],
+    ['weekly-news',       'Weekly News',         '16:9', 240, /\bnews\b|notizie|this week|settimana|newscast|recap/],
+    ['story-documentary', 'Story / Documentary', '16:9', 480, /documentar|history of|storia d|disappear|scompars|civili[sz]|ancient|antic[ao]/],
+    ['explainer',         'Explainer / Tutorial','16:9', 300, /explain|tutorial|how (does|do|to)\b|spiega|come funziona|guide\b/],
+    ['viral-short',       'Viral Short',         '9:16',  45, /./]
+  ];
+  var LOOKS = {
+    cartoon:   /cartoon|pirat|\bkids?\b|bambin|animal|fairy|fiab|dragon|drag[ho]|adventur|avventur|treasure|tesoro|magic|magia|monster|mostr|jungle|giungl|octopus|polp|dinosaur|castle|castell/g,
+    realistic: /realistic|realist|space|spazio|planet|pianet|ocean|documentar|\bcity|citt|travel|viaggi|nature|natura|history|storia|product|prodott|drone|review|recension|sport|\bnews|notizie|luxury|lusso|\bcars?\b|\bauto\b|food|cibo|cinematic|station|stazion|maya|desert|deserto/g,
+    cyber:     /cyber|hack|security|sicurezza|\bai\b|intelligenza|\bcode\b|codice|software|crypto|bitcoin|network|\brete\b|password|relay|malware|\btech|\bdata\b|\bdati\b|algorithm|algoritm|server|mcp\b|api\b/g,
+    stickman:  /stickman|stick figure|omino/g
+  };
+  var PRIOR = { explainer:'cyber', 'product-review':'realistic', 'weekly-news':'realistic', 'story-documentary':'realistic' };
+  function plan(text){
+    var t = ' ' + text.toLowerCase() + ' ', i, tpl;
+    for (i = 0; i < TPL.length; i++) if (TPL[i][4].test(t)) { tpl = TPL[i]; break; }
+    var m = t.match(/(\d+)[\s-]*(?:seconds?|secs?|\bs\b|secondi)/), dur = m ? +m[1] : null;
+    m = t.match(/(\d+)[\s-]*(?:minutes?|mins?|\bmin\b|minuti)/); if (m) dur = +m[1] * 60;
+    if (!dur && /\bshort\b|reel|tiktok/.test(t)) dur = 45;
+    if (!dur) dur = tpl[3];
+    var isShort = dur <= 90;
+    if (isShort && tpl[2] === '16:9') tpl = TPL[TPL.length - 1];              // 90 seconds or less is a Short, whatever it was called
+    if (!isShort && tpl[2] === '9:16' && tpl[0] !== 'motivational') tpl = TPL[/how|why|what|explain|spieg|come |perch/.test(t) ? 8 : 7];   // minutes long is not a Short
+    var fmt = /16:9|landscape|orizzontal|youtube video|long[- ]form/.test(t) ? '16:9' : /9:16|vertical|\bshort\b|reel|tiktok/.test(t) ? '9:16' : tpl[2];
+    if (isShort) fmt = '9:16';
+    if (/\bstickman\b/.test(t)) fmt = '9:16';                                   // stickman is vertical only
+    var named = (t.match(/\b(cartoon|realistic|cyber|stickman|explainer)\b(?= (style|look|stile))/) || [])[1], look, why, hits = {}, best = 0;
+    function wordsAt(re){ var out = [], mm; re.lastIndex = 0; while ((mm = re.exec(t))) { var a = mm.index, b = a + mm[0].length; while (a > 0 && /[a-zà-ú0-9]/.test(t[a - 1])) a--; while (b < t.length && /[a-zà-ú0-9]/.test(t[b])) b++; var w = t.slice(a, b); if (out.indexOf(w) < 0) out.push(w); } return out; }
+    for (var k in LOOKS) hits[k] = wordsAt(LOOKS[k]);
+    if (named) { look = named; why = 'named in the request'; }
+    else {
+      var prior = PRIOR[tpl[0]] || 'cartoon', strong = !!PRIOR[tpl[0]];
+      look = prior; why = 'the usual look for ' + tpl[1];
+      for (k in hits) { if (k === 'stickman') continue; if (hits[k].length > best) { best = hits[k].length; } }
+      for (k in hits) { if (k !== 'stickman' && hits[k].length === best && best >= (strong ? 2 : 1) && k !== prior) { look = k; why = hits[k].length + (hits[k].length > 1 ? ' words point to it: ' : ' word points to it: ') + hits[k].join(', '); break; } }
+      if (hits[prior] && hits[prior].length >= best && hits[prior].length) { look = prior; why = 'the words agree with the template: ' + hits[prior].join(', '); }
+    }
+    var it = /italian|italiano|in italiano|voce italiana|italian voice/.test(t) || ((t.match(/ (di|che|una|per|con|minuti|secondi|sullo|della|degli) /g) || []).length >= 2);
+    var scenes = isShort ? Math.max(4, Math.round(dur / 5)) : Math.round(dur / 25);
+    var drawn = look === 'cartoon' || look === 'realistic';
+    var pics = drawn ? Math.min(isShort ? 24 : 48, Math.floor(scenes * 2.5)) : 0;
+    var credits = isShort ? 1 : dur <= 300 ? 3 : 3 + Math.ceil((dur - 300) / 60);
+    var eta = isShort ? '15–25 min' : '~' + Math.round(20 + dur / 60 * 6) + ' min';
+    var len = dur < 60 ? dur + ' s' : Math.floor(dur / 60) + ' min' + (dur % 60 ? ' ' + (dur % 60) + ' s' : '');
+    return { template:tpl[0], name:tpl[1], dur:dur, len:len, format:fmt, language: it ? 'it' : 'en', style:look, why:why, scenes:scenes, pics:pics, credits:credits, eta:eta, prompt:text.trim() };
+  }
+  var tryText = document.getElementById('tryText'), tryArgs = document.getElementById('tryArgs'), tryPlan = document.getElementById('tryPlan');
+  function esc(x){ return String(x).replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
+  function renderPlan(){
+    var p = plan(tryText.value || ' ');
+    tryArgs.textContent = JSON.stringify({ template:p.template, style:p.style, duration_s:p.dur, format:p.format, language:p.language, prompt:p.prompt }, null, 1).replace(/\n\s*/g, ' ').replace(/^\{ /, '{ ').replace(/ \}$/, ' }');
+    var rows = [
+      ['Template', esc(p.name), 'an editing recipe, chosen from the words'],
+      ['Look', '<b class="lk lk-' + p.style + '">' + esc(p.style) + '</b>', esc(p.why)],
+      ['Length · format', esc(p.len) + ' · ' + esc(p.format), p.format === '9:16' ? '2160×3840 · 60 fps' : '3840×2160 · 60 fps'],
+      ['Scenes', p.scenes + (p.pics ? ' · up to ' + p.pics + ' pictures' : ' · drawn live, no pictures'), p.pics ? 'two to four shots per scene, cut on a spoken word' : 'icons, type and motion drawn frame by frame'],
+      ['Voice', p.language === 'it' ? 'Italian' : 'English', 'neural narration, captions aligned word by word'],
+      ['Price · time', p.credits + (p.credits > 1 ? ' credits' : ' credit') + ' · €' + (p.credits * .4).toFixed(2) + '–' + (p.credits * .5).toFixed(2), 'ready in about ' + esc(p.eta) + ', links good for 7 days']
+    ];
+    tryPlan.innerHTML = rows.map(function(r){ return '<div><dt>' + r[0] + '</dt><dd>' + r[1] + '<small>' + r[2] + '</small></dd></div>'; }).join('');
+  }
+  if (tryText) {
+    tryText.addEventListener('input', renderPlan); renderPlan();
+    Array.prototype.forEach.call(document.querySelectorAll('[data-try]'), function(c){ c.addEventListener('click', function(){ tryText.value = c.getAttribute('data-try'); renderPlan(); tryText.focus(); }); });
+  }
+
+  /* ---------- pricing: what a length costs ---------- */
+  var range = document.getElementById('calcRange'), calcOut = document.getElementById('calcOut');
+  function calc(){
+    var d = +range.value, credits = d <= 90 ? 1 : d <= 300 ? 3 : 3 + Math.ceil((d - 300) / 60);
+    var len = d < 60 ? d + ' s' : Math.floor(d / 60) + ' min' + (d % 60 ? ' ' + (d % 60) + ' s' : '');
+    calcOut.innerHTML = '<b>' + len + '</b> · ' + credits + (credits > 1 ? ' credits' : ' credit') + ' · <b>€' + (credits * .4).toFixed(2) + '–' + (credits * .5).toFixed(2) + '</b>' + (d <= 90 ? ' <em>a Short</em>' : '');
+    range.style.setProperty('--v', ((d - 20) / (720 - 20) * 100) + '%');
+  }
+  if (range) { range.addEventListener('input', calc); calc(); }
+
+  /* ---------- the nav knows where you are ---------- */
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll('.nav-links a[href^="#"]'));
+  if ('IntersectionObserver' in window) {
+    var navIO = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (!en.isIntersecting) return;
+        navLinks.forEach(function(a){ if (a.getAttribute('href') === '#' + en.target.id) a.setAttribute('aria-current', 'location'); else a.removeAttribute('aria-current'); });
+      });
+    }, {rootMargin:'-35% 0px -55% 0px'});
+    navLinks.forEach(function(a){ var sec = document.querySelector(a.getAttribute('href')); if (sec) navIO.observe(sec); });
+  }
 
   /* ---------- the small things ---------- */
   // a hairline at the top that fills as you read

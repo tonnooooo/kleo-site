@@ -1,8 +1,3 @@
-// Generates every file in brand/ from two shapes (the chat bubble + play mark) and the wordmark set in
-// Bricolage Grotesque 800, converted to paths so nothing depends on an installed font.
-// Needs: bricolage-800.ttf (instantiated from the Google Fonts variable font with fontTools),
-//        `npm i opentype.js`, and sharp (borrowed from ../kleo-mcp/node_modules) for the PNG exports.
-//   node build-logo.mjs   → writes dist/, copy it here.
 import opentype from "opentype.js";
 import fs from "node:fs";
 import { createRequire } from "node:module";
@@ -96,6 +91,16 @@ function stacked(color, bg) {
   return svg(W, H, mark((W - M) / 2, top, M) + wm.svg, bg);
 }
 files["kleo-social-1200x630.svg"] = stacked(PAPER, BG);
+
+
+// 4. the wordmark alone, tight box, for the big footer signature (used as a CSS mask, so the colour is irrelevant)
+{
+  const size = 200, wm = wordmark(0, 0, size, "#000");
+  const g = font.charToGlyph("o").getBoundingBox(), desc = Math.abs(g.y1) * size / font.unitsPerEm;   // the o dips below the baseline
+  const H = wm0Cap(size) + desc, W = wm.width;
+  files["kleo-wordmark.svg"] = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 ${-wm0Cap(size)} ${W.toFixed(1)} ${H.toFixed(1)}">${wm.svg}</svg>`;
+}
+function wm0Cap(size){ return font.charToGlyph("K").getBoundingBox().y2 * size / font.unitsPerEm; }
 
 for (const [name, s] of Object.entries(files)) fs.writeFileSync(`${out}/${name}`, s);
 
