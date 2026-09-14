@@ -1,448 +1,237 @@
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script>document.documentElement.classList.remove("no-js")</script>
-<title>Styles · Kleo</title>
-<meta name="description" content="Kleo renders the same idea in four looks: cartoon, realistic, cinema and stickman. Every scene is cut into shots and the pictures are drawn for your topic.">
-<link rel="icon" href="brand/kleo-favicon.svg" type="image/svg+xml">
-<link rel="icon" href="brand/kleo-favicon-32.png" sizes="32x32" type="image/png">
-<link rel="apple-touch-icon" href="brand/kleo-icon-dark-192.png">
-<meta name="theme-color" content="#0A0C10">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kleo Film Looks — Realistic and Animation</title>
+<meta name="description" content="Kleo makes narrated films in two looks: realistic, generated live-action footage, and animation, a 2D animated film. Same workflow, same price, 4K 60 fps.">
+<link rel="canonical" href="https://kleooai.com/styles.html">
+<meta name="robots" content="index,follow,max-image-preview:large">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Kleo">
-<meta property="og:title" content="Styles · Kleo">
-<meta property="og:description" content="Kleo renders the same idea in four looks: cartoon, realistic, cinema and stickman. Every scene is cut into shots and the pictures are drawn for your topic.">
+<meta property="og:site_name" content="Kleo AI">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Kleo Film Looks — Realistic and Animation">
+<meta property="og:description" content="Kleo makes narrated films in two looks: realistic, generated live-action footage, and animation, a 2D animated film. Same workflow, same price, 4K 60 fps.">
+<meta property="og:url" content="https://kleooai.com/styles.html">
 <meta property="og:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta property="og:image:alt" content="Kleo AI — Human direction. Agent-made films.">
 <meta property="og:image:width" content="2400">
 <meta property="og:image:height" content="1260">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css">
-<style>
-  /* ---- hero ---- */
-  .styles-hero{padding:104px 0 56px}
-  .styles-hero .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:48px;align-items:end}
-  .styles-hero h1{font-size:clamp(2.8rem,5.5vw,4.5rem)}
-  .styles-hero p{color:var(--ink-2);font-size:1.125rem;line-height:1.6;max-width:56ch;margin:0;text-wrap:pretty}
-  .looks{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
-  .look{display:inline-flex;align-items:center;gap:9px;padding:9px 14px 9px 11px;border-radius:999px;border:1px solid var(--line-2);
-    background:var(--glass);color:var(--ink-2);font:500 .9375rem var(--font-body);cursor:pointer;transition:.25s}
-  .look i{width:9px;height:9px;border-radius:50%;background:var(--c);box-shadow:0 0 10px var(--c)}
-  .look:hover,.look.on{color:var(--ink);border-color:color-mix(in srgb, var(--c) 60%, var(--line-2));background:var(--glass-2)}
-  .styles-hero::before{transition:filter 1.2s, opacity 1.2s}
-  .styles-hero[data-tint="cartoon"]::before{filter:blur(60px) hue-rotate(-8deg) saturate(1.3)}
-  .styles-hero[data-tint="realistic"]::before{filter:blur(60px) hue-rotate(150deg) saturate(.9)}
-  .styles-hero[data-tint="cinema"]::before{filter:blur(60px) hue-rotate(200deg) saturate(1.1)}
-  .styles-hero[data-tint="stickman"]::before{filter:blur(60px) saturate(0) opacity(.7)}
-  .osd{margin:0 0 24px}
-  @media (max-width:900px){ .styles-hero .wrap{grid-template-columns:1fr;gap:24px} }
-
-  /* ---- one look per row ---- */
-  .style-row{display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr);gap:56px;align-items:center;padding:72px 0;border-top:1px solid var(--line);scroll-margin-top:96px}
-  .style-row:first-of-type{border-top:0;padding-top:24px}
-  .style-row:nth-child(even){grid-template-columns:minmax(0,1fr) minmax(0,320px)}
-  .style-row:nth-child(even) .style-media{order:2}
-  .style-media{position:relative;border-radius:30px;overflow:hidden;background:#000;border:1px solid var(--line-2);aspect-ratio:9/16;box-shadow:var(--shadow);
-    transform:perspective(1200px) rotateY(var(--ry,0deg));transition:transform .9s cubic-bezier(.2,.7,.2,1)}
-  .style-row:nth-child(odd) .style-media{--ry:6deg}
-  .style-row:nth-child(even) .style-media{--ry:-6deg}
-  .style-row:hover .style-media{--ry:0deg}
-  .style-media::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;box-shadow:0 1px 0 rgba(255,255,255,.18) inset, 0 0 0 1px rgba(0,0,0,.4) inset}
-  .style-media{user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
-  .style-media video{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
-  .style-media video::-webkit-media-controls,.style-media video::-webkit-media-controls-start-playback-button,
-  .style-media video::-webkit-media-controls-enclosure{display:none !important;-webkit-appearance:none}
-  .style-live{position:absolute;top:14px;left:14px;display:inline-flex;align-items:center;gap:7px;padding:5px 10px 5px 8px;border-radius:999px;
-    background:rgba(0,0,0,.55);backdrop-filter:blur(8px);color:#fff;font:500 .66rem/1 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;opacity:0;transition:opacity .3s;pointer-events:none}
-  .style-live i{width:7px;height:7px;border-radius:50%;background:var(--rose);box-shadow:0 0 8px var(--rose);animation:blink 1.4s steps(2) infinite}
-  .style-media.playing .style-live{opacity:1}
-  .style-n{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.18em;color:var(--mute);display:flex;align-items:center;gap:14px;margin-bottom:18px}
-  .style-n::after{content:"";width:22px;height:1px;background:var(--c, var(--amber))}
-  .style-name{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:0 0 14px}
-  .style-name h2{font-size:clamp(2rem,3.6vw,2.8rem)}
-  .style-arg{font:500 .78rem var(--font-mono);color:var(--amber-ink);background:var(--amber);border:0;padding:6px 12px;border-radius:999px;white-space:nowrap;cursor:pointer;transition:.2s;box-shadow:0 6px 18px var(--glow)}
-  .style-arg:hover{transform:translateY(-1px);filter:brightness(1.05)}
-  .style-lead{color:var(--ink-2);font-size:1.0625rem;line-height:1.65;max-width:58ch;margin:0 0 22px;text-wrap:pretty}
-  .style-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin:0 0 22px;padding:0;list-style:none;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .style-facts li{padding:14px 18px 14px 0;border-right:1px solid var(--line)}
-  .style-facts li + li{padding-left:18px}
-  .style-facts li:last-child{border-right:0}
-  .style-facts b{display:block;font:500 .66rem var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-bottom:6px}
-  .style-facts span{font-size:.9375rem;color:var(--ink)}
-  .style-say{font-family:var(--font-mono);font-size:.8125rem;line-height:1.55;background:var(--bg-2);border:1px solid var(--line);
-    border-left:3px solid var(--c, var(--amber));border-radius:var(--r-s);padding:12px 16px;color:var(--ink-2);max-width:60ch;margin:0}
-  /* ---- a look shown as 16:9 films: one or two players stacked, wider than the phone column ---- */
-  .style-row.wide,.style-row.wide:nth-child(even){grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}
-  .style-films{display:grid;gap:22px;min-width:0}
-  .style-row:nth-child(even) .style-films{order:2}
-  .style-media.wide{aspect-ratio:16/9;border-radius:22px}
-  .style-row.wide .style-media{--ry:0deg}
-  .film-cap{display:flex;justify-content:space-between;gap:12px;align-items:baseline;margin:10px 4px 0;font:500 .72rem var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
-  .film-cap b{font-weight:500;color:var(--ink-2)}
-  .film-note{color:var(--ink-2);font-size:.9375rem;line-height:1.6;margin:10px 4px 0;text-wrap:pretty}
-  .style-films .film{min-width:0}
-  @media (max-width:860px){
-    .style-row,.style-row:nth-child(even),.style-row.wide,.style-row.wide:nth-child(even){grid-template-columns:1fr;gap:28px;padding:48px 0}
-    .style-row:nth-child(even) .style-media,.style-row:nth-child(even) .style-films{order:0}
-    .style-media{max-width:300px;--ry:0deg !important}
-    .style-media.wide{max-width:none}
-    .style-facts{grid-template-columns:1fr}
-    .style-facts li{border-right:0;border-bottom:1px solid var(--line);padding:12px 0}
-    .style-facts li + li{padding-left:0}
-    .style-facts li:last-child{border-bottom:0}
-  }
-
-  /* ---- how a scene is built: a line that plays ---- */
-  .scene{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:48px;align-items:start}
-  @media (max-width:900px){ .scene{grid-template-columns:1fr} }
-  .line{font-family:var(--font-display);font-weight:700;font-size:clamp(1.5rem,2.6vw,2.1rem);line-height:1.3;letter-spacing:-.02em;margin:0;text-wrap:pretty}
-  .line .w{color:var(--mute);transition:color .18s}
-  .line .w.said{color:var(--ink)}
-  .line .w.now{color:var(--amber)}
-  .line .w.cut{text-decoration:underline;text-decoration-color:color-mix(in srgb, var(--amber) 50%, transparent);text-underline-offset:6px;text-decoration-thickness:2px}
-  .line-foot{margin-top:18px;font:500 .72rem var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mute);display:flex;gap:16px;align-items:center;flex-wrap:wrap}
-  .line-foot button{font:inherit;color:var(--ink-2);background:var(--glass);border:1px solid var(--line-2);border-radius:999px;padding:7px 12px;cursor:pointer;letter-spacing:inherit;text-transform:inherit}
-  .line-foot button:hover{color:var(--ink);border-color:var(--ink-2)}
-  .shots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0}
-  .shot{background:var(--bg-2);border:1px solid var(--line);border-radius:var(--r-s);padding:16px;display:grid;gap:8px;align-content:start;transition:border-color .3s, transform .5s cubic-bezier(.2,.7,.2,1), box-shadow .3s}
-  .shot .frame{aspect-ratio:9/12;border-radius:8px;background:var(--bg-3);border:1px dashed var(--line-2);position:relative;overflow:hidden}
-  .shot .frame svg{position:absolute;inset:0;width:100%;height:100%;opacity:.55;transition:opacity .4s, transform 3s linear;transform:scale(1)}
-  .shot.on .frame svg{opacity:1;transform:scale(1.12) translate(2%,-2%)}
-  .shot.on{border-color:color-mix(in srgb, var(--amber) 55%, var(--line-2));transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.35), 0 0 0 1px color-mix(in srgb, var(--amber) 20%, transparent)}
-  .shot b{font:500 .68rem var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
-  .shot.on b{color:var(--accent-text)}
-  .shot span{font-size:.875rem;color:var(--ink-2);line-height:1.5}
-  .shot .cutword{font:500 .68rem var(--font-mono);color:var(--mute);letter-spacing:.06em}
-  .shot .cutword::before{content:"cut on “"} .shot .cutword::after{content:"”"}
-  @media (max-width:600px){ .shots{grid-template-columns:1fr} .shot .frame{display:none} }
-  .scene-foot{color:var(--mute);font-size:.9375rem;margin:28px 0 0;max-width:62ch}
-  @media (prefers-reduced-motion: reduce){ .style-media{transition:none;transform:none} .shot .frame svg{transition:none} .style-live i{animation:none} }
-
-  /* ---- phone: the page-level rules live in site.css; these are the ones this page owns ---- */
-  @media (max-width:820px){ .style-media{margin:0 auto} }
-  @media (hover:none){ .style-arg:hover{transform:none} }
-  @media (max-width:600px){
-    .styles-hero{padding:56px 0 40px}
-    .styles-hero h1{font-size:clamp(2.2rem,10.5vw,2.8rem)}
-    .styles-hero p{font-size:1.0625rem}
-    .looks{margin-top:22px}
-    .look{padding:10px 14px 10px 12px}
-    .style-row:first-of-type{padding-top:8px}
-    .style-arg{padding:11px 14px}
-    .film-cap{flex-wrap:wrap;gap:4px 12px}
-    .line-foot button{padding:10px 14px}
-  }
-</style>
+<meta name="twitter:title" content="Kleo Film Looks — Realistic and Animation">
+<meta name="twitter:description" content="Kleo makes narrated films in two looks: realistic, generated live-action footage, and animation, a 2D animated film. Same workflow, same price, 4K 60 fps.">
+<meta name="twitter:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta name="theme-color" content="#101215">
+<link rel="icon" href="/brand/kleo-favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/brand/kleo-favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/brand/kleo-icon-dark-192.png">
+<link rel="stylesheet" href="/site.css?v=20260914">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://kleooai.com/#website",
+      "name": "Kleo AI",
+      "alternateName": "Kleo",
+      "url": "https://kleooai.com/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kleooai.com/styles.html#page",
+      "url": "https://kleooai.com/styles.html",
+      "name": "Kleo Film Looks — Realistic and Animation",
+      "description": "Kleo makes narrated films in two looks: realistic, generated live-action footage, and animation, a 2D animated film. Same workflow, same price, 4K 60 fps.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://kleooai.com/#website"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://kleooai.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Film looks",
+          "item": "https://kleooai.com/styles.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<script src="/site.js?v=20260914" defer></script>
 </head>
 <body>
-<div class="progress" id="progress" aria-hidden="true"></div>
-
-<nav class="nav" aria-label="Main">
-  <div class="wrap">
-    <a class="brand" href="index.html" aria-label="Kleo, home">
-      <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
-        <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
-        <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
-      </svg>
-      Kleo <span class="tag">MCP</span>
-    </a>
-    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-menu">
-      <svg class="bars" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 5h14M2 9h14M2 13h14"/></svg>
-      <svg class="x" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 4l10 10M14 4L4 14"/></svg>
-    </button>
-    <div class="nav-links" id="site-menu">
-      <a href="index.html#how">How it works</a>
-      <a href="index.html#template">Templates</a>
-      <a href="styles.html" aria-current="page">Styles</a>
-      <a href="index.html#engine">Behind the scenes</a>
-      <a href="index.html#pricing">Pricing</a>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+  <nav class="wrap nav" aria-label="Main navigation">
+    <a class="logo" href="/"><img src="/brand/kleo-favicon.svg" width="32" height="32" alt="">Kleo<span>AI</span></a>
+    <div class="navlinks">
+      <a href="/ai-youtube-video-generator/">Create videos</a>
+      <a href="/examples/">Examples</a>
+      <a href="/pricing/">Pricing</a>
+      <a href="/faq/">FAQ</a>
     </div>
-    <a class="btn btn-primary btn-sm" href="index.html#connect">Connect Kleo</a>
-  </div>
-</nav>
-
-<section class="styles-hero" id="top">
-  <div class="wrap">
+    <a class="button small" href="/connect/">Connect ↗</a>
+  </nav>
+</header>
+<main id="main" class="wrap inner-page">
+  <div class="hero">
     <div>
-      <div class="osd"><span class="rec" aria-hidden="true"></span> REC · four looks · one engine</div>
-      <h1>Four looks.<br><span class="hl">Your topic,</span><br>not a template.</h1>
-    </div>
-    <div>
-      <p>Kleo does not paste your words onto a fixed background. It reads what the video is about, writes the shots,
-        and draws a picture for each one. Pirates get beaches, ships and sand. Space gets rockets and stations.
-        Ask for a look by name, or say nothing and Kleo picks the one that fits.</p>
-      <div class="looks" role="list">
-        <a class="look" role="listitem" href="#cartoon" data-look="cartoon" style="--c:var(--amber)"><i></i>Cartoon</a>
-        <a class="look" role="listitem" href="#realistic" data-look="realistic" style="--c:var(--teal)"><i></i>Realistic</a>
-        <a class="look" role="listitem" href="#cinema" data-look="cinema" style="--c:var(--blue)"><i></i>Cinema</a>
-        <a class="look" role="listitem" href="#stickman" data-look="stickman" style="--c:var(--ink)"><i></i>Stickman</a>
+      <p class="eyebrow">KLEO AI</p>
+      <h1>Two looks.<br><em>One film.</em></h1>
+      <p class="intro">Kleo makes one kind of video, a complete narrated film, in two looks that are both live on the server:
+        realistic, generated live-action footage with photographic light, and animation, a 2D animated film. One look per
+        film, decided in the treatment before a frame exists; the same workflow, the same 4K 60 fps master and the same
+        price either way.</p>
+      <div class="actions">
+        <a class="button" href="/connect/">Connect Kleo ↗</a>
+        <a class="button secondary" href="#how">How a film is built</a>
       </div>
     </div>
   </div>
-</section>
-
-<section>
-  <div class="wrap">
-
-    <article class="style-row" id="cartoon" style="--c:var(--amber)">
-      <div class="style-media">
-        <video src="samples/cartoon.mp4" poster="samples/cartoon.jpg" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback"
-               aria-label="Cartoon sample: a pirate story"></video>
-        <span class="style-live" aria-hidden="true"><i></i>Playing</span>
+  <section id="realistic" class="section">
+    <p class="eyebrow">LOOK 01</p>
+    <h2>Realistic</h2>
+    <div class="films">
+      <div>
+        <figure class="watch">
+          <video muted loop playsinline preload="none" width="1920" height="1080" poster="/samples/realistic-tether.jpg" disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" aria-label="Tether, a 20-second film in Kleo’s realistic look: one unbroken pull-back from an astronaut’s face inside his helmet to the station he is tethered to. Plays muted while in view.">
+            <source src="/samples/realistic-tether.mp4" type="video/mp4">
+          </video>
+          <span class="live" aria-hidden="true"><i></i>Playing</span>
+          <figcaption><p class="film-cap"><b>Tether</b><span>20 s · one shot · 16:9 · 4K 60 fps, shown at 1080p</span></p></figcaption>
+        </figure>
+        <p>One unbroken pull-back. It opens inside the helmet, on the astronaut’s face and his breath on the glass; a gloved
+          hand comes up, the visor floods red, and the camera keeps backing away as he drifts, arms open, until the gold
+          line running up from his pack meets the station and its solar arrays. Every frame is generated footage. No words
+          at all: only his breathing and a low hum.</p>
+        <p><a class="text-link" href="/examples/tether/">Watch Tether on its own page →</a></p>
       </div>
       <div>
-        <div class="style-n">01 · look</div>
-        <div class="style-name"><h2>Cartoon</h2><button class="style-arg" data-copy='style: "cartoon"' aria-label="Copy the cartoon style argument">style: "cartoon"</button></div>
-        <p class="style-lead">Illustrations drawn for your story, full screen, one per shot. Bold outlines, warm
-          colour, big rounded lettering with the key word picked out. The camera drifts slowly across each picture
-          and cuts to the next one on the word that matters.</p>
-        <ul class="style-facts">
-          <li><b>Best for</b><span>Stories, history, kids, animals, travel, fun facts</span></li>
-          <li><b>Format</b><span>9:16 and 16:9</span></li>
-          <li><b>Pictures</b><span>Up to 24 in a Short</span></li>
-        </ul>
-        <p class="style-say">“Make me a 40 second Short about the pirate treasure nobody came back for, cartoon style.”</p>
-      </div>
-    </article>
-
-    <article class="style-row wide" id="realistic" style="--c:var(--teal)">
-      <div class="style-films">
-        <div class="film">
-          <div class="style-media wide">
-            <video src="samples/realistic-tether.mp4" poster="samples/realistic-tether.jpg" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback"
-                   aria-label="Realistic sample, Tether: one unbroken pull-back from an astronaut's face inside his helmet to the station he is tethered to"></video>
-            <span class="style-live" aria-hidden="true"><i></i>Playing</span>
-          </div>
-          <div class="film-cap"><b>Tether</b><span>20 s · one shot · 4K 60 fps, shown at 1080p</span></div>
-          <p class="film-note">One unbroken pull-back. It opens inside the helmet, on the astronaut's face and his breath on the
-            glass; a gloved hand comes up, the visor floods red, and the camera keeps backing away as he drifts, arms open,
-            until the gold line running up from his pack meets the station and its solar arrays. Every frame is generated
-            footage. No words at all: only his breathing and a low hum.</p>
-        </div>
-        <div class="film">
-          <div class="style-media wide">
-            <video src="samples/realistic-signal.mp4" poster="samples/realistic-signal.jpg" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback"
-                   aria-label="Realistic sample, Signal Delay: the opening minute of a documentary on how engineers fixed Voyager 1's 1977 computer from 24 billion kilometres away"></video>
-            <span class="style-live" aria-hidden="true"><i></i>Playing</span>
-          </div>
-          <div class="film-cap"><b>Signal Delay</b><span>6 min 55 s · opening 0:00–1:02 · 4K 60 fps, shown at 1080p</span></div>
-          <p class="film-note">A documentary told as five months of mission logs: on November 14, 2023, Voyager 1 started
-            repeating one pattern of ones and zeros, and every question cost forty-five hours of light-time. One narrator
-            walks through the readout, the dead chip and the code moved by hand in 1970s assembly. Photographic stills with a
-            slow push-in, hand-drawn amber diagrams, terminal windows, dates on black, two clocks in the corner, 35 mm grain,
-            2.39:1, a quiet music bed and subtitles. Here, the opening minute up to the title.</p>
-        </div>
-      </div>
-      <div>
-        <div class="style-n">02 · look</div>
-        <div class="style-name"><h2>Realistic</h2><button class="style-arg" data-copy='style: "realistic"' aria-label="Copy the realistic style argument">style: "realistic"</button></div>
-        <p class="style-lead">Photographic light, real textures and a camera that moves, at 4K 60 fps. The same look carries
-          a single generated take with nothing on the frame and a seven-minute documentary with dates, diagrams and a
-          narrator: what appears on screen is decided by the film, not by a template. Two films, one look.</p>
-        <ul class="style-facts">
-          <li><b>Output</b><span>4K · 60 fps, 16:9 for YouTube or 9:16 for a Short</span></li>
-          <li><b>Footage</b><span>Generated shots, or photographs with a slow push-in when the story lives in documents</span></li>
-          <li><b>On the frame</b><span>Nothing, or dates, diagrams and subtitles when the film needs them; one narrator or none</span></li>
-        </ul>
-        <p class="style-say">“A 20-second film, 16:9: one continuous pull-back from an astronaut's face inside his helmet to the station he's tethered to. No words, just his breathing.”</p>
-      </div>
-    </article>
-
-    <article class="style-row" id="cinema" style="--c:var(--blue)">
-      <div class="style-media">
-        <video src="samples/cinema.mp4" poster="samples/cinema.jpg" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback"
-               aria-label="Cinema sample: the WiFi Pineapple seized at Perth Airport"></video>
-        <span class="style-live" aria-hidden="true"><i></i>Playing</span>
-      </div>
-      <div>
-        <div class="style-n">03 · look</div>
-        <div class="style-name"><h2>Cinema</h2><button class="style-arg" data-copy='style: "cinema"' aria-label="Copy the cinema style argument">style: "cinema"</button></div>
-        <p class="style-lead">One hero visual per beat, drawn in glowing line art on near-black with drifting light
-          streaks and corner brackets. A chapter label, kinetic type that slams in on the word, a title lockup with
-          the keyword in the chapter's accent, and white captions with one word in green. Every beat is a hard cut
-          anchored to a spoken word: 25 shots in 26 seconds, none longer than 1.7 s.</p>
-        <ul class="style-facts">
-          <li><b>Best for</b><span>Tech, security, gadgets, news stories with a number in them</span></li>
-          <li><b>Format</b><span>9:16 and 16:9</span></li>
-          <li><b>Pictures</b><span>None, 5–8 beats per scene drawn live</span></li>
-        </ul>
-        <p class="style-say">“Police pulled a WiFi Pineapple out of a passenger's bag: make it a 25-second Short, cinema style.”</p>
-      </div>
-    </article>
-
-    <article class="style-row" id="stickman" style="--c:var(--ink)">
-      <div class="style-media">
-        <video src="samples/stickman-omg.mp4" poster="samples/stickman-omg.jpg" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback"
-               aria-label="Stickman sample: the charging cable with a computer hidden inside"></video>
-        <span class="style-live" aria-hidden="true"><i></i>Playing</span>
-      </div>
-      <div>
-        <div class="style-n">04 · look</div>
-        <div class="style-name"><h2>Stickman</h2><button class="style-arg" data-copy='style: "stickman"' aria-label="Copy the stickman style argument">style: "stickman"</button></div>
-        <p class="style-lead">White line art on black, as if drawn by hand. A stick figure acts the story out with the
-          real objects, the cable, the laptop, the drawer full of chargers, and only the danger gets a colour: a red
-          circuit inside the plug, a blue signal, a yellow price tag. Bold captions with one word in green.
-          Deliberately plain, deliberately funny, and unmistakable in a feed full of stock footage.</p>
-        <ul class="style-facts">
-          <li><b>Best for</b><span>Gadgets, scams, security stories with a twist</span></li>
-          <li><b>Format</b><span>9:16 only</span></li>
-          <li><b>Pictures</b><span>None, everything is drawn live</span></li>
-        </ul>
-        <p class="style-say">“This charging cable has a computer hidden inside: make it a 25-second Short, stickman style.”</p>
-      </div>
-    </article>
-
-  </div>
-</section>
-
-<section id="scene">
-  <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <div class="eyebrow"><span class="n">05</span>How a scene is built</div>
-        <h2>Not a slideshow.<br>A line, cut into shots.</h2>
-      </div>
-      <p class="lede">Each narrated line becomes a scene, and each scene is cut into two to four shots. Kleo writes a
-        description for every shot, draws it, and times the cut to a word you actually hear. Watch the line below.</p>
-    </div>
-    <div class="scene">
-      <div>
-        <p class="line" id="line" aria-label="Captain Mara buried her treasure on Skull Beach in 1720. She never came back, and nobody knows why."></p>
-        <div class="line-foot"><span>narration · 9 s</span><button type="button" id="replay">↻ Play it again</button></div>
-      </div>
-      <div class="shots" id="shots" aria-label="The three shots of this scene">
-        <div class="shot" data-from="0"><div class="frame" aria-hidden="true"><svg viewBox="0 0 90 120" aria-hidden="true"><circle cx="45" cy="52" r="13" fill="var(--amber)" opacity=".9"/><path d="M0 78 Q45 70 90 78 V120 H0Z" fill="var(--amber-soft)"/><path d="M0 78 Q45 70 90 78" stroke="var(--amber)" stroke-width="1.2" fill="none" opacity=".7"/><rect x="38" y="84" width="16" height="10" rx="2" fill="var(--ink)" opacity=".8"/><path d="M38 84 q8 -6 16 0" stroke="var(--ink)" stroke-width="1.5" fill="none" opacity=".8"/></svg></div><b>shot 01</b><span>The captain burying a chest on a golden beach at sunset.</span><em class="cutword">Captain</em></div>
-        <div class="shot" data-from="11"><div class="frame" aria-hidden="true"><svg viewBox="0 0 90 120" aria-hidden="true"><circle cx="18" cy="62" r="9" fill="var(--amber)" opacity=".6"/><path d="M0 80 Q45 74 90 80 V120 H0Z" fill="var(--amber-soft)"/><path d="M0 80 Q45 74 90 80" stroke="var(--amber)" stroke-width="1.2" fill="none" opacity=".7"/><g stroke="var(--ink)" stroke-width="1.8" stroke-linecap="round" fill="none" opacity=".85"><circle cx="64" cy="64" r="3.5"/><path d="M64 68 v12 M64 74 l-5 6 M64 74 l5 5 M64 80 l-4 9 M64 80 l5 8"/></g></svg></div><b>shot 02</b><span>She walks away along the shoreline, the chest gone.</span><em class="cutword">never</em></div>
-        <div class="shot" data-from="15"><div class="frame" aria-hidden="true"><svg viewBox="0 0 90 120" aria-hidden="true"><path d="M52 32 a12 12 0 1 0 10 18 a9 9 0 1 1 -10 -18z" fill="var(--ink)" opacity=".8"/><g fill="var(--ink)" opacity=".5"><circle cx="20" cy="28" r="1.2"/><circle cx="30" cy="48" r="1"/><circle cx="74" cy="24" r="1.3"/><circle cx="80" cy="56" r=".9"/></g><path d="M0 80 Q45 74 90 80 V120 H0Z" fill="var(--line)"/><path d="M0 80 Q45 74 90 80" stroke="var(--ink-2)" stroke-width="1" fill="none" opacity=".5"/></svg></div><b>shot 03</b><span>The same beach at night, empty.</span><em class="cutword">nobody</em></div>
+        <figure class="watch">
+          <video muted loop playsinline preload="none" width="1920" height="1080" poster="/samples/realistic-signal.jpg" disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" aria-label="Signal Delay, the opening minute of a documentary on Voyager 1 rendered with Kleo’s realistic look: photographic stills with a slow push-in, hand-drawn amber diagrams, dates on black and two clocks in the corner. Plays muted while in view.">
+            <source src="/samples/realistic-signal.mp4" type="video/mp4">
+          </video>
+          <span class="live" aria-hidden="true"><i></i>Playing</span>
+          <figcaption><p class="film-cap"><b>Signal Delay</b><span>6 min 55 s · opening 0:00–1:02 · 2.39:1 in a 16:9 file · 4K 60 fps, shown at 1080p</span></p></figcaption>
+        </figure>
+        <p>A documentary told as five months of mission logs: on November 14, 2023, Voyager 1 started repeating one pattern
+          of ones and zeros, and every question cost forty-five hours of light-time. One narrator walks through the
+          readout, the dead chip and the code moved by hand in 1970s assembly. Photographic stills with a slow push-in,
+          hand-drawn amber diagrams, terminal windows, dates on black, two clocks in the corner, 35 mm grain, 2.39:1, a
+          quiet music bed and subtitles. Here, the opening minute up to the title. Rendered with Kleo’s realistic look; the
+          full film is not on the site.</p>
+        <p><a class="text-link" href="/examples/signal-delay/">Watch Signal Delay on its own page →</a></p>
       </div>
     </div>
-    <p class="scene-foot">The same character is described the same way in every shot, so the captain still looks like
-      the captain three pictures later.</p>
-  </div>
-</section>
-
+    <p class="wide">Photographic light, real textures and a camera that moves, at 4K 60 fps. The same look carries a single
+      generated take with nothing on the frame and a seven-minute documentary with dates, diagrams and a narrator: what
+      appears on screen is decided by the film, not by a preset. Two films, one look.</p>
+    <ul class="facts">
+      <li><b>Output</b><span>4K · 60 fps, 16:9 for YouTube or 9:16 for a Short, 15 seconds to 5 minutes</span></li>
+      <li><b>Footage</b><span>Every shot generated as moving footage from its own frame</span></li>
+      <li><b>On the frame</b><span>Nothing unless the film’s treatment asks for it (Signal Delay’s did); one narrator</span></li>
+    </ul>
+    <div class="prompt">
+      <p>A 20-second film, 16:9, realistic look: one continuous pull-back from an astronaut’s face inside his helmet to the
+        station he’s tethered to. No words, just his breathing.</p>
+      <button type="button" data-copy="A 20-second film, 16:9, realistic look: one continuous pull-back from an astronaut’s face inside his helmet to the station he’s tethered to. No words, just his breathing.">Copy prompt</button>
+    </div>
+    <p>Or hand your assistant the argument itself: <button type="button" class="style-arg" data-copy='style: "realistic"'>style: "realistic"</button></p>
+  </section>
+  <section id="animation" class="section">
+    <p class="eyebrow">LOOK 02</p>
+    <h2>Animation</h2>
+    <p class="note">Live on the server today · a sample film will be published on this page</p>
+    <p class="wide">A 2D animated film: painted backgrounds, hand-drawn characters kept the same from shot to shot, and every
+      shot generated as moving footage from its own frame, no slideshow of stills. One narrator, in English or Italian,
+      and nothing else on the frame. The same workflow, the same 4K 60 fps master and the same price as the realistic
+      look: 1 credit is 2 seconds of film, from 10 credits.</p>
+    <p>There is no animation sample on the site yet. The look is live on the server, so any connected assistant can ask
+      for it now; a film made in it will be published here as soon as it is ready.</p>
+    <ul class="facts">
+      <li><b>Output</b><span>4K · 60 fps, 16:9 for YouTube or 9:16 for a Short, 15 seconds to 5 minutes</span></li>
+      <li><b>Footage</b><span>Every shot generated as moving footage from its own frame; painted backgrounds, hand-drawn characters kept the same across shots</span></li>
+      <li><b>On the frame</b><span>Nothing unless the film’s treatment asks for it; one narrator, English or Italian, no music, no captions</span></li>
+      <li><b>Price</b><span>The same as the realistic look: 1 credit = 2 seconds, 10 credits minimum; a 40-second Short is 20 credits</span></li>
+    </ul>
+    <div class="prompt">
+      <p>Make me a 40-second Short, animation look, about the lighthouse keeper who kept answering a message in a bottle.
+        English narration.</p>
+      <button type="button" data-copy="Make me a 40-second Short, animation look, about the lighthouse keeper who kept answering a message in a bottle. English narration.">Copy prompt</button>
+    </div>
+    <p>Or hand your assistant the argument itself: <button type="button" class="style-arg" data-copy='style: "animation"'>style: "animation"</button></p>
+  </section>
+  <section id="how" class="section">
+    <p class="eyebrow">THE WORKFLOW</p>
+    <h2>How a film is built</h2>
+    <p class="wide">The two looks share one pipeline. The look is settled at step 0, in the treatment, and everything after
+      it is generated under that decision: the storyboard, every shot, the narration, the cut and the 4K 60 fps render.</p>
+    <ol>
+      <li><b>Treatment.</b> Your assistant hands the request to <code>kleo_adapt_prompt</code>, which reads it against the
+        intake: subject, length, format and look, plus audience, tone and what must appear as options, and asks for
+        whatever is missing instead of assuming it. Back comes the treatment: logline, angle, opening, acts, ending, look,
+        pacing, narrator. The look is decided here, before a frame exists.</li>
+      <li><b>Storyboard.</b> <code>kleo_storyboard_guide</code> sets out how the storyboard is written under that treatment:
+        a direction block, the scenes, the shots and the limits.</li>
+      <li><b>Footage.</b> <code>kleo_create_video</code> checks everything, states the exact credits and starts the render
+        on a GPU rented for that job; nothing is charged until it accepts. Every shot is then generated as moving footage
+        from its own frame, in the look the treatment chose.</li>
+      <li><b>Narration.</b> One narrator voices the film, in English or Italian. No background music, no captions.</li>
+      <li><b>Assembly.</b> The shots and the narration are cut together into one film. Nothing goes on the frame unless the
+        film’s treatment asks for it.</li>
+      <li><b>Render.</b> An MP4 at 4K 60 fps, 3840×2160 for 16:9 or 2160×3840 for 9:16, typically 25–35 minutes on the
+        rented GPU. Your assistant follows the progress and <code>kleo_get_result</code> hands it the link, good for 7
+        days.</li>
+    </ol>
+    <p>Whatever the look, the standard film carries one narrator and nothing else: no background music, no captions, no
+      on-screen text. Dates, diagrams or subtitles appear only when a film’s treatment asks for them, as the treatment of
+      Signal Delay did.</p>
+    <div class="actions">
+      <a class="button" href="/connect/">Connect Kleo ↗</a>
+      <a class="button secondary" href="/pricing/">See pricing</a>
+    </div>
+    <p><a class="text-link" href="/video-generation-mcp/">The tools, one by one: MCP documentation →</a></p>
+    <p><a class="text-link" href="/examples/">All examples →</a></p>
+  </section>
+</main>
 <footer>
-  <div class="wrap">
-    <div class="foot-brand">
-      <a class="brand" href="index.html" aria-label="Kleo, home"><svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
-        <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
-        <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
-      </svg> Kleo</a>
-      <span>A video studio that lives in your chat.</span>
-    </div>
-    <div class="links">
-      <a href="index.html#connect">Connect</a>
-      <a href="index.html#pricing">Pricing</a>
+  <div class="wrap footer-grid">
+    <div>
+      <a class="logo" href="/">Kleo<span>AI</span></a>
+      <p>Human direction. Agent-made films.</p>
       <a href="mailto:kleooai@gmail.com">kleooai@gmail.com</a>
-      <a href="#top">Back to top</a>
+    </div>
+    <div>
+      <a href="/connect/">Connect</a>
+      <a href="/integrations/claude/">Kleo with Claude</a>
+      <a href="/integrations/chatgpt/">Kleo with ChatGPT</a>
+      <a href="/video-generation-mcp/">MCP documentation</a>
+      <a href="/ai-youtube-video-generator/">YouTube videos</a>
+    </div>
+    <div>
+      <a href="/about/">About Kleo</a>
+      <a href="/styles.html">Film looks</a>
+      <a href="/examples/">Examples</a>
+      <a href="/pricing/">Pricing</a>
+      <a href="/faq/">FAQ</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a href="https://github.com/tonnooooo/kleo-mcp">GitHub</a>
     </div>
   </div>
+  <div class="wrap footnote">© 2026 Kleo · kleooai.com <span>Human intelligence. Agent production.</span></div>
 </footer>
-
-<div class="toast" id="toast" role="status" aria-live="polite">Copied</div>
-
-<script>
-(function(){
-  'use strict';
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  /* the hairline that fills as you read */
-  var prog = document.getElementById('progress');
-  function onScroll(){ var h = document.documentElement.scrollHeight - window.innerHeight; prog.style.setProperty('--p', h > 0 ? Math.min(1, window.scrollY / h) : 0); }
-  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
-
-  /* the hero takes the colour of the look you point at */
-  var hero = document.querySelector('.styles-hero');
-  Array.prototype.forEach.call(document.querySelectorAll('.look'), function(l){
-    l.addEventListener('pointerenter', function(){ hero.setAttribute('data-tint', l.getAttribute('data-look')); });
-    l.addEventListener('pointerleave', function(){ hero.removeAttribute('data-tint'); });
-  });
-
-  /* a sample plays by itself while it is in front of you, and stops when it is not — and only then is it fetched:
-     five films, one of them 34 MB, must not all download on every visit. There is nothing to click: the tag has no
-     controls, the frame takes no pointer, no menu, no drag — the film is shown, not handed over */
-  var medias = Array.prototype.slice.call(document.querySelectorAll('.style-media'));
-  medias.forEach(function(m){
-    m.addEventListener('contextmenu', function(e){ e.preventDefault(); });
-    m.addEventListener('dragstart', function(e){ e.preventDefault(); });
-  });
-  if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(en){
-        var v = en.target.querySelector('video');
-        if (en.intersectionRatio >= .6) { var p = v.play(); if (p && p.catch) p.catch(function(){}); }
-        else v.pause();
-      });
-    }, {threshold:[0, .6]});
-    medias.forEach(function(m){
-      var v = m.querySelector('video');
-      v.addEventListener('play', function(){ m.classList.add('playing'); });
-      v.addEventListener('pause', function(){ m.classList.remove('playing'); });
-      io.observe(m);
-    });
-  }
-
-  /* the line plays: words light up as they are said, and the shots cut on their word */
-  var TEXT = 'Captain Mara buried her treasure on Skull Beach in 1720. She never came back, and nobody knows why.';
-  var words = TEXT.split(' '), line = document.getElementById('line'), shots = Array.prototype.slice.call(document.querySelectorAll('#shots .shot'));
-  var cuts = shots.map(function(s){ return parseInt(s.getAttribute('data-from'), 10); });
-  line.innerHTML = words.map(function(w, i){ return '<span class="w' + (cuts.indexOf(i) > 0 ? ' cut' : '') + '">' + w + '</span>'; }).join(' ');
-  var spans = Array.prototype.slice.call(line.querySelectorAll('.w')), timer, at = -1;
-  function paint(i){
-    spans.forEach(function(s, j){ s.classList.toggle('said', j < i); s.classList.toggle('now', j === i); });
-    var k = 0; cuts.forEach(function(c, n){ if (i >= c) k = n; });
-    shots.forEach(function(s, n){ s.classList.toggle('on', i >= 0 && n === k); });
-  }
-  function play(){
-    clearTimeout(timer); at = -1;
-    if (reduce) { paint(words.length - 1); return; }   // no motion: the line already said, the last shot on screen
-    (function step(){
-      at += 1; paint(at);
-      if (at < words.length) timer = setTimeout(step, /[.,]$/.test(words[at]) ? 720 : 380);
-      else timer = setTimeout(function(){ paint(-1); shots.forEach(function(s){ s.classList.remove('on'); }); }, 2400);
-    })();
-  }
-  document.getElementById('replay').addEventListener('click', play);
-  var scene = document.getElementById('scene'), played = false;
-  if ('IntersectionObserver' in window) {
-    new IntersectionObserver(function(en){ if (en[0].isIntersecting && !played) { played = true; play(); } }, {threshold:.35}).observe(scene);
-  } else play();
-
-  /* ---------- the menu button, where the links are folded away (phones and narrow tablets) ---------- */
-  var nav = document.querySelector('.nav'), navToggle = document.querySelector('.nav-toggle');
-  if (nav && navToggle) {
-    var setMenu = function(open){
-      nav.classList.toggle('open', open);
-      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Menu');
-    };
-    navToggle.addEventListener('click', function(){ setMenu(!nav.classList.contains('open')); });
-    // a link chosen from the menu closes it, and so does a tap anywhere else or the Escape key
-    nav.addEventListener('click', function(e){ if (e.target.closest && e.target.closest('a')) setMenu(false); });
-    var outside = function(e){ if (nav.classList.contains('open') && !nav.contains(e.target)) setMenu(false); };
-    document.addEventListener('click', outside);
-    if ('PointerEvent' in window) document.addEventListener('pointerdown', outside);   // iOS fires no click on plain page areas
-    document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && nav.classList.contains('open')) { setMenu(false); navToggle.focus(); } });
-  }
-
-  /* copy */
-  var toast = document.getElementById('toast'), tt;
-  function say(msg){ toast.textContent = msg; toast.classList.add('show'); clearTimeout(tt); tt = setTimeout(function(){ toast.classList.remove('show'); }, 1600); }
-  document.addEventListener('click', function(e){
-    var b = e.target.closest && e.target.closest('[data-copy]'); if(!b) return;
-    var txt = b.getAttribute('data-copy');
-    function ok(){ say('Copied — paste it in your request'); if (!b.dataset.was) { b.dataset.was = b.textContent; b.textContent = 'copied ✓'; setTimeout(function(){ b.textContent = b.dataset.was; delete b.dataset.was; }, 1500); } }
-    try { navigator.clipboard.writeText(txt).then(ok, function(){ say('Copy it by hand: ' + txt); }); }
-    catch(err){ say('Copy it by hand: ' + txt); }
-  });
-
-  var title = document.title;
-  document.addEventListener('visibilitychange', function(){ document.title = document.hidden ? '▶ Four looks are waiting · Kleo' : title; });
-})();
-</script>
+<p id="copy-status" class="copy-status" role="status" aria-live="polite"></p>
 </body>
 </html>

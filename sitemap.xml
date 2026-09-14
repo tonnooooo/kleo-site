@@ -1,30 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Four pages, that is the whole site. Update the dates when a page really changes; a sitemap that lies about
-     freshness is worse than none. Crawlers are allowed by default; add robots.txt only if Kleo needs a specific
-     crawl directive. -->
+<!-- Exactly the indexable pages, rebuilt by tools/sitemap.py; lastmod is the last commit that touched the page. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://kleooai.com/</loc>
-    <lastmod>2026-09-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-09-14</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/pricing/</loc>
+    <lastmod>2026-09-14</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/ai-youtube-video-generator/</loc>
+    <lastmod>2026-09-14</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/connect/</loc>
+    <lastmod>2026-09-14</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/integrations/claude/</loc>
+    <lastmod>2026-09-14</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/integrations/chatgpt/</loc>
+    <lastmod>2026-09-14</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/video-generation-mcp/</loc>
+    <lastmod>2026-09-14</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/examples/</loc>
+    <lastmod>2026-09-14</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/examples/tether/</loc>
+    <lastmod>2026-09-14</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/examples/signal-delay/</loc>
+    <lastmod>2026-09-14</lastmod>
   </url>
   <url>
     <loc>https://kleooai.com/styles.html</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-09-14</lastmod>
   </url>
   <url>
-    <loc>https://kleooai.com/privacy.html</loc>
-    <lastmod>2026-09-11</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <loc>https://kleooai.com/faq/</loc>
+    <lastmod>2026-09-14</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/about/</loc>
+    <lastmod>2026-09-14</lastmod>
   </url>
   <url>
     <loc>https://kleooai.com/terms.html</loc>
-    <lastmod>2026-09-11</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <lastmod>2026-09-14</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/privacy.html</loc>
+    <lastmod>2026-09-14</lastmod>
   </url>
 </urlset>

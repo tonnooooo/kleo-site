@@ -2,47 +2,41 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Not found · Kleo</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Page not found | Kleo AI</title>
 <meta name="robots" content="noindex">
-<link rel="icon" href="brand/kleo-favicon.svg" type="image/svg+xml">
-<!-- Self-contained on purpose: GitHub Pages serves this file for any unknown path, and a stylesheet linked
-     relatively would miss from a nested one. Everything this page needs is in it. -->
-<style>
-:root{color-scheme:dark;--bg:#0F1216;--bg2:#151920;--line:#262C36;--ink:#ECEAE4;--mute:#838B99;--amber:#F3B53F;--amber-ink:#1A1200}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);min-height:100vh;padding:32px;
-  font:16px/1.6 "Instrument Sans","Helvetica Neue",Arial,sans-serif;display:grid;place-items:center}
-main{width:min(520px,100%)}
-.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.2rem;letter-spacing:-.02em;margin-bottom:28px}
-.brand span{font:500 .62rem/1 "IBM Plex Mono",Menlo,monospace;letter-spacing:.12em;border:1px solid var(--line);
-  border-radius:4px;padding:3px 6px;color:var(--mute)}
-.code{font:500 .72rem/1 "IBM Plex Mono",Menlo,monospace;letter-spacing:.16em;color:var(--mute);text-transform:uppercase}
-h1{font-size:clamp(28px,5vw,40px);line-height:1.08;letter-spacing:-.02em;margin:12px 0 14px;text-wrap:balance}
-p{color:var(--mute);margin:0 0 26px}
-.links{display:flex;flex-wrap:wrap;gap:10px}
-a.btn{display:inline-block;text-decoration:none;padding:11px 16px;border-radius:10px;font-weight:600;font-size:.95rem}
-a.primary{background:var(--amber);color:var(--amber-ink)}
-a.ghost{border:1px solid var(--line);color:var(--ink)}
-a.btn:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
-</style>
+<!-- GitHub Pages serves this file, with a real 404 status, for any path that does not exist. Every path in it is
+     absolute, so it works from a nested route too. -->
+<meta name="theme-color" content="#101215">
+<link rel="icon" href="/brand/kleo-favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/site.css?v=20260914">
 </head>
 <body>
-<main>
-  <div class="brand">
-    <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
-        <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="#F3B53F"/>
-        <path d="M39 30L69 50L39 70Z" fill="#1A1200" stroke="#1A1200" stroke-width="9" stroke-linejoin="round"/>
-      </svg>
-    Kleo <span>MCP</span>
-  </div>
-  <div class="code">Error 404</div>
-  <h1>This scene was cut.</h1>
-  <p>The link is wrong, or the page moved. Kleo itself is fine — it lives inside your assistant, not on this website.</p>
-  <div class="links">
-    <a class="btn primary" href="index.html">Go to Kleo</a>
-    <a class="btn ghost" href="styles.html">See the styles</a>
-    <a class="btn ghost" href="mailto:kleooai@gmail.com">Tell us what broke</a>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+  <nav class="wrap nav" aria-label="Main navigation">
+    <a class="logo" href="/"><img src="/brand/kleo-favicon.svg" width="32" height="32" alt="">Kleo<span>AI</span></a>
+    <div class="navlinks">
+      <a href="/ai-youtube-video-generator/">Create videos</a>
+      <a href="/examples/">Examples</a>
+      <a href="/pricing/">Pricing</a>
+      <a href="/faq/">FAQ</a>
+    </div>
+    <a class="button small" href="/connect/">Connect ↗</a>
+  </nav>
+</header>
+<main id="main" class="wrap inner-page">
+  <div class="hero">
+    <div>
+      <p class="eyebrow">ERROR 404</p>
+      <h1>This scene<br><em>was cut.</em></h1>
+      <p class="intro">The link is wrong, or the page moved. Kleo itself is fine: it lives inside your assistant, not on this website.</p>
+      <div class="actions">
+        <a class="button" href="/">Back to Kleo</a>
+        <a class="button secondary" href="/examples/">Watch the examples</a>
+        <a class="button secondary" href="mailto:kleooai@gmail.com">Tell us what broke</a>
+      </div>
+    </div>
   </div>
 </main>
 </body>

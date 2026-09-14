@@ -1,818 +1,271 @@
-<!DOCTYPE html>
-<html lang="en" class="no-js">
+<!doctype html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script>document.documentElement.classList.remove("no-js")</script>
-<title>Kleo — ask in chat, get the video</title>
-<meta name="description" content="Kleo is an MCP server: connect it to Claude, ChatGPT, Grok, Cursor or your coding agent and ask for YouTube Shorts and videos in plain language. Rendered at 60 fps on a GPU rented only for your job; you get a link back.">
-<link rel="icon" href="brand/kleo-favicon.svg" type="image/svg+xml">
-<link rel="icon" href="brand/kleo-favicon-32.png" sizes="32x32" type="image/png">
-<link rel="apple-touch-icon" href="brand/kleo-icon-dark-192.png">
-<meta name="theme-color" content="#0A0C10">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kleo AI — Human Direction. Agent-Made Films.</title>
+<meta name="description" content="Complete narrated films, realistic or animation, made from your AI assistant through MCP. 4K 60 fps, 15 seconds to 5 minutes, English or Italian narration.">
+<link rel="canonical" href="https://kleooai.com/">
+<meta name="robots" content="index,follow,max-image-preview:large">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Kleo">
-<meta property="og:title" content="Kleo — ask in chat, get the video">
-<meta property="og:description" content="Kleo is an MCP server: connect it to Claude, ChatGPT, Grok, Cursor or your coding agent and ask for YouTube Shorts and videos in plain language. Rendered at 60 fps on a GPU rented only for your job; you get a link back.">
+<meta property="og:site_name" content="Kleo AI">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Kleo AI — Human Direction. Agent-Made Films.">
+<meta property="og:description" content="Complete narrated films, realistic or animation, made from your AI assistant through MCP. 4K 60 fps, 15 seconds to 5 minutes, English or Italian narration.">
+<meta property="og:url" content="https://kleooai.com/">
 <meta property="og:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta property="og:image:alt" content="Kleo AI — Human direction. Agent-made films.">
 <meta property="og:image:width" content="2400">
 <meta property="og:image:height" content="1260">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="site.css">
+<meta name="twitter:title" content="Kleo AI — Human Direction. Agent-Made Films.">
+<meta name="twitter:description" content="Complete narrated films, realistic or animation, made from your AI assistant through MCP. 4K 60 fps, 15 seconds to 5 minutes, English or Italian narration.">
+<meta name="twitter:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta name="theme-color" content="#101215">
+<link rel="icon" href="/brand/kleo-favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/brand/kleo-favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/brand/kleo-icon-dark-192.png">
+<link rel="stylesheet" href="/site.css?v=20260914">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://kleooai.com/#website",
+      "name": "Kleo AI",
+      "alternateName": "Kleo",
+      "url": "https://kleooai.com/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kleooai.com/#page",
+      "url": "https://kleooai.com/",
+      "name": "Kleo AI — Human Direction. Agent-Made Films.",
+      "description": "Complete narrated films, realistic or animation, made from your AI assistant through MCP. 4K 60 fps, 15 seconds to 5 minutes, English or Italian narration.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://kleooai.com/#website"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://kleooai.com/"
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://kleooai.com/#software",
+      "name": "Kleo AI",
+      "url": "https://kleooai.com/",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Any MCP-compatible client (remote server)",
+      "description": "A remote MCP server that turns a brief from your AI assistant into a complete narrated film, realistic or animation, with every shot generated as moving footage and rendered as a 4K 60 fps MP4.",
+      "offers": {
+        "@type": "Offer",
+        "name": "10-credit pack",
+        "price": "5",
+        "priceCurrency": "EUR",
+        "url": "https://kleooai.com/pricing/"
+      }
+    }
+  ]
+}
+</script>
+<script src="/site.js?v=20260914" defer></script>
 </head>
 <body>
-<div class="progress" id="progress" aria-hidden="true"></div>
-
-<!-- ============ NAV ============ -->
-<nav class="nav" aria-label="Main">
-  <div class="wrap">
-    <a class="brand" href="#top" aria-label="Kleo, home">
-      <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
-        <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
-        <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
-      </svg>
-      Kleo <span class="tag">MCP</span>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+  <nav class="wrap nav" aria-label="Main navigation">
+    <a class="logo" href="/" aria-current="page"><img src="/brand/kleo-favicon.svg" width="32" height="32" alt="">Kleo<span>AI</span></a>
+    <div class="navlinks">
+      <a href="/ai-youtube-video-generator/">Create videos</a>
+      <a href="/examples/">Examples</a>
+      <a href="/pricing/">Pricing</a>
+      <a href="/faq/">FAQ</a>
+    </div>
+    <a class="button small" href="/connect/">Connect ↗</a>
+  </nav>
+</header>
+<main id="main" class="wrap home">
+  <div class="hero split">
+    <div>
+      <p class="eyebrow">KLEO AI</p>
+      <h1>Human direction.<br><em>Agent-made films.</em></h1>
+      <p class="intro">Your brief sets the story. Kleo turns it into a complete narrated film — every shot generated as moving
+        footage, in a realistic or animation look — and hands the link to the assistant you already use. Directed by you.
+        Produced through MCP.</p>
+      <div class="actions">
+        <a class="button" href="/connect/">Connect Kleo ↗</a>
+        <a class="button secondary" href="/examples/">Watch the examples</a>
+      </div>
+    </div>
+    <a class="hero-image" href="/examples/tether/">
+      <img src="/samples/realistic-tether.jpg" alt="An astronaut drifting with open arms, a gold tether running from his pack toward a space station, in the Tether sample film" width="1920" height="1080" fetchpriority="high">
+      <span>
+        <span class="film-label"><i class="play-mark" aria-hidden="true">▶</i><span><strong>Tether</strong><small>A film by Kleo · Realistic</small></span></span>
+        <b>Watch the film <span aria-hidden="true">↗</span></b>
+      </span>
     </a>
-    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-menu">
-      <svg class="bars" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 5h14M2 9h14M2 13h14"/></svg>
-      <svg class="x" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 4l10 10M14 4L4 14"/></svg>
-    </button>
-    <div class="nav-links" id="site-menu">
-      <a href="#how">How it works</a>
-      <a href="#template">Templates</a>
-      <a href="styles.html">Styles</a>
-      <a href="#engine">Behind the scenes</a>
-      <a href="#pricing">Pricing</a>
-    </div>
-    <a class="btn btn-primary btn-sm" href="#connect">Connect Kleo</a>
   </div>
-</nav>
-
-<!-- ============ HERO ============ -->
-<section class="hero" id="top">
-  <div class="wrap">
-    <div>
-      <div class="osd"><span class="rec" aria-hidden="true"></span> REC <span class="tcode" id="tcode" aria-hidden="true">00:00:00:00</span> · 4K · 60 fps<span class="osd-more"> · Shorts and 16:9 · EN / IT</span></div>
-      <h1>Ask in chat.<br><span class="hl">Get the video.</span></h1>
-      <p class="lede">Kleo is an MCP server. Connect it to Claude, ChatGPT, Grok or Cursor with one URL and ask for a Short or a YouTube video in plain words. Kleo writes it, voices it, draws it and renders it in 4K. You get the link.</p>
-      <div class="cta-row">
-        <a class="btn btn-primary" href="#connect">Connect Kleo <span class="arr" aria-hidden="true">→</span></a>
-        <a class="btn btn-ghost" href="#template">Browse the templates</a>
-      </div>
-      <div class="works">
-        <span>Works with</span>
-        <b>Claude</b><b>ChatGPT</b><b>Grok</b><b>Claude Code</b><b>Cursor</b><b>VS Code</b><b>OpenCode</b><b>Gemini CLI</b><b>Gemini</b>
-      </div>
-    </div>
-
-    <div class="demo" role="figure" aria-label="Example: a conversation with Kleo connected">
-      <div class="demo-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="demo-title">Claude · Kleo connected<span class="clock" id="demoClock" hidden></span></span></div>
-      <div class="demo-body">
-        <div class="msg user">
-          <span class="who">You</span>
-          <p>Make me a Short about pirates who find an island that isn't on any map. 45 seconds, Italian voice, big subtitles.</p>
-        </div>
-        <div class="msg ai">
-          <span class="who">Claude</span>
-          <p>I'll use Kleo with the <em>Viral Short</em> template.</p>
-          <div class="tool">
-            <div class="tool-head">
-              <span class="tool-name"><b>kleo_create_video</b></span>
-              <span class="tool-state" id="toolState">running</span>
-            </div>
-            <pre class="tool-args">{ "template": "viral-short", "duration_s": 45, "format": "9:16", "language": "it",
-  "prompt": "Pirates find an island missing from every map" }</pre>
-          </div>
-        </div>
-        <div class="render" id="render">
-          <div class="render-head"><span>job <b>gt_7f3k</b> · RTX 4090 · ephemeral</span><b id="renderPct">64%</b></div>
-          <div class="tracks" id="tracks">
-            <div class="track done"><span>Script</span><span class="tbar" style="--c:var(--violet)"></span></div>
-            <div class="track done"><span>Voice</span><span class="tbar" style="--c:var(--teal)"></span></div>
-            <div class="track active"><span>Clips</span><span class="tbar" style="--c:var(--amber)"></span></div>
-            <div class="track"><span>Edit</span><span class="tbar" style="--c:var(--rose)"></span></div>
-            <div class="track"><span>Finish</span><span class="tbar" style="--c:var(--blue)"></span></div>
-          </div>
-          <div class="bar"><span id="renderFill"></span></div>
-          <div class="render-status" id="renderStatus">Drawing the scenes · 6 of 9 · ~5 min left</div>
-          <div class="result" id="result" hidden>
-            <span class="file">pirates-phantom-island.mp4</span>
-            <span class="chip">2160p</span><span class="chip">60 fps</span><span class="chip">0:45</span><span class="chip">.srt</span><span class="chip">thumbnail</span>
-            <span class="dl">Download</span>
-          </div>
-        </div>
-      </div>
-    </div>
+  <div class="specs">
+    <span>COMPLETE NARRATED FILMS</span>
+    <span>REALISTIC OR ANIMATION</span>
+    <span>15 SEC–5 MIN</span>
+    <span>16:9 &amp; 9:16</span>
+    <span>4K 60 FPS</span>
+    <span>ENGLISH &amp; ITALIAN</span>
   </div>
-  <div class="wrap wrap-stats">
-    <dl class="stats" aria-label="Kleo in numbers">
-      <div><dt>Output</dt><dd>4K · 60 fps</dd></div>
-      <div><dt>A Short, start to link</dt><dd>~15 min</dd></div>
-      <div><dt>Recipes · looks</dt><dd>10 · 5</dd></div>
-      <div><dt>To begin</dt><dd>Free, 7 credits</dd></div>
-    </dl>
-  </div>
-</section>
-
-<!-- ============ HOW IT WORKS ============ -->
-<section id="how">
-  <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <div class="eyebrow"><span class="n">01</span>How it works</div>
-        <h2>One URL. Then you just talk.</h2>
-      </div>
-      <p class="lede">Kleo has no interface of its own: it lives inside the assistant you already use. The timings below are typical for a 45-second Short, and the clock starts when a free machine picks up your job: when Kleo is busy it waits in the queue first.</p>
+  <section id="how" class="section">
+    <h2>Your vision. Every frame.</h2>
+    <div class="grid three">
+      <article class="card">
+        <h3>01 · Direct the story</h3>
+        <p>Tell your assistant the subject, the length, the format and the look — realistic or animation. Kleo reads the
+          brief and asks for anything missing; your assistant then shows you the treatment first: logline, angle, opening,
+          acts and ending. Change what you want before a frame is made.</p>
+      </article>
+      <article class="card">
+        <h3>02 · Kleo produces it</h3>
+        <p>Under that treatment the storyboard is written, then every shot is generated as moving footage from its own
+          frame and one narrator voices it, in English or Italian. The exact credit cost is stated before anything is
+          charged; nothing is charged until the render is accepted.</p>
+      </article>
+      <article class="card">
+        <h3>03 · Download and publish</h3>
+        <p>The film renders at 4K 60 fps on a GPU rented for your job. Your assistant follows the progress and hands you
+          the link to the finished MP4, good for 7 days. Review it and upload it wherever you publish.</p>
+      </article>
     </div>
-    <div class="steps">
-      <div class="step">
-        <div class="num" aria-hidden="true">01</div>
-        <div class="tc">00:00</div>
-        <h3>Paste one URL</h3>
-        <p>Add Kleo's address as a custom connector in Claude, ChatGPT or Grok. Nothing to install, no keys to copy. Kleo's page opens: click <b>Start free</b> and you're back in the chat, with one film on the house.</p>
-      </div>
-      <div class="step">
-        <div class="num" aria-hidden="true">02</div>
-        <div class="tc">00:20</div>
-        <h3>Ask for the video</h3>
-        <p>Describe it the way you'd brief an editor: topic, length, format, voice, tone. Your assistant picks the template and fills in the parameters.</p>
-      </div>
-      <div class="step">
-        <div class="num" aria-hidden="true">03</div>
-        <div class="tc">00:25 <small>→ ~15:00</small></div>
-        <h3>Kleo gets to work</h3>
-        <p>It writes the storyboard, synthesises the voice, draws every scene, cuts the edit with captions and music, then encodes at 60 fps. A GPU machine is rented only for your render and shut down right after.</p>
-      </div>
-      <div class="step">
-        <div class="num" aria-hidden="true">04</div>
-        <div class="tc">~15:00</div>
-        <h3>Get the link</h3>
-        <p>MP4, subtitles, and thumbnail, valid for 7 days. Your assistant stays with the render and hands you the links the moment they are ready — or tell it to stop waiting, and ask for the status later.</p>
-      </div>
+  </section>
+  <section id="template" class="section">
+    <h2>Make something worth watching.</h2>
+    <div class="grid three">
+      <article class="card">
+        <h3>YouTube explainers</h3>
+        <p>Turn one clear question into a narrated 16:9 film, from the opening hook to the final takeaway, up to five
+          minutes long.</p>
+        <a class="text-link" href="/ai-youtube-video-generator/">Make a YouTube video →</a>
+      </article>
+      <article class="card">
+        <h3>Short stories in the animation look</h3>
+        <p>Give a story a subject, a setting and an ending, and ask for the animation look: a 2D animated film with one
+          narrator, from 15 seconds to 5 minutes.</p>
+        <a class="text-link" href="/styles.html">See the two looks →</a>
+      </article>
+      <article class="card">
+        <h3>Vertical Shorts</h3>
+        <p>A focused 9:16 Short with one idea and a clear narrative, rendered at 2160×3840 and 60 fps. A 30-second Short
+          costs 15 credits.</p>
+        <a class="text-link" href="/pricing/">What a Short costs →</a>
+      </article>
     </div>
-  </div>
-</section>
-
-<!-- ============ TEMPLATES ============ -->
-<section id="template">
-  <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <div class="eyebrow"><span class="n">02</span>Templates</div>
-        <h2>Ten recipes.<br>You bring the idea.</h2>
-      </div>
-      <p class="lede">A template is an editing recipe: pacing, layout, subtitles, music. Your assistant picks the one that fits what you asked for. Kleo has no stock footage — every scene is drawn or generated for your topic, then cut on the narration. The sketches show how each frame is laid out.</p>
+  </section>
+  <section id="engine" class="section">
+    <h2>You direct. Kleo renders.</h2>
+    <p class="wide">Stay in your assistant for the brief, the progress and the link: Kleo works behind the conversation.
+      Every shot is generated as moving footage from its own frame — no slideshow of stills — and one narrator carries the
+      film. The render happens at 4K 60 fps on a GPU rented for your job, typically 25–35 minutes. The finished MP4 is the
+      deliverable; you choose when and where to publish it.</p>
+    <div class="prompt">
+      <p>Use Kleo to make a 60-second narrated film about how coffee travels from farm to cup. Realistic look, English
+        narration, 16:9. Show me the treatment and the credit cost before starting the render.</p>
+      <button type="button" data-copy="Use Kleo to make a 60-second narrated film about how coffee travels from farm to cup. Realistic look, English narration, 16:9. Show me the treatment and the credit cost before starting the render.">Copy prompt</button>
     </div>
-    <div class="filters" role="group" aria-label="Filter templates">
-      <button class="chip" data-filter="all" aria-pressed="true">All</button>
-      <button class="chip" data-filter="16:9" aria-pressed="false">Long-form · 16:9</button>
-      <button class="chip" data-filter="9:16" aria-pressed="false">Shorts · 9:16</button>
+  </section>
+  <section id="pricing" class="section">
+    <h2>Clear pricing before the render.</h2>
+    <p class="wide">Connecting gives you 7 starter credits — no form, no card. A film is priced by length: 1 credit = 2
+      seconds, from 10 credits, so the starter credits alone do not cover a film. Packs start at €5 for 10 credits, paid
+      once; there is no subscription.</p>
+    <p><a class="text-link" href="/pricing/">See the packs and calculate your film’s credits →</a></p>
+  </section>
+  <section id="connect" class="section">
+    <h2>Meet your production team.</h2>
+    <p>Add Kleo’s address to a compatible assistant as a custom connector. Kleo’s page opens from the assistant during
+      sign-in: one button, no form, no card. Then describe your film.</p>
+    <p id="server-note" class="note"></p>
+    <div class="server">
+      <code>https://mcp.kleooai.com/mcp</code>
+      <button type="button" data-copy="https://mcp.kleooai.com/mcp">Copy address</button>
     </div>
-    <div class="grid" id="grid"></div>
-    <p class="tpl-more">Render times are estimates from the moment the machine is rented, the download of the renderer included: about 15–25 minutes for a Short, about 50 minutes for a 5-minute video, up to about two hours for the longest ones. Shorts come out in 4K (2160×3840) and 16:9 videos in 4K (3840×2160), all at 60 fps.</p>
-  </div>
-</section>
-
-<!-- ============ BEHIND THE SCENES ============ -->
-<section id="engine">
-  <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <div class="eyebrow"><span class="n">03</span>Behind the scenes</div>
-        <h2>Five tracks. One GPU, rented only for you.</h2>
-      </div>
+    <p class="works"><span>Works with</span><b>Claude</b><b>ChatGPT</b><b>Grok</b><b>Claude Code</b><b>Cursor</b><b>VS Code</b><b>OpenCode</b><b>Gemini CLI</b></p>
+    <div class="actions">
+      <a class="button" href="/connect/">Connect Kleo ↗</a>
+      <a class="button secondary" href="/video-generation-mcp/">MCP documentation</a>
     </div>
-    <div class="bts">
-      <div>
-        <p class="lede">A Kleo video is a pipeline of tracks, like an editing timeline. Each track uses the best tool for its job, and the scenes are drawn in parallel.</p>
-        <ul>
-          <li style="--c:var(--violet)"><span><b>Script.</b> A language model turns your prompt into a storyboard: hook, scenes, narration and on-screen text, in the template's tone. Your assistant can write it too.</span></li>
-          <li style="--c:var(--teal)"><span><b>Voice.</b> Neural speech synthesis in English or Italian. The narration sets the timing of every scene, and the captions are aligned to it word by word.</span></li>
-          <li style="--c:var(--amber)"><span><b>Clips.</b> In cartoon and realistic the pictures are generated for your topic, and the engine cuts and moves them on the narration with the big type over the top. In cyber it draws every frame itself — icons, charts, kinetic type; in stickman, the character.</span></li>
-          <li style="--c:var(--rose)"><span><b>Edit.</b> Cuts timed to the voice, animated captions, a music bed, titles, and the template's transitions.</span></li>
-          <li style="--c:var(--blue)"><span><b>Finish.</b> Encoding at 60 fps in 4K, Shorts and 16:9 alike, an automatic quality check, then the .srt file and the thumbnail, ready for YouTube.</span></li>
-        </ul>
-      </div>
-      <div class="gantt" role="figure" aria-label="Render times for a 45-second Short">
-        <div class="gantt-title"><span>Short · 45 s · 9:16 · 4K · 60 fps</span><span>one GPU machine · <b>~15 min</b> total</span></div>
-        <div class="g">
-          <div class="lab">Script<small>storyboard</small></div><div class="row"><i style="--c:var(--violet); left:0%; width:4%"></i></div>
-          <div class="lab">Voice<small>TTS + captions</small></div><div class="row"><i style="--c:var(--teal); left:4%; width:4%"></i></div>
-          <div class="lab">Clips<small>9 scenes, drawn in parallel</small></div><div class="row"><i style="--c:var(--amber); left:8%; width:56%"></i></div>
-          <div class="lab">Edit<small>ffmpeg</small></div><div class="row"><i style="--c:var(--rose); left:64%; width:12%"></i></div>
-          <div class="lab">Finish<small>encode · QA · files</small></div><div class="row"><i style="--c:var(--blue); left:76%; width:24%"></i></div>
-          <div class="axis"><span style="left:0">0</span><span style="left:20%">3</span><span style="left:40%">6</span><span style="left:60%">9</span><span style="left:80%">12</span><span style="left:100%">15<span class="unit"> min</span></span></div>
-        </div>
-        <p class="gantt-foot">A 5-minute video in 16:9 follows the same pattern and finishes in about 50 minutes. No machine sits idle waiting for work, which is what keeps a 4K video cheaper than a coffee — and the trade is that a job waits for a free machine instead of a machine waiting for jobs.</p>
-      </div>
-    </div>
-
-
-  </div>
-</section>
-
-<!-- ============ CONNECT ============ -->
-<section id="connect">
-  <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <div class="eyebrow"><span class="n">04</span>Connect</div>
-        <h2>One address, any assistant.</h2>
-      </div>
-      <p class="lede">Kleo speaks the Model Context Protocol over Streamable HTTP with OAuth: the same address works for every client, and connecting is a single button — no sign-up, no password, nothing to type. Pick yours.</p>
-    </div>
-    <p class="mono" id="mcpStatus" hidden style="color:var(--accent-text); margin:-24px 0 24px"></p>
-    <div class="connect">
-      <div class="tabs" role="tablist" aria-label="Clients">
-        <button class="tab" role="tab" aria-selected="true" data-tab="claude">Claude <span class="tk">app · web</span></button>
-        <button class="tab" role="tab" aria-selected="false" data-tab="chatgpt">ChatGPT <span class="tk">developer mode</span></button>
-        <button class="tab" role="tab" aria-selected="false" data-tab="grok">Grok <span class="tk">connectors</span></button>
-        <button class="tab" role="tab" aria-selected="false" data-tab="code">Claude Code <span class="tk">cli</span></button>
-        <button class="tab" role="tab" aria-selected="false" data-tab="cursor">Cursor <span class="tk">mcp.json</span></button>
-        <button class="tab" role="tab" aria-selected="false" data-tab="vscode">VS Code <span class="tk">mcp.json</span></button>
-        <button class="tab" role="tab" aria-selected="false" data-tab="opencode">OpenCode <span class="tk">opencode.jsonc</span></button>
-        <button class="tab" role="tab" aria-selected="false" data-tab="gemini">Gemini CLI <span class="tk">cli</span></button>
-        <button class="tab" role="tab" aria-selected="false" data-tab="other">Other clients <span class="tk">http</span></button>
-      </div>
-
-      <div>
-        <div class="panel" role="tabpanel" data-panel="claude">
-          <h3>Claude (app and web)</h3>
-          <div class="url-line">Server address <code>https://mcp.kleooai.com/mcp</code> <button class="btn btn-ghost btn-sm" data-copy="https://mcp.kleooai.com/mcp">Copy</button></div>
-          <ol>
-            <li>Open <b>Settings → Connectors</b> and choose <b>Add custom connector</b>.</li>
-            <li>Name it <b>Kleo</b>, paste the address above, and confirm. Kleo's page opens: click <b>Start free</b> and you're back in Claude.</li>
-            <li>In a new chat, turn on Kleo from the tools menu and ask: <i>Make me a 45-second Short about…</i>.</li>
-          </ol>
-          <p class="hint" style="color:var(--mute); font-size:.8125rem">Works on every Claude plan; the free plan allows one custom connector.</p>
-        </div>
-
-        <div class="panel" role="tabpanel" data-panel="chatgpt">
-          <h3>ChatGPT (Developer mode)</h3>
-          <div class="url-line">Server address <code>https://mcp.kleooai.com/mcp</code> <button class="btn btn-ghost btn-sm" data-copy="https://mcp.kleooai.com/mcp">Copy</button></div>
-          <ol>
-            <li>Open <b>Settings → Apps &amp; Connectors</b> (called <b>Connectors</b> in older versions), then <b>Advanced settings</b>, and turn on <b>Developer mode</b>.</li>
-            <li>Back in <b>Connectors</b>, choose <b>Create</b>: name it <b>Kleo</b>, paste the address, set authentication to <b>OAuth</b>, and save. Kleo's page opens: click <b>Start free</b> and you're back in ChatGPT.</li>
-            <li>In chat, turn on Kleo from the <b>+</b> menu and ask for the video. ChatGPT asks you to confirm before it starts a render.</li>
-          </ol>
-          <p class="hint" style="color:var(--mute); font-size:.8125rem">Requires ChatGPT Plus, Pro, Business, or Enterprise.</p>
-        </div>
-
-        <div class="panel" role="tabpanel" data-panel="grok">
-          <h3>Grok</h3>
-          <div class="url-line">Server address <code>https://mcp.kleooai.com/mcp</code> <button class="btn btn-ghost btn-sm" data-copy="https://mcp.kleooai.com/mcp">Copy</button></div>
-          <ol>
-            <li>On <b>grok.com</b> or in the app, open <b>Settings → Connectors</b> and choose <b>Add connector → Custom</b>.</li>
-            <li>Name it <b>Kleo</b>, paste the address, and confirm. Kleo's page opens: click <b>Start free</b> and you're back in Grok.</li>
-            <li>In chat, turn on Kleo in the connectors list and ask for the video.</li>
-          </ol>
-        </div>
-
-        <div class="panel" role="tabpanel" data-panel="code">
-          <h3>Claude Code</h3>
-          <div class="code"><span class="cm"># add Kleo once (add --scope user to have it in every project)</span>
-claude mcp add --transport http kleo https://mcp.kleooai.com/mcp
-<span class="cm"># then, inside a session:</span>
-/mcp   <span class="cm">→ Kleo → Authenticate</span><button class="btn btn-ghost btn-sm copy" data-copy="claude mcp add --transport http kleo https://mcp.kleooai.com/mcp">Copy</button></div>
-          <ol>
-            <li>Run the command above, then type <b>/mcp</b> in a session, pick <b>Kleo</b> and <b>Authenticate</b>: Kleo's page opens in your browser, click <b>Start free</b> and you're back in Claude Code.</li>
-            <li>Ask: <i>Use kleo for a 5-minute video on the history of coffee, 16:9</i>. Claude Code checks the progress for you and hands you the links.</li>
-          </ol>
-        </div>
-
-        <div class="panel" role="tabpanel" data-panel="cursor">
-          <h3>Cursor</h3>
-          <p class="lede" style="font-size:.9375rem">Create or edit <code class="mono">~/.cursor/mcp.json</code> (all projects) or <code class="mono">.cursor/mcp.json</code> inside one project.</p>
-          <div class="code">{
-  <span class="k">"mcpServers"</span>: {
-    <span class="k">"kleo"</span>: { <span class="k">"url"</span>: <span class="s">"https://mcp.kleooai.com/mcp"</span> }
-  }
-}<button class="btn btn-ghost btn-sm copy" data-copy='{&#10;  "mcpServers": {&#10;    "kleo": { "url": "https://mcp.kleooai.com/mcp" }&#10;  }&#10;}'>Copy</button></div>
-          <ol>
-            <li>Save the file: Cursor lists Kleo under <b>Settings → MCP</b>. Click <b>Connect</b> (or use a tool once): Kleo's page opens, click <b>Start free</b> and you're back in Cursor.</li>
-          </ol>
-        </div>
-
-        <div class="panel" role="tabpanel" data-panel="vscode">
-          <h3>VS Code</h3>
-          <p class="lede" style="font-size:.9375rem">Create <code class="mono">.vscode/mcp.json</code> in your workspace (or run <b>MCP: Add Server</b> from the Command Palette and paste the address).</p>
-          <div class="code">{
-  <span class="k">"servers"</span>: {
-    <span class="k">"kleo"</span>: { <span class="k">"type"</span>: <span class="s">"http"</span>, <span class="k">"url"</span>: <span class="s">"https://mcp.kleooai.com/mcp"</span> }
-  }
-}<button class="btn btn-ghost btn-sm copy" data-copy='{&#10;  "servers": {&#10;    "kleo": { "type": "http", "url": "https://mcp.kleooai.com/mcp" }&#10;  }&#10;}'>Copy</button></div>
-          <ol>
-            <li>Save the file, then click <b>Start free</b> above the server entry. VS Code opens Kleo's page: click <b>Start free</b> and you're back in VS Code.</li>
-            <li>In Copilot Chat, switch to <b>Agent</b> mode: the kleo tools appear in the tools picker.</li>
-          </ol>
-        </div>
-
-        <div class="panel" role="tabpanel" data-panel="opencode">
-          <h3>OpenCode</h3>
-          <p class="lede" style="font-size:.9375rem">Add this to <code class="mono">~/.config/opencode/opencode.jsonc</code> (global) or to <code class="mono">opencode.jsonc</code> in the project, then connect from the terminal.</p>
-          <div class="code">{
-  <span class="k">"mcp"</span>: {
-    <span class="k">"kleo"</span>: { <span class="k">"type"</span>: <span class="s">"remote"</span>, <span class="k">"url"</span>: <span class="s">"https://mcp.kleooai.com/mcp"</span>, <span class="k">"enabled"</span>: true }
-  }
-}<button class="btn btn-ghost btn-sm copy" data-copy='{&#10;  "mcp": {&#10;    "kleo": { "type": "remote", "url": "https://mcp.kleooai.com/mcp", "enabled": true }&#10;  }&#10;}'>Copy</button></div>
-          <div class="code"><span class="cm"># connect once (opens the browser)</span>
-opencode mcp auth kleo<button class="btn btn-ghost btn-sm copy" data-copy="opencode mcp auth kleo">Copy</button></div>
-          <ol>
-            <li>Save the config and run the command above: Kleo's page opens in the browser, click <b>Start free</b> and you're back in OpenCode.</li>
-            <li>Start <b>opencode</b> and ask for the video: the kleo tools are available in every session.</li>
-          </ol>
-        </div>
-
-        <div class="panel" role="tabpanel" data-panel="gemini">
-          <h3>Gemini CLI</h3>
-          <div class="code"><span class="cm"># add Kleo (add --scope user to have it in every project)</span>
-gemini mcp add --transport http kleo https://mcp.kleooai.com/mcp<button class="btn btn-ghost btn-sm copy" data-copy="gemini mcp add --transport http kleo https://mcp.kleooai.com/mcp">Copy</button></div>
-          <ol>
-            <li>Run the command above, then start <b>gemini</b> and type <b>/mcp auth kleo</b>: Kleo's page opens in your browser, click <b>Start free</b> and you're back in Gemini CLI.</li>
-            <li>Ask for the video in the session. <b>/mcp list</b> shows every kleo tool.</li>
-          </ol>
-        </div>
-
-        <div class="panel" role="tabpanel" data-panel="other">
-          <h3>Windsurf, the Gemini app, and your own agents</h3>
-          <p class="lede" style="font-size:.9375rem">Kleo is a standard MCP server over the Streamable HTTP transport with OAuth 2.1. Any compatible client connects with the same address and the same one-button start.</p>
-          <div class="url-line">Server address <code>https://mcp.kleooai.com/mcp</code> <button class="btn btn-ghost btn-sm" data-copy="https://mcp.kleooai.com/mcp">Copy</button></div>
-          <ol>
-            <li><b>Windsurf</b>: <b>Settings → MCP → Add server</b>, paste the address (its <code class="mono">mcp_config.json</code> uses the key <code class="mono">"serverUrl"</code>).</li>
-            <li><b>Gemini app</b>: <b>Settings → Connected apps → Custom apps</b>, paste the address (currently requires Google AI Pro or Ultra).</li>
-            <li>For your own agent: use an MCP SDK (Python or TypeScript) with the HTTP transport and complete the OAuth flow once.</li>
-          </ol>
-        </div>
-      </div>
-    </div>
-
-    <div class="tools">
-      <h3>What your assistant can do once Kleo is connected</h3>
-      <div class="ttable">
-        <table>
-          <thead><tr><th>Tool</th><th>What it does</th></tr></thead>
-          <tbody>
-            <tr><td>kleo_storyboard_guide</td><td>Teaches your assistant how to write the video before it asks for one: the look, the world it is drawn in, what must never appear, and one accent colour per part of the story.</td></tr>
-            <tr><td>kleo_list_templates</td><td>The ten templates with their formats, lengths, voices and cost, and the credits left on your account.</td></tr>
-            <tr><td>kleo_create_video</td><td>Starts the render, in one of five looks: <strong>cartoon</strong>, <strong>realistic</strong>, <strong>cyber</strong>, <strong>explainer</strong> or <strong>stickman</strong>. Comes back with a video number straight away, so the chat never waits.</td></tr>
-            <tr><td>kleo_wait_for_video</td><td>Holds the line while it renders and hands over the links the moment it is ready.</td></tr>
-            <tr><td>kleo_get_job</td><td>Where the render is up to: stage, percent, minutes left. Without a video number it lists your recent videos.</td></tr>
-            <tr><td>kleo_get_result</td><td>The links: MP4, .srt subtitles and thumbnail. Good for 7 days.</td></tr>
-            <tr><td>kleo_cancel_job</td><td>Stops a render and gives back the credits it had not spent.</td></tr>
-            <tr><td>kleo_account</td><td>Credits left, the link to your account page, and your Kleo key — the one string that carries the account to another browser.</td></tr>
-            <tr><td>kleo_generate_thumbnail</td><td>More thumbnail options. Not in the beta yet: every render already comes with one.</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ PRICING ============ -->
-<section id="pricing">
-  <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <div class="eyebrow"><span class="n">05</span>Pricing</div>
-        <h2>Free to start. Credits only, nothing renews.</h2>
-      </div>
-      <div><span class="draft">Live · one-off payments via Stripe</span></div>
-    </div>
-    <div class="plans two">
-      <div class="plan hi">
-        <div class="name"><span>Free</span><span class="pop">in beta</span></div>
-        <div class="price">€0<small>no sign-up, no card</small></div>
-        <ul>
-          <li>7 credits on your account the moment you connect</li>
-          <li>A film is priced by length: 1 credit = 2 seconds, 10 credits minimum (20 s = 10 · 30 s = 15 · 60 s = 30 · 90 s = 45 · 5 min = 150)</li>
-          <li>So the free credits alone do not buy a film: add the €5 pack and you have 17, a 30-second Short</li>
-          <li>No email, no password, no card, nothing to type</li>
-        </ul>
-        <a class="btn btn-primary" href="#connect">Connect and start</a>
-      </div>
-      <div class="plan">
-        <div class="name"><span>Credit packs</span><span class="pop">available now</span></div>
-        <div class="price">€5–40<small>one-off, no subscription</small></div>
-        <ul>
-          <li>€5 — 10 credits · €15 — 35 · €40 — 100</li>
-          <li>€5 + your free credits = a 30-second Short; €15 = two of them; €40 = a minute and a half of film</li>
-          <li>Kleo tells your assistant what a video costs, and what is left, every time</li>
-          <li>Available now: connect Kleo, then ask for your account page to buy the pack tied to your credits</li>
-        </ul>
-        <a class="btn btn-ghost" href="#connect">Connect to buy credits</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ FAQ ============ -->
-<section id="faq">
-  <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <div class="eyebrow"><span class="n">06</span>Frequently asked questions</div>
-        <h2>The questions everyone asks.</h2>
-      </div>
-    </div>
-    <div class="faq">
-      <div>
-        <details open>
-          <summary>What is MCP, and why do I need it?</summary>
-          <p>The Model Context Protocol is the standard that assistants like Claude and ChatGPT use to work with external tools. Kleo is one of those tools: once connected, your assistant knows how to make videos, the same way it knows how to search the web.</p>
-        </details>
-        <details>
-          <summary>How do I get access?</summary>
-          <p>You don't ask anyone. Paste the address into your assistant and press <b>Start free</b> on the page that opens: no code to request, no email and no password. 7 credits are on your account when you land back in the chat; a film costs 10 or more, so the first one needs the €5 pack from your account page. Only a limited number of new accounts go out each day while Kleo is in beta; if today's are gone the page says so, and the button works again tomorrow.</p>
-        </details>
-        <details>
-          <summary>What does a film include, and why can't I make one with the free credits?</summary>
-          <p>Full quality: 4K at 60 fps, every shot generated as real motion, narrated. One credit buys two seconds of film, ten credits minimum: a 20-second film is 10 credits (the €5 pack), a 30-second Short 15, a minute 30, five minutes 150. The 7 free credits are a head start, not a film: every shot is generated by a paid video model, and that is what the credits pay for. Add the €5 pack (10 credits) and you have 17, enough for a 30-second Short. Every video carries a small Kleo mark where a channel name would go. A failed render gives the credits back, and so does cancelling up to the halfway mark; past halfway the Short's credit is spent.</p>
-        </details>
-        <details>
-          <summary>Do I need to install anything?</summary>
-          <p>No. Paste an address into your assistant's connectors and press one button. There are no programs, plugins, keys or codes to manage.</p>
-        </details>
-        <details>
-          <summary>How long does it take?</summary>
-          <p>About 15–25 minutes for a Short, counting the time to rent the machine and let it download the renderer. A 5-minute video takes about 50 minutes, and the longest ones up to about two hours. Your assistant waits with it and hands you the links; you can always tell it to stop waiting and ask later.</p>
-        </details>
-        <details>
-          <summary>What quality do I get?</summary>
-          <p>An MP4 at 60 fps — 2160×3840 for Shorts, 1920×1080 for 16:9 — with H.264 video, AAC audio, a separate .srt file and a thumbnail. Ready to upload as it is. Every video carries a small Kleo mark where a channel name would go; you cannot change it yet.</p>
-        </details>
-      </div>
-      <div>
-        <details>
-          <summary>Can I use my own voice, logo, and clips?</summary>
-          <p>Not yet, and there is no date. Your own voice, logo and clips are on the list, not in the product.</p>
-        </details>
-        <details>
-          <summary>Who owns the video?</summary>
-          <p>You do. Publish it, monetize it, edit it. Kleo keeps the files for 7 days so you can download them, then deletes them.</p>
-        </details>
-        <details>
-          <summary>Which models do you use?</summary>
-          <p>The storyboard is written by a language model on Cloudflare Workers AI, an open neural voice (Kokoro) narrates it in English or Italian, speech recognition aligns the captions, and Kleo's own engine draws the scenes. Kleo never trains anything on your prompts or your files, and keeps them only as long as the video.</p>
-        </details>
-        <details>
-          <summary>Can I use Kleo from Claude and ChatGPT at the same time?</summary>
-          <p>Yes. In the same browser it is one account and one pot of credits, so a second assistant costs you nothing. A different browser — another computer, or a private window — is a new account, unless you carry your Kleo key across: ask your assistant and it will show you.</p>
-        </details>
-        <details>
-          <summary>Does it work with Grok or the Gemini app?</summary>
-          <p>Yes. Grok accepts custom connectors on grok.com and in the app; the Gemini app accepts them on Google AI Pro or Ultra, and Gemini CLI accepts them everywhere. Claude, ChatGPT, Claude Code, Cursor, VS Code, OpenCode, and Windsurf all use the same address.</p>
-        </details>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ ACCOUNT ============ -->
-<section class="cta" id="account">
-  <div class="wrap">
-    <div>
-      <div class="eyebrow"><span class="n">07</span>Account</div>
-      <h2>There is nothing to sign up for.</h2>
-      <p class="lede" style="margin-top:14px">Paste the address into your assistant, press one button, ask for a video. No email, no password, no code to type; 7 credits on us, and the first film from €5. The account lives in the browser you connected from, so a second assistant in the same browser lands on the same credits.</p>
-      <p class="lede" style="margin-top:14px; font-size:.9375rem">When that film is made, your assistant hands you a link to your account page. Moving to another computer? Ask it for your Kleo key and paste it on the way in.</p>
-    </div>
-    <div>
-      <div class="url-line">Server address <code>https://mcp.kleooai.com/mcp</code> <button class="btn btn-ghost btn-sm" data-copy="https://mcp.kleooai.com/mcp">Copy</button></div>
-      <div class="cta-row" style="margin-top:16px">
-        <a class="btn btn-primary" href="#connect">See the steps for my assistant</a>
-      </div>
-    </div>
-  </div>
-</section>
-
+  </section>
+  <section id="faq" class="section">
+    <h2>Before your first film.</h2>
+    <details>
+      <summary>What does Kleo actually create?</summary>
+      <p>One kind of video: a complete narrated film, in a realistic look (generated live-action footage) or an animation
+        look (a 2D animated film). With your assistant it writes the treatment and the storyboard, generates every shot as
+        moving footage, narrates it and renders an MP4. You get a download link in the assistant, good for 7 days.</p>
+    </details>
+    <details>
+      <summary>How long can a film be?</summary>
+      <p>From 15 seconds to 5 minutes. Choose 16:9 for YouTube or 9:16 for a vertical Short; both render at 4K (3840×2160
+        or 2160×3840) and 60 fps.</p>
+    </details>
+    <details>
+      <summary>Is the first film free?</summary>
+      <p>Connecting gives you 7 starter credits, with no card. A film costs at least 10 credits (1 credit = 2 seconds), so
+        the starter balance alone does not cover one. Add the €5 pack of 10 credits and a new account has 17: a 30-second
+        Short costs 15.</p>
+    </details>
+    <details>
+      <summary>Does Kleo include narration, music and captions?</summary>
+      <p>One narrator, in English or Italian. No background music, no captions and no on-screen text in the film; add
+        those in your editor if your platform needs them.</p>
+    </details>
+    <details>
+      <summary>Will Kleo publish to my channel automatically?</summary>
+      <p>No. Kleo hands your assistant a link to the finished MP4; you review it, download it and upload it yourself.
+        Kleo never posts to YouTube, TikTok or any other channel.</p>
+    </details>
+    <p><a class="text-link" href="/faq/">Read all the answers →</a></p>
+  </section>
+  <section id="account" class="section">
+    <h2>Your account travels with you.</h2>
+    <p>Ask your assistant for your Kleo account page: it shows your credits and the checkout links for the packs. The
+      account is tied to a private Kleo key — whoever has it owns the account — so keep it to yourself.</p>
+  </section>
+</main>
 <footer>
-  <div class="wrap">
-    <div class="foot-brand">
-      <a class="brand" href="#top" aria-label="Kleo, home"><svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
-        <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
-        <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
-      </svg> Kleo</a>
-      <span>A video studio that lives in your chat.</span>
-    </div>
-    <div class="links">
-      <a href="#connect">Connect</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#faq">FAQ</a>
+  <div class="wrap footer-grid">
+    <div>
+      <a class="logo" href="/">Kleo<span>AI</span></a>
+      <p>Human direction. Agent-made films.</p>
       <a href="mailto:kleooai@gmail.com">kleooai@gmail.com</a>
-      <a href="#top">Back to top</a>
+    </div>
+    <div>
+      <a href="/connect/">Connect</a>
+      <a href="/integrations/claude/">Kleo with Claude</a>
+      <a href="/integrations/chatgpt/">Kleo with ChatGPT</a>
+      <a href="/video-generation-mcp/">MCP documentation</a>
+      <a href="/ai-youtube-video-generator/">YouTube videos</a>
+    </div>
+    <div>
+      <a href="/about/">About Kleo</a>
+      <a href="/styles.html">Film looks</a>
+      <a href="/examples/">Examples</a>
+      <a href="/pricing/">Pricing</a>
+      <a href="/faq/">FAQ</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a href="https://github.com/tonnooooo/kleo-mcp">GitHub</a>
     </div>
   </div>
+  <div class="wrap footnote">© 2026 Kleo · kleooai.com <span>Human intelligence. Agent production.</span></div>
 </footer>
-
-<div class="toast" id="toast" role="status" aria-live="polite">Copied</div>
-
-<script>
-(function(){
-  'use strict';
-
-  /* The address written into the markup. config.json still overrides it at load
-     time, so the server moves by editing config.json alone — but a reader whose
-     JavaScript never runs now sees an address that actually answers. */
-  var SHIPPED = "https://mcp.kleooai.com/mcp";
-
-  /* ---------- old Italian anchors, kept working ----------
-     #come #connetti #prezzi #quinte were the section ids until the site went fully English. They are in links that
-     have already been shared, so they are translated once on arrival instead of dropping the visitor at the top. */
-  var MOVED = { come:'how', connetti:'connect', prezzi:'pricing', quinte:'engine' };
-  function followMoved(){
-    var was = (location.hash || '').slice(1);
-    if (!MOVED[was]) return;
-    var el = document.getElementById(MOVED[was]);
-    if (!el) return;
-    history.replaceState(null, '', '#' + MOVED[was]);
-    el.scrollIntoView();
-  }
-  window.addEventListener('hashchange', followMoved);
-  // followMoved() is NOT called here. The templates grid below is empty in the markup and is filled by this same
-  // script further down; scrolling before that happens aims at a page that is about to grow by ten cards, and lands
-  // two screens above the section the link promised. The one call lives right after the grid is built.
-
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  /* ---------- hero: render loop ---------- */
-  var stages = [
-    {pct:6,   status:'Writing the storyboard · hook in the first 2 seconds', track:0},
-    {pct:14,  status:'Synthesizing the voice · aligning the captions', track:1},
-    {pct:40,  status:'Drawing the scenes · 3 of 9 · ~8 min left', track:2},
-    {pct:64,  status:'Drawing the scenes · 6 of 9 · ~5 min left', track:2},
-    {pct:78,  status:'Cutting to the voice · captions · music', track:3},
-    {pct:94,  status:'Encoding · 2160×3840 · 60 fps · quality check', track:4},
-    {pct:100, status:'Done · 14 min 20 s', done:true}
-  ];
-  var tracks = Array.prototype.slice.call(document.querySelectorAll('#tracks .track'));
-  var fill = document.getElementById('renderFill'), pctEl = document.getElementById('renderPct'),
-      statusEl = document.getElementById('renderStatus'), result = document.getElementById('result'),
-      toolState = document.getElementById('toolState');
-  function paint(s){
-    fill.style.width = s.pct + '%'; pctEl.textContent = s.pct + '%'; statusEl.textContent = s.status;
-    tracks.forEach(function(t,i){
-      t.classList.remove('done','active');
-      if (s.done || i < s.track) t.classList.add('done'); else if (i === s.track) t.classList.add('active');
-    });
-    result.hidden = !s.done;
-    toolState.textContent = s.done ? 'done' : 'running';
-    toolState.classList.toggle('done', !!s.done);
-  }
-  if (reduce) { paint(stages[stages.length-1]); }
-  else {
-    var i = 3; paint(stages[i]);
-    setInterval(function(){ i = (i + 1) % stages.length; paint(stages[i]); }, 2400);
-  }
-
-  /* ---------- templates + sketches ---------- */
-  var T = [
-    {id:'story-documentary', name:'Story / Documentary', fmt:'16:9', dur:'5–12 min',
-     desc:'Calm narration over generated scenes, chapter titles, and a date or a map when it helps.',
-     prompt:'Make an 8-minute documentary on the disappearance of the Maya, calm tone, male voice.', sk:'doc'},
-    {id:'top-10', name:'Top 10', fmt:'16:9', dur:'6–10 min',
-     desc:'A countdown from #10 to #1, one scene per entry, the rank in the chapter label, a hard cut on every place.',
-     prompt:'Top 10 inventions that changed the world, fast pace, countdown on screen.', sk:'top'},
-    {id:'viral-short', name:'Viral Short', fmt:'9:16', dur:'30–60 s',
-     desc:'Hook in the first two seconds, big word-by-word subtitles, a new picture every two or three seconds.',
-     prompt:'A 45-second Short about a wild pirate fact, big subtitles, a strong hook.', sk:'short'},
-    {id:'reddit-story', name:'Reddit Story', fmt:'9:16', dur:'45–90 s',
-     desc:'The post read out loud, one drawn scene per turn of the story, big subtitles all the way through.',
-     prompt:'Tell this story as a Short: [paste the post]. Female voice, one scene per turn.', sk:'reddit'},
-    {id:'motivational', name:'Motivational', fmt:'9:16', alt:'16:9', dur:'30–90 s',
-     desc:'Centred lines that land one at a time, wide generated scenes, a quiet music bed under all of it.',
-     prompt:'Motivational Short about discipline, three lines that build, end on a question.', sk:'quote'},
-    {id:'explainer', name:'Explainer / Tutorial', fmt:'16:9', dur:'4–8 min',
-     desc:'Diagrams that build as the voice explains, with a recap at the end.',
-     prompt:'Explain how an MCP server works in 5 minutes, with animated diagrams and a hands-on example.', sk:'diagram'},
-    {id:'weekly-news', name:'Weekly News', fmt:'16:9', dur:'3–5 min',
-     desc:'Four stories, each with its source named in the narration, hard cuts between segments.',
-     prompt:'Recap of this week\'s AI news, newscast style, 4 stories with sources.', sk:'news'},
-    {id:'cinematic-trailer', name:'Cinematic Trailer', fmt:'16:9', dur:'60–90 s',
-     desc:'Terse lines, title cards between scenes, and the title reveal held back to the end.',
-     prompt:'Trailer for a film about pirates in space, ominous tone, title card at the end.', sk:'trailer'},
-    {id:'product-review', name:'Product Review', fmt:'16:9', dur:'4–6 min',
-     desc:'The product scene by scene, what is good and what is not, and the verdict last.',
-     prompt:'Review of an imaginary €300 drone: pros and cons on screen, final score out of 10.', sk:'review'},
-    {id:'did-you-know', name:'Did You Know', fmt:'9:16', dur:'20–40 s',
-     desc:'One fact per scene, karaoke subtitles, a new picture on every sentence.',
-     prompt:'5 facts about octopuses in 30 seconds, karaoke subtitles, fast and upbeat voice.', sk:'facts'}
-  ];
-
-  /* sketch primitives, in 0–100 frame coordinates */
-  function sk(t){
-    var W = t.fmt === '9:16' ? 99 : 300, H = t.fmt === '9:16' ? 176 : 169;
-    var px = function(v){ return (v/100*W).toFixed(1); }, py = function(v){ return (v/100*H).toFixed(1); };
-    var o = [];
-    function rect(x,y,w,h,cls,rx){ o.push('<rect class="'+cls+'" x="'+px(x)+'" y="'+py(y)+'" width="'+px(w)+'" height="'+py(h)+'" rx="'+(rx||2)+'"/>'); }
-    function img(x,y,w,h){ rect(x,y,w,h,'sk-img',3);
-      o.push('<path class="sk-x" d="M'+px(x)+' '+py(y)+' L'+px(x+w)+' '+py(y+h)+' M'+px(x+w)+' '+py(y)+' L'+px(x)+' '+py(y+h)+'"/>'); }
-    function lines(x,y,w,n,cls,h,gap){ h=h||3; gap=gap||2.4; for(var i=0;i<n;i++){ var ww = i===n-1 ? w*0.62 : w; rect(x,y+i*(h+gap),ww,h,cls||'sk-txt',1.2);} }
-    function cap(x,y,w,h){ rect(x,y,w,h,'sk-cap',2); }
-    function wave(x,y,w,h,n){ n=n||18; var bw = w/n*0.55; for(var i=0;i<n;i++){ var a = 0.25+0.75*Math.abs(Math.sin(i*1.7+ (t.id.length))); rect(x+i*(w/n), y+h*(1-a)/2, bw, h*a, 'sk-wave', .8);} }
-    function circ(x,y,r,cls){ o.push('<circle class="'+cls+'" cx="'+px(x)+'" cy="'+py(y)+'" r="'+r+'"/>'); }
-    function box(x,y,w,h){ rect(x,y,w,h,'sk-box',2); }
-    function arrow(x1,y1,x2,y2){ o.push('<path class="sk-line" d="M'+px(x1)+' '+py(y1)+' L'+px(x2)+' '+py(y2)+'"/>'); }
-
-    rect(0,0,100,100,'sk-frame',4);
-    switch(t.sk){
-      case 'doc':     img(0,0,100,100); rect(6,8,22,4,'sk-bar',1); lines(6,80,40,2,'sk-txt',3.5,2.5); wave(60,86,34,8); break;
-      case 'top':     img(0,0,100,100); rect(5,8,18,26,'sk-num',2); lines(28,12,30,2,'sk-txt',4,3); cap(20,80,60,8); break;
-      case 'short':   img(0,0,100,100); rect(12,6,76,5,'sk-bar',1.5); cap(10,58,80,7); cap(18,68,64,7); cap(26,78,48,7); break;
-      case 'reddit':  rect(8,7,84,30,'sk-bar',2); circ(15,13,3,'sk-num'); lines(21,11,60,1,'sk-mute',2.6,2); lines(12,19,74,3,'sk-mute',2.2,2);
-                      img(0,42,100,58); cap(14,86,72,6); break;
-      case 'quote':   img(0,0,100,100); lines(18,38,64,3,'sk-cap',4.5,3.5); rect(40,60,20,1.2,'sk-bar',.6); circ(50,90,3,'sk-bar'); break;
-      case 'diagram': box(8,28,22,22); box(39,28,22,22); box(70,28,22,22); arrow(30,39,39,39); arrow(61,39,70,39);
-                      lines(8,66,84,2,'sk-txt',3,2.4); rect(6,8,30,4,'sk-bar',1); break;
-      case 'news':    img(0,0,100,100); rect(0,72,100,16,'sk-bar',0); rect(4,74,18,12,'sk-num',1); lines(25,75,60,2,'sk-mute',3.6,2.2);
-                      rect(78,8,16,6,'sk-cap',1); break;
-      case 'trailer': rect(0,0,100,100,'sk-bar',4); img(0,17,100,66); lines(30,44,40,1,'sk-cap',5,0); break;
-      case 'review':  img(28,10,44,64); box(4,14,20,44); lines(6,18,15,4,'sk-txt',2.2,2.4); box(76,14,20,44); lines(78,18,15,4,'sk-num',2.2,2.4);
-                      rect(28,80,44,10,'sk-bar',2); rect(30,82,26,6,'sk-cap',1.5); break;
-      case 'facts':   img(0,0,100,100); rect(12,8,76,6,'sk-num',1.5); cap(10,62,80,6); cap(10,70,56,6); wave(10,86,80,7,14); break;
-    }
-    return '<svg viewBox="-1 -1 '+(W+2)+' '+(H+2)+'" width="'+W+'" height="'+H+'" role="img" aria-label="Frame sketch: '+t.name+'">'+o.join('')+'</svg>';
-  }
-
-  var grid = document.getElementById('grid');
-  grid.innerHTML = T.map(function(t){
-    return '<article class="card" data-fmt="'+t.fmt+(t.alt ? ' '+t.alt : '')+'">'+
-      '<div class="sketch">'+sk(t)+'<span class="fmt">'+t.fmt+(t.alt ? ' · '+t.alt : '')+'</span></div>'+
-      '<div class="card-body">'+
-        '<h3>'+t.name+'</h3>'+
-        '<div class="meta"><span>length <b>'+t.dur+'</b></span><span>output <b>'+'4K'+' · 60 fps</b></span></div>'+
-        '<p>'+t.desc+'</p>'+
-        '<div class="prompt"><span class="lab">Try saying</span><q>'+t.prompt+'</q></div>'+
-      '</div></article>';
-  }).join('');
-
-  // The page is now its full height, so an old anchor can be honoured without landing in the middle of the grid.
-  followMoved();
-
-  var chips = Array.prototype.slice.call(document.querySelectorAll('.filters .chip'));
-  chips.forEach(function(c){
-    c.addEventListener('click', function(){
-      chips.forEach(function(x){ x.setAttribute('aria-pressed', x===c ? 'true' : 'false'); });
-      var f = c.getAttribute('data-filter');
-      Array.prototype.forEach.call(grid.children, function(card){ card.hidden = !(f==='all' || card.getAttribute('data-fmt').split(' ').indexOf(f) >= 0); });
-    });
-  });
-
-  /* ---------- connect tabs ---------- */
-  var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
-  var panels = Array.prototype.slice.call(document.querySelectorAll('.panel'));
-  // The panels ship VISIBLE so the page still explains every client with JavaScript switched off; this collapses
-  // them to the selected one the moment the script runs. Hiding them in the markup instead would leave eight of the
-  // nine connection guides unreachable for a reader who never gets the script.
-  function show(id){
-    tabs.forEach(function(x){ x.setAttribute('aria-selected', x.getAttribute('data-tab') === id ? 'true' : 'false'); });
-    panels.forEach(function(p){ p.hidden = p.getAttribute('data-panel') !== id; });
-  }
-  show((tabs[0] && tabs[0].getAttribute('data-tab')) || 'claude');
-  // Wire the pattern the roles promise: every tab names the panel it controls, only the selected tab is in the tab
-  // order, and left/right move between them — which is what a screen reader user expects the moment it hears "tab".
-  tabs.forEach(function(tb){
-    var id = tb.getAttribute('data-tab');
-    tb.id = 'tab-' + id;
-    tb.setAttribute('aria-controls', 'panel-' + id);
-    tb.tabIndex = tb.getAttribute('aria-selected') === 'true' ? 0 : -1;
-  });
-  panels.forEach(function(p){
-    var id = p.getAttribute('data-panel');
-    p.id = 'panel-' + id;
-    p.setAttribute('aria-labelledby', 'tab-' + id);
-    p.tabIndex = 0;
-  });
-  var list = document.querySelector('.tabs');
-  if (list) list.addEventListener('keydown', function(e){
-    var i = tabs.indexOf(document.activeElement);
-    if (i < 0) return;
-    var to = e.key === 'ArrowRight' || e.key === 'ArrowDown' ? i + 1
-           : e.key === 'ArrowLeft'  || e.key === 'ArrowUp'   ? i - 1
-           : e.key === 'Home' ? 0 : e.key === 'End' ? tabs.length - 1 : -1;
-    if (to < 0 && to !== 0) return;
-    e.preventDefault();
-    var next = tabs[(to + tabs.length) % tabs.length];
-    next.focus(); next.click();
-  });
-
-  // [copy] Eleven buttons all read "Copy" on their own. Each one says what it copies, taken from the panel it sits in.
-  Array.prototype.forEach.call(document.querySelectorAll('[data-copy]'), function(b){
-    if (b.getAttribute('aria-label')) return;
-    var panel = b.closest && b.closest('.panel');
-    var what = panel && panel.querySelector('h3') ? panel.querySelector('h3').textContent.trim() : 'Kleo';
-    var v = b.getAttribute('data-copy') || '';
-    b.setAttribute('aria-label', /^https?:/.test(v) ? 'Copy the Kleo server address' : 'Copy the ' + what + ' snippet');
-  });
-  tabs.forEach(function(tb){
-    tb.addEventListener('click', function(){
-      show(tb.getAttribute('data-tab'));
-      tabs.forEach(function(x){ x.tabIndex = x === tb ? 0 : -1; });
-      // on a phone the picker is one row you swipe: bring the chosen pill fully into it
-      if (list && list.scrollWidth > list.clientWidth && tb.scrollIntoView) tb.scrollIntoView({block:'nearest', inline:'nearest'});
-    });
-  });
-  // that row fades at its right edge while there is more to see
-  var more = function(){ if (list.scrollWidth - list.clientWidth - list.scrollLeft > 4) list.setAttribute('data-more', ''); else list.removeAttribute('data-more'); };
-  if (list) { list.addEventListener('scroll', more, {passive:true}); window.addEventListener('resize', more); more(); }
-
-  /* ---------- the menu button, where the links are folded away (phones and narrow tablets) ---------- */
-  var nav = document.querySelector('.nav'), navToggle = document.querySelector('.nav-toggle');
-  if (nav && navToggle) {
-    var setMenu = function(open){
-      nav.classList.toggle('open', open);
-      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Menu');
-    };
-    navToggle.addEventListener('click', function(){ setMenu(!nav.classList.contains('open')); });
-    // a link chosen from the menu closes it, and so does a tap anywhere else or the Escape key
-    nav.addEventListener('click', function(e){ if (e.target.closest && e.target.closest('a')) setMenu(false); });
-    var outside = function(e){ if (nav.classList.contains('open') && !nav.contains(e.target)) setMenu(false); };
-    document.addEventListener('click', outside);
-    if ('PointerEvent' in window) document.addEventListener('pointerdown', outside);   // iOS fires no click on plain page areas
-    document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && nav.classList.contains('open')) { setMenu(false); navToggle.focus(); } });
-  }
-
-  /* ---------- live MCP address from config.json ---------- */
-  fetch('config.json', {cache:'no-store'}).then(function(r){ return r.ok ? r.json() : null; }).then(function(cfg){
-    if(!cfg || !cfg.mcp_url) return;
-    var ph = SHIPPED, live = cfg.mcp_url;
-    if (ph === live) return;   // the markup already ships the live address: nothing to rewrite
-    document.querySelectorAll('[data-copy]').forEach(function(b){ b.setAttribute('data-copy', b.getAttribute('data-copy').split(ph).join(live)); });
-    var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT), n;
-    while((n = walker.nextNode())){ if(n.nodeValue.indexOf(ph) !== -1) n.nodeValue = n.nodeValue.split(ph).join(live); }
-    var note = document.getElementById('mcpStatus'); if(note){ note.textContent = cfg.note || ''; note.hidden = !cfg.note; }
-  }).catch(function(){});
-
-  /* ---------- reveal on scroll ---------- */
-  if (!reduce && 'IntersectionObserver' in window) {
-    var els = document.querySelectorAll('.sec-head, .step, .card, .plan, .gantt, .bts > div:first-child, .tools, .connect, .faq > div, .cta .wrap > div');
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(en){ if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
-    }, {rootMargin:'0px 0px -8% 0px', threshold:.08});
-    Array.prototype.forEach.call(els, function(el, i){
-      // What is already on screen is shown at once: the animation is for what scrolls in, never a gate on reading.
-      if (el.getBoundingClientRect().top < window.innerHeight) return;
-      el.setAttribute('data-reveal',''); el.style.setProperty('--d', ((i % 4) * 70) + 'ms'); io.observe(el);
-    });
-  }
-
-  /* ---------- copy ---------- */
-  var toast = document.getElementById('toast'), tt;
-  function say(msg){ toast.textContent = msg; toast.classList.add('show'); clearTimeout(tt); tt = setTimeout(function(){ toast.classList.remove('show'); }, 1600); }
-  document.addEventListener('click', function(e){
-    var b = e.target.closest && e.target.closest('[data-copy]'); if(!b) return;
-    var txt = b.getAttribute('data-copy');
-    function ok(){ say('Copied'); if (b.tagName === 'BUTTON' && !b.dataset.was) { b.dataset.was = b.textContent; b.textContent = 'Copied ✓'; setTimeout(function(){ b.textContent = b.dataset.was; delete b.dataset.was; }, 1500); } }
-    try { navigator.clipboard.writeText(txt).then(ok, function(){ say('Copy it by hand: ' + txt); }); }
-    catch(err){ say('Copy it by hand: ' + txt); }
-  });
-
-  /* ---------- the small things ---------- */
-  // a hairline at the top that fills as you read
-  var prog = document.getElementById('progress');
-  function onScroll(){ var h = document.documentElement.scrollHeight - window.innerHeight; prog.style.setProperty('--p', h > 0 ? Math.min(1, window.scrollY / h) : 0); }
-  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
-
-  // the REC line carries a real camera timecode, counting frames at 60 fps since you arrived
-  var tcode = document.getElementById('tcode'), t0 = performance.now();
-  function pad(n){ return (n < 10 ? '0' : '') + n; }
-  function tick(now){
-    var f = Math.floor((now - t0) / 1000 * 60);
-    tcode.textContent = pad(Math.floor(f / 216000) % 24) + ':' + pad(Math.floor(f / 3600) % 60) + ':' + pad(Math.floor(f / 60) % 60) + ':' + pad(f % 60);
-    requestAnimationFrame(tick);
-  }
-  if (!reduce) requestAnimationFrame(tick);
-
-  // the chat window shows your clock, like a real one would
-  var clock = document.getElementById('demoClock');
-  function setClock(){ var d = new Date(); clock.textContent = pad(d.getHours()) + ':' + pad(d.getMinutes()); clock.hidden = false; }
-  setClock(); setInterval(setClock, 20000);
-
-  // the numbers under the hero count up to their value
-  if (!reduce) Array.prototype.forEach.call(document.querySelectorAll('.stats dd'), function(dd){
-    var tpl = dd.textContent, parts = tpl.split(/(\d+)/), start;
-    function frame(now){
-      if (!start) start = now;
-      var k = Math.min(1, (now - start) / 1100), e = 1 - Math.pow(1 - k, 3);
-      dd.textContent = parts.map(function(x, i){ return i % 2 ? Math.round(parseInt(x, 10) * e) : x; }).join('');
-      if (k < 1) requestAnimationFrame(frame); else dd.textContent = tpl;
-    }
-    setTimeout(function(){ requestAnimationFrame(frame); }, 500);
-  });
-
-  // a warm spot follows the pointer across cards
-  Array.prototype.forEach.call(document.querySelectorAll('.card, .plan, .panel, .gantt'), function(el){
-    el.classList.add('glow-host');
-    el.addEventListener('pointermove', function(e){ var r = el.getBoundingClientRect(); el.style.setProperty('--mx', (e.clientX - r.left) + 'px'); el.style.setProperty('--my', (e.clientY - r.top) + 'px'); });
-  });
-
-  // when you leave the tab, the title waits for you
-  var title = document.title;
-  document.addEventListener('visibilitychange', function(){ document.title = document.hidden ? '▶ Your video is waiting · Kleo' : title; });
-})();
-</script>
+<p id="copy-status" class="copy-status" role="status" aria-live="polite"></p>
 </body>
 </html>
