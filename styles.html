@@ -71,10 +71,20 @@
   .style-facts span{font-size:.9375rem;color:var(--ink)}
   .style-say{font-family:var(--font-mono);font-size:.8125rem;line-height:1.55;background:var(--bg-2);border:1px solid var(--line);
     border-left:3px solid var(--c, var(--amber));border-radius:var(--r-s);padding:12px 16px;color:var(--ink-2);max-width:60ch;margin:0}
+  /* ---- a look shown as 16:9 films: one or two players stacked, wider than the phone column ---- */
+  .style-row.wide,.style-row.wide:nth-child(even){grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}
+  .style-films{display:grid;gap:22px;min-width:0}
+  .style-row:nth-child(even) .style-films{order:2}
+  .style-media.wide{aspect-ratio:16/9;border-radius:22px}
+  .style-row.wide .style-media{--ry:0deg}
+  .film-cap{display:flex;justify-content:space-between;gap:12px;align-items:baseline;margin:10px 4px 0;font:500 .72rem var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+  .film-cap b{font-weight:500;color:var(--ink-2)}
+  .style-films .film{min-width:0}
   @media (max-width:860px){
-    .style-row,.style-row:nth-child(even){grid-template-columns:1fr;gap:28px;padding:48px 0}
-    .style-row:nth-child(even) .style-media{order:0}
+    .style-row,.style-row:nth-child(even),.style-row.wide,.style-row.wide:nth-child(even){grid-template-columns:1fr;gap:28px;padding:48px 0}
+    .style-row:nth-child(even) .style-media,.style-row:nth-child(even) .style-films{order:0}
     .style-media{max-width:300px;--ry:0deg !important}
+    .style-media.wide{max-width:none}
     .style-facts{grid-template-columns:1fr}
     .style-facts li{border-right:0;border-bottom:1px solid var(--line);padding:12px 0}
     .style-facts li + li{padding-left:0}
@@ -175,23 +185,32 @@
       </div>
     </article>
 
-    <article class="style-row" id="realistic" style="--c:var(--teal)">
-      <div class="style-media">
-        <video src="samples/realistic.mp4" poster="samples/realistic.jpg" muted loop playsinline preload="none"
-               controls aria-label="Realistic sample: life on the space station"></video>
-        <span class="style-live" aria-hidden="true"><i></i>Playing</span>
+    <article class="style-row wide" id="realistic" style="--c:var(--teal)">
+      <div class="style-films">
+        <div class="film">
+          <div class="style-media wide">
+            <video src="samples/realistic-tether.mp4" poster="samples/realistic-tether.jpg" muted loop playsinline preload="none"
+                   controls aria-label="Realistic sample, Tether: one unbroken pull-back from an astronaut's face inside his helmet to the station he is tethered to"></video>
+            <span class="style-live" aria-hidden="true"><i></i>Playing</span>
+          </div>
+          <div class="film-cap"><b>Tether</b><span>20 s · one shot · 4K 60 fps, shown at 1080p</span></div>
+        </div>
       </div>
       <div>
         <div class="style-n">02 · look</div>
         <div class="style-name"><h2>Realistic</h2><button class="style-arg" data-copy='style: "realistic"' aria-label="Copy the realistic style argument">style: "realistic"</button></div>
-        <p class="style-lead">The same shape with a cinematic photo look: 35 mm light, real depth, condensed
-          uppercase titles with an accent underline. It reads like a documentary trailer rather than a cartoon.</p>
+        <p class="style-lead">Footage, not pictures: every shot is generated as moving video and the camera really moves.
+          <i>Tether</i> is one unbroken pull-back. It opens inside the helmet, on the astronaut's face and his breath on the
+          glass; a gloved hand comes up, the visor floods red, and the camera keeps backing away as he drifts, arms open,
+          until the gold line running up from his pack meets the station and its solar arrays. Skin, cloth, glass and
+          light hold together for the whole move. Nothing is written on the frame and there is no music: this one has no
+          words at all, only his breathing and a low hum.</p>
         <ul class="style-facts">
-          <li><b>Best for</b><span>Products, places, news, sport, documentaries</span></li>
-          <li><b>Format</b><span>9:16 and 16:9</span></li>
-          <li><b>Pictures</b><span>Up to 24 in a Short</span></li>
+          <li><b>Output</b><span>4K · 60 fps, 16:9 for YouTube or 9:16 for a Short</span></li>
+          <li><b>Footage</b><span>Generated motion in every shot, no stills, no zoomed photos</span></li>
+          <li><b>On the frame</b><span>No captions, no titles, no music, one narrator or none</span></li>
         </ul>
-        <p class="style-say">“A 35 second Short about life on the space station, realistic look.”</p>
+        <p class="style-say">“A 20-second film, 16:9: one continuous pull-back from an astronaut's face inside his helmet to the station he's tethered to. No words, just his breathing.”</p>
       </div>
     </article>
 
