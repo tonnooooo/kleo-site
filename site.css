@@ -159,6 +159,8 @@ h1 .hl{
 .btn .arr{display:inline-block; transition:transform .25s cubic-bezier(.2,.7,.2,1)}
 .btn:hover .arr{transform:translateX(3px)}
 
+.free-line{margin:18px 0 0; font-size:.9375rem; color:var(--mute); max-width:56ch; text-wrap:pretty}
+.free-line b{color:var(--ink); font-weight:600}
 /* the numbers strip that closes the hero */
 .stats{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:24px; margin:88px 0 0; padding:30px 0 40px; border-top:1px solid var(--line)}
 .stats div{display:grid; gap:8px}
