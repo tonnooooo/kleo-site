@@ -1,0 +1,34 @@
+name: publish-x
+# Manual: Actions → publish-x → Run workflow. Posts one film with its text to @kleooai.
+on:
+  workflow_dispatch:
+    inputs:
+      video_url:
+        description: Public MP4 URL (leave empty for a text-only post)
+        required: false
+        default: https://kleooai.com/samples/realistic-tether.mp4
+      text:
+        description: Post text (max 280 chars)
+        required: true
+      dry_run:
+        description: Only validate, do not post
+        type: boolean
+        default: false
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: >-
+          node scripts/publish-x.mjs
+          --video "${{ inputs.video_url }}"
+          --text "${{ inputs.text }}"
+          ${{ inputs.dry_run && '--dry-run' || '' }}
+        env:
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
