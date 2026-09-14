@@ -1,8 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.remove("no-js")</script>
 <title>Styles · Kleo</title>
 <meta name="description" content="Kleo renders the same idea in four looks: cartoon, realistic, cinema and stickman. Every scene is cut into shots and the pictures are drawn for your topic.">
 <link rel="icon" href="brand/kleo-favicon.svg" type="image/svg+xml">
@@ -119,6 +120,21 @@
   @media (max-width:600px){ .shots{grid-template-columns:1fr} .shot .frame{display:none} }
   .scene-foot{color:var(--mute);font-size:.9375rem;margin:28px 0 0;max-width:62ch}
   @media (prefers-reduced-motion: reduce){ .style-media{transition:none;transform:none} .shot .frame svg{transition:none} .style-live i{animation:none} }
+
+  /* ---- phone: the page-level rules live in site.css; these are the ones this page owns ---- */
+  @media (max-width:820px){ .style-media{margin:0 auto} }
+  @media (hover:none){ .style-arg:hover{transform:none} }
+  @media (max-width:600px){
+    .styles-hero{padding:56px 0 40px}
+    .styles-hero h1{font-size:clamp(2.2rem,10.5vw,2.8rem)}
+    .styles-hero p{font-size:1.0625rem}
+    .looks{margin-top:22px}
+    .look{padding:10px 14px 10px 12px}
+    .style-row:first-of-type{padding-top:8px}
+    .style-arg{padding:11px 14px}
+    .film-cap{flex-wrap:wrap;gap:4px 12px}
+    .line-foot button{padding:10px 14px}
+  }
 </style>
 </head>
 <body>
@@ -133,7 +149,11 @@
       </svg>
       Kleo <span class="tag">MCP</span>
     </a>
-    <div class="nav-links">
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-menu">
+      <svg class="bars" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 5h14M2 9h14M2 13h14"/></svg>
+      <svg class="x" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 4l10 10M14 4L4 14"/></svg>
+    </button>
+    <div class="nav-links" id="site-menu">
       <a href="index.html#how">How it works</a>
       <a href="index.html#template">Templates</a>
       <a href="styles.html" aria-current="page">Styles</a>
@@ -375,6 +395,23 @@
   if ('IntersectionObserver' in window) {
     new IntersectionObserver(function(en){ if (en[0].isIntersecting && !played) { played = true; play(); } }, {threshold:.35}).observe(scene);
   } else play();
+
+  /* ---------- the menu button, where the links are folded away (phones and narrow tablets) ---------- */
+  var nav = document.querySelector('.nav'), navToggle = document.querySelector('.nav-toggle');
+  if (nav && navToggle) {
+    var setMenu = function(open){
+      nav.classList.toggle('open', open);
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Menu');
+    };
+    navToggle.addEventListener('click', function(){ setMenu(!nav.classList.contains('open')); });
+    // a link chosen from the menu closes it, and so does a tap anywhere else or the Escape key
+    nav.addEventListener('click', function(e){ if (e.target.closest && e.target.closest('a')) setMenu(false); });
+    var outside = function(e){ if (nav.classList.contains('open') && !nav.contains(e.target)) setMenu(false); };
+    document.addEventListener('click', outside);
+    if ('PointerEvent' in window) document.addEventListener('pointerdown', outside);   // iOS fires no click on plain page areas
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && nav.classList.contains('open')) { setMenu(false); navToggle.focus(); } });
+  }
 
   /* copy */
   var toast = document.getElementById('toast'), tt;

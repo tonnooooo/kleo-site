@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.remove("no-js")</script>
 <title>Kleo — ask in chat, get the video</title>
 <meta name="description" content="Kleo is an MCP server: connect it to Claude, ChatGPT, Grok, Cursor or your coding agent and ask for YouTube Shorts and videos in plain language. Rendered at 60 fps on a GPU rented only for your job; you get a link back.">
 <link rel="icon" href="brand/kleo-favicon.svg" type="image/svg+xml">
@@ -35,7 +36,11 @@
       </svg>
       Kleo <span class="tag">MCP</span>
     </a>
-    <div class="nav-links">
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-menu">
+      <svg class="bars" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 5h14M2 9h14M2 13h14"/></svg>
+      <svg class="x" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 4l10 10M14 4L4 14"/></svg>
+    </button>
+    <div class="nav-links" id="site-menu">
       <a href="#how">How it works</a>
       <a href="#template">Templates</a>
       <a href="styles.html">Styles</a>
@@ -199,7 +204,7 @@
           <div class="lab">Clips<small>9 scenes, drawn in parallel</small></div><div class="row"><i style="--c:var(--amber); left:8%; width:56%"></i></div>
           <div class="lab">Edit<small>ffmpeg</small></div><div class="row"><i style="--c:var(--rose); left:64%; width:12%"></i></div>
           <div class="lab">Finish<small>encode · QA · files</small></div><div class="row"><i style="--c:var(--blue); left:76%; width:24%"></i></div>
-          <div class="axis"><span style="left:0">0</span><span style="left:20%">3</span><span style="left:40%">6</span><span style="left:60%">9</span><span style="left:80%">12</span><span style="left:100%">15 min</span></div>
+          <div class="axis"><span style="left:0">0</span><span style="left:20%">3</span><span style="left:40%">6</span><span style="left:60%">9</span><span style="left:80%">12</span><span style="left:100%">15<span class="unit"> min</span></span></div>
         </div>
         <p class="gantt-foot">A 5-minute video in 16:9 follows the same pattern and finishes in about 50 minutes. No machine sits idle waiting for work, which is what keeps a 4K video cheaper than a coffee — and the trade is that a job waits for a free machine instead of a machine waiting for jobs.</p>
       </div>
@@ -705,8 +710,30 @@ gemini mcp add --transport http kleo https://mcp.kleooai.com/mcp<button class="b
     tb.addEventListener('click', function(){
       show(tb.getAttribute('data-tab'));
       tabs.forEach(function(x){ x.tabIndex = x === tb ? 0 : -1; });
+      // on a phone the picker is one row you swipe: bring the chosen pill fully into it
+      if (list && list.scrollWidth > list.clientWidth && tb.scrollIntoView) tb.scrollIntoView({block:'nearest', inline:'nearest'});
     });
   });
+  // that row fades at its right edge while there is more to see
+  var more = function(){ if (list.scrollWidth - list.clientWidth - list.scrollLeft > 4) list.setAttribute('data-more', ''); else list.removeAttribute('data-more'); };
+  if (list) { list.addEventListener('scroll', more, {passive:true}); window.addEventListener('resize', more); more(); }
+
+  /* ---------- the menu button, where the links are folded away (phones and narrow tablets) ---------- */
+  var nav = document.querySelector('.nav'), navToggle = document.querySelector('.nav-toggle');
+  if (nav && navToggle) {
+    var setMenu = function(open){
+      nav.classList.toggle('open', open);
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Menu');
+    };
+    navToggle.addEventListener('click', function(){ setMenu(!nav.classList.contains('open')); });
+    // a link chosen from the menu closes it, and so does a tap anywhere else or the Escape key
+    nav.addEventListener('click', function(e){ if (e.target.closest && e.target.closest('a')) setMenu(false); });
+    var outside = function(e){ if (nav.classList.contains('open') && !nav.contains(e.target)) setMenu(false); };
+    document.addEventListener('click', outside);
+    if ('PointerEvent' in window) document.addEventListener('pointerdown', outside);   // iOS fires no click on plain page areas
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && nav.classList.contains('open')) { setMenu(false); navToggle.focus(); } });
+  }
 
   /* ---------- live MCP address from config.json ---------- */
   fetch('config.json', {cache:'no-store'}).then(function(r){ return r.ok ? r.json() : null; }).then(function(cfg){
