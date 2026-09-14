@@ -83,6 +83,7 @@
   .style-row.wide .style-media{--ry:0deg}
   .film-cap{display:flex;justify-content:space-between;gap:12px;align-items:baseline;margin:10px 4px 0;font:500 .72rem var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
   .film-cap b{font-weight:500;color:var(--ink-2)}
+  .film-note{color:var(--ink-2);font-size:.9375rem;line-height:1.6;margin:10px 4px 0;text-wrap:pretty}
   .style-films .film{min-width:0}
   @media (max-width:860px){
     .style-row,.style-row:nth-child(even),.style-row.wide,.style-row.wide:nth-child(even){grid-template-columns:1fr;gap:28px;padding:48px 0}
@@ -189,7 +190,7 @@
 
     <article class="style-row" id="cartoon" style="--c:var(--amber)">
       <div class="style-media">
-        <video src="samples/cartoon.mp4" poster="samples/cartoon.jpg" muted loop playsinline autoplay disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback"
+        <video src="samples/cartoon.mp4" poster="samples/cartoon.jpg" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback"
                aria-label="Cartoon sample: a pirate story"></video>
         <span class="style-live" aria-hidden="true"><i></i>Playing</span>
       </div>
@@ -212,26 +213,40 @@
       <div class="style-films">
         <div class="film">
           <div class="style-media wide">
-            <video src="samples/realistic-tether.mp4" poster="samples/realistic-tether.jpg" muted loop playsinline autoplay disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback"
+            <video src="samples/realistic-tether.mp4" poster="samples/realistic-tether.jpg" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback"
                    aria-label="Realistic sample, Tether: one unbroken pull-back from an astronaut's face inside his helmet to the station he is tethered to"></video>
             <span class="style-live" aria-hidden="true"><i></i>Playing</span>
           </div>
           <div class="film-cap"><b>Tether</b><span>20 s · one shot · 4K 60 fps, shown at 1080p</span></div>
+          <p class="film-note">One unbroken pull-back. It opens inside the helmet, on the astronaut's face and his breath on the
+            glass; a gloved hand comes up, the visor floods red, and the camera keeps backing away as he drifts, arms open,
+            until the gold line running up from his pack meets the station and its solar arrays. Every frame is generated
+            footage. No words at all: only his breathing and a low hum.</p>
+        </div>
+        <div class="film">
+          <div class="style-media wide">
+            <video src="samples/realistic-signal.mp4" poster="samples/realistic-signal.jpg" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback"
+                   aria-label="Realistic sample, Signal Delay: the opening minute of a documentary on how engineers fixed Voyager 1's 1977 computer from 24 billion kilometres away"></video>
+            <span class="style-live" aria-hidden="true"><i></i>Playing</span>
+          </div>
+          <div class="film-cap"><b>Signal Delay</b><span>6 min 55 s · opening 0:00–1:02 · 4K 60 fps, shown at 1080p</span></div>
+          <p class="film-note">A documentary told as five months of mission logs: on November 14, 2023, Voyager 1 started
+            repeating one pattern of ones and zeros, and every question cost forty-five hours of light-time. One narrator
+            walks through the readout, the dead chip and the code moved by hand in 1970s assembly. Photographic stills with a
+            slow push-in, hand-drawn amber diagrams, terminal windows, dates on black, two clocks in the corner, 35 mm grain,
+            2.39:1, a quiet music bed and subtitles. Here, the opening minute up to the title.</p>
         </div>
       </div>
       <div>
         <div class="style-n">02 · look</div>
         <div class="style-name"><h2>Realistic</h2><button class="style-arg" data-copy='style: "realistic"' aria-label="Copy the realistic style argument">style: "realistic"</button></div>
-        <p class="style-lead">Footage, not pictures: every shot is generated as moving video and the camera really moves.
-          <i>Tether</i> is one unbroken pull-back. It opens inside the helmet, on the astronaut's face and his breath on the
-          glass; a gloved hand comes up, the visor floods red, and the camera keeps backing away as he drifts, arms open,
-          until the gold line running up from his pack meets the station and its solar arrays. Skin, cloth, glass and
-          light hold together for the whole move. Nothing is written on the frame and there is no music: this one has no
-          words at all, only his breathing and a low hum.</p>
+        <p class="style-lead">Photographic light, real textures and a camera that moves, at 4K 60 fps. The same look carries
+          a single generated take with nothing on the frame and a seven-minute documentary with dates, diagrams and a
+          narrator: what appears on screen is decided by the film, not by a template. Two films, one look.</p>
         <ul class="style-facts">
           <li><b>Output</b><span>4K · 60 fps, 16:9 for YouTube or 9:16 for a Short</span></li>
-          <li><b>Footage</b><span>Generated motion in every shot, no stills, no zoomed photos</span></li>
-          <li><b>On the frame</b><span>No captions, no titles, no music, one narrator or none</span></li>
+          <li><b>Footage</b><span>Generated shots, or photographs with a slow push-in when the story lives in documents</span></li>
+          <li><b>On the frame</b><span>Nothing, or dates, diagrams and subtitles when the film needs them; one narrator or none</span></li>
         </ul>
         <p class="style-say">“A 20-second film, 16:9: one continuous pull-back from an astronaut's face inside his helmet to the station he's tethered to. No words, just his breathing.”</p>
       </div>
@@ -239,7 +254,7 @@
 
     <article class="style-row" id="cinema" style="--c:var(--blue)">
       <div class="style-media">
-        <video src="samples/cinema.mp4" poster="samples/cinema.jpg" muted loop playsinline autoplay disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback"
+        <video src="samples/cinema.mp4" poster="samples/cinema.jpg" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback"
                aria-label="Cinema sample: the WiFi Pineapple seized at Perth Airport"></video>
         <span class="style-live" aria-hidden="true"><i></i>Playing</span>
       </div>
@@ -261,7 +276,7 @@
 
     <article class="style-row" id="stickman" style="--c:var(--ink)">
       <div class="style-media">
-        <video src="samples/stickman-omg.mp4" poster="samples/stickman-omg.jpg" muted loop playsinline autoplay disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback"
+        <video src="samples/stickman-omg.mp4" poster="samples/stickman-omg.jpg" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback"
                aria-label="Stickman sample: the charging cable with a computer hidden inside"></video>
         <span class="style-live" aria-hidden="true"><i></i>Playing</span>
       </div>
@@ -347,8 +362,9 @@
     l.addEventListener('pointerleave', function(){ hero.removeAttribute('data-tint'); });
   });
 
-  /* a sample plays by itself while it is in front of you, and stops when it is not. There is nothing to click:
-     the tag has no controls, the frame takes no pointer, no menu, no drag — the film is shown, not handed over */
+  /* a sample plays by itself while it is in front of you, and stops when it is not — and only then is it fetched:
+     five films, one of them 34 MB, must not all download on every visit. There is nothing to click: the tag has no
+     controls, the frame takes no pointer, no menu, no drag — the film is shown, not handed over */
   var medias = Array.prototype.slice.call(document.querySelectorAll('.style-media'));
   medias.forEach(function(m){
     m.addEventListener('contextmenu', function(e){ e.preventDefault(); });
