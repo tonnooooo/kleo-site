@@ -51,7 +51,10 @@
   .style-row:nth-child(even) .style-media{--ry:-6deg}
   .style-row:hover .style-media{--ry:0deg}
   .style-media::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;box-shadow:0 1px 0 rgba(255,255,255,.18) inset, 0 0 0 1px rgba(0,0,0,.4) inset}
-  .style-media video{width:100%;height:100%;object-fit:cover;display:block}
+  .style-media{user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+  .style-media video{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+  .style-media video::-webkit-media-controls,.style-media video::-webkit-media-controls-start-playback-button,
+  .style-media video::-webkit-media-controls-enclosure{display:none !important;-webkit-appearance:none}
   .style-live{position:absolute;top:14px;left:14px;display:inline-flex;align-items:center;gap:7px;padding:5px 10px 5px 8px;border-radius:999px;
     background:rgba(0,0,0,.55);backdrop-filter:blur(8px);color:#fff;font:500 .66rem/1 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;opacity:0;transition:opacity .3s;pointer-events:none}
   .style-live i{width:7px;height:7px;border-radius:50%;background:var(--rose);box-shadow:0 0 8px var(--rose);animation:blink 1.4s steps(2) infinite}
@@ -166,8 +169,8 @@
 
     <article class="style-row" id="cartoon" style="--c:var(--amber)">
       <div class="style-media">
-        <video src="samples/cartoon.mp4" poster="samples/cartoon.jpg" muted loop playsinline preload="none"
-               controls aria-label="Cartoon sample: a pirate story"></video>
+        <video src="samples/cartoon.mp4" poster="samples/cartoon.jpg" muted loop playsinline autoplay disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback"
+               aria-label="Cartoon sample: a pirate story"></video>
         <span class="style-live" aria-hidden="true"><i></i>Playing</span>
       </div>
       <div>
@@ -189,8 +192,8 @@
       <div class="style-films">
         <div class="film">
           <div class="style-media wide">
-            <video src="samples/realistic-tether.mp4" poster="samples/realistic-tether.jpg" muted loop playsinline preload="none"
-                   controls aria-label="Realistic sample, Tether: one unbroken pull-back from an astronaut's face inside his helmet to the station he is tethered to"></video>
+            <video src="samples/realistic-tether.mp4" poster="samples/realistic-tether.jpg" muted loop playsinline autoplay disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback"
+                   aria-label="Realistic sample, Tether: one unbroken pull-back from an astronaut's face inside his helmet to the station he is tethered to"></video>
             <span class="style-live" aria-hidden="true"><i></i>Playing</span>
           </div>
           <div class="film-cap"><b>Tether</b><span>20 s · one shot · 4K 60 fps, shown at 1080p</span></div>
@@ -216,8 +219,8 @@
 
     <article class="style-row" id="cinema" style="--c:var(--blue)">
       <div class="style-media">
-        <video src="samples/cinema.mp4" poster="samples/cinema.jpg" muted loop playsinline preload="none"
-               controls aria-label="Cinema sample: the WiFi Pineapple seized at Perth Airport"></video>
+        <video src="samples/cinema.mp4" poster="samples/cinema.jpg" muted loop playsinline autoplay disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback"
+               aria-label="Cinema sample: the WiFi Pineapple seized at Perth Airport"></video>
         <span class="style-live" aria-hidden="true"><i></i>Playing</span>
       </div>
       <div>
@@ -238,8 +241,8 @@
 
     <article class="style-row" id="stickman" style="--c:var(--ink)">
       <div class="style-media">
-        <video src="samples/stickman-omg.mp4" poster="samples/stickman-omg.jpg" muted loop playsinline preload="none"
-               controls aria-label="Stickman sample: the charging cable with a computer hidden inside"></video>
+        <video src="samples/stickman-omg.mp4" poster="samples/stickman-omg.jpg" muted loop playsinline autoplay disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback"
+               aria-label="Stickman sample: the charging cable with a computer hidden inside"></video>
         <span class="style-live" aria-hidden="true"><i></i>Playing</span>
       </div>
       <div>
@@ -324,9 +327,14 @@
     l.addEventListener('pointerleave', function(){ hero.removeAttribute('data-tint'); });
   });
 
-  /* a sample plays by itself while it is in front of you, and stops when it is not */
+  /* a sample plays by itself while it is in front of you, and stops when it is not. There is nothing to click:
+     the tag has no controls, the frame takes no pointer, no menu, no drag — the film is shown, not handed over */
   var medias = Array.prototype.slice.call(document.querySelectorAll('.style-media'));
-  if ('IntersectionObserver' in window && !reduce) {
+  medias.forEach(function(m){
+    m.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+    m.addEventListener('dragstart', function(e){ e.preventDefault(); });
+  });
+  if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function(entries){
       entries.forEach(function(en){
         var v = en.target.querySelector('video');
