@@ -1,0 +1,42 @@
+# A 1080p copy and a poster of a sample film, made on GitHub's machine so nothing runs on the owner's computer.
+# Manual: Actions → sample-copy → Run workflow, with the path of the master inside the repo (on any branch) and
+# the name the copy should get; the result comes back as an artifact to download and commit under samples/.
+name: sample-copy
+on:
+  workflow_dispatch:
+    inputs:
+      source:
+        description: "Path of the master MP4 inside the repo (e.g. samples/master.mp4)"
+        required: true
+      name:
+        description: "Base name of the copy (e.g. animation-octopus → samples/animation-octopus.mp4 + .jpg)"
+        required: true
+      height:
+        description: "Height of the copy in pixels (1080 for a 16:9 or 9:16 master)"
+        default: "1080"
+      poster_at:
+        description: "Second of the frame used as the poster"
+        default: "1"
+permissions:
+  contents: read
+jobs:
+  copy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: ffmpeg (the runner ships it)
+        run: ffmpeg -version | head -1
+      - name: 1080p copy, H.264 + AAC, faststart, and the poster
+        run: |
+          mkdir -p out
+          ffmpeg -v error -y -i "${{ inputs.source }}" -vf "scale=-2:${{ inputs.height }}" -r 60 \
+            -c:v libx264 -preset slow -crf 21 -pix_fmt yuv420p -c:a aac -b:a 128k -movflags +faststart \
+            "out/${{ inputs.name }}.mp4"
+          ffmpeg -v error -y -ss "${{ inputs.poster_at }}" -i "out/${{ inputs.name }}.mp4" -frames:v 1 -q:v 3 "out/${{ inputs.name }}.jpg"
+          ls -la out; ffprobe -v error -select_streams v:0 -show_entries stream=width,height,r_frame_rate:format=duration,size -of default=nw=1 "out/${{ inputs.name }}.mp4"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ inputs.name }}
+          path: out/
+          retention-days: 7
