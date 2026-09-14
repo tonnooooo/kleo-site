@@ -1,8 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.remove("no-js")</script>
 <title>Kleo AI Pricing — Credit Packs and Video Cost Calculator</title>
 <meta name="description" content="Kleo credit packs from €5, one-off and in EUR, no subscription. One credit is two seconds of film, 10 credits minimum, realistic or animation at the same price.">
 <link rel="canonical" href="https://kleooai.com/pricing/">
@@ -21,11 +22,14 @@
 <meta name="twitter:title" content="Kleo AI Pricing — Credit Packs and Video Cost Calculator">
 <meta name="twitter:description" content="Kleo credit packs from €5, one-off and in EUR, no subscription. One credit is two seconds of film, 10 credits minimum, realistic or animation at the same price.">
 <meta name="twitter:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
-<meta name="theme-color" content="#101215">
+<meta name="theme-color" content="#0A0C10">
 <link rel="icon" href="/brand/kleo-favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/brand/kleo-favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="/brand/kleo-icon-dark-192.png">
-<link rel="stylesheet" href="/site.css?v=20260914">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/site.css?v=20260915">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -68,61 +72,121 @@
   ]
 }
 </script>
-<script src="/site.js?v=20260914" defer></script>
+<script src="/site.js?v=20260915" defer></script>
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
-<header>
-  <nav class="wrap nav" aria-label="Main navigation">
-    <a class="logo" href="/"><img src="/brand/kleo-favicon.svg" width="32" height="32" alt="">Kleo<span>AI</span></a>
-    <div class="navlinks">
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Kleo, home">
+      <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+        <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+        <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+      </svg>
+      Kleo <span class="tag">MCP</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-menu">
+      <svg class="bars" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 5h14M2 9h14M2 13h14"/></svg>
+      <svg class="x" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 4l10 10M14 4L4 14"/></svg>
+    </button>
+    <div class="nav-links" id="site-menu">
       <a href="/ai-youtube-video-generator/">Create videos</a>
       <a href="/examples/">Examples</a>
+      <a href="/styles.html">Looks</a>
       <a href="/pricing/" aria-current="page">Pricing</a>
       <a href="/faq/">FAQ</a>
     </div>
-    <a class="button small" href="/connect/">Connect ↗</a>
-  </nav>
-</header>
-<main id="main" class="wrap inner-page">
-  <div class="hero">
+    <a class="btn btn-primary btn-sm" href="/connect/">Connect Kleo</a>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="page-hero hero" id="top">
+  <div class="wrap">
     <div>
-      <p class="eyebrow">KLEO AI</p>
-      <h1>Know the cost.<br>Then <em>create.</em></h1>
-      <p class="intro">One-off credit packs in EUR, no subscription. One credit covers two seconds of film, with a minimum of 10 credits per render. Both looks, realistic and animation, cost the same: the length is the only price.</p>
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">›</span><span>Pricing</span></nav>
+      <h1>Know the cost.<br><span class="hl">Then create.</span></h1>
+      <p class="lede">One-off credit packs in EUR, no subscription. One credit covers two seconds of film, with a minimum
+        of 10 credits per render. Both looks, realistic and animation, cost the same: the length is the only price.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/connect/">Connect Kleo <span class="arr" aria-hidden="true">→</span></a>
+        <a class="btn btn-ghost" href="/examples/">Watch the examples</a>
+      </div>
     </div>
   </div>
-  <section id="packs" class="section">
-    <h2>Three packs.</h2>
-    <div class="grid three">
-      <article class="card">
-        <h3>€5 <small>10 credits</small></h3>
-        <p>Enough for a 15- or 20-second film.</p>
-      </article>
-      <article class="card">
-        <h3>€15 <small>35 credits</small></h3>
-        <p>Enough for a 60-second film at 30 credits, with 5 credits left.</p>
-      </article>
-      <article class="card">
-        <h3>€40 <small>100 credits</small></h3>
-        <p>Enough for a 3-minute film at 90 credits, with 10 credits left.</p>
-      </article>
+</section>
+
+<!-- ============ PACKS ============ -->
+<section id="packs">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">01</span>Packs</div>
+        <h2>Three packs.</h2>
+      </div>
     </div>
-  </section>
-  <section id="starter" class="section">
-    <h2>Your starter balance.</h2>
-    <p class="wide">Connecting Kleo gives you 7 credits, with no form and no card. A film costs at least 10 credits, so the starter credits alone do not buy one: add the €5 pack and your 17-credit balance covers a 30-second Short, which costs 15 credits.</p>
-  </section>
-  <section id="calculator" class="section">
-    <h2>Calculate the credits.</h2>
+    <div class="plans">
+      <div class="plan">
+        <div class="price">€5<small>10 credits</small></div>
+        <ul>
+          <li>Enough for a 15- or 20-second film.</li>
+        </ul>
+      </div>
+      <div class="plan hi">
+        <div class="price">€15<small>35 credits</small></div>
+        <ul>
+          <li>Enough for a 60-second film at 30 credits, with 5 credits left.</li>
+        </ul>
+      </div>
+      <div class="plan">
+        <div class="price">€40<small>100 credits</small></div>
+        <ul>
+          <li>Enough for a 3-minute film at 90 credits, with 10 credits left.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STARTER BALANCE ============ -->
+<section id="starter">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">02</span>Starter balance</div>
+        <h2>Your starter balance.</h2>
+      </div>
+    </div>
+    <div class="prose">
+      <p>Connecting Kleo gives you 7 credits, with no form and no card. A film costs at least 10 credits, so the starter
+        credits alone do not buy one: add the €5 pack and your 17-credit balance covers a 30-second Short, which costs
+        15 credits.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CALCULATE ============ -->
+<section id="calculator">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">03</span>Calculate</div>
+        <h2>Calculate the credits.</h2>
+      </div>
+    </div>
     <div class="calculator">
       <label for="duration">Video duration in seconds</label>
       <input id="duration" type="number" min="15" max="300" step="1" value="60" inputmode="numeric">
-      <output id="credit-result" for="duration" aria-live="polite">60 seconds = 30 credits</output>
-      <p>15 to 300 seconds. One credit for every two seconds, rounded up, with a 10-credit minimum. The same rule applies to the realistic and the animation look, in 16:9 or 9:16. Packs are bought separately on your account page.</p>
+      <output id="credit-result" for="duration" aria-live="polite">60 s = 30 credits</output>
+      <p>15 to 300 seconds. One credit for every two seconds, rounded up, with a 10-credit minimum. The same rule applies
+        to the realistic and the animation look, in 16:9 or 9:16. Packs are bought separately on your account page.</p>
     </div>
-    <div class="tablewrap">
-      <table class="tools">
+    <div class="ttable plain">
+      <table>
         <caption>Credit cost by film length</caption>
         <thead>
           <tr>
@@ -162,61 +226,116 @@
         </tbody>
       </table>
     </div>
-  </section>
-  <section id="buying" class="section">
-    <h2>Buying and using credits.</h2>
-    <ol>
-      <li>Connect Kleo and ask the assistant for your account page: it shows your balance and the checkout links.</li>
-      <li>Buy a pack through the Stripe checkout on that page. Packs are one-off purchases in EUR; there is no subscription.</li>
-      <li>Ask for the film’s cost before you approve a render: <code>kleo_create_video</code> states the exact credits first, and nothing is charged until it accepts the job.</li>
-    </ol>
-    <p class="wide">A 5-minute film costs 150 credits: a single 100-credit pack does not cover it. Your available balance and the account checkout are the final reference before purchase.</p>
-    <p>A refused call charges nothing. If you cancel a render while it is running, the unspent credits are refunded.</p>
-    <div class="actions">
-      <a class="button" href="/connect/">Connect Kleo ↗</a>
-      <a class="button secondary" href="/examples/">Watch the examples</a>
+  </div>
+</section>
+
+<!-- ============ BUYING AND USING CREDITS ============ -->
+<section id="buying">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">04</span>Buying and using</div>
+        <h2>Buying and using credits.</h2>
+      </div>
     </div>
-  </section>
-  <section id="includes" class="section">
-    <h2>What the price includes.</h2>
-    <p class="wide">One render is one complete narrated film, rendered on a GPU rented for that job. It typically takes 25 to 35 minutes; the assistant reports the progress and hands you the link.</p>
-    <ul class="facts">
+    <div class="steps">
+      <div class="step">
+        <span class="num" aria-hidden="true">01</span>
+        <h3>Connect Kleo</h3>
+        <p>Connect Kleo and ask the assistant for your account page: it shows your balance and the checkout links.</p>
+      </div>
+      <div class="step">
+        <span class="num" aria-hidden="true">02</span>
+        <h3>Buy a pack</h3>
+        <p>Buy a pack through the Stripe checkout on that page. Packs are one-off purchases in EUR; there is no
+          subscription.</p>
+      </div>
+      <div class="step">
+        <span class="num" aria-hidden="true">03</span>
+        <h3>Ask for the cost</h3>
+        <p>Ask for the film’s cost before you approve a render: <code>kleo_create_video</code> states the exact credits
+          first, and nothing is charged until it accepts the job.</p>
+      </div>
+    </div>
+    <div class="prose">
+      <p>A 5-minute film costs 150 credits: a single 100-credit pack does not cover it. Your available balance and the
+        account checkout are the final reference before purchase.</p>
+      <p>A refused call charges nothing. If you cancel a render while it is running, the unspent credits are refunded.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT THE PRICE INCLUDES ============ -->
+<section id="includes">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">05</span>What is included</div>
+        <h2>What the price includes.</h2>
+      </div>
+      <p class="lede">One render is one complete narrated film, rendered on a GPU rented for that job. It typically takes
+        25 to 35 minutes; the assistant reports the progress and hands you the link.</p>
+    </div>
+    <ul class="style-facts auto">
       <li><b>Film</b><span>A narrated film with every shot generated as moving footage, in the realistic or the animation look.</span></li>
       <li><b>Output</b><span>An MP4 in 4K (3840×2160 or 2160×3840) at 60 fps, 16:9 for YouTube or 9:16 for a Short.</span></li>
       <li><b>Narration</b><span>One narrator, in English or Italian. No music, no captions, no on-screen text.</span></li>
       <li><b>Length</b><span>15 seconds to 5 minutes.</span></li>
       <li><b>Delivery</b><span>A download link for the finished MP4, good for 7 days: keep a local copy. Kleo never publishes to a channel.</span></li>
     </ul>
-    <p><a class="text-link" href="/terms.html">Read the terms →</a> · <a class="text-link" href="/faq/">Questions about rendering →</a></p>
-  </section>
+    <div class="prose">
+      <p><a href="/terms.html">Read the terms →</a> · <a href="/faq/">Questions about rendering →</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ START ============ -->
+<section class="cta one" id="start">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow"><span class="n">06</span>Start</div>
+      <h2>Seven credits on connecting.<br>The first film from €5.</h2>
+      <p class="lede">Connect Kleo and ask for the cost before the render: nothing is charged until Kleo accepts the job.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/connect/">Connect Kleo <span class="arr" aria-hidden="true">→</span></a>
+        <a class="btn btn-ghost" href="/examples/">Watch the examples</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 </main>
+
+<!-- ============ FOOTER ============ -->
 <footer>
-  <div class="wrap footer-grid">
-    <div>
-      <a class="logo" href="/">Kleo<span>AI</span></a>
-      <p>Human direction. Agent-made films.</p>
-      <a href="mailto:kleooai@gmail.com">kleooai@gmail.com</a>
+  <div class="wrap">
+    <div class="foot-brand">
+      <a class="brand" href="/" aria-label="Kleo, home">
+        <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+          <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+          <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+        </svg>
+        Kleo <span class="tag">MCP</span>
+      </a>
+      <span>Human direction. Agent-made films.</span>
     </div>
-    <div>
+    <div class="links">
       <a href="/connect/">Connect</a>
-      <a href="/integrations/claude/">Kleo with Claude</a>
-      <a href="/integrations/chatgpt/">Kleo with ChatGPT</a>
-      <a href="/video-generation-mcp/">MCP documentation</a>
-      <a href="/ai-youtube-video-generator/">YouTube videos</a>
-    </div>
-    <div>
-      <a href="/about/">About Kleo</a>
-      <a href="/styles.html">Film looks</a>
+      <a href="/integrations/claude/">Claude</a>
+      <a href="/integrations/chatgpt/">ChatGPT</a>
+      <a href="/video-generation-mcp/">MCP docs</a>
       <a href="/examples/">Examples</a>
+      <a href="/styles.html">Looks</a>
       <a href="/pricing/">Pricing</a>
       <a href="/faq/">FAQ</a>
+      <a href="/about/">About</a>
       <a href="/privacy.html">Privacy</a>
       <a href="/terms.html">Terms</a>
       <a href="https://github.com/tonnooooo/kleo-mcp">GitHub</a>
+      <a href="mailto:kleooai@gmail.com">kleooai@gmail.com</a>
     </div>
   </div>
-  <div class="wrap footnote">© 2026 Kleo · kleooai.com <span>Human intelligence. Agent production.</span></div>
 </footer>
-<p id="copy-status" class="copy-status" role="status" aria-live="polite"></p>
+<div class="toast" id="toast" role="status" aria-live="polite">Copied</div>
 </body>
 </html>

@@ -63,7 +63,8 @@ class Page(HTMLParser):
     def handle_starttag(self, tag, attrs):
         a = dict(attrs)
         self.tags.append((tag, a))
-        if tag in ('header', 'footer'):
+        # the chrome: the pill nav (<nav class="nav">) and the footer must be the same markup on every page
+        if (tag == 'nav' and 'nav' in a.get('class', '').split()) or tag == 'footer':
             self._grab = [tag, self.getpos()[0]]
         if 'id' in a:
             if a['id'] in self.ids: self.errors.append('duplicate id ' + a['id'])
@@ -97,7 +98,7 @@ class Page(HTMLParser):
         if not self.stack or self.stack[-1] != tag: self.errors.append('unbalanced </%s> at line %d' % (tag, self.getpos()[0]))
         else: self.stack.pop()
         if self._grab and tag == self._grab[0]:
-            setattr(self, tag, (self._grab[1], self.getpos()[0])); self._grab = None
+            setattr(self, 'header' if tag == 'nav' else tag, (self._grab[1], self.getpos()[0])); self._grab = None
 
     def meta(self, name, key='name'):
         return [a.get('content', '') for t, a in self.tags if t == 'meta' and a.get(key) == name]
@@ -171,10 +172,12 @@ def main():
                 for n in g.get('@graph', []):
                     if n.get('@type') == 'WebPage' and n.get('url') != SITE_URL + route: errors.append('%s: WebPage.url differs from canonical' % name)
                     if n.get('@type') == 'VideoObject' and 'uploadDate' not in n: errors.append('%s: VideoObject without uploadDate' % name)
-        if any(t == 'link' and 'fonts.g' in a.get('href', '') for t, a in p.tags): errors.append('%s: remote font' % name)
-        if any(t == 'script' and a.get('src', '').startswith('http') for t, a in p.tags): errors.append('%s: remote script' % name)
+        # the only remote resources allowed are the three Google Fonts faces the design has always used
+        for t, a in p.tags:
+            if t == 'link' and a.get('rel') not in ('canonical', 'alternate') and a.get('href', '').startswith('http') and not a['href'].startswith(('https://fonts.googleapis.com', 'https://fonts.gstatic.com')): errors.append('%s: remote resource %s' % (name, a['href']))
+            if t == 'script' and a.get('src', '').startswith('http'): errors.append('%s: remote script' % name)
         if any(t == 'style' for t, a in p.tags): errors.append('%s: inline <style> block (use site.css)' % name)
-        if not any(a.get('href') == '/site.js?v=20260914' or a.get('src') == '/site.js?v=20260914' for t, a in p.tags): errors.append('%s: site.js not loaded' % name)
+        if not any(a.get('href') == '/site.js?v=20260915' or a.get('src') == '/site.js?v=20260915' for t, a in p.tags): errors.append('%s: site.js not loaded' % name)
         # header/footer identical everywhere
         if p.header and p.footer:
             h, ft = block(sources[f], p.header), block(sources[f], p.footer)
@@ -191,6 +194,8 @@ def main():
             href = re.search(r'href="([^"]*)"', m)
             if not href or href.group(1) != route: errors.append('%s: aria-current on a link to %s' % (name, href.group(1) if href else '?'))
         if 'aria-current="page"' in raw_hdr and not marked: errors.append('%s: aria-current outside a header link' % name)
+        if 'class="no-js"' not in sources[f][:200]: errors.append('%s: <html> without class="no-js"' % name)
+        if 'id="progress"' not in sources[f]: errors.append('%s: no progress hairline' % name)
         if re.search(r'href="%s"' % re.escape(route), raw_hdr) and not marked: errors.append('%s: header links here without aria-current' % name)
         if re.search(r'aria-current', sources[f].replace(raw_hdr, '')): errors.append('%s: aria-current outside the header' % name)
     # sitemap: exactly the indexable pages, real dates, lastmod not in the future

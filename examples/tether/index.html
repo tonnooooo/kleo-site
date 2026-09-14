@@ -1,8 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.remove("no-js")</script>
 <title>Tether — a 20-second film by Kleo, realistic look</title>
 <meta name="description" content="Tether, a Kleo film in the realistic look: one unbroken 20-second pull-back from an astronaut’s face inside his helmet to the station he is tethered to.">
 <link rel="canonical" href="https://kleooai.com/examples/tether/">
@@ -21,11 +22,14 @@
 <meta name="twitter:title" content="Tether — a 20-second film by Kleo, realistic look">
 <meta name="twitter:description" content="Tether, a Kleo film in the realistic look: one unbroken 20-second pull-back from an astronaut’s face inside his helmet to the station he is tethered to.">
 <meta name="twitter:image" content="https://kleooai.com/samples/realistic-tether.jpg">
-<meta name="theme-color" content="#101215">
+<meta name="theme-color" content="#0A0C10">
 <link rel="icon" href="/brand/kleo-favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/brand/kleo-favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="/brand/kleo-icon-dark-192.png">
-<link rel="stylesheet" href="/site.css?v=20260914">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/site.css?v=20260915">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -83,69 +87,114 @@
   ]
 }
 </script>
-<script src="/site.js?v=20260914" defer></script>
+<script src="/site.js?v=20260915" defer></script>
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
-<header>
-  <nav class="wrap nav" aria-label="Main navigation">
-    <a class="logo" href="/"><img src="/brand/kleo-favicon.svg" width="32" height="32" alt="">Kleo<span>AI</span></a>
-    <div class="navlinks">
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Kleo, home">
+      <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+        <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+        <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+      </svg>
+      Kleo <span class="tag">MCP</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-menu">
+      <svg class="bars" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 5h14M2 9h14M2 13h14"/></svg>
+      <svg class="x" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 4l10 10M14 4L4 14"/></svg>
+    </button>
+    <div class="nav-links" id="site-menu">
       <a href="/ai-youtube-video-generator/">Create videos</a>
       <a href="/examples/">Examples</a>
+      <a href="/styles.html">Looks</a>
       <a href="/pricing/">Pricing</a>
       <a href="/faq/">FAQ</a>
     </div>
-    <a class="button small" href="/connect/">Connect ↗</a>
-  </nav>
-</header>
-<main id="main" class="wrap inner-page">
-  <div class="hero">
+    <a class="btn btn-primary btn-sm" href="/connect/">Connect Kleo</a>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="page-hero hero" id="top">
+  <div class="wrap">
     <div>
-      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>›</span><a href="/examples/">Examples</a><span>›</span>Tether</nav>
-      <p class="eyebrow">KLEO AI · EXAMPLE</p>
-      <h1>Tether.<br><em>One shot, no words.</em></h1>
-      <p class="intro">A 20-second film in Kleo’s realistic look: one continuous pull-back from an astronaut’s face inside
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">›</span><a href="/examples/">Examples</a><span aria-hidden="true">›</span><span>Tether</span></nav>
+      <h1>Tether.<br><span class="hl">One shot, no words.</span></h1>
+      <p class="lede">A 20-second film in Kleo’s realistic look: one continuous pull-back from an astronaut’s face inside
         his helmet to the station he is tethered to. Every frame is generated footage. It plays here muted, by itself,
         while it is in view.</p>
     </div>
   </div>
-  <figure class="watch">
-    <video muted loop playsinline preload="none" width="1920" height="1080" poster="/samples/realistic-tether.jpg" disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" aria-label="Tether, a 20-second film in Kleo’s realistic look: one unbroken pull-back from an astronaut’s face inside his helmet to the station he is tethered to. Plays muted while in view.">
-      <source src="/samples/realistic-tether.mp4" type="video/mp4">
-    </video>
-    <span class="live" aria-hidden="true"><i></i>Playing</span>
-    <figcaption><p class="film-cap"><b>Tether</b><span>20 s · one shot · 16:9 · 4K 60 fps, shown at 1080p</span></p></figcaption>
-  </figure>
-  <section id="film" class="section">
-    <h2>The film</h2>
-    <p class="wide">One unbroken pull-back. It opens inside the helmet, on the astronaut’s face and his breath on the
-      glass; a gloved hand comes up, the visor floods red, and the camera keeps backing away as he drifts, arms open,
-      until the gold line running up from his pack meets the station and its solar arrays. Every frame is generated
-      footage. No words at all: only his breathing and a low hum.</p>
-    <p>The copy on this page is 1080p at 60 fps, taken from the 4K master, and it plays muted: the breathing and the
-      hum are in the master. Tether has no narrator because the brief asked for none. The standard Kleo film has one,
-      in English or Italian, and no background music, no captions and no on-screen text.</p>
-  </section>
-  <section id="brief" class="section">
-    <h2>The brief</h2>
-    <p class="wide">The whole request, one line. Copy it as it is, or keep its shape and change the subject: what
-      happens, how long it runs, which format, which look, what is heard.</p>
-    <div class="prompt">
-      <p>A 20-second film, 16:9: one continuous pull-back from an astronaut’s face inside his helmet to the station
-        he’s tethered to. No words, just his breathing.</p>
-      <button type="button" data-copy="A 20-second film, 16:9: one continuous pull-back from an astronaut’s face inside his helmet to the station he’s tethered to. No words, just his breathing.">Copy prompt</button>
+</section>
+
+<!-- ============ THE FILM ============ -->
+<section id="film">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">01</span>The film</div>
+        <h2>One unbroken pull-back.</h2>
+      </div>
     </div>
-    <p>In a connected client, <code>kleo_adapt_prompt</code> reads a request like this against the intake (subject,
-      length, format, look; audience, tone and what must appear are optional), asks for whatever is missing, and
-      returns the treatment: logline, angle, opening, acts, ending, look, pacing, narrator.
-      <code>kleo_storyboard_guide</code> then sets out how the storyboard is written, and <code>kleo_create_video</code>
-      checks everything, states the exact credits, 10 for a 20-second film, and starts the render on a GPU rented for
-      that job. Nothing is charged until that call accepts the job.</p>
-  </section>
-  <section id="shows" class="section">
-    <h2>What it shows</h2>
-    <ul class="facts">
+    <div class="player">
+      <div class="style-media wide">
+        <video src="/samples/realistic-tether.mp4" poster="/samples/realistic-tether.jpg" width="1920" height="1080" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" aria-label="Tether, a 20-second film in Kleo’s realistic look: one unbroken pull-back from an astronaut’s face inside his helmet to the station he is tethered to. Plays muted while in view."></video>
+        <span class="style-live" aria-hidden="true"><i></i>Playing</span>
+      </div>
+      <div class="film-cap"><b>Tether</b><span>20 s · one shot · 16:9 · 4K 60 fps, shown at 1080p</span></div>
+      <p class="film-note">One unbroken pull-back. It opens inside the helmet, on the astronaut’s face and his breath on the
+        glass; a gloved hand comes up, the visor floods red, and the camera keeps backing away as he drifts, arms open,
+        until the gold line running up from his pack meets the station and its solar arrays. Every frame is generated
+        footage. No words at all: only his breathing and a low hum.</p>
+      <p class="film-note">The copy on this page is 1080p at 60 fps, taken from the 4K master, and it plays muted: the breathing
+        and the hum are in the master. Tether has no narrator because the brief asked for none. The standard Kleo film has
+        one, in English or Italian, and no background music, no captions and no on-screen text.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE BRIEF ============ -->
+<section id="brief">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">02</span>The brief</div>
+        <h2>The whole request, one line.</h2>
+      </div>
+      <p class="lede">Copy it as it is, or keep its shape and change the subject: what happens, how long it runs, which
+        format, which look, what is heard.</p>
+    </div>
+    <div class="split">
+      <div>
+        <p class="style-say copyable" style="--c:var(--teal)">“A 20-second film, 16:9: one continuous pull-back from an astronaut’s face inside his helmet to the station he’s tethered to. No words, just his breathing.”<button class="btn btn-ghost btn-sm copy" type="button" data-copy="A 20-second film, 16:9: one continuous pull-back from an astronaut’s face inside his helmet to the station he’s tethered to. No words, just his breathing.">Copy</button></p>
+      </div>
+      <div class="prose">
+        <p>In a connected client, <code>kleo_adapt_prompt</code> reads a request like this against the intake (subject,
+          length, format, look; audience, tone and what must appear are optional), asks for whatever is missing, and
+          returns the treatment: logline, angle, opening, acts, ending, look, pacing, narrator.
+          <code>kleo_storyboard_guide</code> then sets out how the storyboard is written, and <code>kleo_create_video</code>
+          checks everything, states the exact credits, 10 for a 20-second film, and starts the render on a GPU rented for
+          that job. Nothing is charged until that call accepts the job.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT IT SHOWS ============ -->
+<section id="shows">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">03</span>What it shows</div>
+        <h2>Eight things to look for.</h2>
+      </div>
+    </div>
+    <ul class="style-facts auto">
       <li><b>One shot</b><span>A single generated take from the first frame to the last: no cut, no slideshow of stills.</span></li>
       <li><b>Camera</b><span>One continuous movement, a pull-back that starts inside the helmet and ends at the station, with the astronaut drifting through the frame as it goes.</span></li>
       <li><b>Continuity</b><span>One subject held through one movement: the face, the visor, the glove and the gold tether stay the same from the helmet to the station.</span></li>
@@ -155,49 +204,63 @@
       <li><b>Length</b><span>20 seconds. A Kleo film runs from 15 seconds to 5 minutes.</span></li>
       <li><b>Credits</b><span>10, the minimum a film costs: 1 credit is 2 seconds of film, rounded up, 10 credits minimum.</span></li>
     </ul>
-  </section>
-  <section id="make" class="section">
-    <h2>Make your own</h2>
-    <p class="wide">Connect Kleo to Claude, ChatGPT, Claude Code, Cursor or another MCP client, then describe your film
-      in one message: the subject, the length, the format and the look. Connecting gives you 7 credits, with no form
-      and no card; a film starts at 10 credits, so the €5 pack of 10 covers a 20-second film like this one with 7 to
-      spare. A render typically takes 25–35 minutes on a GPU rented for that job, and the finished MP4 comes back as
-      a link that stays good for 7 days.</p>
-    <div class="actions">
-      <a class="button" href="/connect/">Connect Kleo ↗</a>
-      <a class="button secondary" href="/pricing/">See pricing</a>
+  </div>
+</section>
+
+<!-- ============ MAKE YOUR OWN ============ -->
+<section class="cta one" id="make">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow"><span class="n">04</span>Make your own</div>
+      <h2>Your own film, from one message.</h2>
+      <p class="lede">Connect Kleo to Claude, ChatGPT, Claude Code, Cursor or another MCP client, then describe your film
+        in one message: the subject, the length, the format and the look. Connecting gives you 7 credits, with no form
+        and no card; a film starts at 10 credits, so the €5 pack of 10 covers a 20-second film like this one with 7 to
+        spare. A render typically takes 25–35 minutes on a GPU rented for that job, and the finished MP4 comes back as
+        a link that stays good for 7 days.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/connect/">Connect Kleo <span class="arr" aria-hidden="true">→</span></a>
+        <a class="btn btn-ghost" href="/pricing/">See pricing</a>
+      </div>
+      <div class="prose">
+        <p><a href="/examples/">All examples →</a> · <a href="/styles.html">The two looks, realistic and animation →</a></p>
+      </div>
     </div>
-    <p><a class="text-link" href="/examples/">All examples →</a></p>
-    <p><a class="text-link" href="/styles.html">The two looks, realistic and animation →</a></p>
-  </section>
+  </div>
+</section>
+
 </main>
+
+<!-- ============ FOOTER ============ -->
 <footer>
-  <div class="wrap footer-grid">
-    <div>
-      <a class="logo" href="/">Kleo<span>AI</span></a>
-      <p>Human direction. Agent-made films.</p>
-      <a href="mailto:kleooai@gmail.com">kleooai@gmail.com</a>
+  <div class="wrap">
+    <div class="foot-brand">
+      <a class="brand" href="/" aria-label="Kleo, home">
+        <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+          <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+          <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+        </svg>
+        Kleo <span class="tag">MCP</span>
+      </a>
+      <span>Human direction. Agent-made films.</span>
     </div>
-    <div>
+    <div class="links">
       <a href="/connect/">Connect</a>
-      <a href="/integrations/claude/">Kleo with Claude</a>
-      <a href="/integrations/chatgpt/">Kleo with ChatGPT</a>
-      <a href="/video-generation-mcp/">MCP documentation</a>
-      <a href="/ai-youtube-video-generator/">YouTube videos</a>
-    </div>
-    <div>
-      <a href="/about/">About Kleo</a>
-      <a href="/styles.html">Film looks</a>
+      <a href="/integrations/claude/">Claude</a>
+      <a href="/integrations/chatgpt/">ChatGPT</a>
+      <a href="/video-generation-mcp/">MCP docs</a>
       <a href="/examples/">Examples</a>
+      <a href="/styles.html">Looks</a>
       <a href="/pricing/">Pricing</a>
       <a href="/faq/">FAQ</a>
+      <a href="/about/">About</a>
       <a href="/privacy.html">Privacy</a>
       <a href="/terms.html">Terms</a>
       <a href="https://github.com/tonnooooo/kleo-mcp">GitHub</a>
+      <a href="mailto:kleooai@gmail.com">kleooai@gmail.com</a>
     </div>
   </div>
-  <div class="wrap footnote">© 2026 Kleo · kleooai.com <span>Human intelligence. Agent production.</span></div>
 </footer>
-<p id="copy-status" class="copy-status" role="status" aria-live="polite"></p>
+<div class="toast" id="toast" role="status" aria-live="polite">Copied</div>
 </body>
 </html>

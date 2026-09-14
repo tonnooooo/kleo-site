@@ -1,8 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.remove("no-js")</script>
 <title>Create AI Videos with Claude and Kleo — Setup Guide</title>
 <meta name="description" content="Add Kleo to Claude as a custom connector, ask for a narrated film and get the 4K MP4 link in the same chat: setup steps, a first prompt and troubleshooting.">
 <link rel="canonical" href="https://kleooai.com/integrations/claude/">
@@ -21,11 +22,14 @@
 <meta name="twitter:title" content="Create AI Videos with Claude and Kleo — Setup Guide">
 <meta name="twitter:description" content="Add Kleo to Claude as a custom connector, ask for a narrated film and get the 4K MP4 link in the same chat: setup steps, a first prompt and troubleshooting.">
 <meta name="twitter:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
-<meta name="theme-color" content="#101215">
+<meta name="theme-color" content="#0A0C10">
 <link rel="icon" href="/brand/kleo-favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/brand/kleo-favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="/brand/kleo-icon-dark-192.png">
-<link rel="stylesheet" href="/site.css?v=20260914">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/site.css?v=20260915">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -68,108 +72,181 @@
   ]
 }
 </script>
-<script src="/site.js?v=20260914" defer></script>
+<script src="/site.js?v=20260915" defer></script>
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
-<header>
-  <nav class="wrap nav" aria-label="Main navigation">
-    <a class="logo" href="/"><img src="/brand/kleo-favicon.svg" width="32" height="32" alt="">Kleo<span>AI</span></a>
-    <div class="navlinks">
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Kleo, home">
+      <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+        <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+        <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+      </svg>
+      Kleo <span class="tag">MCP</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-menu">
+      <svg class="bars" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 5h14M2 9h14M2 13h14"/></svg>
+      <svg class="x" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 4l10 10M14 4L4 14"/></svg>
+    </button>
+    <div class="nav-links" id="site-menu">
       <a href="/ai-youtube-video-generator/">Create videos</a>
       <a href="/examples/">Examples</a>
+      <a href="/styles.html">Looks</a>
       <a href="/pricing/">Pricing</a>
       <a href="/faq/">FAQ</a>
     </div>
-    <a class="button small" href="/connect/">Connect ↗</a>
-  </nav>
-</header>
-<main id="main" class="wrap inner-page">
-  <div class="hero">
+    <a class="btn btn-primary btn-sm" href="/connect/">Connect Kleo</a>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="page-hero hero" id="top">
+  <div class="wrap">
     <div>
-      <p class="eyebrow">KLEO AI</p>
-      <h1>Create videos with<br><em>Claude and Kleo.</em></h1>
-      <p class="intro">Claude is where you direct the film. Kleo, added to Claude as a custom connector, generates the
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span aria-hidden="true">›</span>
+        <a href="/connect/">Connect</a>
+        <span aria-hidden="true">›</span>
+        <span>Claude</span>
+      </nav>
+      <h1>Create videos with<br><span class="hl">Claude and Kleo.</span></h1>
+      <p class="lede">Claude is where you direct the film. Kleo, added to Claude as a custom connector, generates the
         footage, the narration and the finished 4K MP4, and the link lands in the same chat.</p>
-      <div class="actions">
-        <a class="button" href="/connect/">Connect Kleo ↗</a>
-        <a class="button secondary" href="/examples/">Watch a sample film</a>
-        <a class="text-link" href="#setup">Setup steps →</a>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/connect/">Connect Kleo <span class="arr" aria-hidden="true">→</span></a>
+        <a class="btn btn-ghost" href="/examples/">Watch a sample film</a>
+        <a class="btn btn-ghost" href="#setup">Setup steps <span class="arr" aria-hidden="true">↓</span></a>
       </div>
     </div>
   </div>
-  <section id="setup" class="section">
-    <h2>Add Kleo to Claude.</h2>
-    <p class="wide">Kleo is a remote MCP server. There is no app to install and no sign-up form: Claude reaches it
-      through a custom connector, and connecting is one button on Kleo’s own page. The steps below are the same in the
-      Claude app and on the web, and they work on every Claude plan; the free plan allows one custom connector.</p>
-    <ol>
-      <li>Open <b>Settings → Connectors</b> in Claude and choose <b>Add custom connector</b>.</li>
-      <li>Name it <b>Kleo</b>, paste the address below and confirm.</li>
-      <li>Kleo’s page opens: click <b>Start free</b>. You are back in Claude, with 7 credits on your new Kleo account.
-        No form, no password, no card. A film is 10 credits minimum, so the €5 pack (10 credits) goes on before the
-        first render; a 30-second film is 15.</li>
-      <li>In a new chat, turn Kleo on from the tools menu and ask for the film.</li>
-    </ol>
-    <div class="server">
-      <code>https://mcp.kleooai.com/mcp</code>
-      <button type="button" data-copy="https://mcp.kleooai.com/mcp">Copy address</button>
+</section>
+
+<!-- ============ SETUP ============ -->
+<section id="setup">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">01</span>Setup</div>
+        <h2>Add Kleo to Claude.</h2>
+      </div>
     </div>
-    <p class="smallprint">Claude is Anthropic’s assistant. Kleo is a separate service that Claude reaches through a
-      custom connector; the same address works in ChatGPT, Grok, Claude Code, Cursor and any other MCP client — see
-      <a href="/connect/">the connection page</a>.</p>
-  </section>
-  <section id="first-prompt" class="section">
-    <h2>Ask for the film you want.</h2>
-    <p class="wide">Say the subject, the length, the format and the look in one message. Audience, tone and anything
-      that must appear in the film are optional. Whatever your request leaves out, Claude asks for before it plans
-      anything; it never picks a length, a format or a look for you.</p>
-    <div class="prompt">
-      <p>Use Kleo to make a 30-second film about a small wooden boat crossing a quiet lake at dawn. Realistic look,
-        16:9, English narration, a calm tone. Show me the treatment and the exact credits before you start the
-        render.</p>
-      <button type="button" data-copy="Use Kleo to make a 30-second film about a small wooden boat crossing a quiet lake at dawn. Realistic look, 16:9, English narration, a calm tone. Show me the treatment and the exact credits before you start the render.">Copy prompt</button>
+    <div class="split">
+      <div>
+        <p class="lede">Kleo is a remote MCP server. There is no app to install and no sign-up form: Claude reaches it
+          through a custom connector, and connecting is one button on Kleo’s own page. The steps below are the same in
+          the Claude app and on the web, and they work on every Claude plan; the free plan allows one custom
+          connector.</p>
+      </div>
+      <div class="panel">
+        <ol>
+          <li>Open <b>Settings → Connectors</b> in Claude and choose <b>Add custom connector</b>.</li>
+          <li>Name it <b>Kleo</b>, paste the address below and confirm.</li>
+          <li>Kleo’s page opens: click <b>Start free</b>. You are back in Claude, with 7 credits on your new Kleo
+            account. No form, no password, no card. A film is 10 credits minimum, so the €5 pack (10 credits) goes on
+            before the first render; a 30-second film is 15.</li>
+          <li>In a new chat, turn Kleo on from the tools menu and ask for the film.</li>
+        </ol>
+        <div class="url-line">Server address <code>https://mcp.kleooai.com/mcp</code> <button class="btn btn-ghost btn-sm" type="button" data-copy="https://mcp.kleooai.com/mcp">Copy</button></div>
+        <p>Claude is Anthropic’s assistant. Kleo is a separate service that Claude reaches through a custom connector;
+          the same address works in ChatGPT, Grok, Claude Code, Cursor and any other MCP client — see
+          <a href="/connect/">the connection page</a>.</p>
+      </div>
     </div>
-    <p>Two looks are available: <b>realistic</b>, generated live-action footage with a cinematic feel, and
-      <b>animation</b>, a 2D animated film. Formats are 16:9 for YouTube or 9:16 for a Short; lengths run from 15
-      seconds to 5 minutes; narration is in English or Italian. <a class="text-link" href="/styles.html">See the film
-      looks →</a></p>
-  </section>
-  <section id="in-the-chat" class="section">
-    <h2>What happens next in the chat.</h2>
-    <p class="wide">Kleo’s tools run in a fixed order and Claude drives them for you. You read, correct and approve at
-      each step; nothing is charged until you give the go-ahead and the job is accepted.</p>
-    <div class="grid two">
-      <article class="card">
-        <h3>1 · The treatment<small>kleo_adapt_prompt</small></h3>
+  </div>
+</section>
+
+<!-- ============ FIRST PROMPT ============ -->
+<section id="first-prompt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">02</span>First prompt</div>
+        <h2>Ask for the film you want.</h2>
+      </div>
+      <p class="lede">Say the subject, the length, the format and the look in one message. Audience, tone and anything
+        that must appear in the film are optional. Whatever your request leaves out, Claude asks for before it plans
+        anything; it never picks a length, a format or a look for you.</p>
+    </div>
+    <div class="split">
+      <div>
+        <p class="style-say copyable">“Use Kleo to make a 30-second film about a small wooden boat crossing a quiet lake at dawn. Realistic look, 16:9, English narration, a calm tone. Show me the treatment and the exact credits before you start the render.”<button class="btn btn-ghost btn-sm copy" type="button" data-copy="Use Kleo to make a 30-second film about a small wooden boat crossing a quiet lake at dawn. Realistic look, 16:9, English narration, a calm tone. Show me the treatment and the exact credits before you start the render.">Copy</button></p>
+      </div>
+      <ul class="defs">
+        <li><b>Looks</b><span>Two looks are available: <b>realistic</b>, generated live-action footage with a cinematic
+          feel, and <b>animation</b>, a 2D animated film. <a href="/styles.html">See the film looks →</a></span></li>
+        <li><b>Formats</b><span>16:9 for YouTube or 9:16 for a Short.</span></li>
+        <li><b>Lengths</b><span>15 seconds to 5 minutes.</span></li>
+        <li><b>Narration</b><span>English or Italian.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ IN THE CHAT ============ -->
+<section id="in-the-chat">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">03</span>In the chat</div>
+        <h2>What happens next in the chat.</h2>
+      </div>
+      <p class="lede">Kleo’s tools run in a fixed order and Claude drives them for you. You read, correct and approve at
+        each step; nothing is charged until you give the go-ahead and the job is accepted.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="num" aria-hidden="true">01</span>
+        <span class="tc">kleo_adapt_prompt</span>
+        <h3>The treatment</h3>
         <p>Claude reads your request against Kleo’s intake. Subject, length, format and look are required; audience,
           tone and what must appear are optional. Whatever is missing, it asks in one message. Then it shows you the
           treatment: logline, angle, opening image, acts, ending, look, pacing and narrator. Change anything before
           going on.</p>
-      </article>
-      <article class="card">
-        <h3>2 · The storyboard<small>kleo_storyboard_guide</small></h3>
+      </div>
+      <div class="step">
+        <span class="num" aria-hidden="true">02</span>
+        <span class="tc">kleo_storyboard_guide</span>
+        <h3>The storyboard</h3>
         <p>Claude fetches Kleo’s guide to the storyboard (a direction block, the scenes, the shots and their limits)
           and writes the storyboard under the treatment you approved. This is where the film is made; read it and ask
           for changes.</p>
-      </article>
-      <article class="card">
-        <h3>3 · The render<small>kleo_create_video</small></h3>
+      </div>
+      <div class="step">
+        <span class="num" aria-hidden="true">03</span>
+        <span class="tc">kleo_create_video</span>
+        <h3>The render</h3>
         <p>Kleo checks everything and answers with the exact credits for the film. With your OK, Claude starts the
           render on a GPU rented for that one job. Nothing is charged before the job is accepted, and a refused call
           costs nothing.</p>
-      </article>
-      <article class="card">
-        <h3>4 · The link<small>kleo_wait_for_video</small></h3>
+      </div>
+      <div class="step">
+        <span class="num" aria-hidden="true">04</span>
+        <span class="tc">kleo_wait_for_video</span>
+        <h3>The link</h3>
         <p>Claude waits for the render, reporting progress, until Kleo hands over the link to the finished MP4,
           typically 25–35 minutes later. The link is good for 7 days. Kleo never publishes the film anywhere: you
           download it and post it where you like.</p>
-      </article>
+      </div>
     </div>
-  </section>
-  <section id="what-you-get" class="section">
-    <h2>What you get.</h2>
-    <ul class="facts">
+  </div>
+</section>
+
+<!-- ============ WHAT YOU GET ============ -->
+<section id="what-you-get">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">04</span>The film</div>
+        <h2>What you get.</h2>
+      </div>
+    </div>
+    <ul class="style-facts auto">
       <li><b>Output</b><span>An MP4 in 4K (3840×2160 or 2160×3840) at 60 fps: 16:9 for YouTube, 9:16 for a
         Short.</span></li>
       <li><b>Length</b><span>15 seconds to 5 minutes.</span></li>
@@ -183,76 +260,107 @@
       <li><b>Time</b><span>A render typically takes 25–35 minutes on a rented GPU; Kleo tells you the estimate in the
         chat.</span></li>
     </ul>
-    <p><a class="text-link" href="/pricing/">See the price of a film →</a></p>
-  </section>
-  <section id="troubleshooting" class="section">
-    <h2>If something does not work.</h2>
-    <details>
-      <summary>Kleo does not appear in Claude.</summary>
-      <p>Check the address you pasted: it is exactly https://mcp.kleooai.com/mcp, with https and nothing after /mcp.
-        Add the connector again with the name Kleo. Once it is added, it is still off in a chat until you turn it on:
-        open a new chat and switch Kleo on from the tools menu. On the free plan one custom connector is allowed, so
-        Kleo has to be that one.</p>
-    </details>
-    <details>
-      <summary>Kleo’s page never opened, or the window was blocked.</summary>
-      <p>When you confirm the connector, Claude opens Kleo’s page for the sign-in: one Start free button, nothing to
-        fill in. If your browser blocked it as a pop-up, allow pop-ups for Claude and confirm the connector again; the
-        page opens, you click Start free and you are back in Claude.</p>
-    </details>
-    <details>
-      <summary>Not enough credits.</summary>
-      <p>Connecting gives you 7 credits, and a film is 10 credits minimum, so the starter credits alone never start a
-        render. A 30-second film is 15 credits: with the €5 pack (10 credits) you have 17 and the render can start.
-        Ask Claude for your Kleo account page (kleo_account): it shows the balance and the checkout links (€5 = 10
-        credits, €15 = 35, €40 = 100; a one-off payment in EUR, no subscription). The refused call charged
-        nothing.</p>
-    </details>
-    <details>
-      <summary>The wait timed out before the film was ready.</summary>
-      <p>A long render can outlast a single tool call, but the job keeps going on its GPU. Ask Claude for the job’s
-        status (kleo_get_job) or to wait again (kleo_wait_for_video), then for the links (kleo_get_result). Do not ask
-        for a second film to check on the first.</p>
-    </details>
-    <details>
-      <summary>You want to stop a render.</summary>
-      <p>Ask Claude to cancel the job (kleo_cancel_job). The render stops and the unspent credits go back to your
-        balance.</p>
-    </details>
-    <div class="actions">
-      <a class="button" href="/connect/">Connect Kleo ↗</a>
-      <a class="button secondary" href="/faq/">Read the FAQ</a>
+    <p><a href="/pricing/">See the price of a film →</a></p>
+  </div>
+</section>
+
+<!-- ============ TROUBLESHOOTING ============ -->
+<section id="troubleshooting">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">05</span>Troubleshooting</div>
+        <h2>If something does not work.</h2>
+      </div>
     </div>
-    <p>Using ChatGPT instead? <a class="text-link" href="/integrations/chatgpt/">Kleo with ChatGPT →</a></p>
-  </section>
+    <div class="faq">
+      <div>
+        <details>
+          <summary>Kleo does not appear in Claude.</summary>
+          <p>Check the address you pasted: it is exactly https://mcp.kleooai.com/mcp, with https and nothing after /mcp.
+            Add the connector again with the name Kleo. Once it is added, it is still off in a chat until you turn it
+            on: open a new chat and switch Kleo on from the tools menu. On the free plan one custom connector is
+            allowed, so Kleo has to be that one.</p>
+        </details>
+        <details>
+          <summary>Kleo’s page never opened, or the window was blocked.</summary>
+          <p>When you confirm the connector, Claude opens Kleo’s page for the sign-in: one Start free button, nothing
+            to fill in. If your browser blocked it as a pop-up, allow pop-ups for Claude and confirm the connector
+            again; the page opens, you click Start free and you are back in Claude.</p>
+        </details>
+        <details>
+          <summary>Not enough credits.</summary>
+          <p>Connecting gives you 7 credits, and a film is 10 credits minimum, so the starter credits alone never start
+            a render. A 30-second film is 15 credits: with the €5 pack (10 credits) you have 17 and the render can
+            start. Ask Claude for your Kleo account page (kleo_account): it shows the balance and the checkout links
+            (€5 = 10 credits, €15 = 35, €40 = 100; a one-off payment in EUR, no subscription). The refused call
+            charged nothing.</p>
+        </details>
+      </div>
+      <div>
+        <details>
+          <summary>The wait timed out before the film was ready.</summary>
+          <p>A long render can outlast a single tool call, but the job keeps going on its GPU. Ask Claude for the job’s
+            status (kleo_get_job) or to wait again (kleo_wait_for_video), then for the links (kleo_get_result). Do not
+            ask for a second film to check on the first.</p>
+        </details>
+        <details>
+          <summary>You want to stop a render.</summary>
+          <p>Ask Claude to cancel the job (kleo_cancel_job). The render stops and the unspent credits go back to your
+            balance.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ START ============ -->
+<section class="cta one" id="start">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow"><span class="n">06</span>Start</div>
+      <h2>Claude is where you direct the film.</h2>
+      <p class="lede">Using ChatGPT instead? <a href="/integrations/chatgpt/">Kleo with ChatGPT →</a></p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/connect/">Connect Kleo <span class="arr" aria-hidden="true">→</span></a>
+        <a class="btn btn-ghost" href="/faq/">Read the FAQ</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 </main>
+
+<!-- ============ FOOTER ============ -->
 <footer>
-  <div class="wrap footer-grid">
-    <div>
-      <a class="logo" href="/">Kleo<span>AI</span></a>
-      <p>Human direction. Agent-made films.</p>
-      <a href="mailto:kleooai@gmail.com">kleooai@gmail.com</a>
+  <div class="wrap">
+    <div class="foot-brand">
+      <a class="brand" href="/" aria-label="Kleo, home">
+        <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+          <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+          <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+        </svg>
+        Kleo <span class="tag">MCP</span>
+      </a>
+      <span>Human direction. Agent-made films.</span>
     </div>
-    <div>
+    <div class="links">
       <a href="/connect/">Connect</a>
-      <a href="/integrations/claude/">Kleo with Claude</a>
-      <a href="/integrations/chatgpt/">Kleo with ChatGPT</a>
-      <a href="/video-generation-mcp/">MCP documentation</a>
-      <a href="/ai-youtube-video-generator/">YouTube videos</a>
-    </div>
-    <div>
-      <a href="/about/">About Kleo</a>
-      <a href="/styles.html">Film looks</a>
+      <a href="/integrations/claude/">Claude</a>
+      <a href="/integrations/chatgpt/">ChatGPT</a>
+      <a href="/video-generation-mcp/">MCP docs</a>
       <a href="/examples/">Examples</a>
+      <a href="/styles.html">Looks</a>
       <a href="/pricing/">Pricing</a>
       <a href="/faq/">FAQ</a>
+      <a href="/about/">About</a>
       <a href="/privacy.html">Privacy</a>
       <a href="/terms.html">Terms</a>
       <a href="https://github.com/tonnooooo/kleo-mcp">GitHub</a>
+      <a href="mailto:kleooai@gmail.com">kleooai@gmail.com</a>
     </div>
   </div>
-  <div class="wrap footnote">© 2026 Kleo · kleooai.com <span>Human intelligence. Agent production.</span></div>
 </footer>
-<p id="copy-status" class="copy-status" role="status" aria-live="polite"></p>
+<div class="toast" id="toast" role="status" aria-live="polite">Copied</div>
 </body>
 </html>

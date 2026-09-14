@@ -21,6 +21,9 @@ updates within a few minutes.
 | `/privacy.html`, `/terms.html` | | Historical routes. Legal wording is the owner's; only product facts get corrected. |
 | `/404.html` | | Served by GitHub Pages with a real 404 for any unknown path. `noindex`. |
 
+Every page works with JavaScript switched off (the menu, the address, the films' posters, the calculator's table
+of costs are all in the markup).
+
 Discovery files: `sitemap.xml` (exactly the indexable pages above; `lastmod` is the date a page really changed, not
 the build date — `/sitemap` is the same file, GitHub Pages resolves the extension), `robots.txt` (allows everything,
 names the sitemap), `llms.txt` (an optional summary for language models: keep it in step with the titles and
@@ -28,15 +31,23 @@ descriptions), `6d501967255b4889a19297ad25fe6c51.txt` (the IndexNow key, public 
 
 ## The one stylesheet, the one script
 
-- `site.css` — the cinematic-glass design for every page: graphite ground, champagne accents, translucent surfaces.
-  Phone rules live in the two `@media (max-width:900px / 560px)` blocks near the end; reduced motion, reduced
-  transparency and the no-`backdrop-filter` fallback close the file. No web fonts, the system stack only.
-- `site.js` — the copy buttons (`data-copy`), the pricing calculator, the sample films (they play muted while in
-  view and are only fetched then; no controls, no menu, no drag: the films are shown, not handed over), the Italian
-  hash map, and the `config.json` override below. No analytics, no cookies, no remote script anywhere on the site:
-  the privacy page promises that.
-- Both are linked with `?v=20260914`; bump it when you change either, so nobody reads a new page with an old
-  stylesheet from the cache.
+- `site.css` — the design the site has always had: graphite ground, amber accent, Bricolage Grotesque headlines
+  (Instrument Sans body, IBM Plex Mono for the camera lines), the aurora behind a hero, the floating glass pill
+  nav, numbered eyebrows, hairline sections, the render-tracks demo. The `INNER PAGES` block holds what the other
+  pages need (page hero, breadcrumbs, prose, panels, definition rows, calculator, the film players that used to live
+  in `styles.html`, the legal layout that used to live in `privacy.html`). Phones: everything phone-specific sits at
+  the END of the file (`PHONE`, scoped to `max-width:820px` / `600px`); nothing in there may change the page at
+  821px and up. Light theme follows `prefers-color-scheme` (or `data-theme` on `<html>`).
+- `site.js` — one script for every page, each block looking for its own elements: the menu button under 820px
+  (with scripts off the `no-js` class on `<html>` wraps the links inside the pill instead), the copy buttons
+  (`data-copy`, toast, an aria-label that says what is copied), the `config.json` override below, reveal on scroll,
+  the progress hairline, the REC timecode and the render loop on the home (real stages: treatment, storyboard,
+  footage, narration, finish), the pricing calculator (`#duration` → `#credit-result`, the server's rule), the sample
+  films (they play muted while in view and are only fetched then; no controls, no menu, no drag: shown, not handed
+  over), the Italian hash map, the looks page tint. No analytics, no cookies, no remote code: the privacy page
+  promises that.
+- Both are linked with `?v=20260915`; bump it when you change either, so nobody reads a new page with an old
+  stylesheet from the cache. The only remote resources on the site are the three Google Fonts faces.
 
 ## The server address
 
