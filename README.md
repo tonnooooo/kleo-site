@@ -83,6 +83,7 @@ image, poster and video points at a file that exists, titles/descriptions/canoni
 JSON-LD parses, header/footer are identical everywhere, the sitemap lists exactly the indexable pages with real
 dates, robots.txt names the sitemap, the videos follow the owner's rule, and no page says a forbidden thing.
 
-After a deploy: `python3 tools/indexnow.py --since <previous live commit>` (dry run) then `--submit` sends the changed
-URLs to IndexNow once the live pages match the repo byte for byte. Google does not use IndexNow: after a change to
+After a deploy: `python3 tools/livecheck.py` proves every page is live with the repo's exact bytes, the 404 is real,
+the discovery files and the films are served; then `python3 tools/indexnow.py --since <previous live commit>` (dry run)
+and `--submit` send the changed URLs to IndexNow once the live pages match the repo byte for byte. Google does not use IndexNow: after a change to
 the sitemap, ask Search Console to re-read it, and inspect the priority pages once.
