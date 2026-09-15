@@ -1,10 +1,10 @@
-# A 1080p copy and a poster of a sample film, made on GitHub's machine so nothing runs on the owner's computer.
-# Manual: Actions → sample-copy → Run workflow, with the path of the master inside the repo (on any branch) and
-# the name the copy should get; the result comes back as an artifact to download and commit under samples/.
+# Site copies of sample films, made on GitHub's machine so nothing runs on the owner's computer: a 1080p H.264
+# copy (or the original when "copy" is false), a poster JPG, and a contact sheet of N frames to look at the film
+# without playing it. Manual: Actions → sample-copy → Run workflow (one film); or push a tmp-sample-* branch whose
+# samples/.copy.json lists the films: {"items":[{"source":"samples/x.mp4","name":"x","height":1080,"poster_at":1,
+# "copy":true,"sheet":6}]}. The results come back as artifacts to download and commit under samples/.
 name: sample-copy
 on:
-  # a push to a tmp-sample-* branch runs it with the values in samples/.copy.json (source, name, height, poster_at);
-  # workflow_dispatch works once the file is on the default branch
   push:
     branches: ["tmp-sample-*"]
   workflow_dispatch:
@@ -26,32 +26,47 @@ permissions:
 jobs:
   copy:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       - name: ffmpeg
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
           ffmpeg -version | head -1
-      - name: the parameters (inputs, or samples/.copy.json on a push)
-        id: p
+      - name: copies, posters, contact sheets
+        env:
+          IN_SOURCE: ${{ inputs.source }}
+          IN_NAME: ${{ inputs.name }}
+          IN_HEIGHT: ${{ inputs.height }}
+          IN_POSTER: ${{ inputs.poster_at }}
         run: |
-          if [ -n "${{ inputs.source }}" ]; then
-            echo "source=${{ inputs.source }}" >> $GITHUB_OUTPUT; echo "name=${{ inputs.name }}" >> $GITHUB_OUTPUT
-            echo "height=${{ inputs.height }}" >> $GITHUB_OUTPUT; echo "poster_at=${{ inputs.poster_at }}" >> $GITHUB_OUTPUT
-          else
-            for k in source name height poster_at; do echo "$k=$(python3 -c "import json;print(json.load(open('samples/.copy.json'))['$k'])")" >> $GITHUB_OUTPUT; done
-          fi
-      - name: 1080p copy, H.264 + AAC, faststart, and the poster
-        run: |
-          mkdir -p out
-          ffmpeg -v error -y -i "${{ steps.p.outputs.source }}" -vf "scale=-2:${{ steps.p.outputs.height }}" -r 60 \
-            -c:v libx264 -preset slow -crf 21 -pix_fmt yuv420p -c:a aac -b:a 128k -movflags +faststart \
-            "out/${{ steps.p.outputs.name }}.mp4"
-          ffmpeg -v error -y -ss "${{ steps.p.outputs.poster_at }}" -i "out/${{ steps.p.outputs.name }}.mp4" -frames:v 1 -q:v 3 "out/${{ steps.p.outputs.name }}.jpg"
-          ls -la out; ffprobe -v error -select_streams v:0 -show_entries stream=width,height,r_frame_rate:format=duration,size -of default=nw=1 "out/${{ steps.p.outputs.name }}.mp4"
+          python3 - <<'PY'
+          import json, os, subprocess, shutil
+          items = []
+          if os.environ.get('IN_SOURCE'):
+              items = [{'source': os.environ['IN_SOURCE'], 'name': os.environ['IN_NAME'], 'height': int(os.environ.get('IN_HEIGHT') or 1080), 'poster_at': float(os.environ.get('IN_POSTER') or 1), 'copy': True, 'sheet': 6}]
+          else:
+              cfg = json.load(open('samples/.copy.json'))
+              items = cfg['items'] if 'items' in cfg else [cfg]
+          os.makedirs('out', exist_ok=True)
+          for it in items:
+              src, name = it['source'], it['name']
+              height, at = int(it.get('height', 1080)), float(it.get('poster_at', 1))
+              out_mp4 = f'out/{name}.mp4'
+              if it.get('copy', True):
+                  subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', src, '-vf', f'scale=-2:{height}', '-r', '60', '-c:v', 'libx264', '-preset', 'slow', '-crf', '21', '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '128k', '-movflags', '+faststart', out_mp4], check=True)
+              else:
+                  shutil.copy(src, out_mp4)
+              subprocess.run(['ffmpeg', '-v', 'error', '-y', '-ss', str(at), '-i', out_mp4, '-frames:v', '1', '-q:v', '3', f'out/{name}.jpg'], check=True)
+              n = int(it.get('sheet', 6))
+              if n:
+                  dur = float(subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', out_mp4], capture_output=True, text=True).stdout.strip() or 1)
+                  subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', out_mp4, '-vf', f'fps={n}/{dur},scale=-2:480,tile={n}x1', '-frames:v', '1', '-q:v', '4', f'out/{name}-sheet.jpg'], check=True)
+              print(name, subprocess.run(['ffprobe', '-v', 'error', '-select_streams', 'v:0', '-show_entries', 'stream=width,height,r_frame_rate:format=duration,size', '-of', 'csv=p=0', out_mp4], capture_output=True, text=True).stdout.strip())
+          PY
+          ls -la out
       - uses: actions/upload-artifact@v4
         with:
-          name: ${{ steps.p.outputs.name }}
+          name: samples-${{ github.sha }}
           path: out/
           retention-days: 7
