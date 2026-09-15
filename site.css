@@ -626,6 +626,10 @@ footer a:hover{color:var(--ink)}
 .sample .poster.tall{justify-self:center}
 .player.tall{max-width:420px}
 .player.tall .style-media{border-radius:30px}
+.shots-row{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; align-items:start}
+.shot-card{min-width:0}
+.shot-card .style-media{--ry:0deg}
+@media (max-width:860px){ .shots-row{grid-template-columns:minmax(0,1fr); max-width:320px} }
 .films-row{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px}
 @media (max-width:860px){ .sample{grid-template-columns:minmax(0,1fr); gap:22px; padding:40px 0} .films-row{grid-template-columns:minmax(0,1fr)} }
 /* the hero of the home when it carries the film instead of the chat: same grid, the poster in the demo's place */

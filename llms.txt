@@ -1,6 +1,6 @@
 # Kleo AI
 
-> Kleo makes complete narrated films from a brief, inside the AI assistant you already use: a treatment, a storyboard, every shot generated as moving footage, one narrator, a 4K 60 fps MP4 you download and publish — or an animatic of the same storyboard (drawn frames under a moving camera, no generated clip, 5 credits, every account). Two looks, realistic and animation. A remote MCP server with OAuth.
+> Kleo makes complete narrated films from a brief, inside the AI assistant you already use: a treatment, a storyboard, every shot generated as moving footage, one narrator, a 4K 60 fps MP4 you download and publish. Two looks, realistic and animation. A remote MCP server with OAuth.
 
 ## Pages
 - [Kleo AI — Human Direction. Agent-Made Films.](https://kleooai.com/): Complete narrated films, realistic or animation, made from your AI assistant through MCP. 4K 60 fps, 15 seconds to 5 minutes, English or Italian narration.
@@ -10,7 +10,7 @@
 - [Create AI Videos with Claude and Kleo — Setup Guide](https://kleooai.com/integrations/claude/): Add Kleo to Claude as a custom connector, ask for a narrated film and get the 4K MP4 link in the same chat: setup steps, a first prompt and troubleshooting.
 - [Create AI Videos with ChatGPT and Kleo — Setup Guide](https://kleooai.com/integrations/chatgpt/): Connect Kleo to ChatGPT in Developer mode with OAuth and direct a narrated film from the chat: tested steps, first prompt, production flow, credits, fixes.
 - [Kleo MCP documentation — endpoint, OAuth and the tools](https://kleooai.com/video-generation-mcp/): Kleo’s remote MCP server, documented: the Streamable HTTP endpoint, OAuth 2.1 in one button, each kleo tool in the order it runs, the price rule and the output.
-- [Kleo AI Video Examples — Tether, Signal Delay, the Octopus Short](https://kleooai.com/examples/): Three Kleo films: Tether, 20 seconds in one shot; the opening minute of Signal Delay, a Voyager 1 documentary; and an animated Short on why octopuses have three hearts.
+- [Kleo AI Video Examples — Three Films and Three Shots](https://kleooai.com/examples/): Three Kleo films — Tether, the opening of Signal Delay, an animated Short on octopuses — and three single generated shots of a few seconds each, realistic look.
 - [Tether — a 20-second film by Kleo, realistic look](https://kleooai.com/examples/tether/): Tether, a Kleo film in the realistic look: one unbroken 20-second pull-back from an astronaut’s face inside his helmet to the station he is tethered to.
 - [Signal Delay — a Kleo documentary opening about Voyager 1](https://kleooai.com/examples/signal-delay/): Watch the first minute of Signal Delay, a Voyager 1 documentary told as mission logs by one narrator and rendered with Kleo’s realistic look at 4K 60 fps.
 - [Why Octopuses Have 3 Hearts — a 32-second animated Short by Kleo](https://kleooai.com/examples/octopus/): Why Octopuses Have 3 Hearts and Blue Blood: a 32-second animated Short made by Kleo from one sentence, painted pictures, captions lit on the spoken word, 9:16.
@@ -20,6 +20,6 @@
 - [Terms | Kleo AI](https://kleooai.com/terms.html): Kleo’s terms in plain words: 7 credits to start (one animatic), a film from 10 for paid accounts, the videos are yours, files last 7 days, no promise that cannot be kept.
 - [Privacy | Kleo AI](https://kleooai.com/privacy.html): What Kleo stores, for how long, and who else sees it. An account is a cookie, rendered files are deleted after 7 days, and this site carries no trackers.
 
-## Facts (deployed server, 15 September 2026)
+## Facts (deployed server, 14 September 2026)
 
-Two products from one storyboard. Film: every shot a generated clip, 15 seconds to 5 minutes; 16:9 or 9:16; English or Italian narration; realistic or animation look; 4K 60 fps MP4; no background music, no captions, no automatic publishing; a render takes about 25–35 minutes on a rented GPU. 1 credit = 2 seconds of film, rounded up, 10 credits minimum; a film is made only for accounts that have bought a credit pack (any pack). Animatic: the same treatment, storyboard and drawn frames with the camera moving over each, the same narrator and graphic layer, no generated clip, 4K 60 fps, 15 to 60 seconds, either look; 5 credits flat, open to every account; also the preview of a film. 7 credits on connecting (one animatic); packs €5 = 10 credits, €15 = 35, €40 = 100, one-off, no subscription. kleo_create_video takes product: "film" | "animatic"; kleo_account reports has_paid. MCP endpoint: https://mcp.kleooai.com/mcp (Streamable HTTP, OAuth 2.1). Contact: kleooai@gmail.com. Source: https://github.com/tonnooooo/kleo-mcp
+15 seconds to 5 minutes; 16:9 or 9:16; English or Italian narration; realistic or animation look; 4K 60 fps MP4; no background music, no captions, no automatic publishing; a render takes about 25–35 minutes on a rented GPU. 1 credit = 2 seconds of film, rounded up, 10 credits minimum. 7 credits on connecting; packs €5 = 10 credits, €15 = 35, €40 = 100, one-off, no subscription. MCP endpoint: https://mcp.kleooai.com/mcp (Streamable HTTP, OAuth 2.1). Contact: kleooai@gmail.com. Source: https://github.com/tonnooooo/kleo-mcp
