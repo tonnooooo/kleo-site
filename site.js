@@ -179,6 +179,36 @@
     medias.forEach(function(m){ if (m.querySelector('video')) vio.observe(m); });
   }
 
+
+  /* ---------- the looks page: the line plays, words light up as they are said, the shots cut on their word ---------- */
+  var line = document.getElementById('line');
+  if (line) {
+    var TEXT = line.getAttribute('aria-label') || '';
+    var words = TEXT.split(' '), shots = Array.prototype.slice.call(document.querySelectorAll('#shots .shot'));
+    var cuts = shots.map(function(s){ return parseInt(s.getAttribute('data-from'), 10); });
+    line.innerHTML = words.map(function(w, i){ return '<span class="w' + (cuts.indexOf(i) > 0 ? ' cut' : '') + '">' + w + '</span>'; }).join(' ');
+    var spans = Array.prototype.slice.call(line.querySelectorAll('.w')), lineTimer, at = -1;
+    var paintLine = function(i){
+      spans.forEach(function(s, k){ s.classList.toggle('said', k < i); s.classList.toggle('now', k === i); });
+      var k = 0; cuts.forEach(function(c, n){ if (i >= c) k = n; });
+      shots.forEach(function(s, n){ s.classList.toggle('on', i >= 0 && n === k); });
+    };
+    var playLine = function(){
+      clearTimeout(lineTimer); at = -1;
+      if (reduce) { paintLine(words.length - 1); return; }   // no motion: the line already said, the last shot on screen
+      (function step(){
+        at += 1; paintLine(at);
+        if (at < words.length) lineTimer = setTimeout(step, /[.,]$/.test(words[at]) ? 720 : 380);
+        else lineTimer = setTimeout(function(){ paintLine(-1); shots.forEach(function(s){ s.classList.remove('on'); }); }, 2400);
+      })();
+    };
+    var replay = document.getElementById('replay'); if (replay) replay.addEventListener('click', playLine);
+    var scene = document.getElementById('scene'), played = false;
+    if (scene && 'IntersectionObserver' in window) {
+      new IntersectionObserver(function(en){ if (en[0].isIntersecting && !played) { played = true; playLine(); } }, {threshold:.35}).observe(scene);
+    } else playLine();
+  }
+
   /* ---------- the looks page: the hero takes the colour of the look you point at ---------- */
   var shero = document.querySelector('.styles-hero');
   if (shero) Array.prototype.forEach.call(document.querySelectorAll('.look'), function(l){

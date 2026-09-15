@@ -114,8 +114,8 @@
     <div>
       <p>Kleo makes one kind of video, a complete narrated film. Two looks are on the server’s style switch today —
         realistic, generated live-action footage with photographic light, and animation, a 2D animated film — and two
-        more are drawn live by the Keou engine, Cinema and Stickman, each shown below with a real sample. One look per
-        film, decided before a frame exists; the same workflow and the same 4K 60 fps master whatever the look.</p>
+        more are drawn live by the Keou engine, Cinema and Stickman. Every look is shown below with a real sample. One
+        look per film, decided before a frame exists; the same workflow and the same 4K 60 fps master whatever the look.</p>
       <div class="looks">
         <a class="look" href="#realistic" data-look="realistic" style="--c:var(--teal)"><i></i>Realistic</a>
         <a class="look" href="#animation" data-look="animation" style="--c:var(--amber)"><i></i>Animation</a>
@@ -176,24 +176,29 @@
       </div>
     </article>
 
-    <article class="style-row wide" id="animation" style="--c:var(--amber)">
-      <div class="style-media wide empty"><span>Animation · live on the server today<br>a sample film will be published on this page</span></div>
+    <article class="style-row" id="animation" style="--c:var(--amber)">
+      <div class="style-media">
+        <video src="/samples/animation-octopus.mp4" poster="/samples/animation-octopus.jpg" width="608" height="1080" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback"
+               aria-label="Animation sample, Why Octopuses Have 3 Hearts and Blue Blood: a painted red octopus, chapter pills and big captions cut on the words"></video>
+        <span class="style-live" aria-hidden="true"><i></i>Playing</span>
+      </div>
       <div>
         <div class="style-n">02 · look</div>
         <div class="style-name"><h2>Animation</h2><button class="style-arg" type="button" data-copy='style: "animation"' aria-label="Copy the animation style argument">style: "animation"</button></div>
-        <p class="style-lead">A 2D animated film: painted backgrounds, hand-drawn characters kept the same from shot to shot, and
-          every shot generated as moving footage from its own frame, no slideshow of stills. One narrator, in English or
-          Italian, and nothing else on the frame. The same workflow, the same 4K 60 fps master and the same price as the
-          realistic look: 1 credit is 2 seconds of film, from 10 credits.</p>
-        <p class="style-lead">There is no animation sample on the site yet. The look is live on the server, so any connected
-          assistant can ask for it now; a film made in it will be published here as soon as it is ready.</p>
-        <ul class="style-facts auto">
+        <p class="style-lead">A 2D animated film: painted backgrounds, hand-drawn characters kept the same from shot to shot, one
+          narrator in English or Italian. Live on the server today, on the same workflow, the same 4K 60 fps master and
+          the same price as the realistic look: 1 credit is 2 seconds of film, from 10 credits.</p>
+        <p class="film-note"><b>Why Octopuses Have 3 Hearts and Blue Blood</b> — a 32-second Short, 9:16, made from one sentence
+          with a connected assistant (OpenCode, on its own, storyboard included): a painted red octopus, one picture per
+          shot with a slow camera move, chapter pills and big captions that light up on the spoken word. Shown at 1080p,
+          muted. The animation look on the server now goes one step further: every shot is generated as moving footage
+          from its drawn frame, with nothing on the frame unless the film’s treatment asks for it.</p>
+        <ul class="style-facts">
           <li><b>Output</b><span>4K · 60 fps, 16:9 for YouTube or 9:16 for a Short, 15 seconds to 5 minutes</span></li>
-          <li><b>Footage</b><span>Every shot generated as moving footage from its own frame; painted backgrounds, hand-drawn characters kept the same across shots</span></li>
-          <li><b>On the frame</b><span>Nothing unless the film’s treatment asks for it; one narrator, English or Italian, no music, no captions</span></li>
+          <li><b>Footage</b><span>Painted backgrounds, hand-drawn characters kept the same across shots, every shot generated from its own frame</span></li>
           <li><b>Price</b><span>The same as the realistic look: 1 credit = 2 seconds, 10 credits minimum; a 40-second Short is 20 credits</span></li>
         </ul>
-        <p class="style-say copyable">“Make me a 40-second Short, animation look, about the lighthouse keeper who kept answering a message in a bottle. English narration.”<button class="btn btn-ghost btn-sm copy" type="button" data-copy="Make me a 40-second Short, animation look, about the lighthouse keeper who kept answering a message in a bottle. English narration.">Copy</button></p>
+        <p class="style-say copyable">“Make me a 40-second Short, animation look, about why octopuses have three hearts and blue blood. English narration.”<button class="btn btn-ghost btn-sm copy" type="button" data-copy="Make me a 40-second Short, animation look, about why octopuses have three hearts and blue blood. English narration.">Copy</button></p>
       </div>
     </article>
 
@@ -301,11 +306,38 @@
   </div>
 </section>
 
+<!-- ============ HOW A SCENE IS CUT ============ -->
+<section id="scene">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">06</span>How a scene is cut</div>
+        <h2>Not a slideshow.<br>A line, cut into shots.</h2>
+      </div>
+      <p class="lede">Each narrated line becomes a scene, and each scene is cut into shots. Kleo writes a description for
+        every shot, generates it from its own frame, and times the cut to a word you actually hear. Watch the line below.</p>
+    </div>
+    <div class="scene">
+      <div>
+        <p class="line" id="line" aria-label="Captain Mara buried her treasure on Skull Beach in 1720. She never came back, and nobody knows why."></p>
+        <div class="line-foot"><span>narration · 9 s</span><button type="button" id="replay">↻ Play it again</button></div>
+      </div>
+      <div class="shots" id="shots" aria-label="The three shots of this scene">
+        <div class="shot" data-from="0"><div class="frame" aria-hidden="true"><svg viewBox="0 0 90 120" aria-hidden="true"><circle cx="45" cy="52" r="13" fill="var(--amber)" opacity=".9"/><path d="M0 78 Q45 70 90 78 V120 H0Z" fill="var(--amber-soft)"/><path d="M0 78 Q45 70 90 78" stroke="var(--amber)" stroke-width="1.2" fill="none" opacity=".7"/><rect x="38" y="84" width="16" height="10" rx="2" fill="var(--ink)" opacity=".8"/><path d="M38 84 q8 -6 16 0" stroke="var(--ink)" stroke-width="1.5" fill="none" opacity=".8"/></svg></div><b>shot 01</b><span>The captain burying a chest on a golden beach at sunset.</span><em class="cutword">Captain</em></div>
+        <div class="shot" data-from="11"><div class="frame" aria-hidden="true"><svg viewBox="0 0 90 120" aria-hidden="true"><circle cx="18" cy="62" r="9" fill="var(--amber)" opacity=".6"/><path d="M0 80 Q45 74 90 80 V120 H0Z" fill="var(--amber-soft)"/><path d="M0 80 Q45 74 90 80" stroke="var(--amber)" stroke-width="1.2" fill="none" opacity=".7"/><g stroke="var(--ink)" stroke-width="1.8" stroke-linecap="round" fill="none" opacity=".85"><circle cx="64" cy="64" r="3.5"/><path d="M64 68 v12 M64 74 l-5 6 M64 74 l5 5 M64 80 l-4 9 M64 80 l5 8"/></g></svg></div><b>shot 02</b><span>She walks away along the shoreline, the chest gone.</span><em class="cutword">never</em></div>
+        <div class="shot" data-from="15"><div class="frame" aria-hidden="true"><svg viewBox="0 0 90 120" aria-hidden="true"><path d="M52 32 a12 12 0 1 0 10 18 a9 9 0 1 1 -10 -18z" fill="var(--ink)" opacity=".8"/><g fill="var(--ink)" opacity=".5"><circle cx="20" cy="28" r="1.2"/><circle cx="30" cy="48" r="1"/><circle cx="74" cy="24" r="1.3"/><circle cx="80" cy="56" r=".9"/></g><path d="M0 80 Q45 74 90 80 V120 H0Z" fill="var(--line)"/><path d="M0 80 Q45 74 90 80" stroke="var(--ink-2)" stroke-width="1" fill="none" opacity=".5"/></svg></div><b>shot 03</b><span>The same beach at night, empty.</span><em class="cutword">nobody</em></div>
+      </div>
+    </div>
+    <p class="scene-foot">The same character is described the same way in every shot, so the captain still looks like
+      the captain three shots later.</p>
+  </div>
+</section>
+
 <!-- ============ START ============ -->
 <section class="cta one" id="start">
   <div class="wrap">
     <div>
-      <div class="eyebrow"><span class="n">04</span>Start</div>
+      <div class="eyebrow"><span class="n">07</span>Start</div>
       <h2>Ask for a look by name.</h2>
       <p class="lede">One look per film, decided in the treatment before a frame exists; the same workflow, the same 4K 60 fps
         master and the same price either way.</p>

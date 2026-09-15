@@ -121,7 +121,9 @@ section + section{border-top:1px solid var(--line)}
 @media (min-width:821px){ .nav .btn{margin-left:0} }
 
 /* ---------- hero ---------- */
-.hero{padding:104px 0 0; border-top:none; overflow:visible}
+.hero{padding:104px 0 0; border-top:none; overflow:visible; overflow-x:clip}
+/* the aurora bleeds 10% past each side of the hero; clipped on the x axis on every screen, so the page never grows sideways (it still rises behind the nav) */
+.styles-hero, .page-hero, .doc-hero{overflow-x:clip}
 .hero::before, .styles-hero::before{
   content:""; position:absolute; inset:-160px -10% 0 -10%; z-index:-1; pointer-events:none;
   background:
@@ -586,6 +588,31 @@ footer a:hover{color:var(--ink)}
   .style-facts li:last-child{border-bottom:0}
 }
 @media (prefers-reduced-motion: reduce){ .style-live i{animation:none} .style-row .style-media{transition:none; --ry:0deg} }
+/* the looks page: how a scene is cut — a line that plays, three shots that cut on their word (from the old page) */
+.scene{display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); gap:48px; align-items:start}
+@media (max-width:900px){ .scene{grid-template-columns:minmax(0,1fr)} }
+.line{font-family:var(--font-display); font-weight:700; font-size:clamp(1.5rem,2.6vw,2.1rem); line-height:1.3; letter-spacing:-.02em; margin:0; text-wrap:pretty}
+.line .w{color:var(--mute); transition:color .18s}
+.line .w.said{color:var(--ink)}
+.line .w.now{color:var(--amber)}
+.line .w.cut{text-decoration:underline; text-decoration-color:color-mix(in srgb, var(--amber) 50%, transparent); text-underline-offset:6px; text-decoration-thickness:2px}
+.line-foot{margin-top:18px; font:500 .72rem var(--font-mono); letter-spacing:.12em; text-transform:uppercase; color:var(--mute); display:flex; gap:16px; align-items:center; flex-wrap:wrap}
+.line-foot button{font:inherit; color:var(--ink-2); background:var(--glass); border:1px solid var(--line-2); border-radius:999px; padding:7px 12px; cursor:pointer; letter-spacing:inherit; text-transform:inherit}
+.line-foot button:hover{color:var(--ink); border-color:var(--ink-2)}
+.shots{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin:0}
+.shot{background:var(--bg-2); border:1px solid var(--line); border-radius:var(--r-s); padding:16px; display:grid; gap:8px; align-content:start; transition:border-color .3s, transform .5s cubic-bezier(.2,.7,.2,1), box-shadow .3s}
+.shot .frame{aspect-ratio:9/12; border-radius:8px; background:var(--bg-3); border:1px dashed var(--line-2); position:relative; overflow:hidden}
+.shot .frame svg{position:absolute; inset:0; width:100%; height:100%; opacity:.55; transition:opacity .4s, transform 3s linear; transform:scale(1)}
+.shot.on .frame svg{opacity:1; transform:scale(1.12) translate(2%,-2%)}
+.shot.on{border-color:color-mix(in srgb, var(--amber) 55%, var(--line-2)); transform:translateY(-4px); box-shadow:0 16px 40px rgba(0,0,0,.35), 0 0 0 1px color-mix(in srgb, var(--amber) 20%, transparent)}
+.shot b{font:500 .68rem var(--font-mono); letter-spacing:.14em; text-transform:uppercase; color:var(--mute)}
+.shot.on b{color:var(--accent-text)}
+.shot span{font-size:.875rem; color:var(--ink-2); line-height:1.5}
+.shot .cutword{font:500 .68rem var(--font-mono); color:var(--mute); letter-spacing:.06em}
+.shot .cutword::before{content:"cut on “"} .shot .cutword::after{content:"”"}
+@media (max-width:600px){ .shots{grid-template-columns:minmax(0,1fr)} .shot .frame{display:none} }
+.scene-foot{color:var(--mute); font-size:.9375rem; margin:28px 0 0; max-width:62ch}
+@media (prefers-reduced-motion: reduce){ .shot, .shot .frame svg, .line .w{transition:none} }
 /* the film-page gallery card: poster, then the words */
 .sample{display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr); gap:36px; align-items:center; padding:56px 0; border-top:1px solid var(--line)}
 .sample:first-of-type{border-top:0; padding-top:8px}
@@ -594,6 +621,7 @@ footer a:hover{color:var(--ink)}
 .poster:hover img{transform:scale(1.03)}
 .poster .play{position:absolute; left:16px; bottom:16px; display:inline-flex; align-items:center; gap:10px; padding:9px 16px 9px 10px; border-radius:999px; background:rgba(0,0,0,.6); backdrop-filter:blur(8px); color:#fff; font:500 .78rem var(--font-mono); letter-spacing:.1em; text-transform:uppercase}
 .poster .play i{width:26px; height:26px; border-radius:50%; background:var(--amber); color:var(--amber-ink); display:grid; place-items:center; font-style:normal; font-size:.7rem; padding-left:2px}
+.poster.tall{max-width:320px}
 .films-row{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px}
 @media (max-width:860px){ .sample{grid-template-columns:minmax(0,1fr); gap:22px; padding:40px 0} .films-row{grid-template-columns:minmax(0,1fr)} }
 /* the hero of the home when it carries the film instead of the chat: same grid, the poster in the demo's place */
