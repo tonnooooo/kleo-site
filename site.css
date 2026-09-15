@@ -523,7 +523,9 @@ footer a:hover{color:var(--ink)}
 /* the looks page and the film pages: one look per row, a film shown, not handed over — moved here from styles.html
    so the example pages can show the same players */
 .styles-hero{padding:104px 0 56px}
-.styles-hero .wrap{display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr); gap:48px; align-items:end}
+/* one column, top-aligned, like every other inner page: the REC line, the title, the lede, the pills */
+.styles-hero .wrap{display:grid; grid-template-columns:minmax(0,1fr); gap:0; align-items:start}
+.styles-hero p{margin-top:26px}
 .styles-hero h1{font-size:clamp(2.8rem,5.5vw,4.5rem)}
 .styles-hero p{color:var(--ink-2); font-size:1.125rem; line-height:1.6; max-width:56ch; margin:0; text-wrap:pretty}
 .looks{display:flex; flex-wrap:wrap; gap:8px; margin-top:28px}
