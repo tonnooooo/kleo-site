@@ -622,6 +622,9 @@ footer a:hover{color:var(--ink)}
 .poster .play{position:absolute; left:16px; bottom:16px; display:inline-flex; align-items:center; gap:10px; padding:9px 16px 9px 10px; border-radius:999px; background:rgba(0,0,0,.6); backdrop-filter:blur(8px); color:#fff; font:500 .78rem var(--font-mono); letter-spacing:.1em; text-transform:uppercase}
 .poster .play i{width:26px; height:26px; border-radius:50%; background:var(--amber); color:var(--amber-ink); display:grid; place-items:center; font-style:normal; font-size:.7rem; padding-left:2px}
 .poster.tall{max-width:320px}
+.sample .poster.tall{justify-self:center}
+.player.tall{max-width:420px}
+.player.tall .style-media{border-radius:30px}
 .films-row{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px}
 @media (max-width:860px){ .sample{grid-template-columns:minmax(0,1fr); gap:22px; padding:40px 0} .films-row{grid-template-columns:minmax(0,1fr)} }
 /* the hero of the home when it carries the film instead of the chat: same grid, the poster in the demo's place */

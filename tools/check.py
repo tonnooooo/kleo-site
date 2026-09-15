@@ -27,6 +27,7 @@ PAGES = {
     '/examples/': 'examples/index.html',
     '/examples/tether/': 'examples/tether/index.html',
     '/examples/signal-delay/': 'examples/signal-delay/index.html',
+    '/examples/octopus/': 'examples/octopus/index.html',
     '/styles.html': 'styles.html',
     '/faq/': 'faq/index.html',
     '/about/': 'about/index.html',
