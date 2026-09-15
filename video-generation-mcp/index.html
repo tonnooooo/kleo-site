@@ -110,8 +110,9 @@
     <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">›</span><span>MCP documentation</span></nav>
     <h1>A video production<br><span class="hl">MCP server.</span></h1>
     <p class="lede">Kleo exposes one film workflow to any MCP client: intake, treatment, storyboard, a render on a GPU rented for the
-      job, and the links to a finished narrated film in 4K at 60 fps. One narrator, two looks, 15 seconds to 5 minutes.
-      There is no app and no dashboard; the assistant does the work through the tools below.</p>
+      job, and the links to a finished narrated film in 4K at 60 fps. One narrator, two looks, two products (a film, or an
+      animatic of the same storyboard), 15 seconds to 5 minutes. There is no app and no dashboard; the assistant does the
+      work through the tools below.</p>
     <p class="mono" id="mcpStatus" hidden></p>
     <div class="address"><code>https://mcp.kleooai.com/mcp</code><button class="btn btn-ghost btn-sm" type="button" data-copy="https://mcp.kleooai.com/mcp">Copy address</button></div>
     <div class="cta-row">
@@ -203,7 +204,8 @@ claude mcp add --transport http kleo https://mcp.kleooai.com/mcp
             </tr>
             <tr>
               <td>kleo_create_video</td>
-              <td>Checks everything, states the exact credits, then starts the render on a GPU rented for that job.</td>
+              <td>Checks everything, states the exact credits, then starts the render on a GPU rented for that job. Takes
+                <code class="mono">product: "film"</code> or <code class="mono">"animatic"</code>.</td>
             </tr>
             <tr>
               <td>kleo_get_job</td>
@@ -223,11 +225,13 @@ claude mcp add --transport http kleo https://mcp.kleooai.com/mcp
             </tr>
             <tr>
               <td>kleo_list_templates</td>
-              <td>Lists the one workflow, film, with its formats, lengths and voices, and the credits left on the account.</td>
+              <td>Lists the one workflow, film, with its formats, lengths and voices, and the credits left on the account. The
+                animatic is a product of that same workflow.</td>
             </tr>
             <tr>
               <td>kleo_account</td>
-              <td>Shows the credits, the link to the account page, and the private Kleo key.</td>
+              <td>Shows the credits, whether the account has paid (<code class="mono">has_paid</code>, which decides if a film
+                can be ordered), the link to the account page, and the private Kleo key.</td>
             </tr>
             <tr>
               <td>kleo_generate_thumbnail</td>
@@ -258,11 +262,15 @@ claude mcp add --transport http kleo https://mcp.kleooai.com/mcp
     </div>
     <ul class="defs">
       <li><b>prompt</b><span>The request in the user’s own words.</span></li>
-      <li><b>duration_s</b><span>15 to 300 seconds.</span></li>
+      <li><b>product</b><span><code class="mono">film</code> (the default: every shot a generated clip, priced by length, for accounts
+        that have bought a pack) or <code class="mono">animatic</code> (the drawn frames under a moving camera, no generated clip,
+        5 credits flat, 15 to 60 seconds, for every account).</span></li>
+      <li><b>duration_s</b><span>15 to 300 seconds for a film, 15 to 60 for an animatic.</span></li>
       <li><b>format</b><span><code class="mono">16:9</code> for YouTube and landscape, <code class="mono">9:16</code> for a Short and
         vertical.</span></li>
       <li><b>style</b><span><code class="mono">realistic</code> (generated live-action footage, cinematic) or
-        <code class="mono">animation</code> (a 2D animated film). Every shot is generated as moving footage from its own frame.</span></li>
+        <code class="mono">animation</code> (a 2D animated film). In a film every shot is generated as moving footage from its own
+        frame; an animatic keeps the look in its drawn frames.</span></li>
       <li><b>language</b><span><code class="mono">en</code> or <code class="mono">it</code> narration. One narrator; no music, no
         captions, no on-screen text in the standard film.</span></li>
       <li><b>voice</b><span>Optional: <code class="mono">narrator-en-m</code>, <code class="mono">narrator-en-f</code>,
@@ -274,16 +282,17 @@ claude mcp add --transport http kleo https://mcp.kleooai.com/mcp
     </ul>
     <div class="prose">
       <h3>Price</h3>
-      <p>One credit is two seconds of film, rounded up, ten credits minimum: 15 s = 10 · 20 s = 10 · 30 s = 15 ·
-        60 s = 30 · 90 s = 45 · 3 min = 90 · 5 min = 150. Connecting includes 7 credits, which alone do not reach the
-        minimum: 7 + the €5 pack = 17, a 30-second Short. Packs are one-off, in EUR, no subscription: €5 = 10 credits ·
-        €15 = 35 · €40 = 100.</p>
+      <p>A film: one credit is two seconds, rounded up, ten credits minimum: 15 s = 10 · 20 s = 10 · 30 s = 15 ·
+        60 s = 30 · 90 s = 45 · 3 min = 90 · 5 min = 150. An animatic: 5 credits flat, 15 to 60 seconds. Connecting includes
+        7 credits, one animatic; a film is made only for accounts that have bought a pack (its clips are generated at Kleo’s
+        expense, so free credits never buy one): 7 + the €5 pack = 17, the film opens, a 30-second Short. Packs are one-off,
+        in EUR, no subscription: €5 = 10 credits · €15 = 35 · €40 = 100.</p>
       <h3>Nothing is charged until the job is accepted</h3>
       <p><code>kleo_create_video</code> answers with the exact credits first; a refused call charges nothing, and
         <code>kleo_cancel_job</code> refunds the credits a stopped render had not spent.</p>
       <h3>Render time</h3>
-      <p>A render typically takes 25–35 minutes on the rented GPU; the server tells the assistant the estimate for the job.
-        It is not a fixed time.</p>
+      <p>A film typically takes 25–35 minutes on the rented GPU, an animatic about 15–20; the server tells the assistant the
+        estimate for the job. It is not a fixed time.</p>
       <p><a href="/pricing/">Credit packs and the cost of any length →</a></p>
     </div>
   </div>
@@ -297,9 +306,9 @@ claude mcp add --transport http kleo https://mcp.kleooai.com/mcp
         <div class="eyebrow"><span class="n">04</span>Output</div>
         <h2>A finished video as the output.</h2>
       </div>
-      <p class="lede">One MP4: 4K (3840×2160 or 2160×3840) at 60 fps, 16:9 or 9:16, with one narrator in English or Italian and
-        every shot generated as moving footage. <code class="mono">kleo_get_result</code> hands the assistant a link to the file;
-        the link is good for 7 days.</p>
+      <p class="lede">One MP4: 4K (3840×2160 or 2160×3840) at 60 fps, 16:9 or 9:16, with one narrator in English or Italian and,
+        in a film, every shot generated as moving footage. <code class="mono">kleo_get_result</code> hands the assistant a link to
+        the file; the link is good for 7 days.</p>
     </div>
     <div class="prose">
       <p>Kleo never publishes to YouTube, TikTok or any channel, and the standard film carries no music, no captions and no

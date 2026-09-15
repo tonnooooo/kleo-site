@@ -148,8 +148,9 @@
           <li>Open <b>Settings → Connectors</b> in Claude and choose <b>Add custom connector</b>.</li>
           <li>Name it <b>Kleo</b>, paste the address below and confirm.</li>
           <li>Kleo’s page opens: click <b>Start free</b>. You are back in Claude, with 7 credits on your new Kleo
-            account. No form, no password, no card. A film is 10 credits minimum, so the €5 pack (10 credits) goes on
-            before the first render; a 30-second film is 15.</li>
+            account. No form, no password, no card: enough for a 5-credit animatic. A film is made only for accounts
+            that have bought a pack and costs 10 credits minimum, so the €5 pack (10 credits) goes on before the first
+            film; a 30-second film is 15.</li>
           <li>In a new chat, turn Kleo on from the tools menu and ask for the film.</li>
         </ol>
         <div class="url-line">Server address <code>https://mcp.kleooai.com/mcp</code> <button class="btn btn-ghost btn-sm" type="button" data-copy="https://mcp.kleooai.com/mcp">Copy</button></div>
@@ -249,14 +250,17 @@
     <ul class="style-facts auto">
       <li><b>Output</b><span>An MP4 in 4K (3840×2160 or 2160×3840) at 60 fps: 16:9 for YouTube, 9:16 for a
         Short.</span></li>
-      <li><b>Length</b><span>15 seconds to 5 minutes.</span></li>
+      <li><b>Length</b><span>A film 15 seconds to 5 minutes; an animatic 15 to 60 seconds.</span></li>
       <li><b>Looks</b><span>Realistic (generated live-action footage, cinematic) or animation (a 2D animated film).
-        Every shot is generated as moving footage from its own frame.</span></li>
+        In a film every shot is generated as moving footage from its own frame.</span></li>
+      <li><b>Products</b><span>The film, or an animatic of the same storyboard: the drawn frames under a moving camera,
+        the same narrator and graphic layer, no generated clip. Every account can order animatics; a film is made only
+        for accounts that have bought a pack.</span></li>
       <li><b>Narration</b><span>One narrator, English or Italian. No background music, no captions, no on-screen
         text.</span></li>
-      <li><b>Credits</b><span>1 credit = 2 seconds of film, rounded up, 10 credits minimum: 15 s = 10, 30 s = 15, 60 s
-        = 30, 5 min = 150. You start with 7 credits; packs are €5 = 10, €15 = 35, €40 = 100, paid once, no
-        subscription.</span></li>
+      <li><b>Credits</b><span>A film: 1 credit = 2 seconds, rounded up, 10 credits minimum: 15 s = 10, 30 s = 15, 60 s
+        = 30, 5 min = 150. An animatic: 5 credits flat. You start with 7 credits; packs are €5 = 10, €15 = 35, €40 = 100,
+        paid once, no subscription.</span></li>
       <li><b>Time</b><span>A render typically takes 25–35 minutes on a rented GPU; Kleo tells you the estimate in the
         chat.</span></li>
     </ul>
@@ -290,9 +294,9 @@
         </details>
         <details>
           <summary>Not enough credits.</summary>
-          <p>Connecting gives you 7 credits, and a film is 10 credits minimum, so the starter credits alone never start
-            a render. A 30-second film is 15 credits: with the €5 pack (10 credits) you have 17 and the render can
-            start. Ask Claude for your Kleo account page (kleo_account): it shows the balance and the checkout links
+          <p>Connecting gives you 7 credits: they buy an animatic (5), never a film. A film is made only for accounts that
+            have bought a pack, and a 30-second film is 15 credits: with the €5 pack (10 credits) you have 17 and the
+            render can start. Ask Claude for your Kleo account page (kleo_account): it shows the balance and the checkout links
             (€5 = 10 credits, €15 = 35, €40 = 100; a one-off payment in EUR, no subscription). The refused call
             charged nothing.</p>
         </details>

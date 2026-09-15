@@ -16,7 +16,7 @@ updates within a few minutes.
 | `/video-generation-mcp/` | `video-generation-mcp/index.html` | The server documented: endpoint, OAuth, the tools in the order they run, the parameters of a render. |
 | `/examples/`, `/examples/tether/`, `/examples/signal-delay/` | `examples/**` | The gallery and one page per real film. |
 | `/styles.html` | `styles.html` | The two looks, realistic and animation. Historical route, keep the `.html`. |
-| `/pricing/` | `pricing/index.html` | Packs, the calculator (`#duration` → `#credit-result`, same rule as the server), the cost table. |
+| `/pricing/` | `pricing/index.html` | Packs, the calculator (`#duration` → `#credit-result`, same rules as the server; the film/animatic switch is the pair of `.chip[data-product]` buttons), the cost table. |
 | `/faq/`, `/about/` | `faq/index.html`, `about/index.html` | |
 | `/privacy.html`, `/terms.html` | | Historical routes. Legal wording is the owner's; only product facts get corrected. |
 | `/404.html` | | Served by GitHub Pages with a real 404 for any unknown path. `noindex`. |
@@ -58,9 +58,11 @@ and on `/connect/` (`#server-note`); keep it true to the product (it says what a
 
 ## Rules
 
-- The pages may only promise what the deployed server does. Today: one narrated film, realistic or animation, every
-  shot generated as moving footage, 15 s to 5 min, 16:9 or 9:16, English or Italian, 4K 60 fps, no music, no
-  captions, no automatic publishing; 1 credit = 2 s, 10 credits minimum, 7 credits on connecting, packs €5/€15/€40.
+- The pages may only promise what the deployed server does. Today: two products from one storyboard — the FILM,
+  realistic or animation, every shot generated as moving footage (kie.ai), 15 s to 5 min, 16:9 or 9:16, English or
+  Italian, 4K 60 fps, no music, no captions, no automatic publishing; 1 credit = 2 s, 10 credits minimum, made only for
+  accounts that have bought a pack — and the ANIMATIC, the same storyboard's drawn frames under a moving camera, no
+  generated clip, 15–60 s, 5 credits flat, for every account. 7 credits on connecting (one animatic), packs €5/€15/€40.
   When the server changes, change the pages the same day — and `tools/check.py` (its `FORBIDDEN` list) refuses the
   words that were wrong before ("8 minutes", "free film", "template", …).
 - Every page has a unique title and description, an absolute canonical, Open Graph/Twitter tags and pretty-printed

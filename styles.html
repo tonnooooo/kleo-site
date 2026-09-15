@@ -112,10 +112,12 @@
       <h1>Four looks.<br><span class="hl">One film.</span></h1>
     </div>
     <div>
-      <p>Kleo makes one kind of video, a complete narrated film. Two looks are on the server’s style switch today —
+      <p>Kleo makes a complete narrated film, and from the same storyboard an animatic — the drawn frames under a moving
+        camera, no generated clip, 5 credits, open to every account. Two looks are on the server’s style switch today —
         realistic, generated live-action footage with photographic light, and animation, a 2D animated film — and two
         more are drawn live by the Keou engine, Cinema and Stickman. Every look is shown below with a real sample. One
-        look per film, decided before a frame exists; the same workflow and the same 4K 60 fps master whatever the look.</p>
+        look per film, decided before a frame exists; the same workflow and the same 4K 60 fps master whatever the look,
+        for a film or an animatic.</p>
       <div class="looks">
         <a class="look" href="#realistic" data-look="realistic" style="--c:var(--teal)"><i></i>Realistic</a>
         <a class="look" href="#animation" data-look="animation" style="--c:var(--amber)"><i></i>Animation</a>
@@ -169,7 +171,7 @@
           narrator: what appears on screen is decided by the film, not by a preset. Two films, one look.</p>
         <ul class="style-facts">
           <li><b>Output</b><span>4K · 60 fps, 16:9 for YouTube or 9:16 for a Short, 15 seconds to 5 minutes</span></li>
-          <li><b>Footage</b><span>Every shot generated as moving footage from its own frame</span></li>
+          <li><b>Footage</b><span>In a film, every shot generated as moving footage from its own frame; in an animatic, the same frames under a moving camera</span></li>
           <li><b>On the frame</b><span>Nothing unless the film’s treatment asks for it (Signal Delay’s did); one narrator</span></li>
         </ul>
         <p class="style-say copyable">“A 20-second film, 16:9, realistic look: one continuous pull-back from an astronaut’s face inside his helmet to the station he’s tethered to. No words, just his breathing.”<button class="btn btn-ghost btn-sm copy" type="button" data-copy="A 20-second film, 16:9, realistic look: one continuous pull-back from an astronaut’s face inside his helmet to the station he’s tethered to. No words, just his breathing.">Copy</button></p>
@@ -187,16 +189,18 @@
         <div class="style-name"><h2>Animation</h2><button class="style-arg" type="button" data-copy='style: "animation"' aria-label="Copy the animation style argument">style: "animation"</button></div>
         <p class="style-lead">A 2D animated film: painted backgrounds, hand-drawn characters kept the same from shot to shot, one
           narrator in English or Italian. Live on the server today, on the same workflow, the same 4K 60 fps master and
-          the same price as the realistic look: 1 credit is 2 seconds of film, from 10 credits.</p>
+          the same price as the realistic look: 1 credit is 2 seconds of film, from 10 credits; an animatic in this look is
+          5 credits.</p>
         <p class="film-note"><b>Why Octopuses Have 3 Hearts and Blue Blood</b> — a 32-second Short, 9:16, made from one sentence
           with a connected assistant (OpenCode, on its own, storyboard included): a painted red octopus, one picture per
           shot with a slow camera move, chapter pills and big captions that light up on the spoken word. Shown at 1080p,
-          muted. The animation look on the server now goes one step further: every shot is generated as moving footage
-          from its drawn frame, with nothing on the frame unless the film’s treatment asks for it.</p>
+          muted. The animation look on the server now goes one step further: in a film every shot is generated as moving
+          footage from its drawn frame, with nothing on the frame unless the film’s treatment asks for it. An animatic keeps
+          the drawn frames under the camera, as this sample does.</p>
         <ul class="style-facts">
           <li><b>Output</b><span>4K · 60 fps, 16:9 for YouTube or 9:16 for a Short, 15 seconds to 5 minutes</span></li>
-          <li><b>Footage</b><span>Painted backgrounds, hand-drawn characters kept the same across shots, every shot generated from its own frame</span></li>
-          <li><b>Price</b><span>The same as the realistic look: 1 credit = 2 seconds, 10 credits minimum; a 40-second Short is 20 credits</span></li>
+          <li><b>Footage</b><span>Painted backgrounds, hand-drawn characters kept the same across shots; in a film every shot generated from its own frame</span></li>
+          <li><b>Price</b><span>The same as the realistic look: a film 1 credit = 2 seconds, 10 credits minimum, a 40-second Short is 20 credits; an animatic 5 credits flat</span></li>
         </ul>
         <p class="film-note"><a href="/examples/octopus/">Watch the octopus Short on its own page →</a></p>
         <p class="style-say copyable">“Make me a 40-second Short, animation look, about why octopuses have three hearts and blue blood. English narration.”<button class="btn btn-ghost btn-sm copy" type="button" data-copy="Make me a 40-second Short, animation look, about why octopuses have three hearts and blue blood. English narration.">Copy</button></p>
@@ -287,9 +291,9 @@
         <span class="tc">kleo_create_video</span>
         <h3>Footage and narration</h3>
         <p><code>kleo_create_video</code> checks everything, states the exact credits and starts the render on a GPU rented
-          for that job; nothing is charged until it accepts. Every shot is then generated as moving footage from its own
-          frame, in the look the treatment chose. One narrator voices the film, in English or Italian. No background music,
-          no captions.</p>
+          for that job; nothing is charged until it accepts. In a film every shot is then generated as moving footage from
+          its own frame, in the look the treatment chose; in an animatic the camera moves over each drawn frame. One narrator
+          voices it, in English or Italian. No background music, no captions.</p>
       </div>
       <div class="step">
         <span class="num" aria-hidden="true">04</span>
@@ -341,7 +345,7 @@
       <div class="eyebrow"><span class="n">07</span>Start</div>
       <h2>Ask for a look by name.</h2>
       <p class="lede">One look per film, decided in the treatment before a frame exists; the same workflow, the same 4K 60 fps
-        master and the same price either way.</p>
+        master and the same price either way, as a film or as a 5-credit animatic.</p>
       <div class="cta-row">
         <a class="btn btn-primary" href="/connect/">Connect Kleo <span class="arr" aria-hidden="true">→</span></a>
         <a class="btn btn-ghost" href="/pricing/">See pricing</a>

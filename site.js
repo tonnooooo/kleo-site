@@ -142,16 +142,32 @@
     else { var si = 3; paint(stages[si]); setInterval(function(){ si = (si + 1) % stages.length; paint(stages[si]); }, 2400); }
   }
 
-  /* ---------- the credit calculator on /pricing/: the server's own rule, max(10, ceil(seconds / 2)) ---------- */
+  /* ---------- the credit calculator on /pricing/: the server's own rules ----------
+     film: max(10, ceil(seconds / 2)) over 15-300 s (src/templates.ts filmBase); animatic: 5 credits flat over 15-60 s
+     (ANIMATIC_CREDITS, ANIMATIC_MAX_S). The product switch is the pair of .chip buttons above the field. */
   var duration = document.getElementById('duration');
   if (duration) {
     var output = document.getElementById('credit-result');
-    var update = function(){
-      var seconds = Number(duration.value);
-      output.textContent = !Number.isInteger(seconds) || seconds < 15 || seconds > 300
-        ? 'A whole number from 15 to 300 seconds'
-        : seconds + ' s = ' + Math.max(10, Math.ceil(seconds / 2)) + ' credits';
+    var chips = Array.prototype.slice.call(document.querySelectorAll('.calculator .chip[data-product]'));
+    var rules = {
+      film:     { min: 15, max: 300, credits: function(s){ return Math.max(10, Math.ceil(s / 2)); } },
+      animatic: { min: 15, max: 60,  credits: function(){ return 5; } }
     };
+    var product = 'film';
+    var update = function(){
+      var rule = rules[product], seconds = Number(duration.value);
+      duration.min = rule.min; duration.max = rule.max;
+      output.textContent = !Number.isInteger(seconds) || seconds < rule.min || seconds > rule.max
+        ? 'A whole number from ' + rule.min + ' to ' + rule.max + ' seconds'
+        : seconds + ' s ' + product + ' = ' + rule.credits(seconds) + ' credits';
+    };
+    chips.forEach(function(c){
+      c.addEventListener('click', function(){
+        product = c.getAttribute('data-product') in rules ? c.getAttribute('data-product') : 'film';
+        chips.forEach(function(o){ o.setAttribute('aria-pressed', String(o === c)); });
+        update();
+      });
+    });
     duration.addEventListener('input', update); update();
   }
 
