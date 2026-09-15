@@ -1,172 +1,231 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Terms · Kleo</title>
-<meta name="description" content="The deal: Kleo is free while in beta, two Shorts to start, you own what you make, files last 7 days, and nothing is promised that cannot be kept.">
-<link rel="icon" href="brand/kleo-favicon.svg" type="image/svg+xml">
-<link rel="icon" href="brand/kleo-favicon-32.png" sizes="32x32" type="image/png">
-<link rel="apple-touch-icon" href="brand/kleo-icon-dark-192.png">
-<meta name="theme-color" content="#0A0C10">
+<script>document.documentElement.classList.remove("no-js")</script>
+<title>Terms | Kleo AI</title>
+<meta name="description" content="Kleo’s terms in plain words: 7 credits to start, a film costs at least 10, the videos are yours, files last 7 days, and no promise that cannot be kept.">
+<link rel="canonical" href="https://kleooai.com/terms.html">
+<meta name="robots" content="index,follow,max-image-preview:large">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Kleo">
-<meta property="og:title" content="Terms · Kleo">
-<meta property="og:description" content="The deal: Kleo is free while in beta, two Shorts to start, you own what you make, files last 7 days, and nothing is promised that cannot be kept.">
+<meta property="og:site_name" content="Kleo AI">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Terms | Kleo AI">
+<meta property="og:description" content="Kleo’s terms in plain words: 7 credits to start, a film costs at least 10, the videos are yours, files last 7 days, and no promise that cannot be kept.">
+<meta property="og:url" content="https://kleooai.com/terms.html">
 <meta property="og:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta property="og:image:alt" content="Kleo AI — Human direction. Agent-made films.">
 <meta property="og:image:width" content="2400">
 <meta property="og:image:height" content="1260">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Terms | Kleo AI">
+<meta name="twitter:description" content="Kleo’s terms in plain words: 7 credits to start, a film costs at least 10, the videos are yours, files last 7 days, and no promise that cannot be kept.">
+<meta name="twitter:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta name="theme-color" content="#0A0C10">
+<link rel="icon" href="/brand/kleo-favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/brand/kleo-favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/brand/kleo-icon-dark-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css">
-<style>
-  /* Same document layout as privacy.html, kept in the page on purpose: these two are the pages that must still
-     render correctly on the day somebody restructures the landing page's stylesheet. */
-  .doc-nav{position:sticky;top:0;background:color-mix(in srgb, var(--bg) 80%, transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);z-index:10}
-  .doc-nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:16px;padding-bottom:16px}
-  .doc-nav .brand{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-weight:800;
-    font-size:20px;letter-spacing:-.02em;color:var(--ink);text-decoration:none}
-  .doc-nav .brand .tag{font-family:var(--font-mono);font-size:10px;font-weight:500;letter-spacing:.12em;
-    border:1px solid var(--line-2);border-radius:4px;padding:3px 6px;color:var(--mute)}
-  .doc-hero{padding:64px 0 8px}
-  .doc-hero h1{font-family:var(--font-display);font-size:clamp(34px,5.5vw,56px);line-height:1.03;
-    letter-spacing:-.02em;margin:10px 0 14px;text-wrap:balance}
-  .doc-date{font-family:var(--font-mono);font-size:13px;color:var(--mute)}
-  .doc{max-width:68ch;padding-bottom:80px}
-  .doc h2{font-family:var(--font-display);font-size:26px;letter-spacing:-.01em;margin:44px 0 10px;text-wrap:balance}
-  .doc h3{font-size:17px;margin:26px 0 6px;color:var(--ink)}
-  .doc p, .doc li{color:var(--ink-2);font-size:16.5px;line-height:1.7}
-  .doc p{margin:0 0 14px}
-  .doc ul{margin:0 0 16px;padding-left:22px}
-  .doc li{margin-bottom:7px}
-  .doc a{color:var(--accent-text)}
-  .doc code{font-family:var(--font-mono);font-size:.9em;background:var(--bg-3);border:1px solid var(--line);
-    border-radius:5px;padding:1px 5px;color:var(--ink)}
-  .short{background:var(--bg-2);border:1px solid var(--line);border-left:3px solid var(--amber);
-    border-radius:var(--r-s);padding:18px 20px;margin:26px 0 8px}
-  .short p{margin:0 0 8px;color:var(--ink)}
-  .short p:last-child{margin:0}
-  .short b{color:var(--ink)}
-  .rules{list-style:none;padding:0;margin:0 0 18px;display:grid;gap:10px}
-  .rules li{border:1px solid var(--line);border-radius:var(--r-s);padding:12px 15px;background:var(--bg-2);
-    color:var(--ink);margin:0;font-size:16px}
-  @media (max-width:640px){ .doc-hero{padding-top:44px} }
-</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/site.css?v=20260915">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://kleooai.com/#website",
+      "name": "Kleo AI",
+      "alternateName": "Kleo",
+      "url": "https://kleooai.com/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kleooai.com/terms.html#page",
+      "url": "https://kleooai.com/terms.html",
+      "name": "Terms | Kleo AI",
+      "description": "Kleo’s terms in plain words: 7 credits to start, a film costs at least 10, the videos are yours, files last 7 days, and no promise that cannot be kept.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://kleooai.com/#website"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://kleooai.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Terms",
+          "item": "https://kleooai.com/terms.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<script src="/site.js?v=20260915" defer></script>
 </head>
 <body>
+<div class="progress" id="progress" aria-hidden="true"></div>
 
-<nav class="doc-nav" aria-label="Main">
+<!-- ============ NAV ============ -->
+<nav class="nav" aria-label="Main">
   <div class="wrap">
-    <a class="brand" href="index.html" aria-label="Kleo, home">
+    <a class="brand" href="/" aria-label="Kleo, home">
       <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
         <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
         <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
       </svg>
       Kleo <span class="tag">MCP</span>
     </a>
-    <a class="btn btn-ghost btn-sm" href="index.html">Back to Kleo</a>
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-menu">
+      <svg class="bars" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 5h14M2 9h14M2 13h14"/></svg>
+      <svg class="x" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 4l10 10M14 4L4 14"/></svg>
+    </button>
+    <div class="nav-links" id="site-menu">
+      <a href="/ai-youtube-video-generator/">Create videos</a>
+      <a href="/examples/">Examples</a>
+      <a href="/styles.html">Looks</a>
+      <a href="/pricing/">Pricing</a>
+      <a href="/faq/">FAQ</a>
+    </div>
+    <a class="btn btn-primary btn-sm" href="/connect/">Connect Kleo</a>
   </div>
 </nav>
 
-<section class="doc-hero">
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="doc-hero hero">
   <div class="wrap">
-    <div class="eyebrow">Terms</div>
-    <h1>The deal, in<br>plain words.</h1>
-    <p class="doc-date">Last updated 11 September 2026</p>
+    <div>
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">›</span><span>Terms</span></nav>
+      <div class="eyebrow"><span class="n">Terms</span>The deal, in plain words</div>
+      <h1>The deal, in<br><span class="hl">plain words.</span></h1>
+      <p class="doc-date">Last updated <time datetime="2026-09-14">14 September 2026</time></p>
+    </div>
   </div>
 </section>
 
-<section>
-  <div class="wrap doc">
+<!-- ============ THE TERMS ============ -->
+<div class="wrap">
+  <div class="doc">
 
     <div class="short">
-      <p><b>Kleo is free while it is in beta.</b> You get two Shorts to start with. There is nothing to pay, so there is nothing to cancel.</p>
+      <p><b>A new account starts with 7 credits, and a film costs at least 10</b> — credit packs are sold as one-off
+        purchases from €5, with no subscription.</p>
       <p><b>The videos are yours.</b> Publish them, monetize them, edit them. What you asked for is your responsibility.</p>
-      <p><b>Nothing here is a promise of uptime.</b> One person runs Kleo, and it rents its GPUs by the minute. Some days it is busy.</p>
+      <p><b>Nothing here is a promise of uptime.</b> One person runs Kleo, and it rents its GPUs by the minute, so some
+        days it is busy.</p>
     </div>
 
-    <h2>What Kleo is</h2>
-    <p>Kleo is a server your assistant talks to. You ask Claude, ChatGPT, Grok or another assistant for a video;
-      it passes the request to Kleo; Kleo writes a storyboard, rents a GPU machine for the minutes the render
-      takes, and hands back an MP4, a subtitle file and a thumbnail. There is no app and no dashboard.</p>
+    <h2 id="what-kleo-is">What Kleo is</h2>
+    <p>Kleo is a server your assistant talks to. You ask Claude, ChatGPT, Grok or another assistant for a video; it
+      passes the request to Kleo; Kleo writes a storyboard, rents a GPU machine for the minutes the render takes, and
+      hands back a rendered MP4. There is no app and no dashboard.</p>
 
-    <h2>Credits</h2>
-    <p>Work is counted in credits: <b>1 credit per Short</b> up to 90 seconds, 3 credits up to 5 minutes, and
-      1 more for every extra minute. A new account starts with 2 credits.</p>
+    <h2 id="credits">Credits</h2>
+    <p>Work is counted in credits: <b>1 credit for every 2 seconds of film</b>, rounded up, with a minimum of 10 credits
+      per film. A new account starts with 7 credits. See the <a href="/pricing/">pricing page</a> for the packs and
+      worked examples.</p>
     <ul>
       <li>If a render <b>fails</b>, the credits come back in full. Always.</li>
       <li>If you <b>cancel</b> before the machine starts, the credits come back in full.</li>
-      <li>If you cancel <b>part-way through</b>, you get back the part that was not rendered — so a Short cancelled
-        after halfway is spent, because the GPU time was already paid for.</li>
+      <li>If you cancel <b>part-way through</b>, the unspent credits come back — the part that was already rendered stays
+        spent, because that GPU time was already paid for.</li>
     </ul>
-    <p>Credits are not money. They have no cash value, they cannot be exchanged or transferred, and they exist
-      only inside Kleo. While the beta lasts they are given, not sold. When credit packs open, this page will say
-      how buying them works before anybody can buy one.</p>
+    <p>Credits are not money. They have no cash value, they cannot be exchanged or transferred, and they exist only
+      inside Kleo. Credit packs are sold as one-off purchases — €5 for 10 credits, €15 for 35, €40 for 100 — through the
+      checkout on your account page, which you reach by asking your assistant; there is no subscription. Before a render
+      starts, Kleo states the exact credits it will take, and a request it refuses costs nothing.</p>
 
-    <h2>Your account</h2>
-    <p>Your account is a signed cookie in the browser you connected from — there is no password to lose and no
-      email to recover. If you clear your cookies without saving your Kleo key, the account and its credits are
-      gone, and there is no way for anybody, including Kleo, to give them back to you. Your assistant will show
-      you the key whenever you ask.</p>
+    <h2 id="your-account">Your account</h2>
+    <p>Your account is a signed cookie in the browser you connected from — there is no password to lose and no email to
+      recover. If you clear your cookies without saving your Kleo key, the account and its credits are gone, and there
+      is no way for anybody, including Kleo, to give them back to you. Your assistant will show you the key whenever you
+      ask.</p>
     <p>Anyone holding your Kleo key can spend your credits. Treat it the way you would treat a password.</p>
-    <p>To keep the free Shorts going round, Kleo hands out a limited number of new accounts each day, and limits
-      how many videos one account starts in a day. When a limit is reached, it says so and asks you to come back
-      tomorrow. It is not personal.</p>
+    <p>To keep the starter credits going round, Kleo hands out a limited number of new accounts each day, and limits how
+      many videos one account starts in a day. When a limit is reached, it says so and asks you to come back tomorrow.
+      It is not personal.</p>
 
-    <h2>What you may not ask for</h2>
-    <p>Every request is rendered on a machine rented with somebody's real money, and carries the Kleo name. So:</p>
-    <ul class="rules">
+    <h2 id="what-you-may-not-ask-for">What you may not ask for</h2>
+    <p>Every request is rendered on a machine rented with somebody’s real money, and carries the Kleo name. So:</p>
+    <ul class="never">
       <li>Nothing illegal where you are, or where the video will be published.</li>
       <li>No content that sexualises minors, incites violence or hatred, or harasses a real person.</li>
-      <li>No pretending to be a real person or a real organisation — no fake statements, fake endorsements, fake news reports.</li>
-      <li>Nothing that infringes somebody else's copyright or trademark. If you paste text, it must be yours to use.</li>
-      <li>No attempt to break, flood or work around Kleo's limits, and no reselling Kleo's output as your own service without asking first.</li>
+      <li>No pretending to be a real person or a real organisation — no fake statements, fake endorsements, fake news
+        reports.</li>
+      <li>Nothing that infringes somebody else’s copyright or trademark. If you paste text, it must be yours to use.</li>
+      <li>No attempt to break, flood or work around Kleo’s limits, and no reselling Kleo’s output as your own service
+        without asking first.</li>
     </ul>
-    <p>Kleo may refuse or stop a render, and may close an account, when one of these is broken. Prompts are kept,
-      so it is always possible to see what was asked for.</p>
+    <p>Kleo may refuse or stop a render, and may close an account, when one of these is broken. Prompts are kept, so it
+      is always possible to see what was asked for.</p>
 
-    <h2>What you own, and what Kleo keeps</h2>
+    <h2 id="what-you-own">What you own, and what Kleo keeps</h2>
     <p>The video is yours. Kleo claims nothing over it and does not use it for anything else.</p>
-    <p>Two honest details. Every video carries a small <b>Kleo mark on screen</b>, where a channel name would go,
-      and today you cannot turn it off. And the voice, the music and the pictures are made by machine models: the
-      same idea asked twice will not come out the same, and nobody can promise that a generated picture resembles
-      nothing that exists.</p>
-    <p><b>The files last 7 days.</b> After that the MP4, the subtitles and the thumbnail are deleted and the
-      links stop working. Download what you want to keep.</p>
+    <p>Two honest details. Every video carries a small <b>Kleo mark on screen</b>, where a channel name would go, and
+      today you cannot turn it off. And the voice and the pictures are made by machine models: the same idea asked twice
+      will not come out the same, and nobody can promise that a generated picture resembles nothing that exists.</p>
+    <p><b>The files last 7 days.</b> After that the generated files are deleted and the links stop working. Download
+      what you want to keep.</p>
 
-    <h2>What is not promised</h2>
-    <p>Kleo is offered as it is, free, during a beta. There is no guaranteed uptime, no guaranteed rendering time,
-      and no guarantee that a given video comes out the way you imagined it. A render can fail; when it does, the
-      credits come back, and that is the whole of what is owed.</p>
+    <h2 id="what-is-not-promised">What is not promised</h2>
+    <p>Kleo is offered as it is, during a beta. There is no guaranteed uptime, no guaranteed rendering time, and no
+      guarantee that a given video comes out the way you imagined it. A render can fail; when it does, the credits come
+      back, and that is the whole of what is owed.</p>
     <p>Kleo can change, pause or stop at any time. If it stops for good, this page will say so before the files go.</p>
 
-    <h2>Who to write to</h2>
-    <p>One address, read by a human: <a href="mailto:kleooai@gmail.com">kleooai@gmail.com</a>. Kleo is run from
-      Italy by one person, and Italian law applies to it. See also the <a href="privacy.html">privacy page</a>,
-      which says exactly what is stored and for how long.</p>
+    <h2 id="who-to-write-to">Who to write to</h2>
+    <p>One address, read by a human: <a href="mailto:kleooai@gmail.com">kleooai@gmail.com</a>. Kleo is run by one
+      person. See also the <a href="/privacy.html">privacy page</a>, which says exactly what is stored and for how
+      long.</p>
 
   </div>
-</section>
+</div>
 
+</main>
+
+<!-- ============ FOOTER ============ -->
 <footer>
   <div class="wrap">
     <div class="foot-brand">
-      <a class="brand" href="index.html" aria-label="Kleo, home"><svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
-        <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
-        <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
-      </svg> Kleo</a>
-      <span>A video studio that lives in your chat.</span>
+      <a class="brand" href="/" aria-label="Kleo, home">
+        <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+          <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+          <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+        </svg>
+        Kleo <span class="tag">MCP</span>
+      </a>
+      <span>Human direction. Agent-made films.</span>
     </div>
     <div class="links">
-      <a href="index.html">Home</a>
-      <a href="styles.html">Styles</a>
-      <a href="privacy.html">Privacy</a>
+      <a href="/connect/">Connect</a>
+      <a href="/integrations/claude/">Claude</a>
+      <a href="/integrations/chatgpt/">ChatGPT</a>
+      <a href="/video-generation-mcp/">MCP docs</a>
+      <a href="/examples/">Examples</a>
+      <a href="/styles.html">Looks</a>
+      <a href="/pricing/">Pricing</a>
+      <a href="/faq/">FAQ</a>
+      <a href="/about/">About</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a href="https://github.com/tonnooooo/kleo-mcp">GitHub</a>
       <a href="mailto:kleooai@gmail.com">kleooai@gmail.com</a>
     </div>
   </div>
 </footer>
-
+<div class="toast" id="toast" role="status" aria-live="polite">Copied</div>
 </body>
 </html>

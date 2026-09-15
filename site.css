@@ -121,7 +121,9 @@ section + section{border-top:1px solid var(--line)}
 @media (min-width:821px){ .nav .btn{margin-left:0} }
 
 /* ---------- hero ---------- */
-.hero{padding:104px 0 0; border-top:none; overflow:visible}
+.hero{padding:104px 0 0; border-top:none; overflow:visible; overflow-x:clip}
+/* the aurora bleeds 10% past each side of the hero; clipped on the x axis on every screen, so the page never grows sideways (it still rises behind the nav) */
+.styles-hero, .page-hero, .doc-hero{overflow-x:clip}
 .hero::before, .styles-hero::before{
   content:""; position:absolute; inset:-160px -10% 0 -10%; z-index:-1; pointer-events:none;
   background:
@@ -159,6 +161,8 @@ h1 .hl{
 .btn .arr{display:inline-block; transition:transform .25s cubic-bezier(.2,.7,.2,1)}
 .btn:hover .arr{transform:translateX(3px)}
 
+.free-line{margin:18px 0 0; font-size:.9375rem; color:var(--mute); max-width:56ch; text-wrap:pretty}
+.free-line b{color:var(--ink); font-weight:600}
 /* the numbers strip that closes the hero */
 .stats{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:24px; margin:88px 0 0; padding:30px 0 40px; border-top:1px solid var(--line)}
 .stats div{display:grid; gap:8px}
@@ -308,7 +312,7 @@ h1 .hl{
 .tab:hover{background:var(--glass-2)}
 .tab[aria-selected="true"]{background:var(--bg-2); border-color:var(--line-2); color:var(--ink); box-shadow:var(--shadow-s)}
 .tab .tk{font-family:var(--font-mono); font-size:.64rem; letter-spacing:.08em; color:var(--mute)}
-.panel{background:var(--bg-2); border:1px solid var(--line); border-radius:var(--r); padding:28px 28px 26px; display:grid; gap:18px; box-shadow:var(--shadow-s)}
+.panel{min-width:0; background:var(--bg-2); border:1px solid var(--line); border-radius:var(--r); padding:28px 28px 26px; display:grid; gap:18px; box-shadow:var(--shadow-s)}
 .panel[hidden]{display:none}
 .panel h3{font-size:1.35rem}
 .panel ol{margin:0; padding-left:22px; color:var(--ink-2); display:grid; gap:8px; font-size:.9375rem}
@@ -406,6 +410,224 @@ footer a:hover{color:var(--ink)}
 .demo-title .clock{color:var(--mute)}
 .demo-title .clock::before{content:" · "}
 @media (prefers-reduced-motion: reduce){ .brand svg path, .sk-img{transition:none} }
+
+
+/* ============================================================
+   INNER PAGES. The landing page above is one long flow; the other pages (guides, connect, examples, pricing, FAQ,
+   about, the looks, the two legal documents) share these pieces. Same tokens, same type, same radii — nothing here
+   changes the home. Phone-specific tuning for these pieces sits in the PHONE block at the end, like everything else.
+   ============================================================ */
+/* a page opens like the styles page did: the aurora behind a single column, a breadcrumb, a headline, one lede */
+.page-hero{padding:96px 0 56px}
+.page-hero .wrap{display:grid; grid-template-columns:1fr; gap:0}
+.page-hero h1{font-size:clamp(2.8rem,5.5vw,4.5rem)}
+.page-hero .lede{margin:26px 0 0; font-size:1.125rem}
+/* the server note (config.json) under the lede, before the address */
+.page-hero #mcpStatus{margin-top:18px; color:var(--mute)}
+.page-hero .cta-row{margin-top:34px}
+.page-hero .osd{margin:0 0 24px}
+.crumbs{font-family:var(--font-mono); font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; color:var(--mute); display:flex; flex-wrap:wrap; gap:6px 10px; align-items:center; margin-bottom:26px}
+.crumbs a{color:var(--mute)}
+.crumbs a:hover{color:var(--ink); text-decoration:none}
+.crumbs span[aria-hidden]{opacity:.6}
+/* a section head that reads on its own when there is no second column */
+.sec-head.one{grid-template-columns:1fr; gap:14px; margin-bottom:40px}
+.sec-head.one .lede{max-width:68ch}
+/* running text: guides, the about page, the film pages */
+.prose{max-width:68ch}
+.prose p, .prose li{color:var(--ink-2); font-size:1.0625rem; line-height:1.7; text-wrap:pretty}
+.prose p{margin:0 0 16px}
+.prose p:last-child{margin-bottom:0}
+.prose h3{margin:34px 0 10px; font-size:1.3rem}
+.prose ul, .prose ol{margin:0 0 16px; padding-left:22px}
+.prose li{margin-bottom:8px}
+.prose li b, .prose p b{color:var(--ink); font-weight:600}
+.prose code, .doc code, .panel code, .step code{font-family:var(--font-mono); font-size:.9em; background:var(--bg-3); border:1px solid var(--line); border-radius:5px; padding:1px 6px; color:var(--ink); overflow-wrap:anywhere}
+.panel > *{min-width:0}
+.prose .url-line{margin:18px 0}
+/* two columns: a lede on the left, the content on the right (the pattern of Behind the scenes) */
+.split{display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); gap:48px; align-items:start}
+@media (max-width:900px){ .split{grid-template-columns:minmax(0,1fr); gap:28px} }
+/* a grid of panels (the connect cards, the use cases, the guides on the hub) */
+.grid.panels{grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px}
+.grid.panels.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:900px){ .grid.panels, .grid.panels.three{grid-template-columns:minmax(0,1fr)} }
+/* a snippet in a half-width panel wraps instead of scrolling sideways (the phone rule, at every width) */
+.grid.panels .code{white-space:pre-wrap; overflow-wrap:anywhere}
+.panel h3 small{display:block; font-family:var(--font-mono); font-weight:500; font-size:.66rem; letter-spacing:.12em; text-transform:uppercase; color:var(--mute); margin-top:6px}
+.panel p{color:var(--ink-2); font-size:.9375rem; text-wrap:pretty}
+.panel .more{font-weight:600; font-size:.9375rem}
+.panel .more .arr{display:inline-block; margin-left:4px; transition:transform .25s cubic-bezier(.2,.7,.2,1)}
+.panel .more:hover .arr{transform:translateX(3px)}
+/* a prompt to copy: the mono quote of the styles page, with the Copy button in its corner */
+.style-say{position:relative}
+.style-say.copyable{padding-right:112px}
+.style-say .copy{top:8px; right:8px}
+/* a prompt inside running text keeps its mono voice (`.prose p` would otherwise win on specificity) */
+.prose .style-say, .doc .style-say{font-family:var(--font-mono); font-size:.8125rem; line-height:1.55; color:var(--ink-2); margin:0 0 18px}
+/* key facts in a row (the styles page pattern), and the same thing for more than three items */
+.style-facts.auto{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.style-facts.auto li:nth-child(n){border-right:1px solid var(--line); padding-left:18px; padding-right:18px}
+.style-facts.auto li:first-child{padding-left:0}
+.style-facts.auto li:last-child{border-right:0}
+/* definition rows: a mono label, then the value (the render parameters, what you receive) */
+.defs{margin:0; padding:0; list-style:none; border-top:1px solid var(--line)}
+.defs li{display:grid; grid-template-columns:180px minmax(0,1fr); gap:18px; padding:14px 0; border-bottom:1px solid var(--line); font-size:.9375rem; color:var(--ink-2)}
+.defs li b{font-family:var(--font-mono); font-weight:500; font-size:.78rem; letter-spacing:.06em; color:var(--accent-text); padding-top:2px}
+.defs li span b{font-family:inherit; font-size:inherit; letter-spacing:0; color:var(--ink); font-weight:600; padding:0}
+/* the calculator on /pricing/: the same box as a connect panel, the result set in the display face */
+.calculator{display:grid; grid-template-columns:minmax(0,1fr) auto; gap:14px 24px; align-items:end; background:var(--bg-2); border:1px solid var(--line); border-radius:var(--r); padding:28px; box-shadow:var(--shadow-s); max-width:760px}
+.calculator label{grid-column:1/-1; font-family:var(--font-mono); font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; color:var(--mute)}
+.calculator input{width:100%; min-width:0; font:500 1.25rem var(--font-mono); color:var(--ink); background:var(--bg); border:1px solid var(--line-2); border-radius:var(--r-s); padding:12px 16px; font-variant-numeric:tabular-nums}
+.calculator input:focus-visible{outline:2px solid var(--amber); outline-offset:2px}
+.calculator output{font-family:var(--font-display); font-weight:800; font-size:clamp(1.5rem,2.6vw,2.1rem); letter-spacing:-.035em; line-height:1.1; color:var(--ink); font-variation-settings:"opsz" 96; white-space:nowrap}
+.calculator p{grid-column:1/-1; color:var(--mute); font-size:.875rem}
+.calculator + .ttable{margin-top:28px}
+.ttable caption{caption-side:top; text-align:left; font-family:var(--font-mono); font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; color:var(--mute); padding:0 0 12px}
+.ttable.plain td:first-child{font-family:var(--font-body); font-size:.9375rem; color:var(--ink)}
+/* a film shown on its own page: the wide player of the styles page, full width */
+.player{max-width:980px}
+.player .style-media{--ry:0deg}
+.player .film-cap{margin-top:14px}
+/* the address, on its own line, on every page that hands it over */
+.address{display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin:26px 0 0}
+.address code{font-family:var(--font-mono); font-size:.95rem; background:var(--bg-2); border:1px solid var(--line-2); padding:10px 16px; border-radius:999px; color:var(--ink); overflow-wrap:anywhere}
+/* a closing call to action on inner pages: the account block of the home, in one column */
+.cta.one .wrap{grid-template-columns:1fr; max-width:760px; margin-inline:auto; text-align:left}
+/* the two legal documents keep their own plain layout (privacy, terms) */
+.doc-hero{padding:96px 0 8px}
+.doc-hero h1{font-size:clamp(2.2rem,5.5vw,3.5rem); margin:10px 0 14px}
+.doc-date{font-family:var(--font-mono); font-size:.8125rem; color:var(--mute)}
+.doc{max-width:68ch; padding:24px 0 96px}
+.doc h2{font-size:1.65rem; letter-spacing:-.02em; margin:44px 0 10px}
+.doc h3{font-size:1.0625rem; margin:26px 0 6px; color:var(--ink)}
+.doc p, .doc li{color:var(--ink-2); font-size:1.03rem; line-height:1.7}
+.doc p{margin:0 0 14px}
+.doc ul{margin:0 0 16px; padding-left:22px}
+.doc li{margin-bottom:7px}
+.doc .never li{color:var(--ink)}
+.short{background:var(--bg-2); border:1px solid var(--line); border-left:3px solid var(--amber); border-radius:var(--r-s); padding:18px 20px; margin:26px 0 8px}
+.short p{margin:0 0 8px; color:var(--ink)}
+.short p:last-child{margin:0}
+.short b{color:var(--ink)}
+.tablewrap{overflow-x:auto; border:1px solid var(--line); border-radius:var(--r-s); margin:0 0 18px}
+.tablewrap table{border-collapse:collapse; width:100%; min-width:560px; font-size:.9375rem}
+.tablewrap th, .tablewrap td{text-align:left; padding:11px 14px; border-bottom:1px solid var(--line); vertical-align:top}
+.tablewrap thead th{font-family:var(--font-mono); font-size:.7rem; letter-spacing:.1em; text-transform:uppercase; color:var(--mute); font-weight:500}
+/* the caption sits inside the border, aligned with the first column (the padding matches the cells) */
+.tablewrap caption{caption-side:top; text-align:left; font-family:var(--font-mono); font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; color:var(--mute); padding:12px 14px 0}
+.tablewrap tbody tr:last-child td{border-bottom:0}
+.tablewrap td:first-child{color:var(--ink)}
+.tablewrap td:last-child{color:var(--ink-2)}
+/* the looks page and the film pages: one look per row, a film shown, not handed over — moved here from styles.html
+   so the example pages can show the same players */
+.styles-hero{padding:104px 0 56px}
+.styles-hero .wrap{display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr); gap:48px; align-items:end}
+.styles-hero h1{font-size:clamp(2.8rem,5.5vw,4.5rem)}
+.styles-hero p{color:var(--ink-2); font-size:1.125rem; line-height:1.6; max-width:56ch; margin:0; text-wrap:pretty}
+.looks{display:flex; flex-wrap:wrap; gap:8px; margin-top:28px}
+.look{display:inline-flex; align-items:center; gap:9px; padding:9px 14px 9px 11px; border-radius:999px; border:1px solid var(--line-2); background:var(--glass); color:var(--ink-2); font:500 .9375rem var(--font-body); cursor:pointer; transition:.25s}
+.look i{width:9px; height:9px; border-radius:50%; background:var(--c); box-shadow:0 0 10px var(--c)}
+.look:hover, .look.on{color:var(--ink); border-color:color-mix(in srgb, var(--c) 60%, var(--line-2)); background:var(--glass-2); text-decoration:none}
+.styles-hero::before{transition:filter 1.2s, opacity 1.2s}
+.styles-hero[data-tint="realistic"]::before{filter:blur(60px) hue-rotate(150deg) saturate(.9)}
+.styles-hero[data-tint="animation"]::before{filter:blur(60px) hue-rotate(-8deg) saturate(1.3)}
+.styles-hero[data-tint="cinema"]::before{filter:blur(60px) hue-rotate(200deg) saturate(1.1)}
+.styles-hero[data-tint="stickman"]::before{filter:blur(60px) saturate(0) opacity(.7)}
+@media (max-width:900px){ .styles-hero .wrap{grid-template-columns:1fr; gap:24px} }
+.style-row{display:grid; grid-template-columns:minmax(0,320px) minmax(0,1fr); gap:56px; align-items:center; padding:72px 0; border-top:1px solid var(--line); scroll-margin-top:96px}
+.style-row:first-of-type{border-top:0; padding-top:24px}
+.style-row:nth-child(even){grid-template-columns:minmax(0,1fr) minmax(0,320px)}
+.style-row:nth-child(even) .style-media{order:2}
+.style-row:nth-child(even) .style-films{order:2}
+.style-row .style-media{transform:perspective(1200px) rotateY(var(--ry,0deg)); transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.style-row:nth-child(odd) .style-media{--ry:6deg}
+.style-row:nth-child(even) .style-media{--ry:-6deg}
+.style-row:hover .style-media{--ry:0deg}
+.style-row.wide .style-media{--ry:0deg}
+.style-media .film-cap{margin:0}
+.style-media{position:relative; border-radius:30px; overflow:hidden; background:#000; border:1px solid var(--line-2); aspect-ratio:9/16; box-shadow:var(--shadow); user-select:none; -webkit-user-select:none; -webkit-touch-callout:none}
+.style-media::after{content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none; box-shadow:0 1px 0 rgba(255,255,255,.18) inset, 0 0 0 1px rgba(0,0,0,.4) inset}
+.style-media video{width:100%; height:100%; object-fit:cover; display:block; pointer-events:none}
+.style-media video::-webkit-media-controls, .style-media video::-webkit-media-controls-start-playback-button, .style-media video::-webkit-media-controls-enclosure{display:none !important; -webkit-appearance:none}
+.style-live{position:absolute; top:14px; left:14px; display:inline-flex; align-items:center; gap:7px; padding:5px 10px 5px 8px; border-radius:999px; background:rgba(0,0,0,.55); backdrop-filter:blur(8px); color:#fff; font:500 .66rem/1 var(--font-mono); letter-spacing:.12em; text-transform:uppercase; opacity:0; transition:opacity .3s; pointer-events:none}
+.style-live i{width:7px; height:7px; border-radius:50%; background:var(--rose); box-shadow:0 0 8px var(--rose); animation:blink 1.4s steps(2) infinite}
+.style-media.playing .style-live{opacity:1}
+.style-n{font-family:var(--font-mono); font-size:.72rem; letter-spacing:.18em; color:var(--mute); display:flex; align-items:center; gap:14px; margin-bottom:18px}
+.style-n::after{content:""; width:22px; height:1px; background:var(--c, var(--amber))}
+.style-name{display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin:0 0 14px}
+.style-name h2{font-size:clamp(2rem,3.6vw,2.8rem)}
+.style-arg{font:500 .78rem var(--font-mono); color:var(--amber-ink); background:var(--amber); border:0; padding:6px 12px; border-radius:999px; white-space:nowrap; cursor:pointer; transition:.2s; box-shadow:0 6px 18px var(--glow)}
+.style-arg:hover{transform:translateY(-1px); filter:brightness(1.05)}
+.style-lead{color:var(--ink-2); font-size:1.0625rem; line-height:1.65; max-width:58ch; margin:0 0 22px; text-wrap:pretty}
+.style-facts{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:0; margin:0 0 22px; padding:0; list-style:none; border-top:1px solid var(--line); border-bottom:1px solid var(--line)}
+.style-facts li{padding:14px 18px 14px 0; border-right:1px solid var(--line)}
+.style-facts li + li{padding-left:18px}
+.style-facts li:last-child{border-right:0}
+.style-facts b{display:block; font:500 .66rem var(--font-mono); letter-spacing:.14em; text-transform:uppercase; color:var(--mute); margin-bottom:6px}
+.style-facts span{font-size:.9375rem; color:var(--ink)}
+.style-say{font-family:var(--font-mono); font-size:.8125rem; line-height:1.55; background:var(--bg-2); border:1px solid var(--line); border-left:3px solid var(--c, var(--amber)); border-radius:var(--r-s); padding:12px 16px; color:var(--ink-2); max-width:60ch; margin:0}
+.style-row.wide, .style-row.wide:nth-child(even){grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}
+.style-films{display:grid; gap:22px; min-width:0}
+.style-media.wide{aspect-ratio:16/9; border-radius:22px}
+.film-cap{display:flex; justify-content:space-between; gap:12px; align-items:baseline; margin:10px 4px 0; font:500 .72rem var(--font-mono); letter-spacing:.12em; text-transform:uppercase; color:var(--mute); flex-wrap:wrap}
+.film-cap b{font-weight:500; color:var(--ink-2)}
+.film-note{color:var(--ink-2); font-size:.9375rem; line-height:1.6; margin:10px 4px 0; text-wrap:pretty}
+.style-films .film{min-width:0}
+/* a look with no film yet: the frame stays, the film is announced */
+.style-media.empty{display:grid; place-items:center; background:radial-gradient(90% 70% at 50% 0%, var(--amber-soft), transparent 70%), var(--bg-3); border-style:dashed}
+.style-media.empty span{font:500 .72rem var(--font-mono); letter-spacing:.14em; text-transform:uppercase; color:var(--mute); text-align:center; padding:24px; line-height:1.8}
+@media (max-width:860px){
+  .style-row, .style-row:nth-child(even), .style-row.wide, .style-row.wide:nth-child(even){grid-template-columns:minmax(0,1fr); gap:28px; padding:48px 0}
+  .style-row:nth-child(even) .style-media, .style-row:nth-child(even) .style-films{order:0}
+  .style-media{max-width:300px; --ry:0deg !important}
+  .style-media.wide{max-width:none}
+  .style-facts{grid-template-columns:1fr}
+  .style-facts li, .style-facts.auto li:nth-child(n){border-right:0; border-bottom:1px solid var(--line); padding:12px 0}
+  .style-facts li + li{padding-left:0}
+  .style-facts li:last-child{border-bottom:0}
+}
+@media (prefers-reduced-motion: reduce){ .style-live i{animation:none} .style-row .style-media{transition:none; --ry:0deg} }
+/* the looks page: how a scene is cut — a line that plays, three shots that cut on their word (from the old page) */
+.scene{display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); gap:48px; align-items:start}
+@media (max-width:900px){ .scene{grid-template-columns:minmax(0,1fr)} }
+.line{font-family:var(--font-display); font-weight:700; font-size:clamp(1.5rem,2.6vw,2.1rem); line-height:1.3; letter-spacing:-.02em; margin:0; text-wrap:pretty}
+.line .w{color:var(--mute); transition:color .18s}
+.line .w.said{color:var(--ink)}
+.line .w.now{color:var(--amber)}
+.line .w.cut{text-decoration:underline; text-decoration-color:color-mix(in srgb, var(--amber) 50%, transparent); text-underline-offset:6px; text-decoration-thickness:2px}
+.line-foot{margin-top:18px; font:500 .72rem var(--font-mono); letter-spacing:.12em; text-transform:uppercase; color:var(--mute); display:flex; gap:16px; align-items:center; flex-wrap:wrap}
+.line-foot button{font:inherit; color:var(--ink-2); background:var(--glass); border:1px solid var(--line-2); border-radius:999px; padding:7px 12px; cursor:pointer; letter-spacing:inherit; text-transform:inherit}
+.line-foot button:hover{color:var(--ink); border-color:var(--ink-2)}
+.shots{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin:0}
+.shot{background:var(--bg-2); border:1px solid var(--line); border-radius:var(--r-s); padding:16px; display:grid; gap:8px; align-content:start; transition:border-color .3s, transform .5s cubic-bezier(.2,.7,.2,1), box-shadow .3s}
+.shot .frame{aspect-ratio:9/12; border-radius:8px; background:var(--bg-3); border:1px dashed var(--line-2); position:relative; overflow:hidden}
+.shot .frame svg{position:absolute; inset:0; width:100%; height:100%; opacity:.55; transition:opacity .4s, transform 3s linear; transform:scale(1)}
+.shot.on .frame svg{opacity:1; transform:scale(1.12) translate(2%,-2%)}
+.shot.on{border-color:color-mix(in srgb, var(--amber) 55%, var(--line-2)); transform:translateY(-4px); box-shadow:0 16px 40px rgba(0,0,0,.35), 0 0 0 1px color-mix(in srgb, var(--amber) 20%, transparent)}
+.shot b{font:500 .68rem var(--font-mono); letter-spacing:.14em; text-transform:uppercase; color:var(--mute)}
+.shot.on b{color:var(--accent-text)}
+.shot span{font-size:.875rem; color:var(--ink-2); line-height:1.5}
+.shot .cutword{font:500 .68rem var(--font-mono); color:var(--mute); letter-spacing:.06em}
+.shot .cutword::before{content:"cut on “"} .shot .cutword::after{content:"”"}
+@media (max-width:600px){ .shots{grid-template-columns:minmax(0,1fr)} .shot .frame{display:none} }
+.scene-foot{color:var(--mute); font-size:.9375rem; margin:28px 0 0; max-width:62ch}
+@media (prefers-reduced-motion: reduce){ .shot, .shot .frame svg, .line .w{transition:none} }
+/* the film-page gallery card: poster, then the words */
+.sample{display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr); gap:36px; align-items:center; padding:56px 0; border-top:1px solid var(--line)}
+.sample:first-of-type{border-top:0; padding-top:8px}
+.poster{display:block; position:relative; border-radius:22px; overflow:hidden; border:1px solid var(--line-2); box-shadow:var(--shadow); background:#000}
+.poster img{display:block; width:100%; height:auto; transition:transform 1.6s cubic-bezier(.2,.7,.2,1)}
+.poster:hover img{transform:scale(1.03)}
+.poster .play{position:absolute; left:16px; bottom:16px; display:inline-flex; align-items:center; gap:10px; padding:9px 16px 9px 10px; border-radius:999px; background:rgba(0,0,0,.6); backdrop-filter:blur(8px); color:#fff; font:500 .78rem var(--font-mono); letter-spacing:.1em; text-transform:uppercase}
+.poster .play i{width:26px; height:26px; border-radius:50%; background:var(--amber); color:var(--amber-ink); display:grid; place-items:center; font-style:normal; font-size:.7rem; padding-left:2px}
+.poster.tall{max-width:320px}
+.sample .poster.tall{justify-self:center}
+.player.tall{max-width:420px}
+.player.tall .style-media{border-radius:30px}
+.films-row{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px}
+@media (max-width:860px){ .sample{grid-template-columns:minmax(0,1fr); gap:22px; padding:40px 0} .films-row{grid-template-columns:minmax(0,1fr)} }
+/* the hero of the home when it carries the film instead of the chat: same grid, the poster in the demo's place */
 
 /* ============================================================
    PHONE. Everything below is scoped to small screens (or to touch), so the desktop page is untouched.
@@ -519,8 +741,23 @@ a,button{-webkit-tap-highlight-color:transparent}
   .cta .wrap{gap:28px}
   footer{padding:44px 0 40px}
   .toast{max-width:calc(100% - 32px)}
+
+  /* inner pages */
+  .page-hero{padding:56px 0 36px}
+  .page-hero h1{font-size:clamp(2.1rem,10vw,2.8rem)}
+  .page-hero .lede{margin-top:18px; font-size:1.0625rem}
+  .crumbs{margin-bottom:18px}
+  .doc-hero{padding:56px 0 8px}
+  .calculator{grid-template-columns:minmax(0,1fr); padding:20px}
+  .calculator output{white-space:normal}
+  .defs li{grid-template-columns:minmax(0,1fr); gap:4px}
+  .style-say.copyable{padding-right:16px; padding-bottom:54px}
+  .style-say .copy{top:auto; bottom:8px; right:8px}
+  .address code{font-size:.85rem; padding:8px 12px}
+  .poster .play{left:10px; bottom:10px; padding:7px 12px 7px 8px}
 }
 @media (max-width:370px){ .brand .tag{display:none} }
+@media (max-width:400px){ .cta-row .btn{white-space:normal; text-align:center} }
 @media (max-width:340px){ .osd{font-size:.7rem; gap:8px; padding:7px 12px 7px 9px} .osd .rec{flex:none} }
 
 /* on a touch screen a tap must not leave a card floating where the pointer "still is" */
