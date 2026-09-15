@@ -35,6 +35,7 @@ jobs:
           ffmpeg -version | head -1
       - name: copies, posters, contact sheets
         env:
+          GH_TOKEN: ${{ github.token }}
           IN_SOURCE: ${{ inputs.source }}
           IN_NAME: ${{ inputs.name }}
           IN_HEIGHT: ${{ inputs.height }}
@@ -51,6 +52,9 @@ jobs:
           os.makedirs('out', exist_ok=True)
           for it in items:
               src, name = it['source'], it['name']
+              # a master too big for git (over 100 MB) travels as the asset of a draft release: {"release": tag, "asset": file}
+              if it.get('release'):
+                  subprocess.run(['gh', 'release', 'download', it['release'], '-p', it['asset'], '-O', src, '--clobber'], check=True)
               height, at = int(it.get('height', 1080)), float(it.get('poster_at', 1))
               out_mp4 = f'out/{name}.mp4'
               if it.get('copy', True):
