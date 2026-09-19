@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="zh-Hans" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.remove("no-js")</script>
+<title>Kleo 影片风格 — 写实、动画、Cinema、Stickman</title>
+<meta name="description" content="Kleo 的四种风格，各配真实示例：写实的真人实拍感画面、2D 动画影片，以及由引擎实时绘制的 Cinema 和 Stickman。一套工作流，4K 60 fps。">
+<link rel="canonical" href="https://kleooai.com/zh/styles.html">
+<!-- i18n:head -->
+<link rel="alternate" hreflang="en" href="https://kleooai.com/styles.html">
+<link rel="alternate" hreflang="it" href="https://kleooai.com/it/styles.html">
+<link rel="alternate" hreflang="de" href="https://kleooai.com/de/styles.html">
+<link rel="alternate" hreflang="fr" href="https://kleooai.com/fr/styles.html">
+<link rel="alternate" hreflang="es" href="https://kleooai.com/es/styles.html">
+<link rel="alternate" hreflang="pt" href="https://kleooai.com/pt/styles.html">
+<link rel="alternate" hreflang="nl" href="https://kleooai.com/nl/styles.html">
+<link rel="alternate" hreflang="pl" href="https://kleooai.com/pl/styles.html">
+<link rel="alternate" hreflang="tr" href="https://kleooai.com/tr/styles.html">
+<link rel="alternate" hreflang="ru" href="https://kleooai.com/ru/styles.html">
+<link rel="alternate" hreflang="uk" href="https://kleooai.com/uk/styles.html">
+<link rel="alternate" hreflang="ja" href="https://kleooai.com/ja/styles.html">
+<link rel="alternate" hreflang="ko" href="https://kleooai.com/ko/styles.html">
+<link rel="alternate" hreflang="zh-Hans" href="https://kleooai.com/zh/styles.html">
+<link rel="alternate" hreflang="zh-Hant" href="https://kleooai.com/zh-tw/styles.html">
+<link rel="alternate" hreflang="ar" href="https://kleooai.com/ar/styles.html">
+<link rel="alternate" hreflang="he" href="https://kleooai.com/he/styles.html">
+<link rel="alternate" hreflang="hi" href="https://kleooai.com/hi/styles.html">
+<link rel="alternate" hreflang="id" href="https://kleooai.com/id/styles.html">
+<link rel="alternate" hreflang="vi" href="https://kleooai.com/vi/styles.html">
+<link rel="alternate" hreflang="th" href="https://kleooai.com/th/styles.html">
+<link rel="alternate" hreflang="x-default" href="https://kleooai.com/styles.html">
+<script>(function(){try{var L=["it", "de", "fr", "es", "pt", "nl", "pl", "tr", "ru", "uk", "ja", "ko", "zh", "zh-tw", "ar", "he", "hi", "id", "vi", "th"],A={"zh-hk": "zh-tw", "zh-mo": "zh-tw", "zh-hant": "zh-tw", "zh-hans": "zh", "zh-cn": "zh", "zh-sg": "zh", "nb": "no", "nn": "no"},p=location.pathname,m=p.match(/^\/([a-z]{2}(?:-[a-z]{2})?)(?=\/)/),on=m&&L.indexOf(m[1])>=0?m[1]:"en",rest=on==="en"?p:p.slice(on.length+1),want=null,s=null;try{s=localStorage.getItem("kleo-lang")}catch(e){}if(s==="en"||L.indexOf(s)>=0)want=s;else{var nl=navigator.languages||[navigator.language||""];for(var i=0;i<nl.length&&!want;i++){var t=String(nl[i]).toLowerCase(),b=t.split("-")[0];t=A[t]||t;b=A[b]||b;want=t==="en"||b==="en"?"en":L.indexOf(t)>=0?t:L.indexOf(b)>=0?b:null}}if(want&&want!==on&&!/404/.test(p))location.replace((want==="en"?"":"/"+want)+rest+location.search+location.hash)}catch(e){}})()</script>
+<script type="application/json" id="i18n">{"Language": "语言", "Menu": "菜单", "Close menu": "关闭菜单", "Copied": "已复制", "Copied ✓": "已复制 ✓", "Copy it by hand: {text}": "请手动复制：{text}", "Copy the Kleo server address": "复制 Kleo 服务器地址", "Copy the argument {value}": "复制参数 {value}", "Copy this prompt": "复制这条提示词", "Copy the {what} snippet": "复制{what}代码片段", "Copy the {what} text": "复制{what}文本", "Treatment · logline, angle, acts · look: realistic": "剧本大纲 · 故事梗概、切入角度、幕次 · 风格：写实", "Storyboard · direction, scenes, shots · 23 credits, confirmed": "分镜 · 导演思路、场景、镜头 · 23 积分，已确认", "Generating the shots as footage · 4 of 11 · ~22 min left": "正在把镜头生成为动态画面 · 第 4 个，共 11 个 · 还剩约 22 分钟", "Generating the shots as footage · 8 of 11 · ~12 min left": "正在把镜头生成为动态画面 · 第 8 个，共 11 个 · 还剩约 12 分钟", "Narration · one voice, English · cutting the shots on the words": "旁白 · 一个声音，英语 · 按台词剪接镜头", "Finish · 2160×3840 · 60 fps · quality check": "收尾 · 2160×3840 · 60 fps · 质量检查", "Done · 28 min · link ready for 7 days": "完成 · 28 分钟 · 链接 7 天内有效", "done": "已完成", "running": "进行中", "A whole number from {min} to {max} seconds": "{min} 到 {max} 秒之间的整数", "{s} s {product} = {n} credits": "{s} 秒{product} = {n} 积分", "film": "影片", "animatic": "动态分镜"}</script>
+<!-- /i18n:head -->
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kleo AI">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:title" content="Kleo 影片风格 — 写实、动画、Cinema、Stickman">
+<meta property="og:description" content="Kleo 的四种风格，各配真实示例：写实的真人实拍感画面、2D 动画影片，以及由引擎实时绘制的 Cinema 和 Stickman。一套工作流，4K 60 fps。">
+<meta property="og:url" content="https://kleooai.com/zh/styles.html">
+<meta property="og:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta property="og:image:alt" content="Kleo AI — 你来执导，智能体拍成影片。">
+<meta property="og:image:width" content="2400">
+<meta property="og:image:height" content="1260">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kleo 影片风格 — 写实、动画、Cinema、Stickman">
+<meta name="twitter:description" content="Kleo 的四种风格，各配真实示例：写实的真人实拍感画面、2D 动画影片，以及由引擎实时绘制的 Cinema 和 Stickman。一套工作流，4K 60 fps。">
+<meta name="twitter:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta name="theme-color" content="#0A0C10">
+<link rel="icon" href="/brand/kleo-favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/brand/kleo-favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/brand/kleo-icon-dark-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/site.css?v=20260920">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://kleooai.com/#website",
+      "name": "Kleo AI",
+      "alternateName": "Kleo",
+      "url": "https://kleooai.com/zh/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kleooai.com/zh/styles.html#page",
+      "url": "https://kleooai.com/zh/styles.html",
+      "name": "Kleo 影片风格 — 写实、动画、Cinema、Stickman",
+      "description": "Kleo 的四种风格，各配真实示例：写实的真人实拍感画面、2D 动画影片，以及由引擎实时绘制的 Cinema 和 Stickman。一套工作流，4K 60 fps。",
+      "inLanguage": "zh-Hans",
+      "isPartOf": {
+        "@id": "https://kleooai.com/#website"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "首页",
+          "item": "https://kleooai.com/zh/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "影片风格",
+          "item": "https://kleooai.com/zh/styles.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<script src="/site.js?v=20260920" defer></script>
+</head>
+<body>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" aria-label="主导航">
+  <div class="wrap">
+    <a class="brand" href="/zh/" aria-label="Kleo，首页">
+      <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+        <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+        <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+      </svg>
+      Kleo <span class="tag">MCP</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="菜单" aria-expanded="false" aria-controls="site-menu">
+      <svg class="bars" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 5h14M2 9h14M2 13h14"/></svg>
+      <svg class="x" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 4l10 10M14 4L4 14"/></svg>
+    </button>
+    <div class="nav-links" id="site-menu">
+      <a href="/zh/ai-youtube-video-generator/">制作视频</a> <a href="/zh/examples/">示例</a> <a href="/zh/styles.html" aria-current="page">风格</a> <a href="/zh/pricing/">价格</a> <a href="/zh/faq/">常见问题</a>
+    </div>
+    <a class="btn btn-primary btn-sm" href="/zh/connect/">连接 Kleo</a>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="styles-hero" id="top">
+  <div class="wrap">
+    <div>
+      <div class="osd"><span class="rec" aria-hidden="true"></span> REC · 四种风格<span class="osd-more"> · 一种影片</span></div>
+      <h1>四种风格。<br><span class="hl">一种影片。</span></h1>
+      <p>Kleo 只做一种视频：一部完整的旁白影片。今天服务器的风格开关上有两种——写实，带摄影光感的生成真人实拍画面；动画，一部 2D 动画影片——另外两种由 Keou 引擎实时绘制，Cinema 和 Stickman。每种风格下面都配有真实示例。每部影片一种风格，在任何一帧存在之前就已决定；无论哪种风格，工作流相同，4K 60 fps 母版也相同。</p>
+      <div class="looks">
+        <a class="look" href="#realistic" data-look="realistic" style="--c:var(--teal)"><i></i>写实</a> <a class="look" href="#animation" data-look="animation" style="--c:var(--amber)"><i></i>动画</a> <a class="look" href="#cinema" data-look="cinema" style="--c:var(--blue)"><i></i>Cinema</a> <a class="look" href="#stickman" data-look="stickman" style="--c:var(--ink)"><i></i>Stickman</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOOKS ============ -->
+<section id="looks">
+  <div class="wrap">
+
+    <article class="style-row wide" id="realistic" style="--c:var(--teal)">
+      <div class="style-films">
+        <div class="film">
+          <div class="style-media wide">
+            <video src="/samples/realistic-tether.mp4" poster="/samples/realistic-tether.jpg" width="1920" height="1080" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback"
+                   aria-label="Tether，一部 Kleo 写实风格的 20 秒影片：一个不间断的后拉镜头，从头盔里宇航员的脸一直到他系绳所连的空间站。进入视野时静音播放。"></video>
+            <span class="style-live" aria-hidden="true"><i></i>播放中</span>
+          </div>
+          <div class="film-cap"><b>Tether</b><span>20 秒 · 一镜到底 · 16:9 · 4K 60 fps，以 1080p 展示</span></div>
+          <p class="film-note">一个不间断的后拉镜头。从头盔内部开始，落在宇航员的脸和他在玻璃上的呼吸上；一只戴手套的手抬起，面罩被红光淹没，镜头在他张开双臂漂浮时不断后退，直到从他背包向上延伸的金色系绳接上空间站和它的太阳能板。每一帧都是生成的画面。没有一句话：只有他的呼吸和低沉的嗡鸣。</p>
+          <p class="film-note"><a href="/zh/examples/tether/">在它自己的页面观看 Tether →</a></p>
+        </div>
+        <div class="film">
+          <div class="style-media wide">
+            <video src="/samples/realistic-signal.mp4" poster="/samples/realistic-signal.jpg" width="1920" height="1080" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback"
+                   aria-label="Signal Delay，一部用 Kleo 写实风格渲染的旅行者 1 号纪录片的开场一分钟：缓慢推进的照片静帧、手绘的琥珀色示意图、黑底上的日期和角落里的两个时钟。进入视野时静音播放。"></video>
+            <span class="style-live" aria-hidden="true"><i></i>播放中</span>
+          </div>
+          <div class="film-cap"><b>Signal Delay</b><span>6 分 55 秒 · 开场 0:00–1:02 · 16:9 文件中的 2.39:1 · 4K 60 fps，以 1080p 展示</span></div>
+          <p class="film-note">一部以五个月任务日志讲述的纪录片：2023 年 11 月 14 日，旅行者 1 号开始重复发送同一组 0 和 1，而每一个问题都要花去四十五小时的光程时间。一位旁白带你走过读数、失效的芯片，以及用 1970 年代汇编语言手工搬移的代码。缓慢推进的照片静帧、手绘的琥珀色示意图、终端窗口、黑底上的日期、角落里的两个时钟、35 mm 胶片颗粒、2.39:1、安静的音乐铺底和字幕。这里是到片名为止的开场一分钟。用 Kleo 的写实风格渲染；全片不在网站上。</p>
+          <p class="film-note"><a href="/zh/examples/signal-delay/">在它自己的页面观看 Signal Delay →</a></p>
+        </div>
+        <div class="film">
+          <div class="style-media wide">
+            <video src="/samples/realistic-apex.mp4" poster="/samples/realistic-apex.jpg" width="1920" height="1080" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback"
+                   aria-label="Apex，一部 Kleo 写实风格的 20 秒影片：一辆黄色超跑和一辆淡绿色经典双门轿跑并排穿过琥珀色灯光的隧道，驶上黄金时刻的海岸公路。进入视野时静音播放。"></video>
+            <span class="style-live" aria-hidden="true"><i></i>播放中</span>
+          </div>
+          <div class="film-cap"><b>Apex</b><span>20 秒 · 16:9 · 4K 60 fps，以 1080p 展示</span></div>
+          <p class="film-note">一辆黄色超跑和一辆淡绿色经典双门轿跑并排行驶，车头朝向镜头，一排排琥珀色的灯在头顶飞驰而过；隧道到了尽头，道路展开在黄金时刻的悬崖海岸上，身旁的海面平静而明亮。两个主体在光线变化中保持不变，每一帧都是生成的画面。</p>
+          <p class="film-note"><a href="/zh/examples/apex/">在它自己的页面观看 Apex →</a></p>
+        </div>
+      </div>
+      <div>
+        <div class="style-n">01 · 风格</div>
+        <div class="style-name"><h2>写实</h2><button class="style-arg" type="button" data-copy='style: "realistic"' aria-label="复制写实风格参数">style: "realistic"</button></div>
+        <p class="style-lead">摄影光感、真实的质感和会运动的镜头，4K 60 fps。同一种风格既能承载画面上空无一物的单个生成镜头，也能承载一部带日期、示意图和旁白的七分钟纪录片：屏幕上出现什么由影片决定，而不是由预设决定。三部影片，一种风格。</p>
+        <ul class="style-facts">
+          <li><b>输出</b><span>4K · 60 fps，YouTube 用 16:9 或 Short 用 9:16，15 秒到 5 分钟</span></li>
+          <li><b>画面</b><span>影片中，每个镜头都从各自的画帧生成为动态画面；动态分镜中，是运动镜头下的同一批画帧</span></li>
+          <li><b>画面上</b><span>除非影片的剧本大纲要求（Signal Delay 的就要求了），否则什么都没有；一位旁白</span></li>
+        </ul>
+        <p class="style-say copyable">“一部 20 秒的影片，16:9，写实风格：一个连续的后拉镜头，从头盔里宇航员的脸一直到他系绳所连的空间站。没有台词，只有他的呼吸。”<button class="btn btn-ghost btn-sm copy" type="button" data-copy="A 20-second film, 16:9, realistic look: one continuous pull-back from an astronaut’s face inside his helmet to the station he’s tethered to. No words, just his breathing.">复制</button></p>
+      </div>
+    </article>
+
+    <article class="style-row" id="animation" style="--c:var(--amber)">
+      <div class="style-media">
+        <video src="/samples/animation-octopus.mp4" poster="/samples/animation-octopus.jpg" width="608" height="1080" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback"
+               aria-label="动画示例，Why Octopuses Have 3 Hearts and Blue Blood：一只手绘的红色章鱼，章节标签和按词切换的大字幕"></video>
+        <span class="style-live" aria-hidden="true"><i></i>播放中</span>
+      </div>
+      <div>
+        <div class="style-n">02 · 风格</div>
+        <div class="style-name"><h2>动画</h2><button class="style-arg" type="button" data-copy='style: "animation"' aria-label="复制动画风格参数">style: "animation"</button></div>
+        <p class="style-lead">一部 2D 动画影片：手绘背景，在镜头之间保持一致的手绘角色，一位英语或意大利语旁白。今天已在服务器上线，同一工作流，同样的 4K 60 fps 母版，与写实风格价格相同：1 积分对应 2 秒影片，从 10 积分起；这种风格的动态分镜是 5 积分。</p>
+        <p class="film-note"><b>Why Octopuses Have 3 Hearts and Blue Blood</b>——一个 32 秒的 Short，9:16，用一个已连接的助手从一句话做出（OpenCode，独自完成，包括分镜）：一只手绘的红色章鱼，每个镜头一幅画配缓慢的镜头运动，章节标签和随念出的词点亮的大字幕。以 1080p 展示，静音。服务器上的动画风格现在更进一步：影片中每个镜头都从其手绘画帧生成为动态画面，除非影片的剧本大纲要求，否则画面上什么都没有。动态分镜则像这个示例一样，把手绘画帧保留在镜头之下。</p>
+        <ul class="style-facts">
+          <li><b>输出</b><span>4K · 60 fps，YouTube 用 16:9 或 Short 用 9:16，15 秒到 5 分钟</span></li>
+          <li><b>画面</b><span>手绘背景，在镜头之间保持一致的手绘角色；影片中每个镜头都从各自的画帧生成</span></li>
+          <li><b>价格</b><span>与写实风格相同：影片 1 积分 = 2 秒，最低 10 积分，40 秒的 Short 是 20 积分；动态分镜固定 5 积分</span></li>
+        </ul>
+        <p class="film-note"><a href="/zh/examples/octopus/">在它自己的页面观看章鱼 Short →</a></p>
+        <p class="style-say copyable">“帮我做一个 40 秒的 Short，动画风格，讲章鱼为什么有三颗心脏和蓝色血液。英语旁白。”<button class="btn btn-ghost btn-sm copy" type="button" data-copy="Make me a 40-second Short, animation look, about why octopuses have three hearts and blue blood. English narration.">复制</button></p>
+      </div>
+    </article>
+
+    <article class="style-row" id="cinema" style="--c:var(--blue)">
+      <div class="style-media">
+        <video src="/samples/cinema.mp4" poster="/samples/cinema.jpg" width="1080" height="1920" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback"
+               aria-label="Cinema 示例：在珀斯机场被查获的 WiFi Pineapple"></video>
+        <span class="style-live" aria-hidden="true"><i></i>播放中</span>
+      </div>
+      <div>
+        <div class="style-n">03 · 风格 · 由引擎绘制</div>
+        <div class="style-name"><h2>Cinema</h2><button class="style-arg" type="button" data-copy='kleo_style: "cyber"' aria-label="复制 cinema 风格参数">kleo_style: "cyber"</button></div>
+        <p class="style-lead">每个节拍一个主视觉，以发光线稿画在近黑的底色上，带漂移的光痕和角落的括线。一个章节标签、随词猛然切入的动态文字、关键词用章节强调色的标题组合，以及一个词为绿色的白色字幕。每个节拍都是锚定在一个念出的词上的硬切：26 秒里 25 个镜头，没有一个超过 1.7 秒。</p>
+        <ul class="style-facts">
+          <li><b>适合</b><span>科技、安全、数码产品、带数字的新闻故事</span></li>
+          <li><b>格式</b><span>9:16 和 16:9</span></li>
+          <li><b>图片</b><span>无，每个场景 5–8 个节拍由 Keou 引擎实时绘制</span></li>
+        </ul>
+        <p class="style-say">“警察从一名乘客的包里搜出一个 WiFi Pineapple：做成 25 秒的 Short，cinema 风格。”</p>
+        <p class="film-note">一种引擎风格：今天不在助手的风格开关上（那里提供写实和动画），而是在分镜里以它的引擎名称请求，<code>kleo_style: "cyber"</code>。</p>
+      </div>
+    </article>
+
+    <article class="style-row" id="stickman" style="--c:var(--ink)">
+      <div class="style-media">
+        <video src="/samples/stickman-omg.mp4" poster="/samples/stickman-omg.jpg" width="1080" height="1920" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback"
+               aria-label="Stickman 示例：藏着一台电脑的充电线"></video>
+        <span class="style-live" aria-hidden="true"><i></i>播放中</span>
+      </div>
+      <div>
+        <div class="style-n">04 · 风格 · 由引擎绘制</div>
+        <div class="style-name"><h2>Stickman</h2><button class="style-arg" type="button" data-copy='kleo_style: "stickman"' aria-label="复制 stickman 风格参数">kleo_style: "stickman"</button></div>
+        <p class="style-lead">黑底上的白色线稿，像手绘一样。一个火柴人用真实的物件演出故事——数据线、笔记本电脑、装满充电器的抽屉——只有危险才有颜色：插头里的红色电路、蓝色的信号、黄色的价签。醒目的字幕，其中一个词是绿色。刻意朴素，刻意好笑，在满是素材库画面的信息流里一眼可辨。</p>
+        <ul class="style-facts">
+          <li><b>适合</b><span>数码产品、骗局、有反转的安全故事</span></li>
+          <li><b>格式</b><span>仅 9:16</span></li>
+          <li><b>图片</b><span>无，一切都由 Keou 引擎实时绘制</span></li>
+        </ul>
+        <p class="style-say">“这根充电线里藏着一台电脑：做成 25 秒的 Short，stickman 风格。”</p>
+        <p class="film-note">一种引擎风格：今天不在助手的风格开关上（那里提供写实和动画），而是在分镜里以它的引擎名称请求，<code>kleo_style: "stickman"</code>。</p>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ============ HOW A FILM IS BUILT ============ -->
+<section id="how">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">05</span>工作流程</div>
+        <h2>一部影片如何构建</h2>
+      </div>
+      <p class="lede">各种风格共用一条流水线。风格在第一步——剧本大纲——就已敲定，之后的一切都在这个决定之下生成：分镜、每个镜头、旁白、剪辑和 4K 60 fps 渲染。</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="num" aria-hidden="true">01</span> <span class="tc">kleo_adapt_prompt</span>
+        <h3>剧本大纲</h3>
+        <p>你的助手把请求交给 <code>kleo_adapt_prompt</code>，它对照需求清单读取请求：主题、时长、格式和风格，外加可选的受众、语调和必须出现的内容，缺什么就问什么，而不是假设。返回的是剧本大纲：故事梗概、切入角度、开场、幕次、结局、风格、节奏、旁白。风格在这里决定，在任何一帧存在之前。</p>
+      </div>
+      <div class="step">
+        <span class="num" aria-hidden="true">02</span> <span class="tc">kleo_storyboard_guide</span>
+        <h3>分镜</h3>
+        <p><code>kleo_storyboard_guide</code> 说明如何在这份剧本大纲之下写分镜：一段导演思路、场景、镜头和限制。</p>
+      </div>
+      <div class="step">
+        <span class="num" aria-hidden="true">03</span> <span class="tc">kleo_create_video</span>
+        <h3>画面与旁白</h3>
+        <p><code>kleo_create_video</code> 检查全部内容，说明准确的积分数，并在为该任务租用的 GPU 上开始渲染；在它接受之前不扣任何费用。然后，影片中每个镜头都以剧本大纲选定的风格从各自的画帧生成为动态画面；动态分镜中，镜头在每幅手绘画帧上运动。由一位旁白配音，英语或意大利语。没有背景音乐，没有字幕。</p>
+      </div>
+      <div class="step">
+        <span class="num" aria-hidden="true">04</span> <span class="tc">kleo_get_result</span>
+        <h3>渲染</h3>
+        <p>镜头和旁白被剪接成一部影片。除非影片的剧本大纲要求，否则画面上什么都不加。一个 4K 60 fps 的 MP4，16:9 为 3840×2160，9:16 为 2160×3840，在租用的 GPU 上通常需要 25–35 分钟。你的助手跟踪进度，<code>kleo_get_result</code> 把链接交给它，7 天内有效。</p>
+      </div>
+    </div>
+    <p class="tpl-more">无论哪种风格，标准影片只有一位旁白，别无其他：没有背景音乐，没有字幕，没有屏幕文字。日期、示意图或字幕只在影片的剧本大纲要求时才出现，就像 Signal Delay 的剧本大纲那样。</p>
+  </div>
+</section>
+
+<!-- ============ HOW A SCENE IS CUT ============ -->
+<section id="scene">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">06</span>一个场景如何剪接</div>
+        <h2>不是幻灯片。<br>一句台词，剪成几个镜头。</h2>
+      </div>
+      <p class="lede">每句旁白台词成为一个场景，每个场景被剪成几个镜头。Kleo 为每个镜头写一段描述，从各自的画帧生成它，并把剪切点对准你真正听到的一个词。看看下面这句台词。</p>
+    </div>
+    <div class="scene">
+      <div>
+        <p class="line" id="line" aria-label="Captain Mara buried her treasure on Skull Beach in 1720. She never came back, and nobody knows why."></p>
+        <div class="line-foot"><span>旁白 · 9 秒</span><button type="button" id="replay">↻ 再播一次</button></div>
+      </div>
+      <div class="shots" id="shots" aria-label="这个场景的三个镜头">
+        <div class="shot" data-from="0"><div class="frame" aria-hidden="true"><svg viewBox="0 0 90 120" aria-hidden="true"><circle cx="45" cy="52" r="13" fill="var(--amber)" opacity=".9"/><path d="M0 78 Q45 70 90 78 V120 H0Z" fill="var(--amber-soft)"/><path d="M0 78 Q45 70 90 78" stroke="var(--amber)" stroke-width="1.2" fill="none" opacity=".7"/><rect x="38" y="84" width="16" height="10" rx="2" fill="var(--ink)" opacity=".8"/><path d="M38 84 q8 -6 16 0" stroke="var(--ink)" stroke-width="1.5" fill="none" opacity=".8"/></svg></div><b>镜头 01</b><span>船长在日落时分的金色海滩上埋一只箱子。</span><em class="cutword">Captain</em></div>
+        <div class="shot" data-from="11"><div class="frame" aria-hidden="true"><svg viewBox="0 0 90 120" aria-hidden="true"><circle cx="18" cy="62" r="9" fill="var(--amber)" opacity=".6"/><path d="M0 80 Q45 74 90 80 V120 H0Z" fill="var(--amber-soft)"/><path d="M0 80 Q45 74 90 80" stroke="var(--amber)" stroke-width="1.2" fill="none" opacity=".7"/><g stroke="var(--ink)" stroke-width="1.8" stroke-linecap="round" fill="none" opacity=".85"><circle cx="64" cy="64" r="3.5"/><path d="M64 68 v12 M64 74 l-5 6 M64 74 l5 5 M64 80 l-4 9 M64 80 l5 8"/></g></svg></div><b>镜头 02</b><span>她沿着海岸线走远，箱子已不见。</span><em class="cutword">never</em></div>
+        <div class="shot" data-from="15"><div class="frame" aria-hidden="true"><svg viewBox="0 0 90 120" aria-hidden="true"><path d="M52 32 a12 12 0 1 0 10 18 a9 9 0 1 1 -10 -18z" fill="var(--ink)" opacity=".8"/><g fill="var(--ink)" opacity=".5"><circle cx="20" cy="28" r="1.2"/><circle cx="30" cy="48" r="1"/><circle cx="74" cy="24" r="1.3"/><circle cx="80" cy="56" r=".9"/></g><path d="M0 80 Q45 74 90 80 V120 H0Z" fill="var(--line)"/><path d="M0 80 Q45 74 90 80" stroke="var(--ink-2)" stroke-width="1" fill="none" opacity=".5"/></svg></div><b>镜头 03</b><span>同一片海滩的夜晚，空无一人。</span><em class="cutword">nobody</em></div>
+      </div>
+    </div>
+    <p class="scene-foot">同一个角色在每个镜头里都以同样的方式描述，所以三个镜头之后船长看起来还是船长。</p>
+  </div>
+</section>
+
+<!-- ============ START ============ -->
+<section class="cta one" id="start">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow"><span class="n">07</span>开始</div>
+      <h2>按名字要一种风格。</h2>
+      <p class="lede">每部影片一种风格，在剧本大纲里、在任何一帧存在之前决定；同一工作流，同样的 4K 60 fps 母版，同样的价格——无论做成影片还是 5 积分的动态分镜。</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/zh/connect/">连接 Kleo <span class="arr" aria-hidden="true">→</span></a> <a class="btn btn-ghost" href="/zh/pricing/">查看价格</a>
+      </div>
+      <p class="lede"><a href="/zh/video-generation-mcp/">逐个工具看：MCP 文档 →</a></p>
+      <p class="lede"><a href="/zh/examples/">全部示例 →</a></p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<!-- i18n:langs -->
+<nav class="langs" aria-label="语言">
+  <div class="wrap">
+    <span>语言</span>
+    <a href="/styles.html" hreflang="en" lang="en">English</a>
+    <a href="/it/styles.html" hreflang="it" lang="it">Italiano</a>
+    <a href="/de/styles.html" hreflang="de" lang="de">Deutsch</a>
+    <a href="/fr/styles.html" hreflang="fr" lang="fr">Français</a>
+    <a href="/es/styles.html" hreflang="es" lang="es">Español</a>
+    <a href="/pt/styles.html" hreflang="pt" lang="pt">Português</a>
+    <a href="/nl/styles.html" hreflang="nl" lang="nl">Nederlands</a>
+    <a href="/pl/styles.html" hreflang="pl" lang="pl">Polski</a>
+    <a href="/tr/styles.html" hreflang="tr" lang="tr">Türkçe</a>
+    <a href="/ru/styles.html" hreflang="ru" lang="ru">Русский</a>
+    <a href="/uk/styles.html" hreflang="uk" lang="uk">Українська</a>
+    <a href="/ja/styles.html" hreflang="ja" lang="ja">日本語</a>
+    <a href="/ko/styles.html" hreflang="ko" lang="ko">한국어</a>
+    <b lang="zh-Hans">简体中文</b>
+    <a href="/zh-tw/styles.html" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+    <a href="/ar/styles.html" hreflang="ar" lang="ar">العربية</a>
+    <a href="/he/styles.html" hreflang="he" lang="he">עברית</a>
+    <a href="/hi/styles.html" hreflang="hi" lang="hi">हिन्दी</a>
+    <a href="/id/styles.html" hreflang="id" lang="id">Bahasa Indonesia</a>
+    <a href="/vi/styles.html" hreflang="vi" lang="vi">Tiếng Việt</a>
+    <a href="/th/styles.html" hreflang="th" lang="th">ไทย</a>
+  </div>
+</nav>
+<!-- /i18n:langs -->
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">
+      <a class="brand" href="/zh/" aria-label="Kleo，首页">
+        <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+          <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+          <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+        </svg>
+        Kleo <span class="tag">MCP</span>
+      </a>
+      <span>你来执导。智能体拍成影片。</span>
+    </div>
+    <div class="links">
+      <a href="/zh/connect/">连接</a> <a href="/zh/integrations/claude/">Claude</a> <a href="/zh/integrations/chatgpt/">ChatGPT</a> <a href="/zh/video-generation-mcp/">MCP 文档</a> <a href="/zh/examples/">示例</a> <a href="/zh/styles.html">风格</a> <a href="/zh/pricing/">价格</a> <a href="/zh/faq/">常见问题</a> <a href="/zh/about/">关于</a> <a href="/zh/privacy.html">隐私</a> <a href="/zh/terms.html">条款</a> <a href="https://github.com/tonnooooo/kleo-mcp">GitHub</a> <a href="mailto:kleooai@gmail.com">kleooai@gmail.com</a>
+    </div>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite">已复制</div>
+</body>
+</html>

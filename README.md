@@ -46,7 +46,7 @@ descriptions), `6d501967255b4889a19297ad25fe6c51.txt` (the IndexNow key, public 
   films (they play muted while in view and are only fetched then; no controls, no menu, no drag: shown, not handed
   over), the Italian hash map, the looks page tint. No analytics, no cookies, no remote code: the privacy page
   promises that.
-- Both are linked with `?v=20260915`; bump it when you change either, so nobody reads a new page with an old
+- Both are linked with `?v=` `ASSETS_V` from `tools/check.py`; bump it when you change either, so nobody reads a new page with an old
   stylesheet from the cache. The only remote resources on the site are the three Google Fonts faces.
 
 ## The server address
@@ -55,6 +55,20 @@ The address `https://mcp.kleooai.com/mcp` ships IN the markup (so a reader witho
 and `config.json` overrides it at load time: change `mcp_url` there to move the server without touching every page,
 and, when convenient, the markup too. The optional `note` in `config.json` is shown above the address on the home
 and on `/connect/` (`#server-note`); keep it true to the product (it says what a new account gets).
+
+## Languages
+
+English is the source; the site is also published in the languages of `LANGS` in `tools/check.py` (20 today), each
+under its own folder: `/it/`, `/de/pricing/`, `/ja/styles.html`… `tools/i18n.py` builds those folders from the English
+pages and one translation memory per language (`tools/i18n/<lang>.json`, keyed by a hash of the English text, so a
+changed English sentence drops its old translation and shows up as missing). Never edit a translated page by hand:
+edit the English page, then `python3 tools/i18n.py status` → `pending --lang xx` → translate the JSON → `import` →
+`build`. Every page carries the `hreflang` alternates of every language, a language switcher above the footer (the
+current language is not a link) and a small inline script in `<head>`: a language chosen in the switcher is kept in
+`localStorage` and wins on every page; otherwise the browser's preferred languages decide, the first one that is
+English or a language the site has, and the visitor lands on the same page in that folder. Search engines see every
+folder (the sitemap lists them all); the redirect never fires for a bot whose browser prefers English. `404.html` and
+`llms.txt` stay English.
 
 ## Rules
 

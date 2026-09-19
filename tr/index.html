@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="tr" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.remove("no-js")</script>
+<title>Kleo AI — Yönetmen İnsan. Filmi Ajan Yapar.</title>
+<meta name="description" content="AI asistanından MCP ile yapılan eksiksiz anlatımlı filmler, gerçekçi ya da animasyon. 4K 60 fps, 15 saniyeden 5 dakikaya, İngilizce ya da İtalyanca anlatım.">
+<link rel="canonical" href="https://kleooai.com/tr/">
+<!-- i18n:head -->
+<link rel="alternate" hreflang="en" href="https://kleooai.com/">
+<link rel="alternate" hreflang="it" href="https://kleooai.com/it/">
+<link rel="alternate" hreflang="de" href="https://kleooai.com/de/">
+<link rel="alternate" hreflang="fr" href="https://kleooai.com/fr/">
+<link rel="alternate" hreflang="es" href="https://kleooai.com/es/">
+<link rel="alternate" hreflang="pt" href="https://kleooai.com/pt/">
+<link rel="alternate" hreflang="nl" href="https://kleooai.com/nl/">
+<link rel="alternate" hreflang="pl" href="https://kleooai.com/pl/">
+<link rel="alternate" hreflang="tr" href="https://kleooai.com/tr/">
+<link rel="alternate" hreflang="ru" href="https://kleooai.com/ru/">
+<link rel="alternate" hreflang="uk" href="https://kleooai.com/uk/">
+<link rel="alternate" hreflang="ja" href="https://kleooai.com/ja/">
+<link rel="alternate" hreflang="ko" href="https://kleooai.com/ko/">
+<link rel="alternate" hreflang="zh-Hans" href="https://kleooai.com/zh/">
+<link rel="alternate" hreflang="zh-Hant" href="https://kleooai.com/zh-tw/">
+<link rel="alternate" hreflang="ar" href="https://kleooai.com/ar/">
+<link rel="alternate" hreflang="he" href="https://kleooai.com/he/">
+<link rel="alternate" hreflang="hi" href="https://kleooai.com/hi/">
+<link rel="alternate" hreflang="id" href="https://kleooai.com/id/">
+<link rel="alternate" hreflang="vi" href="https://kleooai.com/vi/">
+<link rel="alternate" hreflang="th" href="https://kleooai.com/th/">
+<link rel="alternate" hreflang="x-default" href="https://kleooai.com/">
+<script>(function(){try{var L=["it", "de", "fr", "es", "pt", "nl", "pl", "tr", "ru", "uk", "ja", "ko", "zh", "zh-tw", "ar", "he", "hi", "id", "vi", "th"],A={"zh-hk": "zh-tw", "zh-mo": "zh-tw", "zh-hant": "zh-tw", "zh-hans": "zh", "zh-cn": "zh", "zh-sg": "zh", "nb": "no", "nn": "no"},p=location.pathname,m=p.match(/^\/([a-z]{2}(?:-[a-z]{2})?)(?=\/)/),on=m&&L.indexOf(m[1])>=0?m[1]:"en",rest=on==="en"?p:p.slice(on.length+1),want=null,s=null;try{s=localStorage.getItem("kleo-lang")}catch(e){}if(s==="en"||L.indexOf(s)>=0)want=s;else{var nl=navigator.languages||[navigator.language||""];for(var i=0;i<nl.length&&!want;i++){var t=String(nl[i]).toLowerCase(),b=t.split("-")[0];t=A[t]||t;b=A[b]||b;want=t==="en"||b==="en"?"en":L.indexOf(t)>=0?t:L.indexOf(b)>=0?b:null}}if(want&&want!==on&&!/404/.test(p))location.replace((want==="en"?"":"/"+want)+rest+location.search+location.hash)}catch(e){}})()</script>
+<script type="application/json" id="i18n">{"Language": "Dil", "Menu": "Menü", "Close menu": "Menüyü kapat", "Copied": "Kopyalandı", "Copied ✓": "Kopyalandı ✓", "Copy it by hand: {text}": "Elle kopyala: {text}", "Copy the Kleo server address": "Kleo sunucu adresini kopyala", "Copy the argument {value}": "{value} argümanını kopyala", "Copy this prompt": "Bu istemi kopyala", "Copy the {what} snippet": "{what} parçasını kopyala", "Copy the {what} text": "{what} metnini kopyala", "Treatment · logline, angle, acts · look: realistic": "Tretman · logline, bakış açısı, perdeler · görünüm: gerçekçi", "Storyboard · direction, scenes, shots · 23 credits, confirmed": "Storyboard · yönetim, sahneler, çekimler · 23 kredi, onaylandı", "Generating the shots as footage · 4 of 11 · ~22 min left": "Çekimler hareketli görüntü olarak üretiliyor · 11 çekimden 4'ü · ~22 dk kaldı", "Generating the shots as footage · 8 of 11 · ~12 min left": "Çekimler hareketli görüntü olarak üretiliyor · 11 çekimden 8'i · ~12 dk kaldı", "Narration · one voice, English · cutting the shots on the words": "Anlatım · tek ses, İngilizce · çekimler sözlere göre kurgulanıyor", "Finish · 2160×3840 · 60 fps · quality check": "Bitirme · 2160×3840 · 60 fps · kalite kontrolü", "Done · 28 min · link ready for 7 days": "Tamam · 28 dk · bağlantı 7 gün hazır", "done": "tamamlandı", "running": "çalışıyor", "A whole number from {min} to {max} seconds": "{min} ile {max} saniye arasında bir tam sayı", "{s} s {product} = {n} credits": "{s} s {product} = {n} kredi", "film": "film", "animatic": "animatik"}</script>
+<!-- /i18n:head -->
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kleo AI">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:title" content="Kleo AI — Yönetmen İnsan. Filmi Ajan Yapar.">
+<meta property="og:description" content="AI asistanından MCP ile yapılan eksiksiz anlatımlı filmler, gerçekçi ya da animasyon. 4K 60 fps, 15 saniyeden 5 dakikaya, İngilizce ya da İtalyanca anlatım.">
+<meta property="og:url" content="https://kleooai.com/tr/">
+<meta property="og:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta property="og:image:alt" content="Kleo AI — Yönetmen insan. Filmi ajan yapar.">
+<meta property="og:image:width" content="2400">
+<meta property="og:image:height" content="1260">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kleo AI — Yönetmen İnsan. Filmi Ajan Yapar.">
+<meta name="twitter:description" content="AI asistanından MCP ile yapılan eksiksiz anlatımlı filmler, gerçekçi ya da animasyon. 4K 60 fps, 15 saniyeden 5 dakikaya, İngilizce ya da İtalyanca anlatım.">
+<meta name="twitter:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta name="theme-color" content="#0A0C10">
+<link rel="icon" href="/brand/kleo-favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/brand/kleo-favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/brand/kleo-icon-dark-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/site.css?v=20260920">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://kleooai.com/#website",
+      "name": "Kleo AI",
+      "alternateName": "Kleo",
+      "url": "https://kleooai.com/tr/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kleooai.com/tr/#page",
+      "url": "https://kleooai.com/tr/",
+      "name": "Kleo AI — Yönetmen İnsan. Filmi Ajan Yapar.",
+      "description": "AI asistanından MCP ile yapılan eksiksiz anlatımlı filmler, gerçekçi ya da animasyon. 4K 60 fps, 15 saniyeden 5 dakikaya, İngilizce ya da İtalyanca anlatım.",
+      "inLanguage": "tr",
+      "isPartOf": {
+        "@id": "https://kleooai.com/#website"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Ana sayfa",
+          "item": "https://kleooai.com/tr/"
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://kleooai.com/#software",
+      "name": "Kleo AI",
+      "url": "https://kleooai.com/tr/",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "MCP uyumlu herhangi bir istemci (uzak sunucu)",
+      "description": "AI asistanından gelen bir brief'i, her çekimi hareketli görüntü olarak üretilmiş ve 4K 60 fps MP4 olarak render alınmış eksiksiz anlatımlı bir filme, gerçekçi ya da animasyon, dönüştüren uzak bir MCP sunucusu — ya da aynı storyboard'un animatiğine, 5 kredi, her hesaba açık.",
+      "offers": {
+        "@type": "Offer",
+        "name": "10 kredilik paket",
+        "price": "5",
+        "priceCurrency": "EUR",
+        "url": "https://kleooai.com/tr/pricing/"
+      }
+    }
+  ]
+}
+</script>
+<script src="/site.js?v=20260920" defer></script>
+</head>
+<body>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" aria-label="Ana">
+  <div class="wrap">
+    <a class="brand" href="/tr/" aria-label="Kleo, ana sayfa" aria-current="page">
+      <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+        <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+        <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+      </svg>
+      Kleo <span class="tag">MCP</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Menü" aria-expanded="false" aria-controls="site-menu">
+      <svg class="bars" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 5h14M2 9h14M2 13h14"/></svg>
+      <svg class="x" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 4l10 10M14 4L4 14"/></svg>
+    </button>
+    <div class="nav-links" id="site-menu">
+      <a href="/tr/ai-youtube-video-generator/">Video üret</a> <a href="/tr/examples/">Örnekler</a> <a href="/tr/styles.html">Görünümler</a> <a href="/tr/pricing/">Fiyatlar</a> <a href="/tr/faq/">SSS</a>
+    </div>
+    <a class="btn btn-primary btn-sm" href="/tr/connect/">Kleo'yu bağla</a>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <div class="osd"><span class="rec" aria-hidden="true"></span> REC <span class="tcode" id="tcode" aria-hidden="true">00:00:00:00</span> · 4K · 60 fps<span class="osd-more"> · 16:9 ve 9:16 · EN / IT</span></div>
+      <h1>Yönetmen insan.<br><span class="hl">Filmi ajan yapar.</span></h1>
+      <p class="lede">Hikâyeyi senin brief'in belirler. Kleo onu eksiksiz, anlatımlı bir filme dönüştürür — her çekim hareketli görüntü olarak üretilir, gerçekçi ya da animasyon görünümünde — ya da aynı storyboard'un animatiğine, ve bağlantıyı zaten kullandığın asistana teslim eder. Yönetmeni sensin. Yapımı MCP üzerinden.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/tr/connect/">Kleo'yu bağla <span class="arr" aria-hidden="true">→</span></a> <a class="btn btn-ghost" href="/tr/examples/">Örnekleri izle</a>
+      </div>
+      <p class="free-line"><b>Başlamak ücretsiz.</b> Bağlandığın anda hesabında 7 kredi — kayıt yok, kart yok: bir animatik. Film 10 krediden ve 5 €'luk paketten başlar.</p>
+      <div class="works">
+        <span>Şunlarla çalışır</span> <b>Claude</b><b>ChatGPT</b><b>Grok</b><b>Claude Code</b><b>Cursor</b><b>VS Code</b><b>OpenCode</b><b>Gemini CLI</b>
+      </div>
+    </div>
+
+    <div class="demo" role="figure" aria-label="Örnek: Kleo bağlıyken bir sohbet">
+      <div class="demo-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="demo-title">Claude · Kleo bağlı<span class="clock" id="demoClock" hidden></span></span></div>
+      <div class="demo-body">
+        <div class="msg user">
+          <span class="who">Sen</span>
+          <p>Şişedeki mesaja cevap vermeyi bırakmayan bir deniz feneri bekçisi hakkında 45 saniyelik bir Short yap. Gerçekçi görünüm, İngilizce anlatım.</p>
+        </div>
+        <div class="msg">
+          <span class="who">Claude</span>
+          <p>Tretman hazır: bir bekçi, yılda bir şişe, sonuncusuna yüz yüze cevap veriyor. 23 kredi, 9:16. Render başlıyor.</p>
+          <div class="tool">
+            <div class="tool-head">
+              <span class="tool-name"><b>kleo_create_video</b></span> <span class="tool-state" id="toolState">çalışıyor</span>
+            </div>
+            <pre class="tool-args">{ "duration_s": 45, "format": "9:16", "style": "realistic", "language": "en",
+  "prompt": "A lighthouse keeper who keeps answering a message in a bottle" }</pre>
+          </div>
+        </div>
+        <div class="render" id="render">
+          <div class="render-head"><span>iş <b>kl_7f3k</b> · bu iş için kiralanan GPU</span><b id="renderPct">58%</b></div>
+          <div class="tracks" id="tracks">
+            <div class="track done"><span>Tretman</span><span class="tbar" style="--c:var(--violet)"></span></div>
+            <div class="track done"><span>Storyboard</span><span class="tbar" style="--c:var(--teal)"></span></div>
+            <div class="track active"><span>Görüntü</span><span class="tbar" style="--c:var(--amber)"></span></div>
+            <div class="track"><span>Anlatım</span><span class="tbar" style="--c:var(--rose)"></span></div>
+            <div class="track"><span>Bitirme</span><span class="tbar" style="--c:var(--blue)"></span></div>
+          </div>
+          <div class="bar"><span id="renderFill"></span></div>
+          <div class="render-status" id="renderStatus">Çekimler hareketli görüntü olarak üretiliyor · 11 çekimden 8'i · ~12 dk kaldı</div>
+          <div class="result" id="result" hidden>
+            <span class="file">lighthouse-keeper.mp4</span> <span class="chip">2160×3840</span><span class="chip">60 fps</span><span class="chip">0:45</span><span class="chip">7 gün</span> <span class="dl">İndir</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wrap wrap-stats">
+    <dl class="stats" aria-label="Rakamlarla Kleo">
+      <div><dt>Çıktı</dt><dd>4K · 60 fps</dd></div>
+      <div><dt>Bir film, brief'ten bağlantıya</dt><dd>25–35 dk</dd></div>
+      <div><dt>Görünümler</dt><dd>Gerçekçi · Animasyon</dd></div>
+      <div><dt>Başlangıç için</dt><dd>7 kredi, bir animatik</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section id="how">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">01</span>Nasıl çalışır</div>
+        <h2>Senin vizyonun. Her karede.</h2>
+      </div>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="num" aria-hidden="true">01</span> <span class="tc">senin sözlerin</span>
+        <h3>Hikâyeyi yönet</h3>
+        <p>Asistanına konuyu, süreyi, formatı ve görünümü söyle — gerçekçi ya da animasyon. Kleo brief'i okur ve eksik olan ne varsa sorar.</p>
+      </div>
+      <div class="step">
+        <span class="num" aria-hidden="true">02</span> <span class="tc">kleo_adapt_prompt</span>
+        <h3>Tretmanı oku</h3>
+        <p>Asistanın sana önce tretmanı gösterir: logline, bakış açısı, açılış, perdeler ve final. Tek bir kare üretilmeden önce istediğini değiştir.</p>
+      </div>
+      <div class="step">
+        <span class="num" aria-hidden="true">03</span> <span class="tc">kleo_create_video</span>
+        <h3>Kleo render alır</h3>
+        <p>O tretmana göre storyboard yazılır; sonra filmde her çekim kendi karesinden hareketli görüntü olarak üretilir, animatikte ise kamera çizilmiş her karenin üzerinde hareket eder. Tek bir anlatıcı seslendirir, İngilizce ya da İtalyanca. Kesin kredi maliyeti, herhangi bir ücret alınmadan önce belirtilir; render kabul edilene kadar hiçbir ücret alınmaz.</p>
+      </div>
+      <div class="step">
+        <span class="num" aria-hidden="true">04</span> <span class="tc">kleo_get_result</span>
+        <h3>İndir ve yayınla</h3>
+        <p>Film, senin işin için kiralanan bir GPU'da 4K 60 fps olarak render alınır. Asistanın ilerlemeyi takip eder ve sana biten MP4'ün bağlantısını verir; bağlantı 7 gün geçerlidir. İzle, sonra nerede yayınlıyorsan oraya yükle.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FILMS ============ -->
+<section id="films">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">02</span>Filmler</div>
+        <h2>Kleo yapımı filmler.</h2>
+      </div>
+      <p class="lede">Tether, tek çekimde yirmi saniye; Apex, tünelden çıkan iki araba; ve bir belgesel olan Signal Delay'in açılış dakikası, gerçekçi görünümde — ve animasyon görünümünde <a href="/tr/examples/octopus/">ahtapotların neden üç kalbi olduğunu anlatan animasyon bir Short</a>. Tüm 4K 60 fps masterlar 1080p'de gösteriliyor; her biri kendi sayfasında sessiz oynar, tıklanacak hiçbir şey yok.</p>
+    </div>
+    <div class="films-row">
+      <a class="poster" href="/tr/examples/tether/">
+        <img src="/samples/realistic-tether.jpg" alt="Kaskının içinde bir astronotun yüzü, vizör kırmızıya boğuluyor, altın rengi bir halat yukarıya, istasyona doğru uzanıyor" width="1920" height="1080" loading="lazy">
+        <span class="play"><i aria-hidden="true">▶</i>Tether · 20 s · tek çekim</span>
+      </a>
+      <a class="poster" href="/tr/examples/apex/">
+        <img src="/samples/realistic-apex.jpg" alt="Kehribar ışıklı bir tünelde yan yana sarı bir süper araba ve açık yeşil klasik bir coupé" width="1920" height="1080" loading="lazy">
+        <span class="play"><i aria-hidden="true">▶</i>Apex · 20 s · iki araba</span>
+      </a>
+      <a class="poster" href="/tr/examples/signal-delay/">
+        <img src="/samples/realistic-signal.jpg" alt="Voyager 1&#x27;in fotoğrafik bir karesinin üzerinde bir terminal penceresi ve elle çizilmiş kehribar rengi bir şema, siyah üzerine tarihler" width="1920" height="1080" loading="lazy">
+        <span class="play"><i aria-hidden="true">▶</i>Signal Delay · açılış dakikası</span>
+      </a>
+    </div>
+    <p class="tpl-more"><a href="/tr/examples/">Tüm örnekler →</a> · <a href="/tr/styles.html">İki görünüm, gerçekçi ve animasyon →</a></p>
+  </div>
+</section>
+
+<!-- ============ WHAT TO MAKE ============ -->
+<section id="template">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">03</span>Ne yapabilirsin</div>
+        <h2>İzlenmeye değer bir şey yap.</h2>
+      </div>
+    </div>
+    <div class="grid panels three">
+      <article class="panel">
+        <h3>YouTube açıklayıcı videoları</h3>
+        <p>Net bir soruyu, açılış kancasından son çıkarıma kadar, beş dakikaya varan anlatımlı bir 16:9 filme dönüştür.</p>
+        <a class="more" href="/tr/ai-youtube-video-generator/">YouTube videosu yap <span class="arr" aria-hidden="true">→</span></a>
+      </article>
+      <article class="panel">
+        <h3>Animasyon görünümünde kısa hikâyeler</h3>
+        <p>Hikâyeye bir konu, bir mekân ve bir son ver, animasyon görünümünü iste: tek anlatıcılı, 15 saniyeden 5 dakikaya kadar 2D animasyon bir film.</p>
+        <a class="more" href="/tr/examples/octopus/">Ahtapot Short'unu izle <span class="arr" aria-hidden="true">→</span></a>
+      </article>
+      <article class="panel">
+        <h3>Dikey Short'lar</h3>
+        <p>Tek fikirli, net anlatımlı, 2160×3840 ve 60 fps olarak render alınmış odaklı bir 9:16 Short. 30 saniyelik bir Short film olarak 15 kredi, animatik olarak 5 kredi.</p>
+        <a class="more" href="/tr/pricing/">Bir Short ne kadar <span class="arr" aria-hidden="true">→</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BEHIND THE SCENES ============ -->
+<section id="engine">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">04</span>Kamera arkası</div>
+        <h2>Sen yönetirsin. Kleo render alır.</h2>
+      </div>
+      <p class="lede">Brief, ilerleme ve bağlantı için asistanında kal: Kleo sohbetin arkasında çalışır. Filmde her çekim kendi karesinden hareketli görüntü olarak üretilir — durağan görsellerden slayt gösterisi yok — ve tek bir anlatıcı filmi taşır. Render, senin işin için kiralanan bir GPU'da 4K 60 fps olarak gerçekleşir, genellikle 25–35 dakika sürer. Teslim edilen ürün biten MP4'tür; ne zaman ve nerede yayınlayacağına sen karar verirsin.</p>
+    </div>
+    <ul class="style-facts auto">
+      <li><b>Tretman</b><span>Brief'in bir logline'a, bir bakış açısına, bir açılışa, perdelere ve bir finale dönüşür — tek bir kare üretilmeden önce sana gösterilir.</span></li>
+      <li><b>Storyboard</b><span>O tretmana göre yazılan yönetim, sahneler ve çekimler; kesin kredi tutarı herhangi bir ücret alınmadan önce belirtilir.</span></li>
+      <li><b>Görüntü</b><span>Filmde her çekim kendi karesinden hareketli görüntü olarak üretilir, gerçekçi ya da animasyon görünümünde. Animatikte aynı çizilmiş kareler, kamera her birinin üzerinde hareket eder — üretilmiş klip yok.</span></li>
+      <li><b>Anlatım</b><span>Tek bir anlatıcı, İngilizce ya da İtalyanca, filmi taşır. Müzik yok, altyazı yok, ekran yazısı yok.</span></li>
+      <li><b>Bitirme</b><span>4K 60 fps, 16:9 ya da 9:16 bir MP4, asistanının sana verdiği bir bağlantıda — 7 gün geçerli.</span></li>
+    </ul>
+    <p class="style-say copyable">“Kahvenin tarladan fincana yolculuğu hakkında 60 saniyelik anlatımlı bir film yapmak için Kleo'yu kullan. Gerçekçi görünüm, İngilizce anlatım, 16:9. Render'ı başlatmadan önce bana tretmanı ve kredi maliyetini göster.”<button class="btn btn-ghost btn-sm copy" type="button" data-copy="Use Kleo to make a 60-second narrated film about how coffee travels from farm to cup. Realistic look, English narration, 16:9. Show me the treatment and the credit cost before starting the render.">Kopyala</button></p>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section id="pricing">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">05</span>Fiyatlar</div>
+        <h2>Başlamak ücretsiz. Sadece kredi, hiçbir şey yenilenmez.</h2>
+      </div>
+      <div><span class="draft">Yayında · Stripe üzerinden tek seferlik ödemeler</span></div>
+    </div>
+    <div class="plans two">
+      <div class="plan hi">
+        <div class="name"><span>Ücretsiz plan</span><span class="pop">dahil, herkes için</span></div>
+        <div class="price">0 €<small>7 kredi, kayıt yok</small></div>
+        <ul>
+          <li>Ücretsiz plan hesabın kendisidir: bir kez bağlan, 7 kredin olur — form yok, kart yok, iptal edilecek bir şey yok</li>
+          <li>Animatik sabit 5 kredi, 15–60 s: aynı tretman, storyboard ve çizilmiş kareler, kamera her birinin üzerinde hareket eder, aynı anlatıcı ve grafik katmanı, 4K 60 fps, üretilmiş klip yok. Aynı zamanda bir filmin ön izlemesi</li>
+          <li>Film süreye göre fiyatlandırılır: 1 kredi = 2 saniye, 10 krediden başlar (20 s = 10 · 30 s = 15 · 60 s = 30 · 90 s = 45 · 5 dk = 150)</li>
+          <li>Ücretsiz krediler asla film satın almaz: filmin klipleri Kleo'nun masrafıyla üretilir, bu yüzden film yalnızca paket satın almış hesaplar için yapılır. 5 €'luk paketi ekle, 17 kredin olur — film açılır, 30 saniyelik bir Short</li>
+        </ul>
+        <a class="btn btn-primary" href="/tr/connect/">Bağlan ve başla</a>
+      </div>
+      <div class="plan">
+        <div class="name"><span>Kredi paketleri</span><span class="pop">bir kez ödenir</span></div>
+        <div class="price">5–40 €<small>tek seferlik, abonelik yok</small></div>
+        <ul>
+          <li>5 € — 10 kredi · 15 € — 35 · 40 € — 100</li>
+          <li>Herhangi bir paket filmi açar. 5 € artı başlangıç kredilerin = 17, 30 saniyelik bir Short; 15 € = 35 kredi, bir dakika on saniyelik film; 40 € = 100 kredi, üç dakika yirmi saniye</li>
+          <li>Ödeme Stripe üzerinden: asistanından hesap sayfanı iste ve paketi oradan satın al</li>
+        </ul>
+        <a class="btn btn-ghost" href="/tr/pricing/">Kredileri hesapla</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONNECT ============ -->
+<section id="connect">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">06</span>Bağlan</div>
+        <h2>Yapım ekibinle tanış.</h2>
+      </div>
+      <div>
+        <p class="lede">Kleo'nun adresini uyumlu bir asistana özel bağlayıcı olarak ekle. Giriş sırasında Kleo'nun sayfası asistandan açılır: tek düğme, form yok, kart yok. Sonra filmini anlat.</p>
+        <p class="mono" id="mcpStatus" hidden></p>
+        <div class="address"><code>https://mcp.kleooai.com/mcp</code><button class="btn btn-ghost btn-sm" type="button" data-copy="https://mcp.kleooai.com/mcp">Adresi kopyala</button></div>
+      </div>
+    </div>
+    <div class="grid panels">
+      <article class="panel">
+        <h3>Claude <small>uygulama · web</small></h3>
+        <ol>
+          <li><b>Ayarlar → Bağlayıcılar</b>'ı aç ve <b>Özel bağlayıcı ekle</b>'yi seç.</li>
+          <li>Adını <b>Kleo</b> koy, yukarıdaki adresi yapıştır ve onayla. Kleo'nun sayfası açılır: <b>Ücretsiz başla</b>'ya tıkla, Claude'a geri dönersin.</li>
+          <li>Yeni bir sohbette araçlar menüsünden Kleo'yu aç ve iste: <i>Bana … hakkında 45 saniyelik bir Short yap</i></li>
+        </ol>
+        <p>Ücretsiz Claude planı bir özel bağlayıcıya izin verir.</p>
+        <a class="more" href="/tr/integrations/claude/">Claude rehberinin tamamı <span class="arr" aria-hidden="true">→</span></a>
+      </article>
+      <article class="panel">
+        <h3>ChatGPT <small>geliştirici modu</small></h3>
+        <ol>
+          <li><b>Ayarlar → Uygulamalar &amp; Bağlayıcılar</b>'ı aç (eski sürümlerde <b>Bağlayıcılar</b>), sonra <b>Gelişmiş ayarlar</b>'a gir ve <b>Geliştirici modu</b>'nu aç.</li>
+          <li><b>Bağlayıcılar</b>'a dönüp <b>Oluştur</b>'u seç: adını <b>Kleo</b> koy, adresi yapıştır, kimlik doğrulamayı <b>OAuth</b> olarak ayarla ve kaydet. Kleo'nun sayfası açılır: <b>Ücretsiz başla</b>'ya tıkla, ChatGPT'ye geri dönersin.</li>
+          <li>Sohbette <b>+</b> menüsünden Kleo'yu aç ve videoyu iste. ChatGPT bir render başlatmadan önce senden onay ister.</li>
+        </ol>
+        <p>ChatGPT Plus, Pro, Business ya da Enterprise gerektirir.</p>
+        <a class="more" href="/tr/integrations/chatgpt/">ChatGPT rehberinin tamamı <span class="arr" aria-hidden="true">→</span></a>
+      </article>
+    </div>
+    <p class="tpl-more"><a href="/tr/connect/">Her istemci, adım adım →</a> · <a href="/tr/video-generation-mcp/">MCP belgeleri →</a></p>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">07</span>SSS</div>
+        <h2>İlk filminden önce.</h2>
+      </div>
+    </div>
+    <div class="faq">
+      <div>
+        <details open>
+          <summary>Kleo aslında ne üretir?</summary>
+          <p>Tek storyboard'dan iki ürün. Film: eksiksiz, anlatımlı bir film, gerçekçi görünümde (üretilmiş canlı çekim görüntüsü) ya da animasyon görünümünde (2D animasyon bir film), her çekim hareketli görüntü olarak üretilir. Animatik: aynı tretman, storyboard ve çizilmiş kareler, kamera her karenin üzerinde hareket eder, aynı anlatıcı ve grafik katmanı, üretilmiş klip yok — 15 ila 60 saniye, aynı zamanda filmin ön izlemesi. Kleo asistanınla birlikte tretmanı ve storyboard'u yazar, seslendirir ve 4K 60 fps bir MP4 render alır. İndirme bağlantısını asistanın içinde alırsın, 7 gün geçerli.</p>
+        </details>
+        <details>
+          <summary>Bir film ne kadar uzun olabilir?</summary>
+          <p>15 saniyeden 5 dakikaya kadar; animatik 15 ila 60 saniye. YouTube için 16:9, dikey Short için 9:16 seç; ikisi de 4K (3840×2160 ya da 2160×3840) ve 60 fps olarak render alınır.</p>
+        </details>
+        <details>
+          <summary>Ücretsiz plan var mı?</summary>
+          <p>Evet: bağlanmak ücretsizdir ve her yeni hesaba kayıtsız, kartsız 7 kredi verir — 5 kredilik bir animatiğe yeter. Ücretsiz krediler asla film satın almaz: film en az 10 kredidir (1 kredi = 2 saniye) ve klipleri Kleo'nun masrafıyla üretildiği için yalnızca paket satın almış hesaplar için yapılır. 10 kredilik 5 €'luk paketi ekle, yeni hesabın 17 kredisi olur: film açılır ve 30 saniyelik bir Short 15 kredidir.</p>
+        </details>
+      </div>
+      <div>
+        <details>
+          <summary>Kleo anlatım, müzik ve altyazı içeriyor mu?</summary>
+          <p>Tek bir anlatıcı, İngilizce ya da İtalyanca. Filmde fon müziği, altyazı ve ekran yazısı yok; platformun gerektiriyorsa bunları kendi kurgu programında ekle.</p>
+        </details>
+        <details>
+          <summary>Kleo kanalıma otomatik olarak yayınlar mı?</summary>
+          <p>Hayır. Kleo asistanına biten MP4'ün bağlantısını verir; sen izlersin, indirirsin ve kendin yüklersin. Kleo asla YouTube'a, TikTok'a ya da başka bir kanala gönderi yapmaz.</p>
+        </details>
+        <details>
+          <summary>Hangi görünümleri seçebilirim?</summary>
+          <p>İki. Gerçekçi, üretilmiş canlı çekim görüntüsüdür; animasyon, 2D animasyon bir filmdir. Görünümü brief'inde adlandır, asistanın iletir — fiyat yalnızca süreye bağlıdır, görünüme değil. <a href="/tr/styles.html">İki görünümü gör</a>.</p>
+        </details>
+      </div>
+    </div>
+    <p class="tpl-more"><a href="/tr/faq/">Tüm cevapları oku →</a></p>
+  </div>
+</section>
+
+<!-- ============ ACCOUNT ============ -->
+<section class="cta" id="account">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow"><span class="n">08</span>Hesap</div>
+      <h2>Kaydolacak bir şey yok.</h2>
+      <p class="lede">Hesabın seninle gelir. Asistanından Kleo hesap sayfanı iste: kredilerini ve paketlerin ödeme bağlantılarını gösterir. Hesap, özel bir Kleo anahtarına bağlıdır — anahtar kimdeyse hesap onundur — bu yüzden onu kendine sakla.</p>
+    </div>
+    <div>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/tr/connect/">Kleo'yu bağla <span class="arr" aria-hidden="true">→</span></a> <a class="btn btn-ghost" href="/tr/pricing/">Fiyatları gör</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<!-- i18n:langs -->
+<nav class="langs" aria-label="Dil">
+  <div class="wrap">
+    <span>Dil</span>
+    <a href="/" hreflang="en" lang="en">English</a>
+    <a href="/it/" hreflang="it" lang="it">Italiano</a>
+    <a href="/de/" hreflang="de" lang="de">Deutsch</a>
+    <a href="/fr/" hreflang="fr" lang="fr">Français</a>
+    <a href="/es/" hreflang="es" lang="es">Español</a>
+    <a href="/pt/" hreflang="pt" lang="pt">Português</a>
+    <a href="/nl/" hreflang="nl" lang="nl">Nederlands</a>
+    <a href="/pl/" hreflang="pl" lang="pl">Polski</a>
+    <b lang="tr">Türkçe</b>
+    <a href="/ru/" hreflang="ru" lang="ru">Русский</a>
+    <a href="/uk/" hreflang="uk" lang="uk">Українська</a>
+    <a href="/ja/" hreflang="ja" lang="ja">日本語</a>
+    <a href="/ko/" hreflang="ko" lang="ko">한국어</a>
+    <a href="/zh/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+    <a href="/zh-tw/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+    <a href="/ar/" hreflang="ar" lang="ar">العربية</a>
+    <a href="/he/" hreflang="he" lang="he">עברית</a>
+    <a href="/hi/" hreflang="hi" lang="hi">हिन्दी</a>
+    <a href="/id/" hreflang="id" lang="id">Bahasa Indonesia</a>
+    <a href="/vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
+    <a href="/th/" hreflang="th" lang="th">ไทย</a>
+  </div>
+</nav>
+<!-- /i18n:langs -->
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">
+      <a class="brand" href="/tr/" aria-label="Kleo, ana sayfa">
+        <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+          <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+          <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+        </svg>
+        Kleo <span class="tag">MCP</span>
+      </a>
+      <span>Yönetmen insan. Filmi ajan yapar.</span>
+    </div>
+    <div class="links">
+      <a href="/tr/connect/">Bağlan</a> <a href="/tr/integrations/claude/">Claude</a> <a href="/tr/integrations/chatgpt/">ChatGPT</a> <a href="/tr/video-generation-mcp/">MCP belgeleri</a> <a href="/tr/examples/">Örnekler</a> <a href="/tr/styles.html">Görünümler</a> <a href="/tr/pricing/">Fiyatlar</a> <a href="/tr/faq/">SSS</a> <a href="/tr/about/">Hakkında</a> <a href="/tr/privacy.html">Gizlilik</a> <a href="/tr/terms.html">Koşullar</a> <a href="https://github.com/tonnooooo/kleo-mcp">GitHub</a> <a href="mailto:kleooai@gmail.com">kleooai@gmail.com</a>
+    </div>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite">Kopyalandı</div>
+</body>
+</html>

@@ -7,6 +7,31 @@
 <title>Create AI Videos with Claude and Kleo — Setup Guide</title>
 <meta name="description" content="Add Kleo to Claude as a custom connector, ask for a narrated film and get the 4K MP4 link in the same chat: setup steps, a first prompt and troubleshooting.">
 <link rel="canonical" href="https://kleooai.com/integrations/claude/">
+<!-- i18n:head -->
+<link rel="alternate" hreflang="en" href="https://kleooai.com/integrations/claude/">
+<link rel="alternate" hreflang="it" href="https://kleooai.com/it/integrations/claude/">
+<link rel="alternate" hreflang="de" href="https://kleooai.com/de/integrations/claude/">
+<link rel="alternate" hreflang="fr" href="https://kleooai.com/fr/integrations/claude/">
+<link rel="alternate" hreflang="es" href="https://kleooai.com/es/integrations/claude/">
+<link rel="alternate" hreflang="pt" href="https://kleooai.com/pt/integrations/claude/">
+<link rel="alternate" hreflang="nl" href="https://kleooai.com/nl/integrations/claude/">
+<link rel="alternate" hreflang="pl" href="https://kleooai.com/pl/integrations/claude/">
+<link rel="alternate" hreflang="tr" href="https://kleooai.com/tr/integrations/claude/">
+<link rel="alternate" hreflang="ru" href="https://kleooai.com/ru/integrations/claude/">
+<link rel="alternate" hreflang="uk" href="https://kleooai.com/uk/integrations/claude/">
+<link rel="alternate" hreflang="ja" href="https://kleooai.com/ja/integrations/claude/">
+<link rel="alternate" hreflang="ko" href="https://kleooai.com/ko/integrations/claude/">
+<link rel="alternate" hreflang="zh-Hans" href="https://kleooai.com/zh/integrations/claude/">
+<link rel="alternate" hreflang="zh-Hant" href="https://kleooai.com/zh-tw/integrations/claude/">
+<link rel="alternate" hreflang="ar" href="https://kleooai.com/ar/integrations/claude/">
+<link rel="alternate" hreflang="he" href="https://kleooai.com/he/integrations/claude/">
+<link rel="alternate" hreflang="hi" href="https://kleooai.com/hi/integrations/claude/">
+<link rel="alternate" hreflang="id" href="https://kleooai.com/id/integrations/claude/">
+<link rel="alternate" hreflang="vi" href="https://kleooai.com/vi/integrations/claude/">
+<link rel="alternate" hreflang="th" href="https://kleooai.com/th/integrations/claude/">
+<link rel="alternate" hreflang="x-default" href="https://kleooai.com/integrations/claude/">
+<script>(function(){try{var L=["it", "de", "fr", "es", "pt", "nl", "pl", "tr", "ru", "uk", "ja", "ko", "zh", "zh-tw", "ar", "he", "hi", "id", "vi", "th"],A={"zh-hk": "zh-tw", "zh-mo": "zh-tw", "zh-hant": "zh-tw", "zh-hans": "zh", "zh-cn": "zh", "zh-sg": "zh", "nb": "no", "nn": "no"},p=location.pathname,m=p.match(/^\/([a-z]{2}(?:-[a-z]{2})?)(?=\/)/),on=m&&L.indexOf(m[1])>=0?m[1]:"en",rest=on==="en"?p:p.slice(on.length+1),want=null,s=null;try{s=localStorage.getItem("kleo-lang")}catch(e){}if(s==="en"||L.indexOf(s)>=0)want=s;else{var nl=navigator.languages||[navigator.language||""];for(var i=0;i<nl.length&&!want;i++){var t=String(nl[i]).toLowerCase(),b=t.split("-")[0];t=A[t]||t;b=A[b]||b;want=t==="en"||b==="en"?"en":L.indexOf(t)>=0?t:L.indexOf(b)>=0?b:null}}if(want&&want!==on&&!/404/.test(p))location.replace((want==="en"?"":"/"+want)+rest+location.search+location.hash)}catch(e){}})()</script>
+<!-- /i18n:head -->
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Kleo AI">
@@ -29,7 +54,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="/site.css?v=20260915">
+<link rel="stylesheet" href="/site.css?v=20260920">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -72,7 +97,7 @@
   ]
 }
 </script>
-<script src="/site.js?v=20260915" defer></script>
+<script src="/site.js?v=20260920" defer></script>
 </head>
 <body>
 <div class="progress" id="progress" aria-hidden="true"></div>
@@ -336,6 +361,35 @@
 </main>
 
 <!-- ============ FOOTER ============ -->
+<!-- i18n:langs -->
+<nav class="langs" aria-label="Language">
+  <div class="wrap">
+    <span>Language</span>
+    <b lang="en">English</b>
+    <a href="/it/integrations/claude/" hreflang="it" lang="it">Italiano</a>
+    <a href="/de/integrations/claude/" hreflang="de" lang="de">Deutsch</a>
+    <a href="/fr/integrations/claude/" hreflang="fr" lang="fr">Français</a>
+    <a href="/es/integrations/claude/" hreflang="es" lang="es">Español</a>
+    <a href="/pt/integrations/claude/" hreflang="pt" lang="pt">Português</a>
+    <a href="/nl/integrations/claude/" hreflang="nl" lang="nl">Nederlands</a>
+    <a href="/pl/integrations/claude/" hreflang="pl" lang="pl">Polski</a>
+    <a href="/tr/integrations/claude/" hreflang="tr" lang="tr">Türkçe</a>
+    <a href="/ru/integrations/claude/" hreflang="ru" lang="ru">Русский</a>
+    <a href="/uk/integrations/claude/" hreflang="uk" lang="uk">Українська</a>
+    <a href="/ja/integrations/claude/" hreflang="ja" lang="ja">日本語</a>
+    <a href="/ko/integrations/claude/" hreflang="ko" lang="ko">한국어</a>
+    <a href="/zh/integrations/claude/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+    <a href="/zh-tw/integrations/claude/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+    <a href="/ar/integrations/claude/" hreflang="ar" lang="ar">العربية</a>
+    <a href="/he/integrations/claude/" hreflang="he" lang="he">עברית</a>
+    <a href="/hi/integrations/claude/" hreflang="hi" lang="hi">हिन्दी</a>
+    <a href="/id/integrations/claude/" hreflang="id" lang="id">Bahasa Indonesia</a>
+    <a href="/vi/integrations/claude/" hreflang="vi" lang="vi">Tiếng Việt</a>
+    <a href="/th/integrations/claude/" hreflang="th" lang="th">ไทย</a>
+  </div>
+</nav>
+<!-- /i18n:langs -->
+
 <footer>
   <div class="wrap">
     <div class="foot-brand">

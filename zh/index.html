@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="zh-Hans" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.remove("no-js")</script>
+<title>Kleo AI — 你来执导，智能体拍成影片</title>
+<meta name="description" content="通过 MCP 从你的 AI 助手中制作完整的旁白影片，写实或动画风格。4K 60 fps，15 秒到 5 分钟，英语或意大利语旁白。">
+<link rel="canonical" href="https://kleooai.com/zh/">
+<!-- i18n:head -->
+<link rel="alternate" hreflang="en" href="https://kleooai.com/">
+<link rel="alternate" hreflang="it" href="https://kleooai.com/it/">
+<link rel="alternate" hreflang="de" href="https://kleooai.com/de/">
+<link rel="alternate" hreflang="fr" href="https://kleooai.com/fr/">
+<link rel="alternate" hreflang="es" href="https://kleooai.com/es/">
+<link rel="alternate" hreflang="pt" href="https://kleooai.com/pt/">
+<link rel="alternate" hreflang="nl" href="https://kleooai.com/nl/">
+<link rel="alternate" hreflang="pl" href="https://kleooai.com/pl/">
+<link rel="alternate" hreflang="tr" href="https://kleooai.com/tr/">
+<link rel="alternate" hreflang="ru" href="https://kleooai.com/ru/">
+<link rel="alternate" hreflang="uk" href="https://kleooai.com/uk/">
+<link rel="alternate" hreflang="ja" href="https://kleooai.com/ja/">
+<link rel="alternate" hreflang="ko" href="https://kleooai.com/ko/">
+<link rel="alternate" hreflang="zh-Hans" href="https://kleooai.com/zh/">
+<link rel="alternate" hreflang="zh-Hant" href="https://kleooai.com/zh-tw/">
+<link rel="alternate" hreflang="ar" href="https://kleooai.com/ar/">
+<link rel="alternate" hreflang="he" href="https://kleooai.com/he/">
+<link rel="alternate" hreflang="hi" href="https://kleooai.com/hi/">
+<link rel="alternate" hreflang="id" href="https://kleooai.com/id/">
+<link rel="alternate" hreflang="vi" href="https://kleooai.com/vi/">
+<link rel="alternate" hreflang="th" href="https://kleooai.com/th/">
+<link rel="alternate" hreflang="x-default" href="https://kleooai.com/">
+<script>(function(){try{var L=["it", "de", "fr", "es", "pt", "nl", "pl", "tr", "ru", "uk", "ja", "ko", "zh", "zh-tw", "ar", "he", "hi", "id", "vi", "th"],A={"zh-hk": "zh-tw", "zh-mo": "zh-tw", "zh-hant": "zh-tw", "zh-hans": "zh", "zh-cn": "zh", "zh-sg": "zh", "nb": "no", "nn": "no"},p=location.pathname,m=p.match(/^\/([a-z]{2}(?:-[a-z]{2})?)(?=\/)/),on=m&&L.indexOf(m[1])>=0?m[1]:"en",rest=on==="en"?p:p.slice(on.length+1),want=null,s=null;try{s=localStorage.getItem("kleo-lang")}catch(e){}if(s==="en"||L.indexOf(s)>=0)want=s;else{var nl=navigator.languages||[navigator.language||""];for(var i=0;i<nl.length&&!want;i++){var t=String(nl[i]).toLowerCase(),b=t.split("-")[0];t=A[t]||t;b=A[b]||b;want=t==="en"||b==="en"?"en":L.indexOf(t)>=0?t:L.indexOf(b)>=0?b:null}}if(want&&want!==on&&!/404/.test(p))location.replace((want==="en"?"":"/"+want)+rest+location.search+location.hash)}catch(e){}})()</script>
+<script type="application/json" id="i18n">{"Language": "语言", "Menu": "菜单", "Close menu": "关闭菜单", "Copied": "已复制", "Copied ✓": "已复制 ✓", "Copy it by hand: {text}": "请手动复制：{text}", "Copy the Kleo server address": "复制 Kleo 服务器地址", "Copy the argument {value}": "复制参数 {value}", "Copy this prompt": "复制这条提示词", "Copy the {what} snippet": "复制{what}代码片段", "Copy the {what} text": "复制{what}文本", "Treatment · logline, angle, acts · look: realistic": "剧本大纲 · 故事梗概、切入角度、幕次 · 风格：写实", "Storyboard · direction, scenes, shots · 23 credits, confirmed": "分镜 · 导演思路、场景、镜头 · 23 积分，已确认", "Generating the shots as footage · 4 of 11 · ~22 min left": "正在把镜头生成为动态画面 · 第 4 个，共 11 个 · 还剩约 22 分钟", "Generating the shots as footage · 8 of 11 · ~12 min left": "正在把镜头生成为动态画面 · 第 8 个，共 11 个 · 还剩约 12 分钟", "Narration · one voice, English · cutting the shots on the words": "旁白 · 一个声音，英语 · 按台词剪接镜头", "Finish · 2160×3840 · 60 fps · quality check": "收尾 · 2160×3840 · 60 fps · 质量检查", "Done · 28 min · link ready for 7 days": "完成 · 28 分钟 · 链接 7 天内有效", "done": "已完成", "running": "进行中", "A whole number from {min} to {max} seconds": "{min} 到 {max} 秒之间的整数", "{s} s {product} = {n} credits": "{s} 秒{product} = {n} 积分", "film": "影片", "animatic": "动态分镜"}</script>
+<!-- /i18n:head -->
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kleo AI">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:title" content="Kleo AI — 你来执导，智能体拍成影片">
+<meta property="og:description" content="通过 MCP 从你的 AI 助手中制作完整的旁白影片，写实或动画风格。4K 60 fps，15 秒到 5 分钟，英语或意大利语旁白。">
+<meta property="og:url" content="https://kleooai.com/zh/">
+<meta property="og:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta property="og:image:alt" content="Kleo AI — 你来执导，智能体拍成影片。">
+<meta property="og:image:width" content="2400">
+<meta property="og:image:height" content="1260">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kleo AI — 你来执导，智能体拍成影片">
+<meta name="twitter:description" content="通过 MCP 从你的 AI 助手中制作完整的旁白影片，写实或动画风格。4K 60 fps，15 秒到 5 分钟，英语或意大利语旁白。">
+<meta name="twitter:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta name="theme-color" content="#0A0C10">
+<link rel="icon" href="/brand/kleo-favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/brand/kleo-favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/brand/kleo-icon-dark-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/site.css?v=20260920">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://kleooai.com/#website",
+      "name": "Kleo AI",
+      "alternateName": "Kleo",
+      "url": "https://kleooai.com/zh/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kleooai.com/zh/#page",
+      "url": "https://kleooai.com/zh/",
+      "name": "Kleo AI — 你来执导，智能体拍成影片",
+      "description": "通过 MCP 从你的 AI 助手中制作完整的旁白影片，写实或动画风格。4K 60 fps，15 秒到 5 分钟，英语或意大利语旁白。",
+      "inLanguage": "zh-Hans",
+      "isPartOf": {
+        "@id": "https://kleooai.com/#website"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "首页",
+          "item": "https://kleooai.com/zh/"
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://kleooai.com/#software",
+      "name": "Kleo AI",
+      "url": "https://kleooai.com/zh/",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "任何兼容 MCP 的客户端（远程服务器）",
+      "description": "一个远程 MCP 服务器，把你 AI 助手中的简报变成一部完整的旁白影片，写实或动画风格，每个镜头都生成为动态画面，渲染为 4K 60 fps 的 MP4——或者做成同一套分镜的动态分镜，5 积分，对每个账户开放。",
+      "offers": {
+        "@type": "Offer",
+        "name": "10 积分包",
+        "price": "5",
+        "priceCurrency": "EUR",
+        "url": "https://kleooai.com/zh/pricing/"
+      }
+    }
+  ]
+}
+</script>
+<script src="/site.js?v=20260920" defer></script>
+</head>
+<body>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" aria-label="主导航">
+  <div class="wrap">
+    <a class="brand" href="/zh/" aria-label="Kleo，首页" aria-current="page">
+      <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+        <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+        <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+      </svg>
+      Kleo <span class="tag">MCP</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="菜单" aria-expanded="false" aria-controls="site-menu">
+      <svg class="bars" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 5h14M2 9h14M2 13h14"/></svg>
+      <svg class="x" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 4l10 10M14 4L4 14"/></svg>
+    </button>
+    <div class="nav-links" id="site-menu">
+      <a href="/zh/ai-youtube-video-generator/">制作视频</a> <a href="/zh/examples/">示例</a> <a href="/zh/styles.html">风格</a> <a href="/zh/pricing/">价格</a> <a href="/zh/faq/">常见问题</a>
+    </div>
+    <a class="btn btn-primary btn-sm" href="/zh/connect/">连接 Kleo</a>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <div class="osd"><span class="rec" aria-hidden="true"></span> REC <span class="tcode" id="tcode" aria-hidden="true">00:00:00:00</span> · 4K · 60 fps<span class="osd-more"> · 16:9 与 9:16 · EN / IT</span></div>
+      <h1>你来执导。<br><span class="hl">智能体拍成影片。</span></h1>
+      <p class="lede">你的简报决定故事。Kleo 把它变成一部完整的旁白影片——每个镜头都生成为动态画面，可选写实或动画风格——或者做成同一套分镜的动态分镜，再把链接交给你正在使用的助手。由你执导，通过 MCP 制作。</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/zh/connect/">连接 Kleo <span class="arr" aria-hidden="true">→</span></a> <a class="btn btn-ghost" href="/zh/examples/">观看示例</a>
+      </div>
+      <p class="free-line"><b>免费开始。</b>连接的那一刻，账户里就有 7 积分——无需注册，无需银行卡：可做一部动态分镜。影片从 10 积分和一个 €5 积分包起步。</p>
+      <div class="works">
+        <span>兼容</span> <b>Claude</b><b>ChatGPT</b><b>Grok</b><b>Claude Code</b><b>Cursor</b><b>VS Code</b><b>OpenCode</b><b>Gemini CLI</b>
+      </div>
+    </div>
+
+    <div class="demo" role="figure" aria-label="示例：一段已连接 Kleo 的对话">
+      <div class="demo-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="demo-title">Claude · 已连接 Kleo<span class="clock" id="demoClock" hidden></span></span></div>
+      <div class="demo-body">
+        <div class="msg user">
+          <span class="who">你</span>
+          <p>帮我做一个 45 秒的 Short，讲一位灯塔看守人不断回复漂流瓶里的信。写实风格，英语旁白。</p>
+        </div>
+        <div class="msg">
+          <span class="who">Claude</span>
+          <p>剧本大纲已就绪：一位看守人，每年一只漂流瓶，最后一只他亲自去回复。23 积分，9:16。开始渲染。</p>
+          <div class="tool">
+            <div class="tool-head">
+              <span class="tool-name"><b>kleo_create_video</b></span> <span class="tool-state" id="toolState">进行中</span>
+            </div>
+            <pre class="tool-args">{ "duration_s": 45, "format": "9:16", "style": "realistic", "language": "en",
+  "prompt": "A lighthouse keeper who keeps answering a message in a bottle" }</pre>
+          </div>
+        </div>
+        <div class="render" id="render">
+          <div class="render-head"><span>任务 <b>kl_7f3k</b> · 已为此任务租用 GPU</span><b id="renderPct">58%</b></div>
+          <div class="tracks" id="tracks">
+            <div class="track done"><span>剧本大纲</span><span class="tbar" style="--c:var(--violet)"></span></div>
+            <div class="track done"><span>分镜</span><span class="tbar" style="--c:var(--teal)"></span></div>
+            <div class="track active"><span>素材</span><span class="tbar" style="--c:var(--amber)"></span></div>
+            <div class="track"><span>旁白</span><span class="tbar" style="--c:var(--rose)"></span></div>
+            <div class="track"><span>收尾</span><span class="tbar" style="--c:var(--blue)"></span></div>
+          </div>
+          <div class="bar"><span id="renderFill"></span></div>
+          <div class="render-status" id="renderStatus">正在把镜头生成为动态画面 · 第 8 个，共 11 个 · 还剩约 12 分钟</div>
+          <div class="result" id="result" hidden>
+            <span class="file">lighthouse-keeper.mp4</span> <span class="chip">2160×3840</span><span class="chip">60 fps</span><span class="chip">0:45</span><span class="chip">7 天</span> <span class="dl">下载</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wrap wrap-stats">
+    <dl class="stats" aria-label="Kleo 的数字">
+      <div><dt>输出</dt><dd>4K · 60 fps</dd></div>
+      <div><dt>一部影片，从简报到链接</dt><dd>25–35 分钟</dd></div>
+      <div><dt>风格</dt><dd>写实 · 动画</dd></div>
+      <div><dt>起步</dt><dd>7 积分，一部动态分镜</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section id="how">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">01</span>工作方式</div>
+        <h2>你的构想，落到每一帧。</h2>
+      </div>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="num" aria-hidden="true">01</span> <span class="tc">你的话</span>
+        <h3>执导故事</h3>
+        <p>告诉你的助手主题、时长、格式和风格——写实或动画。Kleo 读取简报，缺什么就问什么。</p>
+      </div>
+      <div class="step">
+        <span class="num" aria-hidden="true">02</span> <span class="tc">kleo_adapt_prompt</span>
+        <h3>审阅剧本大纲</h3>
+        <p>你的助手会先把剧本大纲给你看：故事梗概、切入角度、开场、幕次和结局。在生成任何一帧之前，想改什么都可以改。</p>
+      </div>
+      <div class="step">
+        <span class="num" aria-hidden="true">03</span> <span class="tc">kleo_create_video</span>
+        <h3>Kleo 渲染</h3>
+        <p>在这份剧本大纲之下写出分镜；然后，影片会把每个镜头从各自的画帧生成为动态画面，而动态分镜则是让镜头运动扫过每一幅手绘画帧。由一位旁白配音，英语或意大利语。准确的积分费用会在扣费前告知；渲染被接受之前不会扣任何费用。</p>
+      </div>
+      <div class="step">
+        <span class="num" aria-hidden="true">04</span> <span class="tc">kleo_get_result</span>
+        <h3>下载并发布</h3>
+        <p>影片在为你的任务租用的 GPU 上以 4K 60 fps 渲染。你的助手跟踪进度，并把成片 MP4 的链接交给你，7 天内有效。审看之后，上传到你发布的任何平台。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FILMS ============ -->
+<section id="films">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">02</span>影片</div>
+        <h2>Kleo 出品的影片。</h2>
+      </div>
+      <p class="lede">Tether，一镜到底的二十秒；Apex，两辆车冲出隧道；以及纪录片 Signal Delay 的开场一分钟——均为写实风格；还有<a href="/zh/examples/octopus/">一个讲章鱼为什么有三颗心脏的动画 Short</a>，动画风格。全部是 4K 60 fps 母版，以 1080p 展示；每部在各自的页面播放，静音，无需点击。</p>
+    </div>
+    <div class="films-row">
+      <a class="poster" href="/zh/examples/tether/">
+        <img src="/samples/realistic-tether.jpg" alt="头盔里宇航员的脸，面罩被红光淹没，一根金色的系绳向上延伸到空间站" width="1920" height="1080" loading="lazy">
+        <span class="play"><i aria-hidden="true">▶</i>Tether · 20 秒 · 一镜到底</span>
+      </a>
+      <a class="poster" href="/zh/examples/apex/">
+        <img src="/samples/realistic-apex.jpg" alt="一辆黄色超跑和一辆淡绿色经典双门轿跑并排行驶在琥珀色灯光的隧道里" width="1920" height="1080" loading="lazy">
+        <span class="play"><i aria-hidden="true">▶</i>Apex · 20 秒 · 两辆车</span>
+      </a>
+      <a class="poster" href="/zh/examples/signal-delay/">
+        <img src="/samples/realistic-signal.jpg" alt="一个终端窗口和一张手绘的琥珀色示意图，叠在旅行者 1 号的照片上，黑底上的日期" width="1920" height="1080" loading="lazy">
+        <span class="play"><i aria-hidden="true">▶</i>Signal Delay · 开场一分钟</span>
+      </a>
+    </div>
+    <p class="tpl-more"><a href="/zh/examples/">全部示例 →</a> · <a href="/zh/styles.html">两种风格：写实与动画 →</a></p>
+  </div>
+</section>
+
+<!-- ============ WHAT TO MAKE ============ -->
+<section id="template">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">03</span>能做什么</div>
+        <h2>做值得一看的东西。</h2>
+      </div>
+    </div>
+    <div class="grid panels three">
+      <article class="panel">
+        <h3>YouTube 科普解说</h3>
+        <p>把一个清晰的问题变成一部 16:9 的旁白影片，从开场钩子到最后的结论，最长五分钟。</p>
+        <a class="more" href="/zh/ai-youtube-video-generator/">制作 YouTube 视频 <span class="arr" aria-hidden="true">→</span></a>
+      </article>
+      <article class="panel">
+        <h3>动画风格的短篇故事</h3>
+        <p>给故事一个主题、一个场景和一个结局，然后要求动画风格：一部由一位旁白讲述的 2D 动画影片，15 秒到 5 分钟。</p>
+        <a class="more" href="/zh/examples/octopus/">观看章鱼 Short <span class="arr" aria-hidden="true">→</span></a>
+      </article>
+      <article class="panel">
+        <h3>竖版 Shorts</h3>
+        <p>一个聚焦的 9:16 Short，一个想法、一条清晰的叙事线，以 2160×3840 和 60 fps 渲染。30 秒的 Short 做成影片需要 15 积分，做成动态分镜需要 5 积分。</p>
+        <a class="more" href="/zh/pricing/">一个 Short 要多少钱 <span class="arr" aria-hidden="true">→</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BEHIND THE SCENES ============ -->
+<section id="engine">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">04</span>幕后</div>
+        <h2>你来执导，Kleo 来渲染。</h2>
+      </div>
+      <p class="lede">简报、进度和链接都留在你的助手里：Kleo 在对话背后工作。影片中的每个镜头都从各自的画帧生成为动态画面——不是静态图片的幻灯片——由一位旁白贯穿全片。渲染在为你的任务租用的 GPU 上以 4K 60 fps 进行，通常需要 25–35 分钟。成片 MP4 就是交付物；何时、在哪里发布由你决定。</p>
+    </div>
+    <ul class="style-facts auto">
+      <li><b>剧本大纲</b><span>你的简报变成故事梗概、切入角度、开场、幕次和结局——在生成任何一帧之前先给你看。</span></li>
+      <li><b>分镜</b><span>导演思路、场景和镜头，在这份剧本大纲之下写成；准确的积分数在扣费前告知。</span></li>
+      <li><b>素材</b><span>影片中，每个镜头都从各自的画帧生成为动态画面，写实或动画风格。动态分镜中，则是同样的手绘画帧，镜头运动扫过每一幅——没有生成的视频片段。</span></li>
+      <li><b>旁白</b><span>一位旁白，英语或意大利语，贯穿全片。没有音乐，没有字幕，没有屏幕文字。</span></li>
+      <li><b>收尾</b><span>一个 4K 60 fps 的 MP4，16:9 或 9:16，通过链接由你的助手交给你——7 天内有效。</span></li>
+    </ul>
+    <p class="style-say copyable">“用 Kleo 做一部 60 秒的旁白影片，讲咖啡如何从农场到杯中。写实风格，英语旁白，16:9。开始渲染前先给我看剧本大纲和积分费用。”<button class="btn btn-ghost btn-sm copy" type="button" data-copy="Use Kleo to make a 60-second narrated film about how coffee travels from farm to cup. Realistic look, English narration, 16:9. Show me the treatment and the credit cost before starting the render.">复制</button></p>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section id="pricing">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">05</span>价格</div>
+        <h2>免费开始。只有积分，没有任何自动续费。</h2>
+      </div>
+      <div><span class="draft">已上线 · 通过 Stripe 一次性付款</span></div>
+    </div>
+    <div class="plans two">
+      <div class="plan hi">
+        <div class="name"><span>免费方案</span><span class="pop">人人可用，已包含</span></div>
+        <div class="price">€0<small>7 积分，无需注册</small></div>
+        <ul>
+          <li>免费方案就是账户本身：连接一次，你就有 7 积分——没有表单，没有银行卡，没有需要取消的东西</li>
+          <li>动态分镜固定 5 积分，15–60 秒：同样的剧本大纲、分镜和手绘画帧，镜头运动扫过每一幅，同样的旁白和图形层，4K 60 fps，没有生成的视频片段。它也是影片的预览</li>
+          <li>影片按时长计价：1 积分 = 2 秒，从 10 积分起（20 秒 = 10 · 30 秒 = 15 · 60 秒 = 30 · 90 秒 = 45 · 5 分钟 = 150）</li>
+          <li>免费积分永远买不到影片：影片的视频片段由 Kleo 出钱生成，所以只为购买过积分包的账户制作。加一个 €5 积分包，你就有 17 积分——影片解锁，可做一个 30 秒的 Short</li>
+        </ul>
+        <a class="btn btn-primary" href="/zh/connect/">连接并开始</a>
+      </div>
+      <div class="plan">
+        <div class="name"><span>积分包</span><span class="pop">一次付清</span></div>
+        <div class="price">€5–40<small>一次性付款，无需订阅</small></div>
+        <ul>
+          <li>€5 — 10 积分 · €15 — 35 · €40 — 100</li>
+          <li>任何积分包都能解锁影片。€5 加上你的起步积分 = 17，一个 30 秒的 Short；€15 = 35 积分，一分十秒的影片；€40 = 100 积分，三分二十秒</li>
+          <li>通过 Stripe 结账：向你的助手索要账户页面，从那里购买积分包</li>
+        </ul>
+        <a class="btn btn-ghost" href="/zh/pricing/">计算积分</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONNECT ============ -->
+<section id="connect">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">06</span>连接</div>
+        <h2>认识你的制作团队。</h2>
+      </div>
+      <div>
+        <p class="lede">把 Kleo 的地址作为自定义连接器添加到兼容的助手里。登录时 Kleo 的页面会从助手中打开：一个按钮，没有表单，没有银行卡。然后描述你的影片。</p>
+        <p class="mono" id="mcpStatus" hidden></p>
+        <div class="address"><code>https://mcp.kleooai.com/mcp</code><button class="btn btn-ghost btn-sm" type="button" data-copy="https://mcp.kleooai.com/mcp">复制地址</button></div>
+      </div>
+    </div>
+    <div class="grid panels">
+      <article class="panel">
+        <h3>Claude <small>应用 · 网页</small></h3>
+        <ol>
+          <li>打开<b>设置 → 连接器</b>，选择<b>添加自定义连接器</b>。</li>
+          <li>命名为 <b>Kleo</b>，粘贴上面的地址，确认。Kleo 的页面打开：点击<b>免费开始</b>，你就回到了 Claude。</li>
+          <li>在新对话中，从工具菜单开启 Kleo，然后说：<i>帮我做一个 45 秒的 Short，讲……</i></li>
+        </ol>
+        <p>Claude 免费方案允许一个自定义连接器。</p>
+        <a class="more" href="/zh/integrations/claude/">完整 Claude 指南 <span class="arr" aria-hidden="true">→</span></a>
+      </article>
+      <article class="panel">
+        <h3>ChatGPT <small>开发者模式</small></h3>
+        <ol>
+          <li>打开<b>设置 → 应用与连接器</b>（旧版本中叫<b>连接器</b>），再进入<b>高级设置</b>，开启<b>开发者模式</b>。</li>
+          <li>回到<b>连接器</b>，选择<b>创建</b>：命名为 <b>Kleo</b>，粘贴地址，身份验证选 <b>OAuth</b>，保存。Kleo 的页面打开：点击<b>免费开始</b>，你就回到了 ChatGPT。</li>
+          <li>在对话中，从 <b>+</b> 菜单开启 Kleo，然后提出视频需求。ChatGPT 会在开始渲染前请你确认。</li>
+        </ol>
+        <p>需要 ChatGPT Plus、Pro、Business 或 Enterprise。</p>
+        <a class="more" href="/zh/integrations/chatgpt/">完整 ChatGPT 指南 <span class="arr" aria-hidden="true">→</span></a>
+      </article>
+    </div>
+    <p class="tpl-more"><a href="/zh/connect/">每个客户端，逐步说明 →</a> · <a href="/zh/video-generation-mcp/">MCP 文档 →</a></p>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">07</span>常见问题</div>
+        <h2>做第一部影片之前。</h2>
+      </div>
+    </div>
+    <div class="faq">
+      <div>
+        <details open>
+          <summary>Kleo 到底做出什么？</summary>
+          <p>同一套分镜，两种产品。影片：一部完整的旁白影片，写实风格（生成的真人实拍感画面）或动画风格（一部 2D 动画影片），每个镜头都生成为动态画面。动态分镜：同样的剧本大纲、分镜和手绘画帧，镜头运动扫过每一幅画帧，同样的旁白和图形层，没有生成的视频片段——15 到 60 秒，也是影片的预览。Kleo 与你的助手一起写剧本大纲和分镜，配旁白，并渲染出 4K 60 fps 的 MP4。你在助手里得到一个下载链接，7 天内有效。</p>
+        </details>
+        <details>
+          <summary>影片可以多长？</summary>
+          <p>15 秒到 5 分钟；动态分镜 15 到 60 秒。YouTube 选 16:9，竖版 Short 选 9:16；两者都以 4K（3840×2160 或 2160×3840）和 60 fps 渲染。</p>
+        </details>
+        <details>
+          <summary>有免费方案吗？</summary>
+          <p>有：连接是免费的，每个新账户都得到 7 积分，无需注册，无需银行卡——足够做一部 5 积分的动态分镜。免费积分永远买不到影片：一部影片至少 10 积分（1 积分 = 2 秒），并且只为购买过积分包的账户制作，因为它的视频片段由 Kleo 出钱生成。加一个 €5 的 10 积分包，新账户就有 17 积分：影片解锁，30 秒的 Short 需要 15 积分。</p>
+        </details>
+      </div>
+      <div>
+        <details>
+          <summary>Kleo 包含旁白、音乐和字幕吗？</summary>
+          <p>一位旁白，英语或意大利语。影片中没有背景音乐、没有字幕、没有屏幕文字；如果你的平台需要，请在你的剪辑软件里添加。</p>
+        </details>
+        <details>
+          <summary>Kleo 会自动发布到我的频道吗？</summary>
+          <p>不会。Kleo 把成片 MP4 的链接交给你的助手；你审看、下载，再自己上传。Kleo 从不向 YouTube、TikTok 或任何其他渠道发布内容。</p>
+        </details>
+        <details>
+          <summary>我可以选哪些风格？</summary>
+          <p>两种。写实是生成的真人实拍感画面；动画是一部 2D 动画影片。在简报里写明风格，你的助手会传给 Kleo——价格只取决于时长，与风格无关。<a href="/zh/styles.html">看看这两种风格</a>。</p>
+        </details>
+      </div>
+    </div>
+    <p class="tpl-more"><a href="/zh/faq/">阅读全部解答 →</a></p>
+  </div>
+</section>
+
+<!-- ============ ACCOUNT ============ -->
+<section class="cta" id="account">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow"><span class="n">08</span>账户</div>
+      <h2>没有任何东西需要注册。</h2>
+      <p class="lede">你的账户随你而行。向你的助手索要 Kleo 账户页面：上面显示你的积分和各积分包的结账链接。账户绑定在一把私密的 Kleo 密钥上——谁持有密钥，谁就拥有账户——所以请自己保管好。</p>
+    </div>
+    <div>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/zh/connect/">连接 Kleo <span class="arr" aria-hidden="true">→</span></a> <a class="btn btn-ghost" href="/zh/pricing/">查看价格</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<!-- i18n:langs -->
+<nav class="langs" aria-label="语言">
+  <div class="wrap">
+    <span>语言</span>
+    <a href="/" hreflang="en" lang="en">English</a>
+    <a href="/it/" hreflang="it" lang="it">Italiano</a>
+    <a href="/de/" hreflang="de" lang="de">Deutsch</a>
+    <a href="/fr/" hreflang="fr" lang="fr">Français</a>
+    <a href="/es/" hreflang="es" lang="es">Español</a>
+    <a href="/pt/" hreflang="pt" lang="pt">Português</a>
+    <a href="/nl/" hreflang="nl" lang="nl">Nederlands</a>
+    <a href="/pl/" hreflang="pl" lang="pl">Polski</a>
+    <a href="/tr/" hreflang="tr" lang="tr">Türkçe</a>
+    <a href="/ru/" hreflang="ru" lang="ru">Русский</a>
+    <a href="/uk/" hreflang="uk" lang="uk">Українська</a>
+    <a href="/ja/" hreflang="ja" lang="ja">日本語</a>
+    <a href="/ko/" hreflang="ko" lang="ko">한국어</a>
+    <b lang="zh-Hans">简体中文</b>
+    <a href="/zh-tw/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+    <a href="/ar/" hreflang="ar" lang="ar">العربية</a>
+    <a href="/he/" hreflang="he" lang="he">עברית</a>
+    <a href="/hi/" hreflang="hi" lang="hi">हिन्दी</a>
+    <a href="/id/" hreflang="id" lang="id">Bahasa Indonesia</a>
+    <a href="/vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
+    <a href="/th/" hreflang="th" lang="th">ไทย</a>
+  </div>
+</nav>
+<!-- /i18n:langs -->
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">
+      <a class="brand" href="/zh/" aria-label="Kleo，首页">
+        <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+          <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+          <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+        </svg>
+        Kleo <span class="tag">MCP</span>
+      </a>
+      <span>你来执导。智能体拍成影片。</span>
+    </div>
+    <div class="links">
+      <a href="/zh/connect/">连接</a> <a href="/zh/integrations/claude/">Claude</a> <a href="/zh/integrations/chatgpt/">ChatGPT</a> <a href="/zh/video-generation-mcp/">MCP 文档</a> <a href="/zh/examples/">示例</a> <a href="/zh/styles.html">风格</a> <a href="/zh/pricing/">价格</a> <a href="/zh/faq/">常见问题</a> <a href="/zh/about/">关于</a> <a href="/zh/privacy.html">隐私</a> <a href="/zh/terms.html">条款</a> <a href="https://github.com/tonnooooo/kleo-mcp">GitHub</a> <a href="mailto:kleooai@gmail.com">kleooai@gmail.com</a>
+    </div>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite">已复制</div>
+</body>
+</html>

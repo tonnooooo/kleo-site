@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="ko" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.remove("no-js")</script>
+<title>Kleo AI 연결 — 주소 하나, 모든 어시스턴트</title>
+<meta name="description" content="Claude, ChatGPT, Grok, Claude Code, Cursor, VS Code, OpenCode, Gemini CLI에 Kleo를 추가하세요. MCP 주소 하나, 무료로 시작 버튼 하나, 시작 크레딧 7개.">
+<link rel="canonical" href="https://kleooai.com/ko/connect/">
+<!-- i18n:head -->
+<link rel="alternate" hreflang="en" href="https://kleooai.com/connect/">
+<link rel="alternate" hreflang="it" href="https://kleooai.com/it/connect/">
+<link rel="alternate" hreflang="de" href="https://kleooai.com/de/connect/">
+<link rel="alternate" hreflang="fr" href="https://kleooai.com/fr/connect/">
+<link rel="alternate" hreflang="es" href="https://kleooai.com/es/connect/">
+<link rel="alternate" hreflang="pt" href="https://kleooai.com/pt/connect/">
+<link rel="alternate" hreflang="nl" href="https://kleooai.com/nl/connect/">
+<link rel="alternate" hreflang="pl" href="https://kleooai.com/pl/connect/">
+<link rel="alternate" hreflang="tr" href="https://kleooai.com/tr/connect/">
+<link rel="alternate" hreflang="ru" href="https://kleooai.com/ru/connect/">
+<link rel="alternate" hreflang="uk" href="https://kleooai.com/uk/connect/">
+<link rel="alternate" hreflang="ja" href="https://kleooai.com/ja/connect/">
+<link rel="alternate" hreflang="ko" href="https://kleooai.com/ko/connect/">
+<link rel="alternate" hreflang="zh-Hans" href="https://kleooai.com/zh/connect/">
+<link rel="alternate" hreflang="zh-Hant" href="https://kleooai.com/zh-tw/connect/">
+<link rel="alternate" hreflang="ar" href="https://kleooai.com/ar/connect/">
+<link rel="alternate" hreflang="he" href="https://kleooai.com/he/connect/">
+<link rel="alternate" hreflang="hi" href="https://kleooai.com/hi/connect/">
+<link rel="alternate" hreflang="id" href="https://kleooai.com/id/connect/">
+<link rel="alternate" hreflang="vi" href="https://kleooai.com/vi/connect/">
+<link rel="alternate" hreflang="th" href="https://kleooai.com/th/connect/">
+<link rel="alternate" hreflang="x-default" href="https://kleooai.com/connect/">
+<script>(function(){try{var L=["it", "de", "fr", "es", "pt", "nl", "pl", "tr", "ru", "uk", "ja", "ko", "zh", "zh-tw", "ar", "he", "hi", "id", "vi", "th"],A={"zh-hk": "zh-tw", "zh-mo": "zh-tw", "zh-hant": "zh-tw", "zh-hans": "zh", "zh-cn": "zh", "zh-sg": "zh", "nb": "no", "nn": "no"},p=location.pathname,m=p.match(/^\/([a-z]{2}(?:-[a-z]{2})?)(?=\/)/),on=m&&L.indexOf(m[1])>=0?m[1]:"en",rest=on==="en"?p:p.slice(on.length+1),want=null,s=null;try{s=localStorage.getItem("kleo-lang")}catch(e){}if(s==="en"||L.indexOf(s)>=0)want=s;else{var nl=navigator.languages||[navigator.language||""];for(var i=0;i<nl.length&&!want;i++){var t=String(nl[i]).toLowerCase(),b=t.split("-")[0];t=A[t]||t;b=A[b]||b;want=t==="en"||b==="en"?"en":L.indexOf(t)>=0?t:L.indexOf(b)>=0?b:null}}if(want&&want!==on&&!/404/.test(p))location.replace((want==="en"?"":"/"+want)+rest+location.search+location.hash)}catch(e){}})()</script>
+<script type="application/json" id="i18n">{"Language": "언어", "Menu": "메뉴", "Close menu": "메뉴 닫기", "Copied": "복사됨", "Copied ✓": "복사됨 ✓", "Copy it by hand: {text}": "직접 복사하세요: {text}", "Copy the Kleo server address": "Kleo 서버 주소 복사", "Copy the argument {value}": "인수 {value} 복사", "Copy this prompt": "이 프롬프트 복사", "Copy the {what} snippet": "{what} 스니펫 복사", "Copy the {what} text": "{what} 텍스트 복사", "Treatment · logline, angle, acts · look: realistic": "트리트먼트 · 로그라인, 앵글, 막 구성 · 룩: 리얼리스틱", "Storyboard · direction, scenes, shots · 23 credits, confirmed": "스토리보드 · 연출, 장면, 샷 · 23크레딧, 확정", "Generating the shots as footage · 4 of 11 · ~22 min left": "샷을 푸티지로 생성 중 · 11개 중 4개 · 약 22분 남음", "Generating the shots as footage · 8 of 11 · ~12 min left": "샷을 푸티지로 생성 중 · 11개 중 8개 · 약 12분 남음", "Narration · one voice, English · cutting the shots on the words": "내레이션 · 한 목소리, 영어 · 말에 맞춰 샷을 편집하는 중", "Finish · 2160×3840 · 60 fps · quality check": "마무리 · 2160×3840 · 60 fps · 품질 확인", "Done · 28 min · link ready for 7 days": "완료 · 28분 · 링크는 7일간 유효", "done": "완료", "running": "실행 중", "A whole number from {min} to {max} seconds": "{min}초에서 {max}초 사이의 정수", "{s} s {product} = {n} credits": "{s}초 {product} = {n}크레딧", "film": "필름", "animatic": "애니매틱"}</script>
+<!-- /i18n:head -->
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kleo AI">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="Kleo AI 연결 — 주소 하나, 모든 어시스턴트">
+<meta property="og:description" content="Claude, ChatGPT, Grok, Claude Code, Cursor, VS Code, OpenCode, Gemini CLI에 Kleo를 추가하세요. MCP 주소 하나, 무료로 시작 버튼 하나, 시작 크레딧 7개.">
+<meta property="og:url" content="https://kleooai.com/ko/connect/">
+<meta property="og:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta property="og:image:alt" content="Kleo AI — 사람이 연출하고, 에이전트가 필름을 만듭니다.">
+<meta property="og:image:width" content="2400">
+<meta property="og:image:height" content="1260">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kleo AI 연결 — 주소 하나, 모든 어시스턴트">
+<meta name="twitter:description" content="Claude, ChatGPT, Grok, Claude Code, Cursor, VS Code, OpenCode, Gemini CLI에 Kleo를 추가하세요. MCP 주소 하나, 무료로 시작 버튼 하나, 시작 크레딧 7개.">
+<meta name="twitter:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta name="theme-color" content="#0A0C10">
+<link rel="icon" href="/brand/kleo-favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/brand/kleo-favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/brand/kleo-icon-dark-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/site.css?v=20260920">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://kleooai.com/#website",
+      "name": "Kleo AI",
+      "alternateName": "Kleo",
+      "url": "https://kleooai.com/ko/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kleooai.com/ko/connect/#page",
+      "url": "https://kleooai.com/ko/connect/",
+      "name": "Kleo AI 연결 — 주소 하나, 모든 어시스턴트",
+      "description": "Claude, ChatGPT, Grok, Claude Code, Cursor, VS Code, OpenCode, Gemini CLI에 Kleo를 추가하세요. MCP 주소 하나, 무료로 시작 버튼 하나, 시작 크레딧 7개.",
+      "inLanguage": "ko",
+      "isPartOf": {
+        "@id": "https://kleooai.com/#website"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "홈",
+          "item": "https://kleooai.com/ko/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "연결",
+          "item": "https://kleooai.com/ko/connect/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<script src="/site.js?v=20260920" defer></script>
+</head>
+<body>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" aria-label="메인">
+  <div class="wrap">
+    <a class="brand" href="/ko/" aria-label="Kleo, 홈">
+      <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+        <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+        <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+      </svg>
+      Kleo <span class="tag">MCP</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="메뉴" aria-expanded="false" aria-controls="site-menu">
+      <svg class="bars" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 5h14M2 9h14M2 13h14"/></svg>
+      <svg class="x" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 4l10 10M14 4L4 14"/></svg>
+    </button>
+    <div class="nav-links" id="site-menu">
+      <a href="/ko/ai-youtube-video-generator/">영상 만들기</a> <a href="/ko/examples/">예시</a> <a href="/ko/styles.html">룩</a> <a href="/ko/pricing/">요금</a> <a href="/ko/faq/">FAQ</a>
+    </div>
+    <a class="btn btn-primary btn-sm" href="/ko/connect/" aria-current="page">Kleo 연결하기</a>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="page-hero hero" id="top">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="탐색 경로"><a href="/ko/">홈</a><span aria-hidden="true">›</span><span>연결</span></nav>
+    <h1>당신의 채팅이<br><span class="hl">당신의 스튜디오.</span></h1>
+    <p class="lede">Kleo는 원격 MCP 서버입니다. Streamable HTTP와 OAuth 2.1 위에서 Model Context Protocol로 통신하므로 같은 주소가 모든 클라이언트에서 작동하고, 연결은 Kleo 페이지의 버튼 하나로 끝납니다. 가입 양식도, 비밀번호도, 카드도 없습니다. 무료로 시작할 수 있습니다. 연결하는 순간 계정에 7크레딧, 애니매틱 한 편 분량이 들어옵니다. 어시스턴트에 추가하고 만들고 싶은 필름을 설명하세요.</p>
+    <p class="mono" id="mcpStatus" hidden></p>
+    <div class="address"><code>https://mcp.kleooai.com/mcp</code><button class="btn btn-ghost btn-sm" type="button" data-copy="https://mcp.kleooai.com/mcp">주소 복사</button></div>
+    <div class="works">
+      <span>지원 클라이언트</span> <b>Claude</b><b>ChatGPT</b><b>Grok</b><b>Claude Code</b><b>Cursor</b><b>VS Code</b><b>OpenCode</b><b>Gemini CLI</b><b>Windsurf</b><b>Gemini 앱</b>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ASSISTANTS ============ -->
+<section id="assistants">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">01</span>연결</div>
+        <h2>어시스턴트를 고르세요.</h2>
+      </div>
+      <p class="lede">아래 모든 클라이언트는 같은 주소와 같은 원버튼 시작을 사용합니다. 주소를 붙여 넣으면 Kleo 페이지가 열리고, <b>무료로 시작</b>을 누르면 계정에 7크레딧이 담긴 채로 클라이언트로 돌아옵니다. 저희가 직접 테스트한 단계입니다.</p>
+    </div>
+    <div class="grid panels">
+
+      <article class="panel">
+        <h3>Claude <small>앱 · 웹</small></h3>
+        <div class="url-line">서버 주소 <code>https://mcp.kleooai.com/mcp</code> <button class="btn btn-ghost btn-sm" type="button" data-copy="https://mcp.kleooai.com/mcp">복사</button></div>
+        <ol>
+          <li><b>설정 → 커넥터</b>를 열고 <b>사용자 지정 커넥터 추가</b>를 선택하세요.</li>
+          <li>이름을 <b>Kleo</b>로 정하고 위 주소를 붙여 넣은 뒤 확인하세요. Kleo 페이지가 열리면 <b>무료로 시작</b>을 누르세요. 그러면 다시 Claude로 돌아옵니다.</li>
+          <li>새 채팅에서 도구 메뉴에서 Kleo를 켜고 이렇게 요청하세요: <i>…에 관한 45초짜리 쇼츠를 만들어 줘</i></li>
+        </ol>
+        <p>Claude 무료 플랜에서는 사용자 지정 커넥터를 하나 추가할 수 있습니다.</p>
+        <a class="more" href="/ko/integrations/claude/">Claude 전체 가이드 <span class="arr" aria-hidden="true">→</span></a>
+      </article>
+
+      <article class="panel">
+        <h3>ChatGPT <small>개발자 모드</small></h3>
+        <div class="url-line">서버 주소 <code>https://mcp.kleooai.com/mcp</code> <button class="btn btn-ghost btn-sm" type="button" data-copy="https://mcp.kleooai.com/mcp">복사</button></div>
+        <ol>
+          <li><b>설정 → 앱 &amp; 커넥터</b>(이전 버전에서는 <b>커넥터</b>)를 열고 <b>고급 설정</b>에서 <b>개발자 모드</b>를 켜세요.</li>
+          <li>다시 <b>커넥터</b>로 돌아가 <b>만들기</b>를 선택하세요. 이름은 <b>Kleo</b>, 주소를 붙여 넣고 인증을 <b>OAuth</b>로 설정한 뒤 저장하세요. Kleo 페이지가 열리면 <b>무료로 시작</b>을 누르세요. 그러면 다시 ChatGPT로 돌아옵니다.</li>
+          <li>채팅에서 <b>+</b> 메뉴로 Kleo를 켜고 영상을 요청하세요. ChatGPT는 렌더링을 시작하기 전에 확인을 요청합니다.</li>
+        </ol>
+        <p>ChatGPT Plus, Pro, Business 또는 Enterprise가 필요합니다.</p>
+        <a class="more" href="/ko/integrations/chatgpt/">ChatGPT 전체 가이드 <span class="arr" aria-hidden="true">→</span></a>
+      </article>
+
+      <article class="panel">
+        <h3>Grok <small>커넥터</small></h3>
+        <div class="url-line">서버 주소 <code>https://mcp.kleooai.com/mcp</code> <button class="btn btn-ghost btn-sm" type="button" data-copy="https://mcp.kleooai.com/mcp">복사</button></div>
+        <ol>
+          <li><b>grok.com</b> 또는 앱에서 <b>설정 → 커넥터</b>를 열고 <b>커넥터 추가 → 사용자 지정</b>을 선택하세요.</li>
+          <li>이름을 <b>Kleo</b>로 정하고 주소를 붙여 넣은 뒤 확인하세요. Kleo 페이지가 열리면 <b>무료로 시작</b>을 누르세요. 그러면 다시 Grok으로 돌아옵니다.</li>
+          <li>채팅에서 커넥터 목록의 Kleo를 켜고 영상을 요청하세요.</li>
+        </ol>
+      </article>
+
+      <article class="panel">
+        <h3>Claude Code <small>cli</small></h3>
+        <div class="code"><span class="cm"># Kleo를 한 번만 추가 (모든 프로젝트에서 쓰려면 --scope user 추가)</span> claude mcp add --transport http kleo https://mcp.kleooai.com/mcp <span class="cm"># 그다음 세션 안에서:</span> /mcp <span class="cm">→ Kleo → Authenticate</span><button class="btn btn-ghost btn-sm copy" type="button" data-copy="claude mcp add --transport http kleo https://mcp.kleooai.com/mcp">복사</button></div>
+        <ol>
+          <li>위 명령을 실행한 뒤 세션에서 <b>/mcp</b>를 입력하고 <b>Kleo</b>와 <b>Authenticate</b>를 선택하세요. 브라우저에 Kleo 페이지가 열리면 <b>무료로 시작</b>을 누르세요. 그러면 다시 Claude Code로 돌아옵니다.</li>
+          <li>이렇게 요청하세요: <i>kleo로 커피의 역사에 관한 5분짜리 영상을 16:9로 만들어 줘</i>. Claude Code가 진행 상황을 대신 확인하고 링크를 전달합니다.</li>
+        </ol>
+      </article>
+
+      <article class="panel">
+        <h3>Cursor <small>mcp.json</small></h3>
+        <p><code>~/.cursor/mcp.json</code>(모든 프로젝트) 또는 프로젝트 안의 <code>.cursor/mcp.json</code>을 만들거나 편집하세요.</p>
+        <div class="code">{ <span class="k">"mcpServers"</span>: { <span class="k">"kleo"</span>: { <span class="k">"url"</span>: <span class="s">"https://mcp.kleooai.com/mcp"</span> } } }<button class="btn btn-ghost btn-sm copy" type="button" data-copy='{&#10;  "mcpServers": {&#10;    "kleo": { "url": "https://mcp.kleooai.com/mcp" }&#10;  }&#10;}'>복사</button></div>
+        <ol>
+          <li>파일을 저장하면 Cursor의 <b>설정 → MCP</b>에 Kleo가 나타납니다. <b>Connect</b>를 누르거나 도구를 한 번 사용하세요. Kleo 페이지가 열리면 <b>무료로 시작</b>을 누르세요. 그러면 다시 Cursor로 돌아옵니다.</li>
+        </ol>
+      </article>
+
+      <article class="panel">
+        <h3>VS Code <small>mcp.json</small></h3>
+        <p>워크스페이스에 <code>.vscode/mcp.json</code>을 만드세요(또는 명령 팔레트에서 <b>MCP: Add Server</b>를 실행하고 주소를 붙여 넣으세요).</p>
+        <div class="code">{ <span class="k">"servers"</span>: { <span class="k">"kleo"</span>: { <span class="k">"type"</span>: <span class="s">"http"</span>, <span class="k">"url"</span>: <span class="s">"https://mcp.kleooai.com/mcp"</span> } } }<button class="btn btn-ghost btn-sm copy" type="button" data-copy='{&#10;  "servers": {&#10;    "kleo": { "type": "http", "url": "https://mcp.kleooai.com/mcp" }&#10;  }&#10;}'>복사</button></div>
+        <ol>
+          <li>파일을 저장한 뒤 서버 항목 위의 <b>Start</b>를 누르세요. VS Code가 Kleo 페이지를 열면 <b>무료로 시작</b>을 누르세요. 그러면 다시 VS Code로 돌아옵니다.</li>
+          <li>Copilot Chat에서 <b>Agent</b> 모드로 전환하면 도구 선택기에 kleo 도구가 나타납니다.</li>
+        </ol>
+      </article>
+
+      <article class="panel">
+        <h3>OpenCode <small>opencode.jsonc</small></h3>
+        <p><code>~/.config/opencode/opencode.jsonc</code>(전역) 또는 프로젝트의 <code>opencode.jsonc</code>에 다음을 추가한 뒤 터미널에서 연결하세요.</p>
+        <div class="code">{ <span class="k">"mcp"</span>: { <span class="k">"kleo"</span>: { <span class="k">"type"</span>: <span class="s">"remote"</span>, <span class="k">"url"</span>: <span class="s">"https://mcp.kleooai.com/mcp"</span>, <span class="k">"enabled"</span>: true } } }<button class="btn btn-ghost btn-sm copy" type="button" data-copy='{&#10;  "mcp": {&#10;    "kleo": { "type": "remote", "url": "https://mcp.kleooai.com/mcp", "enabled": true }&#10;  }&#10;}'>복사</button></div>
+        <div class="code"><span class="cm"># 한 번만 연결 (브라우저가 열립니다)</span> opencode mcp auth kleo<button class="btn btn-ghost btn-sm copy" type="button" data-copy="opencode mcp auth kleo">복사</button></div>
+        <ol>
+          <li>설정을 저장하고 위 명령을 실행하세요. 브라우저에 Kleo 페이지가 열리면 <b>무료로 시작</b>을 누르세요. 그러면 다시 OpenCode로 돌아옵니다.</li>
+          <li><b>opencode</b>를 시작하고 영상을 요청하세요. kleo 도구는 모든 세션에서 사용할 수 있습니다.</li>
+        </ol>
+      </article>
+
+      <article class="panel">
+        <h3>Gemini CLI <small>cli</small></h3>
+        <div class="code"><span class="cm"># Kleo 추가 (모든 프로젝트에서 쓰려면 --scope user 추가)</span> gemini mcp add --transport http kleo https://mcp.kleooai.com/mcp<button class="btn btn-ghost btn-sm copy" type="button" data-copy="gemini mcp add --transport http kleo https://mcp.kleooai.com/mcp">복사</button></div>
+        <ol>
+          <li>위 명령을 실행한 뒤 <b>gemini</b>를 시작하고 <b>/mcp auth kleo</b>를 입력하세요. 브라우저에 Kleo 페이지가 열리면 <b>무료로 시작</b>을 누르세요. 그러면 다시 Gemini CLI로 돌아옵니다.</li>
+          <li>세션에서 영상을 요청하세요. <b>/mcp list</b>로 모든 kleo 도구를 볼 수 있습니다.</li>
+        </ol>
+      </article>
+
+      <article class="panel">
+        <h3>Windsurf, Gemini 앱, 그리고 직접 만든 에이전트 <small>http</small></h3>
+        <p>Kleo는 OAuth 2.1을 갖춘 Streamable HTTP 전송 방식의 표준 MCP 서버입니다. 호환되는 클라이언트라면 무엇이든 같은 주소와 같은 원버튼 시작으로 연결됩니다.</p>
+        <div class="url-line">서버 주소 <code>https://mcp.kleooai.com/mcp</code> <button class="btn btn-ghost btn-sm" type="button" data-copy="https://mcp.kleooai.com/mcp">복사</button></div>
+        <ol>
+          <li><b>Windsurf</b>: <b>설정 → MCP → 서버 추가</b>에서 주소를 붙여 넣으세요(<code>mcp_config.json</code>에서는 <code>"serverUrl"</code> 키를 사용합니다).</li>
+          <li><b>Gemini 앱</b>: <b>설정 → 연결된 앱 → 사용자 지정 앱</b>에서 주소를 붙여 넣으세요(현재 Google AI Pro 또는 Ultra가 필요합니다).</li>
+          <li>직접 만든 에이전트라면 MCP SDK(Python 또는 TypeScript)를 HTTP 전송 방식으로 사용하고 OAuth 흐름을 한 번 완료하세요.</li>
+        </ol>
+        <a class="more" href="/ko/video-generation-mcp/">도구 작동 방식 <span class="arr" aria-hidden="true">→</span></a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ FIRST REQUEST ============ -->
+<section id="first-prompt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">02</span>첫 요청</div>
+        <h2>분명한 요청으로 시작하세요.</h2>
+      </div>
+      <p class="lede">어시스턴트는 요청을 Kleo의 인테이크(주제, 길이, 포맷, 룩)에 비추어 읽고, 트리트먼트를 쓰기 전에 빠진 것을 물어봅니다. 네 가지를 모두 말하면 곧바로 작업에 들어갑니다. 첫 채팅에 이것을 붙여 넣으세요:</p>
+    </div>
+    <div class="split">
+      <div>
+        <p class="style-say copyable">“Kleo로 병에 담긴 편지를 발견하는 등대지기 이야기로 30초짜리 필름을 계획해 줘. 리얼리스틱 룩, 영어 내레이션, 9:16. 렌더링 전에 개요와 크레딧 비용을 보여 줘.”<button class="btn btn-ghost btn-sm copy" type="button" data-copy="Use Kleo to plan a 30-second film about a lighthouse keeper discovering a message in a bottle. Realistic look, English narration, 9:16. Show me the outline and the credit cost before rendering.">복사</button></p>
+      </div>
+      <div class="prose">
+        <p>서버에서 두 가지 룩을 사용할 수 있습니다. 생성된 실사 푸티지인 <b>리얼리스틱</b>과 2D 애니메이션 필름인 <b>애니메이션</b>. 프롬프트의 단어만 바꾸면 다른 룩이 됩니다.</p>
+        <p><a href="/ko/examples/">리얼리스틱 샘플 보기 →</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BALANCE ============ -->
+<section id="balance">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">03</span>크레딧</div>
+        <h2>제작 전에 잔액을 확인하세요.</h2>
+      </div>
+      <p class="lede">연결하면 7크레딧이 포함됩니다. 스토리보드의 애니매틱은 5크레딧이며 모든 계정에서 주문할 수 있습니다. 필름은 어느 팩이든 팩을 구매한 계정에만 만들어 드리고, 30초 필름은 15크레딧이므로 첫 필름은 €5 팩에서 시작합니다. 7 + 10 = 17크레딧, 30초 쇼츠 한 편에 충분합니다.</p>
+    </div>
+    <div class="prose">
+      <p>어시스턴트에게 계정 페이지를 요청해 크레딧을 구매한 뒤, 렌더링을 시작하고 싶을 때 확인하세요. Kleo가 작업을 수락하기 전까지는 아무것도 청구되지 않습니다. 어시스턴트가 정확한 크레딧을 먼저 알려주며, 거부된 요청에는 비용이 들지 않습니다.</p>
+      <p><a href="/ko/pricing/">모든 크레딧 비용 보기 →</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NEXT ============ -->
+<section id="next">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">04</span>연결한 다음</div>
+        <h2>연결한 다음에는 이렇게 됩니다.</h2>
+      </div>
+    </div>
+    <div class="grid panels">
+      <article class="panel">
+        <h3>도구별 워크플로</h3>
+        <p>인테이크, 트리트먼트, 스토리보드, 렌더링, 링크. 각 kleo 도구가 하는 일을 어시스턴트가 실행하는 순서대로, 그리고 GPU를 대여하기 전에 크레딧을 어떻게 확인하는지.</p>
+        <a class="more" href="/ko/video-generation-mcp/">MCP 문서 읽기 <span class="arr" aria-hidden="true">→</span></a>
+      </article>
+      <article class="panel">
+        <h3>첫 필름을 만들기 전 질문</h3>
+        <p>필름은 얼마나 길 수 있는지, 내레이션에는 무엇이 포함되는지, 크레딧은 어떻게 계산되는지, 렌더링은 얼마나 걸리는지, 어떤 어시스턴트를 연결할 수 있는지.</p>
+        <a class="more" href="/ko/faq/">FAQ 읽기 <span class="arr" aria-hidden="true">→</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<!-- i18n:langs -->
+<nav class="langs" aria-label="언어">
+  <div class="wrap">
+    <span>언어</span>
+    <a href="/connect/" hreflang="en" lang="en">English</a>
+    <a href="/it/connect/" hreflang="it" lang="it">Italiano</a>
+    <a href="/de/connect/" hreflang="de" lang="de">Deutsch</a>
+    <a href="/fr/connect/" hreflang="fr" lang="fr">Français</a>
+    <a href="/es/connect/" hreflang="es" lang="es">Español</a>
+    <a href="/pt/connect/" hreflang="pt" lang="pt">Português</a>
+    <a href="/nl/connect/" hreflang="nl" lang="nl">Nederlands</a>
+    <a href="/pl/connect/" hreflang="pl" lang="pl">Polski</a>
+    <a href="/tr/connect/" hreflang="tr" lang="tr">Türkçe</a>
+    <a href="/ru/connect/" hreflang="ru" lang="ru">Русский</a>
+    <a href="/uk/connect/" hreflang="uk" lang="uk">Українська</a>
+    <a href="/ja/connect/" hreflang="ja" lang="ja">日本語</a>
+    <b lang="ko">한국어</b>
+    <a href="/zh/connect/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+    <a href="/zh-tw/connect/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+    <a href="/ar/connect/" hreflang="ar" lang="ar">العربية</a>
+    <a href="/he/connect/" hreflang="he" lang="he">עברית</a>
+    <a href="/hi/connect/" hreflang="hi" lang="hi">हिन्दी</a>
+    <a href="/id/connect/" hreflang="id" lang="id">Bahasa Indonesia</a>
+    <a href="/vi/connect/" hreflang="vi" lang="vi">Tiếng Việt</a>
+    <a href="/th/connect/" hreflang="th" lang="th">ไทย</a>
+  </div>
+</nav>
+<!-- /i18n:langs -->
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">
+      <a class="brand" href="/ko/" aria-label="Kleo, 홈">
+        <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+          <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+          <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+        </svg>
+        Kleo <span class="tag">MCP</span>
+      </a>
+      <span>사람이 연출하고, 에이전트가 필름을 만듭니다.</span>
+    </div>
+    <div class="links">
+      <a href="/ko/connect/">연결</a> <a href="/ko/integrations/claude/">Claude</a> <a href="/ko/integrations/chatgpt/">ChatGPT</a> <a href="/ko/video-generation-mcp/">MCP 문서</a> <a href="/ko/examples/">예시</a> <a href="/ko/styles.html">룩</a> <a href="/ko/pricing/">요금</a> <a href="/ko/faq/">FAQ</a> <a href="/ko/about/">소개</a> <a href="/ko/privacy.html">개인정보</a> <a href="/ko/terms.html">이용약관</a> <a href="https://github.com/tonnooooo/kleo-mcp">GitHub</a> <a href="mailto:kleooai@gmail.com">kleooai@gmail.com</a>
+    </div>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite">복사됨</div>
+</body>
+</html>

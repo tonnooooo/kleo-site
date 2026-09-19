@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="tr" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.remove("no-js")</script>
+<title>Claude ve Kleo ile AI Video Üret — Kurulum Rehberi</title>
+<meta name="description" content="Kleo&#x27;yu Claude&#x27;a özel bağlayıcı olarak ekle, anlatımlı bir film iste ve 4K MP4 bağlantısını aynı sohbette al: kurulum adımları, ilk istem ve sorun giderme.">
+<link rel="canonical" href="https://kleooai.com/tr/integrations/claude/">
+<!-- i18n:head -->
+<link rel="alternate" hreflang="en" href="https://kleooai.com/integrations/claude/">
+<link rel="alternate" hreflang="it" href="https://kleooai.com/it/integrations/claude/">
+<link rel="alternate" hreflang="de" href="https://kleooai.com/de/integrations/claude/">
+<link rel="alternate" hreflang="fr" href="https://kleooai.com/fr/integrations/claude/">
+<link rel="alternate" hreflang="es" href="https://kleooai.com/es/integrations/claude/">
+<link rel="alternate" hreflang="pt" href="https://kleooai.com/pt/integrations/claude/">
+<link rel="alternate" hreflang="nl" href="https://kleooai.com/nl/integrations/claude/">
+<link rel="alternate" hreflang="pl" href="https://kleooai.com/pl/integrations/claude/">
+<link rel="alternate" hreflang="tr" href="https://kleooai.com/tr/integrations/claude/">
+<link rel="alternate" hreflang="ru" href="https://kleooai.com/ru/integrations/claude/">
+<link rel="alternate" hreflang="uk" href="https://kleooai.com/uk/integrations/claude/">
+<link rel="alternate" hreflang="ja" href="https://kleooai.com/ja/integrations/claude/">
+<link rel="alternate" hreflang="ko" href="https://kleooai.com/ko/integrations/claude/">
+<link rel="alternate" hreflang="zh-Hans" href="https://kleooai.com/zh/integrations/claude/">
+<link rel="alternate" hreflang="zh-Hant" href="https://kleooai.com/zh-tw/integrations/claude/">
+<link rel="alternate" hreflang="ar" href="https://kleooai.com/ar/integrations/claude/">
+<link rel="alternate" hreflang="he" href="https://kleooai.com/he/integrations/claude/">
+<link rel="alternate" hreflang="hi" href="https://kleooai.com/hi/integrations/claude/">
+<link rel="alternate" hreflang="id" href="https://kleooai.com/id/integrations/claude/">
+<link rel="alternate" hreflang="vi" href="https://kleooai.com/vi/integrations/claude/">
+<link rel="alternate" hreflang="th" href="https://kleooai.com/th/integrations/claude/">
+<link rel="alternate" hreflang="x-default" href="https://kleooai.com/integrations/claude/">
+<script>(function(){try{var L=["it", "de", "fr", "es", "pt", "nl", "pl", "tr", "ru", "uk", "ja", "ko", "zh", "zh-tw", "ar", "he", "hi", "id", "vi", "th"],A={"zh-hk": "zh-tw", "zh-mo": "zh-tw", "zh-hant": "zh-tw", "zh-hans": "zh", "zh-cn": "zh", "zh-sg": "zh", "nb": "no", "nn": "no"},p=location.pathname,m=p.match(/^\/([a-z]{2}(?:-[a-z]{2})?)(?=\/)/),on=m&&L.indexOf(m[1])>=0?m[1]:"en",rest=on==="en"?p:p.slice(on.length+1),want=null,s=null;try{s=localStorage.getItem("kleo-lang")}catch(e){}if(s==="en"||L.indexOf(s)>=0)want=s;else{var nl=navigator.languages||[navigator.language||""];for(var i=0;i<nl.length&&!want;i++){var t=String(nl[i]).toLowerCase(),b=t.split("-")[0];t=A[t]||t;b=A[b]||b;want=t==="en"||b==="en"?"en":L.indexOf(t)>=0?t:L.indexOf(b)>=0?b:null}}if(want&&want!==on&&!/404/.test(p))location.replace((want==="en"?"":"/"+want)+rest+location.search+location.hash)}catch(e){}})()</script>
+<script type="application/json" id="i18n">{"Language": "Dil", "Menu": "Menü", "Close menu": "Menüyü kapat", "Copied": "Kopyalandı", "Copied ✓": "Kopyalandı ✓", "Copy it by hand: {text}": "Elle kopyala: {text}", "Copy the Kleo server address": "Kleo sunucu adresini kopyala", "Copy the argument {value}": "{value} argümanını kopyala", "Copy this prompt": "Bu istemi kopyala", "Copy the {what} snippet": "{what} parçasını kopyala", "Copy the {what} text": "{what} metnini kopyala", "Treatment · logline, angle, acts · look: realistic": "Tretman · logline, bakış açısı, perdeler · görünüm: gerçekçi", "Storyboard · direction, scenes, shots · 23 credits, confirmed": "Storyboard · yönetim, sahneler, çekimler · 23 kredi, onaylandı", "Generating the shots as footage · 4 of 11 · ~22 min left": "Çekimler hareketli görüntü olarak üretiliyor · 11 çekimden 4'ü · ~22 dk kaldı", "Generating the shots as footage · 8 of 11 · ~12 min left": "Çekimler hareketli görüntü olarak üretiliyor · 11 çekimden 8'i · ~12 dk kaldı", "Narration · one voice, English · cutting the shots on the words": "Anlatım · tek ses, İngilizce · çekimler sözlere göre kurgulanıyor", "Finish · 2160×3840 · 60 fps · quality check": "Bitirme · 2160×3840 · 60 fps · kalite kontrolü", "Done · 28 min · link ready for 7 days": "Tamam · 28 dk · bağlantı 7 gün hazır", "done": "tamamlandı", "running": "çalışıyor", "A whole number from {min} to {max} seconds": "{min} ile {max} saniye arasında bir tam sayı", "{s} s {product} = {n} credits": "{s} s {product} = {n} kredi", "film": "film", "animatic": "animatik"}</script>
+<!-- /i18n:head -->
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kleo AI">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:title" content="Claude ve Kleo ile AI Video Üret — Kurulum Rehberi">
+<meta property="og:description" content="Kleo&#x27;yu Claude&#x27;a özel bağlayıcı olarak ekle, anlatımlı bir film iste ve 4K MP4 bağlantısını aynı sohbette al: kurulum adımları, ilk istem ve sorun giderme.">
+<meta property="og:url" content="https://kleooai.com/tr/integrations/claude/">
+<meta property="og:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta property="og:image:alt" content="Kleo AI — Yönetmen insan. Filmi ajan yapar.">
+<meta property="og:image:width" content="2400">
+<meta property="og:image:height" content="1260">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Claude ve Kleo ile AI Video Üret — Kurulum Rehberi">
+<meta name="twitter:description" content="Kleo&#x27;yu Claude&#x27;a özel bağlayıcı olarak ekle, anlatımlı bir film iste ve 4K MP4 bağlantısını aynı sohbette al: kurulum adımları, ilk istem ve sorun giderme.">
+<meta name="twitter:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta name="theme-color" content="#0A0C10">
+<link rel="icon" href="/brand/kleo-favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/brand/kleo-favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/brand/kleo-icon-dark-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/site.css?v=20260920">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://kleooai.com/#website",
+      "name": "Kleo AI",
+      "alternateName": "Kleo",
+      "url": "https://kleooai.com/tr/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kleooai.com/tr/integrations/claude/#page",
+      "url": "https://kleooai.com/tr/integrations/claude/",
+      "name": "Claude ve Kleo ile AI Video Üret — Kurulum Rehberi",
+      "description": "Kleo'yu Claude'a özel bağlayıcı olarak ekle, anlatımlı bir film iste ve 4K MP4 bağlantısını aynı sohbette al: kurulum adımları, ilk istem ve sorun giderme.",
+      "inLanguage": "tr",
+      "isPartOf": {
+        "@id": "https://kleooai.com/#website"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Ana sayfa",
+          "item": "https://kleooai.com/tr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Claude ile Kleo",
+          "item": "https://kleooai.com/tr/integrations/claude/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<script src="/site.js?v=20260920" defer></script>
+</head>
+<body>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" aria-label="Ana">
+  <div class="wrap">
+    <a class="brand" href="/tr/" aria-label="Kleo, ana sayfa">
+      <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+        <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+        <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+      </svg>
+      Kleo <span class="tag">MCP</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Menü" aria-expanded="false" aria-controls="site-menu">
+      <svg class="bars" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 5h14M2 9h14M2 13h14"/></svg>
+      <svg class="x" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 4l10 10M14 4L4 14"/></svg>
+    </button>
+    <div class="nav-links" id="site-menu">
+      <a href="/tr/ai-youtube-video-generator/">Video üret</a> <a href="/tr/examples/">Örnekler</a> <a href="/tr/styles.html">Görünümler</a> <a href="/tr/pricing/">Fiyatlar</a> <a href="/tr/faq/">SSS</a>
+    </div>
+    <a class="btn btn-primary btn-sm" href="/tr/connect/">Kleo'yu bağla</a>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="page-hero hero" id="top">
+  <div class="wrap">
+    <div>
+      <nav class="crumbs" aria-label="Sayfa yolu">
+        <a href="/tr/">Ana sayfa</a> <span aria-hidden="true">›</span> <a href="/tr/connect/">Bağlan</a> <span aria-hidden="true">›</span> <span>Claude</span>
+      </nav>
+      <h1>Video üret:<br><span class="hl">Claude ve Kleo ile.</span></h1>
+      <p class="lede">Filmi yönettiğin yer Claude. Claude'a özel bağlayıcı olarak eklenen Kleo görüntüyü, anlatımı ve biten 4K MP4'ü üretir; bağlantı aynı sohbete düşer.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/tr/connect/">Kleo'yu bağla <span class="arr" aria-hidden="true">→</span></a> <a class="btn btn-ghost" href="/tr/examples/">Örnek bir film izle</a> <a class="btn btn-ghost" href="#setup">Kurulum adımları <span class="arr" aria-hidden="true">↓</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SETUP ============ -->
+<section id="setup">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">01</span>Kurulum</div>
+        <h2>Kleo'yu Claude'a ekle.</h2>
+      </div>
+    </div>
+    <div class="split">
+      <div>
+        <p class="lede">Kleo uzak bir MCP sunucusudur. Yüklenecek uygulama, doldurulacak kayıt formu yok: Claude ona özel bir bağlayıcı üzerinden ulaşır ve bağlanmak Kleo'nun kendi sayfasındaki tek bir düğmedir. Aşağıdaki adımlar Claude uygulamasında ve web'de aynıdır ve her Claude planında çalışır; ücretsiz plan bir özel bağlayıcıya izin verir.</p>
+      </div>
+      <div class="panel">
+        <ol>
+          <li>Claude'da <b>Ayarlar → Bağlayıcılar</b>'ı aç ve <b>Özel bağlayıcı ekle</b>'yi seç.</li>
+          <li>Adını <b>Kleo</b> koy, aşağıdaki adresi yapıştır ve onayla.</li>
+          <li>Kleo'nun sayfası açılır: <b>Ücretsiz başla</b>'ya tıkla. Yeni Kleo hesabında 7 krediyle Claude'a geri dönersin. Form yok, şifre yok, kart yok: 5 kredilik bir animatiğe yeter. Film yalnızca paket satın almış hesaplar için yapılır ve en az 10 kredi tutar; bu yüzden ilk filmden önce 5 €'luk paket (10 kredi) eklenir; 30 saniyelik bir film 15 kredidir.</li>
+          <li>Yeni bir sohbette araçlar menüsünden Kleo'yu aç ve filmi iste.</li>
+        </ol>
+        <div class="url-line">Sunucu adresi <code>https://mcp.kleooai.com/mcp</code> <button class="btn btn-ghost btn-sm" type="button" data-copy="https://mcp.kleooai.com/mcp">Kopyala</button></div>
+        <p>Claude, Anthropic'in asistanıdır. Kleo, Claude'un özel bir bağlayıcı üzerinden ulaştığı ayrı bir hizmettir; aynı adres ChatGPT, Grok, Claude Code, Cursor ve diğer tüm MCP istemcilerinde çalışır — bkz. <a href="/tr/connect/">bağlantı sayfası</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FIRST PROMPT ============ -->
+<section id="first-prompt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">02</span>İlk istem</div>
+        <h2>İstediğin filmi iste.</h2>
+      </div>
+      <p class="lede">Konuyu, süreyi, formatı ve görünümü tek mesajda söyle. Hedef kitle, ton ve filmde mutlaka görünmesi gerekenler isteğe bağlıdır. İsteğinin atladığı ne varsa Claude herhangi bir şey planlamadan önce sorar; senin yerine asla süre, format ya da görünüm seçmez.</p>
+    </div>
+    <div class="split">
+      <div>
+        <p class="style-say copyable">“Şafakta sakin bir gölü geçen küçük ahşap bir tekne hakkında 30 saniyelik bir film yapmak için Kleo'yu kullan. Gerçekçi görünüm, 16:9, İngilizce anlatım, sakin bir ton. Render'ı başlatmadan önce bana tretmanı ve kesin kredi tutarını göster.”<button class="btn btn-ghost btn-sm copy" type="button" data-copy="Use Kleo to make a 30-second film about a small wooden boat crossing a quiet lake at dawn. Realistic look, 16:9, English narration, a calm tone. Show me the treatment and the exact credits before you start the render.">Kopyala</button></p>
+      </div>
+      <ul class="defs">
+        <li><b>Görünümler</b><span>İki görünüm var: <b>gerçekçi</b>, sinematik hisli üretilmiş canlı çekim görüntüsü, ve <b>animasyon</b>, 2D animasyon bir film. <a href="/tr/styles.html">Film görünümlerini gör →</a></span></li>
+        <li><b>Formatlar</b><span>YouTube için 16:9 ya da Short için 9:16.</span></li>
+        <li><b>Süreler</b><span>15 saniyeden 5 dakikaya.</span></li>
+        <li><b>Anlatım</b><span>İngilizce ya da İtalyanca.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ IN THE CHAT ============ -->
+<section id="in-the-chat">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">03</span>Sohbette</div>
+        <h2>Sohbette sonra ne olur.</h2>
+      </div>
+      <p class="lede">Kleo'nun araçları sabit bir sırayla çalışır ve Claude onları senin için yürütür. Her adımda okur, düzeltir ve onaylarsın; sen onay verip iş kabul edilene kadar hiçbir ücret alınmaz.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="num" aria-hidden="true">01</span> <span class="tc">kleo_adapt_prompt</span>
+        <h3>Tretman</h3>
+        <p>Claude isteğini Kleo'nun soru listesine göre okur. Konu, süre, format ve görünüm zorunlu; hedef kitle, ton ve mutlaka görünmesi gerekenler isteğe bağlıdır. Eksik olan ne varsa tek mesajda sorar. Sonra sana tretmanı gösterir: logline, bakış açısı, açılış görüntüsü, perdeler, final, görünüm, tempo ve anlatıcı. Devam etmeden önce istediğini değiştir.</p>
+      </div>
+      <div class="step">
+        <span class="num" aria-hidden="true">02</span> <span class="tc">kleo_storyboard_guide</span>
+        <h3>Storyboard</h3>
+        <p>Claude, Kleo'nun storyboard rehberini (bir yönetim bloğu, sahneler, çekimler ve sınırları) alır ve onayladığın tretmana göre storyboard'u yazar. Film burada yapılır; oku ve değişiklik iste.</p>
+      </div>
+      <div class="step">
+        <span class="num" aria-hidden="true">03</span> <span class="tc">kleo_create_video</span>
+        <h3>Render</h3>
+        <p>Kleo her şeyi kontrol eder ve filmin kesin kredi tutarıyla cevap verir. Onayınla Claude render'ı yalnızca o iş için kiralanan bir GPU'da başlatır. İş kabul edilmeden önce hiçbir ücret alınmaz ve reddedilen bir çağrı hiçbir şeye mal olmaz.</p>
+      </div>
+      <div class="step">
+        <span class="num" aria-hidden="true">04</span> <span class="tc">kleo_wait_for_video</span>
+        <h3>Bağlantı</h3>
+        <p>Claude ilerlemeyi bildirerek render'ı bekler; Kleo biten MP4'ün bağlantısını verene kadar, genellikle 25–35 dakika sonra. Bağlantı 7 gün geçerlidir. Kleo filmi asla hiçbir yerde yayınlamaz: indirirsin ve istediğin yerde paylaşırsın.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT YOU GET ============ -->
+<section id="what-you-get">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">04</span>Film</div>
+        <h2>Ne alırsın.</h2>
+      </div>
+    </div>
+    <ul class="style-facts auto">
+      <li><b>Çıktı</b><span>4K (3840×2160 ya da 2160×3840), 60 fps bir MP4: YouTube için 16:9, Short için 9:16.</span></li>
+      <li><b>Süre</b><span>Film 15 saniyeden 5 dakikaya; animatik 15 ila 60 saniye.</span></li>
+      <li><b>Görünümler</b><span>Gerçekçi (üretilmiş canlı çekim görüntüsü, sinematik) ya da animasyon (2D animasyon bir film). Filmde her çekim kendi karesinden hareketli görüntü olarak üretilir.</span></li>
+      <li><b>Ürünler</b><span>Film ya da aynı storyboard'un animatiği: hareketli bir kameranın altındaki çizilmiş kareler, aynı anlatıcı ve grafik katmanı, üretilmiş klip yok. Her hesap animatik sipariş edebilir; film yalnızca paket satın almış hesaplar için yapılır.</span></li>
+      <li><b>Anlatım</b><span>Tek bir anlatıcı, İngilizce ya da İtalyanca. Fon müziği yok, altyazı yok, ekran yazısı yok.</span></li>
+      <li><b>Krediler</b><span>Film: 1 kredi = 2 saniye, yukarı yuvarlanır, en az 10 kredi: 15 s = 10, 30 s = 15, 60 s = 30, 5 dk = 150. Animatik: sabit 5 kredi. 7 krediyle başlarsın; paketler 5 € = 10, 15 € = 35, 40 € = 100, bir kez ödenir, abonelik yok.</span></li>
+      <li><b>Süre</b><span>Bir render kiralanan bir GPU'da genellikle 25–35 dakika sürer; Kleo tahmini süreyi sohbette söyler.</span></li>
+    </ul>
+    <p><a href="/tr/pricing/">Bir filmin fiyatını gör →</a></p>
+  </div>
+</section>
+
+<!-- ============ TROUBLESHOOTING ============ -->
+<section id="troubleshooting">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">05</span>Sorun giderme</div>
+        <h2>Bir şey çalışmazsa.</h2>
+      </div>
+    </div>
+    <div class="faq">
+      <div>
+        <details>
+          <summary>Kleo, Claude'da görünmüyor.</summary>
+          <p>Yapıştırdığın adresi kontrol et: tam olarak https://mcp.kleooai.com/mcp olmalı, https ile ve /mcp'den sonra hiçbir şey olmadan. Bağlayıcıyı Kleo adıyla yeniden ekle. Eklendikten sonra bile sen açana kadar sohbette kapalıdır: yeni bir sohbet aç ve araçlar menüsünden Kleo'yu aç. Ücretsiz planda bir özel bağlayıcıya izin verilir, bu yüzden o bağlayıcı Kleo olmalı.</p>
+        </details>
+        <details>
+          <summary>Kleo'nun sayfası hiç açılmadı ya da pencere engellendi.</summary>
+          <p>Bağlayıcıyı onayladığında Claude, giriş için Kleo'nun sayfasını açar: tek bir Ücretsiz başla düğmesi, doldurulacak hiçbir şey yok. Tarayıcın onu açılır pencere olarak engellediyse Claude için açılır pencerelere izin ver ve bağlayıcıyı yeniden onayla; sayfa açılır, Ücretsiz başla'ya tıklarsın ve Claude'a geri dönersin.</p>
+        </details>
+        <details>
+          <summary>Yeterli kredi yok.</summary>
+          <p>Bağlanmak sana 7 kredi verir: bunlar bir animatik alır (5), asla film almaz. Film yalnızca paket satın almış hesaplar için yapılır ve 30 saniyelik bir film 15 kredidir: 5 €'luk paketle (10 kredi) 17 kredin olur ve render başlayabilir. Claude'dan Kleo hesap sayfanı iste (kleo_account): bakiyeni ve ödeme bağlantılarını gösterir (5 € = 10 kredi, 15 € = 35, 40 € = 100; EUR cinsinden tek seferlik ödeme, abonelik yok). Reddedilen çağrı hiçbir ücret almadı.</p>
+        </details>
+      </div>
+      <div>
+        <details>
+          <summary>Film hazır olmadan bekleme süresi doldu.</summary>
+          <p>Uzun bir render tek bir araç çağrısından daha uzun sürebilir, ama iş GPU'sunda devam eder. Claude'dan işin durumunu (kleo_get_job) ya da yeniden beklemesini (kleo_wait_for_video), sonra bağlantıları (kleo_get_result) iste. İlkini kontrol etmek için ikinci bir film isteme.</p>
+        </details>
+        <details>
+          <summary>Bir render'ı durdurmak istiyorsun.</summary>
+          <p>Claude'dan işi iptal etmesini iste (kleo_cancel_job). Render durur ve harcanmamış krediler bakiyene geri döner.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ START ============ -->
+<section class="cta one" id="start">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow"><span class="n">06</span>Başla</div>
+      <h2>Filmi yönettiğin yer Claude.</h2>
+      <p class="lede">ChatGPT mi kullanıyorsun? <a href="/tr/integrations/chatgpt/">ChatGPT ile Kleo →</a></p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/tr/connect/">Kleo'yu bağla <span class="arr" aria-hidden="true">→</span></a> <a class="btn btn-ghost" href="/tr/faq/">SSS'yi oku</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<!-- i18n:langs -->
+<nav class="langs" aria-label="Dil">
+  <div class="wrap">
+    <span>Dil</span>
+    <a href="/integrations/claude/" hreflang="en" lang="en">English</a>
+    <a href="/it/integrations/claude/" hreflang="it" lang="it">Italiano</a>
+    <a href="/de/integrations/claude/" hreflang="de" lang="de">Deutsch</a>
+    <a href="/fr/integrations/claude/" hreflang="fr" lang="fr">Français</a>
+    <a href="/es/integrations/claude/" hreflang="es" lang="es">Español</a>
+    <a href="/pt/integrations/claude/" hreflang="pt" lang="pt">Português</a>
+    <a href="/nl/integrations/claude/" hreflang="nl" lang="nl">Nederlands</a>
+    <a href="/pl/integrations/claude/" hreflang="pl" lang="pl">Polski</a>
+    <b lang="tr">Türkçe</b>
+    <a href="/ru/integrations/claude/" hreflang="ru" lang="ru">Русский</a>
+    <a href="/uk/integrations/claude/" hreflang="uk" lang="uk">Українська</a>
+    <a href="/ja/integrations/claude/" hreflang="ja" lang="ja">日本語</a>
+    <a href="/ko/integrations/claude/" hreflang="ko" lang="ko">한국어</a>
+    <a href="/zh/integrations/claude/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+    <a href="/zh-tw/integrations/claude/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+    <a href="/ar/integrations/claude/" hreflang="ar" lang="ar">العربية</a>
+    <a href="/he/integrations/claude/" hreflang="he" lang="he">עברית</a>
+    <a href="/hi/integrations/claude/" hreflang="hi" lang="hi">हिन्दी</a>
+    <a href="/id/integrations/claude/" hreflang="id" lang="id">Bahasa Indonesia</a>
+    <a href="/vi/integrations/claude/" hreflang="vi" lang="vi">Tiếng Việt</a>
+    <a href="/th/integrations/claude/" hreflang="th" lang="th">ไทย</a>
+  </div>
+</nav>
+<!-- /i18n:langs -->
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">
+      <a class="brand" href="/tr/" aria-label="Kleo, ana sayfa">
+        <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+          <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+          <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+        </svg>
+        Kleo <span class="tag">MCP</span>
+      </a>
+      <span>Yönetmen insan. Filmi ajan yapar.</span>
+    </div>
+    <div class="links">
+      <a href="/tr/connect/">Bağlan</a> <a href="/tr/integrations/claude/">Claude</a> <a href="/tr/integrations/chatgpt/">ChatGPT</a> <a href="/tr/video-generation-mcp/">MCP belgeleri</a> <a href="/tr/examples/">Örnekler</a> <a href="/tr/styles.html">Görünümler</a> <a href="/tr/pricing/">Fiyatlar</a> <a href="/tr/faq/">SSS</a> <a href="/tr/about/">Hakkında</a> <a href="/tr/privacy.html">Gizlilik</a> <a href="/tr/terms.html">Koşullar</a> <a href="https://github.com/tonnooooo/kleo-mcp">GitHub</a> <a href="mailto:kleooai@gmail.com">kleooai@gmail.com</a>
+    </div>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite">Kopyalandı</div>
+</body>
+</html>

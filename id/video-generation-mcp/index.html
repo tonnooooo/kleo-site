@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="id" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.remove("no-js")</script>
+<title>Dokumentasi MCP Kleo — endpoint, OAuth, dan tool-nya</title>
+<meta name="description" content="Server MCP jarak jauh Kleo, terdokumentasi: endpoint Streamable HTTP, OAuth 2.1 dalam satu tombol, setiap tool kleo dalam urutannya, aturan harga, dan keluaran.">
+<link rel="canonical" href="https://kleooai.com/id/video-generation-mcp/">
+<!-- i18n:head -->
+<link rel="alternate" hreflang="en" href="https://kleooai.com/video-generation-mcp/">
+<link rel="alternate" hreflang="it" href="https://kleooai.com/it/video-generation-mcp/">
+<link rel="alternate" hreflang="de" href="https://kleooai.com/de/video-generation-mcp/">
+<link rel="alternate" hreflang="fr" href="https://kleooai.com/fr/video-generation-mcp/">
+<link rel="alternate" hreflang="es" href="https://kleooai.com/es/video-generation-mcp/">
+<link rel="alternate" hreflang="pt" href="https://kleooai.com/pt/video-generation-mcp/">
+<link rel="alternate" hreflang="nl" href="https://kleooai.com/nl/video-generation-mcp/">
+<link rel="alternate" hreflang="pl" href="https://kleooai.com/pl/video-generation-mcp/">
+<link rel="alternate" hreflang="tr" href="https://kleooai.com/tr/video-generation-mcp/">
+<link rel="alternate" hreflang="ru" href="https://kleooai.com/ru/video-generation-mcp/">
+<link rel="alternate" hreflang="uk" href="https://kleooai.com/uk/video-generation-mcp/">
+<link rel="alternate" hreflang="ja" href="https://kleooai.com/ja/video-generation-mcp/">
+<link rel="alternate" hreflang="ko" href="https://kleooai.com/ko/video-generation-mcp/">
+<link rel="alternate" hreflang="zh-Hans" href="https://kleooai.com/zh/video-generation-mcp/">
+<link rel="alternate" hreflang="zh-Hant" href="https://kleooai.com/zh-tw/video-generation-mcp/">
+<link rel="alternate" hreflang="ar" href="https://kleooai.com/ar/video-generation-mcp/">
+<link rel="alternate" hreflang="he" href="https://kleooai.com/he/video-generation-mcp/">
+<link rel="alternate" hreflang="hi" href="https://kleooai.com/hi/video-generation-mcp/">
+<link rel="alternate" hreflang="id" href="https://kleooai.com/id/video-generation-mcp/">
+<link rel="alternate" hreflang="vi" href="https://kleooai.com/vi/video-generation-mcp/">
+<link rel="alternate" hreflang="th" href="https://kleooai.com/th/video-generation-mcp/">
+<link rel="alternate" hreflang="x-default" href="https://kleooai.com/video-generation-mcp/">
+<script>(function(){try{var L=["it", "de", "fr", "es", "pt", "nl", "pl", "tr", "ru", "uk", "ja", "ko", "zh", "zh-tw", "ar", "he", "hi", "id", "vi", "th"],A={"zh-hk": "zh-tw", "zh-mo": "zh-tw", "zh-hant": "zh-tw", "zh-hans": "zh", "zh-cn": "zh", "zh-sg": "zh", "nb": "no", "nn": "no"},p=location.pathname,m=p.match(/^\/([a-z]{2}(?:-[a-z]{2})?)(?=\/)/),on=m&&L.indexOf(m[1])>=0?m[1]:"en",rest=on==="en"?p:p.slice(on.length+1),want=null,s=null;try{s=localStorage.getItem("kleo-lang")}catch(e){}if(s==="en"||L.indexOf(s)>=0)want=s;else{var nl=navigator.languages||[navigator.language||""];for(var i=0;i<nl.length&&!want;i++){var t=String(nl[i]).toLowerCase(),b=t.split("-")[0];t=A[t]||t;b=A[b]||b;want=t==="en"||b==="en"?"en":L.indexOf(t)>=0?t:L.indexOf(b)>=0?b:null}}if(want&&want!==on&&!/404/.test(p))location.replace((want==="en"?"":"/"+want)+rest+location.search+location.hash)}catch(e){}})()</script>
+<script type="application/json" id="i18n">{"Language": "Bahasa", "Menu": "Menu", "Close menu": "Tutup menu", "Copied": "Tersalin", "Copied ✓": "Tersalin ✓", "Copy it by hand: {text}": "Salin secara manual: {text}", "Copy the Kleo server address": "Salin alamat server Kleo", "Copy the argument {value}": "Salin argumen {value}", "Copy this prompt": "Salin prompt ini", "Copy the {what} snippet": "Salin cuplikan kode {what}", "Copy the {what} text": "Salin teks {what}", "Treatment · logline, angle, acts · look: realistic": "Treatment · logline, sudut pandang, babak · look: realistis", "Storyboard · direction, scenes, shots · 23 credits, confirmed": "Storyboard · arahan, adegan, shot · 23 kredit, dikonfirmasi", "Generating the shots as footage · 4 of 11 · ~22 min left": "Menghasilkan shot sebagai footage · 4 dari 11 · ~22 menit lagi", "Generating the shots as footage · 8 of 11 · ~12 min left": "Menghasilkan shot sebagai footage · 8 dari 11 · ~12 menit lagi", "Narration · one voice, English · cutting the shots on the words": "Narasi · satu suara, bahasa Inggris · memotong shot mengikuti kata-kata", "Finish · 2160×3840 · 60 fps · quality check": "Penyelesaian · 2160×3840 · 60 fps · pemeriksaan kualitas", "Done · 28 min · link ready for 7 days": "Selesai · 28 menit · tautan tersedia selama 7 hari", "done": "selesai", "running": "berjalan", "A whole number from {min} to {max} seconds": "Bilangan bulat dari {min} sampai {max} detik", "{s} s {product} = {n} credits": "{product} {s} dtk = {n} kredit", "film": "film", "animatic": "animatic"}</script>
+<!-- /i18n:head -->
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kleo AI">
+<meta property="og:locale" content="id_ID">
+<meta property="og:title" content="Dokumentasi MCP Kleo — endpoint, OAuth, dan tool-nya">
+<meta property="og:description" content="Server MCP jarak jauh Kleo, terdokumentasi: endpoint Streamable HTTP, OAuth 2.1 dalam satu tombol, setiap tool kleo dalam urutannya, aturan harga, dan keluaran.">
+<meta property="og:url" content="https://kleooai.com/id/video-generation-mcp/">
+<meta property="og:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta property="og:image:alt" content="Kleo AI — Arahan manusia. Film buatan agen.">
+<meta property="og:image:width" content="2400">
+<meta property="og:image:height" content="1260">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Dokumentasi MCP Kleo — endpoint, OAuth, dan tool-nya">
+<meta name="twitter:description" content="Server MCP jarak jauh Kleo, terdokumentasi: endpoint Streamable HTTP, OAuth 2.1 dalam satu tombol, setiap tool kleo dalam urutannya, aturan harga, dan keluaran.">
+<meta name="twitter:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta name="theme-color" content="#0A0C10">
+<link rel="icon" href="/brand/kleo-favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/brand/kleo-favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/brand/kleo-icon-dark-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/site.css?v=20260920">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://kleooai.com/#website",
+      "name": "Kleo AI",
+      "alternateName": "Kleo",
+      "url": "https://kleooai.com/id/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kleooai.com/id/video-generation-mcp/#page",
+      "url": "https://kleooai.com/id/video-generation-mcp/",
+      "name": "Dokumentasi MCP Kleo — endpoint, OAuth, dan tool-nya",
+      "description": "Server MCP jarak jauh Kleo, terdokumentasi: endpoint Streamable HTTP, OAuth 2.1 dalam satu tombol, setiap tool kleo dalam urutannya, aturan harga, dan keluaran.",
+      "inLanguage": "id",
+      "isPartOf": {
+        "@id": "https://kleooai.com/#website"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Beranda",
+          "item": "https://kleooai.com/id/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Dokumentasi MCP",
+          "item": "https://kleooai.com/id/video-generation-mcp/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<script src="/site.js?v=20260920" defer></script>
+</head>
+<body>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" aria-label="Utama">
+  <div class="wrap">
+    <a class="brand" href="/id/" aria-label="Kleo, beranda">
+      <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+        <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+        <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+      </svg>
+      Kleo <span class="tag">MCP</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-menu">
+      <svg class="bars" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 5h14M2 9h14M2 13h14"/></svg>
+      <svg class="x" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 4l10 10M14 4L4 14"/></svg>
+    </button>
+    <div class="nav-links" id="site-menu">
+      <a href="/id/ai-youtube-video-generator/">Buat video</a> <a href="/id/examples/">Contoh</a> <a href="/id/styles.html">Look</a> <a href="/id/pricing/">Harga</a> <a href="/id/faq/">FAQ</a>
+    </div>
+    <a class="btn btn-primary btn-sm" href="/id/connect/">Hubungkan Kleo</a>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="page-hero hero" id="top">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Jejak navigasi"><a href="/id/">Beranda</a><span aria-hidden="true">›</span><span>Dokumentasi MCP</span></nav>
+    <h1>Server MCP<br><span class="hl">untuk produksi video.</span></h1>
+    <p class="lede">Kleo menyediakan satu alur kerja film untuk klien MCP mana pun: intake, treatment, storyboard, render di GPU yang disewa untuk job itu, dan tautan ke film bernarasi yang sudah jadi dalam 4K pada 60 fps. Satu narator, dua look, dua produk (film, atau animatic dari storyboard yang sama), 15 detik sampai 5 menit. Tidak ada aplikasi dan tidak ada dasbor; asisten mengerjakannya melalui tool di bawah ini.</p>
+    <p class="mono" id="mcpStatus" hidden></p>
+    <div class="address"><code>https://mcp.kleooai.com/mcp</code><button class="btn btn-ghost btn-sm" type="button" data-copy="https://mcp.kleooai.com/mcp">Salin alamat</button></div>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="/id/connect/">Hubungkan Kleo <span class="arr" aria-hidden="true">→</span></a> <a class="btn btn-ghost" href="https://github.com/tonnooooo/kleo-mcp">Repositori publik</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ENDPOINT ============ -->
+<section id="endpoint">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">01</span>Endpoint</div>
+        <h2>Terhubung melalui HTTPS.</h2>
+      </div>
+      <p class="lede">Kleo adalah server MCP jarak jauh: satu alamat, transport Streamable HTTP, OAuth 2.1. Atur alamatnya di klien MCP Anda dan selesaikan otorisasinya di browser; tidak ada formulir pendaftaran dan tidak ada kata sandi.</p>
+    </div>
+    <ul class="defs">
+      <li><b>Endpoint</b><span><code class="mono">https://mcp.kleooai.com/mcp</code></span></li>
+      <li><b>Transport</b><span>Streamable HTTP; alamat yang sama di setiap klien.</span></li>
+      <li><b>Autentikasi</b><span>OAuth 2.1. Selama otorisasi klien membuka halaman Kleo sendiri; Anda mengklik <b>Start free</b> dan Anda kembali ke klien dengan 7 kredit di akun. Tanpa formulir, tanpa kartu.</span></li>
+      <li><b>Tanpa token</b><span>GET pada endpoint menjawab <code class="mono">401</code> dan membawa metadata resource OAuth. Ini endpoint protokol, bukan halaman web: membukanya di browser bukanlah proses koneksinya.</span></li>
+      <li><b>Klien</b><span>Claude, ChatGPT, Grok, Claude Code, Cursor, VS Code, OpenCode, Gemini CLI, Windsurf, aplikasi Gemini, dan MCP SDK apa pun dengan transport HTTP.</span></li>
+    </ul>
+    <div class="prose">
+      <p><a href="/id/connect/">Langkah koneksi untuk setiap klien →</a></p>
+      <h3>Dari terminal atau editor.</h3>
+      <p>Dua dari klien yang sudah diuji, sebagai contoh. Langkah-langkah lainnya, dari Claude dan ChatGPT sampai VS Code dan Gemini CLI, ada di <a href="/id/connect/">halaman hubungkan</a>.</p>
+    </div>
+    <div class="grid panels">
+      <article class="panel">
+        <h3>Claude Code <small>cli</small></h3>
+        <div class="code"><span class="cm"># tambahkan Kleo sekali</span> claude mcp add --transport http kleo https://mcp.kleooai.com/mcp <span class="cm"># lalu, di dalam sesi:</span> /mcp <span class="cm">→ Kleo → Authenticate</span><button class="btn btn-ghost btn-sm copy" type="button" data-copy="claude mcp add --transport http kleo https://mcp.kleooai.com/mcp">Salin</button></div>
+        <p>Halaman Kleo terbuka di browser; klik <b>Start free</b> dan Anda kembali ke Claude Code.</p>
+      </article>
+      <article class="panel">
+        <h3>Cursor <small>~/.cursor/mcp.json</small></h3>
+        <div class="code">{ <span class="k">"mcpServers"</span>: { <span class="k">"kleo"</span>: { <span class="k">"url"</span>: <span class="s">"https://mcp.kleooai.com/mcp"</span> } } }<button class="btn btn-ghost btn-sm copy" type="button" data-copy='{&#10;  "mcpServers": {&#10;    "kleo": { "url": "https://mcp.kleooai.com/mcp" }&#10;  }&#10;}'>Salin</button></div>
+        <p>Simpan berkasnya. Saat Cursor terhubung, halaman Kleo terbuka: klik <b>Start free</b> dan Anda kembali ke Cursor.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WORKFLOW ============ -->
+<section id="workflow">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">02</span>Alur kerja</div>
+        <h2>Urutan produksi.</h2>
+      </div>
+      <p class="lede">Tool-tool berjalan dalam urutan yang tetap. Asisten membaca permintaan Anda, mendapatkan treatment dari <code class="mono">kleo_adapt_prompt</code>, menulis storyboard berdasarkan <code class="mono">kleo_storyboard_guide</code>, dan baru kemudian meminta Kleo me-render.</p>
+    </div>
+    <div class="tools">
+      <h3>Tool kleo, dalam urutan asisten menjalankannya</h3>
+      <div class="ttable">
+        <table>
+          <thead>
+            <tr>
+              <th>Tool</th>
+              <th>Fungsinya</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>kleo_adapt_prompt</td>
+              <td>Membaca permintaan berdasarkan intake (subjek, durasi, format, look; opsional audiens, nada, apa yang harus muncul), menanyakan yang kurang, lalu mengembalikan treatment: logline, sudut pandang, pembukaan, babak, penutup, look, tempo, narator.</td>
+            </tr>
+            <tr>
+              <td>kleo_storyboard_guide</td>
+              <td>Menjelaskan cara menulis storyboard: blok arahan, adegan, shot, dan batasannya.</td>
+            </tr>
+            <tr>
+              <td>kleo_create_video</td>
+              <td>Memeriksa semuanya, menyebutkan jumlah kredit yang pasti, lalu memulai render di GPU yang disewa untuk job itu. Menerima <code class="mono">product: "film"</code> atau <code class="mono">"animatic"</code>.</td>
+            </tr>
+            <tr>
+              <td>kleo_get_job</td>
+              <td>Melaporkan progres sebuah job dalam satu panggilan.</td>
+            </tr>
+            <tr>
+              <td>kleo_wait_for_video</td>
+              <td>Menunggu render dan melaporkan progresnya sampai filmnya siap.</td>
+            </tr>
+            <tr>
+              <td>kleo_get_result</td>
+              <td>Mengembalikan tautan ke film yang sudah jadi.</td>
+            </tr>
+            <tr>
+              <td>kleo_cancel_job</td>
+              <td>Menghentikan render dan mengembalikan kredit yang belum terpakai.</td>
+            </tr>
+            <tr>
+              <td>kleo_list_templates</td>
+              <td>Mencantumkan satu-satunya alur kerja, film, dengan format, durasi, dan suaranya, serta kredit yang tersisa di akun. Animatic adalah produk dari alur kerja yang sama itu.</td>
+            </tr>
+            <tr>
+              <td>kleo_account</td>
+              <td>Menampilkan kredit, apakah akun sudah membayar (<code class="mono">has_paid</code>, yang menentukan apakah film bisa dipesan), tautan ke halaman akun, dan kunci Kleo pribadi.</td>
+            </tr>
+            <tr>
+              <td>kleo_generate_thumbnail</td>
+              <td>Belum tersedia di beta.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="prose">
+      <p>Gunakan skema tool dari server yang aktif untuk argumen yang tepat. Jika klien Anda membatasi berapa lama sebuah panggilan tool boleh berjalan, asisten bisa mem-polling <code class="mono">kleo_get_job</code> alih-alih menahan <code class="mono">kleo_wait_for_video</code> tetap terbuka.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PARAMETERS ============ -->
+<section id="render">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">03</span>Parameter</div>
+        <h2>Apa yang dibutuhkan sebuah render.</h2>
+      </div>
+      <p class="lede"><code class="mono">kleo_create_video</code> menerima permintaan dengan kata-kata Anda ditambah pilihan yang diminta oleh intake. Treatment dan storyboard berasal dari dua tool perencanaan, bukan dari keyboard Anda.</p>
+    </div>
+    <ul class="defs">
+      <li><b>prompt</b><span>Permintaan dengan kata-kata pengguna sendiri.</span></li>
+      <li><b>product</b><span><code class="mono">film</code> (bawaan: setiap shot adalah klip yang dihasilkan, dihargai berdasarkan durasi, untuk akun yang sudah membeli paket) atau <code class="mono">animatic</code> (frame gambar di bawah kamera yang bergerak, tanpa klip yang dihasilkan, 5 kredit flat, 15 sampai 60 detik, untuk setiap akun).</span></li>
+      <li><b>duration_s</b><span>15 sampai 300 detik untuk film, 15 sampai 60 untuk animatic.</span></li>
+      <li><b>format</b><span><code class="mono">16:9</code> untuk YouTube dan lanskap, <code class="mono">9:16</code> untuk Short dan vertikal.</span></li>
+      <li><b>style</b><span><code class="mono">realistic</code> (footage live-action yang dihasilkan, sinematik) atau <code class="mono">animation</code> (film animasi 2D). Dalam sebuah film setiap shot dihasilkan sebagai footage bergerak dari frame-nya sendiri; animatic mempertahankan look-nya dalam frame gambar.</span></li>
+      <li><b>language</b><span>Narasi <code class="mono">en</code> atau <code class="mono">it</code>. Satu narator; tanpa musik, tanpa takarir, tanpa teks di layar dalam film standar.</span></li>
+      <li><b>voice</b><span>Opsional: <code class="mono">narrator-en-m</code>, <code class="mono">narrator-en-f</code>, <code class="mono">narrator-it-m</code>, atau <code class="mono">narrator-it-f</code>.</span></li>
+      <li><b>treatment</b><span>Opsional: treatment yang dikembalikan oleh <code class="mono">kleo_adapt_prompt</code> (logline, sudut pandang, pembukaan, babak, penutup, look, tempo, narator).</span></li>
+      <li><b>storyboard</b><span>Opsional: storyboard yang ditulis berdasarkan <code class="mono">kleo_storyboard_guide</code> (blok arahan, adegan, shot, batasan).</span></li>
+    </ul>
+    <div class="prose">
+      <h3>Harga</h3>
+      <p>Film: satu kredit adalah dua detik, dibulatkan ke atas, minimal sepuluh kredit: 15 dtk = 10 · 20 dtk = 10 · 30 dtk = 15 · 60 dtk = 30 · 90 dtk = 45 · 3 mnt = 90 · 5 mnt = 150. Animatic: 5 kredit flat, 15 sampai 60 detik. Menghubungkan sudah termasuk 7 kredit, satu animatic; film hanya dibuat untuk akun yang sudah membeli paket (klipnya dihasilkan atas biaya Kleo, jadi kredit gratis tidak pernah bisa membelinya): 7 + paket €5 = 17, film terbuka, sebuah Short 30 detik. Paket sekali bayar, dalam EUR, tanpa langganan: €5 = 10 kredit · €15 = 35 · €40 = 100.</p>
+      <h3>Tidak ada yang ditagih sampai job diterima</h3>
+      <p><code>kleo_create_video</code> menjawab dengan jumlah kredit yang pasti lebih dulu; panggilan yang ditolak tidak menagih apa pun, dan <code>kleo_cancel_job</code> mengembalikan kredit yang belum terpakai oleh render yang dihentikan.</p>
+      <h3>Waktu render</h3>
+      <p>Film biasanya memakan waktu 25–35 menit di GPU sewaan, animatic sekitar 15–20; server memberi tahu asisten perkiraan untuk job itu. Ini bukan waktu yang tetap.</p>
+      <p><a href="/id/pricing/">Paket kredit dan biaya untuk durasi apa pun →</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OUTPUT ============ -->
+<section id="output">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">04</span>Keluaran</div>
+        <h2>Video jadi sebagai keluarannya.</h2>
+      </div>
+      <p class="lede">Satu MP4: 4K (3840×2160 atau 2160×3840) pada 60 fps, 16:9 atau 9:16, dengan satu narator dalam bahasa Inggris atau Italia dan, dalam sebuah film, setiap shot dihasilkan sebagai footage bergerak. <code class="mono">kleo_get_result</code> menyerahkan tautan ke berkas kepada asisten; tautannya berlaku selama 7 hari.</p>
+    </div>
+    <div class="prose">
+      <p>Kleo tidak pernah menerbitkan ke YouTube, TikTok, atau kanal mana pun, dan film standar tidak membawa musik, takarir, maupun teks di layar. Dua look aktif di server, realistis dan animasi; situs ini menampilkan satu contoh untuk masing-masing di halaman look.</p>
+      <p><a href="/id/examples/">Tonton contoh realistis →</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ACCOUNT ============ -->
+<section class="cta one" id="account">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow"><span class="n">05</span>Akun</div>
+      <h2>Penanganan akun dan job.</h2>
+      <p class="lede">Jauhkan token OAuth dan kunci Kleo dari log dan contoh publik: kuncinya bersifat pribadi, dan siapa pun yang memegangnya memiliki akun itu. Tidak ada dasbor; halaman akun (saldo hanya-baca dan tautan pembayaran) dijangkau dengan bertanya kepada asisten, dan <code class="mono">kleo_account</code> mengembalikannya.</p>
+      <p class="lede">Render membelanjakan kredit: minta konfirmasi sebelum <code class="mono">kleo_create_video</code> berjalan, dan gunakan kembali pengenal job saat memeriksa progres atau membatalkan. Kode servernya publik.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://github.com/tonnooooo/kleo-mcp">Baca kode sumber server di GitHub <span class="arr" aria-hidden="true">→</span></a> <a class="btn btn-ghost" href="/id/privacy.html">Cara Kleo menangani data</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<!-- i18n:langs -->
+<nav class="langs" aria-label="Bahasa">
+  <div class="wrap">
+    <span>Bahasa</span>
+    <a href="/video-generation-mcp/" hreflang="en" lang="en">English</a>
+    <a href="/it/video-generation-mcp/" hreflang="it" lang="it">Italiano</a>
+    <a href="/de/video-generation-mcp/" hreflang="de" lang="de">Deutsch</a>
+    <a href="/fr/video-generation-mcp/" hreflang="fr" lang="fr">Français</a>
+    <a href="/es/video-generation-mcp/" hreflang="es" lang="es">Español</a>
+    <a href="/pt/video-generation-mcp/" hreflang="pt" lang="pt">Português</a>
+    <a href="/nl/video-generation-mcp/" hreflang="nl" lang="nl">Nederlands</a>
+    <a href="/pl/video-generation-mcp/" hreflang="pl" lang="pl">Polski</a>
+    <a href="/tr/video-generation-mcp/" hreflang="tr" lang="tr">Türkçe</a>
+    <a href="/ru/video-generation-mcp/" hreflang="ru" lang="ru">Русский</a>
+    <a href="/uk/video-generation-mcp/" hreflang="uk" lang="uk">Українська</a>
+    <a href="/ja/video-generation-mcp/" hreflang="ja" lang="ja">日本語</a>
+    <a href="/ko/video-generation-mcp/" hreflang="ko" lang="ko">한국어</a>
+    <a href="/zh/video-generation-mcp/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+    <a href="/zh-tw/video-generation-mcp/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+    <a href="/ar/video-generation-mcp/" hreflang="ar" lang="ar">العربية</a>
+    <a href="/he/video-generation-mcp/" hreflang="he" lang="he">עברית</a>
+    <a href="/hi/video-generation-mcp/" hreflang="hi" lang="hi">हिन्दी</a>
+    <b lang="id">Bahasa Indonesia</b>
+    <a href="/vi/video-generation-mcp/" hreflang="vi" lang="vi">Tiếng Việt</a>
+    <a href="/th/video-generation-mcp/" hreflang="th" lang="th">ไทย</a>
+  </div>
+</nav>
+<!-- /i18n:langs -->
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">
+      <a class="brand" href="/id/" aria-label="Kleo, beranda">
+        <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+          <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+          <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+        </svg>
+        Kleo <span class="tag">MCP</span>
+      </a>
+      <span>Arahan manusia. Film buatan agen.</span>
+    </div>
+    <div class="links">
+      <a href="/id/connect/">Hubungkan</a> <a href="/id/integrations/claude/">Claude</a> <a href="/id/integrations/chatgpt/">ChatGPT</a> <a href="/id/video-generation-mcp/">Dokumentasi MCP</a> <a href="/id/examples/">Contoh</a> <a href="/id/styles.html">Look</a> <a href="/id/pricing/">Harga</a> <a href="/id/faq/">FAQ</a> <a href="/id/about/">Tentang</a> <a href="/id/privacy.html">Privasi</a> <a href="/id/terms.html">Ketentuan</a> <a href="https://github.com/tonnooooo/kleo-mcp">GitHub</a> <a href="mailto:kleooai@gmail.com">kleooai@gmail.com</a>
+    </div>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite">Tersalin</div>
+</body>
+</html>

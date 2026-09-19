@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="nl" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.remove("no-js")</script>
+<title>AI-videogenerator voor YouTube — films met voice-over uit een brief | Kleo</title>
+<meta name="description" content="Maak met Kleo een YouTube-video (16:9) of Short (9:16) met voice-over uit een brief: realistisch of animatie, 4K 60 fps, 15 s tot 5 min, vanaf 10 credits.">
+<link rel="canonical" href="https://kleooai.com/nl/ai-youtube-video-generator/">
+<!-- i18n:head -->
+<link rel="alternate" hreflang="en" href="https://kleooai.com/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="it" href="https://kleooai.com/it/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="de" href="https://kleooai.com/de/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="fr" href="https://kleooai.com/fr/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="es" href="https://kleooai.com/es/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="pt" href="https://kleooai.com/pt/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="nl" href="https://kleooai.com/nl/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="pl" href="https://kleooai.com/pl/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="tr" href="https://kleooai.com/tr/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="ru" href="https://kleooai.com/ru/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="uk" href="https://kleooai.com/uk/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="ja" href="https://kleooai.com/ja/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="ko" href="https://kleooai.com/ko/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="zh-Hans" href="https://kleooai.com/zh/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="zh-Hant" href="https://kleooai.com/zh-tw/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="ar" href="https://kleooai.com/ar/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="he" href="https://kleooai.com/he/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="hi" href="https://kleooai.com/hi/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="id" href="https://kleooai.com/id/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="vi" href="https://kleooai.com/vi/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="th" href="https://kleooai.com/th/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="x-default" href="https://kleooai.com/ai-youtube-video-generator/">
+<script>(function(){try{var L=["it", "de", "fr", "es", "pt", "nl", "pl", "tr", "ru", "uk", "ja", "ko", "zh", "zh-tw", "ar", "he", "hi", "id", "vi", "th"],A={"zh-hk": "zh-tw", "zh-mo": "zh-tw", "zh-hant": "zh-tw", "zh-hans": "zh", "zh-cn": "zh", "zh-sg": "zh", "nb": "no", "nn": "no"},p=location.pathname,m=p.match(/^\/([a-z]{2}(?:-[a-z]{2})?)(?=\/)/),on=m&&L.indexOf(m[1])>=0?m[1]:"en",rest=on==="en"?p:p.slice(on.length+1),want=null,s=null;try{s=localStorage.getItem("kleo-lang")}catch(e){}if(s==="en"||L.indexOf(s)>=0)want=s;else{var nl=navigator.languages||[navigator.language||""];for(var i=0;i<nl.length&&!want;i++){var t=String(nl[i]).toLowerCase(),b=t.split("-")[0];t=A[t]||t;b=A[b]||b;want=t==="en"||b==="en"?"en":L.indexOf(t)>=0?t:L.indexOf(b)>=0?b:null}}if(want&&want!==on&&!/404/.test(p))location.replace((want==="en"?"":"/"+want)+rest+location.search+location.hash)}catch(e){}})()</script>
+<script type="application/json" id="i18n">{"Language": "Taal", "Menu": "Menu", "Close menu": "Menu sluiten", "Copied": "Gekopieerd", "Copied ✓": "Gekopieerd ✓", "Copy it by hand: {text}": "Kopieer het zelf: {text}", "Copy the Kleo server address": "Kopieer het serveradres van Kleo", "Copy the argument {value}": "Kopieer het argument {value}", "Copy this prompt": "Kopieer deze prompt", "Copy the {what} snippet": "Kopieer het {what}-fragment", "Copy the {what} text": "Kopieer de {what}-tekst", "Treatment · logline, angle, acts · look: realistic": "Treatment · logline, invalshoek, aktes · look: realistisch", "Storyboard · direction, scenes, shots · 23 credits, confirmed": "Storyboard · regie, scènes, shots · 23 credits, bevestigd", "Generating the shots as footage · 4 of 11 · ~22 min left": "De shots worden als footage gegenereerd · 4 van 11 · nog ~22 min", "Generating the shots as footage · 8 of 11 · ~12 min left": "De shots worden als footage gegenereerd · 8 van 11 · nog ~12 min", "Narration · one voice, English · cutting the shots on the words": "Voice-over · één stem, Engels · de shots worden op de woorden gemonteerd", "Finish · 2160×3840 · 60 fps · quality check": "Afwerking · 2160×3840 · 60 fps · kwaliteitscontrole", "Done · 28 min · link ready for 7 days": "Klaar · 28 min · link 7 dagen geldig", "done": "klaar", "running": "bezig", "A whole number from {min} to {max} seconds": "Een heel getal van {min} tot {max} seconden", "{s} s {product} = {n} credits": "{s} s {product} = {n} credits", "film": "film", "animatic": "animatic"}</script>
+<!-- /i18n:head -->
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kleo AI">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:title" content="AI-videogenerator voor YouTube — films met voice-over uit een brief | Kleo">
+<meta property="og:description" content="Maak met Kleo een YouTube-video (16:9) of Short (9:16) met voice-over uit een brief: realistisch of animatie, 4K 60 fps, 15 s tot 5 min, vanaf 10 credits.">
+<meta property="og:url" content="https://kleooai.com/nl/ai-youtube-video-generator/">
+<meta property="og:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta property="og:image:alt" content="Kleo AI — Menselijke regie. Films gemaakt door agents.">
+<meta property="og:image:width" content="2400">
+<meta property="og:image:height" content="1260">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI-videogenerator voor YouTube — films met voice-over uit een brief | Kleo">
+<meta name="twitter:description" content="Maak met Kleo een YouTube-video (16:9) of Short (9:16) met voice-over uit een brief: realistisch of animatie, 4K 60 fps, 15 s tot 5 min, vanaf 10 credits.">
+<meta name="twitter:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta name="theme-color" content="#0A0C10">
+<link rel="icon" href="/brand/kleo-favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/brand/kleo-favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/brand/kleo-icon-dark-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/site.css?v=20260920">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://kleooai.com/#website",
+      "name": "Kleo AI",
+      "alternateName": "Kleo",
+      "url": "https://kleooai.com/nl/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kleooai.com/nl/ai-youtube-video-generator/#page",
+      "url": "https://kleooai.com/nl/ai-youtube-video-generator/",
+      "name": "AI-videogenerator voor YouTube — films met voice-over uit een brief | Kleo",
+      "description": "Maak met Kleo een YouTube-video (16:9) of Short (9:16) met voice-over uit een brief: realistisch of animatie, 4K 60 fps, 15 s tot 5 min, vanaf 10 credits.",
+      "inLanguage": "nl",
+      "isPartOf": {
+        "@id": "https://kleooai.com/#website"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://kleooai.com/nl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "AI-videogenerator voor YouTube",
+          "item": "https://kleooai.com/nl/ai-youtube-video-generator/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<script src="/site.js?v=20260920" defer></script>
+</head>
+<body>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" aria-label="Hoofdmenu">
+  <div class="wrap">
+    <a class="brand" href="/nl/" aria-label="Kleo, home">
+      <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+        <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+        <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+      </svg>
+      Kleo <span class="tag">MCP</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-menu">
+      <svg class="bars" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 5h14M2 9h14M2 13h14"/></svg>
+      <svg class="x" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 4l10 10M14 4L4 14"/></svg>
+    </button>
+    <div class="nav-links" id="site-menu">
+      <a href="/nl/ai-youtube-video-generator/" aria-current="page">Video's maken</a> <a href="/nl/examples/">Voorbeelden</a> <a href="/nl/styles.html">Looks</a> <a href="/nl/pricing/">Prijzen</a> <a href="/nl/faq/">FAQ</a>
+    </div>
+    <a class="btn btn-primary btn-sm" href="/nl/connect/">Kleo verbinden</a>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="page-hero hero" id="top">
+  <div class="wrap">
+    <div>
+      <nav class="crumbs" aria-label="Kruimelpad"><a href="/nl/">Home</a><span aria-hidden="true">›</span><span>AI-videogenerator voor YouTube</span></nav>
+      <h1>Van een idee<br><span class="hl">naar je volgende video.</span></h1>
+      <p class="lede">Maak vanuit een brief een complete film met voice-over voor je kanaal, in de AI-assistent die je al gebruikt. Kleo plant het verhaal samen met jou, genereert elk shot als bewegende footage, geeft het één verteller en rendert de MP4 in 4K met 60 fps, liggend voor YouTube of verticaal voor een Short. Hetzelfde storyboard kan eerst als animatic van 5 credits worden gerenderd: de getekende frames onder de camera, geen gegenereerde clip.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/nl/connect/">Kleo verbinden <span class="arr" aria-hidden="true">→</span></a> <a class="btn btn-ghost" href="/nl/pricing/">Bekijk de prijzen</a> <a class="btn btn-ghost" href="#sample">Bekijk de opening van Signal Delay</a>
+      </div>
+      <div class="works">
+        <span>Werkt met</span> <b>Claude</b><b>ChatGPT</b><b>Grok</b><b>Claude Code</b><b>Cursor</b><b>VS Code</b><b>Gemini</b>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ONE IDEA ============ -->
+<section id="idea">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">01</span>Eén idee</div>
+        <h2>Bouw een film rond één helder idee.</h2>
+      </div>
+    </div>
+    <div class="split">
+      <div>
+        <p class="lede">Begin met de vraag waarop je kijker een antwoord wil. Geef Kleo de feiten, het publiek en het punt dat de kijker moet onthouden. Een explainer heeft een heldere volgorde nodig; een verhaal een setting, een verandering en een einde.</p>
+      </div>
+      <div class="prose">
+        <p>Kies 16:9 voor een liggende kanaalvideo. Kies 9:16 voor een Short. Een film duurt van 15 seconden tot 5 minuten, met Engelse of Italiaanse voice-over door één verteller. In een film wordt elk shot als bewegende footage gegenereerd vanuit zijn eigen frame, dus een explainer van 3 minuten is een reeks scènes die bewegen, geen diavoorstelling van stilstaande beelden; een animatic, 15 tot 60 seconden en 5 credits, houdt de getekende frames onder een bewegende camera.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOOKS ============ -->
+<section id="looks">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">02</span>Twee looks</div>
+        <h2>Kies de look: realistisch of animatie.</h2>
+      </div>
+      <p class="lede">Kleo maakt een film met voice-over in een van twee looks, en een animatic van hetzelfde storyboard in beide. Beide looks zijn live op de server en kosten hetzelfde per seconde. De look is een van de dingen waar Kleo naar vraagt als je verzoek het niet zegt.</p>
+    </div>
+    <div class="grid panels">
+      <article class="panel">
+        <h3>Realistisch <small>gegenereerde live-action-footage</small></h3>
+        <p>Cinematografische footage, shot voor shot gegenereerd: een gezicht in een helm, een gouden lijn die een station bereikt, een documentaire-opening verteld in missielogboeken en gerenderd met dezelfde look. Twee voorbeeldfilms op de site, Tether en de opening van Signal Delay, zijn in deze look.</p>
+        <a class="more" href="/nl/styles.html">Bekijk de filmlooks <span class="arr" aria-hidden="true">→</span></a>
+      </article>
+      <article class="panel">
+        <h3>Animatie <small>een 2D-animatiefilm</small></h3>
+        <p>Dezelfde film met voice-over, getekend in plaats van gefilmd: een 2D-animatielook voor explainers, verhalen en Shorts die een lichtere toon willen. De animatie-look is nu beschikbaar op de server; het voorbeeld is <a href="/nl/examples/octopus/">een octopus-Short van 32 seconden</a>.</p>
+        <a class="more" href="/nl/styles.html">Bekijk de filmlooks <span class="arr" aria-hidden="true">→</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INTAKE ============ -->
+<section id="intake">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">03</span>De intake</div>
+        <h2>Wat Kleo vraagt voordat het plant.</h2>
+      </div>
+      <p class="lede">Kleo legt je verzoek naast een korte intake. Wat het verzoek niet zegt, vraagt de assistent in één bericht, en dan wacht hij op je antwoorden. Er wordt niets aangenomen: Kleo kiest nooit een onderwerp, een lengte, een formaat of een look voor jou.</p>
+    </div>
+    <ul class="defs">
+      <li><b>Onderwerp</b><span>Waar de film over gaat, en het punt dat de kijker moet onthouden.</span></li>
+      <li><b>Lengte</b><span>Van 15 seconden tot 5 minuten.</span></li>
+      <li><b>Formaat</b><span>16:9 voor een YouTube-video, 9:16 voor een Short.</span></li>
+      <li><b>Look</b><span>Realistisch of animatie.</span></li>
+      <li><b>Optioneel</b><span>Publiek, toon, en alles wat in de film moet voorkomen.</span></li>
+    </ul>
+    <p class="tpl-more">Een brief die dit allemaal meteen beantwoordt, zoals die hieronder, slaat de vragen over en gaat direct naar het treatment.</p>
+  </div>
+</section>
+
+<!-- ============ WORKFLOW ============ -->
+<section id="workflow">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">04</span>De workflow</div>
+        <h2>Een productieworkflow in je gesprek.</h2>
+      </div>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="num">01</span>
+        <h3>Schrijf de brief, beantwoord de intake</h3>
+        <p>Beschrijf je onderwerp, lengte, formaat en look, en deel de feiten en de toon die de film moet aanhouden. Je praat met je eigen assistent; Kleo is de studio erachter. Alles wat de brief weglaat, vraagt de assistent in één bericht. Publiek, toon en wat moet voorkomen zijn optioneel; onderwerp, lengte, formaat en look niet.</p>
+      </div>
+      <div class="step">
+        <span class="num">02</span>
+        <h3>Verander het treatment</h3>
+        <p>Voordat er iets wordt gerenderd, laat de assistent je het treatment zien: de logline, de invalshoek, de opening, de aktes, het einde, de look, het tempo en de verteller. Verander wat je wilt; de film volgt het.</p>
+      </div>
+      <div class="step">
+        <span class="num">03</span>
+        <h3>Het storyboard, dan de credits</h3>
+        <p>Onder dat treatment schrijft de assistent het storyboard: een regieblok, de scènes en de shots, binnen de grenzen van Kleo. Hier wordt de kwaliteit van de film gemaakt. Kleo controleert alles en antwoordt met de exacte credits voordat het begint. Er wordt niets afgeschreven tot de job is geaccepteerd.</p>
+      </div>
+      <div class="step">
+        <span class="num">04</span>
+        <h3>Renderen en downloaden</h3>
+        <p>De render draait op een GPU die voor die job wordt gehuurd, meestal 25–35 minuten, en de assistent meldt de voortgang en geeft je dan een link naar de afgewerkte MP4, 7 dagen geldig. Bekijk hem en upload hem daarna zelf naar je kanaal: Kleo publiceert nooit op YouTube of waar dan ook.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BRIEFS ============ -->
+<section id="brief">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">05</span>Twee briefs</div>
+        <h2>Een brief die je kunt aanpassen.</h2>
+      </div>
+      <p class="lede">Twee briefs die de hele intake in één keer beantwoorden. De eerste is een 16:9-video van 3 minuten, 90 credits. De tweede is een 9:16-Short van 45 seconden, 23 credits. Plak er een in je assistent en verander het onderwerp.</p>
+    </div>
+    <div class="split">
+      <div>
+        <p class="style-say copyable" style="--c:var(--teal)">“Gebruik Kleo om een 16:9 YouTube-video van 3 minuten te maken die uitlegt hoe zeestromingen warmte over de planeet verplaatsen, voor nieuwsgierige beginners. Realistische look, Engelse voice-over, een rustige en heldere toon. Open met een duidelijke vraag, leg het mechanisme uit en sluit af met één conclusie. Laat me het treatment en de kosten in credits zien voordat je rendert. Gebruik alleen de feiten die ik aanlever of kan verifiëren; verzin geen statistieken.”<button class="btn btn-ghost btn-sm copy" type="button" data-copy="Use Kleo to make a 3-minute 16:9 YouTube video explaining how ocean currents move heat around the planet, for curious beginners. Realistic look, English narration, a calm and clear tone. Open with a clear question, explain the mechanism, then finish with one takeaway. Show me the treatment and the credit cost before rendering. Use only the facts I provide or can verify; do not invent statistics.">Kopiëren</button></p>
+      </div>
+      <div>
+        <p class="style-say copyable" style="--c:var(--amber)">“Gebruik Kleo om een 9:16-Short van 45 seconden te maken over waarom de lucht rood kleurt bij zonsondergang, voor een algemeen publiek. Animatie-look, Engelse voice-over, een speelse toon. Eén vraag aan het begin, één antwoord, één beeld om te onthouden aan het einde. Laat me het treatment en de kosten in credits zien voordat je rendert.”<button class="btn btn-ghost btn-sm copy" type="button" data-copy="Use Kleo to make a 45-second 9:16 Short about why the sky turns red at sunset, for a general audience. Animation look, English narration, a playful tone. One question at the top, one answer, one image to remember at the end. Show me the treatment and the credit cost before rendering.">Kopiëren</button></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CREDITS ============ -->
+<section id="credits">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">06</span>Duur en credits</div>
+        <h2>Plan de duur en de credits samen.</h2>
+      </div>
+      <p class="lede">Een film wordt geprijsd op lengte: één credit dekt twee seconden, naar boven afgerond, met een minimum van 10 credits. Een Short van 20 seconden kost 10 credits; 60 seconden kost 30; 3 minuten kost 90; 5 minuten kost 150. Een animatic van hetzelfde storyboard, 15 tot 60 seconden, kost vast 5 credits. Kleo noemt het exacte aantal voordat de render start, en een geweigerd verzoek kost niets.</p>
+    </div>
+    <div class="prose">
+      <p>Credits komen in eenmalige packs, één keer betaald via Stripe, in euro, zonder abonnement: €5 voor 10 credits, €15 voor 35, €40 voor 100. Verbinden geeft je 7 credits zonder formulier en zonder kaart: één animatic. Een film wordt alleen gemaakt voor accounts die een pack hebben gekocht — de clips worden op kosten van Kleo gegenereerd, dus gratis credits kopen er nooit een; met de pack van €5 heb je er 17, de film gaat open, en een Short van 30 seconden kost 15. Als je een render annuleert, komen de niet-gebruikte credits terug.</p>
+      <p>Een animatic van 5 credits is een goede manier om het verhaal en de toon vast te leggen voordat je 90 credits uitgeeft aan een langere film.</p>
+      <p><a href="/nl/pricing/">Open de creditcalculator →</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RECEIVE ============ -->
+<section id="receive">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">07</span>De levering</div>
+        <h2>Wat je ontvangt.</h2>
+      </div>
+    </div>
+    <ul class="style-facts auto">
+      <li><b>Bestand</b><span>Eén MP4 in 4K, 3840×2160 voor 16:9 of 2160×3840 voor 9:16, met 60 fps.</span></li>
+      <li><b>Lengte</b><span>De lengte waar je om vroeg, van 15 seconden tot 5 minuten; een animatic van 15 tot 60 seconden.</span></li>
+      <li><b>Stem</b><span>Eén verteller, Engels of Italiaans, man of vrouw.</span></li>
+      <li><b>Beeld</b><span>In een film elk shot gegenereerd als bewegende footage; in een animatic de getekende frames onder een bewegende camera. Geen muziek, geen ondertitels, geen tekst in beeld.</span></li>
+      <li><b>Levering</b><span>Een downloadlink die je assistent je geeft, 7 dagen geldig.</span></li>
+    </ul>
+    <div class="prose">
+      <p>De film van Kleo bevat geen muziek, ondertitels of tekst in beeld. Als je kanaal die nodig heeft, voeg je ze na de download toe in je editor. Uploaden naar YouTube blijft jouw stap: Kleo heeft geen verbinding met je kanaal en publiceert nooit voor jou. Bekijk de film en de publicatie-eisen van je kanaal voordat je uploadt.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SAMPLE ============ -->
+<section id="sample">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">08</span>Een opening met voice-over</div>
+        <h2>Bekijk een opening met voice-over.</h2>
+      </div>
+      <p class="lede">Signal Delay is een documentaire gerenderd met de realistische look van Kleo, verteld als vijf maanden missielogboeken: op 14 november 2023 begon Voyager 1 één patroon van enen en nullen te herhalen, en elke vraag kostte vijfenveertig uur lichttijd. Eén verteller loopt door de uitlezing, de dode chip en de code die met de hand werd verplaatst in assembly uit de jaren zeventig. Hier de openingsminuut tot aan de titel, zonder geluid.</p>
+    </div>
+    <div class="player">
+      <div class="style-media wide">
+        <video src="/samples/realistic-signal.mp4" poster="/samples/realistic-signal.jpg" width="1920" height="1080" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback"
+               aria-label="Signal Delay, de openingsminuut van een documentaire over de reparatie van Voyager 1, gerenderd met de realistische look van Kleo"></video>
+        <span class="style-live" aria-hidden="true"><i></i>Speelt af</span>
+      </div>
+      <div class="film-cap"><b>Signal Delay</b><span>opening 0:00–1:02 · 16:9 · 4K 60 fps, getoond in 1080p</span></div>
+      <p class="film-note">Fotografische stilbeelden met een langzame push-in, handgetekende amberkleurige diagrammen, terminalvensters, data op zwart, twee klokken in de hoek, 35mm-korrel, 2.39:1, een rustige muziekbedding en ondertitels: het treatment van die documentaire vroeg erom. De volledige film duurt 6 min 55 s en staat niet op de site; films die via de assistent worden gemaakt duren 15 seconden tot 5 minuten.</p>
+      <p class="film-note"><a href="/nl/examples/signal-delay/">Open de voorbeeldpagina van Signal Delay →</a></p>
+      <p class="film-note">Voor een 16:9-film zonder enige voice-over, één ononderbroken shot van een astronaut en zijn station, <a href="/nl/examples/tether/">bekijk Tether →</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ START ============ -->
+<section class="cta one" id="start">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow"><span class="n">09</span>Beginnen</div>
+      <h2>Brief je eerste film.</h2>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/nl/connect/">Kleo verbinden <span class="arr" aria-hidden="true">→</span></a> <a class="btn btn-ghost" href="/nl/pricing/">Bekijk de prijzen</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<!-- i18n:langs -->
+<nav class="langs" aria-label="Taal">
+  <div class="wrap">
+    <span>Taal</span>
+    <a href="/ai-youtube-video-generator/" hreflang="en" lang="en">English</a>
+    <a href="/it/ai-youtube-video-generator/" hreflang="it" lang="it">Italiano</a>
+    <a href="/de/ai-youtube-video-generator/" hreflang="de" lang="de">Deutsch</a>
+    <a href="/fr/ai-youtube-video-generator/" hreflang="fr" lang="fr">Français</a>
+    <a href="/es/ai-youtube-video-generator/" hreflang="es" lang="es">Español</a>
+    <a href="/pt/ai-youtube-video-generator/" hreflang="pt" lang="pt">Português</a>
+    <b lang="nl">Nederlands</b>
+    <a href="/pl/ai-youtube-video-generator/" hreflang="pl" lang="pl">Polski</a>
+    <a href="/tr/ai-youtube-video-generator/" hreflang="tr" lang="tr">Türkçe</a>
+    <a href="/ru/ai-youtube-video-generator/" hreflang="ru" lang="ru">Русский</a>
+    <a href="/uk/ai-youtube-video-generator/" hreflang="uk" lang="uk">Українська</a>
+    <a href="/ja/ai-youtube-video-generator/" hreflang="ja" lang="ja">日本語</a>
+    <a href="/ko/ai-youtube-video-generator/" hreflang="ko" lang="ko">한국어</a>
+    <a href="/zh/ai-youtube-video-generator/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+    <a href="/zh-tw/ai-youtube-video-generator/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+    <a href="/ar/ai-youtube-video-generator/" hreflang="ar" lang="ar">العربية</a>
+    <a href="/he/ai-youtube-video-generator/" hreflang="he" lang="he">עברית</a>
+    <a href="/hi/ai-youtube-video-generator/" hreflang="hi" lang="hi">हिन्दी</a>
+    <a href="/id/ai-youtube-video-generator/" hreflang="id" lang="id">Bahasa Indonesia</a>
+    <a href="/vi/ai-youtube-video-generator/" hreflang="vi" lang="vi">Tiếng Việt</a>
+    <a href="/th/ai-youtube-video-generator/" hreflang="th" lang="th">ไทย</a>
+  </div>
+</nav>
+<!-- /i18n:langs -->
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">
+      <a class="brand" href="/nl/" aria-label="Kleo, home">
+        <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+          <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+          <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+        </svg>
+        Kleo <span class="tag">MCP</span>
+      </a>
+      <span>Menselijke regie. Films gemaakt door agents.</span>
+    </div>
+    <div class="links">
+      <a href="/nl/connect/">Verbinden</a> <a href="/nl/integrations/claude/">Claude</a> <a href="/nl/integrations/chatgpt/">ChatGPT</a> <a href="/nl/video-generation-mcp/">MCP-docs</a> <a href="/nl/examples/">Voorbeelden</a> <a href="/nl/styles.html">Looks</a> <a href="/nl/pricing/">Prijzen</a> <a href="/nl/faq/">FAQ</a> <a href="/nl/about/">Over</a> <a href="/nl/privacy.html">Privacy</a> <a href="/nl/terms.html">Voorwaarden</a> <a href="https://github.com/tonnooooo/kleo-mcp">GitHub</a> <a href="mailto:kleooai@gmail.com">kleooai@gmail.com</a>
+    </div>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite">Gekopieerd</div>
+</body>
+</html>

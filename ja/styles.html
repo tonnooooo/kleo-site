@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="ja" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.remove("no-js")</script>
+<title>Kleoのフィルムのルック — 実写、アニメーション、Cinema、Stickman</title>
+<meta name="description" content="Kleoの4つのルックを実際のサンプルとともに。実写の実写映像、2Dアニメーションのフィルム、そしてエンジンがリアルタイムで描く Cinema と Stickman。ひとつのワークフロー、4K 60 fps。">
+<link rel="canonical" href="https://kleooai.com/ja/styles.html">
+<!-- i18n:head -->
+<link rel="alternate" hreflang="en" href="https://kleooai.com/styles.html">
+<link rel="alternate" hreflang="it" href="https://kleooai.com/it/styles.html">
+<link rel="alternate" hreflang="de" href="https://kleooai.com/de/styles.html">
+<link rel="alternate" hreflang="fr" href="https://kleooai.com/fr/styles.html">
+<link rel="alternate" hreflang="es" href="https://kleooai.com/es/styles.html">
+<link rel="alternate" hreflang="pt" href="https://kleooai.com/pt/styles.html">
+<link rel="alternate" hreflang="nl" href="https://kleooai.com/nl/styles.html">
+<link rel="alternate" hreflang="pl" href="https://kleooai.com/pl/styles.html">
+<link rel="alternate" hreflang="tr" href="https://kleooai.com/tr/styles.html">
+<link rel="alternate" hreflang="ru" href="https://kleooai.com/ru/styles.html">
+<link rel="alternate" hreflang="uk" href="https://kleooai.com/uk/styles.html">
+<link rel="alternate" hreflang="ja" href="https://kleooai.com/ja/styles.html">
+<link rel="alternate" hreflang="ko" href="https://kleooai.com/ko/styles.html">
+<link rel="alternate" hreflang="zh-Hans" href="https://kleooai.com/zh/styles.html">
+<link rel="alternate" hreflang="zh-Hant" href="https://kleooai.com/zh-tw/styles.html">
+<link rel="alternate" hreflang="ar" href="https://kleooai.com/ar/styles.html">
+<link rel="alternate" hreflang="he" href="https://kleooai.com/he/styles.html">
+<link rel="alternate" hreflang="hi" href="https://kleooai.com/hi/styles.html">
+<link rel="alternate" hreflang="id" href="https://kleooai.com/id/styles.html">
+<link rel="alternate" hreflang="vi" href="https://kleooai.com/vi/styles.html">
+<link rel="alternate" hreflang="th" href="https://kleooai.com/th/styles.html">
+<link rel="alternate" hreflang="x-default" href="https://kleooai.com/styles.html">
+<script>(function(){try{var L=["it", "de", "fr", "es", "pt", "nl", "pl", "tr", "ru", "uk", "ja", "ko", "zh", "zh-tw", "ar", "he", "hi", "id", "vi", "th"],A={"zh-hk": "zh-tw", "zh-mo": "zh-tw", "zh-hant": "zh-tw", "zh-hans": "zh", "zh-cn": "zh", "zh-sg": "zh", "nb": "no", "nn": "no"},p=location.pathname,m=p.match(/^\/([a-z]{2}(?:-[a-z]{2})?)(?=\/)/),on=m&&L.indexOf(m[1])>=0?m[1]:"en",rest=on==="en"?p:p.slice(on.length+1),want=null,s=null;try{s=localStorage.getItem("kleo-lang")}catch(e){}if(s==="en"||L.indexOf(s)>=0)want=s;else{var nl=navigator.languages||[navigator.language||""];for(var i=0;i<nl.length&&!want;i++){var t=String(nl[i]).toLowerCase(),b=t.split("-")[0];t=A[t]||t;b=A[b]||b;want=t==="en"||b==="en"?"en":L.indexOf(t)>=0?t:L.indexOf(b)>=0?b:null}}if(want&&want!==on&&!/404/.test(p))location.replace((want==="en"?"":"/"+want)+rest+location.search+location.hash)}catch(e){}})()</script>
+<script type="application/json" id="i18n">{"Language": "言語", "Menu": "メニュー", "Close menu": "メニューを閉じる", "Copied": "コピーしました", "Copied ✓": "コピーしました ✓", "Copy it by hand: {text}": "手動でコピーしてください: {text}", "Copy the Kleo server address": "Kleoのサーバーアドレスをコピー", "Copy the argument {value}": "引数 {value} をコピー", "Copy this prompt": "このプロンプトをコピー", "Copy the {what} snippet": "{what} のスニペットをコピー", "Copy the {what} text": "{what} のテキストをコピー", "Treatment · logline, angle, acts · look: realistic": "トリートメント · ログライン、切り口、幕構成 · ルック: 実写", "Storyboard · direction, scenes, shots · 23 credits, confirmed": "絵コンテ · 演出、シーン、ショット · 23クレジット、確定", "Generating the shots as footage · 4 of 11 · ~22 min left": "ショットを映像として生成中 · 11本中4本 · 残り約22分", "Generating the shots as footage · 8 of 11 · ~12 min left": "ショットを映像として生成中 · 11本中8本 · 残り約12分", "Narration · one voice, English · cutting the shots on the words": "ナレーション · ひとつの声、英語 · 言葉に合わせてショットをカット", "Finish · 2160×3840 · 60 fps · quality check": "仕上げ · 2160×3840 · 60 fps · 品質チェック", "Done · 28 min · link ready for 7 days": "完了 · 28分 · リンクは7日間有効", "done": "完了", "running": "実行中", "A whole number from {min} to {max} seconds": "{min}〜{max}秒の整数", "{s} s {product} = {n} credits": "{s}秒の{product} = {n}クレジット", "film": "フィルム", "animatic": "アニマティック"}</script>
+<!-- /i18n:head -->
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kleo AI">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="Kleoのフィルムのルック — 実写、アニメーション、Cinema、Stickman">
+<meta property="og:description" content="Kleoの4つのルックを実際のサンプルとともに。実写の実写映像、2Dアニメーションのフィルム、そしてエンジンがリアルタイムで描く Cinema と Stickman。ひとつのワークフロー、4K 60 fps。">
+<meta property="og:url" content="https://kleooai.com/ja/styles.html">
+<meta property="og:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta property="og:image:alt" content="Kleo AI — 演出は人間。制作はエージェント。">
+<meta property="og:image:width" content="2400">
+<meta property="og:image:height" content="1260">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kleoのフィルムのルック — 実写、アニメーション、Cinema、Stickman">
+<meta name="twitter:description" content="Kleoの4つのルックを実際のサンプルとともに。実写の実写映像、2Dアニメーションのフィルム、そしてエンジンがリアルタイムで描く Cinema と Stickman。ひとつのワークフロー、4K 60 fps。">
+<meta name="twitter:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta name="theme-color" content="#0A0C10">
+<link rel="icon" href="/brand/kleo-favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/brand/kleo-favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/brand/kleo-icon-dark-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/site.css?v=20260920">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://kleooai.com/#website",
+      "name": "Kleo AI",
+      "alternateName": "Kleo",
+      "url": "https://kleooai.com/ja/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kleooai.com/ja/styles.html#page",
+      "url": "https://kleooai.com/ja/styles.html",
+      "name": "Kleoのフィルムのルック — 実写、アニメーション、Cinema、Stickman",
+      "description": "Kleoの4つのルックを実際のサンプルとともに。実写の実写映像、2Dアニメーションのフィルム、そしてエンジンがリアルタイムで描く Cinema と Stickman。ひとつのワークフロー、4K 60 fps。",
+      "inLanguage": "ja",
+      "isPartOf": {
+        "@id": "https://kleooai.com/#website"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "ホーム",
+          "item": "https://kleooai.com/ja/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "フィルムのルック",
+          "item": "https://kleooai.com/ja/styles.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<script src="/site.js?v=20260920" defer></script>
+</head>
+<body>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" aria-label="メイン">
+  <div class="wrap">
+    <a class="brand" href="/ja/" aria-label="Kleo、ホーム">
+      <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+        <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+        <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+      </svg>
+      Kleo <span class="tag">MCP</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="site-menu">
+      <svg class="bars" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 5h14M2 9h14M2 13h14"/></svg>
+      <svg class="x" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 4l10 10M14 4L4 14"/></svg>
+    </button>
+    <div class="nav-links" id="site-menu">
+      <a href="/ja/ai-youtube-video-generator/">動画を作る</a> <a href="/ja/examples/">作品例</a> <a href="/ja/styles.html" aria-current="page">ルック</a> <a href="/ja/pricing/">料金</a> <a href="/ja/faq/">FAQ</a>
+    </div>
+    <a class="btn btn-primary btn-sm" href="/ja/connect/">Kleoを接続</a>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="styles-hero" id="top">
+  <div class="wrap">
+    <div>
+      <div class="osd"><span class="rec" aria-hidden="true"></span> REC · 4つのルック<span class="osd-more"> · ひとつのフィルム</span></div>
+      <h1>4つのルック。<br><span class="hl">ひとつのフィルム。</span></h1>
+      <p>Kleoが作る動画は一種類、ナレーション付きの完全なフィルムです。サーバーのスタイル切り替えには今日2つのルックがあります——実写は写真的な光を持つ生成された実写映像、アニメーションは2Dアニメーションのフィルム——そしてさらに2つ、Cinema と Stickman をKeouエンジンがリアルタイムで描きます。それぞれのルックを実際のサンプルとともに以下に示します。フィルムごとにルックはひとつ、1フレームも存在する前に決まります。どのルックでも、同じワークフローと同じ4K 60 fpsのマスターです。</p>
+      <div class="looks">
+        <a class="look" href="#realistic" data-look="realistic" style="--c:var(--teal)"><i></i>実写</a> <a class="look" href="#animation" data-look="animation" style="--c:var(--amber)"><i></i>アニメーション</a> <a class="look" href="#cinema" data-look="cinema" style="--c:var(--blue)"><i></i>Cinema</a> <a class="look" href="#stickman" data-look="stickman" style="--c:var(--ink)"><i></i>Stickman</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOOKS ============ -->
+<section id="looks">
+  <div class="wrap">
+
+    <article class="style-row wide" id="realistic" style="--c:var(--teal)">
+      <div class="style-films">
+        <div class="film">
+          <div class="style-media wide">
+            <video src="/samples/realistic-tether.mp4" poster="/samples/realistic-tether.jpg" width="1920" height="1080" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback"
+                   aria-label="Tether、Kleoの実写ルックで作った20秒のフィルム。ヘルメットの中の宇宙飛行士の顔から、彼がつながれたステーションまで、途切れないひとつのプルバック。画面に入っている間、無音で再生。"></video>
+            <span class="style-live" aria-hidden="true"><i></i>再生中</span>
+          </div>
+          <div class="film-cap"><b>Tether</b><span>20秒 · ワンショット · 16:9 · 4K 60 fps、1080pで表示</span></div>
+          <p class="film-note">一度も途切れないプルバック。ヘルメットの中、宇宙飛行士の顔とガラスに映る息から始まります。手袋をした手が上がり、バイザーが赤く染まり、両腕を広げて漂う彼からカメラは引き続け、背中のパックから伸びる金色のラインがステーションとそのソーラーパネルに届くまで。すべてのフレームが生成された映像です。言葉は一切なし。彼の呼吸音と低いうなりだけ。</p>
+          <p class="film-note"><a href="/ja/examples/tether/">Tether を専用ページで見る →</a></p>
+        </div>
+        <div class="film">
+          <div class="style-media wide">
+            <video src="/samples/realistic-signal.mp4" poster="/samples/realistic-signal.jpg" width="1920" height="1080" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback"
+                   aria-label="Signal Delay、Kleoの実写ルックでレンダリングされたボイジャー1号のドキュメンタリーの冒頭1分。ゆっくりと寄っていく写真の静止画、手描きの琥珀色の図、黒地の日付、隅の2つの時計。画面に入っている間、無音で再生。"></video>
+            <span class="style-live" aria-hidden="true"><i></i>再生中</span>
+          </div>
+          <div class="film-cap"><b>Signal Delay</b><span>6分55秒 · 冒頭 0:00〜1:02 · 16:9ファイル内の2.39:1 · 4K 60 fps、1080pで表示</span></div>
+          <p class="film-note">5か月にわたるミッションログとして語られるドキュメンタリー。2023年11月14日、ボイジャー1号が1と0のひとつのパターンを繰り返し始め、問いかけひとつに光の速さで45時間かかりました。ひとりのナレーターが、読み出しデータ、壊れたチップ、1970年代のアセンブリで手作業により移されたコードをたどります。ゆっくりと寄っていく写真の静止画、手描きの琥珀色の図、ターミナルウィンドウ、黒地の日付、隅の2つの時計、35 mmの粒子、2.39:1、静かな音楽と字幕。ここではタイトルまでの冒頭1分を。Kleoの実写ルックでレンダリング、全編はサイトにありません。</p>
+          <p class="film-note"><a href="/ja/examples/signal-delay/">Signal Delay を専用ページで見る →</a></p>
+        </div>
+        <div class="film">
+          <div class="style-media wide">
+            <video src="/samples/realistic-apex.mp4" poster="/samples/realistic-apex.jpg" width="1920" height="1080" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback"
+                   aria-label="Apex、Kleoの実写ルックで作った20秒のフィルム。黄色のスーパーカーと淡い緑のクラシッククーペが、琥珀色に照らされたトンネルを並走し、ゴールデンアワーの海岸道路へ抜けていく。画面に入っている間、無音で再生。"></video>
+            <span class="style-live" aria-hidden="true"><i></i>再生中</span>
+          </div>
+          <div class="film-cap"><b>Apex</b><span>20秒 · 16:9 · 4K 60 fps、1080pで表示</span></div>
+          <p class="film-note">黄色のスーパーカーと淡い緑のクラシッククーペがカメラに正面を向けて並び、頭上を琥珀色のライトの列が流れていく。トンネルが終わり、道はゴールデンアワーの崖沿いの海岸に開け、傍らの海は平らで明るい。光の変化の中で保たれる2つの被写体、すべてのフレームが生成された映像。</p>
+          <p class="film-note"><a href="/ja/examples/apex/">Apex を専用ページで見る →</a></p>
+        </div>
+      </div>
+      <div>
+        <div class="style-n">01 · ルック</div>
+        <div class="style-name"><h2>実写</h2><button class="style-arg" type="button" data-copy='style: "realistic"' aria-label="実写のスタイル引数をコピー">style: "realistic"</button></div>
+        <p class="style-lead">写真的な光、本物の質感、動くカメラ、4K 60 fps。同じルックが、フレームに何も載せない生成ワンテイクも、日付と図とナレーター付きの7分のドキュメンタリーも運びます。画面に何が現れるかはプリセットではなくフィルムが決めます。3本のフィルム、ひとつのルック。</p>
+        <ul class="style-facts">
+          <li><b>出力</b><span>4K · 60 fps、YouTube向けの16:9かショート向けの9:16、15秒から5分</span></li>
+          <li><b>映像</b><span>フィルムでは、各ショットがそれぞれのフレームから動く映像として生成。アニマティックでは、同じフレームの上をカメラが動く</span></li>
+          <li><b>フレーム上</b><span>フィルムのトリートメントが求めない限り何もなし（Signal Delay は求めました）。ナレーターはひとり</span></li>
+        </ul>
+        <p class="style-say copyable">「20秒のフィルム、16:9、実写ルック: ヘルメットの中の宇宙飛行士の顔から、彼がつながれたステーションまで、途切れないひとつのプルバック。言葉はなし、呼吸音だけ。」<button class="btn btn-ghost btn-sm copy" type="button" data-copy="A 20-second film, 16:9, realistic look: one continuous pull-back from an astronaut’s face inside his helmet to the station he’s tethered to. No words, just his breathing.">コピー</button></p>
+      </div>
+    </article>
+
+    <article class="style-row" id="animation" style="--c:var(--amber)">
+      <div class="style-media">
+        <video src="/samples/animation-octopus.mp4" poster="/samples/animation-octopus.jpg" width="608" height="1080" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback"
+               aria-label="アニメーションのサンプル、Why Octopuses Have 3 Hearts and Blue Blood: 描かれた赤いタコ、チャプターピル、言葉に合わせてカットされる大きな字幕"></video>
+        <span class="style-live" aria-hidden="true"><i></i>再生中</span>
+      </div>
+      <div>
+        <div class="style-n">02 · ルック</div>
+        <div class="style-name"><h2>アニメーション</h2><button class="style-arg" type="button" data-copy='style: "animation"' aria-label="アニメーションのスタイル引数をコピー">style: "animation"</button></div>
+        <p class="style-lead">2Dアニメーションのフィルム。描かれた背景、ショットからショットへ同じまま保たれる手描きのキャラクター、英語かイタリア語のナレーターひとり。今日サーバーで稼働中で、同じワークフロー、同じ4K 60 fpsのマスター、実写ルックと同じ価格です。フィルムは1クレジットで2秒、10クレジットから。このルックのアニマティックは5クレジット。</p>
+        <p class="film-note"><b>Why Octopuses Have 3 Hearts and Blue Blood</b> — 32秒のショート、9:16。接続したアシスタント（OpenCodeが自力で、絵コンテも含めて）が一文から作りました。描かれた赤いタコ、ショットごとに一枚の画とゆっくりとしたカメラの動き、チャプターピル、話される言葉に合わせて光る大きな字幕。1080pで表示、無音。サーバーのアニメーションルックは今やさらに一歩進んでいます。フィルムでは各ショットがその描かれたフレームから動く映像として生成され、フィルムのトリートメントが求めない限りフレームには何も載りません。アニマティックは、このサンプルのように、描かれたフレームの上をカメラが動きます。</p>
+        <ul class="style-facts">
+          <li><b>出力</b><span>4K · 60 fps、YouTube向けの16:9かショート向けの9:16、15秒から5分</span></li>
+          <li><b>映像</b><span>描かれた背景、ショットをまたいで同じまま保たれる手描きのキャラクター。フィルムでは各ショットがそれぞれのフレームから生成</span></li>
+          <li><b>価格</b><span>実写ルックと同じ。フィルムは1クレジット = 2秒、最低10クレジット、40秒のショートは20クレジット。アニマティックは一律5クレジット</span></li>
+        </ul>
+        <p class="film-note"><a href="/ja/examples/octopus/">タコのショートを専用ページで見る →</a></p>
+        <p class="style-say copyable">「40秒のショートを作って。アニメーションルック、タコに心臓が3つあって血が青い理由について。英語ナレーションで。」<button class="btn btn-ghost btn-sm copy" type="button" data-copy="Make me a 40-second Short, animation look, about why octopuses have three hearts and blue blood. English narration.">コピー</button></p>
+      </div>
+    </article>
+
+    <article class="style-row" id="cinema" style="--c:var(--blue)">
+      <div class="style-media">
+        <video src="/samples/cinema.mp4" poster="/samples/cinema.jpg" width="1080" height="1920" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback"
+               aria-label="Cinemaのサンプル: パース空港で押収されたWiFi Pineapple"></video>
+        <span class="style-live" aria-hidden="true"><i></i>再生中</span>
+      </div>
+      <div>
+        <div class="style-n">03 · ルック · エンジンが描く</div>
+        <div class="style-name"><h2>Cinema</h2><button class="style-arg" type="button" data-copy='kleo_style: "cyber"' aria-label="Cinemaのスタイル引数をコピー">kleo_style: "cyber"</button></div>
+        <p class="style-lead">ビートごとにひとつのヒーロービジュアルを、漂う光の筋とコーナーブラケットのある黒に近い地の上に、光るラインアートで描きます。チャプターラベル、言葉に合わせて叩き込まれるキネティックタイポグラフィ、チャプターのアクセントカラーでキーワードを強調したタイトルロックアップ、一語だけ緑にした白い字幕。すべてのビートが、実際に聞こえる言葉に固定されたハードカット。26秒に25ショット、どれも1.7秒以下です。</p>
+        <ul class="style-facts">
+          <li><b>向いている題材</b><span>テック、セキュリティ、ガジェット、数字の入ったニュース</span></li>
+          <li><b>フォーマット</b><span>9:16と16:9</span></li>
+          <li><b>画像</b><span>なし。シーンごとに5〜8ビートをKeouエンジンがリアルタイムで描く</span></li>
+        </ul>
+        <p class="style-say">「警察が乗客のバッグからWiFi Pineappleを取り出した: 25秒のショートに、cinemaスタイルで。」</p>
+        <p class="film-note">エンジンのルックです。今日のアシスタントのスタイル切り替え（実写とアニメーション）にはなく、絵コンテの中でエンジン名<code>kleo_style: "cyber"</code>で指定します。</p>
+      </div>
+    </article>
+
+    <article class="style-row" id="stickman" style="--c:var(--ink)">
+      <div class="style-media">
+        <video src="/samples/stickman-omg.mp4" poster="/samples/stickman-omg.jpg" width="1080" height="1920" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback"
+               aria-label="Stickmanのサンプル: コンピュータが隠された充電ケーブル"></video>
+        <span class="style-live" aria-hidden="true"><i></i>再生中</span>
+      </div>
+      <div>
+        <div class="style-n">04 · ルック · エンジンが描く</div>
+        <div class="style-name"><h2>Stickman</h2><button class="style-arg" type="button" data-copy='kleo_style: "stickman"' aria-label="Stickmanのスタイル引数をコピー">kleo_style: "stickman"</button></div>
+        <p class="style-lead">黒地に白のラインアート、手で描いたかのように。棒人間が本物の物——ケーブル、ノートPC、充電器でいっぱいの引き出し——を使って物語を演じ、危険なものだけに色が付きます。プラグの中の赤い回路、青い信号、黄色の値札。一語だけ緑にした太い字幕。あえて素朴に、あえて可笑しく、ストック映像だらけのフィードの中でひと目でわかります。</p>
+        <ul class="style-facts">
+          <li><b>向いている題材</b><span>ガジェット、詐欺、ひねりのあるセキュリティの話</span></li>
+          <li><b>フォーマット</b><span>9:16のみ</span></li>
+          <li><b>画像</b><span>なし。すべてKeouエンジンがリアルタイムで描く</span></li>
+        </ul>
+        <p class="style-say">「この充電ケーブルの中にはコンピュータが隠されている: 25秒のショートに、stickmanスタイルで。」</p>
+        <p class="film-note">エンジンのルックです。今日のアシスタントのスタイル切り替え（実写とアニメーション）にはなく、絵コンテの中でエンジン名<code>kleo_style: "stickman"</code>で指定します。</p>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ============ HOW A FILM IS BUILT ============ -->
+<section id="how">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">05</span>ワークフロー</div>
+        <h2>フィルムはどう組み立てられるか</h2>
+      </div>
+      <p class="lede">ルックはひとつのパイプラインを共有します。ルックは最初のステップ、トリートメントで決まり、その後のすべて——絵コンテ、各ショット、ナレーション、カット、4K 60 fpsのレンダリング——はその決定のもとで生成されます。</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="num" aria-hidden="true">01</span> <span class="tc">kleo_adapt_prompt</span>
+        <h3>トリートメント</h3>
+        <p>アシスタントが依頼を<code>kleo_adapt_prompt</code>に渡し、それがインテーク——題材、長さ、フォーマット、ルック、任意で視聴者、トーン、必ず入れたいもの——に照らして読み、足りないものを推測せずに尋ねます。返ってくるのがトリートメントです。ログライン、切り口、オープニング、幕構成、結末、ルック、テンポ、ナレーター。ルックはここで、1フレームも存在する前に決まります。</p>
+      </div>
+      <div class="step">
+        <span class="num" aria-hidden="true">02</span> <span class="tc">kleo_storyboard_guide</span>
+        <h3>絵コンテ</h3>
+        <p><code>kleo_storyboard_guide</code>が、そのトリートメントのもとで絵コンテをどう書くかを示します。演出ブロック、シーン、ショット、制限。</p>
+      </div>
+      <div class="step">
+        <span class="num" aria-hidden="true">03</span> <span class="tc">kleo_create_video</span>
+        <h3>映像とナレーション</h3>
+        <p><code>kleo_create_video</code>がすべてを確認し、正確なクレジット数を提示して、そのジョブのためにレンタルしたGPUでレンダリングを開始します。受け付けるまで一切課金されません。フィルムでは、各ショットがトリートメントの選んだルックで、それぞれのフレームから動く映像として生成されます。アニマティックでは、描かれた各フレームの上をカメラが動きます。ひとりのナレーターが英語かイタリア語で声を当てます。BGMなし、字幕なし。</p>
+      </div>
+      <div class="step">
+        <span class="num" aria-hidden="true">04</span> <span class="tc">kleo_get_result</span>
+        <h3>レンダリング</h3>
+        <p>ショットとナレーションがひとつのフィルムにカットされます。フィルムのトリートメントが求めない限り、フレームには何も載りません。4K 60 fpsのMP4、16:9なら3840×2160、9:16なら2160×3840、レンタルしたGPU上で通常25〜35分。アシスタントが進行を追い、<code>kleo_get_result</code>がリンク（7日間有効）を手渡します。</p>
+      </div>
+    </div>
+    <p class="tpl-more">どのルックでも、標準のフィルムにあるのはひとりのナレーターだけで、それ以外は何もありません。BGMなし、字幕なし、画面上のテキストなし。日付、図、字幕は、Signal Delay のトリートメントがそうしたように、フィルムのトリートメントが求めたときにだけ現れます。</p>
+  </div>
+</section>
+
+<!-- ============ HOW A SCENE IS CUT ============ -->
+<section id="scene">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">06</span>シーンはどうカットされるか</div>
+        <h2>スライドショーではない。<br>一行のセリフを、ショットに刻む。</h2>
+      </div>
+      <p class="lede">ナレーションの各行がシーンになり、各シーンがショットにカットされます。Kleoはすべてのショットに説明を書き、それぞれのフレームから生成し、実際に聞こえる言葉にカットのタイミングを合わせます。下の一行をご覧ください。</p>
+    </div>
+    <div class="scene">
+      <div>
+        <p class="line" id="line" aria-label="Captain Mara buried her treasure on Skull Beach in 1720. She never came back, and nobody knows why."></p>
+        <div class="line-foot"><span>ナレーション · 9秒</span><button type="button" id="replay">↻ もう一度再生</button></div>
+      </div>
+      <div class="shots" id="shots" aria-label="このシーンの3つのショット">
+        <div class="shot" data-from="0"><div class="frame" aria-hidden="true"><svg viewBox="0 0 90 120" aria-hidden="true"><circle cx="45" cy="52" r="13" fill="var(--amber)" opacity=".9"/><path d="M0 78 Q45 70 90 78 V120 H0Z" fill="var(--amber-soft)"/><path d="M0 78 Q45 70 90 78" stroke="var(--amber)" stroke-width="1.2" fill="none" opacity=".7"/><rect x="38" y="84" width="16" height="10" rx="2" fill="var(--ink)" opacity=".8"/><path d="M38 84 q8 -6 16 0" stroke="var(--ink)" stroke-width="1.5" fill="none" opacity=".8"/></svg></div><b>ショット 01</b><span>夕日の金色の浜辺で宝箱を埋める船長。</span><em class="cutword">Captain</em></div>
+        <div class="shot" data-from="11"><div class="frame" aria-hidden="true"><svg viewBox="0 0 90 120" aria-hidden="true"><circle cx="18" cy="62" r="9" fill="var(--amber)" opacity=".6"/><path d="M0 80 Q45 74 90 80 V120 H0Z" fill="var(--amber-soft)"/><path d="M0 80 Q45 74 90 80" stroke="var(--amber)" stroke-width="1.2" fill="none" opacity=".7"/><g stroke="var(--ink)" stroke-width="1.8" stroke-linecap="round" fill="none" opacity=".85"><circle cx="64" cy="64" r="3.5"/><path d="M64 68 v12 M64 74 l-5 6 M64 74 l5 5 M64 80 l-4 9 M64 80 l5 8"/></g></svg></div><b>ショット 02</b><span>彼女は海岸線に沿って歩き去り、宝箱は消えている。</span><em class="cutword">never</em></div>
+        <div class="shot" data-from="15"><div class="frame" aria-hidden="true"><svg viewBox="0 0 90 120" aria-hidden="true"><path d="M52 32 a12 12 0 1 0 10 18 a9 9 0 1 1 -10 -18z" fill="var(--ink)" opacity=".8"/><g fill="var(--ink)" opacity=".5"><circle cx="20" cy="28" r="1.2"/><circle cx="30" cy="48" r="1"/><circle cx="74" cy="24" r="1.3"/><circle cx="80" cy="56" r=".9"/></g><path d="M0 80 Q45 74 90 80 V120 H0Z" fill="var(--line)"/><path d="M0 80 Q45 74 90 80" stroke="var(--ink-2)" stroke-width="1" fill="none" opacity=".5"/></svg></div><b>ショット 03</b><span>夜の同じ浜辺、誰もいない。</span><em class="cutword">nobody</em></div>
+      </div>
+    </div>
+    <p class="scene-foot">同じキャラクターはすべてのショットで同じように描写されるので、3ショット後でも船長は船長のままです。</p>
+  </div>
+</section>
+
+<!-- ============ START ============ -->
+<section class="cta one" id="start">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow"><span class="n">07</span>はじめる</div>
+      <h2>ルックを名前で指定する。</h2>
+      <p class="lede">フィルムごとにルックはひとつ、1フレームも存在する前にトリートメントで決まります。フィルムでも5クレジットのアニマティックでも、同じワークフロー、同じ4K 60 fpsのマスター、同じ価格です。</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/ja/connect/">Kleoを接続 <span class="arr" aria-hidden="true">→</span></a> <a class="btn btn-ghost" href="/ja/pricing/">料金を見る</a>
+      </div>
+      <p class="lede"><a href="/ja/video-generation-mcp/">ツールをひとつずつ: MCPドキュメント →</a></p>
+      <p class="lede"><a href="/ja/examples/">すべての作品例 →</a></p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<!-- i18n:langs -->
+<nav class="langs" aria-label="言語">
+  <div class="wrap">
+    <span>言語</span>
+    <a href="/styles.html" hreflang="en" lang="en">English</a>
+    <a href="/it/styles.html" hreflang="it" lang="it">Italiano</a>
+    <a href="/de/styles.html" hreflang="de" lang="de">Deutsch</a>
+    <a href="/fr/styles.html" hreflang="fr" lang="fr">Français</a>
+    <a href="/es/styles.html" hreflang="es" lang="es">Español</a>
+    <a href="/pt/styles.html" hreflang="pt" lang="pt">Português</a>
+    <a href="/nl/styles.html" hreflang="nl" lang="nl">Nederlands</a>
+    <a href="/pl/styles.html" hreflang="pl" lang="pl">Polski</a>
+    <a href="/tr/styles.html" hreflang="tr" lang="tr">Türkçe</a>
+    <a href="/ru/styles.html" hreflang="ru" lang="ru">Русский</a>
+    <a href="/uk/styles.html" hreflang="uk" lang="uk">Українська</a>
+    <b lang="ja">日本語</b>
+    <a href="/ko/styles.html" hreflang="ko" lang="ko">한국어</a>
+    <a href="/zh/styles.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+    <a href="/zh-tw/styles.html" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+    <a href="/ar/styles.html" hreflang="ar" lang="ar">العربية</a>
+    <a href="/he/styles.html" hreflang="he" lang="he">עברית</a>
+    <a href="/hi/styles.html" hreflang="hi" lang="hi">हिन्दी</a>
+    <a href="/id/styles.html" hreflang="id" lang="id">Bahasa Indonesia</a>
+    <a href="/vi/styles.html" hreflang="vi" lang="vi">Tiếng Việt</a>
+    <a href="/th/styles.html" hreflang="th" lang="th">ไทย</a>
+  </div>
+</nav>
+<!-- /i18n:langs -->
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">
+      <a class="brand" href="/ja/" aria-label="Kleo、ホーム">
+        <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+          <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+          <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+        </svg>
+        Kleo <span class="tag">MCP</span>
+      </a>
+      <span>演出は人間。制作はエージェント。</span>
+    </div>
+    <div class="links">
+      <a href="/ja/connect/">接続</a> <a href="/ja/integrations/claude/">Claude</a> <a href="/ja/integrations/chatgpt/">ChatGPT</a> <a href="/ja/video-generation-mcp/">MCPドキュメント</a> <a href="/ja/examples/">作品例</a> <a href="/ja/styles.html">ルック</a> <a href="/ja/pricing/">料金</a> <a href="/ja/faq/">FAQ</a> <a href="/ja/about/">Kleoについて</a> <a href="/ja/privacy.html">プライバシー</a> <a href="/ja/terms.html">利用規約</a> <a href="https://github.com/tonnooooo/kleo-mcp">GitHub</a> <a href="mailto:kleooai@gmail.com">kleooai@gmail.com</a>
+    </div>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite">コピーしました</div>
+</body>
+</html>

@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="th" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.remove("no-js")</script>
+<title>เอกสาร Kleo MCP — เอนด์พอยต์ OAuth และเครื่องมือ</title>
+<meta name="description" content="เอกสารเซิร์ฟเวอร์ MCP ระยะไกลของ Kleo: เอนด์พอยต์ Streamable HTTP, OAuth 2.1 ในปุ่มเดียว เครื่องมือ kleo แต่ละตัวตามลำดับที่ทำงาน กฎราคา และผลลัพธ์">
+<link rel="canonical" href="https://kleooai.com/th/video-generation-mcp/">
+<!-- i18n:head -->
+<link rel="alternate" hreflang="en" href="https://kleooai.com/video-generation-mcp/">
+<link rel="alternate" hreflang="it" href="https://kleooai.com/it/video-generation-mcp/">
+<link rel="alternate" hreflang="de" href="https://kleooai.com/de/video-generation-mcp/">
+<link rel="alternate" hreflang="fr" href="https://kleooai.com/fr/video-generation-mcp/">
+<link rel="alternate" hreflang="es" href="https://kleooai.com/es/video-generation-mcp/">
+<link rel="alternate" hreflang="pt" href="https://kleooai.com/pt/video-generation-mcp/">
+<link rel="alternate" hreflang="nl" href="https://kleooai.com/nl/video-generation-mcp/">
+<link rel="alternate" hreflang="pl" href="https://kleooai.com/pl/video-generation-mcp/">
+<link rel="alternate" hreflang="tr" href="https://kleooai.com/tr/video-generation-mcp/">
+<link rel="alternate" hreflang="ru" href="https://kleooai.com/ru/video-generation-mcp/">
+<link rel="alternate" hreflang="uk" href="https://kleooai.com/uk/video-generation-mcp/">
+<link rel="alternate" hreflang="ja" href="https://kleooai.com/ja/video-generation-mcp/">
+<link rel="alternate" hreflang="ko" href="https://kleooai.com/ko/video-generation-mcp/">
+<link rel="alternate" hreflang="zh-Hans" href="https://kleooai.com/zh/video-generation-mcp/">
+<link rel="alternate" hreflang="zh-Hant" href="https://kleooai.com/zh-tw/video-generation-mcp/">
+<link rel="alternate" hreflang="ar" href="https://kleooai.com/ar/video-generation-mcp/">
+<link rel="alternate" hreflang="he" href="https://kleooai.com/he/video-generation-mcp/">
+<link rel="alternate" hreflang="hi" href="https://kleooai.com/hi/video-generation-mcp/">
+<link rel="alternate" hreflang="id" href="https://kleooai.com/id/video-generation-mcp/">
+<link rel="alternate" hreflang="vi" href="https://kleooai.com/vi/video-generation-mcp/">
+<link rel="alternate" hreflang="th" href="https://kleooai.com/th/video-generation-mcp/">
+<link rel="alternate" hreflang="x-default" href="https://kleooai.com/video-generation-mcp/">
+<script>(function(){try{var L=["it", "de", "fr", "es", "pt", "nl", "pl", "tr", "ru", "uk", "ja", "ko", "zh", "zh-tw", "ar", "he", "hi", "id", "vi", "th"],A={"zh-hk": "zh-tw", "zh-mo": "zh-tw", "zh-hant": "zh-tw", "zh-hans": "zh", "zh-cn": "zh", "zh-sg": "zh", "nb": "no", "nn": "no"},p=location.pathname,m=p.match(/^\/([a-z]{2}(?:-[a-z]{2})?)(?=\/)/),on=m&&L.indexOf(m[1])>=0?m[1]:"en",rest=on==="en"?p:p.slice(on.length+1),want=null,s=null;try{s=localStorage.getItem("kleo-lang")}catch(e){}if(s==="en"||L.indexOf(s)>=0)want=s;else{var nl=navigator.languages||[navigator.language||""];for(var i=0;i<nl.length&&!want;i++){var t=String(nl[i]).toLowerCase(),b=t.split("-")[0];t=A[t]||t;b=A[b]||b;want=t==="en"||b==="en"?"en":L.indexOf(t)>=0?t:L.indexOf(b)>=0?b:null}}if(want&&want!==on&&!/404/.test(p))location.replace((want==="en"?"":"/"+want)+rest+location.search+location.hash)}catch(e){}})()</script>
+<script type="application/json" id="i18n">{"Language": "ภาษา", "Menu": "เมนู", "Close menu": "ปิดเมนู", "Copied": "คัดลอกแล้ว", "Copied ✓": "คัดลอกแล้ว ✓", "Copy it by hand: {text}": "คัดลอกด้วยตนเอง: {text}", "Copy the Kleo server address": "คัดลอกที่อยู่เซิร์ฟเวอร์ของ Kleo", "Copy the argument {value}": "คัดลอกอาร์กิวเมนต์ {value}", "Copy this prompt": "คัดลอกพรอมต์นี้", "Copy the {what} snippet": "คัดลอกสนิปเพต {what}", "Copy the {what} text": "คัดลอกข้อความ {what}", "Treatment · logline, angle, acts · look: realistic": "ทรีตเมนต์ · ล็อกไลน์ มุมมอง องก์ · ลุค: สมจริง", "Storyboard · direction, scenes, shots · 23 credits, confirmed": "สตอรีบอร์ด · การกำกับ ฉาก ช็อต · 23 เครดิต ยืนยันแล้ว", "Generating the shots as footage · 4 of 11 · ~22 min left": "กำลังสร้างช็อตเป็นฟุตเทจ · 4 จาก 11 · เหลืออีก ~22 นาที", "Generating the shots as footage · 8 of 11 · ~12 min left": "กำลังสร้างช็อตเป็นฟุตเทจ · 8 จาก 11 · เหลืออีก ~12 นาที", "Narration · one voice, English · cutting the shots on the words": "เสียงบรรยาย · หนึ่งเสียง ภาษาอังกฤษ · ตัดต่อช็อตให้ลงจังหวะคำพูด", "Finish · 2160×3840 · 60 fps · quality check": "ขั้นสุดท้าย · 2160×3840 · 60 fps · ตรวจสอบคุณภาพ", "Done · 28 min · link ready for 7 days": "เสร็จสิ้น · 28 นาที · ลิงก์พร้อมใช้ 7 วัน", "done": "เสร็จสิ้น", "running": "กำลังทำงาน", "A whole number from {min} to {max} seconds": "จำนวนเต็มตั้งแต่ {min} ถึง {max} วินาที", "{s} s {product} = {n} credits": "{product} {s} วินาที = {n} เครดิต", "film": "ภาพยนตร์", "animatic": "แอนิเมติก"}</script>
+<!-- /i18n:head -->
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kleo AI">
+<meta property="og:locale" content="th_TH">
+<meta property="og:title" content="เอกสาร Kleo MCP — เอนด์พอยต์ OAuth และเครื่องมือ">
+<meta property="og:description" content="เอกสารเซิร์ฟเวอร์ MCP ระยะไกลของ Kleo: เอนด์พอยต์ Streamable HTTP, OAuth 2.1 ในปุ่มเดียว เครื่องมือ kleo แต่ละตัวตามลำดับที่ทำงาน กฎราคา และผลลัพธ์">
+<meta property="og:url" content="https://kleooai.com/th/video-generation-mcp/">
+<meta property="og:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta property="og:image:alt" content="Kleo AI — มนุษย์กำกับ เอเจนต์สร้างภาพยนตร์">
+<meta property="og:image:width" content="2400">
+<meta property="og:image:height" content="1260">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="เอกสาร Kleo MCP — เอนด์พอยต์ OAuth และเครื่องมือ">
+<meta name="twitter:description" content="เอกสารเซิร์ฟเวอร์ MCP ระยะไกลของ Kleo: เอนด์พอยต์ Streamable HTTP, OAuth 2.1 ในปุ่มเดียว เครื่องมือ kleo แต่ละตัวตามลำดับที่ทำงาน กฎราคา และผลลัพธ์">
+<meta name="twitter:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta name="theme-color" content="#0A0C10">
+<link rel="icon" href="/brand/kleo-favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/brand/kleo-favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/brand/kleo-icon-dark-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/site.css?v=20260920">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://kleooai.com/#website",
+      "name": "Kleo AI",
+      "alternateName": "Kleo",
+      "url": "https://kleooai.com/th/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kleooai.com/th/video-generation-mcp/#page",
+      "url": "https://kleooai.com/th/video-generation-mcp/",
+      "name": "เอกสาร Kleo MCP — เอนด์พอยต์ OAuth และเครื่องมือ",
+      "description": "เอกสารเซิร์ฟเวอร์ MCP ระยะไกลของ Kleo: เอนด์พอยต์ Streamable HTTP, OAuth 2.1 ในปุ่มเดียว เครื่องมือ kleo แต่ละตัวตามลำดับที่ทำงาน กฎราคา และผลลัพธ์",
+      "inLanguage": "th",
+      "isPartOf": {
+        "@id": "https://kleooai.com/#website"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "หน้าแรก",
+          "item": "https://kleooai.com/th/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "เอกสาร MCP",
+          "item": "https://kleooai.com/th/video-generation-mcp/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<script src="/site.js?v=20260920" defer></script>
+</head>
+<body>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" aria-label="หลัก">
+  <div class="wrap">
+    <a class="brand" href="/th/" aria-label="Kleo หน้าแรก">
+      <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+        <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+        <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+      </svg>
+      Kleo <span class="tag">MCP</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="เมนู" aria-expanded="false" aria-controls="site-menu">
+      <svg class="bars" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 5h14M2 9h14M2 13h14"/></svg>
+      <svg class="x" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 4l10 10M14 4L4 14"/></svg>
+    </button>
+    <div class="nav-links" id="site-menu">
+      <a href="/th/ai-youtube-video-generator/">สร้างวิดีโอ</a> <a href="/th/examples/">ตัวอย่าง</a> <a href="/th/styles.html">ลุค</a> <a href="/th/pricing/">ราคา</a> <a href="/th/faq/">คำถามที่พบบ่อย</a>
+    </div>
+    <a class="btn btn-primary btn-sm" href="/th/connect/">เชื่อมต่อ Kleo</a>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="page-hero hero" id="top">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="เส้นทางหน้า"><a href="/th/">หน้าแรก</a><span aria-hidden="true">›</span><span>เอกสาร MCP</span></nav>
+    <h1>เซิร์ฟเวอร์ MCP<br><span class="hl">สำหรับผลิตวิดีโอ</span></h1>
+    <p class="lede">Kleo เปิดขั้นตอนการทำภาพยนตร์หนึ่งชุดให้ไคลเอนต์ MCP ใดก็ได้: รับบรีฟ ทรีตเมนต์ สตอรีบอร์ด การเรนเดอร์บน GPU ที่เช่าสำหรับงานนั้น และลิงก์ไปยังภาพยนตร์พร้อมเสียงบรรยายที่เสร็จสมบูรณ์แบบ 4K ที่ 60 fps ผู้บรรยายหนึ่งเสียง สองลุค สองผลิตภัณฑ์ (ภาพยนตร์ หรือแอนิเมติกจากสตอรีบอร์ดเดียวกัน) ความยาว 15 วินาทีถึง 5 นาที ไม่มีแอปและไม่มีแดชบอร์ด ผู้ช่วย AI ทำงานผ่านเครื่องมือด้านล่าง</p>
+    <p class="mono" id="mcpStatus" hidden></p>
+    <div class="address"><code>https://mcp.kleooai.com/mcp</code><button class="btn btn-ghost btn-sm" type="button" data-copy="https://mcp.kleooai.com/mcp">คัดลอกที่อยู่</button></div>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="/th/connect/">เชื่อมต่อ Kleo <span class="arr" aria-hidden="true">→</span></a> <a class="btn btn-ghost" href="https://github.com/tonnooooo/kleo-mcp">รีโพซิทอรีสาธารณะ</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ENDPOINT ============ -->
+<section id="endpoint">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">01</span>เอนด์พอยต์</div>
+        <h2>เชื่อมต่อผ่าน HTTPS</h2>
+      </div>
+      <p class="lede">Kleo คือเซิร์ฟเวอร์ MCP ระยะไกล: ที่อยู่เดียว ทรานสปอร์ต Streamable HTTP และ OAuth 2.1 ตั้งค่าที่อยู่ในไคลเอนต์ MCP ของคุณแล้วทำการอนุญาตให้เสร็จในเบราว์เซอร์ ไม่มีแบบฟอร์มลงทะเบียนและไม่มีรหัสผ่าน</p>
+    </div>
+    <ul class="defs">
+      <li><b>เอนด์พอยต์</b><span><code class="mono">https://mcp.kleooai.com/mcp</code></span></li>
+      <li><b>ทรานสปอร์ต</b><span>Streamable HTTP ที่อยู่เดียวกันในทุกไคลเอนต์</span></li>
+      <li><b>การยืนยันตัวตน</b><span>OAuth 2.1 ระหว่างการอนุญาต ไคลเอนต์จะเปิดหน้าของ Kleo เอง คุณคลิก <b>Start free</b> แล้วกลับมาที่ไคลเอนต์พร้อม 7 เครดิตในบัญชี ไม่มีแบบฟอร์ม ไม่ต้องใช้บัตร</span></li>
+      <li><b>เมื่อไม่มีโทเค็น</b><span>GET ไปยังเอนด์พอยต์จะตอบ <code class="mono">401</code> พร้อมเมตาดาตาของทรัพยากร OAuth นี่คือเอนด์พอยต์ของโปรโตคอล ไม่ใช่หน้าเว็บ: การเปิดในเบราว์เซอร์ไม่ใช่ขั้นตอนการเชื่อมต่อ</span></li>
+      <li><b>ไคลเอนต์</b><span>Claude, ChatGPT, Grok, Claude Code, Cursor, VS Code, OpenCode, Gemini CLI, Windsurf, แอป Gemini และ MCP SDK ใดๆ ที่ใช้ทรานสปอร์ต HTTP</span></li>
+    </ul>
+    <div class="prose">
+      <p><a href="/th/connect/">ขั้นตอนเชื่อมต่อสำหรับทุกไคลเอนต์ →</a></p>
+      <h3>จากเทอร์มินัลหรือเอดิเตอร์</h3>
+      <p>ไคลเอนต์ที่ทดสอบแล้วสองตัวเป็นตัวอย่าง ขั้นตอนอื่นๆ ตั้งแต่ Claude และ ChatGPT ไปจนถึง VS Code และ Gemini CLI อยู่ที่ <a href="/th/connect/">หน้าเชื่อมต่อ</a></p>
+    </div>
+    <div class="grid panels">
+      <article class="panel">
+        <h3>Claude Code <small>cli</small></h3>
+        <div class="code"><span class="cm"># เพิ่ม Kleo ครั้งเดียว</span> claude mcp add --transport http kleo https://mcp.kleooai.com/mcp <span class="cm"># จากนั้น ภายในเซสชัน:</span> /mcp <span class="cm">→ Kleo → Authenticate</span><button class="btn btn-ghost btn-sm copy" type="button" data-copy="claude mcp add --transport http kleo https://mcp.kleooai.com/mcp">คัดลอก</button></div>
+        <p>หน้าของ Kleo จะเปิดในเบราว์เซอร์ คลิก <b>Start free</b> แล้วคุณจะกลับมาที่ Claude Code</p>
+      </article>
+      <article class="panel">
+        <h3>Cursor <small>~/.cursor/mcp.json</small></h3>
+        <div class="code">{ <span class="k">"mcpServers"</span>: { <span class="k">"kleo"</span>: { <span class="k">"url"</span>: <span class="s">"https://mcp.kleooai.com/mcp"</span> } } }<button class="btn btn-ghost btn-sm copy" type="button" data-copy='{&#10;  "mcpServers": {&#10;    "kleo": { "url": "https://mcp.kleooai.com/mcp" }&#10;  }&#10;}'>คัดลอก</button></div>
+        <p>บันทึกไฟล์ เมื่อ Cursor เชื่อมต่อ หน้าของ Kleo จะเปิดขึ้น: คลิก <b>Start free</b> แล้วคุณจะกลับมาที่ Cursor</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WORKFLOW ============ -->
+<section id="workflow">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">02</span>ขั้นตอนการทำงาน</div>
+        <h2>ลำดับการผลิต</h2>
+      </div>
+      <p class="lede">เครื่องมือทำงานตามลำดับที่กำหนด ผู้ช่วย AI อ่านคำขอของคุณ รับทรีตเมนต์จาก <code class="mono">kleo_adapt_prompt</code> เขียนสตอรีบอร์ดตาม <code class="mono">kleo_storyboard_guide</code> แล้วจึงขอให้ Kleo เรนเดอร์</p>
+    </div>
+    <div class="tools">
+      <h3>เครื่องมือ kleo ตามลำดับที่ผู้ช่วย AI เรียกใช้</h3>
+      <div class="ttable">
+        <table>
+          <thead>
+            <tr>
+              <th>เครื่องมือ</th>
+              <th>ทำอะไร</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>kleo_adapt_prompt</td>
+              <td>อ่านคำขอเทียบกับรายการรับบรีฟ (หัวข้อ ความยาว รูปแบบ ลุค; กลุ่มผู้ชม น้ำเสียง สิ่งที่ต้องปรากฏ เป็นทางเลือก) ถามสิ่งที่ขาดไป แล้วส่งทรีตเมนต์กลับมา: ล็อกไลน์ มุมมอง ฉากเปิด องก์ ตอนจบ ลุค จังหวะ ผู้บรรยาย</td>
+            </tr>
+            <tr>
+              <td>kleo_storyboard_guide</td>
+              <td>อธิบายวิธีเขียนสตอรีบอร์ด: บล็อกการกำกับ ฉาก ช็อต และขอบเขต</td>
+            </tr>
+            <tr>
+              <td>kleo_create_video</td>
+              <td>ตรวจสอบทุกอย่าง แจ้งจำนวนเครดิตที่แน่นอน แล้วเริ่มเรนเดอร์บน GPU ที่เช่าสำหรับงานนั้น รับ <code class="mono">product: "film"</code> หรือ <code class="mono">"animatic"</code></td>
+            </tr>
+            <tr>
+              <td>kleo_get_job</td>
+              <td>รายงานความคืบหน้าของงานในการเรียกครั้งเดียว</td>
+            </tr>
+            <tr>
+              <td>kleo_wait_for_video</td>
+              <td>รอการเรนเดอร์และรายงานความคืบหน้าจนกว่าภาพยนตร์จะพร้อม</td>
+            </tr>
+            <tr>
+              <td>kleo_get_result</td>
+              <td>ส่งลิงก์ไปยังภาพยนตร์ที่เสร็จแล้วกลับมา</td>
+            </tr>
+            <tr>
+              <td>kleo_cancel_job</td>
+              <td>หยุดการเรนเดอร์และคืนเครดิตที่ยังไม่ได้ใช้</td>
+            </tr>
+            <tr>
+              <td>kleo_list_templates</td>
+              <td>แสดงขั้นตอนการทำงานหนึ่งเดียว คือภาพยนตร์ พร้อมรูปแบบ ความยาว และเสียง และเครดิตที่เหลือในบัญชี แอนิเมติกเป็นผลิตภัณฑ์ของขั้นตอนการทำงานเดียวกันนี้</td>
+            </tr>
+            <tr>
+              <td>kleo_account</td>
+              <td>แสดงเครดิต สถานะว่าบัญชีจ่ายเงินแล้วหรือไม่ (<code class="mono">has_paid</code> ซึ่งกำหนดว่าสั่งภาพยนตร์ได้หรือไม่) ลิงก์ไปยังหน้าบัญชี และกุญแจ Kleo ส่วนตัว</td>
+            </tr>
+            <tr>
+              <td>kleo_generate_thumbnail</td>
+              <td>ยังไม่มีในเบต้า</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="prose">
+      <p>ใช้สคีมาเครื่องมือของเซิร์ฟเวอร์จริงสำหรับอาร์กิวเมนต์ที่แน่นอน หากไคลเอนต์ของคุณจำกัดระยะเวลาที่การเรียกเครื่องมือทำงานได้ ผู้ช่วย AI สามารถเรียก <code class="mono">kleo_get_job</code> เป็นระยะแทนการเปิด <code class="mono">kleo_wait_for_video</code> ค้างไว้</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PARAMETERS ============ -->
+<section id="render">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">03</span>พารามิเตอร์</div>
+        <h2>การเรนเดอร์ต้องใช้อะไรบ้าง</h2>
+      </div>
+      <p class="lede"><code class="mono">kleo_create_video</code> รับคำขอในคำพูดของคุณบวกกับตัวเลือกที่รายการรับบรีฟถามไป ทรีตเมนต์และสตอรีบอร์ดมาจากเครื่องมือวางแผนสองตัว ไม่ใช่จากคีย์บอร์ดของคุณ</p>
+    </div>
+    <ul class="defs">
+      <li><b>prompt</b><span>คำขอในคำพูดของผู้ใช้เอง</span></li>
+      <li><b>product</b><span><code class="mono">film</code> (ค่าเริ่มต้น: ทุกช็อตเป็นคลิปที่สร้างขึ้น คิดราคาตามความยาว สำหรับบัญชีที่ซื้อแพ็กแล้ว) หรือ <code class="mono">animatic</code> (เฟรมที่วาดไว้ใต้กล้องที่เคลื่อนไหว ไม่มีคลิปที่สร้างขึ้น ราคาคงที่ 5 เครดิต ความยาว 15 ถึง 60 วินาที สำหรับทุกบัญชี)</span></li>
+      <li><b>duration_s</b><span>15 ถึง 300 วินาทีสำหรับภาพยนตร์ 15 ถึง 60 สำหรับแอนิเมติก</span></li>
+      <li><b>format</b><span><code class="mono">16:9</code> สำหรับ YouTube และแนวนอน <code class="mono">9:16</code> สำหรับ Short และแนวตั้ง</span></li>
+      <li><b>style</b><span><code class="mono">realistic</code> (ฟุตเทจไลฟ์แอ็กชันที่สร้างขึ้น ให้ความรู้สึกแบบภาพยนตร์) หรือ <code class="mono">animation</code> (ภาพยนตร์แอนิเมชัน 2D) ในภาพยนตร์ ทุกช็อตถูกสร้างเป็นฟุตเทจเคลื่อนไหวจากเฟรมของตัวเอง แอนิเมติกคงลุคไว้ในเฟรมที่วาด</span></li>
+      <li><b>language</b><span>เสียงบรรยาย <code class="mono">en</code> หรือ <code class="mono">it</code> ผู้บรรยายหนึ่งเสียง ไม่มีดนตรี ไม่มีคำบรรยาย ไม่มีข้อความบนหน้าจอในภาพยนตร์มาตรฐาน</span></li>
+      <li><b>voice</b><span>ทางเลือก: <code class="mono">narrator-en-m</code>, <code class="mono">narrator-en-f</code>, <code class="mono">narrator-it-m</code> หรือ <code class="mono">narrator-it-f</code></span></li>
+      <li><b>treatment</b><span>ทางเลือก: ทรีตเมนต์ที่ <code class="mono">kleo_adapt_prompt</code> ส่งกลับมา (ล็อกไลน์ มุมมอง ฉากเปิด องก์ ตอนจบ ลุค จังหวะ ผู้บรรยาย)</span></li>
+      <li><b>storyboard</b><span>ทางเลือก: สตอรีบอร์ดที่เขียนตาม <code class="mono">kleo_storyboard_guide</code> (บล็อกการกำกับ ฉาก ช็อต ขอบเขต)</span></li>
+    </ul>
+    <div class="prose">
+      <h3>ราคา</h3>
+      <p>ภาพยนตร์: หนึ่งเครดิตเท่ากับสองวินาที ปัดขึ้น ขั้นต่ำสิบเครดิต: 15 วินาที = 10 · 20 วินาที = 10 · 30 วินาที = 15 · 60 วินาที = 30 · 90 วินาที = 45 · 3 นาที = 90 · 5 นาที = 150 แอนิเมติก: ราคาคงที่ 5 เครดิต ความยาว 15 ถึง 60 วินาที การเชื่อมต่อรวม 7 เครดิต แอนิเมติกหนึ่งเรื่อง ภาพยนตร์ทำให้เฉพาะบัญชีที่ซื้อแพ็กแล้ว (คลิปของภาพยนตร์ถูกสร้างขึ้นด้วยค่าใช้จ่ายของ Kleo เครดิตฟรีจึงซื้อภาพยนตร์ไม่ได้): 7 + แพ็ก €5 = 17 ภาพยนตร์เปิดให้ทำได้ เป็น Short ความยาว 30 วินาที แพ็กจ่ายครั้งเดียวเป็นยูโร ไม่มีค่าบริการรายเดือน: €5 = 10 เครดิต · €15 = 35 · €40 = 100</p>
+      <h3>จะไม่เรียกเก็บอะไรเลยจนกว่างานจะได้รับการยอมรับ</h3>
+      <p><code>kleo_create_video</code> ตอบด้วยจำนวนเครดิตที่แน่นอนก่อน การเรียกที่ถูกปฏิเสธไม่มีค่าใช้จ่าย และ <code>kleo_cancel_job</code> คืนเครดิตที่การเรนเดอร์ที่ถูกหยุดยังไม่ได้ใช้</p>
+      <h3>เวลาเรนเดอร์</h3>
+      <p>ภาพยนตร์โดยทั่วไปใช้เวลา 25–35 นาทีบน GPU ที่เช่า แอนิเมติกประมาณ 15–20 นาที เซิร์ฟเวอร์บอกเวลาโดยประมาณของงานให้ผู้ช่วย AI ไม่ใช่เวลาที่ตายตัว</p>
+      <p><a href="/th/pricing/">แพ็กเครดิตและราคาของทุกความยาว →</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OUTPUT ============ -->
+<section id="output">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">04</span>ผลลัพธ์</div>
+        <h2>วิดีโอที่เสร็จสมบูรณ์คือผลลัพธ์</h2>
+      </div>
+      <p class="lede">ไฟล์ MP4 หนึ่งไฟล์: 4K (3840×2160 หรือ 2160×3840) ที่ 60 fps 16:9 หรือ 9:16 พร้อมผู้บรรยายหนึ่งเสียงภาษาอังกฤษหรืออิตาลี และในภาพยนตร์ ทุกช็อตถูกสร้างเป็นฟุตเทจเคลื่อนไหว <code class="mono">kleo_get_result</code> ส่งลิงก์ไฟล์ให้ผู้ช่วย AI ลิงก์ใช้ได้ 7 วัน</p>
+    </div>
+    <div class="prose">
+      <p>Kleo ไม่เคยเผยแพร่ไปยัง YouTube, TikTok หรือช่องทางใด และภาพยนตร์มาตรฐานไม่มีดนตรี ไม่มีคำบรรยาย และไม่มีข้อความบนหน้าจอ เซิร์ฟเวอร์เปิดใช้สองลุค สมจริงและแอนิเมชัน เว็บไซต์แสดงตัวอย่างของแต่ละลุคบนหน้าลุค</p>
+      <p><a href="/th/examples/">ดูตัวอย่างลุคสมจริง →</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ACCOUNT ============ -->
+<section class="cta one" id="account">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow"><span class="n">05</span>บัญชี</div>
+      <h2>การจัดการบัญชีและงาน</h2>
+      <p class="lede">เก็บโทเค็น OAuth และกุญแจ Kleo ให้พ้นจากล็อกและตัวอย่างสาธารณะ: กุญแจเป็นของส่วนตัว และใครถือกุญแจก็เป็นเจ้าของบัญชี ไม่มีแดชบอร์ด หน้าบัญชี (ยอดคงเหลือแบบอ่านอย่างเดียวและลิงก์ชำระเงิน) เข้าถึงได้โดยถามผู้ช่วย AI และ <code class="mono">kleo_account</code> ส่งกลับมา</p>
+      <p class="lede">การเรนเดอร์ใช้เครดิต: ขอการยืนยันก่อนที่ <code class="mono">kleo_create_video</code> จะทำงาน และใช้ตัวระบุงานเดิมเมื่อตรวจสอบความคืบหน้าหรือยกเลิก โค้ดของเซิร์ฟเวอร์เป็นสาธารณะ</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://github.com/tonnooooo/kleo-mcp">อ่านซอร์สโค้ดของเซิร์ฟเวอร์บน GitHub <span class="arr" aria-hidden="true">→</span></a> <a class="btn btn-ghost" href="/th/privacy.html">Kleo จัดการข้อมูลอย่างไร</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<!-- i18n:langs -->
+<nav class="langs" aria-label="ภาษา">
+  <div class="wrap">
+    <span>ภาษา</span>
+    <a href="/video-generation-mcp/" hreflang="en" lang="en">English</a>
+    <a href="/it/video-generation-mcp/" hreflang="it" lang="it">Italiano</a>
+    <a href="/de/video-generation-mcp/" hreflang="de" lang="de">Deutsch</a>
+    <a href="/fr/video-generation-mcp/" hreflang="fr" lang="fr">Français</a>
+    <a href="/es/video-generation-mcp/" hreflang="es" lang="es">Español</a>
+    <a href="/pt/video-generation-mcp/" hreflang="pt" lang="pt">Português</a>
+    <a href="/nl/video-generation-mcp/" hreflang="nl" lang="nl">Nederlands</a>
+    <a href="/pl/video-generation-mcp/" hreflang="pl" lang="pl">Polski</a>
+    <a href="/tr/video-generation-mcp/" hreflang="tr" lang="tr">Türkçe</a>
+    <a href="/ru/video-generation-mcp/" hreflang="ru" lang="ru">Русский</a>
+    <a href="/uk/video-generation-mcp/" hreflang="uk" lang="uk">Українська</a>
+    <a href="/ja/video-generation-mcp/" hreflang="ja" lang="ja">日本語</a>
+    <a href="/ko/video-generation-mcp/" hreflang="ko" lang="ko">한국어</a>
+    <a href="/zh/video-generation-mcp/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+    <a href="/zh-tw/video-generation-mcp/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+    <a href="/ar/video-generation-mcp/" hreflang="ar" lang="ar">العربية</a>
+    <a href="/he/video-generation-mcp/" hreflang="he" lang="he">עברית</a>
+    <a href="/hi/video-generation-mcp/" hreflang="hi" lang="hi">हिन्दी</a>
+    <a href="/id/video-generation-mcp/" hreflang="id" lang="id">Bahasa Indonesia</a>
+    <a href="/vi/video-generation-mcp/" hreflang="vi" lang="vi">Tiếng Việt</a>
+    <b lang="th">ไทย</b>
+  </div>
+</nav>
+<!-- /i18n:langs -->
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">
+      <a class="brand" href="/th/" aria-label="Kleo หน้าแรก">
+        <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+          <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+          <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+        </svg>
+        Kleo <span class="tag">MCP</span>
+      </a>
+      <span>มนุษย์กำกับ เอเจนต์สร้างภาพยนตร์</span>
+    </div>
+    <div class="links">
+      <a href="/th/connect/">เชื่อมต่อ</a> <a href="/th/integrations/claude/">Claude</a> <a href="/th/integrations/chatgpt/">ChatGPT</a> <a href="/th/video-generation-mcp/">เอกสาร MCP</a> <a href="/th/examples/">ตัวอย่าง</a> <a href="/th/styles.html">ลุค</a> <a href="/th/pricing/">ราคา</a> <a href="/th/faq/">คำถามที่พบบ่อย</a> <a href="/th/about/">เกี่ยวกับ</a> <a href="/th/privacy.html">ความเป็นส่วนตัว</a> <a href="/th/terms.html">ข้อกำหนด</a> <a href="https://github.com/tonnooooo/kleo-mcp">GitHub</a> <a href="mailto:kleooai@gmail.com">kleooai@gmail.com</a>
+    </div>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite">คัดลอกแล้ว</div>
+</body>
+</html>

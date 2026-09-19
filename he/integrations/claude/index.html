@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="he" dir="rtl" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.remove("no-js")</script>
+<title>יצירת סרטוני AI עם Claude ו-Kleo — מדריך הגדרה</title>
+<meta name="description" content="הוסיפו את Kleo ל-Claude כמחבר מותאם אישית, בקשו סרט מוקריין וקבלו את הקישור ל-MP4 ב-4K באותו צ&#x27;אט: שלבי הגדרה, פרומפט ראשון ופתרון בעיות.">
+<link rel="canonical" href="https://kleooai.com/he/integrations/claude/">
+<!-- i18n:head -->
+<link rel="alternate" hreflang="en" href="https://kleooai.com/integrations/claude/">
+<link rel="alternate" hreflang="it" href="https://kleooai.com/it/integrations/claude/">
+<link rel="alternate" hreflang="de" href="https://kleooai.com/de/integrations/claude/">
+<link rel="alternate" hreflang="fr" href="https://kleooai.com/fr/integrations/claude/">
+<link rel="alternate" hreflang="es" href="https://kleooai.com/es/integrations/claude/">
+<link rel="alternate" hreflang="pt" href="https://kleooai.com/pt/integrations/claude/">
+<link rel="alternate" hreflang="nl" href="https://kleooai.com/nl/integrations/claude/">
+<link rel="alternate" hreflang="pl" href="https://kleooai.com/pl/integrations/claude/">
+<link rel="alternate" hreflang="tr" href="https://kleooai.com/tr/integrations/claude/">
+<link rel="alternate" hreflang="ru" href="https://kleooai.com/ru/integrations/claude/">
+<link rel="alternate" hreflang="uk" href="https://kleooai.com/uk/integrations/claude/">
+<link rel="alternate" hreflang="ja" href="https://kleooai.com/ja/integrations/claude/">
+<link rel="alternate" hreflang="ko" href="https://kleooai.com/ko/integrations/claude/">
+<link rel="alternate" hreflang="zh-Hans" href="https://kleooai.com/zh/integrations/claude/">
+<link rel="alternate" hreflang="zh-Hant" href="https://kleooai.com/zh-tw/integrations/claude/">
+<link rel="alternate" hreflang="ar" href="https://kleooai.com/ar/integrations/claude/">
+<link rel="alternate" hreflang="he" href="https://kleooai.com/he/integrations/claude/">
+<link rel="alternate" hreflang="hi" href="https://kleooai.com/hi/integrations/claude/">
+<link rel="alternate" hreflang="id" href="https://kleooai.com/id/integrations/claude/">
+<link rel="alternate" hreflang="vi" href="https://kleooai.com/vi/integrations/claude/">
+<link rel="alternate" hreflang="th" href="https://kleooai.com/th/integrations/claude/">
+<link rel="alternate" hreflang="x-default" href="https://kleooai.com/integrations/claude/">
+<script>(function(){try{var L=["it", "de", "fr", "es", "pt", "nl", "pl", "tr", "ru", "uk", "ja", "ko", "zh", "zh-tw", "ar", "he", "hi", "id", "vi", "th"],A={"zh-hk": "zh-tw", "zh-mo": "zh-tw", "zh-hant": "zh-tw", "zh-hans": "zh", "zh-cn": "zh", "zh-sg": "zh", "nb": "no", "nn": "no"},p=location.pathname,m=p.match(/^\/([a-z]{2}(?:-[a-z]{2})?)(?=\/)/),on=m&&L.indexOf(m[1])>=0?m[1]:"en",rest=on==="en"?p:p.slice(on.length+1),want=null,s=null;try{s=localStorage.getItem("kleo-lang")}catch(e){}if(s==="en"||L.indexOf(s)>=0)want=s;else{var nl=navigator.languages||[navigator.language||""];for(var i=0;i<nl.length&&!want;i++){var t=String(nl[i]).toLowerCase(),b=t.split("-")[0];t=A[t]||t;b=A[b]||b;want=t==="en"||b==="en"?"en":L.indexOf(t)>=0?t:L.indexOf(b)>=0?b:null}}if(want&&want!==on&&!/404/.test(p))location.replace((want==="en"?"":"/"+want)+rest+location.search+location.hash)}catch(e){}})()</script>
+<script type="application/json" id="i18n">{"Language": "שפה", "Menu": "תפריט", "Close menu": "סגירת התפריט", "Copied": "הועתק", "Copied ✓": "הועתק ✓", "Copy it by hand: {text}": "העתיקו ידנית: {text}", "Copy the Kleo server address": "העתקת כתובת השרת של Kleo", "Copy the argument {value}": "העתקת הארגומנט {value}", "Copy this prompt": "העתקת הפרומפט הזה", "Copy the {what} snippet": "העתקת קטע הקוד {what}", "Copy the {what} text": "העתקת הטקסט {what}", "Treatment · logline, angle, acts · look: realistic": "טריטמנט · לוגליין, זווית, מערכות · מראה: ריאליסטי", "Storyboard · direction, scenes, shots · 23 credits, confirmed": "סטוריבורד · בימוי, סצנות, שוטים · 23 קרדיטים, אושר", "Generating the shots as footage · 4 of 11 · ~22 min left": "מייצר את השוטים כפוטג' · 4 מתוך 11 · נותרו ~22 דק'", "Generating the shots as footage · 8 of 11 · ~12 min left": "מייצר את השוטים כפוטג' · 8 מתוך 11 · נותרו ~12 דק'", "Narration · one voice, English · cutting the shots on the words": "קריינות · קול אחד, אנגלית · חיתוך השוטים על המילים", "Finish · 2160×3840 · 60 fps · quality check": "גימור · 2160×3840 · 60 fps · בדיקת איכות", "Done · 28 min · link ready for 7 days": "הושלם · 28 דק' · הקישור זמין ל-7 ימים", "done": "הושלם", "running": "פועל", "A whole number from {min} to {max} seconds": "מספר שלם בין {min} ל-{max} שניות", "{s} s {product} = {n} credits": "{s} שנ' {product} = {n} קרדיטים", "film": "סרט", "animatic": "אנימטיק"}</script>
+<!-- /i18n:head -->
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kleo AI">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="יצירת סרטוני AI עם Claude ו-Kleo — מדריך הגדרה">
+<meta property="og:description" content="הוסיפו את Kleo ל-Claude כמחבר מותאם אישית, בקשו סרט מוקריין וקבלו את הקישור ל-MP4 ב-4K באותו צ&#x27;אט: שלבי הגדרה, פרומפט ראשון ופתרון בעיות.">
+<meta property="og:url" content="https://kleooai.com/he/integrations/claude/">
+<meta property="og:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta property="og:image:alt" content="Kleo AI — בימוי אנושי. סרטים מעשה סוכן.">
+<meta property="og:image:width" content="2400">
+<meta property="og:image:height" content="1260">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="יצירת סרטוני AI עם Claude ו-Kleo — מדריך הגדרה">
+<meta name="twitter:description" content="הוסיפו את Kleo ל-Claude כמחבר מותאם אישית, בקשו סרט מוקריין וקבלו את הקישור ל-MP4 ב-4K באותו צ&#x27;אט: שלבי הגדרה, פרומפט ראשון ופתרון בעיות.">
+<meta name="twitter:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta name="theme-color" content="#0A0C10">
+<link rel="icon" href="/brand/kleo-favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/brand/kleo-favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/brand/kleo-icon-dark-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/site.css?v=20260920">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://kleooai.com/#website",
+      "name": "Kleo AI",
+      "alternateName": "Kleo",
+      "url": "https://kleooai.com/he/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kleooai.com/he/integrations/claude/#page",
+      "url": "https://kleooai.com/he/integrations/claude/",
+      "name": "יצירת סרטוני AI עם Claude ו-Kleo — מדריך הגדרה",
+      "description": "הוסיפו את Kleo ל-Claude כמחבר מותאם אישית, בקשו סרט מוקריין וקבלו את הקישור ל-MP4 ב-4K באותו צ'אט: שלבי הגדרה, פרומפט ראשון ופתרון בעיות.",
+      "inLanguage": "he",
+      "isPartOf": {
+        "@id": "https://kleooai.com/#website"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "דף הבית",
+          "item": "https://kleooai.com/he/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Kleo עם Claude",
+          "item": "https://kleooai.com/he/integrations/claude/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<script src="/site.js?v=20260920" defer></script>
+</head>
+<body>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" aria-label="ראשי">
+  <div class="wrap">
+    <a class="brand" href="/he/" aria-label="Kleo, דף הבית">
+      <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+        <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+        <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+      </svg>
+      Kleo <span class="tag">MCP</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="תפריט" aria-expanded="false" aria-controls="site-menu">
+      <svg class="bars" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 5h14M2 9h14M2 13h14"/></svg>
+      <svg class="x" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 4l10 10M14 4L4 14"/></svg>
+    </button>
+    <div class="nav-links" id="site-menu">
+      <a href="/he/ai-youtube-video-generator/">יצירת סרטונים</a> <a href="/he/examples/">דוגמאות</a> <a href="/he/styles.html">מראות</a> <a href="/he/pricing/">מחירים</a> <a href="/he/faq/">שאלות ותשובות</a>
+    </div>
+    <a class="btn btn-primary btn-sm" href="/he/connect/">חיבור Kleo</a>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="page-hero hero" id="top">
+  <div class="wrap">
+    <div>
+      <nav class="crumbs" aria-label="ניווט">
+        <a href="/he/">ראשי</a> <span aria-hidden="true">›</span> <a href="/he/connect/">חיבור</a> <span aria-hidden="true">›</span> <span>Claude</span>
+      </nav>
+      <h1>יצירת סרטונים עם<br><span class="hl">Claude ו-Kleo.</span></h1>
+      <p class="lede">Claude הוא המקום שבו אתם מביימים את הסרט. Kleo, שנוסף ל-Claude כמחבר מותאם אישית, מייצר את הפוטג', את הקריינות ואת ה-MP4 המוגמר ב-4K, והקישור נוחת באותו צ'אט.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/he/connect/">חיבור Kleo <span class="arr" aria-hidden="true">→</span></a> <a class="btn btn-ghost" href="/he/examples/">לצפייה בסרט לדוגמה</a> <a class="btn btn-ghost" href="#setup">שלבי ההגדרה <span class="arr" aria-hidden="true">↓</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SETUP ============ -->
+<section id="setup">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">01</span>הגדרה</div>
+        <h2>הוסיפו את Kleo ל-Claude.</h2>
+      </div>
+    </div>
+    <div class="split">
+      <div>
+        <p class="lede">Kleo הוא שרת MCP מרוחק. אין אפליקציה להתקין ואין טופס הרשמה: Claude מגיע אליו דרך מחבר מותאם אישית, והחיבור הוא כפתור אחד בעמוד של Kleo עצמו. השלבים שלמטה זהים באפליקציית Claude ובדפדפן, והם עובדים בכל תוכנית של Claude; התוכנית החינמית מאפשרת מחבר מותאם אישית אחד.</p>
+      </div>
+      <div class="panel">
+        <ol>
+          <li>פתחו <b>Settings → Connectors</b> ב-Claude ובחרו <b>Add custom connector</b>.</li>
+          <li>קראו לו <b>Kleo</b>, הדביקו את הכתובת שלמטה ואשרו.</li>
+          <li>העמוד של Kleo נפתח: לחצו <b>Start free</b>. אתם חוזרים ל-Claude, עם 7 קרדיטים בחשבון Kleo החדש שלכם. בלי טופס, בלי סיסמה, בלי כרטיס: מספיק לאנימטיק של 5 קרדיטים. סרט נעשה רק לחשבונות שרכשו חבילה ועולה לפחות 10 קרדיטים, ולכן חבילת ה-€5 (10 קרדיטים) נכנסת לפני הסרט הראשון; סרט של 30 שניות עולה 15.</li>
+          <li>בצ'אט חדש, הפעילו את Kleo מתפריט הכלים ובקשו את הסרט.</li>
+        </ol>
+        <div class="url-line">כתובת השרת <code>https://mcp.kleooai.com/mcp</code> <button class="btn btn-ghost btn-sm" type="button" data-copy="https://mcp.kleooai.com/mcp">העתקה</button></div>
+        <p>Claude הוא העוזר של Anthropic. Kleo הוא שירות נפרד ש-Claude מגיע אליו דרך מחבר מותאם אישית; אותה כתובת עובדת ב-ChatGPT, ב-Grok, ב-Claude Code, ב-Cursor ובכל לקוח MCP אחר — ראו את <a href="/he/connect/">עמוד החיבור</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FIRST PROMPT ============ -->
+<section id="first-prompt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">02</span>פרומפט ראשון</div>
+        <h2>בקשו את הסרט שאתם רוצים.</h2>
+      </div>
+      <p class="lede">ציינו את הנושא, האורך, הפורמט והמראה בהודעה אחת. קהל יעד, טון וכל מה שחייב להופיע בסרט הם אופציונליים. על כל מה שהבקשה שלכם משמיטה, Claude שואל לפני שהוא מתכנן משהו; הוא לעולם לא בוחר בשבילכם אורך, פורמט או מראה.</p>
+    </div>
+    <div class="split">
+      <div>
+        <p class="style-say copyable">„השתמש ב-Kleo כדי ליצור סרט של 30 שניות על סירת עץ קטנה שחוצה אגם שקט עם שחר. מראה ריאליסטי, 16:9, קריינות באנגלית, טון רגוע. הצג לי את הטריטמנט ואת מספר הקרדיטים המדויק לפני שתתחיל את הרינדור.”<button class="btn btn-ghost btn-sm copy" type="button" data-copy="Use Kleo to make a 30-second film about a small wooden boat crossing a quiet lake at dawn. Realistic look, 16:9, English narration, a calm tone. Show me the treatment and the exact credits before you start the render.">העתקה</button></p>
+      </div>
+      <ul class="defs">
+        <li><b>מראות</b><span>שני מראות זמינים: <b>ריאליסטי</b>, פוטג' לייב-אקשן מיוצר בתחושה קולנועית, ו<b>אנימציה</b>, סרט אנימציה דו-ממדי. <a href="/he/styles.html">לצפייה במראות הסרט →</a></span></li>
+        <li><b>פורמטים</b><span>16:9 ל-YouTube או 9:16 ל-Short.</span></li>
+        <li><b>אורכים</b><span>מ-15 שניות עד 5 דקות.</span></li>
+        <li><b>קריינות</b><span>אנגלית או איטלקית.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ IN THE CHAT ============ -->
+<section id="in-the-chat">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">03</span>בצ'אט</div>
+        <h2>מה קורה אחר כך בצ'אט.</h2>
+      </div>
+      <p class="lede">הכלים של Kleo פועלים בסדר קבוע ו-Claude מפעיל אותם בשבילכם. אתם קוראים, מתקנים ומאשרים בכל שלב; שום דבר לא מחויב עד שאתם נותנים אישור והמשימה מתקבלת.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="num" aria-hidden="true">01</span> <span class="tc">kleo_adapt_prompt</span>
+        <h3>הטריטמנט</h3>
+        <p>Claude קורא את הבקשה שלכם מול האינטייק של Kleo. נושא, אורך, פורמט ומראה הם חובה; קהל יעד, טון ומה שחייב להופיע הם אופציונליים. על כל מה שחסר, הוא שואל בהודעה אחת. ואז הוא מציג לכם את הטריטמנט: לוגליין, זווית, תמונת פתיחה, מערכות, סיום, מראה, קצב וקריין. שנו כל דבר לפני שממשיכים.</p>
+      </div>
+      <div class="step">
+        <span class="num" aria-hidden="true">02</span> <span class="tc">kleo_storyboard_guide</span>
+        <h3>הסטוריבורד</h3>
+        <p>Claude מביא את המדריך של Kleo לסטוריבורד (בלוק בימוי, הסצנות, השוטים והמגבלות שלהם) וכותב את הסטוריבורד על פי הטריטמנט שאישרתם. כאן הסרט נוצר; קראו אותו ובקשו שינויים.</p>
+      </div>
+      <div class="step">
+        <span class="num" aria-hidden="true">03</span> <span class="tc">kleo_create_video</span>
+        <h3>הרינדור</h3>
+        <p>Kleo בודק הכול ומשיב במספר הקרדיטים המדויק לסרט. עם האישור שלכם, Claude מתחיל את הרינדור על GPU שהושכר למשימה הזו בלבד. שום דבר לא מחויב לפני שהמשימה מתקבלת, וקריאה שנדחתה לא עולה דבר.</p>
+      </div>
+      <div class="step">
+        <span class="num" aria-hidden="true">04</span> <span class="tc">kleo_wait_for_video</span>
+        <h3>הקישור</h3>
+        <p>Claude ממתין לרינדור ומדווח על ההתקדמות, עד ש-Kleo מוסר את הקישור ל-MP4 המוגמר, בדרך כלל אחרי 25–35 דקות. הקישור תקף ל-7 ימים. Kleo לעולם לא מפרסם את הסרט בשום מקום: אתם מורידים אותו ומפרסמים אותו איפה שתרצו.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT YOU GET ============ -->
+<section id="what-you-get">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">04</span>הסרט</div>
+        <h2>מה אתם מקבלים.</h2>
+      </div>
+    </div>
+    <ul class="style-facts auto">
+      <li><b>פלט</b><span>MP4 ב-4K (3840×2160 או 2160×3840) ב-60 fps: 16:9 ל-YouTube, 9:16 ל-Short.</span></li>
+      <li><b>אורך</b><span>סרט מ-15 שניות עד 5 דקות; אנימטיק מ-15 עד 60 שניות.</span></li>
+      <li><b>מראות</b><span>ריאליסטי (פוטג' לייב-אקשן מיוצר, קולנועי) או אנימציה (סרט אנימציה דו-ממדי). בסרט כל שוט מיוצר כפוטג' בתנועה מתוך הפריים שלו.</span></li>
+      <li><b>מוצרים</b><span>הסרט, או אנימטיק של אותו סטוריבורד: הפריימים המצוירים תחת מצלמה נעה, אותו קריין ואותה שכבה גרפית, ללא קליפ מיוצר. כל חשבון יכול להזמין אנימטיקים; סרט נעשה רק לחשבונות שרכשו חבילה.</span></li>
+      <li><b>קריינות</b><span>קריין אחד, אנגלית או איטלקית. בלי מוזיקת רקע, בלי כתוביות, בלי טקסט על המסך.</span></li>
+      <li><b>קרדיטים</b><span>סרט: 1 קרדיט = 2 שניות, בעיגול כלפי מעלה, מינימום 10 קרדיטים: 15 שנ' = 10, 30 שנ' = 15, 60 שנ' = 30, 5 דק' = 150. אנימטיק: 5 קרדיטים קבועים. מתחילים עם 7 קרדיטים; החבילות הן €5 = 10, €15 = 35, €40 = 100, בתשלום חד-פעמי, ללא מנוי.</span></li>
+      <li><b>זמן</b><span>רינדור לוקח בדרך כלל 25–35 דקות על GPU שכור; Kleo מוסר לכם את ההערכה בצ'אט.</span></li>
+    </ul>
+    <p><a href="/he/pricing/">למחיר של סרט →</a></p>
+  </div>
+</section>
+
+<!-- ============ TROUBLESHOOTING ============ -->
+<section id="troubleshooting">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">05</span>פתרון בעיות</div>
+        <h2>אם משהו לא עובד.</h2>
+      </div>
+    </div>
+    <div class="faq">
+      <div>
+        <details>
+          <summary>Kleo לא מופיע ב-Claude.</summary>
+          <p>בדקו את הכתובת שהדבקתם: היא בדיוק https://mcp.kleooai.com/mcp, עם https ובלי שום דבר אחרי /mcp. הוסיפו את המחבר שוב עם השם Kleo. גם אחרי שהוא נוסף, הוא עדיין כבוי בצ'אט עד שתפעילו אותו: פתחו צ'אט חדש והפעילו את Kleo מתפריט הכלים. בתוכנית החינמית מותר מחבר מותאם אישית אחד, ולכן Kleo צריך להיות המחבר הזה.</p>
+        </details>
+        <details>
+          <summary>העמוד של Kleo לא נפתח, או שהחלון נחסם.</summary>
+          <p>כשאתם מאשרים את המחבר, Claude פותח את העמוד של Kleo לכניסה: כפתור Start free אחד, בלי מה למלא. אם הדפדפן שלכם חסם אותו כחלון קופץ, אפשרו חלונות קופצים ל-Claude ואשרו את המחבר שוב; העמוד נפתח, אתם לוחצים Start free וחוזרים ל-Claude.</p>
+        </details>
+        <details>
+          <summary>אין מספיק קרדיטים.</summary>
+          <p>החיבור מעניק לכם 7 קרדיטים: הם קונים אנימטיק (5), לעולם לא סרט. סרט נעשה רק לחשבונות שרכשו חבילה, וסרט של 30 שניות עולה 15 קרדיטים: עם חבילת ה-€5 (10 קרדיטים) יש לכם 17 והרינדור יכול להתחיל. בקשו מ-Claude את עמוד חשבון Kleo שלכם (kleo_account): הוא מציג את היתרה ואת קישורי התשלום (€5 = 10 קרדיטים, €15 = 35, €40 = 100; תשלום חד-פעמי ביורו, ללא מנוי). הקריאה שנדחתה לא חייבה דבר.</p>
+        </details>
+      </div>
+      <div>
+        <details>
+          <summary>ההמתנה פגה לפני שהסרט היה מוכן.</summary>
+          <p>רינדור ארוך יכול להימשך יותר מקריאת כלי אחת, אבל המשימה ממשיכה לרוץ על ה-GPU שלה. בקשו מ-Claude את מצב המשימה (kleo_get_job) או להמתין שוב (kleo_wait_for_video), ואז את הקישורים (kleo_get_result). אל תבקשו סרט שני כדי לבדוק מה קורה עם הראשון.</p>
+        </details>
+        <details>
+          <summary>אתם רוצים לעצור רינדור.</summary>
+          <p>בקשו מ-Claude לבטל את המשימה (kleo_cancel_job). הרינדור נעצר והקרדיטים שלא נוצלו חוזרים ליתרה שלכם.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ START ============ -->
+<section class="cta one" id="start">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow"><span class="n">06</span>התחלה</div>
+      <h2>Claude הוא המקום שבו אתם מביימים את הסרט.</h2>
+      <p class="lede">משתמשים ב-ChatGPT במקום? <a href="/he/integrations/chatgpt/">Kleo עם ChatGPT →</a></p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/he/connect/">חיבור Kleo <span class="arr" aria-hidden="true">→</span></a> <a class="btn btn-ghost" href="/he/faq/">לשאלות ותשובות</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<!-- i18n:langs -->
+<nav class="langs" aria-label="שפה">
+  <div class="wrap">
+    <span>שפה</span>
+    <a href="/integrations/claude/" hreflang="en" lang="en">English</a>
+    <a href="/it/integrations/claude/" hreflang="it" lang="it">Italiano</a>
+    <a href="/de/integrations/claude/" hreflang="de" lang="de">Deutsch</a>
+    <a href="/fr/integrations/claude/" hreflang="fr" lang="fr">Français</a>
+    <a href="/es/integrations/claude/" hreflang="es" lang="es">Español</a>
+    <a href="/pt/integrations/claude/" hreflang="pt" lang="pt">Português</a>
+    <a href="/nl/integrations/claude/" hreflang="nl" lang="nl">Nederlands</a>
+    <a href="/pl/integrations/claude/" hreflang="pl" lang="pl">Polski</a>
+    <a href="/tr/integrations/claude/" hreflang="tr" lang="tr">Türkçe</a>
+    <a href="/ru/integrations/claude/" hreflang="ru" lang="ru">Русский</a>
+    <a href="/uk/integrations/claude/" hreflang="uk" lang="uk">Українська</a>
+    <a href="/ja/integrations/claude/" hreflang="ja" lang="ja">日本語</a>
+    <a href="/ko/integrations/claude/" hreflang="ko" lang="ko">한국어</a>
+    <a href="/zh/integrations/claude/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+    <a href="/zh-tw/integrations/claude/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+    <a href="/ar/integrations/claude/" hreflang="ar" lang="ar">العربية</a>
+    <b lang="he">עברית</b>
+    <a href="/hi/integrations/claude/" hreflang="hi" lang="hi">हिन्दी</a>
+    <a href="/id/integrations/claude/" hreflang="id" lang="id">Bahasa Indonesia</a>
+    <a href="/vi/integrations/claude/" hreflang="vi" lang="vi">Tiếng Việt</a>
+    <a href="/th/integrations/claude/" hreflang="th" lang="th">ไทย</a>
+  </div>
+</nav>
+<!-- /i18n:langs -->
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">
+      <a class="brand" href="/he/" aria-label="Kleo, דף הבית">
+        <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+          <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+          <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+        </svg>
+        Kleo <span class="tag">MCP</span>
+      </a>
+      <span>בימוי אנושי. סרטים מעשה סוכן.</span>
+    </div>
+    <div class="links">
+      <a href="/he/connect/">חיבור</a> <a href="/he/integrations/claude/">Claude</a> <a href="/he/integrations/chatgpt/">ChatGPT</a> <a href="/he/video-generation-mcp/">תיעוד MCP</a> <a href="/he/examples/">דוגמאות</a> <a href="/he/styles.html">מראות</a> <a href="/he/pricing/">מחירים</a> <a href="/he/faq/">שאלות ותשובות</a> <a href="/he/about/">אודות</a> <a href="/he/privacy.html">פרטיות</a> <a href="/he/terms.html">תנאים</a> <a href="https://github.com/tonnooooo/kleo-mcp">GitHub</a> <a href="mailto:kleooai@gmail.com">kleooai@gmail.com</a>
+    </div>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite">הועתק</div>
+</body>
+</html>

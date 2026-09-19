@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="zh-Hans" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.remove("no-js")</script>
+<title>Kleo AI 视频示例 — 四部影片与三个镜头</title>
+<meta name="description" content="四部 Kleo 影片——Tether、Apex、Signal Delay 的开场、一个讲章鱼的动画 Short——以及三个几秒钟的单个生成镜头。">
+<link rel="canonical" href="https://kleooai.com/zh/examples/">
+<!-- i18n:head -->
+<link rel="alternate" hreflang="en" href="https://kleooai.com/examples/">
+<link rel="alternate" hreflang="it" href="https://kleooai.com/it/examples/">
+<link rel="alternate" hreflang="de" href="https://kleooai.com/de/examples/">
+<link rel="alternate" hreflang="fr" href="https://kleooai.com/fr/examples/">
+<link rel="alternate" hreflang="es" href="https://kleooai.com/es/examples/">
+<link rel="alternate" hreflang="pt" href="https://kleooai.com/pt/examples/">
+<link rel="alternate" hreflang="nl" href="https://kleooai.com/nl/examples/">
+<link rel="alternate" hreflang="pl" href="https://kleooai.com/pl/examples/">
+<link rel="alternate" hreflang="tr" href="https://kleooai.com/tr/examples/">
+<link rel="alternate" hreflang="ru" href="https://kleooai.com/ru/examples/">
+<link rel="alternate" hreflang="uk" href="https://kleooai.com/uk/examples/">
+<link rel="alternate" hreflang="ja" href="https://kleooai.com/ja/examples/">
+<link rel="alternate" hreflang="ko" href="https://kleooai.com/ko/examples/">
+<link rel="alternate" hreflang="zh-Hans" href="https://kleooai.com/zh/examples/">
+<link rel="alternate" hreflang="zh-Hant" href="https://kleooai.com/zh-tw/examples/">
+<link rel="alternate" hreflang="ar" href="https://kleooai.com/ar/examples/">
+<link rel="alternate" hreflang="he" href="https://kleooai.com/he/examples/">
+<link rel="alternate" hreflang="hi" href="https://kleooai.com/hi/examples/">
+<link rel="alternate" hreflang="id" href="https://kleooai.com/id/examples/">
+<link rel="alternate" hreflang="vi" href="https://kleooai.com/vi/examples/">
+<link rel="alternate" hreflang="th" href="https://kleooai.com/th/examples/">
+<link rel="alternate" hreflang="x-default" href="https://kleooai.com/examples/">
+<script>(function(){try{var L=["it", "de", "fr", "es", "pt", "nl", "pl", "tr", "ru", "uk", "ja", "ko", "zh", "zh-tw", "ar", "he", "hi", "id", "vi", "th"],A={"zh-hk": "zh-tw", "zh-mo": "zh-tw", "zh-hant": "zh-tw", "zh-hans": "zh", "zh-cn": "zh", "zh-sg": "zh", "nb": "no", "nn": "no"},p=location.pathname,m=p.match(/^\/([a-z]{2}(?:-[a-z]{2})?)(?=\/)/),on=m&&L.indexOf(m[1])>=0?m[1]:"en",rest=on==="en"?p:p.slice(on.length+1),want=null,s=null;try{s=localStorage.getItem("kleo-lang")}catch(e){}if(s==="en"||L.indexOf(s)>=0)want=s;else{var nl=navigator.languages||[navigator.language||""];for(var i=0;i<nl.length&&!want;i++){var t=String(nl[i]).toLowerCase(),b=t.split("-")[0];t=A[t]||t;b=A[b]||b;want=t==="en"||b==="en"?"en":L.indexOf(t)>=0?t:L.indexOf(b)>=0?b:null}}if(want&&want!==on&&!/404/.test(p))location.replace((want==="en"?"":"/"+want)+rest+location.search+location.hash)}catch(e){}})()</script>
+<script type="application/json" id="i18n">{"Language": "语言", "Menu": "菜单", "Close menu": "关闭菜单", "Copied": "已复制", "Copied ✓": "已复制 ✓", "Copy it by hand: {text}": "请手动复制：{text}", "Copy the Kleo server address": "复制 Kleo 服务器地址", "Copy the argument {value}": "复制参数 {value}", "Copy this prompt": "复制这条提示词", "Copy the {what} snippet": "复制{what}代码片段", "Copy the {what} text": "复制{what}文本", "Treatment · logline, angle, acts · look: realistic": "剧本大纲 · 故事梗概、切入角度、幕次 · 风格：写实", "Storyboard · direction, scenes, shots · 23 credits, confirmed": "分镜 · 导演思路、场景、镜头 · 23 积分，已确认", "Generating the shots as footage · 4 of 11 · ~22 min left": "正在把镜头生成为动态画面 · 第 4 个，共 11 个 · 还剩约 22 分钟", "Generating the shots as footage · 8 of 11 · ~12 min left": "正在把镜头生成为动态画面 · 第 8 个，共 11 个 · 还剩约 12 分钟", "Narration · one voice, English · cutting the shots on the words": "旁白 · 一个声音，英语 · 按台词剪接镜头", "Finish · 2160×3840 · 60 fps · quality check": "收尾 · 2160×3840 · 60 fps · 质量检查", "Done · 28 min · link ready for 7 days": "完成 · 28 分钟 · 链接 7 天内有效", "done": "已完成", "running": "进行中", "A whole number from {min} to {max} seconds": "{min} 到 {max} 秒之间的整数", "{s} s {product} = {n} credits": "{s} 秒{product} = {n} 积分", "film": "影片", "animatic": "动态分镜"}</script>
+<!-- /i18n:head -->
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kleo AI">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:title" content="Kleo AI 视频示例 — 四部影片与三个镜头">
+<meta property="og:description" content="四部 Kleo 影片——Tether、Apex、Signal Delay 的开场、一个讲章鱼的动画 Short——以及三个几秒钟的单个生成镜头。">
+<meta property="og:url" content="https://kleooai.com/zh/examples/">
+<meta property="og:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta property="og:image:alt" content="Kleo AI — 你来执导，智能体拍成影片。">
+<meta property="og:image:width" content="2400">
+<meta property="og:image:height" content="1260">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kleo AI 视频示例 — 四部影片与三个镜头">
+<meta name="twitter:description" content="四部 Kleo 影片——Tether、Apex、Signal Delay 的开场、一个讲章鱼的动画 Short——以及三个几秒钟的单个生成镜头。">
+<meta name="twitter:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta name="theme-color" content="#0A0C10">
+<link rel="icon" href="/brand/kleo-favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/brand/kleo-favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/brand/kleo-icon-dark-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/site.css?v=20260920">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://kleooai.com/#website",
+      "name": "Kleo AI",
+      "alternateName": "Kleo",
+      "url": "https://kleooai.com/zh/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kleooai.com/zh/examples/#page",
+      "url": "https://kleooai.com/zh/examples/",
+      "name": "Kleo AI 视频示例 — 四部影片与三个镜头",
+      "description": "四部 Kleo 影片——Tether、Apex、Signal Delay 的开场、一个讲章鱼的动画 Short——以及三个几秒钟的单个生成镜头。",
+      "inLanguage": "zh-Hans",
+      "isPartOf": {
+        "@id": "https://kleooai.com/#website"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "首页",
+          "item": "https://kleooai.com/zh/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "示例",
+          "item": "https://kleooai.com/zh/examples/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<script src="/site.js?v=20260920" defer></script>
+</head>
+<body>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" aria-label="主导航">
+  <div class="wrap">
+    <a class="brand" href="/zh/" aria-label="Kleo，首页">
+      <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+        <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+        <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+      </svg>
+      Kleo <span class="tag">MCP</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="菜单" aria-expanded="false" aria-controls="site-menu">
+      <svg class="bars" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 5h14M2 9h14M2 13h14"/></svg>
+      <svg class="x" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 4l10 10M14 4L4 14"/></svg>
+    </button>
+    <div class="nav-links" id="site-menu">
+      <a href="/zh/ai-youtube-video-generator/">制作视频</a> <a href="/zh/examples/" aria-current="page">示例</a> <a href="/zh/styles.html">风格</a> <a href="/zh/pricing/">价格</a> <a href="/zh/faq/">常见问题</a>
+    </div>
+    <a class="btn btn-primary btn-sm" href="/zh/connect/">连接 Kleo</a>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="page-hero hero" id="top">
+  <div class="wrap">
+    <div>
+      <nav class="crumbs" aria-label="面包屑导航"><a href="/zh/">首页</a><span aria-hidden="true">›</span><span>示例</span></nav>
+      <h1>四部影片，<br><span class="hl">两种风格。</span></h1>
+      <p class="lede">Tether，一镜到底的二十秒；Apex，两辆车冲出隧道；以及纪录片 Signal Delay 的开场一分钟——均为写实风格；还有一个讲章鱼为什么有三颗心脏的动画 Short，动画风格。全部是 4K 60 fps 母版，以 1080p 展示。本页放的是海报；每部影片在各自的页面播放，静音。影片下方是三个几秒钟的单镜头，直接出自 Kleo。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FILMS ============ -->
+<section id="films">
+  <div class="wrap">
+
+    <article class="sample" id="tether">
+      <a class="poster" href="/zh/examples/tether/">
+        <img src="/samples/realistic-tether.jpg" alt="Tether：透过面罩看到的宇航员，一只戴手套的手举到头盔前，玻璃被红光照亮，身后一颗孤星" width="1920" height="1080">
+        <span class="play"><i aria-hidden="true">▶</i>观看 Tether</span>
+      </a>
+      <div>
+        <div class="style-n" style="--c:var(--teal)">写实 · 20 秒 · 一镜到底 · 16:9</div>
+        <h2>Tether</h2>
+        <p class="style-lead">一个不间断的后拉镜头。从头盔内部开始，落在宇航员的脸和他在玻璃上的呼吸上；一只戴手套的手抬起，面罩被红光淹没，镜头在他张开双臂漂浮时不断后退，直到从他背包向上延伸的金色系绳接上空间站和它的太阳能板。每一帧都是生成的画面。</p>
+        <p class="style-lead">没有一句话：只有他的呼吸和低沉的嗡鸣。4K 60 fps，以 1080p 展示。</p>
+        <a class="btn btn-ghost" href="/zh/examples/tether/">观看 Tether <span class="arr" aria-hidden="true">→</span></a>
+      </div>
+    </article>
+
+    <article class="sample" id="signal-delay">
+      <a class="poster" href="/zh/examples/signal-delay/">
+        <img src="/samples/realistic-signal.jpg" alt="Signal Delay：从一排排坐在琥珀色终端前的工程师身后看到的 1977 年任务控制室，角落里两个时钟分别显示地球时间和旅行者时间，底部是一条方波读数" width="1920" height="1080">
+        <span class="play"><i aria-hidden="true">▶</i>观看开场</span>
+      </a>
+      <div>
+        <div class="style-n" style="--c:var(--teal)">写实 · 纪录片 · 开场一分钟</div>
+        <h2>Signal Delay</h2>
+        <p class="style-lead">一部以五个月任务日志讲述的纪录片：2023 年 11 月 14 日，旅行者 1 号开始重复发送同一组 0 和 1，而每一个问题都要花去四十五小时的光程时间。一位旁白带你走过读数、失效的芯片，以及用 1970 年代汇编语言手工搬移的代码。缓慢推进的照片静帧、手绘的琥珀色示意图、终端窗口、黑底上的日期、角落里的两个时钟、35 mm 胶片颗粒、2.39:1、安静的音乐铺底和字幕，全都是这部影片自己的剧本大纲所要求的。</p>
+        <p class="style-lead">用 Kleo 的写实风格渲染。全片长 6 分 55 秒；网站展示开场一分钟，0:00–1:02。4K 60 fps，以 1080p 展示。</p>
+        <a class="btn btn-ghost" href="/zh/examples/signal-delay/">观看开场 <span class="arr" aria-hidden="true">→</span></a>
+      </div>
+    </article>
+
+    <article class="sample" id="apex">
+      <a class="poster" href="/zh/examples/apex/">
+        <img src="/samples/realistic-apex.jpg" alt="Apex：一辆黄色超跑和一辆淡绿色经典双门轿跑并排行驶在琥珀色灯光的隧道里，戴头盔的驾驶员握着方向盘" width="1920" height="1080">
+        <span class="play"><i aria-hidden="true">▶</i>观看 Apex</span>
+      </a>
+      <div>
+        <div class="style-n" style="--c:var(--teal)">写实 · 20 秒 · 16:9</div>
+        <h2>Apex</h2>
+        <p class="style-lead">一辆黄色超跑和一辆淡绿色经典双门轿跑并排穿过琥珀色灯光的隧道，然后驶上黄金时刻的海岸公路，身旁的海面平静而明亮。每一帧都是生成的画面；从第一帧到最后一帧，两辆车始终是同样的两辆。</p>
+        <p class="style-lead">Kleo 的写实风格。4K 60 fps 母版，以 1080p 展示，静音，不可全屏。</p>
+        <a class="btn btn-ghost" href="/zh/examples/apex/">观看 Apex <span class="arr" aria-hidden="true">→</span></a>
+      </div>
+    </article>
+
+    <article class="sample" id="octopus">
+      <a class="poster tall" href="/zh/examples/octopus/">
+        <img src="/samples/animation-octopus.jpg" alt="一只手绘的大眼睛红色章鱼浮在蓝色海面上，画面上写着 THREE HEARTS BLUE BLOOD" width="608" height="1080">
+        <span class="play"><i aria-hidden="true">▶</i>观看 Short</span>
+      </a>
+      <div>
+        <div class="style-n" style="--c:var(--amber)">动画 · 32 秒 · 9:16</div>
+        <h2>Why Octopuses Have 3 Hearts and Blue Blood</h2>
+        <p class="style-lead">一个竖版动画 Short，由一个已连接的助手独自从一句话做出：每一帧里都有一只手绘的红色章鱼，四个章节各有标签，一个贴合画面的大标题、其中一个词是黄色，还有随英语旁白念出而逐字点亮的卡拉 OK 式字幕。是铜，不是铁：这就是血为什么是蓝色的。</p>
+        <p class="style-lead">Kleo 的动画风格。4K 60 fps 母版，以 1080p 展示。</p>
+        <a class="btn btn-ghost" href="/zh/examples/octopus/">观看 Short <span class="arr" aria-hidden="true">→</span></a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ============ SHOTS ============ -->
+<section id="shots">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">01</span>镜头</div>
+        <h2>单个镜头，<br>每个几秒钟。</h2>
+      </div>
+      <p class="lede">一部影片就是由这样的镜头组成的：每一个都从各自的画帧生成为动态画面，写实风格，直接出自 Kleo。四秒半，9:16，没有剪切。它们在这里静音、单独播放，只在进入视野时播放。</p>
+    </div>
+    <div class="shots-row">
+      <div class="shot-card">
+        <div class="style-media">
+          <video src="/samples/shot-cameraman.mp4" poster="/samples/shot-cameraman.jpg" width="1440" height="2528" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" aria-label="一个男人站在明亮窗边三脚架上的电影摄影机旁，暖光洒在衬衫上；他把头转向镜头"></video>
+          <span class="style-live" aria-hidden="true"><i></i>播放中</span>
+        </div>
+        <div class="film-cap"><b>摄影师</b><span>4 秒 · 9:16</span></div>
+        <p class="film-note">一个男人站在三脚架上的电影摄影机旁，身后是一扇明亮的窗，暖光洒在衬衫上；他把头转向镜头，又转回取景器。</p>
+      </div>
+      <div class="shot-card">
+        <div class="style-media">
+          <video src="/samples/shot-moon.mp4" poster="/samples/shot-moon.jpg" width="1440" height="2528" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" aria-label="一轮渐盈的月亮悬在瓦屋顶和老虎窗之上，青蓝色的傍晚天空；镜头缓缓漂移"></video>
+          <span class="style-live" aria-hidden="true"><i></i>播放中</span>
+        </div>
+        <div class="film-cap"><b>屋顶上的月亮</b><span>4 秒 · 9:16</span></div>
+        <p class="film-note">一轮渐盈的月亮悬在瓦屋顶和老虎窗之上，青蓝色的傍晚天空带着薄云；镜头缓缓漂移，月亮滑过画面。</p>
+      </div>
+      <div class="shot-card">
+        <div class="style-media">
+          <video src="/samples/shot-dunes.mp4" poster="/samples/shot-dunes.jpg" width="1440" height="2528" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" aria-label="三个拄着手杖的身影，一个孩子和两个大人，迎着太阳翻过阳光下的沙丘，空气中有尘土"></video>
+          <span class="style-live" aria-hidden="true"><i></i>播放中</span>
+        </div>
+        <div class="film-cap"><b>沙丘</b><span>4 秒 · 9:16</span></div>
+        <p class="film-note">三个拄着手杖的身影，一个孩子和两个大人，迎着太阳翻过沙丘；尘土悬在光里，他们的影子在沙地上向后拉长。</p>
+      </div>
+    </div>
+    <p class="scene-foot">在影片中，这样的镜头会按旁白剪接；剧本大纲决定每个镜头展示什么，分镜把它描述出来。<a href="/zh/styles.html">风格 →</a></p>
+  </div>
+</section>
+
+<!-- ============ YOUR OWN FILM ============ -->
+<section class="cta one" id="your-film">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow"><span class="n">02</span>开始</div>
+      <h2>你自己的影片。</h2>
+      <p class="lede">告诉你的助手主题、时长、格式和风格——写实或动画。Kleo 问清缺少的信息，返回剧本大纲，指导分镜，并在扣任何费用之前说明准确的积分数。影片 15 秒到 5 分钟，16:9 或 9:16，4K 60 fps，一位英语或意大利语旁白；同一套分镜的动态分镜，5 积分，以 15 到 60 秒预览它。成片 MP4 以链接形式返回，7 天内有效。</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/zh/connect/">连接 Kleo <span class="arr" aria-hidden="true">→</span></a> <a class="btn btn-ghost" href="/zh/pricing/">查看价格</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<!-- i18n:langs -->
+<nav class="langs" aria-label="语言">
+  <div class="wrap">
+    <span>语言</span>
+    <a href="/examples/" hreflang="en" lang="en">English</a>
+    <a href="/it/examples/" hreflang="it" lang="it">Italiano</a>
+    <a href="/de/examples/" hreflang="de" lang="de">Deutsch</a>
+    <a href="/fr/examples/" hreflang="fr" lang="fr">Français</a>
+    <a href="/es/examples/" hreflang="es" lang="es">Español</a>
+    <a href="/pt/examples/" hreflang="pt" lang="pt">Português</a>
+    <a href="/nl/examples/" hreflang="nl" lang="nl">Nederlands</a>
+    <a href="/pl/examples/" hreflang="pl" lang="pl">Polski</a>
+    <a href="/tr/examples/" hreflang="tr" lang="tr">Türkçe</a>
+    <a href="/ru/examples/" hreflang="ru" lang="ru">Русский</a>
+    <a href="/uk/examples/" hreflang="uk" lang="uk">Українська</a>
+    <a href="/ja/examples/" hreflang="ja" lang="ja">日本語</a>
+    <a href="/ko/examples/" hreflang="ko" lang="ko">한국어</a>
+    <b lang="zh-Hans">简体中文</b>
+    <a href="/zh-tw/examples/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+    <a href="/ar/examples/" hreflang="ar" lang="ar">العربية</a>
+    <a href="/he/examples/" hreflang="he" lang="he">עברית</a>
+    <a href="/hi/examples/" hreflang="hi" lang="hi">हिन्दी</a>
+    <a href="/id/examples/" hreflang="id" lang="id">Bahasa Indonesia</a>
+    <a href="/vi/examples/" hreflang="vi" lang="vi">Tiếng Việt</a>
+    <a href="/th/examples/" hreflang="th" lang="th">ไทย</a>
+  </div>
+</nav>
+<!-- /i18n:langs -->
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">
+      <a class="brand" href="/zh/" aria-label="Kleo，首页">
+        <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+          <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+          <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+        </svg>
+        Kleo <span class="tag">MCP</span>
+      </a>
+      <span>你来执导。智能体拍成影片。</span>
+    </div>
+    <div class="links">
+      <a href="/zh/connect/">连接</a> <a href="/zh/integrations/claude/">Claude</a> <a href="/zh/integrations/chatgpt/">ChatGPT</a> <a href="/zh/video-generation-mcp/">MCP 文档</a> <a href="/zh/examples/">示例</a> <a href="/zh/styles.html">风格</a> <a href="/zh/pricing/">价格</a> <a href="/zh/faq/">常见问题</a> <a href="/zh/about/">关于</a> <a href="/zh/privacy.html">隐私</a> <a href="/zh/terms.html">条款</a> <a href="https://github.com/tonnooooo/kleo-mcp">GitHub</a> <a href="mailto:kleooai@gmail.com">kleooai@gmail.com</a>
+    </div>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite">已复制</div>
+</body>
+</html>

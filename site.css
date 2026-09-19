@@ -391,6 +391,21 @@ footer a:hover{color:var(--ink)}
 .foot-brand{display:flex; align-items:center; gap:14px; flex-wrap:wrap}
 .foot-brand > span{color:var(--mute)}
 
+/* the language switcher: every language of the page, above the footer; the current one is not a link */
+.langs{border-top:1px solid var(--line); padding:28px 0 4px; font-size:.8125rem; color:var(--mute)}
+.langs .wrap{display:flex; flex-wrap:wrap; gap:8px 18px; align-items:baseline}
+.langs > .wrap > span{margin-inline-end:6px; text-transform:uppercase; letter-spacing:.08em; font-size:.6875rem}
+.langs a{color:var(--ink-2)}
+.langs a:hover{color:var(--ink)}
+.langs b{color:var(--ink); font-weight:600}
+/* right-to-left pages (Arabic, Hebrew): the few things written with a physical side */
+[dir="rtl"] .arr{display:inline-block; transform:scaleX(-1)}
+[dir="rtl"] .crumbs > span[aria-hidden]{display:inline-block; transform:scaleX(-1)}
+[dir="rtl"] .progress{transform-origin:100% 50%}
+[dir="rtl"] .toast{left:auto; right:50%; transform:translateX(50%) translateY(20px)}
+[dir="rtl"] .toast.show{transform:translateX(50%) translateY(0)}
+[dir="rtl"] .tool-args, [dir="rtl"] pre, [dir="rtl"] code, [dir="rtl"] .tc, [dir="rtl"] .osd, [dir="rtl"] .tcode{direction:ltr; unicode-bidi:isolate}
+
 /* ---------- the small things ---------- */
 /* a hairline that fills as you read */
 .progress{position:fixed; top:0; left:0; width:100%; height:2px; z-index:40; pointer-events:none; transform-origin:0 50%; transform:scaleX(var(--p,0)); background:linear-gradient(90deg, var(--hl-c), var(--amber)); box-shadow:0 0 8px var(--glow)}

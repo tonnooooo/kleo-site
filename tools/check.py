@@ -36,6 +36,43 @@ PAGES = {
     '/privacy.html': 'privacy.html',
 }
 NOINDEX = ['404.html']
+# the languages the site is published in, besides English: path prefix → (html lang, native name, og:locale, direction).
+# The order is the order of the language switcher. tools/i18n.py builds /<code>/... from the English pages.
+LANGS = {
+    'it': ('it', 'Italiano', 'it_IT', 'ltr'),
+    'de': ('de', 'Deutsch', 'de_DE', 'ltr'),
+    'fr': ('fr', 'Français', 'fr_FR', 'ltr'),
+    'es': ('es', 'Español', 'es_ES', 'ltr'),
+    'pt': ('pt', 'Português', 'pt_BR', 'ltr'),
+    'nl': ('nl', 'Nederlands', 'nl_NL', 'ltr'),
+    'pl': ('pl', 'Polski', 'pl_PL', 'ltr'),
+    'tr': ('tr', 'Türkçe', 'tr_TR', 'ltr'),
+    'ru': ('ru', 'Русский', 'ru_RU', 'ltr'),
+    'uk': ('uk', 'Українська', 'uk_UA', 'ltr'),
+    'ja': ('ja', '日本語', 'ja_JP', 'ltr'),
+    'ko': ('ko', '한국어', 'ko_KR', 'ltr'),
+    'zh': ('zh-Hans', '简体中文', 'zh_CN', 'ltr'),
+    'zh-tw': ('zh-Hant', '繁體中文', 'zh_TW', 'ltr'),
+    'ar': ('ar', 'العربية', 'ar_AR', 'rtl'),
+    'he': ('he', 'עברית', 'he_IL', 'rtl'),
+    'hi': ('hi', 'हिन्दी', 'hi_IN', 'ltr'),
+    'id': ('id', 'Bahasa Indonesia', 'id_ID', 'ltr'),
+    'vi': ('vi', 'Tiếng Việt', 'vi_VN', 'ltr'),
+    'th': ('th', 'ไทย', 'th_TH', 'ltr'),
+}
+ASSETS_V = '20260920'   # the ?v= on site.css and site.js; bump it when either changes
+
+
+def lang_route(code, route):
+    return route if code == 'en' else '/' + code + route
+
+
+def lang_file(code, file):
+    return file if code == 'en' else code + '/' + file
+
+
+# every indexable page in every language: route → file
+ALL_PAGES = {lang_route(c, r): lang_file(c, f) for c in ['en'] + list(LANGS) for r, f in PAGES.items()}
 # things the product does not do, or the site must not say (case-insensitive regexes over the visible text)
 FORBIDDEN = [
     (r'\b8[ -]?min', 'films are 15 s to 5 min'),
@@ -118,7 +155,7 @@ def main():
     parsed = {f: Page(s) for f, s in sources.items()}
     rel = lambda f: str(f.relative_to(ROOT))
     titles, descs, canonicals = {}, {}, {}
-    header_ref = footer_ref = None
+    chrome = {}
     for f, p in parsed.items():
         name = rel(f)
         errors += ['%s: %s' % (name, e) for e in p.errors]
@@ -140,24 +177,30 @@ def main():
             if '/index.html' in link or link == 'index.html': errors.append('%s: links to index.html instead of the directory route: %s' % (name, link))
         # the visible text must not promise what the product does not do
         text = ' '.join(' '.join(p.text).split())
-        for rx, why in FORBIDDEN:
+        # the word lists are English; a translated page carries the same facts as its English source, which is checked
+        for rx, why in (FORBIDDEN if '/' not in name or name.split('/')[0] not in LANGS else []):
             m = re.search(rx, text, re.I)
             if m: errors.append('%s: says "%s" — %s' % (name, text[max(0, m.start() - 40):m.end() + 40], why))
         if name in NOINDEX:
             if 'noindex' not in ''.join(p.meta('robots')): errors.append('%s: should be noindex' % name)
             continue
-        route = next((r for r, fn in PAGES.items() if fn == name), None)
-        if route is None: errors.append('%s: html file that is neither in PAGES nor NOINDEX' % name); continue
+        route = next((r for r, fn in ALL_PAGES.items() if fn == name), None)
+        if route is None: errors.append('%s: html file that is neither in PAGES (any language) nor NOINDEX' % name); continue
+        lang = route.split('/')[1] if route.split('/')[1] in LANGS else 'en'
+        en_route = route if lang == 'en' else route[len(lang) + 1:]
+        m = re.search(r'^<html lang="([^"]*)"', sources[f], re.M)
+        if not m or m.group(1) != ('en' if lang == 'en' else LANGS[lang][0]): errors.append('%s: <html lang> is not %s' % (name, 'en' if lang == 'en' else LANGS[lang][0]))
+        if lang != 'en' and (LANGS[lang][3] == 'rtl') != (' dir="rtl"' in sources[f][:120]): errors.append('%s: dir="rtl" does not match the language' % name)
         m = re.search(r'<title>(.*?)</title>', sources[f], re.S); title = html.unescape(m.group(1).strip()) if m else ''
         if not title: errors.append('%s: no title' % name)
-        elif title in titles: errors.append('%s: title duplicates %s' % (name, titles[title]))
-        titles[title] = name
+        elif (lang, title) in titles: errors.append('%s: title duplicates %s' % (name, titles[(lang, title)]))
+        titles[(lang, title)] = name
         d = p.meta('description')
         if not d or not d[0].strip(): errors.append('%s: no description' % name)
         else:
-            if not 70 <= len(d[0]) <= 170: errors.append('%s: description is %d chars' % (name, len(d[0])))
-            if d[0] in descs: errors.append('%s: description duplicates %s' % (name, descs[d[0]]))
-            descs[d[0]] = name
+            if not (70 if lang == 'en' else 30) <= len(d[0]) <= 170: errors.append('%s: description is %d chars' % (name, len(d[0])))
+            if (lang, d[0]) in descs: errors.append('%s: description duplicates %s' % (name, descs[(lang, d[0])]))
+            descs[(lang, d[0])] = name
         c = [a.get('href') for t, a in p.tags if t == 'link' and a.get('rel') == 'canonical']
         if c != [SITE_URL + route]: errors.append('%s: canonical %s, expected %s' % (name, c, SITE_URL + route))
         if p.meta('og:url', 'property') != [SITE_URL + route]: errors.append('%s: og:url differs from canonical' % name)
@@ -179,14 +222,27 @@ def main():
             if t == 'link' and a.get('rel') not in ('canonical', 'alternate') and a.get('href', '').startswith('http') and not a['href'].startswith(('https://fonts.googleapis.com', 'https://fonts.gstatic.com')): errors.append('%s: remote resource %s' % (name, a['href']))
             if t == 'script' and a.get('src', '').startswith('http'): errors.append('%s: remote script' % name)
         if any(t == 'style' for t, a in p.tags): errors.append('%s: inline <style> block (use site.css)' % name)
-        if not any(a.get('href') == '/site.js?v=20260915' or a.get('src') == '/site.js?v=20260915' for t, a in p.tags): errors.append('%s: site.js not loaded' % name)
-        # header/footer identical everywhere
+        for asset in ('/site.css', '/site.js'):
+            if not any(a.get('href') == asset + '?v=' + ASSETS_V or a.get('src') == asset + '?v=' + ASSETS_V for t, a in p.tags): errors.append('%s: %s?v=%s not loaded' % (name, asset, ASSETS_V))
+        # every language of the page is announced, in every language of the site, and English is the default
+        alts = {(a.get('hreflang'), a.get('href')) for t, a in p.tags if t == 'link' and a.get('rel') == 'alternate' and a.get('hreflang')}
+        want_alts = {('en', SITE_URL + en_route), ('x-default', SITE_URL + en_route)} | {(v[0], SITE_URL + lang_route(c, en_route)) for c, v in LANGS.items()}
+        if alts != want_alts: errors.append('%s: hreflang alternates: %s' % (name, sorted(alts ^ want_alts)[:3]))
+        # the language switcher: one entry per language, each pointing at this very page in that language
+        sw = re.search(r'<nav class="langs"[^>]*>(.*?)</nav>', sources[f], re.S)
+        if not sw: errors.append('%s: no language switcher' % name)
+        else:
+            got = dict(re.findall(r'<a href="([^"]*)" hreflang="([^"]*)"', sw.group(1)))
+            want = {lang_route(c, en_route): ('en' if c == 'en' else LANGS[c][0]) for c in ['en'] + list(LANGS) if c != lang}
+            if got != want: errors.append('%s: language switcher links: %s' % (name, sorted(set(got.items()) ^ set(want.items()))[:3]))
+            if not re.search(r'<b lang="%s">' % re.escape('en' if lang == 'en' else LANGS[lang][0]), sw.group(1)): errors.append('%s: language switcher does not mark %s as current' % (name, lang))
+        # header/footer identical everywhere, per language
         if p.header and p.footer:
             h, ft = block(sources[f], p.header), block(sources[f], p.footer)
-            if header_ref is None: header_ref, footer_ref = (h, name), (ft, name)
+            if lang not in chrome: chrome[lang] = ((h, name), (ft, name))
             else:
-                if h != header_ref[0]: errors.append('%s: header differs from %s' % (name, header_ref[1]))
-                if ft != footer_ref[0]: errors.append('%s: footer differs from %s' % (name, footer_ref[1]))
+                if h != chrome[lang][0][0]: errors.append('%s: header differs from %s' % (name, chrome[lang][0][1]))
+                if ft != chrome[lang][1][0]: errors.append('%s: footer differs from %s' % (name, chrome[lang][1][1]))
         else: errors.append('%s: no header/footer' % name)
         # aria-current="page" only on a header link that points at this very page
         hdr = block(sources[f], p.header) if p.header else ''
@@ -204,8 +260,8 @@ def main():
     sm = ET.parse(ROOT / 'sitemap.xml').getroot()
     ns = {'s': 'http://www.sitemaps.org/schemas/sitemap/0.9'}
     locs = [u.find('s:loc', ns).text for u in sm.findall('s:url', ns)]
-    want = [SITE_URL + r for r in PAGES]
-    if sorted(locs) != sorted(want): errors.append('sitemap: %s' % (set(locs) ^ set(want)))
+    want = [SITE_URL + r for r in ALL_PAGES]
+    if sorted(locs) != sorted(want): errors.append('sitemap: %d urls differ, e.g. %s' % (len(set(locs) ^ set(want)), sorted(set(locs) ^ set(want))[:3]))
     if len(locs) != len(set(locs)): errors.append('sitemap: duplicate loc')
     today = datetime.date.today()
     for u in sm.findall('s:url', ns):
@@ -224,7 +280,7 @@ def main():
     if (ROOT / '6d501967255b4889a19297ad25fe6c51.txt').read_text().strip() != '6d501967255b4889a19297ad25fe6c51': errors.append('IndexNow key file content')
     for banned in ('implementation', 'contenus', 'ready-to-deploy', 'audit-pearl'):
         if (ROOT / banned).exists(): errors.append('%s/ must not be published' % banned)
-    print('%d html files, %d indexable, %d errors' % (len(files), len(PAGES), len(errors)))
+    print('%d html files, %d indexable (%d in English, %d languages), %d errors' % (len(files), len(ALL_PAGES), len(PAGES), len(LANGS) + 1, len(errors)))
     for e in errors: print(' -', e)
     return 1 if errors else 0
 

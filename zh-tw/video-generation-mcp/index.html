@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="zh-Hant" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.remove("no-js")</script>
+<title>Kleo MCP 文件 — 端點、OAuth 與工具</title>
+<meta name="description" content="Kleo 遠端 MCP 伺服器文件：Streamable HTTP 端點、一鍵完成的 OAuth 2.1、每個 kleo 工具及其執行順序、價格規則和輸出。">
+<link rel="canonical" href="https://kleooai.com/zh-tw/video-generation-mcp/">
+<!-- i18n:head -->
+<link rel="alternate" hreflang="en" href="https://kleooai.com/video-generation-mcp/">
+<link rel="alternate" hreflang="it" href="https://kleooai.com/it/video-generation-mcp/">
+<link rel="alternate" hreflang="de" href="https://kleooai.com/de/video-generation-mcp/">
+<link rel="alternate" hreflang="fr" href="https://kleooai.com/fr/video-generation-mcp/">
+<link rel="alternate" hreflang="es" href="https://kleooai.com/es/video-generation-mcp/">
+<link rel="alternate" hreflang="pt" href="https://kleooai.com/pt/video-generation-mcp/">
+<link rel="alternate" hreflang="nl" href="https://kleooai.com/nl/video-generation-mcp/">
+<link rel="alternate" hreflang="pl" href="https://kleooai.com/pl/video-generation-mcp/">
+<link rel="alternate" hreflang="tr" href="https://kleooai.com/tr/video-generation-mcp/">
+<link rel="alternate" hreflang="ru" href="https://kleooai.com/ru/video-generation-mcp/">
+<link rel="alternate" hreflang="uk" href="https://kleooai.com/uk/video-generation-mcp/">
+<link rel="alternate" hreflang="ja" href="https://kleooai.com/ja/video-generation-mcp/">
+<link rel="alternate" hreflang="ko" href="https://kleooai.com/ko/video-generation-mcp/">
+<link rel="alternate" hreflang="zh-Hans" href="https://kleooai.com/zh/video-generation-mcp/">
+<link rel="alternate" hreflang="zh-Hant" href="https://kleooai.com/zh-tw/video-generation-mcp/">
+<link rel="alternate" hreflang="ar" href="https://kleooai.com/ar/video-generation-mcp/">
+<link rel="alternate" hreflang="he" href="https://kleooai.com/he/video-generation-mcp/">
+<link rel="alternate" hreflang="hi" href="https://kleooai.com/hi/video-generation-mcp/">
+<link rel="alternate" hreflang="id" href="https://kleooai.com/id/video-generation-mcp/">
+<link rel="alternate" hreflang="vi" href="https://kleooai.com/vi/video-generation-mcp/">
+<link rel="alternate" hreflang="th" href="https://kleooai.com/th/video-generation-mcp/">
+<link rel="alternate" hreflang="x-default" href="https://kleooai.com/video-generation-mcp/">
+<script>(function(){try{var L=["it", "de", "fr", "es", "pt", "nl", "pl", "tr", "ru", "uk", "ja", "ko", "zh", "zh-tw", "ar", "he", "hi", "id", "vi", "th"],A={"zh-hk": "zh-tw", "zh-mo": "zh-tw", "zh-hant": "zh-tw", "zh-hans": "zh", "zh-cn": "zh", "zh-sg": "zh", "nb": "no", "nn": "no"},p=location.pathname,m=p.match(/^\/([a-z]{2}(?:-[a-z]{2})?)(?=\/)/),on=m&&L.indexOf(m[1])>=0?m[1]:"en",rest=on==="en"?p:p.slice(on.length+1),want=null,s=null;try{s=localStorage.getItem("kleo-lang")}catch(e){}if(s==="en"||L.indexOf(s)>=0)want=s;else{var nl=navigator.languages||[navigator.language||""];for(var i=0;i<nl.length&&!want;i++){var t=String(nl[i]).toLowerCase(),b=t.split("-")[0];t=A[t]||t;b=A[b]||b;want=t==="en"||b==="en"?"en":L.indexOf(t)>=0?t:L.indexOf(b)>=0?b:null}}if(want&&want!==on&&!/404/.test(p))location.replace((want==="en"?"":"/"+want)+rest+location.search+location.hash)}catch(e){}})()</script>
+<script type="application/json" id="i18n">{"Language": "語言", "Menu": "選單", "Close menu": "關閉選單", "Copied": "已複製", "Copied ✓": "已複製 ✓", "Copy it by hand: {text}": "請手動複製:{text}", "Copy the Kleo server address": "複製 Kleo 伺服器位址", "Copy the argument {value}": "複製參數 {value}", "Copy this prompt": "複製這段提示詞", "Copy the {what} snippet": "複製 {what} 程式碼片段", "Copy the {what} text": "複製 {what} 文字", "Treatment · logline, angle, acts · look: realistic": "故事大綱 · 主軸、切入角度、幕次 · 風格：寫實", "Storyboard · direction, scenes, shots · 23 credits, confirmed": "分鏡 · 執導方向、場景、鏡頭 · 23 點數，已確認", "Generating the shots as footage · 4 of 11 · ~22 min left": "正在把鏡頭生成為動態影像 · 第 4 / 11 個 · 約剩 22 分鐘", "Generating the shots as footage · 8 of 11 · ~12 min left": "正在把鏡頭生成為動態影像 · 第 8 / 11 個 · 約剩 12 分鐘", "Narration · one voice, English · cutting the shots on the words": "旁白 · 單一聲音，英語 · 依語句剪接鏡頭", "Finish · 2160×3840 · 60 fps · quality check": "完成階段 · 2160×3840 · 60 fps · 品質檢查", "Done · 28 min · link ready for 7 days": "完成 · 28 分鐘 · 連結 7 天內有效", "done": "完成", "running": "進行中", "A whole number from {min} to {max} seconds": "{min} 到 {max} 秒之間的整數", "{s} s {product} = {n} credits": "{s} 秒{product} = {n} 點數", "film": "影片", "animatic": "動態分鏡"}</script>
+<!-- /i18n:head -->
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kleo AI">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:title" content="Kleo MCP 文件 — 端點、OAuth 與工具">
+<meta property="og:description" content="Kleo 遠端 MCP 伺服器文件：Streamable HTTP 端點、一鍵完成的 OAuth 2.1、每個 kleo 工具及其執行順序、價格規則和輸出。">
+<meta property="og:url" content="https://kleooai.com/zh-tw/video-generation-mcp/">
+<meta property="og:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta property="og:image:alt" content="Kleo AI — 由人執導。由代理製作的影片。">
+<meta property="og:image:width" content="2400">
+<meta property="og:image:height" content="1260">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kleo MCP 文件 — 端點、OAuth 與工具">
+<meta name="twitter:description" content="Kleo 遠端 MCP 伺服器文件：Streamable HTTP 端點、一鍵完成的 OAuth 2.1、每個 kleo 工具及其執行順序、價格規則和輸出。">
+<meta name="twitter:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta name="theme-color" content="#0A0C10">
+<link rel="icon" href="/brand/kleo-favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/brand/kleo-favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/brand/kleo-icon-dark-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/site.css?v=20260920">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://kleooai.com/#website",
+      "name": "Kleo AI",
+      "alternateName": "Kleo",
+      "url": "https://kleooai.com/zh-tw/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kleooai.com/zh-tw/video-generation-mcp/#page",
+      "url": "https://kleooai.com/zh-tw/video-generation-mcp/",
+      "name": "Kleo MCP 文件 — 端點、OAuth 與工具",
+      "description": "Kleo 遠端 MCP 伺服器文件：Streamable HTTP 端點、一鍵完成的 OAuth 2.1、每個 kleo 工具及其執行順序、價格規則和輸出。",
+      "inLanguage": "zh-Hant",
+      "isPartOf": {
+        "@id": "https://kleooai.com/#website"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "首頁",
+          "item": "https://kleooai.com/zh-tw/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "MCP 文件",
+          "item": "https://kleooai.com/zh-tw/video-generation-mcp/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<script src="/site.js?v=20260920" defer></script>
+</head>
+<body>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" aria-label="主選單">
+  <div class="wrap">
+    <a class="brand" href="/zh-tw/" aria-label="Kleo,首頁">
+      <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+        <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+        <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+      </svg>
+      Kleo <span class="tag">MCP</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="選單" aria-expanded="false" aria-controls="site-menu">
+      <svg class="bars" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 5h14M2 9h14M2 13h14"/></svg>
+      <svg class="x" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 4l10 10M14 4L4 14"/></svg>
+    </button>
+    <div class="nav-links" id="site-menu">
+      <a href="/zh-tw/ai-youtube-video-generator/">製作影片</a> <a href="/zh-tw/examples/">範例</a> <a href="/zh-tw/styles.html">風格</a> <a href="/zh-tw/pricing/">價格</a> <a href="/zh-tw/faq/">常見問題</a>
+    </div>
+    <a class="btn btn-primary btn-sm" href="/zh-tw/connect/">連接 Kleo</a>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="page-hero hero" id="top">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="導覽路徑"><a href="/zh-tw/">首頁</a><span aria-hidden="true">›</span><span>MCP 文件</span></nav>
+    <h1>一個影片製作的<br><span class="hl">MCP 伺服器。</span></h1>
+    <p class="lede">Kleo 向任何 MCP 用戶端提供同一套影片工作流程：需求確認、故事大綱、分鏡、在為該工作租用的 GPU 上渲染，以及一部完成的 4K 60 fps 旁白影片的連結。一位旁白，兩種風格，兩種產品（影片，或同一份分鏡的動態分鏡），15 秒到 5 分鐘。沒有應用程式，也沒有儀表板；助理透過下面的工具完成工作。</p>
+    <p class="mono" id="mcpStatus" hidden></p>
+    <div class="address"><code>https://mcp.kleooai.com/mcp</code><button class="btn btn-ghost btn-sm" type="button" data-copy="https://mcp.kleooai.com/mcp">複製位址</button></div>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="/zh-tw/connect/">連接 Kleo <span class="arr" aria-hidden="true">→</span></a> <a class="btn btn-ghost" href="https://github.com/tonnooooo/kleo-mcp">公開程式庫</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ENDPOINT ============ -->
+<section id="endpoint">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">01</span>端點</div>
+        <h2>透過 HTTPS 連接。</h2>
+      </div>
+      <p class="lede">Kleo 是一個遠端 MCP 伺服器：一個位址，Streamable HTTP 傳輸，OAuth 2.1。在你的 MCP 用戶端設定位址，並在瀏覽器裡完成授權；沒有註冊表單，也沒有密碼。</p>
+    </div>
+    <ul class="defs">
+      <li><b>端點</b><span><code class="mono">https://mcp.kleooai.com/mcp</code></span></li>
+      <li><b>傳輸</b><span>Streamable HTTP；每個用戶端都用同一個位址。</span></li>
+      <li><b>驗證</b><span>OAuth 2.1。授權過程中，用戶端會開啟 Kleo 自己的頁面；你按下<b>免費開始</b>，就回到用戶端，帳戶裡有 7 點數。沒有表單、沒有信用卡。</span></li>
+      <li><b>沒有權杖時</b><span>對端點發出 GET 會回應 <code class="mono">401</code>，並附帶 OAuth 資源中繼資料。它是協定端點，不是網頁：在瀏覽器裡開啟它並不是連接流程。</span></li>
+      <li><b>用戶端</b><span>Claude、ChatGPT、Grok、Claude Code、Cursor、VS Code、OpenCode、Gemini CLI、Windsurf、Gemini 應用程式，以及任何搭配 HTTP 傳輸的 MCP SDK。</span></li>
+    </ul>
+    <div class="prose">
+      <p><a href="/zh-tw/connect/">每個用戶端的連接步驟 →</a></p>
+      <h3>從終端機或編輯器。</h3>
+      <p>以測試過的用戶端中的兩個為例。其他步驟，從 Claude、ChatGPT 到 VS Code 和 Gemini CLI，都在<a href="/zh-tw/connect/">連接頁面</a>。</p>
+    </div>
+    <div class="grid panels">
+      <article class="panel">
+        <h3>Claude Code <small>cli</small></h3>
+        <div class="code"><span class="cm"># 加入 Kleo 一次</span> claude mcp add --transport http kleo https://mcp.kleooai.com/mcp <span class="cm"># 然後，在工作階段裡：</span> /mcp <span class="cm">→ Kleo → Authenticate</span><button class="btn btn-ghost btn-sm copy" type="button" data-copy="claude mcp add --transport http kleo https://mcp.kleooai.com/mcp">複製</button></div>
+        <p>Kleo 的頁面會在瀏覽器開啟；按下<b>免費開始</b>，就回到 Claude Code 了。</p>
+      </article>
+      <article class="panel">
+        <h3>Cursor <small>~/.cursor/mcp.json</small></h3>
+        <div class="code">{ <span class="k">"mcpServers"</span>: { <span class="k">"kleo"</span>: { <span class="k">"url"</span>: <span class="s">"https://mcp.kleooai.com/mcp"</span> } } }<button class="btn btn-ghost btn-sm copy" type="button" data-copy='{&#10;  "mcpServers": {&#10;    "kleo": { "url": "https://mcp.kleooai.com/mcp" }&#10;  }&#10;}'>複製</button></div>
+        <p>儲存檔案。Cursor 連接時，Kleo 的頁面會開啟：按下<b>免費開始</b>，就回到 Cursor 了。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WORKFLOW ============ -->
+<section id="workflow">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">02</span>工作流程</div>
+        <h2>製作順序。</h2>
+      </div>
+      <p class="lede">工具依固定順序執行。助理讀取你的請求，從 <code class="mono">kleo_adapt_prompt</code> 取得故事大綱，依 <code class="mono">kleo_storyboard_guide</code> 寫出分鏡，然後才要求 Kleo 渲染。</p>
+    </div>
+    <div class="tools">
+      <h3>kleo 工具，依助理執行的順序</h3>
+      <div class="ttable">
+        <table>
+          <thead>
+            <tr>
+              <th>工具</th>
+              <th>功能</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>kleo_adapt_prompt</td>
+              <td>用確認清單核對請求（主題、長度、格式、風格；選填的受眾、語氣、必須出現的東西），詢問缺少的部分，然後回傳故事大綱：主軸、切入角度、開場、幕次、結局、風格、節奏、旁白。</td>
+            </tr>
+            <tr>
+              <td>kleo_storyboard_guide</td>
+              <td>說明分鏡怎麼寫：執導方向、場景、鏡頭和限制。</td>
+            </tr>
+            <tr>
+              <td>kleo_create_video</td>
+              <td>檢查全部內容，明示確切的點數，然後在為該工作租用的 GPU 上開始渲染。接受 <code class="mono">product: "film"</code> 或 <code class="mono">"animatic"</code>。</td>
+            </tr>
+            <tr>
+              <td>kleo_get_job</td>
+              <td>以單次呼叫回報一個工作的進度。</td>
+            </tr>
+            <tr>
+              <td>kleo_wait_for_video</td>
+              <td>等待渲染並回報進度，直到影片就緒。</td>
+            </tr>
+            <tr>
+              <td>kleo_get_result</td>
+              <td>回傳完成影片的連結。</td>
+            </tr>
+            <tr>
+              <td>kleo_cancel_job</td>
+              <td>停止渲染，退回尚未用掉的點數。</td>
+            </tr>
+            <tr>
+              <td>kleo_list_templates</td>
+              <td>列出唯一的工作流程「影片」，及其格式、長度和聲音，還有帳戶剩餘的點數。動態分鏡是同一套工作流程的產品。</td>
+            </tr>
+            <tr>
+              <td>kleo_account</td>
+              <td>顯示點數、帳戶是否已付費（<code class="mono">has_paid</code>，決定能否訂製影片）、帳戶頁面的連結，以及私密的 Kleo 金鑰。</td>
+            </tr>
+            <tr>
+              <td>kleo_generate_thumbnail</td>
+              <td>測試版尚未提供。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="prose">
+      <p>確切的參數請以線上伺服器的工具結構描述為準。如果你的用戶端限制工具呼叫的執行時間，助理可以輪詢 <code class="mono">kleo_get_job</code>，而不是一直掛著 <code class="mono">kleo_wait_for_video</code>。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PARAMETERS ============ -->
+<section id="render">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">03</span>參數</div>
+        <h2>渲染需要什麼。</h2>
+      </div>
+      <p class="lede"><code class="mono">kleo_create_video</code> 接收你以自己的話寫的請求，加上確認清單問到的選項。故事大綱和分鏡來自兩個規劃工具，不是來自你的鍵盤。</p>
+    </div>
+    <ul class="defs">
+      <li><b>prompt</b><span>使用者以自己的話寫的請求。</span></li>
+      <li><b>product</b><span><code class="mono">film</code>（預設：每個鏡頭都是生成的片段，依長度計價，限已購買點數包的帳戶）或 <code class="mono">animatic</code>（手繪畫格在移動的鏡頭下呈現，沒有生成的片段，固定 5 點數，15 到 60 秒，所有帳戶皆可）。</span></li>
+      <li><b>duration_s</b><span>影片 15 到 300 秒，動態分鏡 15 到 60 秒。</span></li>
+      <li><b>format</b><span><code class="mono">16:9</code> 用於 YouTube 和橫式，<code class="mono">9:16</code> 用於 Shorts 和直式。</span></li>
+      <li><b>style</b><span><code class="mono">realistic</code>（生成的實景影像，電影感）或 <code class="mono">animation</code>（2D 動畫影片）。影片裡的每個鏡頭都是從各自的畫格生成的動態影像；動態分鏡則把風格保留在手繪畫格裡。</span></li>
+      <li><b>language</b><span><code class="mono">en</code> 或 <code class="mono">it</code> 旁白。一位旁白；標準影片沒有音樂、沒有字幕、沒有畫面文字。</span></li>
+      <li><b>voice</b><span>選填：<code class="mono">narrator-en-m</code>、<code class="mono">narrator-en-f</code>、<code class="mono">narrator-it-m</code> 或 <code class="mono">narrator-it-f</code>。</span></li>
+      <li><b>treatment</b><span>選填：<code class="mono">kleo_adapt_prompt</code> 回傳的故事大綱（主軸、切入角度、開場、幕次、結局、風格、節奏、旁白）。</span></li>
+      <li><b>storyboard</b><span>選填：依 <code class="mono">kleo_storyboard_guide</code> 寫出的分鏡（執導方向、場景、鏡頭、限制）。</span></li>
+    </ul>
+    <div class="prose">
+      <h3>價格</h3>
+      <p>影片：一點數是兩秒，無條件進位，最少十點數：15 秒 = 10 · 20 秒 = 10 · 30 秒 = 15 · 60 秒 = 30 · 90 秒 = 45 · 3 分鐘 = 90 · 5 分鐘 = 150。動態分鏡：固定 5 點數，15 到 60 秒。連接即含 7 點數，一支動態分鏡；影片只為已購買點數包的帳戶製作（片段由 Kleo 出資生成，所以免費點數永遠買不到影片）：7 + €5 點數包 = 17，影片開放，一支 30 秒的 Shorts。點數包一次付清，以歐元計價，不必訂閱：€5 = 10 點數 · €15 = 35 · €40 = 100。</p>
+      <h3>工作被接受之前不扣任何費用</h3>
+      <p><code>kleo_create_video</code> 會先回覆確切的點數；被拒絕的呼叫不會扣費，<code>kleo_cancel_job</code> 會退回已停止的渲染尚未用掉的點數。</p>
+      <h3>渲染時間</h3>
+      <p>影片在租用的 GPU 上通常需要 25–35 分鐘，動態分鏡約 15–20 分鐘；伺服器會把該工作的預估時間告訴助理。這不是固定的時間。</p>
+      <p><a href="/zh-tw/pricing/">點數包與各長度的費用 →</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OUTPUT ============ -->
+<section id="output">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">04</span>輸出</div>
+        <h2>輸出是一部完成的影片。</h2>
+      </div>
+      <p class="lede">一個 MP4：4K（3840×2160 或 2160×3840）、60 fps，16:9 或 9:16，一位英語或義大利語的旁白，而且在影片裡，每個鏡頭都生成為動態影像。<code class="mono">kleo_get_result</code> 把檔案連結交給助理；連結 7 天內有效。</p>
+    </div>
+    <div class="prose">
+      <p>Kleo 絕不會發布到 YouTube、TikTok 或任何頻道，而標準影片沒有音樂、沒有字幕、沒有畫面文字。伺服器上有兩種風格，寫實和動畫；網站的風格頁各有一部範例。</p>
+      <p><a href="/zh-tw/examples/">觀看寫實風格的範例 →</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ACCOUNT ============ -->
+<section class="cta one" id="account">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow"><span class="n">05</span>帳戶</div>
+      <h2>帳戶與工作處理。</h2>
+      <p class="lede">請讓 OAuth 權杖和 Kleo 金鑰遠離日誌和公開範例：金鑰是私密的，誰持有它，誰就擁有帳戶。沒有儀表板；帳戶頁面（唯讀的餘額和結帳連結）透過詢問助理取得，由 <code class="mono">kleo_account</code> 回傳。</p>
+      <p class="lede">渲染會花點數：在 <code class="mono">kleo_create_video</code> 執行前先請求確認，查詢進度或取消時重複使用同一個工作識別碼。伺服器程式碼是公開的。</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://github.com/tonnooooo/kleo-mcp">在 GitHub 閱讀伺服器原始碼 <span class="arr" aria-hidden="true">→</span></a> <a class="btn btn-ghost" href="/zh-tw/privacy.html">Kleo 如何處理資料</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<!-- i18n:langs -->
+<nav class="langs" aria-label="語言">
+  <div class="wrap">
+    <span>語言</span>
+    <a href="/video-generation-mcp/" hreflang="en" lang="en">English</a>
+    <a href="/it/video-generation-mcp/" hreflang="it" lang="it">Italiano</a>
+    <a href="/de/video-generation-mcp/" hreflang="de" lang="de">Deutsch</a>
+    <a href="/fr/video-generation-mcp/" hreflang="fr" lang="fr">Français</a>
+    <a href="/es/video-generation-mcp/" hreflang="es" lang="es">Español</a>
+    <a href="/pt/video-generation-mcp/" hreflang="pt" lang="pt">Português</a>
+    <a href="/nl/video-generation-mcp/" hreflang="nl" lang="nl">Nederlands</a>
+    <a href="/pl/video-generation-mcp/" hreflang="pl" lang="pl">Polski</a>
+    <a href="/tr/video-generation-mcp/" hreflang="tr" lang="tr">Türkçe</a>
+    <a href="/ru/video-generation-mcp/" hreflang="ru" lang="ru">Русский</a>
+    <a href="/uk/video-generation-mcp/" hreflang="uk" lang="uk">Українська</a>
+    <a href="/ja/video-generation-mcp/" hreflang="ja" lang="ja">日本語</a>
+    <a href="/ko/video-generation-mcp/" hreflang="ko" lang="ko">한국어</a>
+    <a href="/zh/video-generation-mcp/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+    <b lang="zh-Hant">繁體中文</b>
+    <a href="/ar/video-generation-mcp/" hreflang="ar" lang="ar">العربية</a>
+    <a href="/he/video-generation-mcp/" hreflang="he" lang="he">עברית</a>
+    <a href="/hi/video-generation-mcp/" hreflang="hi" lang="hi">हिन्दी</a>
+    <a href="/id/video-generation-mcp/" hreflang="id" lang="id">Bahasa Indonesia</a>
+    <a href="/vi/video-generation-mcp/" hreflang="vi" lang="vi">Tiếng Việt</a>
+    <a href="/th/video-generation-mcp/" hreflang="th" lang="th">ไทย</a>
+  </div>
+</nav>
+<!-- /i18n:langs -->
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">
+      <a class="brand" href="/zh-tw/" aria-label="Kleo,首頁">
+        <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+          <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+          <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+        </svg>
+        Kleo <span class="tag">MCP</span>
+      </a>
+      <span>由人執導。由代理製作的影片。</span>
+    </div>
+    <div class="links">
+      <a href="/zh-tw/connect/">連接</a> <a href="/zh-tw/integrations/claude/">Claude</a> <a href="/zh-tw/integrations/chatgpt/">ChatGPT</a> <a href="/zh-tw/video-generation-mcp/">MCP 文件</a> <a href="/zh-tw/examples/">範例</a> <a href="/zh-tw/styles.html">風格</a> <a href="/zh-tw/pricing/">價格</a> <a href="/zh-tw/faq/">常見問題</a> <a href="/zh-tw/about/">關於</a> <a href="/zh-tw/privacy.html">隱私權</a> <a href="/zh-tw/terms.html">條款</a> <a href="https://github.com/tonnooooo/kleo-mcp">GitHub</a> <a href="mailto:kleooai@gmail.com">kleooai@gmail.com</a>
+    </div>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite">已複製</div>
+</body>
+</html>

@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="zh-Hant" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.remove("no-js")</script>
+<title>連接 Kleo AI — 一個位址，任何助理</title>
+<meta name="description" content="把 Kleo 加進 Claude、ChatGPT、Grok、Claude Code、Cursor、VS Code、OpenCode 或 Gemini CLI：一個 MCP 位址，一個「免費開始」按鈕，7 點數起步。">
+<link rel="canonical" href="https://kleooai.com/zh-tw/connect/">
+<!-- i18n:head -->
+<link rel="alternate" hreflang="en" href="https://kleooai.com/connect/">
+<link rel="alternate" hreflang="it" href="https://kleooai.com/it/connect/">
+<link rel="alternate" hreflang="de" href="https://kleooai.com/de/connect/">
+<link rel="alternate" hreflang="fr" href="https://kleooai.com/fr/connect/">
+<link rel="alternate" hreflang="es" href="https://kleooai.com/es/connect/">
+<link rel="alternate" hreflang="pt" href="https://kleooai.com/pt/connect/">
+<link rel="alternate" hreflang="nl" href="https://kleooai.com/nl/connect/">
+<link rel="alternate" hreflang="pl" href="https://kleooai.com/pl/connect/">
+<link rel="alternate" hreflang="tr" href="https://kleooai.com/tr/connect/">
+<link rel="alternate" hreflang="ru" href="https://kleooai.com/ru/connect/">
+<link rel="alternate" hreflang="uk" href="https://kleooai.com/uk/connect/">
+<link rel="alternate" hreflang="ja" href="https://kleooai.com/ja/connect/">
+<link rel="alternate" hreflang="ko" href="https://kleooai.com/ko/connect/">
+<link rel="alternate" hreflang="zh-Hans" href="https://kleooai.com/zh/connect/">
+<link rel="alternate" hreflang="zh-Hant" href="https://kleooai.com/zh-tw/connect/">
+<link rel="alternate" hreflang="ar" href="https://kleooai.com/ar/connect/">
+<link rel="alternate" hreflang="he" href="https://kleooai.com/he/connect/">
+<link rel="alternate" hreflang="hi" href="https://kleooai.com/hi/connect/">
+<link rel="alternate" hreflang="id" href="https://kleooai.com/id/connect/">
+<link rel="alternate" hreflang="vi" href="https://kleooai.com/vi/connect/">
+<link rel="alternate" hreflang="th" href="https://kleooai.com/th/connect/">
+<link rel="alternate" hreflang="x-default" href="https://kleooai.com/connect/">
+<script>(function(){try{var L=["it", "de", "fr", "es", "pt", "nl", "pl", "tr", "ru", "uk", "ja", "ko", "zh", "zh-tw", "ar", "he", "hi", "id", "vi", "th"],A={"zh-hk": "zh-tw", "zh-mo": "zh-tw", "zh-hant": "zh-tw", "zh-hans": "zh", "zh-cn": "zh", "zh-sg": "zh", "nb": "no", "nn": "no"},p=location.pathname,m=p.match(/^\/([a-z]{2}(?:-[a-z]{2})?)(?=\/)/),on=m&&L.indexOf(m[1])>=0?m[1]:"en",rest=on==="en"?p:p.slice(on.length+1),want=null,s=null;try{s=localStorage.getItem("kleo-lang")}catch(e){}if(s==="en"||L.indexOf(s)>=0)want=s;else{var nl=navigator.languages||[navigator.language||""];for(var i=0;i<nl.length&&!want;i++){var t=String(nl[i]).toLowerCase(),b=t.split("-")[0];t=A[t]||t;b=A[b]||b;want=t==="en"||b==="en"?"en":L.indexOf(t)>=0?t:L.indexOf(b)>=0?b:null}}if(want&&want!==on&&!/404/.test(p))location.replace((want==="en"?"":"/"+want)+rest+location.search+location.hash)}catch(e){}})()</script>
+<script type="application/json" id="i18n">{"Language": "語言", "Menu": "選單", "Close menu": "關閉選單", "Copied": "已複製", "Copied ✓": "已複製 ✓", "Copy it by hand: {text}": "請手動複製:{text}", "Copy the Kleo server address": "複製 Kleo 伺服器位址", "Copy the argument {value}": "複製參數 {value}", "Copy this prompt": "複製這段提示詞", "Copy the {what} snippet": "複製 {what} 程式碼片段", "Copy the {what} text": "複製 {what} 文字", "Treatment · logline, angle, acts · look: realistic": "故事大綱 · 主軸、切入角度、幕次 · 風格：寫實", "Storyboard · direction, scenes, shots · 23 credits, confirmed": "分鏡 · 執導方向、場景、鏡頭 · 23 點數，已確認", "Generating the shots as footage · 4 of 11 · ~22 min left": "正在把鏡頭生成為動態影像 · 第 4 / 11 個 · 約剩 22 分鐘", "Generating the shots as footage · 8 of 11 · ~12 min left": "正在把鏡頭生成為動態影像 · 第 8 / 11 個 · 約剩 12 分鐘", "Narration · one voice, English · cutting the shots on the words": "旁白 · 單一聲音，英語 · 依語句剪接鏡頭", "Finish · 2160×3840 · 60 fps · quality check": "完成階段 · 2160×3840 · 60 fps · 品質檢查", "Done · 28 min · link ready for 7 days": "完成 · 28 分鐘 · 連結 7 天內有效", "done": "完成", "running": "進行中", "A whole number from {min} to {max} seconds": "{min} 到 {max} 秒之間的整數", "{s} s {product} = {n} credits": "{s} 秒{product} = {n} 點數", "film": "影片", "animatic": "動態分鏡"}</script>
+<!-- /i18n:head -->
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kleo AI">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:title" content="連接 Kleo AI — 一個位址，任何助理">
+<meta property="og:description" content="把 Kleo 加進 Claude、ChatGPT、Grok、Claude Code、Cursor、VS Code、OpenCode 或 Gemini CLI：一個 MCP 位址，一個「免費開始」按鈕，7 點數起步。">
+<meta property="og:url" content="https://kleooai.com/zh-tw/connect/">
+<meta property="og:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta property="og:image:alt" content="Kleo AI — 由人執導。由代理製作的影片。">
+<meta property="og:image:width" content="2400">
+<meta property="og:image:height" content="1260">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="連接 Kleo AI — 一個位址，任何助理">
+<meta name="twitter:description" content="把 Kleo 加進 Claude、ChatGPT、Grok、Claude Code、Cursor、VS Code、OpenCode 或 Gemini CLI：一個 MCP 位址，一個「免費開始」按鈕，7 點數起步。">
+<meta name="twitter:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta name="theme-color" content="#0A0C10">
+<link rel="icon" href="/brand/kleo-favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/brand/kleo-favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/brand/kleo-icon-dark-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/site.css?v=20260920">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://kleooai.com/#website",
+      "name": "Kleo AI",
+      "alternateName": "Kleo",
+      "url": "https://kleooai.com/zh-tw/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kleooai.com/zh-tw/connect/#page",
+      "url": "https://kleooai.com/zh-tw/connect/",
+      "name": "連接 Kleo AI — 一個位址，任何助理",
+      "description": "把 Kleo 加進 Claude、ChatGPT、Grok、Claude Code、Cursor、VS Code、OpenCode 或 Gemini CLI：一個 MCP 位址，一個「免費開始」按鈕，7 點數起步。",
+      "inLanguage": "zh-Hant",
+      "isPartOf": {
+        "@id": "https://kleooai.com/#website"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "首頁",
+          "item": "https://kleooai.com/zh-tw/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "連接",
+          "item": "https://kleooai.com/zh-tw/connect/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<script src="/site.js?v=20260920" defer></script>
+</head>
+<body>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" aria-label="主選單">
+  <div class="wrap">
+    <a class="brand" href="/zh-tw/" aria-label="Kleo,首頁">
+      <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+        <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+        <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+      </svg>
+      Kleo <span class="tag">MCP</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="選單" aria-expanded="false" aria-controls="site-menu">
+      <svg class="bars" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 5h14M2 9h14M2 13h14"/></svg>
+      <svg class="x" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 4l10 10M14 4L4 14"/></svg>
+    </button>
+    <div class="nav-links" id="site-menu">
+      <a href="/zh-tw/ai-youtube-video-generator/">製作影片</a> <a href="/zh-tw/examples/">範例</a> <a href="/zh-tw/styles.html">風格</a> <a href="/zh-tw/pricing/">價格</a> <a href="/zh-tw/faq/">常見問題</a>
+    </div>
+    <a class="btn btn-primary btn-sm" href="/zh-tw/connect/" aria-current="page">連接 Kleo</a>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="page-hero hero" id="top">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="導覽路徑"><a href="/zh-tw/">首頁</a><span aria-hidden="true">›</span><span>連接</span></nav>
+    <h1>你的對話。<br><span class="hl">你的製片廠。</span></h1>
+    <p class="lede">Kleo 是一個遠端 MCP 伺服器。它透過 Streamable HTTP 搭配 OAuth 2.1 使用 Model Context Protocol，所以同一個位址在每個用戶端都能用，而連接只是 Kleo 自己頁面上的一個按鈕——沒有註冊表單、沒有密碼、沒有信用卡。免費開始：連接的那一刻，你的帳戶就有 7 點數，可做一支動態分鏡。把它加進你的助理，描述你想做的影片。</p>
+    <p class="mono" id="mcpStatus" hidden></p>
+    <div class="address"><code>https://mcp.kleooai.com/mcp</code><button class="btn btn-ghost btn-sm" type="button" data-copy="https://mcp.kleooai.com/mcp">複製位址</button></div>
+    <div class="works">
+      <span>支援</span> <b>Claude</b><b>ChatGPT</b><b>Grok</b><b>Claude Code</b><b>Cursor</b><b>VS Code</b><b>OpenCode</b><b>Gemini CLI</b><b>Windsurf</b><b>Gemini 應用程式</b>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ASSISTANTS ============ -->
+<section id="assistants">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">01</span>連接</div>
+        <h2>選擇你的助理。</h2>
+      </div>
+      <p class="lede">下面每個用戶端都用同一個位址、同一個一鍵開始：貼上位址，Kleo 的頁面開啟，按下<b>免費開始</b>，你就回到用戶端，帳戶裡有 7 點數。這些是我們實際測試過的步驟。</p>
+    </div>
+    <div class="grid panels">
+
+      <article class="panel">
+        <h3>Claude <small>應用程式 · 網頁版</small></h3>
+        <div class="url-line">伺服器位址 <code>https://mcp.kleooai.com/mcp</code> <button class="btn btn-ghost btn-sm" type="button" data-copy="https://mcp.kleooai.com/mcp">複製</button></div>
+        <ol>
+          <li>開啟<b>設定 → 連接器</b>,選擇<b>新增自訂連接器</b>。</li>
+          <li>命名為 <b>Kleo</b>,貼上上方位址，然後確認。Kleo 的頁面會開啟：按下<b>免費開始</b>,就回到 Claude 了。</li>
+          <li>在新的對話裡，從工具選單開啟 Kleo,然後說：<i>幫我做一支 45 秒的 Shorts,講……</i></li>
+        </ol>
+        <p>Claude 免費方案允許一個自訂連接器。</p>
+        <a class="more" href="/zh-tw/integrations/claude/">完整 Claude 指南 <span class="arr" aria-hidden="true">→</span></a>
+      </article>
+
+      <article class="panel">
+        <h3>ChatGPT <small>開發者模式</small></h3>
+        <div class="url-line">伺服器位址 <code>https://mcp.kleooai.com/mcp</code> <button class="btn btn-ghost btn-sm" type="button" data-copy="https://mcp.kleooai.com/mcp">複製</button></div>
+        <ol>
+          <li>開啟<b>設定 → 應用程式與連接器</b>(舊版稱為<b>連接器</b>),接著進入<b>進階設定</b>,開啟<b>開發者模式</b>。</li>
+          <li>回到<b>連接器</b>,選擇<b>建立</b>:命名為 <b>Kleo</b>,貼上位址，驗證方式設為 <b>OAuth</b>,然後儲存。Kleo 的頁面會開啟：按下<b>免費開始</b>,就回到 ChatGPT 了。</li>
+          <li>在對話中，從 <b>+</b> 選單開啟 Kleo,然後要求製作影片。ChatGPT 會在開始渲染前請你確認。</li>
+        </ol>
+        <p>需要 ChatGPT Plus、Pro、Business 或 Enterprise。</p>
+        <a class="more" href="/zh-tw/integrations/chatgpt/">完整 ChatGPT 指南 <span class="arr" aria-hidden="true">→</span></a>
+      </article>
+
+      <article class="panel">
+        <h3>Grok <small>連接器</small></h3>
+        <div class="url-line">伺服器位址 <code>https://mcp.kleooai.com/mcp</code> <button class="btn btn-ghost btn-sm" type="button" data-copy="https://mcp.kleooai.com/mcp">複製</button></div>
+        <ol>
+          <li>在 <b>grok.com</b> 或應用程式裡，開啟<b>設定 → 連接器</b>，選擇<b>新增連接器 → 自訂</b>。</li>
+          <li>命名為 <b>Kleo</b>，貼上位址，然後確認。Kleo 的頁面會開啟：按下<b>免費開始</b>，就回到 Grok 了。</li>
+          <li>在對話中，從連接器清單開啟 Kleo，然後要求製作影片。</li>
+        </ol>
+      </article>
+
+      <article class="panel">
+        <h3>Claude Code <small>cli</small></h3>
+        <div class="code"><span class="cm"># 加入 Kleo 一次（加上 --scope user 可在每個專案使用）</span> claude mcp add --transport http kleo https://mcp.kleooai.com/mcp <span class="cm"># 然後，在工作階段裡：</span> /mcp <span class="cm">→ Kleo → Authenticate</span><button class="btn btn-ghost btn-sm copy" type="button" data-copy="claude mcp add --transport http kleo https://mcp.kleooai.com/mcp">複製</button></div>
+        <ol>
+          <li>執行上方指令，然後在工作階段裡輸入 <b>/mcp</b>，選擇 <b>Kleo</b> 和 <b>Authenticate</b>：Kleo 的頁面會在瀏覽器開啟，按下<b>免費開始</b>，就回到 Claude Code 了。</li>
+          <li>提出要求：<i>用 kleo 做一支 5 分鐘的影片，講咖啡的歷史，16:9</i>。Claude Code 會替你跟進進度，並把連結交給你。</li>
+        </ol>
+      </article>
+
+      <article class="panel">
+        <h3>Cursor <small>mcp.json</small></h3>
+        <p>建立或編輯 <code>~/.cursor/mcp.json</code>（所有專案）或單一專案裡的 <code>.cursor/mcp.json</code>。</p>
+        <div class="code">{ <span class="k">"mcpServers"</span>: { <span class="k">"kleo"</span>: { <span class="k">"url"</span>: <span class="s">"https://mcp.kleooai.com/mcp"</span> } } }<button class="btn btn-ghost btn-sm copy" type="button" data-copy='{&#10;  "mcpServers": {&#10;    "kleo": { "url": "https://mcp.kleooai.com/mcp" }&#10;  }&#10;}'>複製</button></div>
+        <ol>
+          <li>儲存檔案：Cursor 會在<b>設定 → MCP</b> 下列出 Kleo。按下<b>連接</b>（或使用任一工具一次）：Kleo 的頁面會開啟，按下<b>免費開始</b>，就回到 Cursor 了。</li>
+        </ol>
+      </article>
+
+      <article class="panel">
+        <h3>VS Code <small>mcp.json</small></h3>
+        <p>在你的工作區建立 <code>.vscode/mcp.json</code>（或從命令選擇區執行 <b>MCP: Add Server</b> 並貼上位址）。</p>
+        <div class="code">{ <span class="k">"servers"</span>: { <span class="k">"kleo"</span>: { <span class="k">"type"</span>: <span class="s">"http"</span>, <span class="k">"url"</span>: <span class="s">"https://mcp.kleooai.com/mcp"</span> } } }<button class="btn btn-ghost btn-sm copy" type="button" data-copy='{&#10;  "servers": {&#10;    "kleo": { "type": "http", "url": "https://mcp.kleooai.com/mcp" }&#10;  }&#10;}'>複製</button></div>
+        <ol>
+          <li>儲存檔案，然後按下伺服器項目上方的<b>啟動</b>。VS Code 會開啟 Kleo 的頁面：按下<b>免費開始</b>，就回到 VS Code 了。</li>
+          <li>在 Copilot Chat 裡切換到<b>代理</b>模式：kleo 工具就會出現在工具選擇器裡。</li>
+        </ol>
+      </article>
+
+      <article class="panel">
+        <h3>OpenCode <small>opencode.jsonc</small></h3>
+        <p>把這段加進 <code>~/.config/opencode/opencode.jsonc</code>（全域）或專案裡的 <code>opencode.jsonc</code>，然後從終端機連接。</p>
+        <div class="code">{ <span class="k">"mcp"</span>: { <span class="k">"kleo"</span>: { <span class="k">"type"</span>: <span class="s">"remote"</span>, <span class="k">"url"</span>: <span class="s">"https://mcp.kleooai.com/mcp"</span>, <span class="k">"enabled"</span>: true } } }<button class="btn btn-ghost btn-sm copy" type="button" data-copy='{&#10;  "mcp": {&#10;    "kleo": { "type": "remote", "url": "https://mcp.kleooai.com/mcp", "enabled": true }&#10;  }&#10;}'>複製</button></div>
+        <div class="code"><span class="cm"># 連接一次（會開啟瀏覽器）</span> opencode mcp auth kleo<button class="btn btn-ghost btn-sm copy" type="button" data-copy="opencode mcp auth kleo">複製</button></div>
+        <ol>
+          <li>儲存設定並執行上方指令：Kleo 的頁面會在瀏覽器開啟，按下<b>免費開始</b>，就回到 OpenCode 了。</li>
+          <li>啟動 <b>opencode</b> 並要求製作影片：kleo 工具在每個工作階段都可以使用。</li>
+        </ol>
+      </article>
+
+      <article class="panel">
+        <h3>Gemini CLI <small>cli</small></h3>
+        <div class="code"><span class="cm"># 加入 Kleo（加上 --scope user 可在每個專案使用）</span> gemini mcp add --transport http kleo https://mcp.kleooai.com/mcp<button class="btn btn-ghost btn-sm copy" type="button" data-copy="gemini mcp add --transport http kleo https://mcp.kleooai.com/mcp">複製</button></div>
+        <ol>
+          <li>執行上方指令，然後啟動 <b>gemini</b> 並輸入 <b>/mcp auth kleo</b>：Kleo 的頁面會在瀏覽器開啟，按下<b>免費開始</b>，就回到 Gemini CLI 了。</li>
+          <li>在工作階段裡要求製作影片。<b>/mcp list</b> 會列出每個 kleo 工具。</li>
+        </ol>
+      </article>
+
+      <article class="panel">
+        <h3>Windsurf、Gemini 應用程式和你自己的代理 <small>http</small></h3>
+        <p>Kleo 是一個標準的 MCP 伺服器，使用 Streamable HTTP 傳輸搭配 OAuth 2.1。任何相容的用戶端都用同一個位址、同一個一鍵開始來連接。</p>
+        <div class="url-line">伺服器位址 <code>https://mcp.kleooai.com/mcp</code> <button class="btn btn-ghost btn-sm" type="button" data-copy="https://mcp.kleooai.com/mcp">複製</button></div>
+        <ol>
+          <li><b>Windsurf</b>：<b>設定 → MCP → 新增伺服器</b>，貼上位址（它的 <code>mcp_config.json</code> 使用 <code>"serverUrl"</code> 這個鍵）。</li>
+          <li><b>Gemini 應用程式</b>：<b>設定 → 已連接的應用程式 → 自訂應用程式</b>，貼上位址（目前需要 Google AI Pro 或 Ultra）。</li>
+          <li>你自己的代理：使用 MCP SDK（Python 或 TypeScript）搭配 HTTP 傳輸，完成一次 OAuth 流程即可。</li>
+        </ol>
+        <a class="more" href="/zh-tw/video-generation-mcp/">工具如何運作 <span class="arr" aria-hidden="true">→</span></a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ FIRST REQUEST ============ -->
+<section id="first-prompt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">02</span>第一個請求</div>
+        <h2>從一個清楚的請求開始。</h2>
+      </div>
+      <p class="lede">助理會用 Kleo 的確認清單核對你的請求——主題、長度、格式、風格——缺什麼就先問，再寫故事大綱。四項都說清楚，它就直接開工。把這段貼進你的第一個對話：</p>
+    </div>
+    <div class="split">
+      <div>
+        <p class="style-say copyable">「用 Kleo 規劃一部 30 秒的影片，講一位燈塔看守人發現瓶中信。寫實風格，英語旁白，9:16。開始渲染前先讓我看大綱和點數費用。」<button class="btn btn-ghost btn-sm copy" type="button" data-copy="Use Kleo to plan a 30-second film about a lighthouse keeper discovering a message in a bottle. Realistic look, English narration, 9:16. Show me the outline and the credit cost before rendering.">複製</button></p>
+      </div>
+      <div class="prose">
+        <p>伺服器上有兩種風格：<b>寫實</b>，生成的實景影像；<b>動畫</b>，2D 動畫影片。把提示詞裡的那個詞換掉，就得到另一種。</p>
+        <p><a href="/zh-tw/examples/">觀看寫實風格的範例 →</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BALANCE ============ -->
+<section id="balance">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">03</span>點數</div>
+        <h2>製作前先確認餘額。</h2>
+      </div>
+      <p class="lede">連接即含 7 點數：你分鏡的動態分鏡要 5 點，每個帳戶都可以訂製一支。影片只為已購買點數包（任一種）的帳戶製作，而一部 30 秒的影片要 15 點數，所以第一部影片從 €5 點數包開始：7 + 10 = 17 點數，足夠做一支 30 秒的 Shorts。</p>
+    </div>
+    <div class="prose">
+      <p>向助理索取你的帳戶頁面來購買點數，然後在你想開始渲染時確認。Kleo 接受工作之前不會扣任何費用：助理會先明示確切的點數，被拒絕的請求不花一毛錢。</p>
+      <p><a href="/zh-tw/pricing/">查看所有點數費用 →</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NEXT ============ -->
+<section id="next">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">04</span>連接之後</div>
+        <h2>連接之後會發生什麼。</h2>
+      </div>
+    </div>
+    <div class="grid panels">
+      <article class="panel">
+        <h3>工作流程，逐一工具說明</h3>
+        <p>需求確認、故事大綱、分鏡、渲染、連結：每個 kleo 工具做什麼、助理依什麼順序執行，以及租用 GPU 之前如何檢查點數。</p>
+        <a class="more" href="/zh-tw/video-generation-mcp/">閱讀 MCP 文件 <span class="arr" aria-hidden="true">→</span></a>
+      </article>
+      <article class="panel">
+        <h3>第一部影片之前的問題</h3>
+        <p>影片可以多長、旁白包含什麼、點數怎麼計算、渲染要多久，以及哪些助理可以連接。</p>
+        <a class="more" href="/zh-tw/faq/">閱讀常見問題 <span class="arr" aria-hidden="true">→</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<!-- i18n:langs -->
+<nav class="langs" aria-label="語言">
+  <div class="wrap">
+    <span>語言</span>
+    <a href="/connect/" hreflang="en" lang="en">English</a>
+    <a href="/it/connect/" hreflang="it" lang="it">Italiano</a>
+    <a href="/de/connect/" hreflang="de" lang="de">Deutsch</a>
+    <a href="/fr/connect/" hreflang="fr" lang="fr">Français</a>
+    <a href="/es/connect/" hreflang="es" lang="es">Español</a>
+    <a href="/pt/connect/" hreflang="pt" lang="pt">Português</a>
+    <a href="/nl/connect/" hreflang="nl" lang="nl">Nederlands</a>
+    <a href="/pl/connect/" hreflang="pl" lang="pl">Polski</a>
+    <a href="/tr/connect/" hreflang="tr" lang="tr">Türkçe</a>
+    <a href="/ru/connect/" hreflang="ru" lang="ru">Русский</a>
+    <a href="/uk/connect/" hreflang="uk" lang="uk">Українська</a>
+    <a href="/ja/connect/" hreflang="ja" lang="ja">日本語</a>
+    <a href="/ko/connect/" hreflang="ko" lang="ko">한국어</a>
+    <a href="/zh/connect/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+    <b lang="zh-Hant">繁體中文</b>
+    <a href="/ar/connect/" hreflang="ar" lang="ar">العربية</a>
+    <a href="/he/connect/" hreflang="he" lang="he">עברית</a>
+    <a href="/hi/connect/" hreflang="hi" lang="hi">हिन्दी</a>
+    <a href="/id/connect/" hreflang="id" lang="id">Bahasa Indonesia</a>
+    <a href="/vi/connect/" hreflang="vi" lang="vi">Tiếng Việt</a>
+    <a href="/th/connect/" hreflang="th" lang="th">ไทย</a>
+  </div>
+</nav>
+<!-- /i18n:langs -->
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">
+      <a class="brand" href="/zh-tw/" aria-label="Kleo,首頁">
+        <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+          <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+          <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+        </svg>
+        Kleo <span class="tag">MCP</span>
+      </a>
+      <span>由人執導。由代理製作的影片。</span>
+    </div>
+    <div class="links">
+      <a href="/zh-tw/connect/">連接</a> <a href="/zh-tw/integrations/claude/">Claude</a> <a href="/zh-tw/integrations/chatgpt/">ChatGPT</a> <a href="/zh-tw/video-generation-mcp/">MCP 文件</a> <a href="/zh-tw/examples/">範例</a> <a href="/zh-tw/styles.html">風格</a> <a href="/zh-tw/pricing/">價格</a> <a href="/zh-tw/faq/">常見問題</a> <a href="/zh-tw/about/">關於</a> <a href="/zh-tw/privacy.html">隱私權</a> <a href="/zh-tw/terms.html">條款</a> <a href="https://github.com/tonnooooo/kleo-mcp">GitHub</a> <a href="mailto:kleooai@gmail.com">kleooai@gmail.com</a>
+    </div>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite">已複製</div>
+</body>
+</html>

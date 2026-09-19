@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="zh-Hant" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.remove("no-js")</script>
+<title>AI YouTube 影片產生器 — 從需求到旁白影片 | Kleo</title>
+<meta name="description" content="用 Kleo 從一份需求製作旁白 YouTube 影片（16:9）或 Shorts（9:16）：寫實或動畫風格，4K 60 fps，15 秒到 5 分鐘，10 點數起，或 5 點數的動態分鏡。">
+<link rel="canonical" href="https://kleooai.com/zh-tw/ai-youtube-video-generator/">
+<!-- i18n:head -->
+<link rel="alternate" hreflang="en" href="https://kleooai.com/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="it" href="https://kleooai.com/it/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="de" href="https://kleooai.com/de/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="fr" href="https://kleooai.com/fr/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="es" href="https://kleooai.com/es/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="pt" href="https://kleooai.com/pt/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="nl" href="https://kleooai.com/nl/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="pl" href="https://kleooai.com/pl/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="tr" href="https://kleooai.com/tr/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="ru" href="https://kleooai.com/ru/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="uk" href="https://kleooai.com/uk/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="ja" href="https://kleooai.com/ja/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="ko" href="https://kleooai.com/ko/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="zh-Hans" href="https://kleooai.com/zh/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="zh-Hant" href="https://kleooai.com/zh-tw/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="ar" href="https://kleooai.com/ar/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="he" href="https://kleooai.com/he/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="hi" href="https://kleooai.com/hi/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="id" href="https://kleooai.com/id/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="vi" href="https://kleooai.com/vi/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="th" href="https://kleooai.com/th/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="x-default" href="https://kleooai.com/ai-youtube-video-generator/">
+<script>(function(){try{var L=["it", "de", "fr", "es", "pt", "nl", "pl", "tr", "ru", "uk", "ja", "ko", "zh", "zh-tw", "ar", "he", "hi", "id", "vi", "th"],A={"zh-hk": "zh-tw", "zh-mo": "zh-tw", "zh-hant": "zh-tw", "zh-hans": "zh", "zh-cn": "zh", "zh-sg": "zh", "nb": "no", "nn": "no"},p=location.pathname,m=p.match(/^\/([a-z]{2}(?:-[a-z]{2})?)(?=\/)/),on=m&&L.indexOf(m[1])>=0?m[1]:"en",rest=on==="en"?p:p.slice(on.length+1),want=null,s=null;try{s=localStorage.getItem("kleo-lang")}catch(e){}if(s==="en"||L.indexOf(s)>=0)want=s;else{var nl=navigator.languages||[navigator.language||""];for(var i=0;i<nl.length&&!want;i++){var t=String(nl[i]).toLowerCase(),b=t.split("-")[0];t=A[t]||t;b=A[b]||b;want=t==="en"||b==="en"?"en":L.indexOf(t)>=0?t:L.indexOf(b)>=0?b:null}}if(want&&want!==on&&!/404/.test(p))location.replace((want==="en"?"":"/"+want)+rest+location.search+location.hash)}catch(e){}})()</script>
+<script type="application/json" id="i18n">{"Language": "語言", "Menu": "選單", "Close menu": "關閉選單", "Copied": "已複製", "Copied ✓": "已複製 ✓", "Copy it by hand: {text}": "請手動複製:{text}", "Copy the Kleo server address": "複製 Kleo 伺服器位址", "Copy the argument {value}": "複製參數 {value}", "Copy this prompt": "複製這段提示詞", "Copy the {what} snippet": "複製 {what} 程式碼片段", "Copy the {what} text": "複製 {what} 文字", "Treatment · logline, angle, acts · look: realistic": "故事大綱 · 主軸、切入角度、幕次 · 風格：寫實", "Storyboard · direction, scenes, shots · 23 credits, confirmed": "分鏡 · 執導方向、場景、鏡頭 · 23 點數，已確認", "Generating the shots as footage · 4 of 11 · ~22 min left": "正在把鏡頭生成為動態影像 · 第 4 / 11 個 · 約剩 22 分鐘", "Generating the shots as footage · 8 of 11 · ~12 min left": "正在把鏡頭生成為動態影像 · 第 8 / 11 個 · 約剩 12 分鐘", "Narration · one voice, English · cutting the shots on the words": "旁白 · 單一聲音，英語 · 依語句剪接鏡頭", "Finish · 2160×3840 · 60 fps · quality check": "完成階段 · 2160×3840 · 60 fps · 品質檢查", "Done · 28 min · link ready for 7 days": "完成 · 28 分鐘 · 連結 7 天內有效", "done": "完成", "running": "進行中", "A whole number from {min} to {max} seconds": "{min} 到 {max} 秒之間的整數", "{s} s {product} = {n} credits": "{s} 秒{product} = {n} 點數", "film": "影片", "animatic": "動態分鏡"}</script>
+<!-- /i18n:head -->
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kleo AI">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:title" content="AI YouTube 影片產生器 — 從需求到旁白影片 | Kleo">
+<meta property="og:description" content="用 Kleo 從一份需求製作旁白 YouTube 影片（16:9）或 Shorts（9:16）：寫實或動畫風格，4K 60 fps，15 秒到 5 分鐘，10 點數起，或 5 點數的動態分鏡。">
+<meta property="og:url" content="https://kleooai.com/zh-tw/ai-youtube-video-generator/">
+<meta property="og:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta property="og:image:alt" content="Kleo AI — 由人執導。由代理製作的影片。">
+<meta property="og:image:width" content="2400">
+<meta property="og:image:height" content="1260">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI YouTube 影片產生器 — 從需求到旁白影片 | Kleo">
+<meta name="twitter:description" content="用 Kleo 從一份需求製作旁白 YouTube 影片（16:9）或 Shorts（9:16）：寫實或動畫風格，4K 60 fps，15 秒到 5 分鐘，10 點數起，或 5 點數的動態分鏡。">
+<meta name="twitter:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta name="theme-color" content="#0A0C10">
+<link rel="icon" href="/brand/kleo-favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/brand/kleo-favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/brand/kleo-icon-dark-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/site.css?v=20260920">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://kleooai.com/#website",
+      "name": "Kleo AI",
+      "alternateName": "Kleo",
+      "url": "https://kleooai.com/zh-tw/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kleooai.com/zh-tw/ai-youtube-video-generator/#page",
+      "url": "https://kleooai.com/zh-tw/ai-youtube-video-generator/",
+      "name": "AI YouTube 影片產生器 — 從需求到旁白影片 | Kleo",
+      "description": "用 Kleo 從一份需求製作旁白 YouTube 影片（16:9）或 Shorts（9:16）：寫實或動畫風格，4K 60 fps，15 秒到 5 分鐘，10 點數起，或 5 點數的動態分鏡。",
+      "inLanguage": "zh-Hant",
+      "isPartOf": {
+        "@id": "https://kleooai.com/#website"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "首頁",
+          "item": "https://kleooai.com/zh-tw/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "AI YouTube 影片產生器",
+          "item": "https://kleooai.com/zh-tw/ai-youtube-video-generator/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<script src="/site.js?v=20260920" defer></script>
+</head>
+<body>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" aria-label="主選單">
+  <div class="wrap">
+    <a class="brand" href="/zh-tw/" aria-label="Kleo,首頁">
+      <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+        <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+        <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+      </svg>
+      Kleo <span class="tag">MCP</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="選單" aria-expanded="false" aria-controls="site-menu">
+      <svg class="bars" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 5h14M2 9h14M2 13h14"/></svg>
+      <svg class="x" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 4l10 10M14 4L4 14"/></svg>
+    </button>
+    <div class="nav-links" id="site-menu">
+      <a href="/zh-tw/ai-youtube-video-generator/" aria-current="page">製作影片</a> <a href="/zh-tw/examples/">範例</a> <a href="/zh-tw/styles.html">風格</a> <a href="/zh-tw/pricing/">價格</a> <a href="/zh-tw/faq/">常見問題</a>
+    </div>
+    <a class="btn btn-primary btn-sm" href="/zh-tw/connect/">連接 Kleo</a>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="page-hero hero" id="top">
+  <div class="wrap">
+    <div>
+      <nav class="crumbs" aria-label="導覽路徑"><a href="/zh-tw/">首頁</a><span aria-hidden="true">›</span><span>AI YouTube 影片產生器</span></nav>
+      <h1>從一個想法<br><span class="hl">到你的下一支影片。</span></h1>
+      <p class="lede">在你已經在用的 AI 助理裡，從一份需求為你的頻道製作一部完整的旁白影片。Kleo 和你一起規劃故事，把每個鏡頭生成為動態影像，配上一位旁白，再以 4K 60 fps 渲染成 MP4，YouTube 用橫式，Shorts 用直式。同一份分鏡可以先渲染成 5 點數的動態分鏡：手繪畫格在鏡頭下移動，沒有生成的片段。</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/zh-tw/connect/">連接 Kleo <span class="arr" aria-hidden="true">→</span></a> <a class="btn btn-ghost" href="/zh-tw/pricing/">查看價格</a> <a class="btn btn-ghost" href="#sample">觀看 Signal Delay 的開場</a>
+      </div>
+      <div class="works">
+        <span>支援</span> <b>Claude</b><b>ChatGPT</b><b>Grok</b><b>Claude Code</b><b>Cursor</b><b>VS Code</b><b>Gemini</b>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ONE IDEA ============ -->
+<section id="idea">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">01</span>一個想法</div>
+        <h2>圍繞一個清楚的想法打造影片。</h2>
+      </div>
+    </div>
+    <div class="split">
+      <div>
+        <p class="lede">從觀眾想得到解答的問題開始。把事實、受眾，以及你希望觀眾記住的重點交給 Kleo。解說影片需要清楚的順序；故事需要一個場景、一個轉折和一個結局。</p>
+      </div>
+      <div class="prose">
+        <p>橫式的頻道影片選 16:9，Shorts 選 9:16。影片長度從 15 秒到 5 分鐘，由一位旁白以英語或義大利語講述。影片裡的每個鏡頭都是從各自的畫格生成的動態影像，所以一部 3 分鐘的解說影片是一連串會動的場景，不是靜態圖片的幻燈片；動態分鏡則是 15 到 60 秒、5 點數，讓手繪畫格在移動的鏡頭下呈現。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOOKS ============ -->
+<section id="looks">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">02</span>兩種風格</div>
+        <h2>選擇風格：寫實或動畫。</h2>
+      </div>
+      <p class="lede">Kleo 以兩種風格之一製作旁白影片，也能以任一風格製作同一份分鏡的動態分鏡。兩種風格都已在伺服器上線，每秒費用相同。當你的需求沒有指定風格，這是 Kleo 會問的事項之一。</p>
+    </div>
+    <div class="grid panels">
+      <article class="panel">
+        <h3>寫實 <small>生成的實景影像</small></h3>
+        <p>逐鏡生成的電影感影像：頭盔裡的一張臉、一條通往太空站的金色繫繩、一部以任務日誌講述並以同樣風格渲染的紀錄片開場。網站上的兩部範例影片，Tether 和 Signal Delay 的開場，都是這種風格。</p>
+        <a class="more" href="/zh-tw/styles.html">看看影片風格 <span class="arr" aria-hidden="true">→</span></a>
+      </article>
+      <article class="panel">
+        <h3>動畫 <small>2D 動畫影片</small></h3>
+        <p>同樣的旁白影片，用畫的而不是拍的：2D 動畫風格，適合想要輕快一點的解說影片、故事和 Shorts。動畫風格現已在伺服器上線；範例是<a href="/zh-tw/examples/octopus/">一支 32 秒的章魚 Shorts</a>。</p>
+        <a class="more" href="/zh-tw/styles.html">看看影片風格 <span class="arr" aria-hidden="true">→</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INTAKE ============ -->
+<section id="intake">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">03</span>需求確認</div>
+        <h2>Kleo 在規劃之前會問什麼。</h2>
+      </div>
+      <p class="lede">Kleo 會用一份簡短的確認清單核對你的需求。凡是需求裡沒說的，助理會在一則訊息裡一次問完，等你回答。不做任何假設：Kleo 絕不會替你決定主題、長度、格式或風格。</p>
+    </div>
+    <ul class="defs">
+      <li><b>主題</b><span>影片講什麼，以及觀眾該記住的重點。</span></li>
+      <li><b>長度</b><span>15 秒到 5 分鐘。</span></li>
+      <li><b>格式</b><span>YouTube 影片用 16:9，Shorts 用 9:16。</span></li>
+      <li><b>風格</b><span>寫實或動畫。</span></li>
+      <li><b>選填</b><span>受眾、語氣，以及影片裡必須出現的東西。</span></li>
+    </ul>
+    <p class="tpl-more">像下面這樣，一開始就把全部答清楚的需求，會跳過提問，直接進入故事大綱。</p>
+  </div>
+</section>
+
+<!-- ============ WORKFLOW ============ -->
+<section id="workflow">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">04</span>工作流程</div>
+        <h2>在你的對話裡完成一套製作流程。</h2>
+      </div>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="num">01</span>
+        <h3>寫需求，回答確認事項</h3>
+        <p>描述你的主題、長度、格式和風格，並交代你希望影片保留的事實和語氣。你對話的對象是你自己的助理；Kleo 是它背後的製片廠。需求裡漏掉的，助理會在一則訊息裡問清楚。受眾、語氣和必須出現的東西是選填；主題、長度、格式和風格則不是。</p>
+      </div>
+      <div class="step">
+        <span class="num">02</span>
+        <h3>修改故事大綱</h3>
+        <p>在任何東西渲染之前，助理會先讓你看故事大綱：主軸、切入角度、開場、幕次、結局、風格、節奏和旁白。想改什麼就改；影片會照著走。</p>
+      </div>
+      <div class="step">
+        <span class="num">03</span>
+        <h3>分鏡，然後是點數</h3>
+        <p>依據這份故事大綱，助理寫出分鏡：一段執導方向、場景和鏡頭，都在 Kleo 的限制之內。影片的品質就在這裡決定。Kleo 會檢查全部內容，並在開始之前回覆確切的點數。工作被接受之前不會扣任何費用。</p>
+      </div>
+      <div class="step">
+        <span class="num">04</span>
+        <h3>渲染並下載</h3>
+        <p>渲染在為該工作租用的 GPU 上進行，通常 25–35 分鐘；助理會回報進度，然後把完成 MP4 的連結交給你，7 天內有效。看過之後，自己上傳到你的頻道：Kleo 絕不會發布到 YouTube 或任何其他地方。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BRIEFS ============ -->
+<section id="brief">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">05</span>兩份需求</div>
+        <h2>一份可以改寫的需求。</h2>
+      </div>
+      <p class="lede">兩份一次答完全部確認事項的需求。第一份是 3 分鐘的 16:9 影片，90 點數。第二份是 45 秒的 9:16 Shorts，23 點數。把其中一份貼進你的助理，換掉主題就行。</p>
+    </div>
+    <div class="split">
+      <div>
+        <p class="style-say copyable" style="--c:var(--teal)">「用 Kleo 做一支 3 分鐘的 16:9 YouTube 影片，解釋洋流如何把熱量輸送到地球各處，給好奇的初學者看。寫實風格，英語旁白，語氣平靜清楚。以一個清楚的問題開場，解釋機制，最後以一個重點收尾。開始渲染前先讓我看故事大綱和點數費用。只使用我提供或可查證的事實；不要編造統計數據。」<button class="btn btn-ghost btn-sm copy" type="button" data-copy="Use Kleo to make a 3-minute 16:9 YouTube video explaining how ocean currents move heat around the planet, for curious beginners. Realistic look, English narration, a calm and clear tone. Open with a clear question, explain the mechanism, then finish with one takeaway. Show me the treatment and the credit cost before rendering. Use only the facts I provide or can verify; do not invent statistics.">複製</button></p>
+      </div>
+      <div>
+        <p class="style-say copyable" style="--c:var(--amber)">「用 Kleo 做一支 45 秒的 9:16 Shorts，講天空為什麼在日落時變紅，給一般大眾看。動畫風格，英語旁白，語氣輕鬆有趣。開頭一個問題，一個答案，結尾一個令人難忘的畫面。開始渲染前先讓我看故事大綱和點數費用。」<button class="btn btn-ghost btn-sm copy" type="button" data-copy="Use Kleo to make a 45-second 9:16 Short about why the sky turns red at sunset, for a general audience. Animation look, English narration, a playful tone. One question at the top, one answer, one image to remember at the end. Show me the treatment and the credit cost before rendering.">複製</button></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CREDITS ============ -->
+<section id="credits">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">06</span>長度與點數</div>
+        <h2>一起規劃長度和點數。</h2>
+      </div>
+      <p class="lede">影片依長度計價：一點數涵蓋兩秒，無條件進位，最少 10 點數。20 秒的 Shorts 是 10 點數；60 秒是 30；3 分鐘是 90；5 分鐘是 150。同一份分鏡的動態分鏡，15 到 60 秒，固定 5 點數。確切數字由 Kleo 在渲染開始前明示，被拒絕的請求不會扣費。</p>
+    </div>
+    <div class="prose">
+      <p>點數以一次性點數包販售，透過 Stripe 以歐元一次付清，不必訂閱：€5 換 10 點數，€15 換 35，€40 換 100。連接即得 7 點數，沒有表單、沒有信用卡：一支動態分鏡。影片只為已購買點數包的帳戶製作——片段由 Kleo 出資生成，所以免費點數永遠買不到影片；加購 €5 點數包後你有 17 點，影片開放了，一支 30 秒的 Shorts 是 15 點。如果你取消渲染，未用掉的點數會退回。</p>
+      <p>在花 90 點數做一部較長的影片之前，先用 5 點數的動態分鏡把故事和語氣定下來，是個好方法。</p>
+      <p><a href="/zh-tw/pricing/">開啟點數計算器 →</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RECEIVE ============ -->
+<section id="receive">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">07</span>交付內容</div>
+        <h2>你會拿到什麼。</h2>
+      </div>
+    </div>
+    <ul class="style-facts auto">
+      <li><b>檔案</b><span>一個 4K 的 MP4，16:9 為 3840×2160，9:16 為 2160×3840，60 fps。</span></li>
+      <li><b>長度</b><span>你要求的長度，15 秒到 5 分鐘；動態分鏡 15 到 60 秒。</span></li>
+      <li><b>聲音</b><span>一位旁白，英語或義大利語，男聲或女聲。</span></li>
+      <li><b>畫面</b><span>影片裡，每個鏡頭都生成為動態影像；動態分鏡裡，手繪畫格在移動的鏡頭下呈現。沒有音樂、沒有字幕、沒有畫面文字。</span></li>
+      <li><b>交付</b><span>由你的助理交給你的下載連結，7 天內有效。</span></li>
+    </ul>
+    <div class="prose">
+      <p>Kleo 的影片不含音樂、字幕或畫面文字。如果你的頻道需要，下載後在剪輯軟體裡加上。上傳到 YouTube 仍是你自己的步驟：Kleo 沒有連接你的頻道，也絕不會替你發布。上傳前請先檢視影片和你頻道的發布要求。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SAMPLE ============ -->
+<section id="sample">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">08</span>一段旁白開場</div>
+        <h2>觀看一段旁白開場。</h2>
+      </div>
+      <p class="lede">Signal Delay 是一部以 Kleo 寫實風格渲染的紀錄片，以五個月的任務日誌講述：2023 年 11 月 14 日，航海家 1 號開始重複同一組 0 與 1 的模式，而每一個問題都要耗上四十五小時的光行時間。一位旁白帶你看過讀數、失效的晶片，以及用 1970 年代組合語言手動搬移的程式碼。這裡是到片名為止的開場一分鐘，靜音。</p>
+    </div>
+    <div class="player">
+      <div class="style-media wide">
+        <video src="/samples/realistic-signal.mp4" poster="/samples/realistic-signal.jpg" width="1920" height="1080" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback"
+               aria-label="Signal Delay，一部關於航海家 1 號修復的紀錄片的開場一分鐘，以 Kleo 的寫實風格渲染"></video>
+        <span class="style-live" aria-hidden="true"><i></i>播放中</span>
+      </div>
+      <div class="film-cap"><b>Signal Delay</b><span>開場 0:00–1:02 · 16:9 · 4K 60 fps，以 1080p 呈現</span></div>
+      <p class="film-note">緩慢推進的攝影劇照、手繪的琥珀色圖表、終端機視窗、黑底上的日期、角落的兩個時鐘、35 mm 顆粒、2.39:1、安靜的配樂和字幕：這些是那部紀錄片的故事大綱要求的。全片長 6 分 55 秒，未放在網站上；透過助理製作的影片長度為 15 秒到 5 分鐘。</p>
+      <p class="film-note"><a href="/zh-tw/examples/signal-delay/">開啟 Signal Delay 範例頁 →</a></p>
+      <p class="film-note">想看一部完全沒有旁白的 16:9 影片，一位太空人和他的太空站的一鏡到底，<a href="/zh-tw/examples/tether/">觀看 Tether →</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ START ============ -->
+<section class="cta one" id="start">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow"><span class="n">09</span>開始</div>
+      <h2>為你的第一部影片寫需求。</h2>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/zh-tw/connect/">連接 Kleo <span class="arr" aria-hidden="true">→</span></a> <a class="btn btn-ghost" href="/zh-tw/pricing/">查看價格</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<!-- i18n:langs -->
+<nav class="langs" aria-label="語言">
+  <div class="wrap">
+    <span>語言</span>
+    <a href="/ai-youtube-video-generator/" hreflang="en" lang="en">English</a>
+    <a href="/it/ai-youtube-video-generator/" hreflang="it" lang="it">Italiano</a>
+    <a href="/de/ai-youtube-video-generator/" hreflang="de" lang="de">Deutsch</a>
+    <a href="/fr/ai-youtube-video-generator/" hreflang="fr" lang="fr">Français</a>
+    <a href="/es/ai-youtube-video-generator/" hreflang="es" lang="es">Español</a>
+    <a href="/pt/ai-youtube-video-generator/" hreflang="pt" lang="pt">Português</a>
+    <a href="/nl/ai-youtube-video-generator/" hreflang="nl" lang="nl">Nederlands</a>
+    <a href="/pl/ai-youtube-video-generator/" hreflang="pl" lang="pl">Polski</a>
+    <a href="/tr/ai-youtube-video-generator/" hreflang="tr" lang="tr">Türkçe</a>
+    <a href="/ru/ai-youtube-video-generator/" hreflang="ru" lang="ru">Русский</a>
+    <a href="/uk/ai-youtube-video-generator/" hreflang="uk" lang="uk">Українська</a>
+    <a href="/ja/ai-youtube-video-generator/" hreflang="ja" lang="ja">日本語</a>
+    <a href="/ko/ai-youtube-video-generator/" hreflang="ko" lang="ko">한국어</a>
+    <a href="/zh/ai-youtube-video-generator/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+    <b lang="zh-Hant">繁體中文</b>
+    <a href="/ar/ai-youtube-video-generator/" hreflang="ar" lang="ar">العربية</a>
+    <a href="/he/ai-youtube-video-generator/" hreflang="he" lang="he">עברית</a>
+    <a href="/hi/ai-youtube-video-generator/" hreflang="hi" lang="hi">हिन्दी</a>
+    <a href="/id/ai-youtube-video-generator/" hreflang="id" lang="id">Bahasa Indonesia</a>
+    <a href="/vi/ai-youtube-video-generator/" hreflang="vi" lang="vi">Tiếng Việt</a>
+    <a href="/th/ai-youtube-video-generator/" hreflang="th" lang="th">ไทย</a>
+  </div>
+</nav>
+<!-- /i18n:langs -->
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">
+      <a class="brand" href="/zh-tw/" aria-label="Kleo,首頁">
+        <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+          <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+          <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+        </svg>
+        Kleo <span class="tag">MCP</span>
+      </a>
+      <span>由人執導。由代理製作的影片。</span>
+    </div>
+    <div class="links">
+      <a href="/zh-tw/connect/">連接</a> <a href="/zh-tw/integrations/claude/">Claude</a> <a href="/zh-tw/integrations/chatgpt/">ChatGPT</a> <a href="/zh-tw/video-generation-mcp/">MCP 文件</a> <a href="/zh-tw/examples/">範例</a> <a href="/zh-tw/styles.html">風格</a> <a href="/zh-tw/pricing/">價格</a> <a href="/zh-tw/faq/">常見問題</a> <a href="/zh-tw/about/">關於</a> <a href="/zh-tw/privacy.html">隱私權</a> <a href="/zh-tw/terms.html">條款</a> <a href="https://github.com/tonnooooo/kleo-mcp">GitHub</a> <a href="mailto:kleooai@gmail.com">kleooai@gmail.com</a>
+    </div>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite">已複製</div>
+</body>
+</html>

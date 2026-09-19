@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="zh-Hans" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.remove("no-js")</script>
+<title>用 Claude 和 Kleo 制作 AI 视频 — 设置指南</title>
+<meta name="description" content="把 Kleo 作为自定义连接器添加到 Claude，提出旁白影片需求，在同一段对话里拿到 4K MP4 链接：设置步骤、第一条提示词和故障排除。">
+<link rel="canonical" href="https://kleooai.com/zh/integrations/claude/">
+<!-- i18n:head -->
+<link rel="alternate" hreflang="en" href="https://kleooai.com/integrations/claude/">
+<link rel="alternate" hreflang="it" href="https://kleooai.com/it/integrations/claude/">
+<link rel="alternate" hreflang="de" href="https://kleooai.com/de/integrations/claude/">
+<link rel="alternate" hreflang="fr" href="https://kleooai.com/fr/integrations/claude/">
+<link rel="alternate" hreflang="es" href="https://kleooai.com/es/integrations/claude/">
+<link rel="alternate" hreflang="pt" href="https://kleooai.com/pt/integrations/claude/">
+<link rel="alternate" hreflang="nl" href="https://kleooai.com/nl/integrations/claude/">
+<link rel="alternate" hreflang="pl" href="https://kleooai.com/pl/integrations/claude/">
+<link rel="alternate" hreflang="tr" href="https://kleooai.com/tr/integrations/claude/">
+<link rel="alternate" hreflang="ru" href="https://kleooai.com/ru/integrations/claude/">
+<link rel="alternate" hreflang="uk" href="https://kleooai.com/uk/integrations/claude/">
+<link rel="alternate" hreflang="ja" href="https://kleooai.com/ja/integrations/claude/">
+<link rel="alternate" hreflang="ko" href="https://kleooai.com/ko/integrations/claude/">
+<link rel="alternate" hreflang="zh-Hans" href="https://kleooai.com/zh/integrations/claude/">
+<link rel="alternate" hreflang="zh-Hant" href="https://kleooai.com/zh-tw/integrations/claude/">
+<link rel="alternate" hreflang="ar" href="https://kleooai.com/ar/integrations/claude/">
+<link rel="alternate" hreflang="he" href="https://kleooai.com/he/integrations/claude/">
+<link rel="alternate" hreflang="hi" href="https://kleooai.com/hi/integrations/claude/">
+<link rel="alternate" hreflang="id" href="https://kleooai.com/id/integrations/claude/">
+<link rel="alternate" hreflang="vi" href="https://kleooai.com/vi/integrations/claude/">
+<link rel="alternate" hreflang="th" href="https://kleooai.com/th/integrations/claude/">
+<link rel="alternate" hreflang="x-default" href="https://kleooai.com/integrations/claude/">
+<script>(function(){try{var L=["it", "de", "fr", "es", "pt", "nl", "pl", "tr", "ru", "uk", "ja", "ko", "zh", "zh-tw", "ar", "he", "hi", "id", "vi", "th"],A={"zh-hk": "zh-tw", "zh-mo": "zh-tw", "zh-hant": "zh-tw", "zh-hans": "zh", "zh-cn": "zh", "zh-sg": "zh", "nb": "no", "nn": "no"},p=location.pathname,m=p.match(/^\/([a-z]{2}(?:-[a-z]{2})?)(?=\/)/),on=m&&L.indexOf(m[1])>=0?m[1]:"en",rest=on==="en"?p:p.slice(on.length+1),want=null,s=null;try{s=localStorage.getItem("kleo-lang")}catch(e){}if(s==="en"||L.indexOf(s)>=0)want=s;else{var nl=navigator.languages||[navigator.language||""];for(var i=0;i<nl.length&&!want;i++){var t=String(nl[i]).toLowerCase(),b=t.split("-")[0];t=A[t]||t;b=A[b]||b;want=t==="en"||b==="en"?"en":L.indexOf(t)>=0?t:L.indexOf(b)>=0?b:null}}if(want&&want!==on&&!/404/.test(p))location.replace((want==="en"?"":"/"+want)+rest+location.search+location.hash)}catch(e){}})()</script>
+<script type="application/json" id="i18n">{"Language": "语言", "Menu": "菜单", "Close menu": "关闭菜单", "Copied": "已复制", "Copied ✓": "已复制 ✓", "Copy it by hand: {text}": "请手动复制：{text}", "Copy the Kleo server address": "复制 Kleo 服务器地址", "Copy the argument {value}": "复制参数 {value}", "Copy this prompt": "复制这条提示词", "Copy the {what} snippet": "复制{what}代码片段", "Copy the {what} text": "复制{what}文本", "Treatment · logline, angle, acts · look: realistic": "剧本大纲 · 故事梗概、切入角度、幕次 · 风格：写实", "Storyboard · direction, scenes, shots · 23 credits, confirmed": "分镜 · 导演思路、场景、镜头 · 23 积分，已确认", "Generating the shots as footage · 4 of 11 · ~22 min left": "正在把镜头生成为动态画面 · 第 4 个，共 11 个 · 还剩约 22 分钟", "Generating the shots as footage · 8 of 11 · ~12 min left": "正在把镜头生成为动态画面 · 第 8 个，共 11 个 · 还剩约 12 分钟", "Narration · one voice, English · cutting the shots on the words": "旁白 · 一个声音，英语 · 按台词剪接镜头", "Finish · 2160×3840 · 60 fps · quality check": "收尾 · 2160×3840 · 60 fps · 质量检查", "Done · 28 min · link ready for 7 days": "完成 · 28 分钟 · 链接 7 天内有效", "done": "已完成", "running": "进行中", "A whole number from {min} to {max} seconds": "{min} 到 {max} 秒之间的整数", "{s} s {product} = {n} credits": "{s} 秒{product} = {n} 积分", "film": "影片", "animatic": "动态分镜"}</script>
+<!-- /i18n:head -->
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kleo AI">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:title" content="用 Claude 和 Kleo 制作 AI 视频 — 设置指南">
+<meta property="og:description" content="把 Kleo 作为自定义连接器添加到 Claude，提出旁白影片需求，在同一段对话里拿到 4K MP4 链接：设置步骤、第一条提示词和故障排除。">
+<meta property="og:url" content="https://kleooai.com/zh/integrations/claude/">
+<meta property="og:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta property="og:image:alt" content="Kleo AI — 你来执导，智能体拍成影片。">
+<meta property="og:image:width" content="2400">
+<meta property="og:image:height" content="1260">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="用 Claude 和 Kleo 制作 AI 视频 — 设置指南">
+<meta name="twitter:description" content="把 Kleo 作为自定义连接器添加到 Claude，提出旁白影片需求，在同一段对话里拿到 4K MP4 链接：设置步骤、第一条提示词和故障排除。">
+<meta name="twitter:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta name="theme-color" content="#0A0C10">
+<link rel="icon" href="/brand/kleo-favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/brand/kleo-favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/brand/kleo-icon-dark-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/site.css?v=20260920">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://kleooai.com/#website",
+      "name": "Kleo AI",
+      "alternateName": "Kleo",
+      "url": "https://kleooai.com/zh/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kleooai.com/zh/integrations/claude/#page",
+      "url": "https://kleooai.com/zh/integrations/claude/",
+      "name": "用 Claude 和 Kleo 制作 AI 视频 — 设置指南",
+      "description": "把 Kleo 作为自定义连接器添加到 Claude，提出旁白影片需求，在同一段对话里拿到 4K MP4 链接：设置步骤、第一条提示词和故障排除。",
+      "inLanguage": "zh-Hans",
+      "isPartOf": {
+        "@id": "https://kleooai.com/#website"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "首页",
+          "item": "https://kleooai.com/zh/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Kleo 与 Claude",
+          "item": "https://kleooai.com/zh/integrations/claude/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<script src="/site.js?v=20260920" defer></script>
+</head>
+<body>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" aria-label="主导航">
+  <div class="wrap">
+    <a class="brand" href="/zh/" aria-label="Kleo，首页">
+      <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+        <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+        <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+      </svg>
+      Kleo <span class="tag">MCP</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="菜单" aria-expanded="false" aria-controls="site-menu">
+      <svg class="bars" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 5h14M2 9h14M2 13h14"/></svg>
+      <svg class="x" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 4l10 10M14 4L4 14"/></svg>
+    </button>
+    <div class="nav-links" id="site-menu">
+      <a href="/zh/ai-youtube-video-generator/">制作视频</a> <a href="/zh/examples/">示例</a> <a href="/zh/styles.html">风格</a> <a href="/zh/pricing/">价格</a> <a href="/zh/faq/">常见问题</a>
+    </div>
+    <a class="btn btn-primary btn-sm" href="/zh/connect/">连接 Kleo</a>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="page-hero hero" id="top">
+  <div class="wrap">
+    <div>
+      <nav class="crumbs" aria-label="面包屑导航">
+        <a href="/zh/">首页</a> <span aria-hidden="true">›</span> <a href="/zh/connect/">连接</a> <span aria-hidden="true">›</span> <span>Claude</span>
+      </nav>
+      <h1>用 Claude 和 Kleo<br><span class="hl">制作视频。</span></h1>
+      <p class="lede">你在 Claude 里执导影片。作为自定义连接器添加到 Claude 的 Kleo 生成画面、旁白和成片 4K MP4，链接就出现在同一段对话里。</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/zh/connect/">连接 Kleo <span class="arr" aria-hidden="true">→</span></a> <a class="btn btn-ghost" href="/zh/examples/">观看示例影片</a> <a class="btn btn-ghost" href="#setup">设置步骤 <span class="arr" aria-hidden="true">↓</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SETUP ============ -->
+<section id="setup">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">01</span>设置</div>
+        <h2>把 Kleo 添加到 Claude。</h2>
+      </div>
+    </div>
+    <div class="split">
+      <div>
+        <p class="lede">Kleo 是一个远程 MCP 服务器。没有应用要安装，没有注册表单：Claude 通过自定义连接器访问它，而连接只是 Kleo 自己页面上的一个按钮。下面的步骤在 Claude 应用和网页版中相同，适用于 Claude 的每个方案；免费方案允许一个自定义连接器。</p>
+      </div>
+      <div class="panel">
+        <ol>
+          <li>在 Claude 中打开<b>设置 → 连接器</b>，选择<b>添加自定义连接器</b>。</li>
+          <li>命名为 <b>Kleo</b>，粘贴下面的地址，确认。</li>
+          <li>Kleo 的页面打开：点击<b>免费开始</b>。你回到了 Claude，新的 Kleo 账户里有 7 积分。没有表单，没有密码，没有银行卡：足够做一部 5 积分的动态分镜。影片只为购买过积分包的账户制作，且至少 10 积分，所以第一部影片之前要先加一个 €5 积分包（10 积分）；一部 30 秒的影片是 15 积分。</li>
+          <li>在新对话中，从工具菜单开启 Kleo，然后提出影片需求。</li>
+        </ol>
+        <div class="url-line">服务器地址 <code>https://mcp.kleooai.com/mcp</code> <button class="btn btn-ghost btn-sm" type="button" data-copy="https://mcp.kleooai.com/mcp">复制</button></div>
+        <p>Claude 是 Anthropic 的助手。Kleo 是一个独立的服务，Claude 通过自定义连接器访问它；同一个地址也适用于 ChatGPT、Grok、Claude Code、Cursor 和任何其他 MCP 客户端——见<a href="/zh/connect/">连接页面</a>。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FIRST PROMPT ============ -->
+<section id="first-prompt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">02</span>第一条提示词</div>
+        <h2>说出你想要的影片。</h2>
+      </div>
+      <p class="lede">在一条消息里说清主题、时长、格式和风格。受众、语调和影片中必须出现的内容是可选的。你的请求里漏掉的，Claude 会在规划任何东西之前问清；它从不替你选时长、格式或风格。</p>
+    </div>
+    <div class="split">
+      <div>
+        <p class="style-say copyable">“用 Kleo 做一部 30 秒的影片，讲一条小木船在黎明时分驶过平静的湖面。写实风格，16:9，英语旁白，语调平静。开始渲染前先给我看剧本大纲和准确的积分数。”<button class="btn btn-ghost btn-sm copy" type="button" data-copy="Use Kleo to make a 30-second film about a small wooden boat crossing a quiet lake at dawn. Realistic look, 16:9, English narration, a calm tone. Show me the treatment and the exact credits before you start the render.">复制</button></p>
+      </div>
+      <ul class="defs">
+        <li><b>风格</b><span>两种风格可选：<b>写实</b>，带电影感的生成真人实拍画面；<b>动画</b>，一部 2D 动画影片。<a href="/zh/styles.html">查看影片风格 →</a></span></li>
+        <li><b>格式</b><span>YouTube 用 16:9，Short 用 9:16。</span></li>
+        <li><b>时长</b><span>15 秒到 5 分钟。</span></li>
+        <li><b>旁白</b><span>英语或意大利语。</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ IN THE CHAT ============ -->
+<section id="in-the-chat">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">03</span>在对话中</div>
+        <h2>接下来对话里会发生什么。</h2>
+      </div>
+      <p class="lede">Kleo 的工具按固定顺序运行，由 Claude 替你驱动。每一步你都可以阅读、修改和批准；在你点头、任务被接受之前不会扣任何费用。</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="num" aria-hidden="true">01</span> <span class="tc">kleo_adapt_prompt</span>
+        <h3>剧本大纲</h3>
+        <p>Claude 对照 Kleo 的需求清单读取你的请求。主题、时长、格式和风格是必填的；受众、语调和必须出现的内容是可选的。缺什么，它就在一条消息里问清。然后它给你看剧本大纲：故事梗概、切入角度、开场画面、幕次、结局、风格、节奏和旁白。继续之前想改什么都可以改。</p>
+      </div>
+      <div class="step">
+        <span class="num" aria-hidden="true">02</span> <span class="tc">kleo_storyboard_guide</span>
+        <h3>分镜</h3>
+        <p>Claude 获取 Kleo 的分镜指南（一段导演思路、场景、镜头及其限制），并在你批准的剧本大纲之下写出分镜。影片就在这里成形；请阅读它并提出修改。</p>
+      </div>
+      <div class="step">
+        <span class="num" aria-hidden="true">03</span> <span class="tc">kleo_create_video</span>
+        <h3>渲染</h3>
+        <p>Kleo 检查全部内容，并回复这部影片准确的积分数。得到你的同意后，Claude 在为这一个任务租用的 GPU 上开始渲染。任务被接受之前不会扣任何费用，被拒绝的调用不收费。</p>
+      </div>
+      <div class="step">
+        <span class="num" aria-hidden="true">04</span> <span class="tc">kleo_wait_for_video</span>
+        <h3>链接</h3>
+        <p>Claude 等待渲染并汇报进度，直到 Kleo 交出成片 MP4 的链接，通常在 25–35 分钟之后。链接 7 天内有效。Kleo 从不把影片发布到任何地方：你下载它，想发到哪里都可以。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT YOU GET ============ -->
+<section id="what-you-get">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">04</span>影片</div>
+        <h2>你会得到什么。</h2>
+      </div>
+    </div>
+    <ul class="style-facts auto">
+      <li><b>输出</b><span>一个 4K（3840×2160 或 2160×3840）60 fps 的 MP4：YouTube 用 16:9，Short 用 9:16。</span></li>
+      <li><b>时长</b><span>影片 15 秒到 5 分钟；动态分镜 15 到 60 秒。</span></li>
+      <li><b>风格</b><span>写实（生成的真人实拍感画面，电影感）或动画（一部 2D 动画影片）。影片中每个镜头都从各自的画帧生成为动态画面。</span></li>
+      <li><b>产品</b><span>影片，或同一套分镜的动态分镜：运动镜头下的手绘画帧，同样的旁白和图形层，没有生成的视频片段。每个账户都可以订购动态分镜；影片只为购买过积分包的账户制作。</span></li>
+      <li><b>旁白</b><span>一位旁白，英语或意大利语。没有背景音乐，没有字幕，没有屏幕文字。</span></li>
+      <li><b>积分</b><span>影片：1 积分 = 2 秒，向上取整，最低 10 积分：15 秒 = 10，30 秒 = 15，60 秒 = 30，5 分钟 = 150。动态分镜：固定 5 积分。起步有 7 积分；积分包为 €5 = 10、€15 = 35、€40 = 100，一次付清，无需订阅。</span></li>
+      <li><b>时间</b><span>一次渲染在租用的 GPU 上通常需要 25–35 分钟；Kleo 会在对话里告诉你预计时间。</span></li>
+    </ul>
+    <p><a href="/zh/pricing/">查看一部影片的价格 →</a></p>
+  </div>
+</section>
+
+<!-- ============ TROUBLESHOOTING ============ -->
+<section id="troubleshooting">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">05</span>故障排除</div>
+        <h2>如果有什么不正常。</h2>
+      </div>
+    </div>
+    <div class="faq">
+      <div>
+        <details>
+          <summary>Claude 里看不到 Kleo。</summary>
+          <p>检查你粘贴的地址：必须正好是 https://mcp.kleooai.com/mcp，带 https，/mcp 之后什么都没有。用 Kleo 这个名字再添加一次连接器。添加之后，它在对话里仍然是关闭的，直到你开启它：打开新对话，从工具菜单开启 Kleo。免费方案只允许一个自定义连接器，所以 Kleo 必须是那一个。</p>
+        </details>
+        <details>
+          <summary>Kleo 的页面没有打开，或窗口被拦截了。</summary>
+          <p>当你确认连接器时，Claude 会打开 Kleo 的页面进行登录：一个免费开始按钮，没有任何要填的。如果你的浏览器把它当作弹出窗口拦截了，请允许 Claude 的弹出窗口，再确认一次连接器；页面打开，点击免费开始，你就回到了 Claude。</p>
+        </details>
+        <details>
+          <summary>积分不够。</summary>
+          <p>连接会给你 7 积分：它们可以买一部动态分镜（5），永远买不到影片。影片只为购买过积分包的账户制作，一部 30 秒的影片是 15 积分：有了 €5 积分包（10 积分）你就有 17，渲染可以开始。向 Claude 索要你的 Kleo 账户页面（kleo_account）：上面显示余额和结账链接（€5 = 10 积分，€15 = 35，€40 = 100；以欧元一次性付款，无需订阅）。被拒绝的调用没有扣费。</p>
+        </details>
+      </div>
+      <div>
+        <details>
+          <summary>影片还没好，等待就超时了。</summary>
+          <p>一次长时间的渲染可能超过单次工具调用的时限，但任务仍在它的 GPU 上继续。让 Claude 查询任务状态（kleo_get_job）或再等一次（kleo_wait_for_video），然后索要链接（kleo_get_result）。不要为了查看第一部影片而再要一部。</p>
+        </details>
+        <details>
+          <summary>你想停止渲染。</summary>
+          <p>让 Claude 取消任务（kleo_cancel_job）。渲染停止，未花掉的积分退回你的余额。</p>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ START ============ -->
+<section class="cta one" id="start">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow"><span class="n">06</span>开始</div>
+      <h2>你在 Claude 里执导影片。</h2>
+      <p class="lede">用的是 ChatGPT？<a href="/zh/integrations/chatgpt/">Kleo 与 ChatGPT →</a></p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/zh/connect/">连接 Kleo <span class="arr" aria-hidden="true">→</span></a> <a class="btn btn-ghost" href="/zh/faq/">阅读常见问题</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<!-- i18n:langs -->
+<nav class="langs" aria-label="语言">
+  <div class="wrap">
+    <span>语言</span>
+    <a href="/integrations/claude/" hreflang="en" lang="en">English</a>
+    <a href="/it/integrations/claude/" hreflang="it" lang="it">Italiano</a>
+    <a href="/de/integrations/claude/" hreflang="de" lang="de">Deutsch</a>
+    <a href="/fr/integrations/claude/" hreflang="fr" lang="fr">Français</a>
+    <a href="/es/integrations/claude/" hreflang="es" lang="es">Español</a>
+    <a href="/pt/integrations/claude/" hreflang="pt" lang="pt">Português</a>
+    <a href="/nl/integrations/claude/" hreflang="nl" lang="nl">Nederlands</a>
+    <a href="/pl/integrations/claude/" hreflang="pl" lang="pl">Polski</a>
+    <a href="/tr/integrations/claude/" hreflang="tr" lang="tr">Türkçe</a>
+    <a href="/ru/integrations/claude/" hreflang="ru" lang="ru">Русский</a>
+    <a href="/uk/integrations/claude/" hreflang="uk" lang="uk">Українська</a>
+    <a href="/ja/integrations/claude/" hreflang="ja" lang="ja">日本語</a>
+    <a href="/ko/integrations/claude/" hreflang="ko" lang="ko">한국어</a>
+    <b lang="zh-Hans">简体中文</b>
+    <a href="/zh-tw/integrations/claude/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+    <a href="/ar/integrations/claude/" hreflang="ar" lang="ar">العربية</a>
+    <a href="/he/integrations/claude/" hreflang="he" lang="he">עברית</a>
+    <a href="/hi/integrations/claude/" hreflang="hi" lang="hi">हिन्दी</a>
+    <a href="/id/integrations/claude/" hreflang="id" lang="id">Bahasa Indonesia</a>
+    <a href="/vi/integrations/claude/" hreflang="vi" lang="vi">Tiếng Việt</a>
+    <a href="/th/integrations/claude/" hreflang="th" lang="th">ไทย</a>
+  </div>
+</nav>
+<!-- /i18n:langs -->
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">
+      <a class="brand" href="/zh/" aria-label="Kleo，首页">
+        <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+          <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+          <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+        </svg>
+        Kleo <span class="tag">MCP</span>
+      </a>
+      <span>你来执导。智能体拍成影片。</span>
+    </div>
+    <div class="links">
+      <a href="/zh/connect/">连接</a> <a href="/zh/integrations/claude/">Claude</a> <a href="/zh/integrations/chatgpt/">ChatGPT</a> <a href="/zh/video-generation-mcp/">MCP 文档</a> <a href="/zh/examples/">示例</a> <a href="/zh/styles.html">风格</a> <a href="/zh/pricing/">价格</a> <a href="/zh/faq/">常见问题</a> <a href="/zh/about/">关于</a> <a href="/zh/privacy.html">隐私</a> <a href="/zh/terms.html">条款</a> <a href="https://github.com/tonnooooo/kleo-mcp">GitHub</a> <a href="mailto:kleooai@gmail.com">kleooai@gmail.com</a>
+    </div>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite">已复制</div>
+</body>
+</html>

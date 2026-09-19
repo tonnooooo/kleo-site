@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="pl" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.remove("no-js")</script>
+<title>Twórz filmy AI z ChatGPT i Kleo — przewodnik konfiguracji</title>
+<meta name="description" content="Podłącz Kleo do ChatGPT w trybie dewelopera z OAuth i reżyseruj film z narracją z czatu: przetestowane kroki, pierwszy prompt, przebieg produkcji, kredyty, poprawki.">
+<link rel="canonical" href="https://kleooai.com/pl/integrations/chatgpt/">
+<!-- i18n:head -->
+<link rel="alternate" hreflang="en" href="https://kleooai.com/integrations/chatgpt/">
+<link rel="alternate" hreflang="it" href="https://kleooai.com/it/integrations/chatgpt/">
+<link rel="alternate" hreflang="de" href="https://kleooai.com/de/integrations/chatgpt/">
+<link rel="alternate" hreflang="fr" href="https://kleooai.com/fr/integrations/chatgpt/">
+<link rel="alternate" hreflang="es" href="https://kleooai.com/es/integrations/chatgpt/">
+<link rel="alternate" hreflang="pt" href="https://kleooai.com/pt/integrations/chatgpt/">
+<link rel="alternate" hreflang="nl" href="https://kleooai.com/nl/integrations/chatgpt/">
+<link rel="alternate" hreflang="pl" href="https://kleooai.com/pl/integrations/chatgpt/">
+<link rel="alternate" hreflang="tr" href="https://kleooai.com/tr/integrations/chatgpt/">
+<link rel="alternate" hreflang="ru" href="https://kleooai.com/ru/integrations/chatgpt/">
+<link rel="alternate" hreflang="uk" href="https://kleooai.com/uk/integrations/chatgpt/">
+<link rel="alternate" hreflang="ja" href="https://kleooai.com/ja/integrations/chatgpt/">
+<link rel="alternate" hreflang="ko" href="https://kleooai.com/ko/integrations/chatgpt/">
+<link rel="alternate" hreflang="zh-Hans" href="https://kleooai.com/zh/integrations/chatgpt/">
+<link rel="alternate" hreflang="zh-Hant" href="https://kleooai.com/zh-tw/integrations/chatgpt/">
+<link rel="alternate" hreflang="ar" href="https://kleooai.com/ar/integrations/chatgpt/">
+<link rel="alternate" hreflang="he" href="https://kleooai.com/he/integrations/chatgpt/">
+<link rel="alternate" hreflang="hi" href="https://kleooai.com/hi/integrations/chatgpt/">
+<link rel="alternate" hreflang="id" href="https://kleooai.com/id/integrations/chatgpt/">
+<link rel="alternate" hreflang="vi" href="https://kleooai.com/vi/integrations/chatgpt/">
+<link rel="alternate" hreflang="th" href="https://kleooai.com/th/integrations/chatgpt/">
+<link rel="alternate" hreflang="x-default" href="https://kleooai.com/integrations/chatgpt/">
+<script>(function(){try{var L=["it", "de", "fr", "es", "pt", "nl", "pl", "tr", "ru", "uk", "ja", "ko", "zh", "zh-tw", "ar", "he", "hi", "id", "vi", "th"],A={"zh-hk": "zh-tw", "zh-mo": "zh-tw", "zh-hant": "zh-tw", "zh-hans": "zh", "zh-cn": "zh", "zh-sg": "zh", "nb": "no", "nn": "no"},p=location.pathname,m=p.match(/^\/([a-z]{2}(?:-[a-z]{2})?)(?=\/)/),on=m&&L.indexOf(m[1])>=0?m[1]:"en",rest=on==="en"?p:p.slice(on.length+1),want=null,s=null;try{s=localStorage.getItem("kleo-lang")}catch(e){}if(s==="en"||L.indexOf(s)>=0)want=s;else{var nl=navigator.languages||[navigator.language||""];for(var i=0;i<nl.length&&!want;i++){var t=String(nl[i]).toLowerCase(),b=t.split("-")[0];t=A[t]||t;b=A[b]||b;want=t==="en"||b==="en"?"en":L.indexOf(t)>=0?t:L.indexOf(b)>=0?b:null}}if(want&&want!==on&&!/404/.test(p))location.replace((want==="en"?"":"/"+want)+rest+location.search+location.hash)}catch(e){}})()</script>
+<script type="application/json" id="i18n">{"Language": "Język", "Menu": "Menu", "Close menu": "Zamknij menu", "Copied": "Skopiowano", "Copied ✓": "Skopiowano ✓", "Copy it by hand: {text}": "Skopiuj ręcznie: {text}", "Copy the Kleo server address": "Skopiuj adres serwera Kleo", "Copy the argument {value}": "Skopiuj argument {value}", "Copy this prompt": "Skopiuj ten prompt", "Copy the {what} snippet": "Skopiuj fragment {what}", "Copy the {what} text": "Skopiuj tekst {what}", "Treatment · logline, angle, acts · look: realistic": "Treatment · logline, kąt ujęcia tematu, akty · styl: realistyczny", "Storyboard · direction, scenes, shots · 23 credits, confirmed": "Storyboard · reżyseria, sceny, ujęcia · 23 kredyty, potwierdzono", "Generating the shots as footage · 4 of 11 · ~22 min left": "Generowanie ujęć jako ruchomego materiału · 4 z 11 · zostało ok. 22 min", "Generating the shots as footage · 8 of 11 · ~12 min left": "Generowanie ujęć jako ruchomego materiału · 8 z 11 · zostało ok. 12 min", "Narration · one voice, English · cutting the shots on the words": "Narracja · jeden głos, angielski · cięcie ujęć pod słowa", "Finish · 2160×3840 · 60 fps · quality check": "Finalizacja · 2160×3840 · 60 fps · kontrola jakości", "Done · 28 min · link ready for 7 days": "Gotowe · 28 min · link ważny przez 7 dni", "done": "gotowe", "running": "w toku", "A whole number from {min} to {max} seconds": "Liczba całkowita od {min} do {max} sekund", "{s} s {product} = {n} credits": "{s} s {product} = {n} kredytów", "film": "film", "animatic": "animatik"}</script>
+<!-- /i18n:head -->
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kleo AI">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:title" content="Twórz filmy AI z ChatGPT i Kleo — przewodnik konfiguracji">
+<meta property="og:description" content="Podłącz Kleo do ChatGPT w trybie dewelopera z OAuth i reżyseruj film z narracją z czatu: przetestowane kroki, pierwszy prompt, przebieg produkcji, kredyty, poprawki.">
+<meta property="og:url" content="https://kleooai.com/pl/integrations/chatgpt/">
+<meta property="og:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta property="og:image:alt" content="Kleo AI — Ludzka reżyseria. Filmy robione przez agenta.">
+<meta property="og:image:width" content="2400">
+<meta property="og:image:height" content="1260">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Twórz filmy AI z ChatGPT i Kleo — przewodnik konfiguracji">
+<meta name="twitter:description" content="Podłącz Kleo do ChatGPT w trybie dewelopera z OAuth i reżyseruj film z narracją z czatu: przetestowane kroki, pierwszy prompt, przebieg produkcji, kredyty, poprawki.">
+<meta name="twitter:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta name="theme-color" content="#0A0C10">
+<link rel="icon" href="/brand/kleo-favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/brand/kleo-favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/brand/kleo-icon-dark-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/site.css?v=20260920">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://kleooai.com/#website",
+      "name": "Kleo AI",
+      "alternateName": "Kleo",
+      "url": "https://kleooai.com/pl/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kleooai.com/pl/integrations/chatgpt/#page",
+      "url": "https://kleooai.com/pl/integrations/chatgpt/",
+      "name": "Twórz filmy AI z ChatGPT i Kleo — przewodnik konfiguracji",
+      "description": "Podłącz Kleo do ChatGPT w trybie dewelopera z OAuth i reżyseruj film z narracją z czatu: przetestowane kroki, pierwszy prompt, przebieg produkcji, kredyty, poprawki.",
+      "inLanguage": "pl",
+      "isPartOf": {
+        "@id": "https://kleooai.com/#website"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Strona główna",
+          "item": "https://kleooai.com/pl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Kleo z ChatGPT",
+          "item": "https://kleooai.com/pl/integrations/chatgpt/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<script src="/site.js?v=20260920" defer></script>
+</head>
+<body>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" aria-label="Główna">
+  <div class="wrap">
+    <a class="brand" href="/pl/" aria-label="Kleo, strona główna">
+      <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+        <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+        <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+      </svg>
+      Kleo <span class="tag">MCP</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-menu">
+      <svg class="bars" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 5h14M2 9h14M2 13h14"/></svg>
+      <svg class="x" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 4l10 10M14 4L4 14"/></svg>
+    </button>
+    <div class="nav-links" id="site-menu">
+      <a href="/pl/ai-youtube-video-generator/">Twórz filmy</a> <a href="/pl/examples/">Przykłady</a> <a href="/pl/styles.html">Style</a> <a href="/pl/pricing/">Cennik</a> <a href="/pl/faq/">FAQ</a>
+    </div>
+    <a class="btn btn-primary btn-sm" href="/pl/connect/">Podłącz Kleo</a>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="page-hero hero" id="top">
+  <div class="wrap">
+    <div>
+      <nav class="crumbs" aria-label="Okruszki"><a href="/pl/">Strona główna</a><span aria-hidden="true">›</span><a href="/pl/connect/">Podłączenie</a><span aria-hidden="true">›</span><span>ChatGPT</span></nav>
+      <h1>Twórz z<br><span class="hl">ChatGPT + Kleo.</span></h1>
+      <p class="lede">W ChatGPT reżyserujesz film. Kleo generuje materiał, narrację i gotowe wideo w 4K, a ChatGPT przekazuje Ci link.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#connect">Kroki podłączenia <span class="arr" aria-hidden="true">→</span></a> <a class="btn btn-ghost" href="/pl/integrations/claude/">Używasz Claude? →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT YOU NEED ============ -->
+<section id="requirements">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">01</span>Wymagania</div>
+        <h2>Czego potrzebujesz.</h2>
+      </div>
+    </div>
+    <ul class="defs">
+      <li><b>Plan ChatGPT</b><span>Plus, Pro, Business lub Enterprise. Kleo dodaje się jako własny konektor w trybie dewelopera, a to, czy tryb dewelopera jest oferowany, może zależeć od konta lub przestrzeni roboczej.</span></li>
+      <li><b>Konto Kleo</b><span>Nic do zakładania z góry. Strona Kleo otwiera się podczas podłączania; jedno kliknięcie w <b>Start free</b> i konto istnieje, z 7 kredytami, bez formularza i bez karty: jeden animatik.</span></li>
+      <li><b>Adres</b><span>Jeden adres serwera, ten sam dla każdego klienta: <code class="mono">https://mcp.kleooai.com/mcp</code>.</span></li>
+      <li><b>Koszt</b><span>Podłączenie i planowanie nic nie kosztują. Kredyty są wydawane dopiero, gdy render zostanie przyjęty, a ChatGPT prosi Cię o potwierdzenie, zanim do tego dojdzie.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ CONNECT ============ -->
+<section id="connect">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">02</span>Podłączenie</div>
+        <h2>Podłącz Kleo do ChatGPT.</h2>
+      </div>
+      <p class="lede">Oto przetestowane kroki. Konektor tworzy się raz; od tej chwili Kleo to jeden przełącznik w menu + każdego czatu.</p>
+    </div>
+    <article class="panel">
+      <h3>ChatGPT <small>tryb dewelopera</small></h3>
+      <ol>
+        <li>Otwórz <b>Settings → Apps &amp; Connectors</b> (w starszych wersjach <b>Connectors</b>), potem <b>Advanced settings</b> i włącz <b>Developer mode</b>.</li>
+        <li>Z powrotem w <b>Connectors</b> wybierz <b>Create</b>: nazwij go <b>Kleo</b>, wklej poniższy adres, ustaw uwierzytelnianie na <b>OAuth</b> i zapisz.</li>
+        <li>Otwiera się strona Kleo: kliknij <b>Start free</b> i wracasz do ChatGPT. To kliknięcie to cała rejestracja — konto już istnieje, z 7 kredytami, bez formularza i bez karty.</li>
+        <li>Na czacie włącz Kleo w menu <b>+</b> i poproś o wideo. ChatGPT prosi Cię o potwierdzenie, zanim zacznie render.</li>
+      </ol>
+      <div class="url-line">Adres serwera <code>https://mcp.kleooai.com/mcp</code> <button class="btn btn-ghost btn-sm" type="button" data-copy="https://mcp.kleooai.com/mcp">Kopiuj</button></div>
+      <p>ChatGPT to asystent firmy OpenAI. Kleo to osobna usługa, z którą ChatGPT łączy się przez własny konektor; ten sam adres działa w Claude, Groku, Claude Code, Cursorze i każdym innym kliencie MCP — zobacz <a href="/pl/connect/">stronę podłączenia</a>.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ============ THE FIRST FILM ============ -->
+<section id="first-film">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">03</span>Pierwszy film</div>
+        <h2>Poproś o film, którego chcesz.</h2>
+      </div>
+      <p class="lede">Podaj cztery rzeczy i Kleo może zacząć: temat, długość, format i styl. O wszystko, czego prośba nie zawiera, Kleo pyta w jednej wiadomości, zanim zacznie cokolwiek planować — nigdy nie wybiera za Ciebie tematu ani długości.</p>
+    </div>
+    <div class="split">
+      <div>
+        <p class="style-say copyable">„Użyj Kleo, żeby zrobić 30-sekundowy film o malutkiej łódce przepływającej spokojne jezioro o świcie. Styl realistyczny, narracja po angielsku, 16:9 na YouTube. Pokaż mi treatment i dokładną liczbę kredytów, zanim zaczniesz render.”<button class="btn btn-ghost btn-sm copy" type="button" data-copy="Use Kleo to make a 30-second film about a tiny boat crossing a quiet lake at dawn. Realistic look, English narration, 16:9 for YouTube. Show me the treatment and the exact credits before you start the render.">Kopiuj</button></p>
+      </div>
+      <ul class="defs">
+        <li><b>Temat</b><span>O czym jest film, prostymi słowami. Odbiorcy, ton i wszystko, co musi się pojawić, są opcjonalne i mile widziane.</span></li>
+        <li><b>Długość</b><span>Film od 15 sekund do 5 minut; animatik od 15 do 60 sekund.</span></li>
+        <li><b>Format</b><span>16:9 na YouTube lub dowolny poziomy ekran, 9:16 na Shorta lub dowolny pionowy feed.</span></li>
+        <li><b>Styl</b><span>Realistyczny — generowany materiał aktorski, kinowy — lub animowany, animowany film 2D. W filmie każde ujęcie jest generowane jako ruchomy materiał z własnej klatki, w obu stylach; animatik tego samego storyboardu zostawia narysowane klatki pod ruchomą kamerą, bez generowanego klipu.</span></li>
+        <li><b>Narracja</b><span>Jeden narrator, po angielsku lub po włosku, głosem męskim lub żeńskim. Bez muzyki w tle, bez napisów, bez tekstu na ekranie.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRODUCTION ============ -->
+<section id="production">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">04</span>Produkcja</div>
+        <h2>Jak przebiega produkcja.</h2>
+      </div>
+      <p class="lede">Kleo to zestaw narzędzi, które ChatGPT wywołuje w stałej kolejności. Widzisz każdy krok na czacie i masz ostatnie słowo, zanim cokolwiek zostanie wydane.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="num">01</span> <span class="tc">kleo_adapt_prompt</span>
+        <h3>Treatment</h3>
+        <p>Porównuje Twoją prośbę z pytaniami wstępnymi i zwraca treatment: logline, kąt ujęcia tematu, otwarcie, akty, zakończenie, styl, tempo, narratora. ChatGPT podaje Ci logline i podjęte decyzje; zmień, co chcesz.</p>
+      </div>
+      <div class="step">
+        <span class="num">02</span> <span class="tc">kleo_storyboard_guide</span>
+        <h3>Storyboard</h3>
+        <p>Wyjaśnia, jak pisze się storyboard — blok reżyserski, sceny, ujęcia, ograniczenia — a ChatGPT pisze go na podstawie treatmentu.</p>
+      </div>
+      <div class="step">
+        <span class="num">03</span> <span class="tc">kleo_create_video</span>
+        <h3>Potwierdzenie</h3>
+        <p>Sprawdza wszystko i podaje dokładną liczbę kredytów. ChatGPT prosi Cię o potwierdzenie, zanim zacznie: to jedyny moment, w którym wydawane są kredyty, a odrzucone wywołanie nic nie pobiera.</p>
+      </div>
+      <div class="step">
+        <span class="num">04</span> <span class="tc">kleo_wait_for_video · kleo_get_result</span>
+        <h3>Render i dostawa</h3>
+        <p>Film jest renderowany na GPU wynajętym do tego zadania. Trwa to zwykle 25–35 minut — serwer podaje to przy starcie zadania — a <code>kleo_wait_for_video</code> lub <code>kleo_get_job</code> raportują postęp na tym samym czacie. Potem <code>kleo_get_result</code> zwraca linki. Pobierasz MP4 w 4K (3840×2160 lub 2160×3840) przy 60 fps; link jest ważny przez 7 dni. Kleo nigdy nie publikuje na YouTube, TikToku ani żadnym kanale — to zostaje przy Tobie.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOLLOW THE RENDER ============ -->
+<section id="follow">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">05</span>Postęp</div>
+        <h2>Śledź render.</h2>
+      </div>
+    </div>
+    <div class="prose">
+      <p>Po potwierdzeniu zostań na tym samym czacie i pytaj o postęp tego zadania: ChatGPT wywołuje <code>kleo_wait_for_video</code> i zdaje relację. Nie uruchamiaj drugiego zadania, żeby sprawdzić pierwsze — każde przyjęte zadanie wydaje własne kredyty. Gdy render się skończy, poproś o wynik i pobierz MP4 w ciągu 7 dni. Jeśli w trakcie zmienisz zdanie, poproś ChatGPT o anulowanie: <code>kleo_cancel_job</code> zatrzymuje render i zwraca niewykorzystane kredyty.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT COMES BACK ============ -->
+<section id="sample">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">06</span>Przykład</div>
+        <h2>Co wraca.</h2>
+      </div>
+      <p class="lede">Tether, 20-sekundowy film w realistycznym stylu Kleo: jeden nieprzerwany odjazd kamery, który zaczyna się wewnątrz hełmu, na twarzy astronauty i jego oddechu na szkle; unosi się dłoń w rękawicy, wizjer zalewa czerwień, a kamera cofa się dalej, gdy on dryfuje z rozłożonymi ramionami, aż złota lina biegnąca w górę z jego plecaka dociera do stacji i jej paneli słonecznych. Każda klatka to generowany materiał.</p>
+    </div>
+    <div class="player">
+      <div class="style-media wide">
+        <video src="/samples/realistic-tether.mp4" poster="/samples/realistic-tether.jpg" width="1920" height="1080" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback"
+               aria-label="Tether, 20-sekundowy film w realistycznym stylu Kleo: jeden ciągły odjazd kamery od twarzy astronauty wewnątrz hełmu do stacji i jej paneli słonecznych"></video>
+        <span class="style-live" aria-hidden="true"><i></i>Odtwarzanie</span>
+      </div>
+      <div class="film-cap"><b>Tether</b><span>20 s · jedno ujęcie · 16:9 · 4K 60 fps, pokazany w 1080p</span></div>
+      <p class="film-note">W tym filmie nie ma narracji — tylko oddech i niski szum. <a href="/pl/examples/tether/">Obejrzyj Tether na własnej stronie →</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CREDITS ============ -->
+<section id="credits">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">07</span>Kredyty</div>
+        <h2>Kredyty i cena.</h2>
+      </div>
+    </div>
+    <ul class="defs">
+      <li><b>Przy podłączeniu</b><span>7 kredytów, bez formularza, bez karty: jeden animatik.</span></li>
+      <li><b>Za film</b><span>1 kredyt = 2 sekundy, zaokrąglane w górę, minimum 10 kredytów, niezależnie od stylu: 15 s = 10 · 30 s = 15 · 60 s = 30 · 3 min = 90 · 5 min = 150. Film powstaje tylko dla kont, które kupiły pakiet.</span></li>
+      <li><b>Za animatik</b><span>Stałe 5 kredytów, od 15 do 60 sekund, niezależnie od stylu, dla każdego konta.</span></li>
+      <li><b>Pakiety</b><span>5 € = 10 kredytów · 15 € = 35 · 40 € = 100. Jednorazowa płatność Stripe w EUR, bez abonamentu.</span></li>
+      <li><b>Pierwszy Short</b><span>7 kredytów startowych kupuje animatik, nigdy film; z pakietem za 5 € masz 17, film się otwiera i wystarcza na 30-sekundowego Shorta (15 kredytów).</span></li>
+      <li><b>Strona konta</b><span>Poproś ChatGPT o swoje konto Kleo: <code class="mono">kleo_account</code> podaje saldo i linki do płatności. Klucz Kleo, który pokazuje, jest prywatny — kto ma klucz, ten ma konto, więc nie pokazuj go na zrzutach ekranu.</span></li>
+    </ul>
+    <div class="cta-row">
+      <a class="btn btn-ghost" href="/pl/pricing/">Zobacz cennik</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TROUBLESHOOTING ============ -->
+<section id="troubleshooting">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">08</span>Rozwiązywanie problemów</div>
+        <h2>Jeśli coś nie działa.</h2>
+      </div>
+      <p class="lede">Nadal nie działa? Napisz na <a href="mailto:kleooai@gmail.com">kleooai@gmail.com</a>.</p>
+    </div>
+    <div class="faq">
+      <div>
+        <details>
+          <summary>Brak trybu dewelopera w ustawieniach.</summary>
+          <p>Własne konektory wymagają ChatGPT Plus, Pro, Business lub Enterprise, a dostępność trybu dewelopera może zależeć od konta lub przestrzeni roboczej. Jeśli opcji nie ma, to kwestia planu lub przestrzeni roboczej, nie adresu.</p>
+        </details>
+        <details>
+          <summary>Kleo nie ma w menu +.</summary>
+          <p>Konektor musi być zapisany w Connectors z uwierzytelnianiem ustawionym na OAuth, a potem włączony na każdym czacie z menu +. Sprawdź, czy adres to dokładnie <code class="mono">https://mcp.kleooai.com/mcp</code>.</p>
+        </details>
+        <details>
+          <summary>Autoryzacja nie powiodła się.</summary>
+          <p>Otwórz konektor Kleo ponownie i powtórz autoryzację: otwiera się strona Kleo, kliknij <b>Start free</b> i wracasz do ChatGPT.</p>
+        </details>
+        <details>
+          <summary>ChatGPT prosi o potwierdzenie.</summary>
+          <p>Tak ma być: ChatGPT pyta, zanim render się zacznie, a <code class="mono">kleo_create_video</code> podało już dokładną liczbę kredytów. Nic nie jest pobierane, dopóki nie powiesz „tak”, a zadanie nie zostanie przyjęte.</p>
+        </details>
+      </div>
+      <div>
+        <details>
+          <summary>Za mało kredytów.</summary>
+          <p>Film kosztuje co najmniej 10 kredytów i powstaje tylko dla kont, które kupiły pakiet; saldo startowe to 7, co kupuje animatik. Poproś o stronę konta i dodaj pakiet za 5 €: 17 kredytów pokrywa 30-sekundowego Shorta.</p>
+        </details>
+        <details>
+          <summary>Render wydaje się powolny.</summary>
+          <p>25–35 minut na wynajętym GPU to zwykły czas. Pytaj o status tego samego zadania, zamiast zlecać je ponownie; jeśli chcesz przerwać, poproś o anulowanie, a niewykorzystane kredyty wrócą.</p>
+        </details>
+        <details>
+          <summary>Link już nie działa.</summary>
+          <p>Linki do pobrania są ważne przez 7 dni. Pobierz MP4, gdy tylko dotrze, i zachowaj własną kopię.</p>
+        </details>
+        <details>
+          <summary>Prośba została odrzucona.</summary>
+          <p>Film trwa od 15 sekund do 5 minut, 16:9 lub 9:16, w stylu realistycznym lub animowanym, z narracją po angielsku lub po włosku. Odrzucone wywołanie nic nie pobiera — popraw prośbę i zapytaj ponownie.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ KEEP GOING ============ -->
+<section id="more">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">09</span>Dalej</div>
+        <h2>Idź dalej.</h2>
+      </div>
+    </div>
+    <div class="grid panels three">
+      <article class="panel">
+        <h3>Kleo z Claude</h3>
+        <p>Ten sam przewodnik dla Claude, w aplikacji i w przeglądarce: Settings → Connectors → Add custom connector. Plan darmowy pozwala na jeden własny konektor.</p>
+        <a class="more" href="/pl/integrations/claude/">Przewodnik Claude <span class="arr" aria-hidden="true">→</span></a>
+      </article>
+      <article class="panel">
+        <h3>Każdy klient</h3>
+        <p>Grok, Claude Code, Cursor, VS Code, OpenCode, Gemini CLI, Windsurf, aplikacja Gemini i każde MCP SDK z transportem HTTP — jeden adres dla wszystkich.</p>
+        <a class="more" href="/pl/connect/">Kroki podłączenia <span class="arr" aria-hidden="true">→</span></a>
+      </article>
+      <article class="panel">
+        <h3>Dwa style</h3>
+        <p>Realistyczny i animowany: czym jest każdy z nich, z przykładowym filmem dla każdego — plus dwa style rysowane przez silnik, Cinema i Stickman.</p>
+        <a class="more" href="/pl/styles.html">Style filmów <span class="arr" aria-hidden="true">→</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ START ============ -->
+<section class="cta one" id="start">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow"><span class="n">10</span>Start</div>
+      <h2>W ChatGPT reżyserujesz film.</h2>
+      <p class="lede">Konektor tworzy się raz; od tej chwili Kleo to jeden przełącznik w menu + każdego czatu. Podłączenie i planowanie nic nie kosztują: kredyty są wydawane dopiero, gdy render zostanie przyjęty, a ChatGPT prosi Cię o potwierdzenie, zanim do tego dojdzie.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#connect">Kroki podłączenia <span class="arr" aria-hidden="true">→</span></a> <a class="btn btn-ghost" href="/pl/integrations/claude/">Używasz Claude? →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<!-- i18n:langs -->
+<nav class="langs" aria-label="Język">
+  <div class="wrap">
+    <span>Język</span>
+    <a href="/integrations/chatgpt/" hreflang="en" lang="en">English</a>
+    <a href="/it/integrations/chatgpt/" hreflang="it" lang="it">Italiano</a>
+    <a href="/de/integrations/chatgpt/" hreflang="de" lang="de">Deutsch</a>
+    <a href="/fr/integrations/chatgpt/" hreflang="fr" lang="fr">Français</a>
+    <a href="/es/integrations/chatgpt/" hreflang="es" lang="es">Español</a>
+    <a href="/pt/integrations/chatgpt/" hreflang="pt" lang="pt">Português</a>
+    <a href="/nl/integrations/chatgpt/" hreflang="nl" lang="nl">Nederlands</a>
+    <b lang="pl">Polski</b>
+    <a href="/tr/integrations/chatgpt/" hreflang="tr" lang="tr">Türkçe</a>
+    <a href="/ru/integrations/chatgpt/" hreflang="ru" lang="ru">Русский</a>
+    <a href="/uk/integrations/chatgpt/" hreflang="uk" lang="uk">Українська</a>
+    <a href="/ja/integrations/chatgpt/" hreflang="ja" lang="ja">日本語</a>
+    <a href="/ko/integrations/chatgpt/" hreflang="ko" lang="ko">한국어</a>
+    <a href="/zh/integrations/chatgpt/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+    <a href="/zh-tw/integrations/chatgpt/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+    <a href="/ar/integrations/chatgpt/" hreflang="ar" lang="ar">العربية</a>
+    <a href="/he/integrations/chatgpt/" hreflang="he" lang="he">עברית</a>
+    <a href="/hi/integrations/chatgpt/" hreflang="hi" lang="hi">हिन्दी</a>
+    <a href="/id/integrations/chatgpt/" hreflang="id" lang="id">Bahasa Indonesia</a>
+    <a href="/vi/integrations/chatgpt/" hreflang="vi" lang="vi">Tiếng Việt</a>
+    <a href="/th/integrations/chatgpt/" hreflang="th" lang="th">ไทย</a>
+  </div>
+</nav>
+<!-- /i18n:langs -->
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">
+      <a class="brand" href="/pl/" aria-label="Kleo, strona główna">
+        <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+          <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+          <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+        </svg>
+        Kleo <span class="tag">MCP</span>
+      </a>
+      <span>Ludzka reżyseria. Filmy robione przez agenta.</span>
+    </div>
+    <div class="links">
+      <a href="/pl/connect/">Podłączenie</a> <a href="/pl/integrations/claude/">Claude</a> <a href="/pl/integrations/chatgpt/">ChatGPT</a> <a href="/pl/video-generation-mcp/">Dokumentacja MCP</a> <a href="/pl/examples/">Przykłady</a> <a href="/pl/styles.html">Style</a> <a href="/pl/pricing/">Cennik</a> <a href="/pl/faq/">FAQ</a> <a href="/pl/about/">O nas</a> <a href="/pl/privacy.html">Prywatność</a> <a href="/pl/terms.html">Regulamin</a> <a href="https://github.com/tonnooooo/kleo-mcp">GitHub</a> <a href="mailto:kleooai@gmail.com">kleooai@gmail.com</a>
+    </div>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite">Skopiowano</div>
+</body>
+</html>

@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="ko" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.remove("no-js")</script>
+<title>Kleo AI — 사람이 연출하고, 에이전트가 필름을 만듭니다</title>
+<meta name="description" content="AI 어시스턴트에서 MCP로 만드는 완성된 내레이션 필름, 리얼리스틱 또는 애니메이션. 4K 60 fps, 15초에서 5분, 영어 또는 이탈리아어 내레이션.">
+<link rel="canonical" href="https://kleooai.com/ko/">
+<!-- i18n:head -->
+<link rel="alternate" hreflang="en" href="https://kleooai.com/">
+<link rel="alternate" hreflang="it" href="https://kleooai.com/it/">
+<link rel="alternate" hreflang="de" href="https://kleooai.com/de/">
+<link rel="alternate" hreflang="fr" href="https://kleooai.com/fr/">
+<link rel="alternate" hreflang="es" href="https://kleooai.com/es/">
+<link rel="alternate" hreflang="pt" href="https://kleooai.com/pt/">
+<link rel="alternate" hreflang="nl" href="https://kleooai.com/nl/">
+<link rel="alternate" hreflang="pl" href="https://kleooai.com/pl/">
+<link rel="alternate" hreflang="tr" href="https://kleooai.com/tr/">
+<link rel="alternate" hreflang="ru" href="https://kleooai.com/ru/">
+<link rel="alternate" hreflang="uk" href="https://kleooai.com/uk/">
+<link rel="alternate" hreflang="ja" href="https://kleooai.com/ja/">
+<link rel="alternate" hreflang="ko" href="https://kleooai.com/ko/">
+<link rel="alternate" hreflang="zh-Hans" href="https://kleooai.com/zh/">
+<link rel="alternate" hreflang="zh-Hant" href="https://kleooai.com/zh-tw/">
+<link rel="alternate" hreflang="ar" href="https://kleooai.com/ar/">
+<link rel="alternate" hreflang="he" href="https://kleooai.com/he/">
+<link rel="alternate" hreflang="hi" href="https://kleooai.com/hi/">
+<link rel="alternate" hreflang="id" href="https://kleooai.com/id/">
+<link rel="alternate" hreflang="vi" href="https://kleooai.com/vi/">
+<link rel="alternate" hreflang="th" href="https://kleooai.com/th/">
+<link rel="alternate" hreflang="x-default" href="https://kleooai.com/">
+<script>(function(){try{var L=["it", "de", "fr", "es", "pt", "nl", "pl", "tr", "ru", "uk", "ja", "ko", "zh", "zh-tw", "ar", "he", "hi", "id", "vi", "th"],A={"zh-hk": "zh-tw", "zh-mo": "zh-tw", "zh-hant": "zh-tw", "zh-hans": "zh", "zh-cn": "zh", "zh-sg": "zh", "nb": "no", "nn": "no"},p=location.pathname,m=p.match(/^\/([a-z]{2}(?:-[a-z]{2})?)(?=\/)/),on=m&&L.indexOf(m[1])>=0?m[1]:"en",rest=on==="en"?p:p.slice(on.length+1),want=null,s=null;try{s=localStorage.getItem("kleo-lang")}catch(e){}if(s==="en"||L.indexOf(s)>=0)want=s;else{var nl=navigator.languages||[navigator.language||""];for(var i=0;i<nl.length&&!want;i++){var t=String(nl[i]).toLowerCase(),b=t.split("-")[0];t=A[t]||t;b=A[b]||b;want=t==="en"||b==="en"?"en":L.indexOf(t)>=0?t:L.indexOf(b)>=0?b:null}}if(want&&want!==on&&!/404/.test(p))location.replace((want==="en"?"":"/"+want)+rest+location.search+location.hash)}catch(e){}})()</script>
+<script type="application/json" id="i18n">{"Language": "언어", "Menu": "메뉴", "Close menu": "메뉴 닫기", "Copied": "복사됨", "Copied ✓": "복사됨 ✓", "Copy it by hand: {text}": "직접 복사하세요: {text}", "Copy the Kleo server address": "Kleo 서버 주소 복사", "Copy the argument {value}": "인수 {value} 복사", "Copy this prompt": "이 프롬프트 복사", "Copy the {what} snippet": "{what} 스니펫 복사", "Copy the {what} text": "{what} 텍스트 복사", "Treatment · logline, angle, acts · look: realistic": "트리트먼트 · 로그라인, 앵글, 막 구성 · 룩: 리얼리스틱", "Storyboard · direction, scenes, shots · 23 credits, confirmed": "스토리보드 · 연출, 장면, 샷 · 23크레딧, 확정", "Generating the shots as footage · 4 of 11 · ~22 min left": "샷을 푸티지로 생성 중 · 11개 중 4개 · 약 22분 남음", "Generating the shots as footage · 8 of 11 · ~12 min left": "샷을 푸티지로 생성 중 · 11개 중 8개 · 약 12분 남음", "Narration · one voice, English · cutting the shots on the words": "내레이션 · 한 목소리, 영어 · 말에 맞춰 샷을 편집하는 중", "Finish · 2160×3840 · 60 fps · quality check": "마무리 · 2160×3840 · 60 fps · 품질 확인", "Done · 28 min · link ready for 7 days": "완료 · 28분 · 링크는 7일간 유효", "done": "완료", "running": "실행 중", "A whole number from {min} to {max} seconds": "{min}초에서 {max}초 사이의 정수", "{s} s {product} = {n} credits": "{s}초 {product} = {n}크레딧", "film": "필름", "animatic": "애니매틱"}</script>
+<!-- /i18n:head -->
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kleo AI">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="Kleo AI — 사람이 연출하고, 에이전트가 필름을 만듭니다">
+<meta property="og:description" content="AI 어시스턴트에서 MCP로 만드는 완성된 내레이션 필름, 리얼리스틱 또는 애니메이션. 4K 60 fps, 15초에서 5분, 영어 또는 이탈리아어 내레이션.">
+<meta property="og:url" content="https://kleooai.com/ko/">
+<meta property="og:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta property="og:image:alt" content="Kleo AI — 사람이 연출하고, 에이전트가 필름을 만듭니다.">
+<meta property="og:image:width" content="2400">
+<meta property="og:image:height" content="1260">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kleo AI — 사람이 연출하고, 에이전트가 필름을 만듭니다">
+<meta name="twitter:description" content="AI 어시스턴트에서 MCP로 만드는 완성된 내레이션 필름, 리얼리스틱 또는 애니메이션. 4K 60 fps, 15초에서 5분, 영어 또는 이탈리아어 내레이션.">
+<meta name="twitter:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta name="theme-color" content="#0A0C10">
+<link rel="icon" href="/brand/kleo-favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/brand/kleo-favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/brand/kleo-icon-dark-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/site.css?v=20260920">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://kleooai.com/#website",
+      "name": "Kleo AI",
+      "alternateName": "Kleo",
+      "url": "https://kleooai.com/ko/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kleooai.com/ko/#page",
+      "url": "https://kleooai.com/ko/",
+      "name": "Kleo AI — 사람이 연출하고, 에이전트가 필름을 만듭니다",
+      "description": "AI 어시스턴트에서 MCP로 만드는 완성된 내레이션 필름, 리얼리스틱 또는 애니메이션. 4K 60 fps, 15초에서 5분, 영어 또는 이탈리아어 내레이션.",
+      "inLanguage": "ko",
+      "isPartOf": {
+        "@id": "https://kleooai.com/#website"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "홈",
+          "item": "https://kleooai.com/ko/"
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://kleooai.com/#software",
+      "name": "Kleo AI",
+      "url": "https://kleooai.com/ko/",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "모든 MCP 호환 클라이언트(원격 서버)",
+      "description": "AI 어시스턴트의 브리프를 완성된 내레이션 필름으로 만드는 원격 MCP 서버. 리얼리스틱 또는 애니메이션 룩, 모든 샷이 움직이는 푸티지로 생성되어 4K 60 fps MP4로 렌더링됩니다. 같은 스토리보드로 만드는 애니매틱은 5크레딧, 모든 계정에서 이용할 수 있습니다.",
+      "offers": {
+        "@type": "Offer",
+        "name": "10크레딧 팩",
+        "price": "5",
+        "priceCurrency": "EUR",
+        "url": "https://kleooai.com/ko/pricing/"
+      }
+    }
+  ]
+}
+</script>
+<script src="/site.js?v=20260920" defer></script>
+</head>
+<body>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" aria-label="메인">
+  <div class="wrap">
+    <a class="brand" href="/ko/" aria-label="Kleo, 홈" aria-current="page">
+      <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+        <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+        <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+      </svg>
+      Kleo <span class="tag">MCP</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="메뉴" aria-expanded="false" aria-controls="site-menu">
+      <svg class="bars" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 5h14M2 9h14M2 13h14"/></svg>
+      <svg class="x" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 4l10 10M14 4L4 14"/></svg>
+    </button>
+    <div class="nav-links" id="site-menu">
+      <a href="/ko/ai-youtube-video-generator/">영상 만들기</a> <a href="/ko/examples/">예시</a> <a href="/ko/styles.html">룩</a> <a href="/ko/pricing/">요금</a> <a href="/ko/faq/">FAQ</a>
+    </div>
+    <a class="btn btn-primary btn-sm" href="/ko/connect/">Kleo 연결하기</a>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <div class="osd"><span class="rec" aria-hidden="true"></span> REC <span class="tcode" id="tcode" aria-hidden="true">00:00:00:00</span> · 4K · 60 fps<span class="osd-more"> · 16:9 및 9:16 · EN / IT</span></div>
+      <h1>사람이 연출하고,<br><span class="hl">에이전트가 필름을 만듭니다.</span></h1>
+      <p class="lede">브리프가 이야기를 정합니다. Kleo는 그 브리프를 완성된 내레이션 필름으로 만듭니다. 모든 샷이 움직이는 푸티지로 생성되고, 리얼리스틱 룩과 애니메이션 룩 중 고를 수 있으며, 같은 스토리보드로 애니매틱을 만들 수도 있습니다. 완성된 링크는 이미 쓰고 있는 어시스턴트에게 바로 전달됩니다. 연출은 당신이, 제작은 MCP를 통해.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/ko/connect/">Kleo 연결하기 <span class="arr" aria-hidden="true">→</span></a> <a class="btn btn-ghost" href="/ko/examples/">예시 보기</a>
+      </div>
+      <p class="free-line"><b>무료로 시작하세요.</b> 연결하는 순간 계정에 7크레딧이 들어옵니다. 가입도, 카드도 필요 없습니다. 애니매틱 한 편 분량입니다. 필름은 10크레딧과 €5 팩부터 시작합니다.</p>
+      <div class="works">
+        <span>지원 클라이언트</span> <b>Claude</b><b>ChatGPT</b><b>Grok</b><b>Claude Code</b><b>Cursor</b><b>VS Code</b><b>OpenCode</b><b>Gemini CLI</b>
+      </div>
+    </div>
+
+    <div class="demo" role="figure" aria-label="예시: Kleo가 연결된 대화">
+      <div class="demo-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="demo-title">Claude · Kleo 연결됨<span class="clock" id="demoClock" hidden></span></span></div>
+      <div class="demo-body">
+        <div class="msg user">
+          <span class="who">나</span>
+          <p>병에 담긴 편지에 계속 답장을 보내는 등대지기 이야기로 45초짜리 쇼츠를 만들어 줘. 리얼리스틱 룩, 영어 내레이션으로.</p>
+        </div>
+        <div class="msg">
+          <span class="who">Claude</span>
+          <p>트리트먼트 준비 완료: 등대지기, 1년에 병 하나, 마지막 편지에는 직접 찾아가 답합니다. 23크레딧, 9:16. 렌더링을 시작합니다.</p>
+          <div class="tool">
+            <div class="tool-head">
+              <span class="tool-name"><b>kleo_create_video</b></span> <span class="tool-state" id="toolState">실행 중</span>
+            </div>
+            <pre class="tool-args">{ "duration_s": 45, "format": "9:16", "style": "realistic", "language": "en",
+  "prompt": "A lighthouse keeper who keeps answering a message in a bottle" }</pre>
+          </div>
+        </div>
+        <div class="render" id="render">
+          <div class="render-head"><span>작업 <b>kl_7f3k</b> · 이 작업을 위해 대여한 GPU</span><b id="renderPct">58%</b></div>
+          <div class="tracks" id="tracks">
+            <div class="track done"><span>트리트먼트</span><span class="tbar" style="--c:var(--violet)"></span></div>
+            <div class="track done"><span>스토리보드</span><span class="tbar" style="--c:var(--teal)"></span></div>
+            <div class="track active"><span>푸티지</span><span class="tbar" style="--c:var(--amber)"></span></div>
+            <div class="track"><span>내레이션</span><span class="tbar" style="--c:var(--rose)"></span></div>
+            <div class="track"><span>마무리</span><span class="tbar" style="--c:var(--blue)"></span></div>
+          </div>
+          <div class="bar"><span id="renderFill"></span></div>
+          <div class="render-status" id="renderStatus">샷을 푸티지로 생성 중 · 11개 중 8개 · 약 12분 남음</div>
+          <div class="result" id="result" hidden>
+            <span class="file">lighthouse-keeper.mp4</span> <span class="chip">2160×3840</span><span class="chip">60 fps</span><span class="chip">0:45</span><span class="chip">7일</span> <span class="dl">다운로드</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wrap wrap-stats">
+    <dl class="stats" aria-label="숫자로 보는 Kleo">
+      <div><dt>출력</dt><dd>4K · 60 fps</dd></div>
+      <div><dt>필름 한 편, 브리프에서 링크까지</dt><dd>25–35분</dd></div>
+      <div><dt>룩</dt><dd>리얼리스틱 · 애니메이션</dd></div>
+      <div><dt>시작은</dt><dd>7크레딧, 애니매틱 한 편</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section id="how">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">01</span>작동 방식</div>
+        <h2>당신의 비전을, 모든 프레임에.</h2>
+      </div>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="num" aria-hidden="true">01</span> <span class="tc">당신의 말</span>
+        <h3>이야기를 연출하세요</h3>
+        <p>어시스턴트에게 주제, 길이, 포맷, 그리고 룩(리얼리스틱 또는 애니메이션)을 말하세요. Kleo가 브리프를 읽고 빠진 것이 있으면 물어봅니다.</p>
+      </div>
+      <div class="step">
+        <span class="num" aria-hidden="true">02</span> <span class="tc">kleo_adapt_prompt</span>
+        <h3>트리트먼트를 읽으세요</h3>
+        <p>어시스턴트가 먼저 트리트먼트를 보여줍니다. 로그라인, 앵글, 오프닝, 막 구성, 결말까지. 프레임 하나가 만들어지기 전에 원하는 대로 바꾸세요.</p>
+      </div>
+      <div class="step">
+        <span class="num" aria-hidden="true">03</span> <span class="tc">kleo_create_video</span>
+        <h3>Kleo가 렌더링합니다</h3>
+        <p>그 트리트먼트를 바탕으로 스토리보드가 쓰이고, 필름에서는 모든 샷이 각자의 프레임에서 움직이는 푸티지로 생성됩니다. 애니매틱에서는 대신 그려진 프레임 위로 카메라가 움직입니다. 한 명의 내레이터가 영어 또는 이탈리아어로 목소리를 입힙니다. 정확한 크레딧 비용은 청구 전에 알려드리며, 렌더링을 수락하기 전까지는 아무것도 청구되지 않습니다.</p>
+      </div>
+      <div class="step">
+        <span class="num" aria-hidden="true">04</span> <span class="tc">kleo_get_result</span>
+        <h3>다운로드하고 게시하세요</h3>
+        <p>필름은 당신의 작업을 위해 대여한 GPU에서 4K 60 fps로 렌더링됩니다. 어시스턴트가 진행 상황을 지켜보다가 완성된 MP4 링크를 전달합니다. 링크는 7일간 유효합니다. 확인한 뒤 원하는 곳에 올리세요.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FILMS ============ -->
+<section id="films">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">02</span>필름</div>
+        <h2>Kleo가 만든 필름.</h2>
+      </div>
+      <p class="lede">리얼리스틱 룩으로 만든 Tether(20초, 원 테이크), Apex(터널을 빠져나오는 두 대의 차), 다큐멘터리 Signal Delay의 첫 1분, 그리고 애니메이션 룩으로 만든 <a href="/ko/examples/octopus/">문어에게 심장이 세 개인 이유를 다룬 애니메이션 쇼츠</a>. 모두 4K 60 fps 마스터를 1080p로 보여드립니다. 각 영상은 자기 페이지에서 음소거로 재생되며, 클릭할 것은 없습니다.</p>
+    </div>
+    <div class="films-row">
+      <a class="poster" href="/ko/examples/tether/">
+        <img src="/samples/realistic-tether.jpg" alt="헬멧 안 우주비행사의 얼굴, 바이저가 붉게 물들고, 금빛 테더가 정거장을 향해 위로 뻗어 있다" width="1920" height="1080" loading="lazy">
+        <span class="play"><i aria-hidden="true">▶</i>Tether · 20초 · 원 테이크</span>
+      </a>
+      <a class="poster" href="/ko/examples/apex/">
+        <img src="/samples/realistic-apex.jpg" alt="호박빛 조명의 터널 안에 나란히 선 노란 슈퍼카와 연녹색 클래식 쿠페" width="1920" height="1080" loading="lazy">
+        <span class="play"><i aria-hidden="true">▶</i>Apex · 20초 · 두 대의 차</span>
+      </a>
+      <a class="poster" href="/ko/examples/signal-delay/">
+        <img src="/samples/realistic-signal.jpg" alt="보이저 1호 사진 스틸 위에 놓인 터미널 창과 손으로 그린 호박색 도표, 검은 배경에 날짜들" width="1920" height="1080" loading="lazy">
+        <span class="play"><i aria-hidden="true">▶</i>Signal Delay · 첫 1분</span>
+      </a>
+    </div>
+    <p class="tpl-more"><a href="/ko/examples/">모든 예시 →</a> · <a href="/ko/styles.html">두 가지 룩, 리얼리스틱과 애니메이션 →</a></p>
+  </div>
+</section>
+
+<!-- ============ WHAT TO MAKE ============ -->
+<section id="template">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">03</span>무엇을 만들까</div>
+        <h2>볼 만한 것을 만드세요.</h2>
+      </div>
+    </div>
+    <div class="grid panels three">
+      <article class="panel">
+        <h3>YouTube 설명 영상</h3>
+        <p>하나의 분명한 질문을 오프닝 훅부터 마지막 핵심까지 담은 16:9 내레이션 필름으로 만드세요. 최대 5분까지.</p>
+        <a class="more" href="/ko/ai-youtube-video-generator/">YouTube 영상 만들기 <span class="arr" aria-hidden="true">→</span></a>
+      </article>
+      <article class="panel">
+        <h3>애니메이션 룩의 짧은 이야기</h3>
+        <p>주제, 배경, 결말을 정하고 애니메이션 룩을 요청하세요. 내레이터 한 명이 이끄는 2D 애니메이션 필름이 15초에서 5분까지 만들어집니다.</p>
+        <a class="more" href="/ko/examples/octopus/">문어 쇼츠 보기 <span class="arr" aria-hidden="true">→</span></a>
+      </article>
+      <article class="panel">
+        <h3>세로형 쇼츠</h3>
+        <p>하나의 아이디어와 분명한 서사를 담은 9:16 쇼츠. 2160×3840, 60 fps로 렌더링됩니다. 30초 쇼츠는 필름으로 15크레딧, 애니매틱으로 5크레딧입니다.</p>
+        <a class="more" href="/ko/pricing/">쇼츠 비용 <span class="arr" aria-hidden="true">→</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BEHIND THE SCENES ============ -->
+<section id="engine">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">04</span>제작 과정</div>
+        <h2>당신이 연출하고, Kleo가 렌더링합니다.</h2>
+      </div>
+      <p class="lede">브리프, 진행 상황, 링크까지 모두 어시스턴트 안에서 처리됩니다. Kleo는 대화 뒤에서 일합니다. 필름에서는 모든 샷이 각자의 프레임에서 움직이는 푸티지로 생성되며(정지 이미지 슬라이드쇼가 아닙니다), 한 명의 내레이터가 이야기를 이끕니다. 렌더링은 당신의 작업을 위해 대여한 GPU에서 4K 60 fps로 이루어지고, 보통 25–35분이 걸립니다. 완성된 MP4가 결과물이며, 언제 어디에 게시할지는 당신이 정합니다.</p>
+    </div>
+    <ul class="style-facts auto">
+      <li><b>트리트먼트</b><span>브리프가 로그라인, 앵글, 오프닝, 막 구성, 결말이 됩니다. 프레임 하나가 만들어지기 전에 먼저 보여드립니다.</span></li>
+      <li><b>스토리보드</b><span>그 트리트먼트를 바탕으로 연출, 장면, 샷이 쓰입니다. 정확한 크레딧은 청구 전에 알려드립니다.</span></li>
+      <li><b>푸티지</b><span>필름에서는 모든 샷이 각자의 프레임에서 리얼리스틱 또는 애니메이션 룩의 움직이는 푸티지로 생성됩니다. 애니매틱에서는 같은 그려진 프레임 위로 카메라가 움직이며, 생성된 클립은 없습니다.</span></li>
+      <li><b>내레이션</b><span>한 명의 내레이터가 영어 또는 이탈리아어로 필름을 이끕니다. 음악도, 자막도, 화면 속 텍스트도 없습니다.</span></li>
+      <li><b>마무리</b><span>4K 60 fps, 16:9 또는 9:16의 MP4를 어시스턴트가 링크로 전달합니다. 링크는 7일간 유효합니다.</span></li>
+    </ul>
+    <p class="style-say copyable">“Kleo로 커피가 농장에서 잔까지 오는 여정을 다룬 60초짜리 내레이션 필름을 만들어 줘. 리얼리스틱 룩, 영어 내레이션, 16:9. 렌더링을 시작하기 전에 트리트먼트와 크레딧 비용을 먼저 보여 줘.”<button class="btn btn-ghost btn-sm copy" type="button" data-copy="Use Kleo to make a 60-second narrated film about how coffee travels from farm to cup. Realistic look, English narration, 16:9. Show me the treatment and the credit cost before starting the render.">복사</button></p>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section id="pricing">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">05</span>요금</div>
+        <h2>무료로 시작. 크레딧만 있고, 자동 갱신은 없습니다.</h2>
+      </div>
+      <div><span class="draft">운영 중 · Stripe를 통한 일회성 결제</span></div>
+    </div>
+    <div class="plans two">
+      <div class="plan hi">
+        <div class="name"><span>무료 플랜</span><span class="pop">누구에게나 기본 제공</span></div>
+        <div class="price">€0<small>7크레딧, 가입 불필요</small></div>
+        <ul>
+          <li>무료 플랜은 계정 그 자체입니다. 한 번 연결하면 7크레딧이 생깁니다. 양식도, 카드도, 해지할 것도 없습니다</li>
+          <li>애니매틱은 15–60초에 5크레딧 정액입니다. 같은 트리트먼트, 스토리보드, 그려진 프레임 위로 카메라가 움직이고, 같은 내레이터와 그래픽 레이어, 4K 60 fps, 생성된 클립은 없습니다. 필름의 미리보기이기도 합니다</li>
+          <li>필름은 길이에 따라 가격이 정해집니다. 1크레딧 = 2초, 10크레딧부터 (20초 = 10 · 30초 = 15 · 60초 = 30 · 90초 = 45 · 5분 = 150)</li>
+          <li>무료 크레딧으로는 필름을 살 수 없습니다. 필름의 클립은 Kleo의 비용으로 생성되므로, 팩을 구매한 계정에만 필름을 만들어 드립니다. €5 팩을 더하면 17크레딧이 되어 필름이 열리고, 30초 쇼츠를 만들 수 있습니다</li>
+        </ul>
+        <a class="btn btn-primary" href="/ko/connect/">연결하고 시작하기</a>
+      </div>
+      <div class="plan">
+        <div class="name"><span>크레딧 팩</span><span class="pop">한 번만 결제</span></div>
+        <div class="price">€5–40<small>일회성, 구독 없음</small></div>
+        <ul>
+          <li>€5 — 10크레딧 · €15 — 35 · €40 — 100</li>
+          <li>어느 팩이든 필름이 열립니다. €5에 시작 크레딧을 더하면 17크레딧, 30초 쇼츠 한 편. €15 = 35크레딧, 1분 10초의 필름. €40 = 100크레딧, 3분 20초</li>
+          <li>결제는 Stripe로 진행됩니다. 어시스턴트에게 계정 페이지를 요청하고 거기서 팩을 구매하세요</li>
+        </ul>
+        <a class="btn btn-ghost" href="/ko/pricing/">크레딧 계산하기</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONNECT ============ -->
+<section id="connect">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">06</span>연결</div>
+        <h2>당신의 제작팀을 만나보세요.</h2>
+      </div>
+      <div>
+        <p class="lede">호환되는 어시스턴트에 Kleo의 주소를 사용자 지정 커넥터로 추가하세요. 로그인 과정에서 어시스턴트가 Kleo 페이지를 엽니다. 버튼 하나, 양식도 카드도 없습니다. 그다음 필름을 설명하세요.</p>
+        <p class="mono" id="mcpStatus" hidden></p>
+        <div class="address"><code>https://mcp.kleooai.com/mcp</code><button class="btn btn-ghost btn-sm" type="button" data-copy="https://mcp.kleooai.com/mcp">주소 복사</button></div>
+      </div>
+    </div>
+    <div class="grid panels">
+      <article class="panel">
+        <h3>Claude <small>앱 · 웹</small></h3>
+        <ol>
+          <li><b>설정 → 커넥터</b>를 열고 <b>사용자 지정 커넥터 추가</b>를 선택하세요.</li>
+          <li>이름을 <b>Kleo</b>로 정하고 위 주소를 붙여 넣은 뒤 확인하세요. Kleo 페이지가 열리면 <b>무료로 시작</b>을 누르세요. 그러면 다시 Claude로 돌아옵니다.</li>
+          <li>새 채팅에서 도구 메뉴에서 Kleo를 켜고 이렇게 요청하세요: <i>…에 관한 45초짜리 쇼츠를 만들어 줘</i></li>
+        </ol>
+        <p>Claude 무료 플랜에서는 사용자 지정 커넥터를 하나 추가할 수 있습니다.</p>
+        <a class="more" href="/ko/integrations/claude/">Claude 전체 가이드 <span class="arr" aria-hidden="true">→</span></a>
+      </article>
+      <article class="panel">
+        <h3>ChatGPT <small>개발자 모드</small></h3>
+        <ol>
+          <li><b>설정 → 앱 &amp; 커넥터</b>(이전 버전에서는 <b>커넥터</b>)를 열고 <b>고급 설정</b>에서 <b>개발자 모드</b>를 켜세요.</li>
+          <li>다시 <b>커넥터</b>로 돌아가 <b>만들기</b>를 선택하세요. 이름은 <b>Kleo</b>, 주소를 붙여 넣고 인증을 <b>OAuth</b>로 설정한 뒤 저장하세요. Kleo 페이지가 열리면 <b>무료로 시작</b>을 누르세요. 그러면 다시 ChatGPT로 돌아옵니다.</li>
+          <li>채팅에서 <b>+</b> 메뉴로 Kleo를 켜고 영상을 요청하세요. ChatGPT는 렌더링을 시작하기 전에 확인을 요청합니다.</li>
+        </ol>
+        <p>ChatGPT Plus, Pro, Business 또는 Enterprise가 필요합니다.</p>
+        <a class="more" href="/ko/integrations/chatgpt/">ChatGPT 전체 가이드 <span class="arr" aria-hidden="true">→</span></a>
+      </article>
+    </div>
+    <p class="tpl-more"><a href="/ko/connect/">모든 클라이언트, 단계별 안내 →</a> · <a href="/ko/video-generation-mcp/">MCP 문서 →</a></p>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">07</span>FAQ</div>
+        <h2>첫 필름을 만들기 전에.</h2>
+      </div>
+    </div>
+    <div class="faq">
+      <div>
+        <details open>
+          <summary>Kleo는 실제로 무엇을 만드나요?</summary>
+          <p>하나의 스토리보드에서 두 가지 제품이 나옵니다. 필름: 리얼리스틱 룩(생성된 실사 푸티지) 또는 애니메이션 룩(2D 애니메이션 필름)의 완성된 내레이션 필름으로, 모든 샷이 움직이는 푸티지로 생성됩니다. 애니매틱: 같은 트리트먼트, 스토리보드, 그려진 프레임 위로 카메라가 움직이고, 같은 내레이터와 그래픽 레이어가 들어가며, 생성된 클립은 없습니다. 15초에서 60초까지이며 필름의 미리보기이기도 합니다. Kleo는 어시스턴트와 함께 트리트먼트와 스토리보드를 쓰고, 내레이션을 입히고, 4K 60 fps MP4로 렌더링합니다. 다운로드 링크는 어시스턴트 안에서 받으며 7일간 유효합니다.</p>
+        </details>
+        <details>
+          <summary>필름은 얼마나 길 수 있나요?</summary>
+          <p>15초에서 5분까지, 애니매틱은 15초에서 60초까지입니다. YouTube용은 16:9, 세로형 쇼츠는 9:16을 고르세요. 둘 다 4K(3840×2160 또는 2160×3840), 60 fps로 렌더링됩니다.</p>
+        </details>
+        <details>
+          <summary>무료 플랜이 있나요?</summary>
+          <p>네. 연결은 무료이며, 새 계정마다 가입도 카드도 없이 7크레딧을 드립니다. 5크레딧짜리 애니매틱 한 편에 충분합니다. 무료 크레딧으로는 필름을 살 수 없습니다. 필름은 최소 10크레딧(1크레딧 = 2초)이고, 클립이 Kleo의 비용으로 생성되므로 팩을 구매한 계정에만 만들어 드립니다. 10크레딧짜리 €5 팩을 더하면 새 계정은 17크레딧이 되어 필름이 열리고, 30초 쇼츠는 15크레딧입니다.</p>
+        </details>
+      </div>
+      <div>
+        <details>
+          <summary>내레이션, 음악, 자막이 포함되나요?</summary>
+          <p>내레이터 한 명, 영어 또는 이탈리아어입니다. 필름에는 배경 음악도, 자막도, 화면 속 텍스트도 없습니다. 플랫폼에 필요하다면 편집 프로그램에서 추가하세요.</p>
+        </details>
+        <details>
+          <summary>Kleo가 제 채널에 자동으로 게시하나요?</summary>
+          <p>아니요. Kleo는 완성된 MP4 링크를 어시스턴트에게 전달할 뿐입니다. 확인하고, 다운로드하고, 직접 올리세요. Kleo는 YouTube, TikTok 등 어떤 채널에도 게시하지 않습니다.</p>
+        </details>
+        <details>
+          <summary>어떤 룩을 고를 수 있나요?</summary>
+          <p>두 가지입니다. 리얼리스틱은 생성된 실사 푸티지, 애니메이션은 2D 애니메이션 필름입니다. 브리프에서 룩을 말하면 어시스턴트가 전달합니다. 가격은 길이에만 따르고 룩과는 무관합니다. <a href="/ko/styles.html">두 가지 룩 보기</a>.</p>
+        </details>
+      </div>
+    </div>
+    <p class="tpl-more"><a href="/ko/faq/">모든 답변 읽기 →</a></p>
+  </div>
+</section>
+
+<!-- ============ ACCOUNT ============ -->
+<section class="cta" id="account">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow"><span class="n">08</span>계정</div>
+      <h2>가입할 것이 없습니다.</h2>
+      <p class="lede">계정은 당신을 따라다닙니다. 어시스턴트에게 Kleo 계정 페이지를 요청하면 크레딧과 팩 결제 링크를 보여줍니다. 계정은 비공개 Kleo 키에 연결되어 있고, 그 키를 가진 사람이 계정의 주인이 되므로 혼자만 간직하세요.</p>
+    </div>
+    <div>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/ko/connect/">Kleo 연결하기 <span class="arr" aria-hidden="true">→</span></a> <a class="btn btn-ghost" href="/ko/pricing/">요금 보기</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<!-- i18n:langs -->
+<nav class="langs" aria-label="언어">
+  <div class="wrap">
+    <span>언어</span>
+    <a href="/" hreflang="en" lang="en">English</a>
+    <a href="/it/" hreflang="it" lang="it">Italiano</a>
+    <a href="/de/" hreflang="de" lang="de">Deutsch</a>
+    <a href="/fr/" hreflang="fr" lang="fr">Français</a>
+    <a href="/es/" hreflang="es" lang="es">Español</a>
+    <a href="/pt/" hreflang="pt" lang="pt">Português</a>
+    <a href="/nl/" hreflang="nl" lang="nl">Nederlands</a>
+    <a href="/pl/" hreflang="pl" lang="pl">Polski</a>
+    <a href="/tr/" hreflang="tr" lang="tr">Türkçe</a>
+    <a href="/ru/" hreflang="ru" lang="ru">Русский</a>
+    <a href="/uk/" hreflang="uk" lang="uk">Українська</a>
+    <a href="/ja/" hreflang="ja" lang="ja">日本語</a>
+    <b lang="ko">한국어</b>
+    <a href="/zh/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+    <a href="/zh-tw/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+    <a href="/ar/" hreflang="ar" lang="ar">العربية</a>
+    <a href="/he/" hreflang="he" lang="he">עברית</a>
+    <a href="/hi/" hreflang="hi" lang="hi">हिन्दी</a>
+    <a href="/id/" hreflang="id" lang="id">Bahasa Indonesia</a>
+    <a href="/vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
+    <a href="/th/" hreflang="th" lang="th">ไทย</a>
+  </div>
+</nav>
+<!-- /i18n:langs -->
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">
+      <a class="brand" href="/ko/" aria-label="Kleo, 홈">
+        <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+          <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+          <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+        </svg>
+        Kleo <span class="tag">MCP</span>
+      </a>
+      <span>사람이 연출하고, 에이전트가 필름을 만듭니다.</span>
+    </div>
+    <div class="links">
+      <a href="/ko/connect/">연결</a> <a href="/ko/integrations/claude/">Claude</a> <a href="/ko/integrations/chatgpt/">ChatGPT</a> <a href="/ko/video-generation-mcp/">MCP 문서</a> <a href="/ko/examples/">예시</a> <a href="/ko/styles.html">룩</a> <a href="/ko/pricing/">요금</a> <a href="/ko/faq/">FAQ</a> <a href="/ko/about/">소개</a> <a href="/ko/privacy.html">개인정보</a> <a href="/ko/terms.html">이용약관</a> <a href="https://github.com/tonnooooo/kleo-mcp">GitHub</a> <a href="mailto:kleooai@gmail.com">kleooai@gmail.com</a>
+    </div>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite">복사됨</div>
+</body>
+</html>

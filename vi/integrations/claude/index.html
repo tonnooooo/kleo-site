@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="vi" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.remove("no-js")</script>
+<title>Tạo video AI với Claude và Kleo — Hướng dẫn cài đặt</title>
+<meta name="description" content="Thêm Kleo vào Claude dưới dạng connector tùy chỉnh, yêu cầu một bộ phim có lời dẫn và nhận link MP4 4K ngay trong chat: cài đặt, prompt đầu tiên, khắc phục sự cố.">
+<link rel="canonical" href="https://kleooai.com/vi/integrations/claude/">
+<!-- i18n:head -->
+<link rel="alternate" hreflang="en" href="https://kleooai.com/integrations/claude/">
+<link rel="alternate" hreflang="it" href="https://kleooai.com/it/integrations/claude/">
+<link rel="alternate" hreflang="de" href="https://kleooai.com/de/integrations/claude/">
+<link rel="alternate" hreflang="fr" href="https://kleooai.com/fr/integrations/claude/">
+<link rel="alternate" hreflang="es" href="https://kleooai.com/es/integrations/claude/">
+<link rel="alternate" hreflang="pt" href="https://kleooai.com/pt/integrations/claude/">
+<link rel="alternate" hreflang="nl" href="https://kleooai.com/nl/integrations/claude/">
+<link rel="alternate" hreflang="pl" href="https://kleooai.com/pl/integrations/claude/">
+<link rel="alternate" hreflang="tr" href="https://kleooai.com/tr/integrations/claude/">
+<link rel="alternate" hreflang="ru" href="https://kleooai.com/ru/integrations/claude/">
+<link rel="alternate" hreflang="uk" href="https://kleooai.com/uk/integrations/claude/">
+<link rel="alternate" hreflang="ja" href="https://kleooai.com/ja/integrations/claude/">
+<link rel="alternate" hreflang="ko" href="https://kleooai.com/ko/integrations/claude/">
+<link rel="alternate" hreflang="zh-Hans" href="https://kleooai.com/zh/integrations/claude/">
+<link rel="alternate" hreflang="zh-Hant" href="https://kleooai.com/zh-tw/integrations/claude/">
+<link rel="alternate" hreflang="ar" href="https://kleooai.com/ar/integrations/claude/">
+<link rel="alternate" hreflang="he" href="https://kleooai.com/he/integrations/claude/">
+<link rel="alternate" hreflang="hi" href="https://kleooai.com/hi/integrations/claude/">
+<link rel="alternate" hreflang="id" href="https://kleooai.com/id/integrations/claude/">
+<link rel="alternate" hreflang="vi" href="https://kleooai.com/vi/integrations/claude/">
+<link rel="alternate" hreflang="th" href="https://kleooai.com/th/integrations/claude/">
+<link rel="alternate" hreflang="x-default" href="https://kleooai.com/integrations/claude/">
+<script>(function(){try{var L=["it", "de", "fr", "es", "pt", "nl", "pl", "tr", "ru", "uk", "ja", "ko", "zh", "zh-tw", "ar", "he", "hi", "id", "vi", "th"],A={"zh-hk": "zh-tw", "zh-mo": "zh-tw", "zh-hant": "zh-tw", "zh-hans": "zh", "zh-cn": "zh", "zh-sg": "zh", "nb": "no", "nn": "no"},p=location.pathname,m=p.match(/^\/([a-z]{2}(?:-[a-z]{2})?)(?=\/)/),on=m&&L.indexOf(m[1])>=0?m[1]:"en",rest=on==="en"?p:p.slice(on.length+1),want=null,s=null;try{s=localStorage.getItem("kleo-lang")}catch(e){}if(s==="en"||L.indexOf(s)>=0)want=s;else{var nl=navigator.languages||[navigator.language||""];for(var i=0;i<nl.length&&!want;i++){var t=String(nl[i]).toLowerCase(),b=t.split("-")[0];t=A[t]||t;b=A[b]||b;want=t==="en"||b==="en"?"en":L.indexOf(t)>=0?t:L.indexOf(b)>=0?b:null}}if(want&&want!==on&&!/404/.test(p))location.replace((want==="en"?"":"/"+want)+rest+location.search+location.hash)}catch(e){}})()</script>
+<script type="application/json" id="i18n">{"Language": "Ngôn ngữ", "Menu": "Menu", "Close menu": "Đóng menu", "Copied": "Đã sao chép", "Copied ✓": "Đã sao chép ✓", "Copy it by hand: {text}": "Hãy sao chép thủ công: {text}", "Copy the Kleo server address": "Sao chép địa chỉ máy chủ Kleo", "Copy the argument {value}": "Sao chép tham số {value}", "Copy this prompt": "Sao chép prompt này", "Copy the {what} snippet": "Sao chép đoạn mã {what}", "Copy the {what} text": "Sao chép văn bản {what}", "Treatment · logline, angle, acts · look: realistic": "Treatment · logline, góc nhìn, các hồi · phong cách: chân thực", "Storyboard · direction, scenes, shots · 23 credits, confirmed": "Storyboard · chỉ đạo, phân cảnh, cảnh quay · 23 credit, đã xác nhận", "Generating the shots as footage · 4 of 11 · ~22 min left": "Đang tạo các cảnh quay thành thước phim · 4 trên 11 · còn ~22 phút", "Generating the shots as footage · 8 of 11 · ~12 min left": "Đang tạo các cảnh quay thành thước phim · 8 trên 11 · còn ~12 phút", "Narration · one voice, English · cutting the shots on the words": "Lời dẫn · một giọng, tiếng Anh · cắt cảnh theo lời dẫn", "Finish · 2160×3840 · 60 fps · quality check": "Hoàn thiện · 2160×3840 · 60 fps · kiểm tra chất lượng", "Done · 28 min · link ready for 7 days": "Xong · 28 phút · link sẵn sàng trong 7 ngày", "done": "xong", "running": "đang chạy", "A whole number from {min} to {max} seconds": "Một số nguyên từ {min} đến {max} giây", "{s} s {product} = {n} credits": "{s} giây {product} = {n} credit", "film": "phim", "animatic": "animatic"}</script>
+<!-- /i18n:head -->
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kleo AI">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="Tạo video AI với Claude và Kleo — Hướng dẫn cài đặt">
+<meta property="og:description" content="Thêm Kleo vào Claude dưới dạng connector tùy chỉnh, yêu cầu một bộ phim có lời dẫn và nhận link MP4 4K ngay trong chat: cài đặt, prompt đầu tiên, khắc phục sự cố.">
+<meta property="og:url" content="https://kleooai.com/vi/integrations/claude/">
+<meta property="og:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta property="og:image:alt" content="Kleo AI — Con người đạo diễn. Agent làm phim.">
+<meta property="og:image:width" content="2400">
+<meta property="og:image:height" content="1260">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tạo video AI với Claude và Kleo — Hướng dẫn cài đặt">
+<meta name="twitter:description" content="Thêm Kleo vào Claude dưới dạng connector tùy chỉnh, yêu cầu một bộ phim có lời dẫn và nhận link MP4 4K ngay trong chat: cài đặt, prompt đầu tiên, khắc phục sự cố.">
+<meta name="twitter:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta name="theme-color" content="#0A0C10">
+<link rel="icon" href="/brand/kleo-favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/brand/kleo-favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/brand/kleo-icon-dark-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/site.css?v=20260920">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://kleooai.com/#website",
+      "name": "Kleo AI",
+      "alternateName": "Kleo",
+      "url": "https://kleooai.com/vi/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kleooai.com/vi/integrations/claude/#page",
+      "url": "https://kleooai.com/vi/integrations/claude/",
+      "name": "Tạo video AI với Claude và Kleo — Hướng dẫn cài đặt",
+      "description": "Thêm Kleo vào Claude dưới dạng connector tùy chỉnh, yêu cầu một bộ phim có lời dẫn và nhận link MP4 4K ngay trong chat: cài đặt, prompt đầu tiên, khắc phục sự cố.",
+      "inLanguage": "vi",
+      "isPartOf": {
+        "@id": "https://kleooai.com/#website"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Trang chủ",
+          "item": "https://kleooai.com/vi/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Kleo với Claude",
+          "item": "https://kleooai.com/vi/integrations/claude/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<script src="/site.js?v=20260920" defer></script>
+</head>
+<body>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" aria-label="Chính">
+  <div class="wrap">
+    <a class="brand" href="/vi/" aria-label="Kleo, trang chủ">
+      <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+        <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+        <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+      </svg>
+      Kleo <span class="tag">MCP</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-menu">
+      <svg class="bars" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 5h14M2 9h14M2 13h14"/></svg>
+      <svg class="x" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 4l10 10M14 4L4 14"/></svg>
+    </button>
+    <div class="nav-links" id="site-menu">
+      <a href="/vi/ai-youtube-video-generator/">Tạo video</a> <a href="/vi/examples/">Ví dụ</a> <a href="/vi/styles.html">Phong cách</a> <a href="/vi/pricing/">Bảng giá</a> <a href="/vi/faq/">FAQ</a>
+    </div>
+    <a class="btn btn-primary btn-sm" href="/vi/connect/">Kết nối Kleo</a>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="page-hero hero" id="top">
+  <div class="wrap">
+    <div>
+      <nav class="crumbs" aria-label="Đường dẫn điều hướng">
+        <a href="/vi/">Trang chủ</a> <span aria-hidden="true">›</span> <a href="/vi/connect/">Kết nối</a> <span aria-hidden="true">›</span> <span>Claude</span>
+      </nav>
+      <h1>Tạo video với<br><span class="hl">Claude và Kleo.</span></h1>
+      <p class="lede">Claude là nơi bạn đạo diễn bộ phim. Kleo, được thêm vào Claude dưới dạng connector tùy chỉnh, tạo ra thước phim, lời dẫn và file MP4 4K hoàn chỉnh, rồi link xuất hiện ngay trong cuộc trò chuyện đó.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/vi/connect/">Kết nối Kleo <span class="arr" aria-hidden="true">→</span></a> <a class="btn btn-ghost" href="/vi/examples/">Xem một phim mẫu</a> <a class="btn btn-ghost" href="#setup">Các bước cài đặt <span class="arr" aria-hidden="true">↓</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SETUP ============ -->
+<section id="setup">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">01</span>Cài đặt</div>
+        <h2>Thêm Kleo vào Claude.</h2>
+      </div>
+    </div>
+    <div class="split">
+      <div>
+        <p class="lede">Kleo là một máy chủ MCP từ xa. Không có ứng dụng để cài và không có biểu mẫu đăng ký: Claude kết nối tới Kleo qua một connector tùy chỉnh, và việc kết nối chỉ là một nút bấm trên chính trang của Kleo. Các bước bên dưới giống nhau trên ứng dụng Claude và trên web, và hoạt động trên mọi gói Claude; gói miễn phí cho phép một connector tùy chỉnh.</p>
+      </div>
+      <div class="panel">
+        <ol>
+          <li>Mở <b>Settings → Connectors</b> trong Claude và chọn <b>Add custom connector</b>.</li>
+          <li>Đặt tên là <b>Kleo</b>, dán địa chỉ bên dưới và xác nhận.</li>
+          <li>Trang của Kleo mở ra: bấm <b>Start free</b>. Bạn quay lại Claude, với 7 credit trong tài khoản Kleo mới của mình. Không biểu mẫu, không mật khẩu, không thẻ: đủ cho một animatic 5 credit. Phim chỉ được làm cho những tài khoản đã mua gói và tốn tối thiểu 10 credit, nên gói €5 (10 credit) cần được mua trước bộ phim đầu tiên; một bộ phim 30 giây là 15.</li>
+          <li>Trong một cuộc trò chuyện mới, bật Kleo từ menu công cụ và yêu cầu bộ phim.</li>
+        </ol>
+        <div class="url-line">Địa chỉ máy chủ <code>https://mcp.kleooai.com/mcp</code> <button class="btn btn-ghost btn-sm" type="button" data-copy="https://mcp.kleooai.com/mcp">Sao chép</button></div>
+        <p>Claude là trợ lý của Anthropic. Kleo là một dịch vụ riêng biệt mà Claude kết nối tới qua connector tùy chỉnh; cùng địa chỉ đó hoạt động trong ChatGPT, Grok, Claude Code, Cursor và bất kỳ client MCP nào khác — xem <a href="/vi/connect/">trang kết nối</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FIRST PROMPT ============ -->
+<section id="first-prompt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">02</span>Prompt đầu tiên</div>
+        <h2>Yêu cầu bộ phim bạn muốn.</h2>
+      </div>
+      <p class="lede">Nêu chủ đề, độ dài, định dạng và phong cách trong một tin nhắn. Đối tượng khán giả, giọng điệu và bất cứ điều gì bắt buộc phải xuất hiện trong phim là tùy chọn. Điều gì yêu cầu của bạn chưa nói, Claude sẽ hỏi trước khi lên kế hoạch; nó không bao giờ tự chọn độ dài, định dạng hay phong cách thay cho bạn.</p>
+    </div>
+    <div class="split">
+      <div>
+        <p class="style-say copyable">“Dùng Kleo làm một bộ phim 30 giây về một chiếc thuyền gỗ nhỏ băng qua mặt hồ tĩnh lặng lúc bình minh. Phong cách chân thực, 16:9, lời dẫn tiếng Anh, giọng điệu điềm tĩnh. Cho tôi xem treatment và số credit chính xác trước khi bắt đầu render.”<button class="btn btn-ghost btn-sm copy" type="button" data-copy="Use Kleo to make a 30-second film about a small wooden boat crossing a quiet lake at dawn. Realistic look, 16:9, English narration, a calm tone. Show me the treatment and the exact credits before you start the render.">Sao chép</button></p>
+      </div>
+      <ul class="defs">
+        <li><b>Phong cách</b><span>Có hai phong cách: <b>chân thực</b>, thước phim người thật được tạo bằng AI với cảm giác điện ảnh, và <b>hoạt hình</b>, một phim hoạt hình 2D. <a href="/vi/styles.html">Xem các phong cách phim →</a></span></li>
+        <li><b>Định dạng</b><span>16:9 cho YouTube hoặc 9:16 cho Short.</span></li>
+        <li><b>Độ dài</b><span>Từ 15 giây đến 5 phút.</span></li>
+        <li><b>Lời dẫn</b><span>Tiếng Anh hoặc tiếng Ý.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ IN THE CHAT ============ -->
+<section id="in-the-chat">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">03</span>Trong cuộc trò chuyện</div>
+        <h2>Điều gì diễn ra tiếp theo trong cuộc trò chuyện.</h2>
+      </div>
+      <p class="lede">Các công cụ của Kleo chạy theo một thứ tự cố định và Claude điều khiển chúng cho bạn. Bạn đọc, sửa và chấp nhận ở từng bước; không trừ gì cho đến khi bạn bật đèn xanh và job được chấp nhận.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="num" aria-hidden="true">01</span> <span class="tc">kleo_adapt_prompt</span>
+        <h3>Treatment</h3>
+        <p>Claude đối chiếu yêu cầu của bạn với bước tiếp nhận của Kleo. Chủ đề, độ dài, định dạng và phong cách là bắt buộc; đối tượng khán giả, giọng điệu và những gì phải xuất hiện là tùy chọn. Điều gì còn thiếu, nó hỏi trong một tin nhắn. Rồi nó cho bạn xem treatment: logline, góc nhìn, cảnh mở đầu, các hồi, kết thúc, phong cách, nhịp điệu và người dẫn chuyện. Sửa bất cứ gì trước khi đi tiếp.</p>
+      </div>
+      <div class="step">
+        <span class="num" aria-hidden="true">02</span> <span class="tc">kleo_storyboard_guide</span>
+        <h3>Storyboard</h3>
+        <p>Claude lấy hướng dẫn storyboard của Kleo (một khối chỉ đạo, các phân cảnh, các cảnh quay và giới hạn của chúng) và viết storyboard dựa trên treatment bạn đã chấp nhận. Đây là nơi bộ phim được tạo nên; hãy đọc và yêu cầu chỉnh sửa.</p>
+      </div>
+      <div class="step">
+        <span class="num" aria-hidden="true">03</span> <span class="tc">kleo_create_video</span>
+        <h3>Render</h3>
+        <p>Kleo kiểm tra mọi thứ và trả lời với số credit chính xác cho bộ phim. Khi bạn đồng ý, Claude bắt đầu render trên một GPU thuê riêng cho job đó. Không trừ gì trước khi job được chấp nhận, và một lệnh gọi bị từ chối không tốn gì.</p>
+      </div>
+      <div class="step">
+        <span class="num" aria-hidden="true">04</span> <span class="tc">kleo_wait_for_video</span>
+        <h3>Link</h3>
+        <p>Claude chờ render, báo tiến độ, cho đến khi Kleo giao link tới file MP4 hoàn chỉnh, thường sau 25–35 phút. Link có hiệu lực trong 7 ngày. Kleo không bao giờ đăng bộ phim ở đâu cả: bạn tải xuống và đăng nơi bạn muốn.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT YOU GET ============ -->
+<section id="what-you-get">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">04</span>Bộ phim</div>
+        <h2>Bạn nhận được gì.</h2>
+      </div>
+    </div>
+    <ul class="style-facts auto">
+      <li><b>Đầu ra</b><span>Một file MP4 ở 4K (3840×2160 hoặc 2160×3840) và 60 fps: 16:9 cho YouTube, 9:16 cho Short.</span></li>
+      <li><b>Độ dài</b><span>Phim từ 15 giây đến 5 phút; animatic từ 15 đến 60 giây.</span></li>
+      <li><b>Phong cách</b><span>Chân thực (thước phim người thật được tạo bằng AI, chất điện ảnh) hoặc hoạt hình (một phim hoạt hình 2D). Trong một bộ phim, mọi cảnh quay đều được tạo thành thước phim chuyển động từ chính khung hình của nó.</span></li>
+      <li><b>Sản phẩm</b><span>Phim, hoặc animatic của cùng storyboard: các khung hình vẽ dưới máy quay chuyển động, cùng người dẫn chuyện và lớp đồ họa, không có clip được tạo. Mọi tài khoản đều có thể đặt animatic; phim chỉ được làm cho những tài khoản đã mua gói.</span></li>
+      <li><b>Lời dẫn</b><span>Một người dẫn chuyện, tiếng Anh hoặc tiếng Ý. Không nhạc nền, không phụ đề, không chữ trên màn hình.</span></li>
+      <li><b>Credit</b><span>Phim: 1 credit = 2 giây, làm tròn lên, tối thiểu 10 credit: 15 giây = 10, 30 giây = 15, 60 giây = 30, 5 phút = 150. Animatic: giá cố định 5 credit. Bạn bắt đầu với 7 credit; các gói là €5 = 10, €15 = 35, €40 = 100, trả một lần, không thuê bao định kỳ.</span></li>
+      <li><b>Thời gian</b><span>Một lần render thường mất 25–35 phút trên một GPU thuê riêng; Kleo cho bạn biết ước tính trong cuộc trò chuyện.</span></li>
+    </ul>
+    <p><a href="/vi/pricing/">Xem giá của một bộ phim →</a></p>
+  </div>
+</section>
+
+<!-- ============ TROUBLESHOOTING ============ -->
+<section id="troubleshooting">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">05</span>Khắc phục sự cố</div>
+        <h2>Nếu có gì không hoạt động.</h2>
+      </div>
+    </div>
+    <div class="faq">
+      <div>
+        <details>
+          <summary>Kleo không xuất hiện trong Claude.</summary>
+          <p>Kiểm tra địa chỉ bạn đã dán: phải chính xác là https://mcp.kleooai.com/mcp, với https và không có gì sau /mcp. Thêm lại connector với tên Kleo. Sau khi thêm, nó vẫn tắt trong cuộc trò chuyện cho đến khi bạn bật lên: mở một cuộc trò chuyện mới và bật Kleo từ menu công cụ. Gói miễn phí cho phép một connector tùy chỉnh, nên Kleo phải là connector đó.</p>
+        </details>
+        <details>
+          <summary>Trang của Kleo không mở, hoặc cửa sổ bị chặn.</summary>
+          <p>Khi bạn xác nhận connector, Claude mở trang của Kleo để đăng nhập: một nút Start free, không có gì phải điền. Nếu trình duyệt của bạn chặn nó như một cửa sổ bật lên, hãy cho phép cửa sổ bật lên cho Claude và xác nhận lại connector; trang mở ra, bạn bấm Start free và quay lại Claude.</p>
+        </details>
+        <details>
+          <summary>Không đủ credit.</summary>
+          <p>Kết nối là bạn có 7 credit: chúng mua được một animatic (5), không bao giờ mua được phim. Phim chỉ được làm cho những tài khoản đã mua gói, và một bộ phim 30 giây là 15 credit: với gói €5 (10 credit) bạn có 17 và render có thể bắt đầu. Hỏi Claude để mở trang tài khoản Kleo của bạn (kleo_account): trang này hiển thị số dư và các link thanh toán (€5 = 10 credit, €15 = 35, €40 = 100; thanh toán một lần bằng EUR, không thuê bao định kỳ). Lệnh gọi bị từ chối không trừ gì.</p>
+        </details>
+      </div>
+      <div>
+        <details>
+          <summary>Thời gian chờ hết trước khi phim sẵn sàng.</summary>
+          <p>Một lần render dài có thể vượt quá một lệnh gọi công cụ, nhưng job vẫn tiếp tục chạy trên GPU của nó. Hỏi Claude về trạng thái job (kleo_get_job) hoặc chờ lại (kleo_wait_for_video), rồi hỏi các link (kleo_get_result). Đừng yêu cầu một bộ phim thứ hai để kiểm tra bộ phim đầu tiên.</p>
+        </details>
+        <details>
+          <summary>Bạn muốn dừng một lần render.</summary>
+          <p>Yêu cầu Claude hủy job (kleo_cancel_job). Render dừng lại và số credit chưa dùng trở về số dư của bạn.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ START ============ -->
+<section class="cta one" id="start">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow"><span class="n">06</span>Bắt đầu</div>
+      <h2>Claude là nơi bạn đạo diễn bộ phim.</h2>
+      <p class="lede">Dùng ChatGPT thay vì Claude? <a href="/vi/integrations/chatgpt/">Kleo với ChatGPT →</a></p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/vi/connect/">Kết nối Kleo <span class="arr" aria-hidden="true">→</span></a> <a class="btn btn-ghost" href="/vi/faq/">Đọc FAQ</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<!-- i18n:langs -->
+<nav class="langs" aria-label="Ngôn ngữ">
+  <div class="wrap">
+    <span>Ngôn ngữ</span>
+    <a href="/integrations/claude/" hreflang="en" lang="en">English</a>
+    <a href="/it/integrations/claude/" hreflang="it" lang="it">Italiano</a>
+    <a href="/de/integrations/claude/" hreflang="de" lang="de">Deutsch</a>
+    <a href="/fr/integrations/claude/" hreflang="fr" lang="fr">Français</a>
+    <a href="/es/integrations/claude/" hreflang="es" lang="es">Español</a>
+    <a href="/pt/integrations/claude/" hreflang="pt" lang="pt">Português</a>
+    <a href="/nl/integrations/claude/" hreflang="nl" lang="nl">Nederlands</a>
+    <a href="/pl/integrations/claude/" hreflang="pl" lang="pl">Polski</a>
+    <a href="/tr/integrations/claude/" hreflang="tr" lang="tr">Türkçe</a>
+    <a href="/ru/integrations/claude/" hreflang="ru" lang="ru">Русский</a>
+    <a href="/uk/integrations/claude/" hreflang="uk" lang="uk">Українська</a>
+    <a href="/ja/integrations/claude/" hreflang="ja" lang="ja">日本語</a>
+    <a href="/ko/integrations/claude/" hreflang="ko" lang="ko">한국어</a>
+    <a href="/zh/integrations/claude/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+    <a href="/zh-tw/integrations/claude/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+    <a href="/ar/integrations/claude/" hreflang="ar" lang="ar">العربية</a>
+    <a href="/he/integrations/claude/" hreflang="he" lang="he">עברית</a>
+    <a href="/hi/integrations/claude/" hreflang="hi" lang="hi">हिन्दी</a>
+    <a href="/id/integrations/claude/" hreflang="id" lang="id">Bahasa Indonesia</a>
+    <b lang="vi">Tiếng Việt</b>
+    <a href="/th/integrations/claude/" hreflang="th" lang="th">ไทย</a>
+  </div>
+</nav>
+<!-- /i18n:langs -->
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">
+      <a class="brand" href="/vi/" aria-label="Kleo, trang chủ">
+        <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+          <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+          <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+        </svg>
+        Kleo <span class="tag">MCP</span>
+      </a>
+      <span>Con người đạo diễn. Agent làm phim.</span>
+    </div>
+    <div class="links">
+      <a href="/vi/connect/">Kết nối</a> <a href="/vi/integrations/claude/">Claude</a> <a href="/vi/integrations/chatgpt/">ChatGPT</a> <a href="/vi/video-generation-mcp/">Tài liệu MCP</a> <a href="/vi/examples/">Ví dụ</a> <a href="/vi/styles.html">Phong cách</a> <a href="/vi/pricing/">Bảng giá</a> <a href="/vi/faq/">FAQ</a> <a href="/vi/about/">Giới thiệu</a> <a href="/vi/privacy.html">Quyền riêng tư</a> <a href="/vi/terms.html">Điều khoản</a> <a href="https://github.com/tonnooooo/kleo-mcp">GitHub</a> <a href="mailto:kleooai@gmail.com">kleooai@gmail.com</a>
+    </div>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite">Đã sao chép</div>
+</body>
+</html>

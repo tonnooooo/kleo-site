@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="uk" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.remove("no-js")</script>
+<title>Kleo AI — Режисура людини. Фільми, зроблені агентом.</title>
+<meta name="description" content="Завершені фільми з нарацією, реалістичні або анімаційні, з вашого AI-асистента через MCP. 4K 60 fps, від 15 с до 5 хв, нарація англійською чи італійською.">
+<link rel="canonical" href="https://kleooai.com/uk/">
+<!-- i18n:head -->
+<link rel="alternate" hreflang="en" href="https://kleooai.com/">
+<link rel="alternate" hreflang="it" href="https://kleooai.com/it/">
+<link rel="alternate" hreflang="de" href="https://kleooai.com/de/">
+<link rel="alternate" hreflang="fr" href="https://kleooai.com/fr/">
+<link rel="alternate" hreflang="es" href="https://kleooai.com/es/">
+<link rel="alternate" hreflang="pt" href="https://kleooai.com/pt/">
+<link rel="alternate" hreflang="nl" href="https://kleooai.com/nl/">
+<link rel="alternate" hreflang="pl" href="https://kleooai.com/pl/">
+<link rel="alternate" hreflang="tr" href="https://kleooai.com/tr/">
+<link rel="alternate" hreflang="ru" href="https://kleooai.com/ru/">
+<link rel="alternate" hreflang="uk" href="https://kleooai.com/uk/">
+<link rel="alternate" hreflang="ja" href="https://kleooai.com/ja/">
+<link rel="alternate" hreflang="ko" href="https://kleooai.com/ko/">
+<link rel="alternate" hreflang="zh-Hans" href="https://kleooai.com/zh/">
+<link rel="alternate" hreflang="zh-Hant" href="https://kleooai.com/zh-tw/">
+<link rel="alternate" hreflang="ar" href="https://kleooai.com/ar/">
+<link rel="alternate" hreflang="he" href="https://kleooai.com/he/">
+<link rel="alternate" hreflang="hi" href="https://kleooai.com/hi/">
+<link rel="alternate" hreflang="id" href="https://kleooai.com/id/">
+<link rel="alternate" hreflang="vi" href="https://kleooai.com/vi/">
+<link rel="alternate" hreflang="th" href="https://kleooai.com/th/">
+<link rel="alternate" hreflang="x-default" href="https://kleooai.com/">
+<script>(function(){try{var L=["it", "de", "fr", "es", "pt", "nl", "pl", "tr", "ru", "uk", "ja", "ko", "zh", "zh-tw", "ar", "he", "hi", "id", "vi", "th"],A={"zh-hk": "zh-tw", "zh-mo": "zh-tw", "zh-hant": "zh-tw", "zh-hans": "zh", "zh-cn": "zh", "zh-sg": "zh", "nb": "no", "nn": "no"},p=location.pathname,m=p.match(/^\/([a-z]{2}(?:-[a-z]{2})?)(?=\/)/),on=m&&L.indexOf(m[1])>=0?m[1]:"en",rest=on==="en"?p:p.slice(on.length+1),want=null,s=null;try{s=localStorage.getItem("kleo-lang")}catch(e){}if(s==="en"||L.indexOf(s)>=0)want=s;else{var nl=navigator.languages||[navigator.language||""];for(var i=0;i<nl.length&&!want;i++){var t=String(nl[i]).toLowerCase(),b=t.split("-")[0];t=A[t]||t;b=A[b]||b;want=t==="en"||b==="en"?"en":L.indexOf(t)>=0?t:L.indexOf(b)>=0?b:null}}if(want&&want!==on&&!/404/.test(p))location.replace((want==="en"?"":"/"+want)+rest+location.search+location.hash)}catch(e){}})()</script>
+<script type="application/json" id="i18n">{"Language": "Мова", "Menu": "Меню", "Close menu": "Закрити меню", "Copied": "Скопійовано", "Copied ✓": "Скопійовано ✓", "Copy it by hand: {text}": "Скопіюйте вручну: {text}", "Copy the Kleo server address": "Скопіювати адресу сервера Kleo", "Copy the argument {value}": "Скопіювати аргумент {value}", "Copy this prompt": "Скопіювати цей промпт", "Copy the {what} snippet": "Скопіювати фрагмент {what}", "Copy the {what} text": "Скопіювати текст {what}", "Treatment · logline, angle, acts · look: realistic": "Тритмент · логлайн, ракурс, акти · стиль: реалістичний", "Storyboard · direction, scenes, shots · 23 credits, confirmed": "Сторіборд · режисура, сцени, кадри · 23 кредити, підтверджено", "Generating the shots as footage · 4 of 11 · ~22 min left": "Генерація кадрів як відзнятого матеріалу · 4 з 11 · ~22 хв залишилося", "Generating the shots as footage · 8 of 11 · ~12 min left": "Генерація кадрів як відзнятого матеріалу · 8 з 11 · ~12 хв залишилося", "Narration · one voice, English · cutting the shots on the words": "Нарація · один голос, англійська · монтаж кадрів під слова", "Finish · 2160×3840 · 60 fps · quality check": "Фініш · 2160×3840 · 60 fps · перевірка якості", "Done · 28 min · link ready for 7 days": "Готово · 28 хв · посилання діє 7 днів", "done": "готово", "running": "виконується", "A whole number from {min} to {max} seconds": "Ціле число від {min} до {max} секунд", "{s} s {product} = {n} credits": "{s} с {product} = {n} кредитів", "film": "фільм", "animatic": "аніматик"}</script>
+<!-- /i18n:head -->
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kleo AI">
+<meta property="og:locale" content="uk_UA">
+<meta property="og:title" content="Kleo AI — Режисура людини. Фільми, зроблені агентом.">
+<meta property="og:description" content="Завершені фільми з нарацією, реалістичні або анімаційні, з вашого AI-асистента через MCP. 4K 60 fps, від 15 с до 5 хв, нарація англійською чи італійською.">
+<meta property="og:url" content="https://kleooai.com/uk/">
+<meta property="og:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta property="og:image:alt" content="Kleo AI — Режисура людини. Фільми, зроблені агентом.">
+<meta property="og:image:width" content="2400">
+<meta property="og:image:height" content="1260">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kleo AI — Режисура людини. Фільми, зроблені агентом.">
+<meta name="twitter:description" content="Завершені фільми з нарацією, реалістичні або анімаційні, з вашого AI-асистента через MCP. 4K 60 fps, від 15 с до 5 хв, нарація англійською чи італійською.">
+<meta name="twitter:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta name="theme-color" content="#0A0C10">
+<link rel="icon" href="/brand/kleo-favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/brand/kleo-favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/brand/kleo-icon-dark-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/site.css?v=20260920">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://kleooai.com/#website",
+      "name": "Kleo AI",
+      "alternateName": "Kleo",
+      "url": "https://kleooai.com/uk/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kleooai.com/uk/#page",
+      "url": "https://kleooai.com/uk/",
+      "name": "Kleo AI — Режисура людини. Фільми, зроблені агентом.",
+      "description": "Завершені фільми з нарацією, реалістичні або анімаційні, з вашого AI-асистента через MCP. 4K 60 fps, від 15 с до 5 хв, нарація англійською чи італійською.",
+      "inLanguage": "uk",
+      "isPartOf": {
+        "@id": "https://kleooai.com/#website"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Головна",
+          "item": "https://kleooai.com/uk/"
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://kleooai.com/#software",
+      "name": "Kleo AI",
+      "url": "https://kleooai.com/uk/",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Будь-який MCP-сумісний клієнт (віддалений сервер)",
+      "description": "Віддалений MCP-сервер, який перетворює бриф із вашого AI-асистента на завершений фільм із нарацією, реалістичний або анімаційний, де кожен кадр згенеровано як рухоме відео й відрендерено як MP4 у 4K 60 fps — або на аніматик того самого сторіборду, 5 кредитів, доступний кожному обліковому запису.",
+      "offers": {
+        "@type": "Offer",
+        "name": "Пакет на 10 кредитів",
+        "price": "5",
+        "priceCurrency": "EUR",
+        "url": "https://kleooai.com/uk/pricing/"
+      }
+    }
+  ]
+}
+</script>
+<script src="/site.js?v=20260920" defer></script>
+</head>
+<body>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" aria-label="Основне">
+  <div class="wrap">
+    <a class="brand" href="/uk/" aria-label="Kleo, головна" aria-current="page">
+      <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+        <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+        <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+      </svg>
+      Kleo <span class="tag">MCP</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Меню" aria-expanded="false" aria-controls="site-menu">
+      <svg class="bars" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 5h14M2 9h14M2 13h14"/></svg>
+      <svg class="x" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 4l10 10M14 4L4 14"/></svg>
+    </button>
+    <div class="nav-links" id="site-menu">
+      <a href="/uk/ai-youtube-video-generator/">Створити відео</a> <a href="/uk/examples/">Приклади</a> <a href="/uk/styles.html">Стилі</a> <a href="/uk/pricing/">Ціни</a> <a href="/uk/faq/">FAQ</a>
+    </div>
+    <a class="btn btn-primary btn-sm" href="/uk/connect/">Підключити Kleo</a>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <div class="osd"><span class="rec" aria-hidden="true"></span> REC <span class="tcode" id="tcode" aria-hidden="true">00:00:00:00</span> · 4K · 60 fps<span class="osd-more"> · 16:9 і 9:16 · EN / IT</span></div>
+      <h1>Режисура людини.<br><span class="hl">Фільми, зроблені агентом.</span></h1>
+      <p class="lede">Ваш бриф задає історію. Kleo перетворює його на завершений фільм із закадровою нарацією — кожен кадр згенеровано як рухоме відео, у реалістичному чи анімаційному стилі — або на аніматик того самого сторіборду, і передає посилання асистентові, яким ви вже користуєтеся. Режисуєте ви. Виробництво — через MCP.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/uk/connect/">Підключити Kleo <span class="arr" aria-hidden="true">→</span></a> <a class="btn btn-ghost" href="/uk/examples/">Подивитися приклади</a>
+      </div>
+      <p class="free-line"><b>Початок безкоштовний.</b> 7 кредитів на рахунку в момент підключення — без реєстрації, без картки: один аніматик. Фільм починається з 10 кредитів і пакета за €5.</p>
+      <div class="works">
+        <span>Працює з</span> <b>Claude</b><b>ChatGPT</b><b>Grok</b><b>Claude Code</b><b>Cursor</b><b>VS Code</b><b>OpenCode</b><b>Gemini CLI</b>
+      </div>
+    </div>
+
+    <div class="demo" role="figure" aria-label="Приклад: розмова з підключеним Kleo">
+      <div class="demo-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="demo-title">Claude · Kleo підключено<span class="clock" id="demoClock" hidden></span></span></div>
+      <div class="demo-body">
+        <div class="msg user">
+          <span class="who">Ви</span>
+          <p>Зроби мені 45-секундний Short про доглядача маяка, який щоразу відповідає на послання в пляшці. Реалістичний стиль, нарація англійською.</p>
+        </div>
+        <div class="msg">
+          <span class="who">Claude</span>
+          <p>Тритмент готовий: доглядач, одна пляшка на рік, на останню він відповідає особисто. 23 кредити, 9:16. Запускаю рендер.</p>
+          <div class="tool">
+            <div class="tool-head">
+              <span class="tool-name"><b>kleo_create_video</b></span> <span class="tool-state" id="toolState">виконується</span>
+            </div>
+            <pre class="tool-args">{ "duration_s": 45, "format": "9:16", "style": "realistic", "language": "en",
+  "prompt": "A lighthouse keeper who keeps answering a message in a bottle" }</pre>
+          </div>
+        </div>
+        <div class="render" id="render">
+          <div class="render-head"><span>завдання <b>kl_7f3k</b> · GPU орендовано для цього завдання</span><b id="renderPct">58%</b></div>
+          <div class="tracks" id="tracks">
+            <div class="track done"><span>Тритмент</span><span class="tbar" style="--c:var(--violet)"></span></div>
+            <div class="track done"><span>Сторіборд</span><span class="tbar" style="--c:var(--teal)"></span></div>
+            <div class="track active"><span>Футаж</span><span class="tbar" style="--c:var(--amber)"></span></div>
+            <div class="track"><span>Нарація</span><span class="tbar" style="--c:var(--rose)"></span></div>
+            <div class="track"><span>Фініш</span><span class="tbar" style="--c:var(--blue)"></span></div>
+          </div>
+          <div class="bar"><span id="renderFill"></span></div>
+          <div class="render-status" id="renderStatus">Генерація кадрів як відзнятого матеріалу · 8 з 11 · ~12 хв залишилося</div>
+          <div class="result" id="result" hidden>
+            <span class="file">lighthouse-keeper.mp4</span> <span class="chip">2160×3840</span><span class="chip">60 fps</span><span class="chip">0:45</span><span class="chip">7 днів</span> <span class="dl">Завантажити</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wrap wrap-stats">
+    <dl class="stats" aria-label="Kleo в цифрах">
+      <div><dt>Результат</dt><dd>4K · 60 fps</dd></div>
+      <div><dt>Фільм, від брифу до посилання</dt><dd>25–35 хв</dd></div>
+      <div><dt>Стилі</dt><dd>Реалістичний · Анімаційний</dd></div>
+      <div><dt>На старт</dt><dd>7 кредитів, один аніматик</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section id="how">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">01</span>Як це працює</div>
+        <h2>Ваше бачення. Кожен кадр.</h2>
+      </div>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="num" aria-hidden="true">01</span> <span class="tc">ваші слова</span>
+        <h3>Задайте історію</h3>
+        <p>Скажіть асистентові тему, тривалість, формат і стиль — реалістичний чи анімаційний. Kleo читає бриф і запитує все, чого бракує.</p>
+      </div>
+      <div class="step">
+        <span class="num" aria-hidden="true">02</span> <span class="tc">kleo_adapt_prompt</span>
+        <h3>Прочитайте тритмент</h3>
+        <p>Спершу асистент показує вам тритмент: логлайн, ракурс, відкриття, акти й фінал. Змініть що завгодно, перш ніж буде створено бодай один кадр.</p>
+      </div>
+      <div class="step">
+        <span class="num" aria-hidden="true">03</span> <span class="tc">kleo_create_video</span>
+        <h3>Kleo рендерить</h3>
+        <p>За цим тритментом пишеться сторіборд, а далі у фільмі кожен кадр генерується як рухоме відео з власного ескізу; в аніматику натомість камера рухається над кожним намальованим ескізом. Озвучує один оповідач, англійською або італійською. Точна вартість у кредитах повідомляється до списання; нічого не списується, доки рендер не підтверджено.</p>
+      </div>
+      <div class="step">
+        <span class="num" aria-hidden="true">04</span> <span class="tc">kleo_get_result</span>
+        <h3>Завантажте й опублікуйте</h3>
+        <p>Фільм рендериться у 4K 60 fps на GPU, орендованому для вашого завдання. Асистент стежить за прогресом і передає вам посилання на готовий MP4, яке діє 7 днів. Перегляньте його й завантажте туди, де публікуєте.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FILMS ============ -->
+<section id="films">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">02</span>Фільми</div>
+        <h2>Фільми від Kleo.</h2>
+      </div>
+      <p class="lede">Tether — двадцять секунд одним кадром, Apex — дві машини з тунелю, і перша хвилина Signal Delay, документального фільму, у реалістичному стилі — та <a href="/uk/examples/octopus/">анімований Short про те, чому у восьминогів три серця</a>, в анімаційному стилі. Усі майстер-копії 4K 60 fps показано в 1080p; кожен грає на власній сторінці, без звуку, нічого натискати.</p>
+    </div>
+    <div class="films-row">
+      <a class="poster" href="/uk/examples/tether/">
+        <img src="/samples/realistic-tether.jpg" alt="Обличчя астронавта в шоломі, візор заливає червоним, золотий трос тягнеться вгору до станції" width="1920" height="1080" loading="lazy">
+        <span class="play"><i aria-hidden="true">▶</i>Tether · 20 с · один кадр</span>
+      </a>
+      <a class="poster" href="/uk/examples/apex/">
+        <img src="/samples/realistic-apex.jpg" alt="Жовтий суперкар і блідо-зелене класичне купе пліч-о-пліч у тунелі з бурштиновим світлом" width="1920" height="1080" loading="lazy">
+        <span class="play"><i aria-hidden="true">▶</i>Apex · 20 с · дві машини</span>
+      </a>
+      <a class="poster" href="/uk/examples/signal-delay/">
+        <img src="/samples/realistic-signal.jpg" alt="Вікно термінала й намальована від руки бурштинова схема поверх фотографії «Вояджера-1», дати на чорному" width="1920" height="1080" loading="lazy">
+        <span class="play"><i aria-hidden="true">▶</i>Signal Delay · перша хвилина</span>
+      </a>
+    </div>
+    <p class="tpl-more"><a href="/uk/examples/">Усі приклади →</a> · <a href="/uk/styles.html">Два стилі, реалістичний і анімаційний →</a></p>
+  </div>
+</section>
+
+<!-- ============ WHAT TO MAKE ============ -->
+<section id="template">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">03</span>Що створювати</div>
+        <h2>Зробіть те, що варто подивитися.</h2>
+      </div>
+    </div>
+    <div class="grid panels three">
+      <article class="panel">
+        <h3>Пояснювальні відео для YouTube</h3>
+        <p>Перетворіть одне чітке запитання на фільм 16:9 із нарацією, від зачіпки на початку до фінального висновку, тривалістю до п’яти хвилин.</p>
+        <a class="more" href="/uk/ai-youtube-video-generator/">Створити відео для YouTube <span class="arr" aria-hidden="true">→</span></a>
+      </article>
+      <article class="panel">
+        <h3>Короткі історії в анімаційному стилі</h3>
+        <p>Дайте історії тему, місце дії та фінал і попросіть анімаційний стиль: 2D-анімаційний фільм з одним оповідачем, від 15 секунд до 5 хвилин.</p>
+        <a class="more" href="/uk/examples/octopus/">Подивитися Short про восьминога <span class="arr" aria-hidden="true">→</span></a>
+      </article>
+      <article class="panel">
+        <h3>Вертикальні Shorts</h3>
+        <p>Сфокусований Short 9:16 з однією ідеєю та чіткою оповіддю, відрендерений у 2160×3840 і 60 fps. 30-секундний Short коштує 15 кредитів як фільм і 5 як аніматик.</p>
+        <a class="more" href="/uk/pricing/">Скільки коштує Short <span class="arr" aria-hidden="true">→</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BEHIND THE SCENES ============ -->
+<section id="engine">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">04</span>За лаштунками</div>
+        <h2>Ви режисуєте. Kleo рендерить.</h2>
+      </div>
+      <p class="lede">Залишайтеся в асистенті для брифу, прогресу й посилання: Kleo працює за лаштунками розмови. У фільмі кожен кадр згенеровано як рухоме відео з власного ескізу — жодного слайд-шоу зі стоп-кадрів — і веде його один оповідач. Рендер відбувається у 4K 60 fps на GPU, орендованому для вашого завдання, зазвичай 25–35 хвилин. Готовий MP4 — це і є результат; коли й де його публікувати, вирішуєте ви.</p>
+    </div>
+    <ul class="style-facts auto">
+      <li><b>Тритмент</b><span>Ваш бриф стає логлайном, ракурсом, відкриттям, актами й фіналом — і ви бачите це, перш ніж буде створено бодай один кадр.</span></li>
+      <li><b>Сторіборд</b><span>Режисура, сцени й кадри, написані за цим тритментом; точна кількість кредитів повідомляється до будь-якого списання.</span></li>
+      <li><b>Футаж</b><span>У фільмі кожен кадр згенеровано як рухоме відео з власного ескізу, у реалістичному або анімаційному стилі. В аніматику — ті самі намальовані ескізи, над кожним рухається камера, без згенерованих кліпів.</span></li>
+      <li><b>Нарація</b><span>Один оповідач, англійською або італійською, веде фільм. Без музики, без субтитрів, без тексту на екрані.</span></li>
+      <li><b>Фініш</b><span>MP4 у 4K 60 fps, 16:9 або 9:16, за посиланням, яке передає вам асистент — діє 7 днів.</span></li>
+    </ul>
+    <p class="style-say copyable">«Скористайся Kleo, щоб зробити 60-секундний фільм із нарацією про те, як кава проходить шлях від ферми до чашки. Реалістичний стиль, нарація англійською, 16:9. Покажи мені тритмент і вартість у кредитах, перш ніж запускати рендер.»<button class="btn btn-ghost btn-sm copy" type="button" data-copy="Use Kleo to make a 60-second narrated film about how coffee travels from farm to cup. Realistic look, English narration, 16:9. Show me the treatment and the credit cost before starting the render.">Копіювати</button></p>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section id="pricing">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">05</span>Ціни</div>
+        <h2>Початок безкоштовний. Лише кредити, нічого не поновлюється.</h2>
+      </div>
+      <div><span class="draft">Працює · разові платежі через Stripe</span></div>
+    </div>
+    <div class="plans two">
+      <div class="plan hi">
+        <div class="name"><span>Безкоштовний план</span><span class="pop">включено, для всіх</span></div>
+        <div class="price">€0<small>7 кредитів, без реєстрації</small></div>
+        <ul>
+          <li>Безкоштовний план — це сам обліковий запис: підключіться один раз, і у вас 7 кредитів — без форми, без картки, нічого скасовувати</li>
+          <li>Аніматик коштує рівно 5 кредитів, 15–60 с: той самий тритмент, сторіборд і намальовані ескізи, над кожним рухається камера, той самий оповідач і графічний шар, 4K 60 fps, без згенерованих кліпів. А ще це прев’ю фільму</li>
+          <li>Ціна фільму залежить від тривалості: 1 кредит = 2 секунди, від 10 кредитів (20 с = 10 · 30 с = 15 · 60 с = 30 · 90 с = 45 · 5 хв = 150)</li>
+          <li>Безкоштовні кредити ніколи не купують фільм: його кліпи генеруються коштом Kleo, тож фільм створюється лише для облікових записів, які купили пакет. Додайте пакет за €5 — і у вас 17: фільм відкрито, це 30-секундний Short</li>
+        </ul>
+        <a class="btn btn-primary" href="/uk/connect/">Підключитися і почати</a>
+      </div>
+      <div class="plan">
+        <div class="name"><span>Пакети кредитів</span><span class="pop">оплата один раз</span></div>
+        <div class="price">€5–40<small>разово, без підписки</small></div>
+        <ul>
+          <li>€5 — 10 кредитів · €15 — 35 · €40 — 100</li>
+          <li>Будь-який пакет відкриває фільм. €5 плюс ваші стартові кредити = 17, 30-секундний Short; €15 = 35 кредитів, хвилина десять секунд фільму; €40 = 100 кредитів, три хвилини двадцять</li>
+          <li>Оплата через Stripe: попросіть асистента показати сторінку вашого облікового запису й купіть пакет звідти</li>
+        </ul>
+        <a class="btn btn-ghost" href="/uk/pricing/">Порахувати кредити</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONNECT ============ -->
+<section id="connect">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">06</span>Підключення</div>
+        <h2>Знайомтеся: ваша знімальна група.</h2>
+      </div>
+      <div>
+        <p class="lede">Додайте адресу Kleo до сумісного асистента як власний конектор. Під час входу з асистента відкривається сторінка Kleo: одна кнопка, без форми, без картки. Далі опишіть свій фільм.</p>
+        <p class="mono" id="mcpStatus" hidden></p>
+        <div class="address"><code>https://mcp.kleooai.com/mcp</code><button class="btn btn-ghost btn-sm" type="button" data-copy="https://mcp.kleooai.com/mcp">Копіювати адресу</button></div>
+      </div>
+    </div>
+    <div class="grid panels">
+      <article class="panel">
+        <h3>Claude <small>застосунок · веб</small></h3>
+        <ol>
+          <li>Відкрийте <b>Settings → Connectors</b> і виберіть <b>Add custom connector</b>.</li>
+          <li>Назвіть його <b>Kleo</b>, вставте адресу вище й підтвердьте. Відкриється сторінка Kleo: натисніть <b>Start free</b> — і ви знову в Claude.</li>
+          <li>У новому чаті увімкніть Kleo в меню інструментів і попросіть: <i>Зроби мені 45-секундний Short про…</i></li>
+        </ol>
+        <p>Безкоштовний план Claude дозволяє один власний конектор.</p>
+        <a class="more" href="/uk/integrations/claude/">Повна інструкція для Claude <span class="arr" aria-hidden="true">→</span></a>
+      </article>
+      <article class="panel">
+        <h3>ChatGPT <small>режим розробника</small></h3>
+        <ol>
+          <li>Відкрийте <b>Settings → Apps &amp; Connectors</b> (у старіших версіях — <b>Connectors</b>), далі <b>Advanced settings</b>, і увімкніть <b>Developer mode</b>.</li>
+          <li>Поверніться в <b>Connectors</b> і виберіть <b>Create</b>: назвіть його <b>Kleo</b>, вставте адресу, виберіть автентифікацію <b>OAuth</b> і збережіть. Відкриється сторінка Kleo: натисніть <b>Start free</b> — і ви знову в ChatGPT.</li>
+          <li>У чаті увімкніть Kleo через меню <b>+</b> і попросіть відео. ChatGPT попросить підтвердження, перш ніж запустити рендер.</li>
+        </ol>
+        <p>Потрібен ChatGPT Plus, Pro, Business або Enterprise.</p>
+        <a class="more" href="/uk/integrations/chatgpt/">Повна інструкція для ChatGPT <span class="arr" aria-hidden="true">→</span></a>
+      </article>
+    </div>
+    <p class="tpl-more"><a href="/uk/connect/">Кожен клієнт, крок за кроком →</a> · <a href="/uk/video-generation-mcp/">Документація MCP →</a></p>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">07</span>FAQ</div>
+        <h2>Перед вашим першим фільмом.</h2>
+      </div>
+    </div>
+    <div class="faq">
+      <div>
+        <details open>
+          <summary>Що саме створює Kleo?</summary>
+          <p>Два продукти з одного сторіборду. Фільм: завершений фільм із нарацією, у реалістичному стилі (згенероване ігрове відео) або анімаційному (2D-анімаційний фільм), кожен кадр згенеровано як рухоме відео. Аніматик: той самий тритмент, сторіборд і намальовані ескізи, над кожним рухається камера, той самий оповідач і графічний шар, без згенерованих кліпів — від 15 до 60 секунд, а також прев’ю фільму. Разом із вашим асистентом Kleo пише тритмент і сторіборд, озвучує та рендерить MP4 у 4K 60 fps. Посилання на завантаження ви отримуєте в асистенті, воно діє 7 днів.</p>
+        </details>
+        <details>
+          <summary>Якої тривалості може бути фільм?</summary>
+          <p>Від 15 секунд до 5 хвилин; аніматик — від 15 до 60 секунд. Виберіть 16:9 для YouTube або 9:16 для вертикального Short; обидва рендеряться у 4K (3840×2160 або 2160×3840) і 60 fps.</p>
+        </details>
+        <details>
+          <summary>Є безкоштовний план?</summary>
+          <p>Так: підключення безкоштовне й дає кожному новому обліковому запису 7 кредитів, без реєстрації та без картки — досить на один аніматик за 5. Безкоштовні кредити ніколи не купують фільм: фільм коштує щонайменше 10 кредитів (1 кредит = 2 секунди) і створюється лише для облікових записів, які купили пакет, бо його кліпи генеруються коштом Kleo. Додайте пакет за €5 на 10 кредитів — і в нового облікового запису 17: фільм відкрито, а 30-секундний Short коштує 15.</p>
+        </details>
+      </div>
+      <div>
+        <details>
+          <summary>Чи включає Kleo нарацію, музику й субтитри?</summary>
+          <p>Один оповідач, англійською або італійською. У фільмі немає фонової музики, субтитрів і тексту на екрані; додайте їх у своєму редакторі, якщо цього вимагає ваша платформа.</p>
+        </details>
+        <details>
+          <summary>Чи публікуватиме Kleo на мій канал автоматично?</summary>
+          <p>Ні. Kleo передає асистентові посилання на готовий MP4; ви переглядаєте його, завантажуєте й викладаєте самі. Kleo ніколи не постить на YouTube, TikTok чи будь-який інший канал.</p>
+        </details>
+        <details>
+          <summary>Які стилі можна вибрати?</summary>
+          <p>Два. Реалістичний — це згенероване ігрове відео; анімаційний — 2D-анімаційний фільм. Назвіть стиль у брифі, і асистент передасть його далі — ціна залежить лише від тривалості, не від стилю. <a href="/uk/styles.html">Подивіться обидва стилі</a>.</p>
+        </details>
+      </div>
+    </div>
+    <p class="tpl-more"><a href="/uk/faq/">Прочитати всі відповіді →</a></p>
+  </div>
+</section>
+
+<!-- ============ ACCOUNT ============ -->
+<section class="cta" id="account">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow"><span class="n">08</span>Обліковий запис</div>
+      <h2>Реєструватися нема куди.</h2>
+      <p class="lede">Ваш обліковий запис подорожує з вами. Попросіть асистента показати сторінку вашого облікового запису Kleo: там ваші кредити й посилання на оплату пакетів. Обліковий запис прив’язаний до приватного ключа Kleo — хто має ключ, той володіє обліковим записом, — тож нікому його не передавайте.</p>
+    </div>
+    <div>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/uk/connect/">Підключити Kleo <span class="arr" aria-hidden="true">→</span></a> <a class="btn btn-ghost" href="/uk/pricing/">Подивитися ціни</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<!-- i18n:langs -->
+<nav class="langs" aria-label="Мова">
+  <div class="wrap">
+    <span>Мова</span>
+    <a href="/" hreflang="en" lang="en">English</a>
+    <a href="/it/" hreflang="it" lang="it">Italiano</a>
+    <a href="/de/" hreflang="de" lang="de">Deutsch</a>
+    <a href="/fr/" hreflang="fr" lang="fr">Français</a>
+    <a href="/es/" hreflang="es" lang="es">Español</a>
+    <a href="/pt/" hreflang="pt" lang="pt">Português</a>
+    <a href="/nl/" hreflang="nl" lang="nl">Nederlands</a>
+    <a href="/pl/" hreflang="pl" lang="pl">Polski</a>
+    <a href="/tr/" hreflang="tr" lang="tr">Türkçe</a>
+    <a href="/ru/" hreflang="ru" lang="ru">Русский</a>
+    <b lang="uk">Українська</b>
+    <a href="/ja/" hreflang="ja" lang="ja">日本語</a>
+    <a href="/ko/" hreflang="ko" lang="ko">한국어</a>
+    <a href="/zh/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+    <a href="/zh-tw/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+    <a href="/ar/" hreflang="ar" lang="ar">العربية</a>
+    <a href="/he/" hreflang="he" lang="he">עברית</a>
+    <a href="/hi/" hreflang="hi" lang="hi">हिन्दी</a>
+    <a href="/id/" hreflang="id" lang="id">Bahasa Indonesia</a>
+    <a href="/vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
+    <a href="/th/" hreflang="th" lang="th">ไทย</a>
+  </div>
+</nav>
+<!-- /i18n:langs -->
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">
+      <a class="brand" href="/uk/" aria-label="Kleo, головна">
+        <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+          <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+          <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+        </svg>
+        Kleo <span class="tag">MCP</span>
+      </a>
+      <span>Режисура людини. Фільми, зроблені агентом.</span>
+    </div>
+    <div class="links">
+      <a href="/uk/connect/">Підключення</a> <a href="/uk/integrations/claude/">Claude</a> <a href="/uk/integrations/chatgpt/">ChatGPT</a> <a href="/uk/video-generation-mcp/">Документація MCP</a> <a href="/uk/examples/">Приклади</a> <a href="/uk/styles.html">Стилі</a> <a href="/uk/pricing/">Ціни</a> <a href="/uk/faq/">FAQ</a> <a href="/uk/about/">Про нас</a> <a href="/uk/privacy.html">Конфіденційність</a> <a href="/uk/terms.html">Умови</a> <a href="https://github.com/tonnooooo/kleo-mcp">GitHub</a> <a href="mailto:kleooai@gmail.com">kleooai@gmail.com</a>
+    </div>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite">Скопійовано</div>
+</body>
+</html>

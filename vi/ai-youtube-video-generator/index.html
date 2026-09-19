@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="vi" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.remove("no-js")</script>
+<title>Trình tạo video YouTube bằng AI — Phim có lời dẫn từ brief | Kleo</title>
+<meta name="description" content="Làm video YouTube (16:9) hoặc Short (9:16) có lời dẫn từ một brief với Kleo: chân thực hoặc hoạt hình, 4K 60 fps, 15 giây đến 5 phút, từ 10 credit hoặc animatic 5.">
+<link rel="canonical" href="https://kleooai.com/vi/ai-youtube-video-generator/">
+<!-- i18n:head -->
+<link rel="alternate" hreflang="en" href="https://kleooai.com/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="it" href="https://kleooai.com/it/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="de" href="https://kleooai.com/de/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="fr" href="https://kleooai.com/fr/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="es" href="https://kleooai.com/es/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="pt" href="https://kleooai.com/pt/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="nl" href="https://kleooai.com/nl/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="pl" href="https://kleooai.com/pl/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="tr" href="https://kleooai.com/tr/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="ru" href="https://kleooai.com/ru/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="uk" href="https://kleooai.com/uk/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="ja" href="https://kleooai.com/ja/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="ko" href="https://kleooai.com/ko/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="zh-Hans" href="https://kleooai.com/zh/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="zh-Hant" href="https://kleooai.com/zh-tw/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="ar" href="https://kleooai.com/ar/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="he" href="https://kleooai.com/he/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="hi" href="https://kleooai.com/hi/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="id" href="https://kleooai.com/id/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="vi" href="https://kleooai.com/vi/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="th" href="https://kleooai.com/th/ai-youtube-video-generator/">
+<link rel="alternate" hreflang="x-default" href="https://kleooai.com/ai-youtube-video-generator/">
+<script>(function(){try{var L=["it", "de", "fr", "es", "pt", "nl", "pl", "tr", "ru", "uk", "ja", "ko", "zh", "zh-tw", "ar", "he", "hi", "id", "vi", "th"],A={"zh-hk": "zh-tw", "zh-mo": "zh-tw", "zh-hant": "zh-tw", "zh-hans": "zh", "zh-cn": "zh", "zh-sg": "zh", "nb": "no", "nn": "no"},p=location.pathname,m=p.match(/^\/([a-z]{2}(?:-[a-z]{2})?)(?=\/)/),on=m&&L.indexOf(m[1])>=0?m[1]:"en",rest=on==="en"?p:p.slice(on.length+1),want=null,s=null;try{s=localStorage.getItem("kleo-lang")}catch(e){}if(s==="en"||L.indexOf(s)>=0)want=s;else{var nl=navigator.languages||[navigator.language||""];for(var i=0;i<nl.length&&!want;i++){var t=String(nl[i]).toLowerCase(),b=t.split("-")[0];t=A[t]||t;b=A[b]||b;want=t==="en"||b==="en"?"en":L.indexOf(t)>=0?t:L.indexOf(b)>=0?b:null}}if(want&&want!==on&&!/404/.test(p))location.replace((want==="en"?"":"/"+want)+rest+location.search+location.hash)}catch(e){}})()</script>
+<script type="application/json" id="i18n">{"Language": "Ngôn ngữ", "Menu": "Menu", "Close menu": "Đóng menu", "Copied": "Đã sao chép", "Copied ✓": "Đã sao chép ✓", "Copy it by hand: {text}": "Hãy sao chép thủ công: {text}", "Copy the Kleo server address": "Sao chép địa chỉ máy chủ Kleo", "Copy the argument {value}": "Sao chép tham số {value}", "Copy this prompt": "Sao chép prompt này", "Copy the {what} snippet": "Sao chép đoạn mã {what}", "Copy the {what} text": "Sao chép văn bản {what}", "Treatment · logline, angle, acts · look: realistic": "Treatment · logline, góc nhìn, các hồi · phong cách: chân thực", "Storyboard · direction, scenes, shots · 23 credits, confirmed": "Storyboard · chỉ đạo, phân cảnh, cảnh quay · 23 credit, đã xác nhận", "Generating the shots as footage · 4 of 11 · ~22 min left": "Đang tạo các cảnh quay thành thước phim · 4 trên 11 · còn ~22 phút", "Generating the shots as footage · 8 of 11 · ~12 min left": "Đang tạo các cảnh quay thành thước phim · 8 trên 11 · còn ~12 phút", "Narration · one voice, English · cutting the shots on the words": "Lời dẫn · một giọng, tiếng Anh · cắt cảnh theo lời dẫn", "Finish · 2160×3840 · 60 fps · quality check": "Hoàn thiện · 2160×3840 · 60 fps · kiểm tra chất lượng", "Done · 28 min · link ready for 7 days": "Xong · 28 phút · link sẵn sàng trong 7 ngày", "done": "xong", "running": "đang chạy", "A whole number from {min} to {max} seconds": "Một số nguyên từ {min} đến {max} giây", "{s} s {product} = {n} credits": "{s} giây {product} = {n} credit", "film": "phim", "animatic": "animatic"}</script>
+<!-- /i18n:head -->
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kleo AI">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="Trình tạo video YouTube bằng AI — Phim có lời dẫn từ brief | Kleo">
+<meta property="og:description" content="Làm video YouTube (16:9) hoặc Short (9:16) có lời dẫn từ một brief với Kleo: chân thực hoặc hoạt hình, 4K 60 fps, 15 giây đến 5 phút, từ 10 credit hoặc animatic 5.">
+<meta property="og:url" content="https://kleooai.com/vi/ai-youtube-video-generator/">
+<meta property="og:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta property="og:image:alt" content="Kleo AI — Con người đạo diễn. Agent làm phim.">
+<meta property="og:image:width" content="2400">
+<meta property="og:image:height" content="1260">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Trình tạo video YouTube bằng AI — Phim có lời dẫn từ brief | Kleo">
+<meta name="twitter:description" content="Làm video YouTube (16:9) hoặc Short (9:16) có lời dẫn từ một brief với Kleo: chân thực hoặc hoạt hình, 4K 60 fps, 15 giây đến 5 phút, từ 10 credit hoặc animatic 5.">
+<meta name="twitter:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta name="theme-color" content="#0A0C10">
+<link rel="icon" href="/brand/kleo-favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/brand/kleo-favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/brand/kleo-icon-dark-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/site.css?v=20260920">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://kleooai.com/#website",
+      "name": "Kleo AI",
+      "alternateName": "Kleo",
+      "url": "https://kleooai.com/vi/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kleooai.com/vi/ai-youtube-video-generator/#page",
+      "url": "https://kleooai.com/vi/ai-youtube-video-generator/",
+      "name": "Trình tạo video YouTube bằng AI — Phim có lời dẫn từ brief | Kleo",
+      "description": "Làm video YouTube (16:9) hoặc Short (9:16) có lời dẫn từ một brief với Kleo: chân thực hoặc hoạt hình, 4K 60 fps, 15 giây đến 5 phút, từ 10 credit hoặc animatic 5.",
+      "inLanguage": "vi",
+      "isPartOf": {
+        "@id": "https://kleooai.com/#website"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Trang chủ",
+          "item": "https://kleooai.com/vi/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Trình tạo video YouTube bằng AI",
+          "item": "https://kleooai.com/vi/ai-youtube-video-generator/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<script src="/site.js?v=20260920" defer></script>
+</head>
+<body>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" aria-label="Chính">
+  <div class="wrap">
+    <a class="brand" href="/vi/" aria-label="Kleo, trang chủ">
+      <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+        <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+        <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+      </svg>
+      Kleo <span class="tag">MCP</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-menu">
+      <svg class="bars" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 5h14M2 9h14M2 13h14"/></svg>
+      <svg class="x" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 4l10 10M14 4L4 14"/></svg>
+    </button>
+    <div class="nav-links" id="site-menu">
+      <a href="/vi/ai-youtube-video-generator/" aria-current="page">Tạo video</a> <a href="/vi/examples/">Ví dụ</a> <a href="/vi/styles.html">Phong cách</a> <a href="/vi/pricing/">Bảng giá</a> <a href="/vi/faq/">FAQ</a>
+    </div>
+    <a class="btn btn-primary btn-sm" href="/vi/connect/">Kết nối Kleo</a>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="page-hero hero" id="top">
+  <div class="wrap">
+    <div>
+      <nav class="crumbs" aria-label="Đường dẫn điều hướng"><a href="/vi/">Trang chủ</a><span aria-hidden="true">›</span><span>Trình tạo video YouTube bằng AI</span></nav>
+      <h1>Từ một ý tưởng<br><span class="hl">đến video tiếp theo của bạn.</span></h1>
+      <p class="lede">Tạo một bộ phim hoàn chỉnh có lời dẫn cho kênh của bạn từ một brief, ngay trong trợ lý AI bạn đang dùng. Kleo cùng bạn lên kế hoạch câu chuyện, tạo mọi cảnh quay thành thước phim chuyển động, giao cho một người dẫn chuyện, rồi render file MP4 ở 4K 60 fps, ngang cho YouTube hoặc dọc cho Short. Cùng storyboard đó có thể được render trước dưới dạng animatic 5 credit: các khung hình vẽ dưới máy quay chuyển động, không có clip được tạo.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/vi/connect/">Kết nối Kleo <span class="arr" aria-hidden="true">→</span></a> <a class="btn btn-ghost" href="/vi/pricing/">Xem bảng giá</a> <a class="btn btn-ghost" href="#sample">Xem phút mở đầu của Signal Delay</a>
+      </div>
+      <div class="works">
+        <span>Hoạt động với</span> <b>Claude</b><b>ChatGPT</b><b>Grok</b><b>Claude Code</b><b>Cursor</b><b>VS Code</b><b>Gemini</b>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ONE IDEA ============ -->
+<section id="idea">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">01</span>Một ý tưởng</div>
+        <h2>Xây dựng bộ phim quanh một ý tưởng rõ ràng.</h2>
+      </div>
+    </div>
+    <div class="split">
+      <div>
+        <p class="lede">Bắt đầu từ câu hỏi mà người xem muốn được trả lời. Đưa cho Kleo các dữ kiện, đối tượng khán giả và điều bạn muốn người xem ghi nhớ. Một video giải thích cần một trình tự rõ ràng; một câu chuyện cần bối cảnh, một biến chuyển và một kết thúc.</p>
+      </div>
+      <div class="prose">
+        <p>Với video ngang cho kênh, chọn 16:9. Với Short, chọn 9:16. Một bộ phim dài từ 15 giây đến 5 phút, với lời dẫn tiếng Anh hoặc tiếng Ý do một người dẫn chuyện đọc. Trong một bộ phim, mọi cảnh quay đều được tạo thành thước phim chuyển động từ chính khung hình của nó, nên một video giải thích 3 phút là một chuỗi cảnh chuyển động, không phải trình chiếu ảnh tĩnh; một animatic, từ 15 đến 60 giây và 5 credit, giữ các khung hình vẽ dưới máy quay chuyển động.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOOKS ============ -->
+<section id="looks">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">02</span>Hai phong cách</div>
+        <h2>Chọn phong cách: chân thực hoặc hoạt hình.</h2>
+      </div>
+      <p class="lede">Kleo làm phim có lời dẫn theo một trong hai phong cách, và làm animatic của cùng storyboard theo bất kỳ phong cách nào trong hai. Cả hai phong cách đều đang hoạt động trên máy chủ và có cùng giá mỗi giây. Phong cách là một trong những điều Kleo sẽ hỏi khi yêu cầu của bạn chưa nói rõ.</p>
+    </div>
+    <div class="grid panels">
+      <article class="panel">
+        <h3>Chân thực <small>thước phim người thật được tạo bằng AI</small></h3>
+        <p>Thước phim điện ảnh được tạo từng cảnh quay một: một gương mặt trong mũ bảo hiểm, một sợi dây vàng vươn tới trạm không gian, một đoạn mở đầu phim tài liệu kể bằng nhật ký nhiệm vụ và render với cùng phong cách. Hai phim mẫu trên trang, Tether và phút mở đầu của Signal Delay, thuộc phong cách này.</p>
+        <a class="more" href="/vi/styles.html">Xem các phong cách phim <span class="arr" aria-hidden="true">→</span></a>
+      </article>
+      <article class="panel">
+        <h3>Hoạt hình <small>một phim hoạt hình 2D</small></h3>
+        <p>Vẫn là bộ phim có lời dẫn ấy, nhưng được vẽ thay vì quay: một phong cách hoạt hình 2D cho video giải thích, truyện kể và Short muốn một giọng điệu nhẹ nhàng hơn. Phong cách hoạt hình hiện đã có trên máy chủ; mẫu của nó là <a href="/vi/examples/octopus/">một Short 32 giây về bạch tuộc</a>.</p>
+        <a class="more" href="/vi/styles.html">Xem các phong cách phim <span class="arr" aria-hidden="true">→</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INTAKE ============ -->
+<section id="intake">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">03</span>Bước tiếp nhận</div>
+        <h2>Kleo hỏi gì trước khi lên kế hoạch.</h2>
+      </div>
+      <p class="lede">Kleo đối chiếu yêu cầu của bạn với một danh sách tiếp nhận ngắn. Điều gì yêu cầu chưa nói, trợ lý sẽ hỏi trong một tin nhắn và chờ bạn trả lời. Không có gì bị mặc định: Kleo không bao giờ tự chọn chủ đề, độ dài, định dạng hay phong cách thay cho bạn.</p>
+    </div>
+    <ul class="defs">
+      <li><b>Chủ đề</b><span>Bộ phim nói về điều gì, và điều người xem nên ghi nhớ.</span></li>
+      <li><b>Độ dài</b><span>Từ 15 giây đến 5 phút.</span></li>
+      <li><b>Định dạng</b><span>16:9 cho video YouTube, 9:16 cho Short.</span></li>
+      <li><b>Phong cách</b><span>Chân thực hoặc hoạt hình.</span></li>
+      <li><b>Tùy chọn</b><span>Đối tượng khán giả, giọng điệu, và bất cứ điều gì bắt buộc phải xuất hiện trong phim.</span></li>
+    </ul>
+    <p class="tpl-more">Một brief trả lời sẵn tất cả những điều đó, như các brief bên dưới, sẽ bỏ qua các câu hỏi và đi thẳng tới treatment.</p>
+  </div>
+</section>
+
+<!-- ============ WORKFLOW ============ -->
+<section id="workflow">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">04</span>Quy trình</div>
+        <h2>Một quy trình sản xuất ngay trong cuộc trò chuyện của bạn.</h2>
+      </div>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="num">01</span>
+        <h3>Viết brief, trả lời bước tiếp nhận</h3>
+        <p>Mô tả chủ đề, độ dài, định dạng và phong cách, rồi chia sẻ các dữ kiện và giọng điệu bạn muốn bộ phim giữ nguyên. Bạn đang nói chuyện với trợ lý của chính mình; Kleo là xưởng phim phía sau. Bất cứ điều gì brief còn thiếu, trợ lý sẽ hỏi trong một tin nhắn. Đối tượng khán giả, giọng điệu và những gì bắt buộc phải xuất hiện là tùy chọn; chủ đề, độ dài, định dạng và phong cách thì không.</p>
+      </div>
+      <div class="step">
+        <span class="num">02</span>
+        <h3>Sửa treatment</h3>
+        <p>Trước khi bất cứ thứ gì được render, trợ lý cho bạn xem treatment: logline, góc nhìn, cảnh mở đầu, các hồi, kết thúc, phong cách, nhịp điệu và người dẫn chuyện. Sửa những gì bạn muốn; bộ phim sẽ làm theo.</p>
+      </div>
+      <div class="step">
+        <span class="num">03</span>
+        <h3>Storyboard, rồi đến số credit</h3>
+        <p>Dựa trên treatment đó, trợ lý viết storyboard: một khối chỉ đạo, các phân cảnh và các cảnh quay, trong giới hạn của Kleo. Đây là nơi chất lượng bộ phim được tạo nên. Kleo kiểm tra mọi thứ và trả lời với số credit chính xác trước khi bắt đầu. Không trừ gì cho đến khi job được chấp nhận.</p>
+      </div>
+      <div class="step">
+        <span class="num">04</span>
+        <h3>Render và tải xuống</h3>
+        <p>Quá trình render chạy trên một GPU thuê riêng cho job đó, thường mất 25–35 phút; trợ lý báo tiến độ rồi đưa cho bạn link tới file MP4 hoàn chỉnh, có hiệu lực trong 7 ngày. Xem lại, rồi tự tải lên kênh của bạn: Kleo không bao giờ đăng lên YouTube hay bất kỳ nơi nào khác.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BRIEFS ============ -->
+<section id="brief">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">05</span>Hai brief</div>
+        <h2>Một brief bạn có thể tùy chỉnh.</h2>
+      </div>
+      <p class="lede">Hai brief trả lời toàn bộ bước tiếp nhận ngay từ đầu. Brief thứ nhất là một video 16:9 dài 3 phút, 90 credit. Brief thứ hai là một Short 9:16 dài 45 giây, 23 credit. Dán một brief vào trợ lý của bạn và đổi chủ đề.</p>
+    </div>
+    <div class="split">
+      <div>
+        <p class="style-say copyable" style="--c:var(--teal)">“Dùng Kleo làm một video YouTube 16:9 dài 3 phút giải thích cách các dòng hải lưu vận chuyển nhiệt quanh hành tinh, cho người mới tò mò tìm hiểu. Phong cách chân thực, lời dẫn tiếng Anh, giọng điệu điềm tĩnh và rõ ràng. Mở đầu bằng một câu hỏi rõ ràng, giải thích cơ chế, rồi kết thúc bằng một điều đọng lại. Cho tôi xem treatment và số credit trước khi render. Chỉ dùng những dữ kiện tôi cung cấp hoặc có thể kiểm chứng; không bịa số liệu thống kê.”<button class="btn btn-ghost btn-sm copy" type="button" data-copy="Use Kleo to make a 3-minute 16:9 YouTube video explaining how ocean currents move heat around the planet, for curious beginners. Realistic look, English narration, a calm and clear tone. Open with a clear question, explain the mechanism, then finish with one takeaway. Show me the treatment and the credit cost before rendering. Use only the facts I provide or can verify; do not invent statistics.">Sao chép</button></p>
+      </div>
+      <div>
+        <p class="style-say copyable" style="--c:var(--amber)">“Dùng Kleo làm một Short 9:16 dài 45 giây về lý do bầu trời chuyển đỏ lúc hoàng hôn, cho khán giả đại chúng. Phong cách hoạt hình, lời dẫn tiếng Anh, giọng điệu vui tươi. Một câu hỏi ở đầu, một câu trả lời, một hình ảnh đáng nhớ ở cuối. Cho tôi xem treatment và số credit trước khi render.”<button class="btn btn-ghost btn-sm copy" type="button" data-copy="Use Kleo to make a 45-second 9:16 Short about why the sky turns red at sunset, for a general audience. Animation look, English narration, a playful tone. One question at the top, one answer, one image to remember at the end. Show me the treatment and the credit cost before rendering.">Sao chép</button></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CREDITS ============ -->
+<section id="credits">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">06</span>Độ dài và credit</div>
+        <h2>Lên kế hoạch độ dài và số credit cùng lúc.</h2>
+      </div>
+      <p class="lede">Một bộ phim tính giá theo độ dài: một credit cho hai giây, làm tròn lên, tối thiểu 10 credit. Một Short 20 giây tốn 10 credit; 60 giây tốn 30; 3 phút tốn 90; 5 phút tốn 150. Một animatic của cùng storyboard, từ 15 đến 60 giây, có giá cố định 5 credit. Con số chính xác được Kleo nêu rõ trước khi render bắt đầu, và một yêu cầu bị từ chối không tốn gì.</p>
+    </div>
+    <div class="prose">
+      <p>Credit được bán theo gói mua một lần, thanh toán một lần qua Stripe, bằng euro, không có gói thuê bao định kỳ: €5 cho 10 credit, €15 cho 35, €40 cho 100. Kết nối là bạn có 7 credit, không biểu mẫu, không thẻ: một animatic. Phim chỉ được làm cho những tài khoản đã mua gói — các clip của phim được tạo ra bằng chi phí của Kleo, nên credit miễn phí không bao giờ mua được phim; với gói €5 bạn có 17, phim được mở khóa, và một Short 30 giây tốn 15. Nếu bạn hủy render, số credit chưa dùng sẽ được hoàn lại.</p>
+      <p>Một animatic 5 credit là cách hay để chốt câu chuyện và giọng điệu trước khi bạn chi 90 credit cho một bộ phim dài hơn.</p>
+      <p><a href="/vi/pricing/">Mở công cụ tính credit →</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RECEIVE ============ -->
+<section id="receive">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">07</span>Bàn giao</div>
+        <h2>Bạn nhận được gì.</h2>
+      </div>
+    </div>
+    <ul class="style-facts auto">
+      <li><b>File</b><span>Một file MP4 ở 4K, 3840×2160 cho 16:9 hoặc 2160×3840 cho 9:16, ở 60 fps.</span></li>
+      <li><b>Độ dài</b><span>Độ dài bạn yêu cầu, từ 15 giây đến 5 phút; animatic từ 15 đến 60 giây.</span></li>
+      <li><b>Giọng đọc</b><span>Một người dẫn chuyện, tiếng Anh hoặc tiếng Ý, giọng nam hoặc nữ.</span></li>
+      <li><b>Hình ảnh</b><span>Trong một bộ phim, mọi cảnh quay đều được tạo thành thước phim chuyển động; trong một animatic, các khung hình vẽ dưới máy quay chuyển động. Không nhạc, không phụ đề, không chữ trên màn hình.</span></li>
+      <li><b>Bàn giao</b><span>Một link tải xuống do trợ lý của bạn đưa, có hiệu lực trong 7 ngày.</span></li>
+    </ul>
+    <div class="prose">
+      <p>Phim của Kleo không có nhạc, phụ đề hay chữ trên màn hình. Nếu kênh của bạn cần, hãy thêm chúng trong trình dựng sau khi tải xuống. Tải lên YouTube vẫn là bước của bạn: Kleo không kết nối với kênh của bạn và không bao giờ đăng thay bạn. Hãy xem lại bộ phim và các yêu cầu đăng tải của kênh trước khi tải lên.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SAMPLE ============ -->
+<section id="sample">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">08</span>Một đoạn mở đầu có lời dẫn</div>
+        <h2>Xem một đoạn mở đầu có lời dẫn.</h2>
+      </div>
+      <p class="lede">Signal Delay là một phim tài liệu render theo phong cách chân thực của Kleo, kể qua năm tháng nhật ký nhiệm vụ: ngày 14 tháng 11 năm 2023, Voyager 1 bắt đầu lặp đi lặp lại một chuỗi số 1 và số 0, và mỗi câu hỏi phải mất bốn mươi lăm giờ ánh sáng. Một người dẫn chuyện đi qua bảng số liệu, con chip hỏng và đoạn mã được chuyển bằng tay trong ngôn ngữ assembly thập niên 1970. Ở đây là phút mở đầu cho đến tiêu đề, tắt tiếng.</p>
+    </div>
+    <div class="player">
+      <div class="style-media wide">
+        <video src="/samples/realistic-signal.mp4" poster="/samples/realistic-signal.jpg" width="1920" height="1080" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback"
+               aria-label="Signal Delay, phút mở đầu của một phim tài liệu về việc sửa chữa Voyager 1, render theo phong cách chân thực của Kleo"></video>
+        <span class="style-live" aria-hidden="true"><i></i>Đang phát</span>
+      </div>
+      <div class="film-cap"><b>Signal Delay</b><span>mở đầu 0:00–1:02 · 16:9 · 4K 60 fps, hiển thị ở 1080p</span></div>
+      <p class="film-note">Ảnh tĩnh với cú đẩy máy chậm, sơ đồ vẽ tay màu hổ phách, cửa sổ terminal, các mốc ngày trên nền đen, hai chiếc đồng hồ ở góc, hạt phim 35 mm, tỷ lệ 2.39:1, một nền nhạc khẽ và phụ đề: treatment của phim tài liệu đó đã yêu cầu như vậy. Phim đầy đủ dài 6 phút 55 giây và không có trên trang; phim làm qua trợ lý dài từ 15 giây đến 5 phút.</p>
+      <p class="film-note"><a href="/vi/examples/signal-delay/">Mở trang mẫu Signal Delay →</a></p>
+      <p class="film-note">Với một bộ phim 16:9 hoàn toàn không có lời dẫn, một cảnh quay liền mạch về một phi hành gia và trạm không gian của anh, <a href="/vi/examples/tether/">xem Tether →</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ START ============ -->
+<section class="cta one" id="start">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow"><span class="n">09</span>Bắt đầu</div>
+      <h2>Viết brief cho bộ phim đầu tiên của bạn.</h2>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/vi/connect/">Kết nối Kleo <span class="arr" aria-hidden="true">→</span></a> <a class="btn btn-ghost" href="/vi/pricing/">Xem bảng giá</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<!-- i18n:langs -->
+<nav class="langs" aria-label="Ngôn ngữ">
+  <div class="wrap">
+    <span>Ngôn ngữ</span>
+    <a href="/ai-youtube-video-generator/" hreflang="en" lang="en">English</a>
+    <a href="/it/ai-youtube-video-generator/" hreflang="it" lang="it">Italiano</a>
+    <a href="/de/ai-youtube-video-generator/" hreflang="de" lang="de">Deutsch</a>
+    <a href="/fr/ai-youtube-video-generator/" hreflang="fr" lang="fr">Français</a>
+    <a href="/es/ai-youtube-video-generator/" hreflang="es" lang="es">Español</a>
+    <a href="/pt/ai-youtube-video-generator/" hreflang="pt" lang="pt">Português</a>
+    <a href="/nl/ai-youtube-video-generator/" hreflang="nl" lang="nl">Nederlands</a>
+    <a href="/pl/ai-youtube-video-generator/" hreflang="pl" lang="pl">Polski</a>
+    <a href="/tr/ai-youtube-video-generator/" hreflang="tr" lang="tr">Türkçe</a>
+    <a href="/ru/ai-youtube-video-generator/" hreflang="ru" lang="ru">Русский</a>
+    <a href="/uk/ai-youtube-video-generator/" hreflang="uk" lang="uk">Українська</a>
+    <a href="/ja/ai-youtube-video-generator/" hreflang="ja" lang="ja">日本語</a>
+    <a href="/ko/ai-youtube-video-generator/" hreflang="ko" lang="ko">한국어</a>
+    <a href="/zh/ai-youtube-video-generator/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+    <a href="/zh-tw/ai-youtube-video-generator/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+    <a href="/ar/ai-youtube-video-generator/" hreflang="ar" lang="ar">العربية</a>
+    <a href="/he/ai-youtube-video-generator/" hreflang="he" lang="he">עברית</a>
+    <a href="/hi/ai-youtube-video-generator/" hreflang="hi" lang="hi">हिन्दी</a>
+    <a href="/id/ai-youtube-video-generator/" hreflang="id" lang="id">Bahasa Indonesia</a>
+    <b lang="vi">Tiếng Việt</b>
+    <a href="/th/ai-youtube-video-generator/" hreflang="th" lang="th">ไทย</a>
+  </div>
+</nav>
+<!-- /i18n:langs -->
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">
+      <a class="brand" href="/vi/" aria-label="Kleo, trang chủ">
+        <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+          <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+          <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+        </svg>
+        Kleo <span class="tag">MCP</span>
+      </a>
+      <span>Con người đạo diễn. Agent làm phim.</span>
+    </div>
+    <div class="links">
+      <a href="/vi/connect/">Kết nối</a> <a href="/vi/integrations/claude/">Claude</a> <a href="/vi/integrations/chatgpt/">ChatGPT</a> <a href="/vi/video-generation-mcp/">Tài liệu MCP</a> <a href="/vi/examples/">Ví dụ</a> <a href="/vi/styles.html">Phong cách</a> <a href="/vi/pricing/">Bảng giá</a> <a href="/vi/faq/">FAQ</a> <a href="/vi/about/">Giới thiệu</a> <a href="/vi/privacy.html">Quyền riêng tư</a> <a href="/vi/terms.html">Điều khoản</a> <a href="https://github.com/tonnooooo/kleo-mcp">GitHub</a> <a href="mailto:kleooai@gmail.com">kleooai@gmail.com</a>
+    </div>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite">Đã sao chép</div>
+</body>
+</html>

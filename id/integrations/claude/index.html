@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="id" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.remove("no-js")</script>
+<title>Buat Video AI dengan Claude dan Kleo — Panduan Pemasangan</title>
+<meta name="description" content="Tambahkan Kleo ke Claude sebagai konektor kustom, minta film bernarasi, dan dapatkan tautan MP4 4K di chat yang sama: langkah pemasangan, prompt pertama.">
+<link rel="canonical" href="https://kleooai.com/id/integrations/claude/">
+<!-- i18n:head -->
+<link rel="alternate" hreflang="en" href="https://kleooai.com/integrations/claude/">
+<link rel="alternate" hreflang="it" href="https://kleooai.com/it/integrations/claude/">
+<link rel="alternate" hreflang="de" href="https://kleooai.com/de/integrations/claude/">
+<link rel="alternate" hreflang="fr" href="https://kleooai.com/fr/integrations/claude/">
+<link rel="alternate" hreflang="es" href="https://kleooai.com/es/integrations/claude/">
+<link rel="alternate" hreflang="pt" href="https://kleooai.com/pt/integrations/claude/">
+<link rel="alternate" hreflang="nl" href="https://kleooai.com/nl/integrations/claude/">
+<link rel="alternate" hreflang="pl" href="https://kleooai.com/pl/integrations/claude/">
+<link rel="alternate" hreflang="tr" href="https://kleooai.com/tr/integrations/claude/">
+<link rel="alternate" hreflang="ru" href="https://kleooai.com/ru/integrations/claude/">
+<link rel="alternate" hreflang="uk" href="https://kleooai.com/uk/integrations/claude/">
+<link rel="alternate" hreflang="ja" href="https://kleooai.com/ja/integrations/claude/">
+<link rel="alternate" hreflang="ko" href="https://kleooai.com/ko/integrations/claude/">
+<link rel="alternate" hreflang="zh-Hans" href="https://kleooai.com/zh/integrations/claude/">
+<link rel="alternate" hreflang="zh-Hant" href="https://kleooai.com/zh-tw/integrations/claude/">
+<link rel="alternate" hreflang="ar" href="https://kleooai.com/ar/integrations/claude/">
+<link rel="alternate" hreflang="he" href="https://kleooai.com/he/integrations/claude/">
+<link rel="alternate" hreflang="hi" href="https://kleooai.com/hi/integrations/claude/">
+<link rel="alternate" hreflang="id" href="https://kleooai.com/id/integrations/claude/">
+<link rel="alternate" hreflang="vi" href="https://kleooai.com/vi/integrations/claude/">
+<link rel="alternate" hreflang="th" href="https://kleooai.com/th/integrations/claude/">
+<link rel="alternate" hreflang="x-default" href="https://kleooai.com/integrations/claude/">
+<script>(function(){try{var L=["it", "de", "fr", "es", "pt", "nl", "pl", "tr", "ru", "uk", "ja", "ko", "zh", "zh-tw", "ar", "he", "hi", "id", "vi", "th"],A={"zh-hk": "zh-tw", "zh-mo": "zh-tw", "zh-hant": "zh-tw", "zh-hans": "zh", "zh-cn": "zh", "zh-sg": "zh", "nb": "no", "nn": "no"},p=location.pathname,m=p.match(/^\/([a-z]{2}(?:-[a-z]{2})?)(?=\/)/),on=m&&L.indexOf(m[1])>=0?m[1]:"en",rest=on==="en"?p:p.slice(on.length+1),want=null,s=null;try{s=localStorage.getItem("kleo-lang")}catch(e){}if(s==="en"||L.indexOf(s)>=0)want=s;else{var nl=navigator.languages||[navigator.language||""];for(var i=0;i<nl.length&&!want;i++){var t=String(nl[i]).toLowerCase(),b=t.split("-")[0];t=A[t]||t;b=A[b]||b;want=t==="en"||b==="en"?"en":L.indexOf(t)>=0?t:L.indexOf(b)>=0?b:null}}if(want&&want!==on&&!/404/.test(p))location.replace((want==="en"?"":"/"+want)+rest+location.search+location.hash)}catch(e){}})()</script>
+<script type="application/json" id="i18n">{"Language": "Bahasa", "Menu": "Menu", "Close menu": "Tutup menu", "Copied": "Tersalin", "Copied ✓": "Tersalin ✓", "Copy it by hand: {text}": "Salin secara manual: {text}", "Copy the Kleo server address": "Salin alamat server Kleo", "Copy the argument {value}": "Salin argumen {value}", "Copy this prompt": "Salin prompt ini", "Copy the {what} snippet": "Salin cuplikan kode {what}", "Copy the {what} text": "Salin teks {what}", "Treatment · logline, angle, acts · look: realistic": "Treatment · logline, sudut pandang, babak · look: realistis", "Storyboard · direction, scenes, shots · 23 credits, confirmed": "Storyboard · arahan, adegan, shot · 23 kredit, dikonfirmasi", "Generating the shots as footage · 4 of 11 · ~22 min left": "Menghasilkan shot sebagai footage · 4 dari 11 · ~22 menit lagi", "Generating the shots as footage · 8 of 11 · ~12 min left": "Menghasilkan shot sebagai footage · 8 dari 11 · ~12 menit lagi", "Narration · one voice, English · cutting the shots on the words": "Narasi · satu suara, bahasa Inggris · memotong shot mengikuti kata-kata", "Finish · 2160×3840 · 60 fps · quality check": "Penyelesaian · 2160×3840 · 60 fps · pemeriksaan kualitas", "Done · 28 min · link ready for 7 days": "Selesai · 28 menit · tautan tersedia selama 7 hari", "done": "selesai", "running": "berjalan", "A whole number from {min} to {max} seconds": "Bilangan bulat dari {min} sampai {max} detik", "{s} s {product} = {n} credits": "{product} {s} dtk = {n} kredit", "film": "film", "animatic": "animatic"}</script>
+<!-- /i18n:head -->
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kleo AI">
+<meta property="og:locale" content="id_ID">
+<meta property="og:title" content="Buat Video AI dengan Claude dan Kleo — Panduan Pemasangan">
+<meta property="og:description" content="Tambahkan Kleo ke Claude sebagai konektor kustom, minta film bernarasi, dan dapatkan tautan MP4 4K di chat yang sama: langkah pemasangan, prompt pertama.">
+<meta property="og:url" content="https://kleooai.com/id/integrations/claude/">
+<meta property="og:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta property="og:image:alt" content="Kleo AI — Arahan manusia. Film buatan agen.">
+<meta property="og:image:width" content="2400">
+<meta property="og:image:height" content="1260">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Buat Video AI dengan Claude dan Kleo — Panduan Pemasangan">
+<meta name="twitter:description" content="Tambahkan Kleo ke Claude sebagai konektor kustom, minta film bernarasi, dan dapatkan tautan MP4 4K di chat yang sama: langkah pemasangan, prompt pertama.">
+<meta name="twitter:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta name="theme-color" content="#0A0C10">
+<link rel="icon" href="/brand/kleo-favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/brand/kleo-favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/brand/kleo-icon-dark-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/site.css?v=20260920">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://kleooai.com/#website",
+      "name": "Kleo AI",
+      "alternateName": "Kleo",
+      "url": "https://kleooai.com/id/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kleooai.com/id/integrations/claude/#page",
+      "url": "https://kleooai.com/id/integrations/claude/",
+      "name": "Buat Video AI dengan Claude dan Kleo — Panduan Pemasangan",
+      "description": "Tambahkan Kleo ke Claude sebagai konektor kustom, minta film bernarasi, dan dapatkan tautan MP4 4K di chat yang sama: langkah pemasangan, prompt pertama.",
+      "inLanguage": "id",
+      "isPartOf": {
+        "@id": "https://kleooai.com/#website"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Beranda",
+          "item": "https://kleooai.com/id/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Kleo dengan Claude",
+          "item": "https://kleooai.com/id/integrations/claude/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<script src="/site.js?v=20260920" defer></script>
+</head>
+<body>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" aria-label="Utama">
+  <div class="wrap">
+    <a class="brand" href="/id/" aria-label="Kleo, beranda">
+      <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+        <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+        <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+      </svg>
+      Kleo <span class="tag">MCP</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-menu">
+      <svg class="bars" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 5h14M2 9h14M2 13h14"/></svg>
+      <svg class="x" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 4l10 10M14 4L4 14"/></svg>
+    </button>
+    <div class="nav-links" id="site-menu">
+      <a href="/id/ai-youtube-video-generator/">Buat video</a> <a href="/id/examples/">Contoh</a> <a href="/id/styles.html">Look</a> <a href="/id/pricing/">Harga</a> <a href="/id/faq/">FAQ</a>
+    </div>
+    <a class="btn btn-primary btn-sm" href="/id/connect/">Hubungkan Kleo</a>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="page-hero hero" id="top">
+  <div class="wrap">
+    <div>
+      <nav class="crumbs" aria-label="Jejak navigasi">
+        <a href="/id/">Beranda</a> <span aria-hidden="true">›</span> <a href="/id/connect/">Hubungkan</a> <span aria-hidden="true">›</span> <span>Claude</span>
+      </nav>
+      <h1>Buat video dengan<br><span class="hl">Claude dan Kleo.</span></h1>
+      <p class="lede">Claude adalah tempat Anda mengarahkan film. Kleo, yang ditambahkan ke Claude sebagai konektor kustom, menghasilkan footage, narasi, dan MP4 4K yang sudah jadi, dan tautannya masuk ke chat yang sama.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/id/connect/">Hubungkan Kleo <span class="arr" aria-hidden="true">→</span></a> <a class="btn btn-ghost" href="/id/examples/">Tonton film contoh</a> <a class="btn btn-ghost" href="#setup">Langkah pemasangan <span class="arr" aria-hidden="true">↓</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SETUP ============ -->
+<section id="setup">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">01</span>Pemasangan</div>
+        <h2>Tambahkan Kleo ke Claude.</h2>
+      </div>
+    </div>
+    <div class="split">
+      <div>
+        <p class="lede">Kleo adalah server MCP jarak jauh. Tidak ada aplikasi yang perlu dipasang dan tidak ada formulir pendaftaran: Claude menjangkaunya melalui konektor kustom, dan menghubungkannya cukup satu tombol di halaman Kleo sendiri. Langkah-langkah di bawah ini sama di aplikasi Claude dan di web, dan berfungsi di setiap paket Claude; paket gratis mengizinkan satu konektor kustom.</p>
+      </div>
+      <div class="panel">
+        <ol>
+          <li>Buka <b>Settings → Connectors</b> di Claude dan pilih <b>Add custom connector</b>.</li>
+          <li>Beri nama <b>Kleo</b>, tempel alamat di bawah, lalu konfirmasi.</li>
+          <li>Halaman Kleo terbuka: klik <b>Start free</b>. Anda kembali ke Claude, dengan 7 kredit di akun Kleo baru Anda. Tanpa formulir, tanpa kata sandi, tanpa kartu: cukup untuk animatic 5 kredit. Film hanya dibuat untuk akun yang sudah membeli paket dan berharga minimal 10 kredit, jadi paket €5 (10 kredit) dibeli sebelum film pertama; film 30 detik berharga 15.</li>
+          <li>Di chat baru, aktifkan Kleo dari menu tools dan minta filmnya.</li>
+        </ol>
+        <div class="url-line">Alamat server <code>https://mcp.kleooai.com/mcp</code> <button class="btn btn-ghost btn-sm" type="button" data-copy="https://mcp.kleooai.com/mcp">Salin</button></div>
+        <p>Claude adalah asisten buatan Anthropic. Kleo adalah layanan terpisah yang dijangkau Claude melalui konektor kustom; alamat yang sama bekerja di ChatGPT, Grok, Claude Code, Cursor, dan klien MCP lain mana pun — lihat <a href="/id/connect/">halaman koneksi</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FIRST PROMPT ============ -->
+<section id="first-prompt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">02</span>Prompt pertama</div>
+        <h2>Minta film yang Anda inginkan.</h2>
+      </div>
+      <p class="lede">Sebutkan subjek, durasi, format, dan look dalam satu pesan. Audiens, nada, dan apa pun yang harus muncul dalam film bersifat opsional. Apa pun yang terlewat dari permintaan Anda, Claude menanyakannya sebelum merencanakan apa pun; ia tidak pernah memilihkan durasi, format, atau look untuk Anda.</p>
+    </div>
+    <div class="split">
+      <div>
+        <p class="style-say copyable">“Gunakan Kleo untuk membuat film 30 detik tentang perahu kayu kecil yang menyeberangi danau yang tenang saat fajar. Look realistis, 16:9, narasi bahasa Inggris, nada tenang. Tunjukkan treatment dan jumlah kredit yang pasti sebelum Anda memulai render.”<button class="btn btn-ghost btn-sm copy" type="button" data-copy="Use Kleo to make a 30-second film about a small wooden boat crossing a quiet lake at dawn. Realistic look, 16:9, English narration, a calm tone. Show me the treatment and the exact credits before you start the render.">Salin</button></p>
+      </div>
+      <ul class="defs">
+        <li><b>Look</b><span>Dua look tersedia: <b>realistis</b>, footage live-action yang dihasilkan dengan nuansa sinematik, dan <b>animasi</b>, film animasi 2D. <a href="/id/styles.html">Lihat look film →</a></span></li>
+        <li><b>Format</b><span>16:9 untuk YouTube atau 9:16 untuk Short.</span></li>
+        <li><b>Durasi</b><span>15 detik sampai 5 menit.</span></li>
+        <li><b>Narasi</b><span>Bahasa Inggris atau Italia.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ IN THE CHAT ============ -->
+<section id="in-the-chat">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">03</span>Di dalam chat</div>
+        <h2>Apa yang terjadi selanjutnya di chat.</h2>
+      </div>
+      <p class="lede">Tool Kleo berjalan dalam urutan yang tetap dan Claude menjalankannya untuk Anda. Anda membaca, mengoreksi, dan menyetujui di setiap langkah; tidak ada yang ditagih sampai Anda memberi lampu hijau dan job diterima.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="num" aria-hidden="true">01</span> <span class="tc">kleo_adapt_prompt</span>
+        <h3>Treatment</h3>
+        <p>Claude membaca permintaan Anda berdasarkan intake Kleo. Subjek, durasi, format, dan look wajib; audiens, nada, dan apa yang harus muncul bersifat opsional. Apa pun yang kurang, ia menanyakannya dalam satu pesan. Lalu ia menunjukkan treatment-nya kepada Anda: logline, sudut pandang, gambar pembuka, babak, penutup, look, tempo, dan narator. Ubah apa pun sebelum melanjutkan.</p>
+      </div>
+      <div class="step">
+        <span class="num" aria-hidden="true">02</span> <span class="tc">kleo_storyboard_guide</span>
+        <h3>Storyboard</h3>
+        <p>Claude mengambil panduan storyboard Kleo (blok arahan, adegan, shot, dan batasannya) dan menulis storyboard berdasarkan treatment yang Anda setujui. Di sinilah filmnya dibuat; bacalah dan minta perubahan.</p>
+      </div>
+      <div class="step">
+        <span class="num" aria-hidden="true">03</span> <span class="tc">kleo_create_video</span>
+        <h3>Render</h3>
+        <p>Kleo memeriksa semuanya dan menjawab dengan jumlah kredit yang pasti untuk film itu. Dengan persetujuan Anda, Claude memulai render di GPU yang disewa untuk job itu saja. Tidak ada yang ditagih sebelum job diterima, dan panggilan yang ditolak tidak berbiaya apa pun.</p>
+      </div>
+      <div class="step">
+        <span class="num" aria-hidden="true">04</span> <span class="tc">kleo_wait_for_video</span>
+        <h3>Tautan</h3>
+        <p>Claude menunggu render, melaporkan progresnya, sampai Kleo menyerahkan tautan ke MP4 yang sudah jadi, biasanya 25–35 menit kemudian. Tautannya berlaku selama 7 hari. Kleo tidak pernah menerbitkan film ke mana pun: Anda mengunduhnya dan mempostingnya di mana pun Anda mau.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT YOU GET ============ -->
+<section id="what-you-get">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">04</span>Filmnya</div>
+        <h2>Apa yang Anda dapatkan.</h2>
+      </div>
+    </div>
+    <ul class="style-facts auto">
+      <li><b>Keluaran</b><span>MP4 dalam 4K (3840×2160 atau 2160×3840) pada 60 fps: 16:9 untuk YouTube, 9:16 untuk Short.</span></li>
+      <li><b>Durasi</b><span>Film 15 detik sampai 5 menit; animatic 15 sampai 60 detik.</span></li>
+      <li><b>Look</b><span>Realistis (footage live-action yang dihasilkan, sinematik) atau animasi (film animasi 2D). Dalam sebuah film setiap shot dihasilkan sebagai footage bergerak dari frame-nya sendiri.</span></li>
+      <li><b>Produk</b><span>Film, atau animatic dari storyboard yang sama: frame gambar di bawah kamera yang bergerak, narator dan lapisan grafis yang sama, tanpa klip yang dihasilkan. Setiap akun bisa memesan animatic; film hanya dibuat untuk akun yang sudah membeli paket.</span></li>
+      <li><b>Narasi</b><span>Satu narator, bahasa Inggris atau Italia. Tanpa musik latar, tanpa takarir, tanpa teks di layar.</span></li>
+      <li><b>Kredit</b><span>Film: 1 kredit = 2 detik, dibulatkan ke atas, minimal 10 kredit: 15 dtk = 10, 30 dtk = 15, 60 dtk = 30, 5 mnt = 150. Animatic: 5 kredit flat. Anda mulai dengan 7 kredit; paketnya €5 = 10, €15 = 35, €40 = 100, dibayar sekali, tanpa langganan.</span></li>
+      <li><b>Waktu</b><span>Render biasanya memakan waktu 25–35 menit di GPU sewaan; Kleo memberi tahu perkiraannya di chat.</span></li>
+    </ul>
+    <p><a href="/id/pricing/">Lihat harga sebuah film →</a></p>
+  </div>
+</section>
+
+<!-- ============ TROUBLESHOOTING ============ -->
+<section id="troubleshooting">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">05</span>Pemecahan masalah</div>
+        <h2>Jika ada yang tidak berfungsi.</h2>
+      </div>
+    </div>
+    <div class="faq">
+      <div>
+        <details>
+          <summary>Kleo tidak muncul di Claude.</summary>
+          <p>Periksa alamat yang Anda tempel: harus persis https://mcp.kleooai.com/mcp, dengan https dan tanpa apa pun setelah /mcp. Tambahkan konektornya lagi dengan nama Kleo. Setelah ditambahkan, ia masih nonaktif di chat sampai Anda mengaktifkannya: buka chat baru dan aktifkan Kleo dari menu tools. Di paket gratis hanya satu konektor kustom yang diizinkan, jadi Kleo harus menjadi yang satu itu.</p>
+        </details>
+        <details>
+          <summary>Halaman Kleo tidak pernah terbuka, atau jendelanya diblokir.</summary>
+          <p>Saat Anda mengonfirmasi konektor, Claude membuka halaman Kleo untuk masuk: satu tombol Start free, tidak ada yang perlu diisi. Jika browser Anda memblokirnya sebagai pop-up, izinkan pop-up untuk Claude dan konfirmasi konektornya lagi; halamannya terbuka, Anda mengklik Start free dan Anda kembali ke Claude.</p>
+        </details>
+        <details>
+          <summary>Kredit tidak cukup.</summary>
+          <p>Menghubungkan memberi Anda 7 kredit: kredit itu membeli animatic (5), tidak pernah film. Film hanya dibuat untuk akun yang sudah membeli paket, dan film 30 detik berharga 15 kredit: dengan paket €5 (10 kredit) Anda punya 17 dan render bisa dimulai. Minta halaman akun Kleo Anda kepada Claude (kleo_account): halaman itu menampilkan saldo dan tautan pembayaran (€5 = 10 kredit, €15 = 35, €40 = 100; pembayaran sekali bayar dalam EUR, tanpa langganan). Panggilan yang ditolak tidak menagih apa pun.</p>
+        </details>
+      </div>
+      <div>
+        <details>
+          <summary>Waktu tunggu habis sebelum film siap.</summary>
+          <p>Render yang panjang bisa melampaui satu panggilan tool, tetapi job-nya tetap berjalan di GPU-nya. Minta status job kepada Claude (kleo_get_job) atau minta menunggu lagi (kleo_wait_for_video), lalu minta tautannya (kleo_get_result). Jangan meminta film kedua untuk memeriksa yang pertama.</p>
+        </details>
+        <details>
+          <summary>Anda ingin menghentikan render.</summary>
+          <p>Minta Claude membatalkan job (kleo_cancel_job). Render berhenti dan kredit yang belum terpakai kembali ke saldo Anda.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ START ============ -->
+<section class="cta one" id="start">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow"><span class="n">06</span>Mulai</div>
+      <h2>Claude adalah tempat Anda mengarahkan film.</h2>
+      <p class="lede">Memakai ChatGPT? <a href="/id/integrations/chatgpt/">Kleo dengan ChatGPT →</a></p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/id/connect/">Hubungkan Kleo <span class="arr" aria-hidden="true">→</span></a> <a class="btn btn-ghost" href="/id/faq/">Baca FAQ</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<!-- i18n:langs -->
+<nav class="langs" aria-label="Bahasa">
+  <div class="wrap">
+    <span>Bahasa</span>
+    <a href="/integrations/claude/" hreflang="en" lang="en">English</a>
+    <a href="/it/integrations/claude/" hreflang="it" lang="it">Italiano</a>
+    <a href="/de/integrations/claude/" hreflang="de" lang="de">Deutsch</a>
+    <a href="/fr/integrations/claude/" hreflang="fr" lang="fr">Français</a>
+    <a href="/es/integrations/claude/" hreflang="es" lang="es">Español</a>
+    <a href="/pt/integrations/claude/" hreflang="pt" lang="pt">Português</a>
+    <a href="/nl/integrations/claude/" hreflang="nl" lang="nl">Nederlands</a>
+    <a href="/pl/integrations/claude/" hreflang="pl" lang="pl">Polski</a>
+    <a href="/tr/integrations/claude/" hreflang="tr" lang="tr">Türkçe</a>
+    <a href="/ru/integrations/claude/" hreflang="ru" lang="ru">Русский</a>
+    <a href="/uk/integrations/claude/" hreflang="uk" lang="uk">Українська</a>
+    <a href="/ja/integrations/claude/" hreflang="ja" lang="ja">日本語</a>
+    <a href="/ko/integrations/claude/" hreflang="ko" lang="ko">한국어</a>
+    <a href="/zh/integrations/claude/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+    <a href="/zh-tw/integrations/claude/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+    <a href="/ar/integrations/claude/" hreflang="ar" lang="ar">العربية</a>
+    <a href="/he/integrations/claude/" hreflang="he" lang="he">עברית</a>
+    <a href="/hi/integrations/claude/" hreflang="hi" lang="hi">हिन्दी</a>
+    <b lang="id">Bahasa Indonesia</b>
+    <a href="/vi/integrations/claude/" hreflang="vi" lang="vi">Tiếng Việt</a>
+    <a href="/th/integrations/claude/" hreflang="th" lang="th">ไทย</a>
+  </div>
+</nav>
+<!-- /i18n:langs -->
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">
+      <a class="brand" href="/id/" aria-label="Kleo, beranda">
+        <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+          <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+          <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+        </svg>
+        Kleo <span class="tag">MCP</span>
+      </a>
+      <span>Arahan manusia. Film buatan agen.</span>
+    </div>
+    <div class="links">
+      <a href="/id/connect/">Hubungkan</a> <a href="/id/integrations/claude/">Claude</a> <a href="/id/integrations/chatgpt/">ChatGPT</a> <a href="/id/video-generation-mcp/">Dokumentasi MCP</a> <a href="/id/examples/">Contoh</a> <a href="/id/styles.html">Look</a> <a href="/id/pricing/">Harga</a> <a href="/id/faq/">FAQ</a> <a href="/id/about/">Tentang</a> <a href="/id/privacy.html">Privasi</a> <a href="/id/terms.html">Ketentuan</a> <a href="https://github.com/tonnooooo/kleo-mcp">GitHub</a> <a href="mailto:kleooai@gmail.com">kleooai@gmail.com</a>
+    </div>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite">Tersalin</div>
+</body>
+</html>

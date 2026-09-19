@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="ko" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.remove("no-js")</script>
+<title>Kleo AI 영상 예시 — 필름 네 편과 샷 세 개</title>
+<meta name="description" content="Kleo 필름 네 편(Tether, Apex, Signal Delay의 오프닝, 문어를 다룬 애니메이션 쇼츠)과 각각 몇 초짜리 생성된 단일 샷 세 개.">
+<link rel="canonical" href="https://kleooai.com/ko/examples/">
+<!-- i18n:head -->
+<link rel="alternate" hreflang="en" href="https://kleooai.com/examples/">
+<link rel="alternate" hreflang="it" href="https://kleooai.com/it/examples/">
+<link rel="alternate" hreflang="de" href="https://kleooai.com/de/examples/">
+<link rel="alternate" hreflang="fr" href="https://kleooai.com/fr/examples/">
+<link rel="alternate" hreflang="es" href="https://kleooai.com/es/examples/">
+<link rel="alternate" hreflang="pt" href="https://kleooai.com/pt/examples/">
+<link rel="alternate" hreflang="nl" href="https://kleooai.com/nl/examples/">
+<link rel="alternate" hreflang="pl" href="https://kleooai.com/pl/examples/">
+<link rel="alternate" hreflang="tr" href="https://kleooai.com/tr/examples/">
+<link rel="alternate" hreflang="ru" href="https://kleooai.com/ru/examples/">
+<link rel="alternate" hreflang="uk" href="https://kleooai.com/uk/examples/">
+<link rel="alternate" hreflang="ja" href="https://kleooai.com/ja/examples/">
+<link rel="alternate" hreflang="ko" href="https://kleooai.com/ko/examples/">
+<link rel="alternate" hreflang="zh-Hans" href="https://kleooai.com/zh/examples/">
+<link rel="alternate" hreflang="zh-Hant" href="https://kleooai.com/zh-tw/examples/">
+<link rel="alternate" hreflang="ar" href="https://kleooai.com/ar/examples/">
+<link rel="alternate" hreflang="he" href="https://kleooai.com/he/examples/">
+<link rel="alternate" hreflang="hi" href="https://kleooai.com/hi/examples/">
+<link rel="alternate" hreflang="id" href="https://kleooai.com/id/examples/">
+<link rel="alternate" hreflang="vi" href="https://kleooai.com/vi/examples/">
+<link rel="alternate" hreflang="th" href="https://kleooai.com/th/examples/">
+<link rel="alternate" hreflang="x-default" href="https://kleooai.com/examples/">
+<script>(function(){try{var L=["it", "de", "fr", "es", "pt", "nl", "pl", "tr", "ru", "uk", "ja", "ko", "zh", "zh-tw", "ar", "he", "hi", "id", "vi", "th"],A={"zh-hk": "zh-tw", "zh-mo": "zh-tw", "zh-hant": "zh-tw", "zh-hans": "zh", "zh-cn": "zh", "zh-sg": "zh", "nb": "no", "nn": "no"},p=location.pathname,m=p.match(/^\/([a-z]{2}(?:-[a-z]{2})?)(?=\/)/),on=m&&L.indexOf(m[1])>=0?m[1]:"en",rest=on==="en"?p:p.slice(on.length+1),want=null,s=null;try{s=localStorage.getItem("kleo-lang")}catch(e){}if(s==="en"||L.indexOf(s)>=0)want=s;else{var nl=navigator.languages||[navigator.language||""];for(var i=0;i<nl.length&&!want;i++){var t=String(nl[i]).toLowerCase(),b=t.split("-")[0];t=A[t]||t;b=A[b]||b;want=t==="en"||b==="en"?"en":L.indexOf(t)>=0?t:L.indexOf(b)>=0?b:null}}if(want&&want!==on&&!/404/.test(p))location.replace((want==="en"?"":"/"+want)+rest+location.search+location.hash)}catch(e){}})()</script>
+<script type="application/json" id="i18n">{"Language": "언어", "Menu": "메뉴", "Close menu": "메뉴 닫기", "Copied": "복사됨", "Copied ✓": "복사됨 ✓", "Copy it by hand: {text}": "직접 복사하세요: {text}", "Copy the Kleo server address": "Kleo 서버 주소 복사", "Copy the argument {value}": "인수 {value} 복사", "Copy this prompt": "이 프롬프트 복사", "Copy the {what} snippet": "{what} 스니펫 복사", "Copy the {what} text": "{what} 텍스트 복사", "Treatment · logline, angle, acts · look: realistic": "트리트먼트 · 로그라인, 앵글, 막 구성 · 룩: 리얼리스틱", "Storyboard · direction, scenes, shots · 23 credits, confirmed": "스토리보드 · 연출, 장면, 샷 · 23크레딧, 확정", "Generating the shots as footage · 4 of 11 · ~22 min left": "샷을 푸티지로 생성 중 · 11개 중 4개 · 약 22분 남음", "Generating the shots as footage · 8 of 11 · ~12 min left": "샷을 푸티지로 생성 중 · 11개 중 8개 · 약 12분 남음", "Narration · one voice, English · cutting the shots on the words": "내레이션 · 한 목소리, 영어 · 말에 맞춰 샷을 편집하는 중", "Finish · 2160×3840 · 60 fps · quality check": "마무리 · 2160×3840 · 60 fps · 품질 확인", "Done · 28 min · link ready for 7 days": "완료 · 28분 · 링크는 7일간 유효", "done": "완료", "running": "실행 중", "A whole number from {min} to {max} seconds": "{min}초에서 {max}초 사이의 정수", "{s} s {product} = {n} credits": "{s}초 {product} = {n}크레딧", "film": "필름", "animatic": "애니매틱"}</script>
+<!-- /i18n:head -->
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kleo AI">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="Kleo AI 영상 예시 — 필름 네 편과 샷 세 개">
+<meta property="og:description" content="Kleo 필름 네 편(Tether, Apex, Signal Delay의 오프닝, 문어를 다룬 애니메이션 쇼츠)과 각각 몇 초짜리 생성된 단일 샷 세 개.">
+<meta property="og:url" content="https://kleooai.com/ko/examples/">
+<meta property="og:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta property="og:image:alt" content="Kleo AI — 사람이 연출하고, 에이전트가 필름을 만듭니다.">
+<meta property="og:image:width" content="2400">
+<meta property="og:image:height" content="1260">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kleo AI 영상 예시 — 필름 네 편과 샷 세 개">
+<meta name="twitter:description" content="Kleo 필름 네 편(Tether, Apex, Signal Delay의 오프닝, 문어를 다룬 애니메이션 쇼츠)과 각각 몇 초짜리 생성된 단일 샷 세 개.">
+<meta name="twitter:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta name="theme-color" content="#0A0C10">
+<link rel="icon" href="/brand/kleo-favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/brand/kleo-favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/brand/kleo-icon-dark-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/site.css?v=20260920">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://kleooai.com/#website",
+      "name": "Kleo AI",
+      "alternateName": "Kleo",
+      "url": "https://kleooai.com/ko/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kleooai.com/ko/examples/#page",
+      "url": "https://kleooai.com/ko/examples/",
+      "name": "Kleo AI 영상 예시 — 필름 네 편과 샷 세 개",
+      "description": "Kleo 필름 네 편(Tether, Apex, Signal Delay의 오프닝, 문어를 다룬 애니메이션 쇼츠)과 각각 몇 초짜리 생성된 단일 샷 세 개.",
+      "inLanguage": "ko",
+      "isPartOf": {
+        "@id": "https://kleooai.com/#website"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "홈",
+          "item": "https://kleooai.com/ko/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "예시",
+          "item": "https://kleooai.com/ko/examples/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<script src="/site.js?v=20260920" defer></script>
+</head>
+<body>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" aria-label="메인">
+  <div class="wrap">
+    <a class="brand" href="/ko/" aria-label="Kleo, 홈">
+      <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+        <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+        <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+      </svg>
+      Kleo <span class="tag">MCP</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="메뉴" aria-expanded="false" aria-controls="site-menu">
+      <svg class="bars" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 5h14M2 9h14M2 13h14"/></svg>
+      <svg class="x" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 4l10 10M14 4L4 14"/></svg>
+    </button>
+    <div class="nav-links" id="site-menu">
+      <a href="/ko/ai-youtube-video-generator/">영상 만들기</a> <a href="/ko/examples/" aria-current="page">예시</a> <a href="/ko/styles.html">룩</a> <a href="/ko/pricing/">요금</a> <a href="/ko/faq/">FAQ</a>
+    </div>
+    <a class="btn btn-primary btn-sm" href="/ko/connect/">Kleo 연결하기</a>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="page-hero hero" id="top">
+  <div class="wrap">
+    <div>
+      <nav class="crumbs" aria-label="탐색 경로"><a href="/ko/">홈</a><span aria-hidden="true">›</span><span>예시</span></nav>
+      <h1>필름 네 편,<br><span class="hl">룩 두 가지.</span></h1>
+      <p class="lede">리얼리스틱 룩으로 만든 Tether(20초, 원 테이크), Apex(터널을 빠져나오는 두 대의 차), 다큐멘터리 Signal Delay의 첫 1분. 그리고 애니메이션 룩으로 만든, 문어에게 심장이 세 개인 이유를 다룬 애니메이션 쇼츠. 모두 4K 60 fps 마스터를 1080p로 보여드립니다. 이 페이지에는 포스터가 있고, 각 필름은 자기 페이지에서 음소거로 재생됩니다. 필름 아래에는 Kleo에서 바로 나온 몇 초짜리 단일 샷 세 개가 있습니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FILMS ============ -->
+<section id="films">
+  <div class="wrap">
+
+    <article class="sample" id="tether">
+      <a class="poster" href="/ko/examples/tether/">
+        <img src="/samples/realistic-tether.jpg" alt="Tether: 바이저 너머로 보이는 우주비행사, 헬멧에 올린 장갑 낀 손, 붉게 빛나는 유리, 뒤로 별 하나" width="1920" height="1080">
+        <span class="play"><i aria-hidden="true">▶</i>Tether 보기</span>
+      </a>
+      <div>
+        <div class="style-n" style="--c:var(--teal)">리얼리스틱 · 20초 · 원 테이크 · 16:9</div>
+        <h2>Tether</h2>
+        <p class="style-lead">끊김 없는 풀백 한 번. 헬멧 안, 우주비행사의 얼굴과 유리에 서린 숨결에서 시작합니다. 장갑 낀 손이 올라오고, 바이저가 붉게 물들고, 그가 두 팔을 벌린 채 떠내려가는 동안 카메라는 계속 물러나다가, 그의 팩에서 위로 뻗은 금빛 줄이 정거장과 태양전지판에 닿습니다. 모든 프레임이 생성된 푸티지입니다.</p>
+        <p class="style-lead">말은 한마디도 없습니다. 숨소리와 낮은 웅웅거림뿐입니다. 4K 60 fps, 1080p로 표시.</p>
+        <a class="btn btn-ghost" href="/ko/examples/tether/">Tether 보기 <span class="arr" aria-hidden="true">→</span></a>
+      </div>
+    </article>
+
+    <article class="sample" id="signal-delay">
+      <a class="poster" href="/ko/examples/signal-delay/">
+        <img src="/samples/realistic-signal.jpg" alt="Signal Delay: 호박빛 터미널 앞에 줄지어 앉은 엔지니어들 뒤에서 본 1977년 관제실, 구석에 지구 시간과 보이저 시간을 가리키는 시계 두 개, 아래쪽에 구형파 판독값" width="1920" height="1080">
+        <span class="play"><i aria-hidden="true">▶</i>오프닝 보기</span>
+      </a>
+      <div>
+        <div class="style-n" style="--c:var(--teal)">리얼리스틱 · 다큐멘터리 · 첫 1분</div>
+        <h2>Signal Delay</h2>
+        <p class="style-lead">다섯 달의 미션 로그로 풀어낸 다큐멘터리. 2023년 11월 14일, 보이저 1호가 0과 1의 한 패턴만 반복하기 시작했고, 질문 하나마다 45시간의 광속 왕복 시간이 들었습니다. 내레이터 한 명이 판독값, 고장 난 칩, 1970년대 어셈블리로 손수 옮긴 코드를 차례로 짚어갑니다. 천천히 밀고 들어가는 사진 스틸, 손으로 그린 호박색 도표, 터미널 창, 검은 배경 위의 날짜, 구석의 시계 두 개, 35 mm 그레인, 2.39:1, 잔잔한 배경 음악과 자막. 모두 이 필름의 트리트먼트가 직접 요청한 것들입니다.</p>
+        <p class="style-lead">Kleo의 리얼리스틱 룩으로 렌더링. 전체 필름은 6분 55초이고, 사이트에서는 첫 1분(0:00–1:02)을 보여드립니다. 4K 60 fps, 1080p로 표시.</p>
+        <a class="btn btn-ghost" href="/ko/examples/signal-delay/">오프닝 보기 <span class="arr" aria-hidden="true">→</span></a>
+      </div>
+    </article>
+
+    <article class="sample" id="apex">
+      <a class="poster" href="/ko/examples/apex/">
+        <img src="/samples/realistic-apex.jpg" alt="Apex: 호박빛 조명의 터널 안에 나란히 선 노란 슈퍼카와 연녹색 클래식 쿠페, 헬멧을 쓴 운전자들" width="1920" height="1080">
+        <span class="play"><i aria-hidden="true">▶</i>Apex 보기</span>
+      </a>
+      <div>
+        <div class="style-n" style="--c:var(--teal)">리얼리스틱 · 20초 · 16:9</div>
+        <h2>Apex</h2>
+        <p class="style-lead">노란 슈퍼카와 연녹색 클래식 쿠페가 호박빛 조명의 터널을 나란히 달려 빠져나온 뒤, 골든아워의 해안 도로로 들어섭니다. 옆으로는 잔잔하고 환한 바다. 모든 프레임이 생성된 푸티지이며, 두 대의 차는 첫 프레임부터 마지막 프레임까지 같은 두 대로 남아 있습니다.</p>
+        <p class="style-lead">Kleo의 리얼리스틱 룩. 4K 60 fps 마스터를 1080p로 표시, 음소거, 전체 화면 없음.</p>
+        <a class="btn btn-ghost" href="/ko/examples/apex/">Apex 보기 <span class="arr" aria-hidden="true">→</span></a>
+      </div>
+    </article>
+
+    <article class="sample" id="octopus">
+      <a class="poster tall" href="/ko/examples/octopus/">
+        <img src="/samples/animation-octopus.jpg" alt="파란 바다 위에 그려진 큰 눈의 붉은 문어, 프레임을 가로지르는 THREE HEARTS BLUE BLOOD 글자" width="608" height="1080">
+        <span class="play"><i aria-hidden="true">▶</i>쇼츠 보기</span>
+      </a>
+      <div>
+        <div class="style-n" style="--c:var(--amber)">애니메이션 · 32초 · 9:16</div>
+        <h2>Why Octopuses Have 3 Hearts and Blue Blood</h2>
+        <p class="style-lead">연결된 어시스턴트가 문장 하나로 혼자 만든 세로형 애니메이션 쇼츠. 모든 프레임에 등장하는 그림체의 붉은 문어, 각각의 알약 라벨이 붙은 네 개의 챕터, 한 단어만 노란색인 큼직하게 맞춘 타이틀, 그리고 영어 내레이터가 말하는 순간에 맞춰 밝아지는 노래방식 자막. 철이 아니라 구리. 그래서 피가 파랗습니다.</p>
+        <p class="style-lead">Kleo의 애니메이션 룩. 4K 60 fps 마스터를 1080p로 표시.</p>
+        <a class="btn btn-ghost" href="/ko/examples/octopus/">쇼츠 보기 <span class="arr" aria-hidden="true">→</span></a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ============ SHOTS ============ -->
+<section id="shots">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">01</span>샷</div>
+        <h2>단일 샷,<br>각각 몇 초.</h2>
+      </div>
+      <p class="lede">필름은 이런 샷들로 만들어집니다. 각 샷은 각자의 프레임에서 리얼리스틱 룩의 움직이는 푸티지로 생성되어 Kleo에서 바로 나옵니다. 4.5초, 9:16, 컷 없음. 화면에 보이는 동안 여기서 음소거로 저절로 재생됩니다.</p>
+    </div>
+    <div class="shots-row">
+      <div class="shot-card">
+        <div class="style-media">
+          <video src="/samples/shot-cameraman.mp4" poster="/samples/shot-cameraman.jpg" width="1440" height="2528" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" aria-label="밝은 창가에서 삼각대 위 필름 카메라 앞에 선 남자, 셔츠 위로 따뜻한 빛. 그가 렌즈 쪽으로 고개를 돌린다"></video>
+          <span class="style-live" aria-hidden="true"><i></i>재생 중</span>
+        </div>
+        <div class="film-cap"><b>카메라맨</b><span>4초 · 9:16</span></div>
+        <p class="film-note">삼각대 위 필름 카메라 앞에 선 남자, 뒤로는 밝은 창, 셔츠 위로 따뜻한 빛. 그가 렌즈 쪽으로 고개를 돌렸다가 다시 뷰파인더로 돌아갑니다.</p>
+      </div>
+      <div class="shot-card">
+        <div class="style-media">
+          <video src="/samples/shot-moon.mp4" poster="/samples/shot-moon.jpg" width="1440" height="2528" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" aria-label="청록빛 저녁 하늘 아래 기와지붕과 지붕창 위로 뜬 차오르는 달. 카메라가 천천히 흐른다"></video>
+          <span class="style-live" aria-hidden="true"><i></i>재생 중</span>
+        </div>
+        <div class="film-cap"><b>지붕 위의 달</b><span>4초 · 9:16</span></div>
+        <p class="film-note">기와지붕과 지붕창 위로 뜬 차오르는 달, 옅은 구름이 낀 청록빛 저녁 하늘. 카메라가 흐르고, 달이 프레임을 가로질러 미끄러집니다.</p>
+      </div>
+      <div class="shot-card">
+        <div class="style-media">
+          <video src="/samples/shot-dunes.mp4" poster="/samples/shot-dunes.jpg" width="1440" height="2528" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" aria-label="지팡이를 든 세 사람, 아이 하나와 어른 둘이 햇빛 비치는 사구를 태양을 향해 넘어간다, 공중에 먼지"></video>
+          <span class="style-live" aria-hidden="true"><i></i>재생 중</span>
+        </div>
+        <div class="film-cap"><b>사구</b><span>4초 · 9:16</span></div>
+        <p class="film-note">지팡이를 든 세 사람, 아이 하나와 어른 둘이 태양을 정면으로 향해 사구를 넘어갑니다. 빛 속에 먼지가 떠 있고, 그림자가 모래 위로 길게 뒤로 뻗습니다.</p>
+      </div>
+    </div>
+    <p class="scene-foot">필름에서는 이런 샷들이 내레이션에 맞춰 편집됩니다. 각 샷이 무엇을 보여줄지는 트리트먼트가 정하고, 스토리보드가 묘사합니다. <a href="/ko/styles.html">룩 보기 →</a></p>
+  </div>
+</section>
+
+<!-- ============ YOUR OWN FILM ============ -->
+<section class="cta one" id="your-film">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow"><span class="n">02</span>시작</div>
+      <h2>당신만의 필름.</h2>
+      <p class="lede">어시스턴트에게 주제, 길이, 포맷, 그리고 룩(리얼리스틱 또는 애니메이션)을 말하세요. Kleo가 빠진 것을 묻고, 트리트먼트를 돌려주고, 스토리보드를 안내하고, 청구 전에 정확한 크레딧을 알려줍니다. 필름은 15초에서 5분, 16:9 또는 9:16, 4K 60 fps, 영어 또는 이탈리아어 내레이터 한 명. 같은 스토리보드의 애니매틱은 5크레딧으로 15초에서 60초 분량의 미리보기를 만듭니다. 완성된 MP4는 7일간 유효한 링크로 돌아옵니다.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/ko/connect/">Kleo 연결하기 <span class="arr" aria-hidden="true">→</span></a> <a class="btn btn-ghost" href="/ko/pricing/">요금 보기</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<!-- i18n:langs -->
+<nav class="langs" aria-label="언어">
+  <div class="wrap">
+    <span>언어</span>
+    <a href="/examples/" hreflang="en" lang="en">English</a>
+    <a href="/it/examples/" hreflang="it" lang="it">Italiano</a>
+    <a href="/de/examples/" hreflang="de" lang="de">Deutsch</a>
+    <a href="/fr/examples/" hreflang="fr" lang="fr">Français</a>
+    <a href="/es/examples/" hreflang="es" lang="es">Español</a>
+    <a href="/pt/examples/" hreflang="pt" lang="pt">Português</a>
+    <a href="/nl/examples/" hreflang="nl" lang="nl">Nederlands</a>
+    <a href="/pl/examples/" hreflang="pl" lang="pl">Polski</a>
+    <a href="/tr/examples/" hreflang="tr" lang="tr">Türkçe</a>
+    <a href="/ru/examples/" hreflang="ru" lang="ru">Русский</a>
+    <a href="/uk/examples/" hreflang="uk" lang="uk">Українська</a>
+    <a href="/ja/examples/" hreflang="ja" lang="ja">日本語</a>
+    <b lang="ko">한국어</b>
+    <a href="/zh/examples/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+    <a href="/zh-tw/examples/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+    <a href="/ar/examples/" hreflang="ar" lang="ar">العربية</a>
+    <a href="/he/examples/" hreflang="he" lang="he">עברית</a>
+    <a href="/hi/examples/" hreflang="hi" lang="hi">हिन्दी</a>
+    <a href="/id/examples/" hreflang="id" lang="id">Bahasa Indonesia</a>
+    <a href="/vi/examples/" hreflang="vi" lang="vi">Tiếng Việt</a>
+    <a href="/th/examples/" hreflang="th" lang="th">ไทย</a>
+  </div>
+</nav>
+<!-- /i18n:langs -->
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">
+      <a class="brand" href="/ko/" aria-label="Kleo, 홈">
+        <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+          <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+          <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+        </svg>
+        Kleo <span class="tag">MCP</span>
+      </a>
+      <span>사람이 연출하고, 에이전트가 필름을 만듭니다.</span>
+    </div>
+    <div class="links">
+      <a href="/ko/connect/">연결</a> <a href="/ko/integrations/claude/">Claude</a> <a href="/ko/integrations/chatgpt/">ChatGPT</a> <a href="/ko/video-generation-mcp/">MCP 문서</a> <a href="/ko/examples/">예시</a> <a href="/ko/styles.html">룩</a> <a href="/ko/pricing/">요금</a> <a href="/ko/faq/">FAQ</a> <a href="/ko/about/">소개</a> <a href="/ko/privacy.html">개인정보</a> <a href="/ko/terms.html">이용약관</a> <a href="https://github.com/tonnooooo/kleo-mcp">GitHub</a> <a href="mailto:kleooai@gmail.com">kleooai@gmail.com</a>
+    </div>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite">복사됨</div>
+</body>
+</html>

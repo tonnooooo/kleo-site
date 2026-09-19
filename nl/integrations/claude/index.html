@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="nl" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.remove("no-js")</script>
+<title>AI-video&#x27;s maken met Claude en Kleo — installatiegids</title>
+<meta name="description" content="Voeg Kleo als connector toe aan Claude, vraag om een film met voice-over en krijg de link naar de 4K-MP4 in dezelfde chat: stappen, eerste prompt, problemen.">
+<link rel="canonical" href="https://kleooai.com/nl/integrations/claude/">
+<!-- i18n:head -->
+<link rel="alternate" hreflang="en" href="https://kleooai.com/integrations/claude/">
+<link rel="alternate" hreflang="it" href="https://kleooai.com/it/integrations/claude/">
+<link rel="alternate" hreflang="de" href="https://kleooai.com/de/integrations/claude/">
+<link rel="alternate" hreflang="fr" href="https://kleooai.com/fr/integrations/claude/">
+<link rel="alternate" hreflang="es" href="https://kleooai.com/es/integrations/claude/">
+<link rel="alternate" hreflang="pt" href="https://kleooai.com/pt/integrations/claude/">
+<link rel="alternate" hreflang="nl" href="https://kleooai.com/nl/integrations/claude/">
+<link rel="alternate" hreflang="pl" href="https://kleooai.com/pl/integrations/claude/">
+<link rel="alternate" hreflang="tr" href="https://kleooai.com/tr/integrations/claude/">
+<link rel="alternate" hreflang="ru" href="https://kleooai.com/ru/integrations/claude/">
+<link rel="alternate" hreflang="uk" href="https://kleooai.com/uk/integrations/claude/">
+<link rel="alternate" hreflang="ja" href="https://kleooai.com/ja/integrations/claude/">
+<link rel="alternate" hreflang="ko" href="https://kleooai.com/ko/integrations/claude/">
+<link rel="alternate" hreflang="zh-Hans" href="https://kleooai.com/zh/integrations/claude/">
+<link rel="alternate" hreflang="zh-Hant" href="https://kleooai.com/zh-tw/integrations/claude/">
+<link rel="alternate" hreflang="ar" href="https://kleooai.com/ar/integrations/claude/">
+<link rel="alternate" hreflang="he" href="https://kleooai.com/he/integrations/claude/">
+<link rel="alternate" hreflang="hi" href="https://kleooai.com/hi/integrations/claude/">
+<link rel="alternate" hreflang="id" href="https://kleooai.com/id/integrations/claude/">
+<link rel="alternate" hreflang="vi" href="https://kleooai.com/vi/integrations/claude/">
+<link rel="alternate" hreflang="th" href="https://kleooai.com/th/integrations/claude/">
+<link rel="alternate" hreflang="x-default" href="https://kleooai.com/integrations/claude/">
+<script>(function(){try{var L=["it", "de", "fr", "es", "pt", "nl", "pl", "tr", "ru", "uk", "ja", "ko", "zh", "zh-tw", "ar", "he", "hi", "id", "vi", "th"],A={"zh-hk": "zh-tw", "zh-mo": "zh-tw", "zh-hant": "zh-tw", "zh-hans": "zh", "zh-cn": "zh", "zh-sg": "zh", "nb": "no", "nn": "no"},p=location.pathname,m=p.match(/^\/([a-z]{2}(?:-[a-z]{2})?)(?=\/)/),on=m&&L.indexOf(m[1])>=0?m[1]:"en",rest=on==="en"?p:p.slice(on.length+1),want=null,s=null;try{s=localStorage.getItem("kleo-lang")}catch(e){}if(s==="en"||L.indexOf(s)>=0)want=s;else{var nl=navigator.languages||[navigator.language||""];for(var i=0;i<nl.length&&!want;i++){var t=String(nl[i]).toLowerCase(),b=t.split("-")[0];t=A[t]||t;b=A[b]||b;want=t==="en"||b==="en"?"en":L.indexOf(t)>=0?t:L.indexOf(b)>=0?b:null}}if(want&&want!==on&&!/404/.test(p))location.replace((want==="en"?"":"/"+want)+rest+location.search+location.hash)}catch(e){}})()</script>
+<script type="application/json" id="i18n">{"Language": "Taal", "Menu": "Menu", "Close menu": "Menu sluiten", "Copied": "Gekopieerd", "Copied ✓": "Gekopieerd ✓", "Copy it by hand: {text}": "Kopieer het zelf: {text}", "Copy the Kleo server address": "Kopieer het serveradres van Kleo", "Copy the argument {value}": "Kopieer het argument {value}", "Copy this prompt": "Kopieer deze prompt", "Copy the {what} snippet": "Kopieer het {what}-fragment", "Copy the {what} text": "Kopieer de {what}-tekst", "Treatment · logline, angle, acts · look: realistic": "Treatment · logline, invalshoek, aktes · look: realistisch", "Storyboard · direction, scenes, shots · 23 credits, confirmed": "Storyboard · regie, scènes, shots · 23 credits, bevestigd", "Generating the shots as footage · 4 of 11 · ~22 min left": "De shots worden als footage gegenereerd · 4 van 11 · nog ~22 min", "Generating the shots as footage · 8 of 11 · ~12 min left": "De shots worden als footage gegenereerd · 8 van 11 · nog ~12 min", "Narration · one voice, English · cutting the shots on the words": "Voice-over · één stem, Engels · de shots worden op de woorden gemonteerd", "Finish · 2160×3840 · 60 fps · quality check": "Afwerking · 2160×3840 · 60 fps · kwaliteitscontrole", "Done · 28 min · link ready for 7 days": "Klaar · 28 min · link 7 dagen geldig", "done": "klaar", "running": "bezig", "A whole number from {min} to {max} seconds": "Een heel getal van {min} tot {max} seconden", "{s} s {product} = {n} credits": "{s} s {product} = {n} credits", "film": "film", "animatic": "animatic"}</script>
+<!-- /i18n:head -->
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kleo AI">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:title" content="AI-video&#x27;s maken met Claude en Kleo — installatiegids">
+<meta property="og:description" content="Voeg Kleo als connector toe aan Claude, vraag om een film met voice-over en krijg de link naar de 4K-MP4 in dezelfde chat: stappen, eerste prompt, problemen.">
+<meta property="og:url" content="https://kleooai.com/nl/integrations/claude/">
+<meta property="og:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta property="og:image:alt" content="Kleo AI — Menselijke regie. Films gemaakt door agents.">
+<meta property="og:image:width" content="2400">
+<meta property="og:image:height" content="1260">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI-video&#x27;s maken met Claude en Kleo — installatiegids">
+<meta name="twitter:description" content="Voeg Kleo als connector toe aan Claude, vraag om een film met voice-over en krijg de link naar de 4K-MP4 in dezelfde chat: stappen, eerste prompt, problemen.">
+<meta name="twitter:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta name="theme-color" content="#0A0C10">
+<link rel="icon" href="/brand/kleo-favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/brand/kleo-favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/brand/kleo-icon-dark-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/site.css?v=20260920">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://kleooai.com/#website",
+      "name": "Kleo AI",
+      "alternateName": "Kleo",
+      "url": "https://kleooai.com/nl/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kleooai.com/nl/integrations/claude/#page",
+      "url": "https://kleooai.com/nl/integrations/claude/",
+      "name": "AI-video's maken met Claude en Kleo — installatiegids",
+      "description": "Voeg Kleo als connector toe aan Claude, vraag om een film met voice-over en krijg de link naar de 4K-MP4 in dezelfde chat: stappen, eerste prompt, problemen.",
+      "inLanguage": "nl",
+      "isPartOf": {
+        "@id": "https://kleooai.com/#website"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://kleooai.com/nl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Kleo met Claude",
+          "item": "https://kleooai.com/nl/integrations/claude/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<script src="/site.js?v=20260920" defer></script>
+</head>
+<body>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" aria-label="Hoofdmenu">
+  <div class="wrap">
+    <a class="brand" href="/nl/" aria-label="Kleo, home">
+      <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+        <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+        <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+      </svg>
+      Kleo <span class="tag">MCP</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-menu">
+      <svg class="bars" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 5h14M2 9h14M2 13h14"/></svg>
+      <svg class="x" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 4l10 10M14 4L4 14"/></svg>
+    </button>
+    <div class="nav-links" id="site-menu">
+      <a href="/nl/ai-youtube-video-generator/">Video's maken</a> <a href="/nl/examples/">Voorbeelden</a> <a href="/nl/styles.html">Looks</a> <a href="/nl/pricing/">Prijzen</a> <a href="/nl/faq/">FAQ</a>
+    </div>
+    <a class="btn btn-primary btn-sm" href="/nl/connect/">Kleo verbinden</a>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="page-hero hero" id="top">
+  <div class="wrap">
+    <div>
+      <nav class="crumbs" aria-label="Kruimelpad">
+        <a href="/nl/">Home</a> <span aria-hidden="true">›</span> <a href="/nl/connect/">Verbinden</a> <span aria-hidden="true">›</span> <span>Claude</span>
+      </nav>
+      <h1>Maak video's met<br><span class="hl">Claude en Kleo.</span></h1>
+      <p class="lede">In Claude regisseer je de film. Kleo, als aangepaste connector aan Claude toegevoegd, genereert de footage, de voice-over en de afgewerkte MP4 in 4K, en de link verschijnt in dezelfde chat.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/nl/connect/">Kleo verbinden <span class="arr" aria-hidden="true">→</span></a> <a class="btn btn-ghost" href="/nl/examples/">Bekijk een voorbeeldfilm</a> <a class="btn btn-ghost" href="#setup">Installatiestappen <span class="arr" aria-hidden="true">↓</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SETUP ============ -->
+<section id="setup">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">01</span>Installatie</div>
+        <h2>Voeg Kleo toe aan Claude.</h2>
+      </div>
+    </div>
+    <div class="split">
+      <div>
+        <p class="lede">Kleo is een remote MCP-server. Er is geen app om te installeren en geen registratieformulier: Claude bereikt Kleo via een aangepaste connector, en verbinden is één knop op de eigen pagina van Kleo. De stappen hieronder zijn dezelfde in de Claude-app en op het web, en ze werken op elk Claude-plan; het gratis plan staat één aangepaste connector toe.</p>
+      </div>
+      <div class="panel">
+        <ol>
+          <li>Open <b>Instellingen → Connectors</b> in Claude en kies <b>Aangepaste connector toevoegen</b>.</li>
+          <li>Noem hem <b>Kleo</b>, plak het adres hieronder en bevestig.</li>
+          <li>De pagina van Kleo opent: klik op <b>Gratis beginnen</b>. Je bent terug in Claude, met 7 credits op je nieuwe Kleo-account. Geen formulier, geen wachtwoord, geen kaart: genoeg voor een animatic van 5 credits. Een film wordt alleen gemaakt voor accounts die een pack hebben gekocht en kost minimaal 10 credits, dus vóór de eerste film komt de pack van €5 (10 credits); een film van 30 seconden kost 15.</li>
+          <li>Zet in een nieuwe chat Kleo aan in het toolsmenu en vraag om de film.</li>
+        </ol>
+        <div class="url-line">Serveradres <code>https://mcp.kleooai.com/mcp</code> <button class="btn btn-ghost btn-sm" type="button" data-copy="https://mcp.kleooai.com/mcp">Kopiëren</button></div>
+        <p>Claude is de assistent van Anthropic. Kleo is een aparte dienst die Claude via een aangepaste connector bereikt; hetzelfde adres werkt in ChatGPT, Grok, Claude Code, Cursor en elke andere MCP-client — zie <a href="/nl/connect/">de verbindingspagina</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FIRST PROMPT ============ -->
+<section id="first-prompt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">02</span>Eerste prompt</div>
+        <h2>Vraag om de film die je wilt.</h2>
+      </div>
+      <p class="lede">Noem het onderwerp, de lengte, het formaat en de look in één bericht. Doelgroep, toon en alles wat in de film moet voorkomen zijn optioneel. Wat je verzoek weglaat, vraagt Claude voordat het iets plant; het kiest nooit een lengte, een formaat of een look voor jou.</p>
+    </div>
+    <div class="split">
+      <div>
+        <p class="style-say copyable">“Gebruik Kleo om een film van 30 seconden te maken over een kleine houten boot die bij dageraad een stil meer oversteekt. Realistische look, 16:9, Engelse voice-over, een rustige toon. Laat me het treatment en de exacte credits zien voordat je de render start.”<button class="btn btn-ghost btn-sm copy" type="button" data-copy="Use Kleo to make a 30-second film about a small wooden boat crossing a quiet lake at dawn. Realistic look, 16:9, English narration, a calm tone. Show me the treatment and the exact credits before you start the render.">Kopiëren</button></p>
+      </div>
+      <ul class="defs">
+        <li><b>Looks</b><span>Er zijn twee looks: <b>realistisch</b>, gegenereerde live-action-footage met een filmische uitstraling, en <b>animatie</b>, een 2D-animatiefilm. <a href="/nl/styles.html">Bekijk de looks →</a></span></li>
+        <li><b>Formaten</b><span>16:9 voor YouTube of 9:16 voor een Short.</span></li>
+        <li><b>Lengtes</b><span>15 seconden tot 5 minuten.</span></li>
+        <li><b>Voice-over</b><span>Engels of Italiaans.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ IN THE CHAT ============ -->
+<section id="in-the-chat">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">03</span>In de chat</div>
+        <h2>Wat er daarna in de chat gebeurt.</h2>
+      </div>
+      <p class="lede">De tools van Kleo draaien in een vaste volgorde en Claude bedient ze voor je. Jij leest, corrigeert en keurt goed bij elke stap; er wordt niets afgeschreven tot je het startsein geeft en de job wordt geaccepteerd.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="num" aria-hidden="true">01</span> <span class="tc">kleo_adapt_prompt</span>
+        <h3>Het treatment</h3>
+        <p>Claude legt je verzoek naast de intake van Kleo. Onderwerp, lengte, formaat en look zijn verplicht; doelgroep, toon en wat er in moet voorkomen zijn optioneel. Wat ontbreekt, vraagt het in één bericht. Daarna laat het je het treatment zien: logline, invalshoek, openingsbeeld, aktes, einde, look, tempo en verteller. Verander wat je wilt voordat je verdergaat.</p>
+      </div>
+      <div class="step">
+        <span class="num" aria-hidden="true">02</span> <span class="tc">kleo_storyboard_guide</span>
+        <h3>Het storyboard</h3>
+        <p>Claude haalt de storyboardgids van Kleo op (een regieblok, de scènes, de shots en hun limieten) en schrijft het storyboard onder het treatment dat je hebt goedgekeurd. Hier wordt de film gemaakt; lees het en vraag om aanpassingen.</p>
+      </div>
+      <div class="step">
+        <span class="num" aria-hidden="true">03</span> <span class="tc">kleo_create_video</span>
+        <h3>De render</h3>
+        <p>Kleo controleert alles en antwoordt met de exacte credits voor de film. Met jouw OK start Claude de render op een GPU die voor die ene job wordt gehuurd. Er wordt niets afgeschreven voordat de job is geaccepteerd, en een geweigerde aanroep kost niets.</p>
+      </div>
+      <div class="step">
+        <span class="num" aria-hidden="true">04</span> <span class="tc">kleo_wait_for_video</span>
+        <h3>De link</h3>
+        <p>Claude wacht op de render en meldt de voortgang, tot Kleo de link naar de afgewerkte MP4 overhandigt, meestal 25–35 minuten later. De link is 7 dagen geldig. Kleo publiceert de film nergens: jij downloadt hem en plaatst hem waar je wilt.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT YOU GET ============ -->
+<section id="what-you-get">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">04</span>De film</div>
+        <h2>Wat je krijgt.</h2>
+      </div>
+    </div>
+    <ul class="style-facts auto">
+      <li><b>Output</b><span>Een MP4 in 4K (3840×2160 of 2160×3840) met 60 fps: 16:9 voor YouTube, 9:16 voor een Short.</span></li>
+      <li><b>Lengte</b><span>Een film van 15 seconden tot 5 minuten; een animatic van 15 tot 60 seconden.</span></li>
+      <li><b>Looks</b><span>Realistisch (gegenereerde live-action-footage, filmisch) of animatie (een 2D-animatiefilm). In een film wordt elk shot als bewegende footage gegenereerd vanuit zijn eigen frame.</span></li>
+      <li><b>Producten</b><span>De film, of een animatic van hetzelfde storyboard: de getekende frames onder een bewegende camera, dezelfde verteller en grafische laag, geen gegenereerde clip. Elk account kan animatics bestellen; een film wordt alleen gemaakt voor accounts die een pack hebben gekocht.</span></li>
+      <li><b>Voice-over</b><span>Eén verteller, Engels of Italiaans. Geen achtergrondmuziek, geen ondertitels, geen tekst in beeld.</span></li>
+      <li><b>Credits</b><span>Een film: 1 credit = 2 seconden, naar boven afgerond, minimaal 10 credits: 15 s = 10, 30 s = 15, 60 s = 30, 5 min = 150. Een animatic: vast 5 credits. Je begint met 7 credits; packs zijn €5 = 10, €15 = 35, €40 = 100, eenmalig betaald, geen abonnement.</span></li>
+      <li><b>Tijd</b><span>Een render duurt meestal 25–35 minuten op een gehuurde GPU; Kleo noemt de schatting in de chat.</span></li>
+    </ul>
+    <p><a href="/nl/pricing/">Bekijk de prijs van een film →</a></p>
+  </div>
+</section>
+
+<!-- ============ TROUBLESHOOTING ============ -->
+<section id="troubleshooting">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">05</span>Problemen oplossen</div>
+        <h2>Als iets niet werkt.</h2>
+      </div>
+    </div>
+    <div class="faq">
+      <div>
+        <details>
+          <summary>Kleo verschijnt niet in Claude.</summary>
+          <p>Controleer het adres dat je hebt geplakt: het is precies https://mcp.kleooai.com/mcp, met https en niets na /mcp. Voeg de connector opnieuw toe met de naam Kleo. Zodra hij is toegevoegd, staat hij in een chat nog uit tot je hem aanzet: open een nieuwe chat en zet Kleo aan in het toolsmenu. Op het gratis plan is één aangepaste connector toegestaan, dus Kleo moet die ene zijn.</p>
+        </details>
+        <details>
+          <summary>De pagina van Kleo opende niet, of het venster werd geblokkeerd.</summary>
+          <p>Wanneer je de connector bevestigt, opent Claude de pagina van Kleo voor het aanmelden: één knop Gratis beginnen, niets om in te vullen. Als je browser die als pop-up heeft geblokkeerd, sta pop-ups toe voor Claude en bevestig de connector opnieuw; de pagina opent, je klikt op Gratis beginnen en je bent terug in Claude.</p>
+        </details>
+        <details>
+          <summary>Niet genoeg credits.</summary>
+          <p>Verbinden geeft je 7 credits: die kopen een animatic (5), nooit een film. Een film wordt alleen gemaakt voor accounts die een pack hebben gekocht, en een film van 30 seconden kost 15 credits: met de pack van €5 (10 credits) heb je er 17 en kan de render starten. Vraag Claude om je Kleo-accountpagina (kleo_account): die toont het saldo en de afrekenlinks (€5 = 10 credits, €15 = 35, €40 = 100; een eenmalige betaling in EUR, geen abonnement). De geweigerde aanroep heeft niets afgeschreven.</p>
+        </details>
+      </div>
+      <div>
+        <details>
+          <summary>Het wachten liep af voordat de film klaar was.</summary>
+          <p>Een lange render kan langer duren dan één toolaanroep, maar de job loopt door op zijn GPU. Vraag Claude om de status van de job (kleo_get_job) of om opnieuw te wachten (kleo_wait_for_video), en daarna om de links (kleo_get_result). Vraag niet om een tweede film om de eerste te controleren.</p>
+        </details>
+        <details>
+          <summary>Je wilt een render stoppen.</summary>
+          <p>Vraag Claude om de job te annuleren (kleo_cancel_job). De render stopt en de niet-gebruikte credits gaan terug naar je saldo.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ START ============ -->
+<section class="cta one" id="start">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow"><span class="n">06</span>Beginnen</div>
+      <h2>In Claude regisseer je de film.</h2>
+      <p class="lede">Gebruik je liever ChatGPT? <a href="/nl/integrations/chatgpt/">Kleo met ChatGPT →</a></p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/nl/connect/">Kleo verbinden <span class="arr" aria-hidden="true">→</span></a> <a class="btn btn-ghost" href="/nl/faq/">Lees de FAQ</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<!-- i18n:langs -->
+<nav class="langs" aria-label="Taal">
+  <div class="wrap">
+    <span>Taal</span>
+    <a href="/integrations/claude/" hreflang="en" lang="en">English</a>
+    <a href="/it/integrations/claude/" hreflang="it" lang="it">Italiano</a>
+    <a href="/de/integrations/claude/" hreflang="de" lang="de">Deutsch</a>
+    <a href="/fr/integrations/claude/" hreflang="fr" lang="fr">Français</a>
+    <a href="/es/integrations/claude/" hreflang="es" lang="es">Español</a>
+    <a href="/pt/integrations/claude/" hreflang="pt" lang="pt">Português</a>
+    <b lang="nl">Nederlands</b>
+    <a href="/pl/integrations/claude/" hreflang="pl" lang="pl">Polski</a>
+    <a href="/tr/integrations/claude/" hreflang="tr" lang="tr">Türkçe</a>
+    <a href="/ru/integrations/claude/" hreflang="ru" lang="ru">Русский</a>
+    <a href="/uk/integrations/claude/" hreflang="uk" lang="uk">Українська</a>
+    <a href="/ja/integrations/claude/" hreflang="ja" lang="ja">日本語</a>
+    <a href="/ko/integrations/claude/" hreflang="ko" lang="ko">한국어</a>
+    <a href="/zh/integrations/claude/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+    <a href="/zh-tw/integrations/claude/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+    <a href="/ar/integrations/claude/" hreflang="ar" lang="ar">العربية</a>
+    <a href="/he/integrations/claude/" hreflang="he" lang="he">עברית</a>
+    <a href="/hi/integrations/claude/" hreflang="hi" lang="hi">हिन्दी</a>
+    <a href="/id/integrations/claude/" hreflang="id" lang="id">Bahasa Indonesia</a>
+    <a href="/vi/integrations/claude/" hreflang="vi" lang="vi">Tiếng Việt</a>
+    <a href="/th/integrations/claude/" hreflang="th" lang="th">ไทย</a>
+  </div>
+</nav>
+<!-- /i18n:langs -->
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">
+      <a class="brand" href="/nl/" aria-label="Kleo, home">
+        <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+          <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+          <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+        </svg>
+        Kleo <span class="tag">MCP</span>
+      </a>
+      <span>Menselijke regie. Films gemaakt door agents.</span>
+    </div>
+    <div class="links">
+      <a href="/nl/connect/">Verbinden</a> <a href="/nl/integrations/claude/">Claude</a> <a href="/nl/integrations/chatgpt/">ChatGPT</a> <a href="/nl/video-generation-mcp/">MCP-docs</a> <a href="/nl/examples/">Voorbeelden</a> <a href="/nl/styles.html">Looks</a> <a href="/nl/pricing/">Prijzen</a> <a href="/nl/faq/">FAQ</a> <a href="/nl/about/">Over</a> <a href="/nl/privacy.html">Privacy</a> <a href="/nl/terms.html">Voorwaarden</a> <a href="https://github.com/tonnooooo/kleo-mcp">GitHub</a> <a href="mailto:kleooai@gmail.com">kleooai@gmail.com</a>
+    </div>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite">Gekopieerd</div>
+</body>
+</html>

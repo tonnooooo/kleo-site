@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="ja" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.remove("no-js")</script>
+<title>Kleo AI — 演出は人間。制作はエージェント。</title>
+<meta name="description" content="AIアシスタントからMCP経由で作る、実写かアニメーションのナレーション付き完全フィルム。4K 60 fps、15秒から5分、英語またはイタリア語のナレーション。">
+<link rel="canonical" href="https://kleooai.com/ja/">
+<!-- i18n:head -->
+<link rel="alternate" hreflang="en" href="https://kleooai.com/">
+<link rel="alternate" hreflang="it" href="https://kleooai.com/it/">
+<link rel="alternate" hreflang="de" href="https://kleooai.com/de/">
+<link rel="alternate" hreflang="fr" href="https://kleooai.com/fr/">
+<link rel="alternate" hreflang="es" href="https://kleooai.com/es/">
+<link rel="alternate" hreflang="pt" href="https://kleooai.com/pt/">
+<link rel="alternate" hreflang="nl" href="https://kleooai.com/nl/">
+<link rel="alternate" hreflang="pl" href="https://kleooai.com/pl/">
+<link rel="alternate" hreflang="tr" href="https://kleooai.com/tr/">
+<link rel="alternate" hreflang="ru" href="https://kleooai.com/ru/">
+<link rel="alternate" hreflang="uk" href="https://kleooai.com/uk/">
+<link rel="alternate" hreflang="ja" href="https://kleooai.com/ja/">
+<link rel="alternate" hreflang="ko" href="https://kleooai.com/ko/">
+<link rel="alternate" hreflang="zh-Hans" href="https://kleooai.com/zh/">
+<link rel="alternate" hreflang="zh-Hant" href="https://kleooai.com/zh-tw/">
+<link rel="alternate" hreflang="ar" href="https://kleooai.com/ar/">
+<link rel="alternate" hreflang="he" href="https://kleooai.com/he/">
+<link rel="alternate" hreflang="hi" href="https://kleooai.com/hi/">
+<link rel="alternate" hreflang="id" href="https://kleooai.com/id/">
+<link rel="alternate" hreflang="vi" href="https://kleooai.com/vi/">
+<link rel="alternate" hreflang="th" href="https://kleooai.com/th/">
+<link rel="alternate" hreflang="x-default" href="https://kleooai.com/">
+<script>(function(){try{var L=["it", "de", "fr", "es", "pt", "nl", "pl", "tr", "ru", "uk", "ja", "ko", "zh", "zh-tw", "ar", "he", "hi", "id", "vi", "th"],A={"zh-hk": "zh-tw", "zh-mo": "zh-tw", "zh-hant": "zh-tw", "zh-hans": "zh", "zh-cn": "zh", "zh-sg": "zh", "nb": "no", "nn": "no"},p=location.pathname,m=p.match(/^\/([a-z]{2}(?:-[a-z]{2})?)(?=\/)/),on=m&&L.indexOf(m[1])>=0?m[1]:"en",rest=on==="en"?p:p.slice(on.length+1),want=null,s=null;try{s=localStorage.getItem("kleo-lang")}catch(e){}if(s==="en"||L.indexOf(s)>=0)want=s;else{var nl=navigator.languages||[navigator.language||""];for(var i=0;i<nl.length&&!want;i++){var t=String(nl[i]).toLowerCase(),b=t.split("-")[0];t=A[t]||t;b=A[b]||b;want=t==="en"||b==="en"?"en":L.indexOf(t)>=0?t:L.indexOf(b)>=0?b:null}}if(want&&want!==on&&!/404/.test(p))location.replace((want==="en"?"":"/"+want)+rest+location.search+location.hash)}catch(e){}})()</script>
+<script type="application/json" id="i18n">{"Language": "言語", "Menu": "メニュー", "Close menu": "メニューを閉じる", "Copied": "コピーしました", "Copied ✓": "コピーしました ✓", "Copy it by hand: {text}": "手動でコピーしてください: {text}", "Copy the Kleo server address": "Kleoのサーバーアドレスをコピー", "Copy the argument {value}": "引数 {value} をコピー", "Copy this prompt": "このプロンプトをコピー", "Copy the {what} snippet": "{what} のスニペットをコピー", "Copy the {what} text": "{what} のテキストをコピー", "Treatment · logline, angle, acts · look: realistic": "トリートメント · ログライン、切り口、幕構成 · ルック: 実写", "Storyboard · direction, scenes, shots · 23 credits, confirmed": "絵コンテ · 演出、シーン、ショット · 23クレジット、確定", "Generating the shots as footage · 4 of 11 · ~22 min left": "ショットを映像として生成中 · 11本中4本 · 残り約22分", "Generating the shots as footage · 8 of 11 · ~12 min left": "ショットを映像として生成中 · 11本中8本 · 残り約12分", "Narration · one voice, English · cutting the shots on the words": "ナレーション · ひとつの声、英語 · 言葉に合わせてショットをカット", "Finish · 2160×3840 · 60 fps · quality check": "仕上げ · 2160×3840 · 60 fps · 品質チェック", "Done · 28 min · link ready for 7 days": "完了 · 28分 · リンクは7日間有効", "done": "完了", "running": "実行中", "A whole number from {min} to {max} seconds": "{min}〜{max}秒の整数", "{s} s {product} = {n} credits": "{s}秒の{product} = {n}クレジット", "film": "フィルム", "animatic": "アニマティック"}</script>
+<!-- /i18n:head -->
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kleo AI">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="Kleo AI — 演出は人間。制作はエージェント。">
+<meta property="og:description" content="AIアシスタントからMCP経由で作る、実写かアニメーションのナレーション付き完全フィルム。4K 60 fps、15秒から5分、英語またはイタリア語のナレーション。">
+<meta property="og:url" content="https://kleooai.com/ja/">
+<meta property="og:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta property="og:image:alt" content="Kleo AI — 演出は人間。制作はエージェント。">
+<meta property="og:image:width" content="2400">
+<meta property="og:image:height" content="1260">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kleo AI — 演出は人間。制作はエージェント。">
+<meta name="twitter:description" content="AIアシスタントからMCP経由で作る、実写かアニメーションのナレーション付き完全フィルム。4K 60 fps、15秒から5分、英語またはイタリア語のナレーション。">
+<meta name="twitter:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta name="theme-color" content="#0A0C10">
+<link rel="icon" href="/brand/kleo-favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/brand/kleo-favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/brand/kleo-icon-dark-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/site.css?v=20260920">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://kleooai.com/#website",
+      "name": "Kleo AI",
+      "alternateName": "Kleo",
+      "url": "https://kleooai.com/ja/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kleooai.com/ja/#page",
+      "url": "https://kleooai.com/ja/",
+      "name": "Kleo AI — 演出は人間。制作はエージェント。",
+      "description": "AIアシスタントからMCP経由で作る、実写かアニメーションのナレーション付き完全フィルム。4K 60 fps、15秒から5分、英語またはイタリア語のナレーション。",
+      "inLanguage": "ja",
+      "isPartOf": {
+        "@id": "https://kleooai.com/#website"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "ホーム",
+          "item": "https://kleooai.com/ja/"
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://kleooai.com/#software",
+      "name": "Kleo AI",
+      "url": "https://kleooai.com/ja/",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "MCP対応クライアントすべて（リモートサーバー）",
+      "description": "AIアシスタントからの依頼を、すべてのショットを動く映像として生成した実写かアニメーションのナレーション付き完全フィルムとして4K 60 fpsのMP4にレンダリングする——または同じ絵コンテからアニマティックを作る（5クレジット、すべてのアカウントで利用可能）リモートMCPサーバー。",
+      "offers": {
+        "@type": "Offer",
+        "name": "10クレジットパック",
+        "price": "5",
+        "priceCurrency": "EUR",
+        "url": "https://kleooai.com/ja/pricing/"
+      }
+    }
+  ]
+}
+</script>
+<script src="/site.js?v=20260920" defer></script>
+</head>
+<body>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" aria-label="メイン">
+  <div class="wrap">
+    <a class="brand" href="/ja/" aria-label="Kleo、ホーム" aria-current="page">
+      <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+        <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+        <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+      </svg>
+      Kleo <span class="tag">MCP</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="site-menu">
+      <svg class="bars" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 5h14M2 9h14M2 13h14"/></svg>
+      <svg class="x" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 4l10 10M14 4L4 14"/></svg>
+    </button>
+    <div class="nav-links" id="site-menu">
+      <a href="/ja/ai-youtube-video-generator/">動画を作る</a> <a href="/ja/examples/">作品例</a> <a href="/ja/styles.html">ルック</a> <a href="/ja/pricing/">料金</a> <a href="/ja/faq/">FAQ</a>
+    </div>
+    <a class="btn btn-primary btn-sm" href="/ja/connect/">Kleoを接続</a>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <div class="osd"><span class="rec" aria-hidden="true"></span> REC <span class="tcode" id="tcode" aria-hidden="true">00:00:00:00</span> · 4K · 60 fps<span class="osd-more"> · 16:9 と 9:16 · EN / IT</span></div>
+      <h1>演出は人間。<br><span class="hl">制作はエージェント。</span></h1>
+      <p class="lede">物語を決めるのはあなたの依頼です。Kleoはそれをナレーション付きの完全なフィルムに仕上げます。すべてのショットを動く映像として生成し、実写ルックかアニメーションルックで——あるいは同じ絵コンテからアニマティックとして——そのリンクを、あなたが普段使っているアシスタントに手渡します。演出はあなた。制作はMCP経由で。</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/ja/connect/">Kleoを接続 <span class="arr" aria-hidden="true">→</span></a> <a class="btn btn-ghost" href="/ja/examples/">作品例を見る</a>
+      </div>
+      <p class="free-line"><b>無料で始められます。</b>接続した瞬間にアカウントへ7クレジット——登録もカードも不要で、アニマティック1本分です。フィルムは10クレジットと€5のパックから。</p>
+      <div class="works">
+        <span>対応アシスタント</span> <b>Claude</b><b>ChatGPT</b><b>Grok</b><b>Claude Code</b><b>Cursor</b><b>VS Code</b><b>OpenCode</b><b>Gemini CLI</b>
+      </div>
+    </div>
+
+    <div class="demo" role="figure" aria-label="例: Kleoを接続した会話">
+      <div class="demo-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="demo-title">Claude · Kleo接続済み<span class="clock" id="demoClock" hidden></span></span></div>
+      <div class="demo-body">
+        <div class="msg user">
+          <span class="who">あなた</span>
+          <p>ボトルメッセージに返事を出し続ける灯台守の話で、45秒のショートを作って。実写ルック、英語ナレーションで。</p>
+        </div>
+        <div class="msg">
+          <span class="who">Claude</span>
+          <p>トリートメントができました: 灯台守、年に一本のボトル、最後の一本には本人が直接答える。23クレジット、9:16。レンダリングを開始します。</p>
+          <div class="tool">
+            <div class="tool-head">
+              <span class="tool-name"><b>kleo_create_video</b></span> <span class="tool-state" id="toolState">実行中</span>
+            </div>
+            <pre class="tool-args">{ "duration_s": 45, "format": "9:16", "style": "realistic", "language": "en",
+  "prompt": "A lighthouse keeper who keeps answering a message in a bottle" }</pre>
+          </div>
+        </div>
+        <div class="render" id="render">
+          <div class="render-head"><span>ジョブ <b>kl_7f3k</b> · このジョブ専用にGPUをレンタル</span><b id="renderPct">58%</b></div>
+          <div class="tracks" id="tracks">
+            <div class="track done"><span>トリートメント</span><span class="tbar" style="--c:var(--violet)"></span></div>
+            <div class="track done"><span>絵コンテ</span><span class="tbar" style="--c:var(--teal)"></span></div>
+            <div class="track active"><span>映像</span><span class="tbar" style="--c:var(--amber)"></span></div>
+            <div class="track"><span>ナレーション</span><span class="tbar" style="--c:var(--rose)"></span></div>
+            <div class="track"><span>仕上げ</span><span class="tbar" style="--c:var(--blue)"></span></div>
+          </div>
+          <div class="bar"><span id="renderFill"></span></div>
+          <div class="render-status" id="renderStatus">ショットを映像として生成中 · 11本中8本 · 残り約12分</div>
+          <div class="result" id="result" hidden>
+            <span class="file">lighthouse-keeper.mp4</span> <span class="chip">2160×3840</span><span class="chip">60 fps</span><span class="chip">0:45</span><span class="chip">7日間</span> <span class="dl">ダウンロード</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wrap wrap-stats">
+    <dl class="stats" aria-label="数字で見るKleo">
+      <div><dt>出力</dt><dd>4K · 60 fps</dd></div>
+      <div><dt>依頼からリンクまで、フィルム1本</dt><dd>25〜35分</dd></div>
+      <div><dt>ルック</dt><dd>実写 · アニメーション</dd></div>
+      <div><dt>はじめに</dt><dd>7クレジット、アニマティック1本</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section id="how">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">01</span>仕組み</div>
+        <h2>あなたのビジョンを、すべてのフレームに。</h2>
+      </div>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="num" aria-hidden="true">01</span> <span class="tc">あなたの言葉</span>
+        <h3>物語を演出する</h3>
+        <p>アシスタントに、題材、長さ、フォーマット、そしてルック（実写かアニメーション）を伝えます。Kleoは依頼を読み取り、足りないことがあれば質問します。</p>
+      </div>
+      <div class="step">
+        <span class="num" aria-hidden="true">02</span> <span class="tc">kleo_adapt_prompt</span>
+        <h3>トリートメントを読む</h3>
+        <p>アシスタントはまずトリートメントを見せます。ログライン、切り口、オープニング、幕構成、結末。1フレームも作られる前に、好きなだけ手を入れられます。</p>
+      </div>
+      <div class="step">
+        <span class="num" aria-hidden="true">03</span> <span class="tc">kleo_create_video</span>
+        <h3>Kleoがレンダリングする</h3>
+        <p>そのトリートメントのもとで絵コンテが書かれ、フィルムでは各ショットがそれぞれのフレームから動く映像として生成されます。アニマティックでは、代わりにカメラが描かれたフレームの上を動きます。ひとりのナレーターが英語かイタリア語で語ります。正確なクレジット数は課金前に提示され、レンダリングが承認されるまで一切課金されません。</p>
+      </div>
+      <div class="step">
+        <span class="num" aria-hidden="true">04</span> <span class="tc">kleo_get_result</span>
+        <h3>ダウンロードして公開する</h3>
+        <p>フィルムは、あなたのジョブのためにレンタルしたGPU上で4K 60 fpsでレンダリングされます。アシスタントが進行を追い、完成したMP4のリンクを手渡します。リンクは7日間有効。確認して、公開したい場所にアップロードしてください。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FILMS ============ -->
+<section id="films">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">02</span>フィルム</div>
+        <h2>Kleoが作ったフィルム。</h2>
+      </div>
+      <p class="lede">ワンショット20秒の Tether、トンネルから飛び出す2台の車の Apex、ドキュメンタリー Signal Delay の冒頭1分——いずれも実写ルック。そして<a href="/ja/examples/octopus/">タコに心臓が3つある理由を描いたアニメーションのショート</a>はアニメーションルックです。すべて4K 60 fpsのマスターを1080pで表示。それぞれ専用ページで、無音のまま自動再生され、クリックするものはありません。</p>
+    </div>
+    <div class="films-row">
+      <a class="poster" href="/ja/examples/tether/">
+        <img src="/samples/realistic-tether.jpg" alt="ヘルメットの中の宇宙飛行士の顔、バイザーが赤く染まり、金色のテザーがステーションへ伸びていく" width="1920" height="1080" loading="lazy">
+        <span class="play"><i aria-hidden="true">▶</i>Tether · 20秒 · ワンショット</span>
+      </a>
+      <a class="poster" href="/ja/examples/apex/">
+        <img src="/samples/realistic-apex.jpg" alt="琥珀色に照らされたトンネルに並ぶ、黄色のスーパーカーと淡い緑のクラシッククーペ" width="1920" height="1080" loading="lazy">
+        <span class="play"><i aria-hidden="true">▶</i>Apex · 20秒 · 2台の車</span>
+      </a>
+      <a class="poster" href="/ja/examples/signal-delay/">
+        <img src="/samples/realistic-signal.jpg" alt="ボイジャー1号の写真の上に重なるターミナルウィンドウと手描きの琥珀色の図、黒地に日付" width="1920" height="1080" loading="lazy">
+        <span class="play"><i aria-hidden="true">▶</i>Signal Delay · 冒頭の1分</span>
+      </a>
+    </div>
+    <p class="tpl-more"><a href="/ja/examples/">すべての作品例 →</a> · <a href="/ja/styles.html">2つのルック、実写とアニメーション →</a></p>
+  </div>
+</section>
+
+<!-- ============ WHAT TO MAKE ============ -->
+<section id="template">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">03</span>何を作るか</div>
+        <h2>観る価値のあるものを作る。</h2>
+      </div>
+    </div>
+    <div class="grid panels three">
+      <article class="panel">
+        <h3>YouTube解説動画</h3>
+        <p>ひとつの明確な問いを、冒頭のフックから最後の結論まで、ナレーション付きの16:9フィルムに。最長5分。</p>
+        <a class="more" href="/ja/ai-youtube-video-generator/">YouTube動画を作る <span class="arr" aria-hidden="true">→</span></a>
+      </article>
+      <article class="panel">
+        <h3>アニメーションルックの短編</h3>
+        <p>物語に題材、舞台、結末を与えて、アニメーションルックを指定するだけ。ひとりのナレーターが語る2Dアニメーションのフィルムを、15秒から5分まで。</p>
+        <a class="more" href="/ja/examples/octopus/">タコのショートを見る <span class="arr" aria-hidden="true">→</span></a>
+      </article>
+      <article class="panel">
+        <h3>縦型ショート</h3>
+        <p>ひとつのアイデアと明快な物語に絞った9:16のショートを、2160×3840・60 fpsでレンダリング。30秒のショートは、フィルムなら15クレジット、アニマティックなら5クレジットです。</p>
+        <a class="more" href="/ja/pricing/">ショートの料金 <span class="arr" aria-hidden="true">→</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BEHIND THE SCENES ============ -->
+<section id="engine">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">04</span>舞台裏</div>
+        <h2>あなたが演出し、Kleoがレンダリングする。</h2>
+      </div>
+      <p class="lede">依頼も、進行も、リンクも、すべてアシスタントの中で。Kleoは会話の裏側で働きます。フィルムでは各ショットがそれぞれのフレームから動く映像として生成され——静止画のスライドショーではありません——ひとりのナレーターがそれを支えます。レンダリングは、あなたのジョブのためにレンタルしたGPU上で4K 60 fps、通常25〜35分。納品物は完成したMP4で、いつどこで公開するかはあなたが決めます。</p>
+    </div>
+    <ul class="style-facts auto">
+      <li><b>トリートメント</b><span>あなたの依頼がログライン、切り口、オープニング、幕構成、結末になります——1フレームも作られる前に提示されます。</span></li>
+      <li><b>絵コンテ</b><span>演出、シーン、ショットを、そのトリートメントのもとで書き起こします。正確なクレジット数は課金前に提示されます。</span></li>
+      <li><b>映像</b><span>フィルムでは、各ショットがそれぞれのフレームから動く映像として、実写ルックかアニメーションルックで生成されます。アニマティックでは、同じ描かれたフレームの上をカメラが動きます——生成クリップはありません。</span></li>
+      <li><b>ナレーション</b><span>ひとりのナレーターが英語かイタリア語でフィルムを支えます。音楽なし、字幕なし、画面上のテキストなし。</span></li>
+      <li><b>仕上げ</b><span>4K 60 fps、16:9か9:16のMP4を、アシスタントが手渡すリンクで——7日間有効です。</span></li>
+    </ul>
+    <p class="style-say copyable">「Kleoを使って、コーヒーが農園からカップに届くまでを描く60秒のナレーション付きフィルムを作って。実写ルック、英語ナレーション、16:9。レンダリングを始める前にトリートメントとクレジット数を見せて。」<button class="btn btn-ghost btn-sm copy" type="button" data-copy="Use Kleo to make a 60-second narrated film about how coffee travels from farm to cup. Realistic look, English narration, 16:9. Show me the treatment and the credit cost before starting the render.">コピー</button></p>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section id="pricing">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">05</span>料金</div>
+        <h2>無料で始められます。クレジット制のみ、自動更新はありません。</h2>
+      </div>
+      <div><span class="draft">稼働中 · Stripeによる都度払い</span></div>
+    </div>
+    <div class="plans two">
+      <div class="plan hi">
+        <div class="name"><span>無料プラン</span><span class="pop">全員に付属</span></div>
+        <div class="price">€0<small>7クレジット、登録不要</small></div>
+        <ul>
+          <li>無料プランとはアカウントそのものです。一度接続すれば7クレジットが手に入ります——フォームもカードも、解約するものもありません</li>
+          <li>アニマティックは一律5クレジット、15〜60秒。同じトリートメント、絵コンテ、描かれたフレームの上をカメラが動き、同じナレーターとグラフィックレイヤー、4K 60 fps、生成クリップなし。フィルムのプレビューにもなります</li>
+          <li>フィルムは長さで価格が決まります。1クレジット = 2秒、10クレジットから（20秒 = 10 · 30秒 = 15 · 60秒 = 30 · 90秒 = 45 · 5分 = 150）</li>
+          <li>無料クレジットでフィルムは作れません。フィルムのクリップはKleoの費用負担で生成されるため、パックを購入したアカウントだけに作られます。€5のパックを加えれば17クレジット——フィルムが開放され、30秒のショートが作れます</li>
+        </ul>
+        <a class="btn btn-primary" href="/ja/connect/">接続して始める</a>
+      </div>
+      <div class="plan">
+        <div class="name"><span>クレジットパック</span><span class="pop">一回払い</span></div>
+        <div class="price">€5〜40<small>一回払い、定期課金なし</small></div>
+        <ul>
+          <li>€5 — 10クレジット · €15 — 35 · €40 — 100</li>
+          <li>どのパックでもフィルムが開放されます。€5に初期クレジットを足して17、30秒のショート。€15 = 35クレジットで1分10秒のフィルム。€40 = 100クレジットで3分20秒</li>
+          <li>決済はStripeで。アシスタントにアカウントページを頼み、そこからパックを購入してください</li>
+        </ul>
+        <a class="btn btn-ghost" href="/ja/pricing/">クレジットを計算する</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONNECT ============ -->
+<section id="connect">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">06</span>接続</div>
+        <h2>あなたの制作チームです。</h2>
+      </div>
+      <div>
+        <p class="lede">対応するアシスタントに、Kleoのアドレスをカスタムコネクタとして追加します。サインイン中にアシスタントからKleoのページが開きます。ボタンひとつ、フォームもカードもなし。あとはフィルムの内容を伝えるだけ。</p>
+        <p class="mono" id="mcpStatus" hidden></p>
+        <div class="address"><code>https://mcp.kleooai.com/mcp</code><button class="btn btn-ghost btn-sm" type="button" data-copy="https://mcp.kleooai.com/mcp">アドレスをコピー</button></div>
+      </div>
+    </div>
+    <div class="grid panels">
+      <article class="panel">
+        <h3>Claude <small>アプリ · ウェブ</small></h3>
+        <ol>
+          <li><b>設定 → コネクタ</b>を開き、<b>カスタムコネクタを追加</b>を選びます。</li>
+          <li>名前を<b>Kleo</b>にして上のアドレスを貼り付け、確定します。Kleoのページが開くので<b>Start free</b>をクリックすると、Claudeに戻ります。</li>
+          <li>新しいチャットでツールメニューからKleoをオンにして、こう頼みます: <i>45秒のショートを作って。テーマは……</i></li>
+        </ol>
+        <p>Claudeの無料プランではカスタムコネクタを1つ追加できます。</p>
+        <a class="more" href="/ja/integrations/claude/">Claude完全ガイド <span class="arr" aria-hidden="true">→</span></a>
+      </article>
+      <article class="panel">
+        <h3>ChatGPT <small>開発者モード</small></h3>
+        <ol>
+          <li><b>設定 → アプリ &amp; コネクタ</b>（旧バージョンでは<b>コネクタ</b>）を開き、<b>詳細設定</b>で<b>開発者モード</b>をオンにします。</li>
+          <li><b>コネクタ</b>に戻って<b>作成</b>を選び、名前を<b>Kleo</b>にしてアドレスを貼り付け、認証を<b>OAuth</b>に設定して保存します。Kleoのページが開くので<b>Start free</b>をクリックすると、ChatGPTに戻ります。</li>
+          <li>チャットで<b>+</b>メニューからKleoをオンにして、動画を頼みます。ChatGPTはレンダリングを始める前に確認を求めます。</li>
+        </ol>
+        <p>ChatGPT Plus、Pro、Business、Enterpriseのいずれかが必要です。</p>
+        <a class="more" href="/ja/integrations/chatgpt/">ChatGPT完全ガイド <span class="arr" aria-hidden="true">→</span></a>
+      </article>
+    </div>
+    <p class="tpl-more"><a href="/ja/connect/">各クライアントの手順 →</a> · <a href="/ja/video-generation-mcp/">MCPドキュメント →</a></p>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">07</span>FAQ</div>
+        <h2>最初のフィルムを作る前に。</h2>
+      </div>
+    </div>
+    <div class="faq">
+      <div>
+        <details open>
+          <summary>Kleoは実際に何を作るのですか？</summary>
+          <p>ひとつの絵コンテから2つの製品を作ります。フィルム: 実写ルック（生成された実写映像）かアニメーションルック（2Dアニメーションのフィルム）で、すべてのショットを動く映像として生成した、ナレーション付きの完全なフィルム。アニマティック: 同じトリートメント、絵コンテ、描かれたフレームの上をカメラが動き、同じナレーターとグラフィックレイヤー、生成クリップなし——15〜60秒で、フィルムのプレビューにもなります。Kleoはアシスタントと一緒にトリートメントと絵コンテを書き、ナレーションを入れ、4K 60 fpsのMP4をレンダリングします。ダウンロードリンクはアシスタント内で受け取れ、7日間有効です。</p>
+        </details>
+        <details>
+          <summary>フィルムの長さはどこまで？</summary>
+          <p>15秒から5分まで。アニマティックは15〜60秒です。YouTube向けの16:9か、縦型ショート向けの9:16を選べます。どちらも4K（3840×2160または2160×3840）、60 fpsでレンダリングされます。</p>
+        </details>
+        <details>
+          <summary>無料プランはありますか？</summary>
+          <p>はい。接続は無料で、新しいアカウントには登録もカードもなしで7クレジットが付きます——5クレジットのアニマティック1本分です。無料クレジットでフィルムは作れません。フィルムは最低10クレジット（1クレジット = 2秒）で、クリップがKleoの費用負担で生成されるため、パックを購入したアカウントだけに作られます。€5の10クレジットパックを加えると新しいアカウントは17クレジットになり、フィルムが開放されます。30秒のショートは15クレジットです。</p>
+        </details>
+      </div>
+      <div>
+        <details>
+          <summary>ナレーション、音楽、字幕は含まれますか？</summary>
+          <p>ナレーターはひとり、英語かイタリア語です。フィルムにBGM、字幕、画面上のテキストは含まれません。プラットフォームが必要とする場合は、お使いの編集ソフトで追加してください。</p>
+        </details>
+        <details>
+          <summary>Kleoは自動で私のチャンネルに公開しますか？</summary>
+          <p>いいえ。Kleoは完成したMP4のリンクをアシスタントに渡すだけです。確認、ダウンロード、アップロードはご自身で行います。KleoがYouTube、TikTok、その他のチャンネルに投稿することはありません。</p>
+        </details>
+        <details>
+          <summary>どのルックを選べますか？</summary>
+          <p>2つです。実写は生成された実写映像、アニメーションは2Dアニメーションのフィルムです。依頼でルックを指定すればアシスタントが伝えます。価格は長さだけで決まり、ルックには左右されません。<a href="/ja/styles.html">2つのルックを見る</a>。</p>
+        </details>
+      </div>
+    </div>
+    <p class="tpl-more"><a href="/ja/faq/">すべての回答を読む →</a></p>
+  </div>
+</section>
+
+<!-- ============ ACCOUNT ============ -->
+<section class="cta" id="account">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow"><span class="n">08</span>アカウント</div>
+      <h2>登録するものは何もありません。</h2>
+      <p class="lede">アカウントはあなたと一緒に移動します。アシスタントにKleoのアカウントページを頼めば、クレジット残高とパックの決済リンクが表示されます。アカウントは非公開のKleoキーに紐づいており、キーを持つ人がアカウントの持ち主です。誰にも渡さないでください。</p>
+    </div>
+    <div>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/ja/connect/">Kleoを接続 <span class="arr" aria-hidden="true">→</span></a> <a class="btn btn-ghost" href="/ja/pricing/">料金を見る</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<!-- i18n:langs -->
+<nav class="langs" aria-label="言語">
+  <div class="wrap">
+    <span>言語</span>
+    <a href="/" hreflang="en" lang="en">English</a>
+    <a href="/it/" hreflang="it" lang="it">Italiano</a>
+    <a href="/de/" hreflang="de" lang="de">Deutsch</a>
+    <a href="/fr/" hreflang="fr" lang="fr">Français</a>
+    <a href="/es/" hreflang="es" lang="es">Español</a>
+    <a href="/pt/" hreflang="pt" lang="pt">Português</a>
+    <a href="/nl/" hreflang="nl" lang="nl">Nederlands</a>
+    <a href="/pl/" hreflang="pl" lang="pl">Polski</a>
+    <a href="/tr/" hreflang="tr" lang="tr">Türkçe</a>
+    <a href="/ru/" hreflang="ru" lang="ru">Русский</a>
+    <a href="/uk/" hreflang="uk" lang="uk">Українська</a>
+    <b lang="ja">日本語</b>
+    <a href="/ko/" hreflang="ko" lang="ko">한국어</a>
+    <a href="/zh/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+    <a href="/zh-tw/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+    <a href="/ar/" hreflang="ar" lang="ar">العربية</a>
+    <a href="/he/" hreflang="he" lang="he">עברית</a>
+    <a href="/hi/" hreflang="hi" lang="hi">हिन्दी</a>
+    <a href="/id/" hreflang="id" lang="id">Bahasa Indonesia</a>
+    <a href="/vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
+    <a href="/th/" hreflang="th" lang="th">ไทย</a>
+  </div>
+</nav>
+<!-- /i18n:langs -->
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">
+      <a class="brand" href="/ja/" aria-label="Kleo、ホーム">
+        <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+          <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+          <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+        </svg>
+        Kleo <span class="tag">MCP</span>
+      </a>
+      <span>演出は人間。制作はエージェント。</span>
+    </div>
+    <div class="links">
+      <a href="/ja/connect/">接続</a> <a href="/ja/integrations/claude/">Claude</a> <a href="/ja/integrations/chatgpt/">ChatGPT</a> <a href="/ja/video-generation-mcp/">MCPドキュメント</a> <a href="/ja/examples/">作品例</a> <a href="/ja/styles.html">ルック</a> <a href="/ja/pricing/">料金</a> <a href="/ja/faq/">FAQ</a> <a href="/ja/about/">Kleoについて</a> <a href="/ja/privacy.html">プライバシー</a> <a href="/ja/terms.html">利用規約</a> <a href="https://github.com/tonnooooo/kleo-mcp">GitHub</a> <a href="mailto:kleooai@gmail.com">kleooai@gmail.com</a>
+    </div>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite">コピーしました</div>
+</body>
+</html>

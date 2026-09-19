@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="es" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.remove("no-js")</script>
+<title>Kleo AI — Dirección humana. Películas hechas por agentes.</title>
+<meta name="description" content="Películas narradas completas, realistas o de animación, desde tu asistente de IA vía MCP. 4K 60 fps, de 15 segundos a 5 minutos, narración en inglés o italiano.">
+<link rel="canonical" href="https://kleooai.com/es/">
+<!-- i18n:head -->
+<link rel="alternate" hreflang="en" href="https://kleooai.com/">
+<link rel="alternate" hreflang="it" href="https://kleooai.com/it/">
+<link rel="alternate" hreflang="de" href="https://kleooai.com/de/">
+<link rel="alternate" hreflang="fr" href="https://kleooai.com/fr/">
+<link rel="alternate" hreflang="es" href="https://kleooai.com/es/">
+<link rel="alternate" hreflang="pt" href="https://kleooai.com/pt/">
+<link rel="alternate" hreflang="nl" href="https://kleooai.com/nl/">
+<link rel="alternate" hreflang="pl" href="https://kleooai.com/pl/">
+<link rel="alternate" hreflang="tr" href="https://kleooai.com/tr/">
+<link rel="alternate" hreflang="ru" href="https://kleooai.com/ru/">
+<link rel="alternate" hreflang="uk" href="https://kleooai.com/uk/">
+<link rel="alternate" hreflang="ja" href="https://kleooai.com/ja/">
+<link rel="alternate" hreflang="ko" href="https://kleooai.com/ko/">
+<link rel="alternate" hreflang="zh-Hans" href="https://kleooai.com/zh/">
+<link rel="alternate" hreflang="zh-Hant" href="https://kleooai.com/zh-tw/">
+<link rel="alternate" hreflang="ar" href="https://kleooai.com/ar/">
+<link rel="alternate" hreflang="he" href="https://kleooai.com/he/">
+<link rel="alternate" hreflang="hi" href="https://kleooai.com/hi/">
+<link rel="alternate" hreflang="id" href="https://kleooai.com/id/">
+<link rel="alternate" hreflang="vi" href="https://kleooai.com/vi/">
+<link rel="alternate" hreflang="th" href="https://kleooai.com/th/">
+<link rel="alternate" hreflang="x-default" href="https://kleooai.com/">
+<script>(function(){try{var L=["it", "de", "fr", "es", "pt", "nl", "pl", "tr", "ru", "uk", "ja", "ko", "zh", "zh-tw", "ar", "he", "hi", "id", "vi", "th"],A={"zh-hk": "zh-tw", "zh-mo": "zh-tw", "zh-hant": "zh-tw", "zh-hans": "zh", "zh-cn": "zh", "zh-sg": "zh", "nb": "no", "nn": "no"},p=location.pathname,m=p.match(/^\/([a-z]{2}(?:-[a-z]{2})?)(?=\/)/),on=m&&L.indexOf(m[1])>=0?m[1]:"en",rest=on==="en"?p:p.slice(on.length+1),want=null,s=null;try{s=localStorage.getItem("kleo-lang")}catch(e){}if(s==="en"||L.indexOf(s)>=0)want=s;else{var nl=navigator.languages||[navigator.language||""];for(var i=0;i<nl.length&&!want;i++){var t=String(nl[i]).toLowerCase(),b=t.split("-")[0];t=A[t]||t;b=A[b]||b;want=t==="en"||b==="en"?"en":L.indexOf(t)>=0?t:L.indexOf(b)>=0?b:null}}if(want&&want!==on&&!/404/.test(p))location.replace((want==="en"?"":"/"+want)+rest+location.search+location.hash)}catch(e){}})()</script>
+<script type="application/json" id="i18n">{"Language": "Idioma", "Menu": "Menú", "Close menu": "Cerrar menú", "Copied": "Copiado", "Copied ✓": "Copiado ✓", "Copy it by hand: {text}": "Cópialo a mano: {text}", "Copy the Kleo server address": "Copiar la dirección del servidor de Kleo", "Copy the argument {value}": "Copiar el argumento {value}", "Copy this prompt": "Copiar este prompt", "Copy the {what} snippet": "Copiar el fragmento {what}", "Copy the {what} text": "Copiar el texto {what}", "Treatment · logline, angle, acts · look: realistic": "Tratamiento · logline, ángulo, actos · look: realista", "Storyboard · direction, scenes, shots · 23 credits, confirmed": "Storyboard · dirección, escenas, planos · 23 créditos, confirmado", "Generating the shots as footage · 4 of 11 · ~22 min left": "Generando los planos como metraje · 4 de 11 · ~22 min restantes", "Generating the shots as footage · 8 of 11 · ~12 min left": "Generando los planos como metraje · 8 de 11 · ~12 min restantes", "Narration · one voice, English · cutting the shots on the words": "Narración · una voz, inglés · cortando los planos sobre las palabras", "Finish · 2160×3840 · 60 fps · quality check": "Acabado · 2160×3840 · 60 fps · control de calidad", "Done · 28 min · link ready for 7 days": "Listo · 28 min · enlace disponible durante 7 días", "done": "listo", "running": "en curso", "A whole number from {min} to {max} seconds": "Un número entero de {min} a {max} segundos", "{s} s {product} = {n} credits": "{s} s de {product} = {n} créditos", "film": "película", "animatic": "animatic"}</script>
+<!-- /i18n:head -->
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kleo AI">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="Kleo AI — Dirección humana. Películas hechas por agentes.">
+<meta property="og:description" content="Películas narradas completas, realistas o de animación, desde tu asistente de IA vía MCP. 4K 60 fps, de 15 segundos a 5 minutos, narración en inglés o italiano.">
+<meta property="og:url" content="https://kleooai.com/es/">
+<meta property="og:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta property="og:image:alt" content="Kleo AI — Dirección humana. Películas hechas por agentes.">
+<meta property="og:image:width" content="2400">
+<meta property="og:image:height" content="1260">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kleo AI — Dirección humana. Películas hechas por agentes.">
+<meta name="twitter:description" content="Películas narradas completas, realistas o de animación, desde tu asistente de IA vía MCP. 4K 60 fps, de 15 segundos a 5 minutos, narración en inglés o italiano.">
+<meta name="twitter:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta name="theme-color" content="#0A0C10">
+<link rel="icon" href="/brand/kleo-favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/brand/kleo-favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/brand/kleo-icon-dark-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/site.css?v=20260920">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://kleooai.com/#website",
+      "name": "Kleo AI",
+      "alternateName": "Kleo",
+      "url": "https://kleooai.com/es/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kleooai.com/es/#page",
+      "url": "https://kleooai.com/es/",
+      "name": "Kleo AI — Dirección humana. Películas hechas por agentes.",
+      "description": "Películas narradas completas, realistas o de animación, desde tu asistente de IA vía MCP. 4K 60 fps, de 15 segundos a 5 minutos, narración en inglés o italiano.",
+      "inLanguage": "es",
+      "isPartOf": {
+        "@id": "https://kleooai.com/#website"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://kleooai.com/es/"
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://kleooai.com/#software",
+      "name": "Kleo AI",
+      "url": "https://kleooai.com/es/",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Cualquier cliente compatible con MCP (servidor remoto)",
+      "description": "Un servidor MCP remoto que convierte un brief de tu asistente de IA en una película narrada completa, realista o de animación, con cada plano generado como metraje en movimiento y renderizada como MP4 a 4K 60 fps — o en un animatic del mismo storyboard, 5 créditos, abierto a todas las cuentas.",
+      "offers": {
+        "@type": "Offer",
+        "name": "Pack de 10 créditos",
+        "price": "5",
+        "priceCurrency": "EUR",
+        "url": "https://kleooai.com/es/pricing/"
+      }
+    }
+  ]
+}
+</script>
+<script src="/site.js?v=20260920" defer></script>
+</head>
+<body>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" aria-label="Principal">
+  <div class="wrap">
+    <a class="brand" href="/es/" aria-label="Kleo, inicio" aria-current="page">
+      <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+        <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+        <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+      </svg>
+      Kleo <span class="tag">MCP</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Menú" aria-expanded="false" aria-controls="site-menu">
+      <svg class="bars" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 5h14M2 9h14M2 13h14"/></svg>
+      <svg class="x" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 4l10 10M14 4L4 14"/></svg>
+    </button>
+    <div class="nav-links" id="site-menu">
+      <a href="/es/ai-youtube-video-generator/">Crear vídeos</a> <a href="/es/examples/">Ejemplos</a> <a href="/es/styles.html">Looks</a> <a href="/es/pricing/">Precios</a> <a href="/es/faq/">FAQ</a>
+    </div>
+    <a class="btn btn-primary btn-sm" href="/es/connect/">Conectar Kleo</a>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <div class="osd"><span class="rec" aria-hidden="true"></span> REC <span class="tcode" id="tcode" aria-hidden="true">00:00:00:00</span> · 4K · 60 fps<span class="osd-more"> · 16:9 y 9:16 · EN / IT</span></div>
+      <h1>Dirección humana.<br><span class="hl">Películas hechas por agentes.</span></h1>
+      <p class="lede">Tu brief marca la historia. Kleo lo convierte en una película narrada completa — cada plano generado como metraje en movimiento, en look realista o de animación — o en un animatic del mismo storyboard, y entrega el enlace al asistente que ya usas. Dirigida por ti. Producida a través de MCP.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/es/connect/">Conectar Kleo <span class="arr" aria-hidden="true">→</span></a> <a class="btn btn-ghost" href="/es/examples/">Ver los ejemplos</a>
+      </div>
+      <p class="free-line"><b>Gratis para empezar.</b> 7 créditos en tu cuenta en cuanto te conectas — sin registro, sin tarjeta: un animatic. Una película empieza en 10 créditos y un pack de 5 €.</p>
+      <div class="works">
+        <span>Funciona con</span> <b>Claude</b><b>ChatGPT</b><b>Grok</b><b>Claude Code</b><b>Cursor</b><b>VS Code</b><b>OpenCode</b><b>Gemini CLI</b>
+      </div>
+    </div>
+
+    <div class="demo" role="figure" aria-label="Ejemplo: una conversación con Kleo conectado">
+      <div class="demo-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="demo-title">Claude · Kleo conectado<span class="clock" id="demoClock" hidden></span></span></div>
+      <div class="demo-body">
+        <div class="msg user">
+          <span class="who">Tú</span>
+          <p>Hazme un Short de 45 segundos sobre un farero que no deja de responder a un mensaje en una botella. Look realista, narración en inglés.</p>
+        </div>
+        <div class="msg">
+          <span class="who">Claude</span>
+          <p>Tratamiento listo: un farero, una botella al año, la última respondida en persona. 23 créditos, 9:16. Empiezo el render.</p>
+          <div class="tool">
+            <div class="tool-head">
+              <span class="tool-name"><b>kleo_create_video</b></span> <span class="tool-state" id="toolState">en curso</span>
+            </div>
+            <pre class="tool-args">{ "duration_s": 45, "format": "9:16", "style": "realistic", "language": "en",
+  "prompt": "A lighthouse keeper who keeps answering a message in a bottle" }</pre>
+          </div>
+        </div>
+        <div class="render" id="render">
+          <div class="render-head"><span>trabajo <b>kl_7f3k</b> · GPU alquilada para este trabajo</span><b id="renderPct">58%</b></div>
+          <div class="tracks" id="tracks">
+            <div class="track done"><span>Tratamiento</span><span class="tbar" style="--c:var(--violet)"></span></div>
+            <div class="track done"><span>Storyboard</span><span class="tbar" style="--c:var(--teal)"></span></div>
+            <div class="track active"><span>Metraje</span><span class="tbar" style="--c:var(--amber)"></span></div>
+            <div class="track"><span>Narración</span><span class="tbar" style="--c:var(--rose)"></span></div>
+            <div class="track"><span>Acabado</span><span class="tbar" style="--c:var(--blue)"></span></div>
+          </div>
+          <div class="bar"><span id="renderFill"></span></div>
+          <div class="render-status" id="renderStatus">Generando los planos como metraje · 8 de 11 · ~12 min restantes</div>
+          <div class="result" id="result" hidden>
+            <span class="file">lighthouse-keeper.mp4</span> <span class="chip">2160×3840</span><span class="chip">60 fps</span><span class="chip">0:45</span><span class="chip">7 días</span> <span class="dl">Descargar</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wrap wrap-stats">
+    <dl class="stats" aria-label="Kleo en cifras">
+      <div><dt>Salida</dt><dd>4K · 60 fps</dd></div>
+      <div><dt>Una película, del brief al enlace</dt><dd>25–35 min</dd></div>
+      <div><dt>Looks</dt><dd>Realista · Animación</dd></div>
+      <div><dt>Para empezar</dt><dd>7 créditos, un animatic</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section id="how">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">01</span>Cómo funciona</div>
+        <h2>Tu visión. Cada fotograma.</h2>
+      </div>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="num" aria-hidden="true">01</span> <span class="tc">tus palabras</span>
+        <h3>Dirige la historia</h3>
+        <p>Dile a tu asistente el tema, la duración, el formato y el look — realista o animación. Kleo lee el brief y pregunta lo que falte.</p>
+      </div>
+      <div class="step">
+        <span class="num" aria-hidden="true">02</span> <span class="tc">kleo_adapt_prompt</span>
+        <h3>Lee el tratamiento</h3>
+        <p>Tu asistente te muestra primero el tratamiento: logline, ángulo, apertura, actos y final. Cambia lo que quieras antes de que se genere un solo fotograma.</p>
+      </div>
+      <div class="step">
+        <span class="num" aria-hidden="true">03</span> <span class="tc">kleo_create_video</span>
+        <h3>Kleo renderiza</h3>
+        <p>Con ese tratamiento se escribe el storyboard; después, en una película, cada plano se genera como metraje en movimiento a partir de su propio fotograma; en un animatic, en cambio, la cámara se mueve sobre cada fotograma dibujado. Un solo narrador le pone voz, en inglés o en italiano. El coste exacto en créditos se indica antes de cobrar nada; no se cobra nada hasta que aceptas el render.</p>
+      </div>
+      <div class="step">
+        <span class="num" aria-hidden="true">04</span> <span class="tc">kleo_get_result</span>
+        <h3>Descarga y publica</h3>
+        <p>La película se renderiza a 4K 60 fps en una GPU alquilada para tu trabajo. Tu asistente sigue el progreso y te entrega el enlace al MP4 terminado, válido durante 7 días. Revísalo y súbelo donde publiques.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FILMS ============ -->
+<section id="films">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">02</span>Películas</div>
+        <h2>Películas de Kleo.</h2>
+      </div>
+      <p class="lede">Tether, veinte segundos en un solo plano, Apex, dos coches saliendo de un túnel, y el primer minuto de Signal Delay, un documental, en el look realista — y <a href="/es/examples/octopus/">un Short animado sobre por qué los pulpos tienen tres corazones</a> en el look de animación. Todos son másteres 4K 60 fps mostrados a 1080p; cada uno se reproduce en su propia página, sin sonido, sin nada que pulsar.</p>
+    </div>
+    <div class="films-row">
+      <a class="poster" href="/es/examples/tether/">
+        <img src="/samples/realistic-tether.jpg" alt="El rostro de un astronauta dentro de su casco, el visor inundado de rojo, un cable dorado que sube hacia la estación" width="1920" height="1080" loading="lazy">
+        <span class="play"><i aria-hidden="true">▶</i>Tether · 20 s · un solo plano</span>
+      </a>
+      <a class="poster" href="/es/examples/apex/">
+        <img src="/samples/realistic-apex.jpg" alt="Un superdeportivo amarillo y un cupé clásico verde pálido uno junto al otro en un túnel de luz ámbar" width="1920" height="1080" loading="lazy">
+        <span class="play"><i aria-hidden="true">▶</i>Apex · 20 s · dos coches</span>
+      </a>
+      <a class="poster" href="/es/examples/signal-delay/">
+        <img src="/samples/realistic-signal.jpg" alt="Una ventana de terminal y un diagrama ámbar dibujado a mano sobre una imagen fotográfica de la Voyager 1, fechas sobre negro" width="1920" height="1080" loading="lazy">
+        <span class="play"><i aria-hidden="true">▶</i>Signal Delay · el primer minuto</span>
+      </a>
+    </div>
+    <p class="tpl-more"><a href="/es/examples/">Todos los ejemplos →</a> · <a href="/es/styles.html">Los dos looks, realista y animación →</a></p>
+  </div>
+</section>
+
+<!-- ============ WHAT TO MAKE ============ -->
+<section id="template">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">03</span>Qué hacer</div>
+        <h2>Haz algo que merezca la pena ver.</h2>
+      </div>
+    </div>
+    <div class="grid panels three">
+      <article class="panel">
+        <h3>Vídeos explicativos para YouTube</h3>
+        <p>Convierte una pregunta clara en una película narrada en 16:9, desde el gancho inicial hasta la conclusión final, de hasta cinco minutos.</p>
+        <a class="more" href="/es/ai-youtube-video-generator/">Hacer un vídeo para YouTube <span class="arr" aria-hidden="true">→</span></a>
+      </article>
+      <article class="panel">
+        <h3>Historias cortas en el look de animación</h3>
+        <p>Dale a una historia un tema, un escenario y un final, y pide el look de animación: una película de animación 2D con un solo narrador, de 15 segundos a 5 minutos.</p>
+        <a class="more" href="/es/examples/octopus/">Ver el Short del pulpo <span class="arr" aria-hidden="true">→</span></a>
+      </article>
+      <article class="panel">
+        <h3>Shorts verticales</h3>
+        <p>Un Short 9:16 centrado en una sola idea y con una narrativa clara, renderizado a 2160×3840 y 60 fps. Un Short de 30 segundos cuesta 15 créditos como película, 5 como animatic.</p>
+        <a class="more" href="/es/pricing/">Cuánto cuesta un Short <span class="arr" aria-hidden="true">→</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BEHIND THE SCENES ============ -->
+<section id="engine">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">04</span>Entre bastidores</div>
+        <h2>Tú diriges. Kleo renderiza.</h2>
+      </div>
+      <p class="lede">Quédate en tu asistente para el brief, el progreso y el enlace: Kleo trabaja detrás de la conversación. En una película, cada plano se genera como metraje en movimiento a partir de su propio fotograma — nada de pases de imágenes fijas — y un solo narrador la sostiene. El render se hace a 4K 60 fps en una GPU alquilada para tu trabajo, normalmente en 25–35 minutos. El MP4 terminado es el entregable; tú decides cuándo y dónde publicarlo.</p>
+    </div>
+    <ul class="style-facts auto">
+      <li><b>Tratamiento</b><span>Tu brief se convierte en un logline, un ángulo, una apertura, actos y un final — que ves antes de que se genere un solo fotograma.</span></li>
+      <li><b>Storyboard</b><span>Dirección, escenas y planos, escritos bajo ese tratamiento; los créditos exactos se indican antes de cobrar nada.</span></li>
+      <li><b>Metraje</b><span>En una película, cada plano generado como metraje en movimiento a partir de su propio fotograma, en look realista o de animación. En un animatic, los mismos fotogramas dibujados con la cámara moviéndose sobre cada uno — sin clips generados.</span></li>
+      <li><b>Narración</b><span>Un solo narrador, en inglés o en italiano, sostiene la película. Sin música, sin subtítulos, sin texto en pantalla.</span></li>
+      <li><b>Acabado</b><span>Un MP4 a 4K 60 fps, 16:9 o 9:16, en un enlace que te entrega tu asistente — válido durante 7 días.</span></li>
+    </ul>
+    <p class="style-say copyable">«Usa Kleo para hacer una película narrada de 60 segundos sobre cómo viaja el café de la finca a la taza. Look realista, narración en inglés, 16:9. Muéstrame el tratamiento y el coste en créditos antes de empezar el render.»<button class="btn btn-ghost btn-sm copy" type="button" data-copy="Use Kleo to make a 60-second narrated film about how coffee travels from farm to cup. Realistic look, English narration, 16:9. Show me the treatment and the credit cost before starting the render.">Copiar</button></p>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section id="pricing">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">05</span>Precios</div>
+        <h2>Gratis para empezar. Solo créditos, nada se renueva.</h2>
+      </div>
+      <div><span class="draft">Activo · pagos únicos a través de Stripe</span></div>
+    </div>
+    <div class="plans two">
+      <div class="plan hi">
+        <div class="name"><span>Plan gratuito</span><span class="pop">incluido, para todos</span></div>
+        <div class="price">0 €<small>7 créditos, sin registro</small></div>
+        <ul>
+          <li>El plan gratuito es la cuenta misma: conéctate una vez y tienes 7 créditos — sin formulario, sin tarjeta, nada que cancelar</li>
+          <li>Un animatic cuesta 5 créditos fijos, 15–60 s: el mismo tratamiento, storyboard y fotogramas dibujados, la cámara moviéndose sobre cada uno, el mismo narrador y la misma capa gráfica, 4K 60 fps, sin clips generados. También es la previsualización de una película</li>
+          <li>Una película se cobra por duración: 1 crédito = 2 segundos, desde 10 créditos (20 s = 10 · 30 s = 15 · 60 s = 30 · 90 s = 45 · 5 min = 150)</li>
+          <li>Los créditos gratuitos nunca compran una película: sus clips se generan a costa de Kleo, así que una película solo se hace para cuentas que han comprado un pack. Añade el pack de 5 € y tienes 17 — se abre la película, un Short de 30 segundos</li>
+        </ul>
+        <a class="btn btn-primary" href="/es/connect/">Conectar y empezar</a>
+      </div>
+      <div class="plan">
+        <div class="name"><span>Packs de créditos</span><span class="pop">pago único</span></div>
+        <div class="price">5–40 €<small>pago único, sin suscripción</small></div>
+        <ul>
+          <li>5 € — 10 créditos · 15 € — 35 · 40 € — 100</li>
+          <li>Cualquier pack abre la película. 5 € más tus créditos iniciales = 17, un Short de 30 segundos; 15 € = 35 créditos, un minuto y diez segundos de película; 40 € = 100 créditos, tres minutos y veinte</li>
+          <li>Pago a través de Stripe: pide a tu asistente la página de tu cuenta y compra el pack desde ahí</li>
+        </ul>
+        <a class="btn btn-ghost" href="/es/pricing/">Calcular los créditos</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONNECT ============ -->
+<section id="connect">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">06</span>Conectar</div>
+        <h2>Conoce a tu equipo de producción.</h2>
+      </div>
+      <div>
+        <p class="lede">Añade la dirección de Kleo a un asistente compatible como conector personalizado. La página de Kleo se abre desde el asistente durante el inicio de sesión: un botón, sin formulario, sin tarjeta. Luego describe tu película.</p>
+        <p class="mono" id="mcpStatus" hidden></p>
+        <div class="address"><code>https://mcp.kleooai.com/mcp</code><button class="btn btn-ghost btn-sm" type="button" data-copy="https://mcp.kleooai.com/mcp">Copiar dirección</button></div>
+      </div>
+    </div>
+    <div class="grid panels">
+      <article class="panel">
+        <h3>Claude <small>app · web</small></h3>
+        <ol>
+          <li>Abre <b>Configuración → Conectores</b> y elige <b>Añadir conector personalizado</b>.</li>
+          <li>Llámalo <b>Kleo</b>, pega la dirección de arriba y confirma. Se abre la página de Kleo: pulsa <b>Empezar gratis</b> y vuelves a Claude.</li>
+          <li>En un chat nuevo, activa Kleo desde el menú de herramientas y pide: <i>Hazme un Short de 45 segundos sobre…</i></li>
+        </ol>
+        <p>El plan gratuito de Claude permite un conector personalizado.</p>
+        <a class="more" href="/es/integrations/claude/">Guía completa de Claude <span class="arr" aria-hidden="true">→</span></a>
+      </article>
+      <article class="panel">
+        <h3>ChatGPT <small>modo desarrollador</small></h3>
+        <ol>
+          <li>Abre <b>Configuración → Apps y conectores</b> (llamado <b>Conectores</b> en versiones anteriores), luego <b>Configuración avanzada</b>, y activa el <b>Modo desarrollador</b>.</li>
+          <li>De vuelta en <b>Conectores</b>, elige <b>Crear</b>: llámalo <b>Kleo</b>, pega la dirección, pon la autenticación en <b>OAuth</b> y guarda. Se abre la página de Kleo: pulsa <b>Empezar gratis</b> y vuelves a ChatGPT.</li>
+          <li>En el chat, activa Kleo desde el menú <b>+</b> y pide el vídeo. ChatGPT te pide confirmación antes de iniciar un render.</li>
+        </ol>
+        <p>Requiere ChatGPT Plus, Pro, Business o Enterprise.</p>
+        <a class="more" href="/es/integrations/chatgpt/">Guía completa de ChatGPT <span class="arr" aria-hidden="true">→</span></a>
+      </article>
+    </div>
+    <p class="tpl-more"><a href="/es/connect/">Cada cliente, paso a paso →</a> · <a href="/es/video-generation-mcp/">Documentación MCP →</a></p>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head one">
+      <div>
+        <div class="eyebrow"><span class="n">07</span>FAQ</div>
+        <h2>Antes de tu primera película.</h2>
+      </div>
+    </div>
+    <div class="faq">
+      <div>
+        <details open>
+          <summary>¿Qué crea Kleo exactamente?</summary>
+          <p>Dos productos a partir de un mismo storyboard. La película: una película narrada completa, en look realista (metraje de imagen real generado) o en look de animación (una película de animación 2D), con cada plano generado como metraje en movimiento. El animatic: el mismo tratamiento, storyboard y fotogramas dibujados, la cámara moviéndose sobre cada fotograma, el mismo narrador y la misma capa gráfica, sin clips generados — de 15 a 60 segundos, y también la previsualización de la película. Con tu asistente, Kleo escribe el tratamiento y el storyboard, narra y renderiza un MP4 a 4K 60 fps. Recibes un enlace de descarga en el asistente, válido durante 7 días.</p>
+        </details>
+        <details>
+          <summary>¿Cuánto puede durar una película?</summary>
+          <p>De 15 segundos a 5 minutos; un animatic, de 15 a 60 segundos. Elige 16:9 para YouTube o 9:16 para un Short vertical; ambos se renderizan a 4K (3840×2160 o 2160×3840) y 60 fps.</p>
+        </details>
+        <details>
+          <summary>¿Hay un plan gratuito?</summary>
+          <p>Sí: conectarse es gratis y da a cada cuenta nueva 7 créditos, sin registro y sin tarjeta — suficiente para un animatic de 5. Los créditos gratuitos nunca compran una película: una película cuesta como mínimo 10 créditos (1 crédito = 2 segundos) y solo se hace para cuentas que han comprado un pack, porque sus clips se generan a costa de Kleo. Añade el pack de 5 € con 10 créditos y una cuenta nueva tiene 17: se abre la película, y un Short de 30 segundos cuesta 15.</p>
+        </details>
+      </div>
+      <div>
+        <details>
+          <summary>¿Kleo incluye narración, música y subtítulos?</summary>
+          <p>Un solo narrador, en inglés o en italiano. Sin música de fondo, sin subtítulos y sin texto en pantalla en la película; añádelos en tu editor si tu plataforma los necesita.</p>
+        </details>
+        <details>
+          <summary>¿Kleo publicará en mi canal automáticamente?</summary>
+          <p>No. Kleo entrega a tu asistente un enlace al MP4 terminado; tú lo revisas, lo descargas y lo subes. Kleo nunca publica en YouTube, TikTok ni en ningún otro canal.</p>
+        </details>
+        <details>
+          <summary>¿Qué looks puedo elegir?</summary>
+          <p>Dos. Realista es metraje de imagen real generado; animación es una película de animación 2D. Indica el look en tu brief y tu asistente lo transmite — el precio depende solo de la duración, no del look. <a href="/es/styles.html">Ver los dos looks</a>.</p>
+        </details>
+      </div>
+    </div>
+    <p class="tpl-more"><a href="/es/faq/">Leer todas las respuestas →</a></p>
+  </div>
+</section>
+
+<!-- ============ ACCOUNT ============ -->
+<section class="cta" id="account">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow"><span class="n">08</span>Cuenta</div>
+      <h2>No hay nada en lo que registrarse.</h2>
+      <p class="lede">Tu cuenta viaja contigo. Pide a tu asistente la página de tu cuenta de Kleo: muestra tus créditos y los enlaces de pago de los packs. La cuenta está ligada a una clave privada de Kleo — quien la tiene es dueño de la cuenta — así que guárdala solo para ti.</p>
+    </div>
+    <div>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/es/connect/">Conectar Kleo <span class="arr" aria-hidden="true">→</span></a> <a class="btn btn-ghost" href="/es/pricing/">Ver precios</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<!-- i18n:langs -->
+<nav class="langs" aria-label="Idioma">
+  <div class="wrap">
+    <span>Idioma</span>
+    <a href="/" hreflang="en" lang="en">English</a>
+    <a href="/it/" hreflang="it" lang="it">Italiano</a>
+    <a href="/de/" hreflang="de" lang="de">Deutsch</a>
+    <a href="/fr/" hreflang="fr" lang="fr">Français</a>
+    <b lang="es">Español</b>
+    <a href="/pt/" hreflang="pt" lang="pt">Português</a>
+    <a href="/nl/" hreflang="nl" lang="nl">Nederlands</a>
+    <a href="/pl/" hreflang="pl" lang="pl">Polski</a>
+    <a href="/tr/" hreflang="tr" lang="tr">Türkçe</a>
+    <a href="/ru/" hreflang="ru" lang="ru">Русский</a>
+    <a href="/uk/" hreflang="uk" lang="uk">Українська</a>
+    <a href="/ja/" hreflang="ja" lang="ja">日本語</a>
+    <a href="/ko/" hreflang="ko" lang="ko">한국어</a>
+    <a href="/zh/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+    <a href="/zh-tw/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+    <a href="/ar/" hreflang="ar" lang="ar">العربية</a>
+    <a href="/he/" hreflang="he" lang="he">עברית</a>
+    <a href="/hi/" hreflang="hi" lang="hi">हिन्दी</a>
+    <a href="/id/" hreflang="id" lang="id">Bahasa Indonesia</a>
+    <a href="/vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
+    <a href="/th/" hreflang="th" lang="th">ไทย</a>
+  </div>
+</nav>
+<!-- /i18n:langs -->
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">
+      <a class="brand" href="/es/" aria-label="Kleo, inicio">
+        <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+          <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+          <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+        </svg>
+        Kleo <span class="tag">MCP</span>
+      </a>
+      <span>Dirección humana. Películas hechas por agentes.</span>
+    </div>
+    <div class="links">
+      <a href="/es/connect/">Conectar</a> <a href="/es/integrations/claude/">Claude</a> <a href="/es/integrations/chatgpt/">ChatGPT</a> <a href="/es/video-generation-mcp/">Docs MCP</a> <a href="/es/examples/">Ejemplos</a> <a href="/es/styles.html">Looks</a> <a href="/es/pricing/">Precios</a> <a href="/es/faq/">FAQ</a> <a href="/es/about/">Acerca de</a> <a href="/es/privacy.html">Privacidad</a> <a href="/es/terms.html">Términos</a> <a href="https://github.com/tonnooooo/kleo-mcp">GitHub</a> <a href="mailto:kleooai@gmail.com">kleooai@gmail.com</a>
+    </div>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite">Copiado</div>
+</body>
+</html>

@@ -8,6 +8,23 @@
   var SHIPPED = "https://mcp.kleooai.com/mcp";
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  /* ---------- the few strings this script prints, in the page's language ----------
+     A translated page carries them in <script type="application/json" id="i18n"> (built by tools/i18n.py from the
+     English text below, which is the key); an English page carries nothing and the key is printed as it is. */
+  var T = {};
+  try { var tj = document.getElementById('i18n'); if (tj) T = JSON.parse(tj.textContent) || {}; } catch (err) { T = {}; }
+  function t(key, vars){
+    var s = Object.prototype.hasOwnProperty.call(T, key) ? T[key] : key;
+    return vars ? s.replace(/\{(\w+)\}/g, function(m, k){ return k in vars ? vars[k] : m; }) : s;
+  }
+
+  /* ---------- the language switcher: a choice made here is kept, and the head script honours it on every page ---------- */
+  document.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('.langs a[hreflang]'); if (!a) return;
+    var code = a.getAttribute('href').split('/')[1]; if (!/^[a-z]{2}(-[a-z]{2})?$/.test(code) || a.getAttribute('hreflang') === 'en') code = 'en';
+    try { localStorage.setItem('kleo-lang', code); } catch (err) {}
+  });
+
   /* ---------- old Italian anchors, kept working ----------
      #come #connetti #prezzi #quinte were the home's section ids until the site went fully English. They are in links
      that have already been shared, so they are translated once on arrival instead of dropping the visitor at the top. */
@@ -29,7 +46,7 @@
     var setMenu = function(open){
       nav.classList.toggle('open', open);
       navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Menu');
+      navToggle.setAttribute('aria-label', open ? t('Close menu') : t('Menu'));
     };
     navToggle.addEventListener('click', function(){ setMenu(!nav.classList.contains('open')); });
     // a link chosen from the menu closes it, and so does a tap anywhere else or the Escape key
@@ -49,18 +66,18 @@
     var host = b.closest && (b.closest('.panel') || b.closest('.step') || b.closest('section'));
     var what = host && host.querySelector('h3, h2') ? host.querySelector('h3, h2').textContent.trim() : 'Kleo';
     var v = b.getAttribute('data-copy') || '';
-    b.setAttribute('aria-label', /^https?:/.test(v) ? 'Copy the Kleo server address'
-      : /^style:/.test(v) ? 'Copy the argument ' + v
-      : b.closest('.style-say') ? 'Copy this prompt'
-      : b.closest('.code') ? 'Copy the ' + what + ' snippet'
-      : 'Copy the ' + what + ' text');
+    b.setAttribute('aria-label', /^https?:/.test(v) ? t('Copy the Kleo server address')
+      : /^style:/.test(v) ? t('Copy the argument {value}', {value: v})
+      : b.closest('.style-say') ? t('Copy this prompt')
+      : b.closest('.code') ? t('Copy the {what} snippet', {what: what})
+      : t('Copy the {what} text', {what: what}));
   });
   document.addEventListener('click', function(e){
     var b = e.target.closest && e.target.closest('[data-copy]'); if(!b) return;
     var txt = b.getAttribute('data-copy');
-    function ok(){ say('Copied'); if (b.tagName === 'BUTTON' && !b.dataset.was && !b.classList.contains('style-arg')) { b.dataset.was = b.textContent; b.textContent = 'Copied ✓'; setTimeout(function(){ b.textContent = b.dataset.was; delete b.dataset.was; }, 1500); } }
-    try { navigator.clipboard.writeText(txt).then(ok, function(){ say('Copy it by hand: ' + txt); }); }
-    catch(err){ say('Copy it by hand: ' + txt); }
+    function ok(){ say(t('Copied')); if (b.tagName === 'BUTTON' && !b.dataset.was && !b.classList.contains('style-arg')) { b.dataset.was = b.textContent; b.textContent = t('Copied ✓'); setTimeout(function(){ b.textContent = b.dataset.was; delete b.dataset.was; }, 1500); } }
+    try { navigator.clipboard.writeText(txt).then(ok, function(){ say(t('Copy it by hand: {text}', {text: txt})); }); }
+    catch(err){ say(t('Copy it by hand: {text}', {text: txt})); }
   });
 
   /* ---------- live MCP address from config.json ---------- */
@@ -118,13 +135,13 @@
   var tracks = Array.prototype.slice.call(document.querySelectorAll('#tracks .track'));
   if (tracks.length) {
     var stages = [
-      {pct:5,   status:'Treatment · logline, angle, acts · look: realistic', track:0},
-      {pct:12,  status:'Storyboard · direction, scenes, shots · 23 credits, confirmed', track:1},
-      {pct:34,  status:'Generating the shots as footage · 4 of 11 · ~22 min left', track:2},
-      {pct:58,  status:'Generating the shots as footage · 8 of 11 · ~12 min left', track:2},
-      {pct:76,  status:'Narration · one voice, English · cutting the shots on the words', track:3},
-      {pct:93,  status:'Finish · 2160×3840 · 60 fps · quality check', track:4},
-      {pct:100, status:'Done · 28 min · link ready for 7 days', done:true}
+      {pct:5,   status:t('Treatment · logline, angle, acts · look: realistic'), track:0},
+      {pct:12,  status:t('Storyboard · direction, scenes, shots · 23 credits, confirmed'), track:1},
+      {pct:34,  status:t('Generating the shots as footage · 4 of 11 · ~22 min left'), track:2},
+      {pct:58,  status:t('Generating the shots as footage · 8 of 11 · ~12 min left'), track:2},
+      {pct:76,  status:t('Narration · one voice, English · cutting the shots on the words'), track:3},
+      {pct:93,  status:t('Finish · 2160×3840 · 60 fps · quality check'), track:4},
+      {pct:100, status:t('Done · 28 min · link ready for 7 days'), done:true}
     ];
     var fill = document.getElementById('renderFill'), pctEl = document.getElementById('renderPct'),
         statusEl = document.getElementById('renderStatus'), result = document.getElementById('result'),
@@ -136,7 +153,7 @@
         if (s.done || i < s.track) t.classList.add('done'); else if (i === s.track) t.classList.add('active');
       });
       if (result) result.hidden = !s.done;
-      if (toolState) { toolState.textContent = s.done ? 'done' : 'running'; toolState.classList.toggle('done', !!s.done); }
+      if (toolState) { toolState.textContent = s.done ? t('done') : t('running'); toolState.classList.toggle('done', !!s.done); }
     };
     if (reduce) { paint(stages[stages.length-1]); }
     else { var si = 3; paint(stages[si]); setInterval(function(){ si = (si + 1) % stages.length; paint(stages[si]); }, 2400); }
@@ -158,8 +175,8 @@
       var rule = rules[product], seconds = Number(duration.value);
       duration.min = rule.min; duration.max = rule.max;
       output.textContent = !Number.isInteger(seconds) || seconds < rule.min || seconds > rule.max
-        ? 'A whole number from ' + rule.min + ' to ' + rule.max + ' seconds'
-        : seconds + ' s ' + product + ' = ' + rule.credits(seconds) + ' credits';
+        ? t('A whole number from {min} to {max} seconds', {min: rule.min, max: rule.max})
+        : t('{s} s {product} = {n} credits', {s: seconds, product: t(product), n: rule.credits(seconds)});
     };
     chips.forEach(function(c){
       c.addEventListener('click', function(){

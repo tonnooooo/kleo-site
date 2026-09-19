@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Rebuild sitemap.xml and llms.txt from the pages themselves.
 
-sitemap.xml lists exactly the indexable pages of tools/check.py with, for each, the date of the last commit that
+sitemap.xml lists exactly the indexable pages of tools/check.py, in every language, with, for each, the date of the last commit that
 touched its file (or today, for a file not yet committed) — a real modification date, never the build date.
 llms.txt repeats each page's title and description, so it cannot drift from the HTML. Run from the repo root.
 """
@@ -10,7 +10,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / 'tools'))
-from check import PAGES, SITE_URL
+from check import PAGES, ALL_PAGES, SITE_URL
 
 
 def last_change(path):
@@ -27,7 +27,7 @@ def meta(path):
 
 
 urls = []
-for route, path in PAGES.items():
+for route, path in ALL_PAGES.items():
     urls.append('  <url>\n    <loc>%s%s</loc>\n    <lastmod>%s</lastmod>\n  </url>' % (SITE_URL, route, last_change(path)))
 (ROOT / 'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n'
     '<!-- Exactly the indexable pages, rebuilt by tools/sitemap.py; lastmod is the last commit that touched the page. -->\n'

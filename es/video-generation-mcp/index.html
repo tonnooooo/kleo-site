@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="es" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.remove("no-js")</script>
+<title>Documentación MCP de Kleo — endpoint, OAuth y herramientas</title>
+<meta name="description" content="El servidor MCP remoto de Kleo, documentado: el endpoint Streamable HTTP, OAuth 2.1 en un botón, cada herramienta kleo en su orden, la regla de precios y la salida.">
+<link rel="canonical" href="https://kleooai.com/es/video-generation-mcp/">
+<!-- i18n:head -->
+<link rel="alternate" hreflang="en" href="https://kleooai.com/video-generation-mcp/">
+<link rel="alternate" hreflang="it" href="https://kleooai.com/it/video-generation-mcp/">
+<link rel="alternate" hreflang="de" href="https://kleooai.com/de/video-generation-mcp/">
+<link rel="alternate" hreflang="fr" href="https://kleooai.com/fr/video-generation-mcp/">
+<link rel="alternate" hreflang="es" href="https://kleooai.com/es/video-generation-mcp/">
+<link rel="alternate" hreflang="pt" href="https://kleooai.com/pt/video-generation-mcp/">
+<link rel="alternate" hreflang="nl" href="https://kleooai.com/nl/video-generation-mcp/">
+<link rel="alternate" hreflang="pl" href="https://kleooai.com/pl/video-generation-mcp/">
+<link rel="alternate" hreflang="tr" href="https://kleooai.com/tr/video-generation-mcp/">
+<link rel="alternate" hreflang="ru" href="https://kleooai.com/ru/video-generation-mcp/">
+<link rel="alternate" hreflang="uk" href="https://kleooai.com/uk/video-generation-mcp/">
+<link rel="alternate" hreflang="ja" href="https://kleooai.com/ja/video-generation-mcp/">
+<link rel="alternate" hreflang="ko" href="https://kleooai.com/ko/video-generation-mcp/">
+<link rel="alternate" hreflang="zh-Hans" href="https://kleooai.com/zh/video-generation-mcp/">
+<link rel="alternate" hreflang="zh-Hant" href="https://kleooai.com/zh-tw/video-generation-mcp/">
+<link rel="alternate" hreflang="ar" href="https://kleooai.com/ar/video-generation-mcp/">
+<link rel="alternate" hreflang="he" href="https://kleooai.com/he/video-generation-mcp/">
+<link rel="alternate" hreflang="hi" href="https://kleooai.com/hi/video-generation-mcp/">
+<link rel="alternate" hreflang="id" href="https://kleooai.com/id/video-generation-mcp/">
+<link rel="alternate" hreflang="vi" href="https://kleooai.com/vi/video-generation-mcp/">
+<link rel="alternate" hreflang="th" href="https://kleooai.com/th/video-generation-mcp/">
+<link rel="alternate" hreflang="x-default" href="https://kleooai.com/video-generation-mcp/">
+<script>(function(){try{var L=["it", "de", "fr", "es", "pt", "nl", "pl", "tr", "ru", "uk", "ja", "ko", "zh", "zh-tw", "ar", "he", "hi", "id", "vi", "th"],A={"zh-hk": "zh-tw", "zh-mo": "zh-tw", "zh-hant": "zh-tw", "zh-hans": "zh", "zh-cn": "zh", "zh-sg": "zh", "nb": "no", "nn": "no"},p=location.pathname,m=p.match(/^\/([a-z]{2}(?:-[a-z]{2})?)(?=\/)/),on=m&&L.indexOf(m[1])>=0?m[1]:"en",rest=on==="en"?p:p.slice(on.length+1),want=null,s=null;try{s=localStorage.getItem("kleo-lang")}catch(e){}if(s==="en"||L.indexOf(s)>=0)want=s;else{var nl=navigator.languages||[navigator.language||""];for(var i=0;i<nl.length&&!want;i++){var t=String(nl[i]).toLowerCase(),b=t.split("-")[0];t=A[t]||t;b=A[b]||b;want=t==="en"||b==="en"?"en":L.indexOf(t)>=0?t:L.indexOf(b)>=0?b:null}}if(want&&want!==on&&!/404/.test(p))location.replace((want==="en"?"":"/"+want)+rest+location.search+location.hash)}catch(e){}})()</script>
+<script type="application/json" id="i18n">{"Language": "Idioma", "Menu": "Menú", "Close menu": "Cerrar menú", "Copied": "Copiado", "Copied ✓": "Copiado ✓", "Copy it by hand: {text}": "Cópialo a mano: {text}", "Copy the Kleo server address": "Copiar la dirección del servidor de Kleo", "Copy the argument {value}": "Copiar el argumento {value}", "Copy this prompt": "Copiar este prompt", "Copy the {what} snippet": "Copiar el fragmento {what}", "Copy the {what} text": "Copiar el texto {what}", "Treatment · logline, angle, acts · look: realistic": "Tratamiento · logline, ángulo, actos · look: realista", "Storyboard · direction, scenes, shots · 23 credits, confirmed": "Storyboard · dirección, escenas, planos · 23 créditos, confirmado", "Generating the shots as footage · 4 of 11 · ~22 min left": "Generando los planos como metraje · 4 de 11 · ~22 min restantes", "Generating the shots as footage · 8 of 11 · ~12 min left": "Generando los planos como metraje · 8 de 11 · ~12 min restantes", "Narration · one voice, English · cutting the shots on the words": "Narración · una voz, inglés · cortando los planos sobre las palabras", "Finish · 2160×3840 · 60 fps · quality check": "Acabado · 2160×3840 · 60 fps · control de calidad", "Done · 28 min · link ready for 7 days": "Listo · 28 min · enlace disponible durante 7 días", "done": "listo", "running": "en curso", "A whole number from {min} to {max} seconds": "Un número entero de {min} a {max} segundos", "{s} s {product} = {n} credits": "{s} s de {product} = {n} créditos", "film": "película", "animatic": "animatic"}</script>
+<!-- /i18n:head -->
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kleo AI">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="Documentación MCP de Kleo — endpoint, OAuth y herramientas">
+<meta property="og:description" content="El servidor MCP remoto de Kleo, documentado: el endpoint Streamable HTTP, OAuth 2.1 en un botón, cada herramienta kleo en su orden, la regla de precios y la salida.">
+<meta property="og:url" content="https://kleooai.com/es/video-generation-mcp/">
+<meta property="og:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta property="og:image:alt" content="Kleo AI — Dirección humana. Películas hechas por agentes.">
+<meta property="og:image:width" content="2400">
+<meta property="og:image:height" content="1260">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Documentación MCP de Kleo — endpoint, OAuth y herramientas">
+<meta name="twitter:description" content="El servidor MCP remoto de Kleo, documentado: el endpoint Streamable HTTP, OAuth 2.1 en un botón, cada herramienta kleo en su orden, la regla de precios y la salida.">
+<meta name="twitter:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
+<meta name="theme-color" content="#0A0C10">
+<link rel="icon" href="/brand/kleo-favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/brand/kleo-favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/brand/kleo-icon-dark-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/site.css?v=20260920">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://kleooai.com/#website",
+      "name": "Kleo AI",
+      "alternateName": "Kleo",
+      "url": "https://kleooai.com/es/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kleooai.com/es/video-generation-mcp/#page",
+      "url": "https://kleooai.com/es/video-generation-mcp/",
+      "name": "Documentación MCP de Kleo — endpoint, OAuth y herramientas",
+      "description": "El servidor MCP remoto de Kleo, documentado: el endpoint Streamable HTTP, OAuth 2.1 en un botón, cada herramienta kleo en su orden, la regla de precios y la salida.",
+      "inLanguage": "es",
+      "isPartOf": {
+        "@id": "https://kleooai.com/#website"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://kleooai.com/es/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Documentación MCP",
+          "item": "https://kleooai.com/es/video-generation-mcp/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<script src="/site.js?v=20260920" defer></script>
+</head>
+<body>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" aria-label="Principal">
+  <div class="wrap">
+    <a class="brand" href="/es/" aria-label="Kleo, inicio">
+      <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+        <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+        <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+      </svg>
+      Kleo <span class="tag">MCP</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Menú" aria-expanded="false" aria-controls="site-menu">
+      <svg class="bars" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 5h14M2 9h14M2 13h14"/></svg>
+      <svg class="x" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 4l10 10M14 4L4 14"/></svg>
+    </button>
+    <div class="nav-links" id="site-menu">
+      <a href="/es/ai-youtube-video-generator/">Crear vídeos</a> <a href="/es/examples/">Ejemplos</a> <a href="/es/styles.html">Looks</a> <a href="/es/pricing/">Precios</a> <a href="/es/faq/">FAQ</a>
+    </div>
+    <a class="btn btn-primary btn-sm" href="/es/connect/">Conectar Kleo</a>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="page-hero hero" id="top">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Ruta de navegación"><a href="/es/">Inicio</a><span aria-hidden="true">›</span><span>Documentación MCP</span></nav>
+    <h1>Un servidor MCP<br><span class="hl">de producción de vídeo.</span></h1>
+    <p class="lede">Kleo expone un solo flujo de trabajo de película a cualquier cliente MCP: intake, tratamiento, storyboard, un render en una GPU alquilada para el trabajo, y los enlaces a una película narrada terminada en 4K a 60 fps. Un solo narrador, dos looks, dos productos (una película, o un animatic del mismo storyboard), de 15 segundos a 5 minutos. No hay app ni panel de control; el asistente hace el trabajo a través de las herramientas de abajo.</p>
+    <p class="mono" id="mcpStatus" hidden></p>
+    <div class="address"><code>https://mcp.kleooai.com/mcp</code><button class="btn btn-ghost btn-sm" type="button" data-copy="https://mcp.kleooai.com/mcp">Copiar dirección</button></div>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="/es/connect/">Conectar Kleo <span class="arr" aria-hidden="true">→</span></a> <a class="btn btn-ghost" href="https://github.com/tonnooooo/kleo-mcp">Repositorio público</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ENDPOINT ============ -->
+<section id="endpoint">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">01</span>Endpoint</div>
+        <h2>Conéctate por HTTPS.</h2>
+      </div>
+      <p class="lede">Kleo es un servidor MCP remoto: una dirección, el transporte Streamable HTTP, OAuth 2.1. Configura la dirección en tu cliente MCP y completa la autorización en el navegador; no hay formulario de registro ni contraseña.</p>
+    </div>
+    <ul class="defs">
+      <li><b>Endpoint</b><span><code class="mono">https://mcp.kleooai.com/mcp</code></span></li>
+      <li><b>Transporte</b><span>Streamable HTTP; la misma dirección en todos los clientes.</span></li>
+      <li><b>Autenticación</b><span>OAuth 2.1. Durante la autorización el cliente abre la propia página de Kleo; pulsas <b>Empezar gratis</b> y vuelves al cliente con 7 créditos en la cuenta. Sin formulario, sin tarjeta.</span></li>
+      <li><b>Sin token</b><span>Un GET al endpoint responde <code class="mono">401</code> y lleva los metadatos del recurso OAuth. Es un endpoint de protocolo, no una página web: abrirlo en un navegador no es el proceso de conexión.</span></li>
+      <li><b>Clientes</b><span>Claude, ChatGPT, Grok, Claude Code, Cursor, VS Code, OpenCode, Gemini CLI, Windsurf, la app de Gemini y cualquier SDK de MCP con el transporte HTTP.</span></li>
+    </ul>
+    <div class="prose">
+      <p><a href="/es/connect/">Pasos de conexión para cada cliente →</a></p>
+      <h3>Desde un terminal o un editor.</h3>
+      <p>Dos de los clientes probados, como ejemplo. Los demás pasos, de Claude y ChatGPT a VS Code y Gemini CLI, están en <a href="/es/connect/">la página de conexión</a>.</p>
+    </div>
+    <div class="grid panels">
+      <article class="panel">
+        <h3>Claude Code <small>cli</small></h3>
+        <div class="code"><span class="cm"># añade Kleo una vez</span> claude mcp add --transport http kleo https://mcp.kleooai.com/mcp <span class="cm"># después, dentro de una sesión:</span> /mcp <span class="cm">→ Kleo → Authenticate</span><button class="btn btn-ghost btn-sm copy" type="button" data-copy="claude mcp add --transport http kleo https://mcp.kleooai.com/mcp">Copiar</button></div>
+        <p>La página de Kleo se abre en el navegador; pulsa <b>Empezar gratis</b> y vuelves a Claude Code.</p>
+      </article>
+      <article class="panel">
+        <h3>Cursor <small>~/.cursor/mcp.json</small></h3>
+        <div class="code">{ <span class="k">"mcpServers"</span>: { <span class="k">"kleo"</span>: { <span class="k">"url"</span>: <span class="s">"https://mcp.kleooai.com/mcp"</span> } } }<button class="btn btn-ghost btn-sm copy" type="button" data-copy='{&#10;  "mcpServers": {&#10;    "kleo": { "url": "https://mcp.kleooai.com/mcp" }&#10;  }&#10;}'>Copiar</button></div>
+        <p>Guarda el archivo. Cuando Cursor se conecta, se abre la página de Kleo: pulsa <b>Empezar gratis</b> y vuelves a Cursor.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WORKFLOW ============ -->
+<section id="workflow">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">02</span>Flujo de trabajo</div>
+        <h2>La secuencia de producción.</h2>
+      </div>
+      <p class="lede">Las herramientas se ejecutan en un orden fijo. El asistente lee tu petición, obtiene el tratamiento de <code class="mono">kleo_adapt_prompt</code>, escribe el storyboard según <code class="mono">kleo_storyboard_guide</code> y solo entonces pide a Kleo que renderice.</p>
+    </div>
+    <div class="tools">
+      <h3>Las herramientas kleo, en el orden en que el asistente las ejecuta</h3>
+      <div class="ttable">
+        <table>
+          <thead>
+            <tr>
+              <th>Herramienta</th>
+              <th>Qué hace</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>kleo_adapt_prompt</td>
+              <td>Contrasta la petición con el intake (tema, duración, formato, look; opcionalmente audiencia, tono, qué debe aparecer), pregunta lo que falta y luego devuelve el tratamiento: logline, ángulo, apertura, actos, final, look, ritmo, narrador.</td>
+            </tr>
+            <tr>
+              <td>kleo_storyboard_guide</td>
+              <td>Explica cómo escribir el storyboard: el bloque de dirección, las escenas, los planos y los límites.</td>
+            </tr>
+            <tr>
+              <td>kleo_create_video</td>
+              <td>Lo comprueba todo, indica los créditos exactos y luego inicia el render en una GPU alquilada para ese trabajo. Acepta <code class="mono">product: "film"</code> o <code class="mono">"animatic"</code>.</td>
+            </tr>
+            <tr>
+              <td>kleo_get_job</td>
+              <td>Informa del progreso de un trabajo en una sola llamada.</td>
+            </tr>
+            <tr>
+              <td>kleo_wait_for_video</td>
+              <td>Espera el render e informa del progreso hasta que la película está lista.</td>
+            </tr>
+            <tr>
+              <td>kleo_get_result</td>
+              <td>Devuelve los enlaces a la película terminada.</td>
+            </tr>
+            <tr>
+              <td>kleo_cancel_job</td>
+              <td>Detiene un render y devuelve los créditos que no había gastado.</td>
+            </tr>
+            <tr>
+              <td>kleo_list_templates</td>
+              <td>Lista el único flujo de trabajo, película, con sus formatos, duraciones y voces, y los créditos que quedan en la cuenta. El animatic es un producto de ese mismo flujo de trabajo.</td>
+            </tr>
+            <tr>
+              <td>kleo_account</td>
+              <td>Muestra los créditos, si la cuenta ha pagado (<code class="mono">has_paid</code>, que decide si se puede pedir una película), el enlace a la página de la cuenta y la clave privada de Kleo.</td>
+            </tr>
+            <tr>
+              <td>kleo_generate_thumbnail</td>
+              <td>Todavía no está en la beta.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="prose">
+      <p>Usa los esquemas de herramientas del servidor en producción para los argumentos exactos. Si tu cliente limita cuánto puede durar una llamada a una herramienta, el asistente puede consultar <code class="mono">kleo_get_job</code> en lugar de mantener abierta <code class="mono">kleo_wait_for_video</code>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PARAMETERS ============ -->
+<section id="render">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">03</span>Parámetros</div>
+        <h2>Qué necesita un render.</h2>
+      </div>
+      <p class="lede"><code class="mono">kleo_create_video</code> recibe la petición en tus palabras más las elecciones que pidió el intake. El tratamiento y el storyboard vienen de las dos herramientas de planificación, no de tu teclado.</p>
+    </div>
+    <ul class="defs">
+      <li><b>prompt</b><span>La petición en las propias palabras del usuario.</span></li>
+      <li><b>product</b><span><code class="mono">film</code> (el valor por defecto: cada plano un clip generado, cobrado por duración, para cuentas que han comprado un pack) o <code class="mono">animatic</code> (los fotogramas dibujados bajo una cámara en movimiento, sin clips generados, 5 créditos fijos, de 15 a 60 segundos, para todas las cuentas).</span></li>
+      <li><b>duration_s</b><span>De 15 a 300 segundos para una película, de 15 a 60 para un animatic.</span></li>
+      <li><b>format</b><span><code class="mono">16:9</code> para YouTube y horizontal, <code class="mono">9:16</code> para un Short y vertical.</span></li>
+      <li><b>style</b><span><code class="mono">realistic</code> (metraje de imagen real generado, cinematográfico) o <code class="mono">animation</code> (una película de animación 2D). En una película, cada plano se genera como metraje en movimiento a partir de su propio fotograma; un animatic conserva el look en sus fotogramas dibujados.</span></li>
+      <li><b>language</b><span>Narración en <code class="mono">en</code> o <code class="mono">it</code>. Un solo narrador; sin música, sin subtítulos, sin texto en pantalla en la película estándar.</span></li>
+      <li><b>voice</b><span>Opcional: <code class="mono">narrator-en-m</code>, <code class="mono">narrator-en-f</code>, <code class="mono">narrator-it-m</code> o <code class="mono">narrator-it-f</code>.</span></li>
+      <li><b>treatment</b><span>Opcional: el tratamiento devuelto por <code class="mono">kleo_adapt_prompt</code> (logline, ángulo, apertura, actos, final, look, ritmo, narrador).</span></li>
+      <li><b>storyboard</b><span>Opcional: el storyboard escrito según <code class="mono">kleo_storyboard_guide</code> (bloque de dirección, escenas, planos, límites).</span></li>
+    </ul>
+    <div class="prose">
+      <h3>Precio</h3>
+      <p>Una película: un crédito son dos segundos, redondeado hacia arriba, mínimo diez créditos: 15 s = 10 · 20 s = 10 · 30 s = 15 · 60 s = 30 · 90 s = 45 · 3 min = 90 · 5 min = 150. Un animatic: 5 créditos fijos, de 15 a 60 segundos. Conectarse incluye 7 créditos, un animatic; una película solo se hace para cuentas que han comprado un pack (sus clips se generan a costa de Kleo, así que los créditos gratuitos nunca compran una): 7 + el pack de 5 € = 17, se abre la película, un Short de 30 segundos. Los packs son de pago único, en EUR, sin suscripción: 5 € = 10 créditos · 15 € = 35 · 40 € = 100.</p>
+      <h3>No se cobra nada hasta que el trabajo es aceptado</h3>
+      <p><code>kleo_create_video</code> responde primero con los créditos exactos; una llamada rechazada no cobra nada, y <code>kleo_cancel_job</code> devuelve los créditos que un render detenido no había gastado.</p>
+      <h3>Tiempo de render</h3>
+      <p>Una película suele tardar 25–35 minutos en la GPU alquilada, un animatic unos 15–20; el servidor le dice al asistente la estimación para el trabajo. No es un tiempo fijo.</p>
+      <p><a href="/es/pricing/">Packs de créditos y el coste de cualquier duración →</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OUTPUT ============ -->
+<section id="output">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><span class="n">04</span>Salida</div>
+        <h2>Un vídeo terminado como salida.</h2>
+      </div>
+      <p class="lede">Un MP4: 4K (3840×2160 o 2160×3840) a 60 fps, 16:9 o 9:16, con un solo narrador en inglés o italiano y, en una película, cada plano generado como metraje en movimiento. <code class="mono">kleo_get_result</code> entrega al asistente un enlace al archivo; el enlace es válido durante 7 días.</p>
+    </div>
+    <div class="prose">
+      <p>Kleo nunca publica en YouTube, TikTok ni en ningún canal, y la película estándar no lleva música, ni subtítulos, ni texto en pantalla. Hay dos looks activos en el servidor, realista y animación; el sitio muestra una muestra de cada uno en la página de looks.</p>
+      <p><a href="/es/examples/">Ver las muestras realistas →</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ACCOUNT ============ -->
+<section class="cta one" id="account">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow"><span class="n">05</span>Cuenta</div>
+      <h2>Gestión de la cuenta y de los trabajos.</h2>
+      <p class="lede">Mantén los tokens OAuth y la clave de Kleo fuera de los registros y de los ejemplos públicos: la clave es privada, y quien la tiene es dueño de la cuenta. No hay panel de control; a la página de la cuenta (un saldo de solo lectura y los enlaces de pago) se llega pidiéndosela al asistente, y <code class="mono">kleo_account</code> la devuelve.</p>
+      <p class="lede">Un render gasta créditos: pide confirmación antes de que se ejecute <code class="mono">kleo_create_video</code>, y reutiliza el identificador del trabajo al comprobar el progreso o al cancelar. El código del servidor es público.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://github.com/tonnooooo/kleo-mcp">Leer el código fuente del servidor en GitHub <span class="arr" aria-hidden="true">→</span></a> <a class="btn btn-ghost" href="/es/privacy.html">Cómo trata Kleo los datos</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<!-- i18n:langs -->
+<nav class="langs" aria-label="Idioma">
+  <div class="wrap">
+    <span>Idioma</span>
+    <a href="/video-generation-mcp/" hreflang="en" lang="en">English</a>
+    <a href="/it/video-generation-mcp/" hreflang="it" lang="it">Italiano</a>
+    <a href="/de/video-generation-mcp/" hreflang="de" lang="de">Deutsch</a>
+    <a href="/fr/video-generation-mcp/" hreflang="fr" lang="fr">Français</a>
+    <b lang="es">Español</b>
+    <a href="/pt/video-generation-mcp/" hreflang="pt" lang="pt">Português</a>
+    <a href="/nl/video-generation-mcp/" hreflang="nl" lang="nl">Nederlands</a>
+    <a href="/pl/video-generation-mcp/" hreflang="pl" lang="pl">Polski</a>
+    <a href="/tr/video-generation-mcp/" hreflang="tr" lang="tr">Türkçe</a>
+    <a href="/ru/video-generation-mcp/" hreflang="ru" lang="ru">Русский</a>
+    <a href="/uk/video-generation-mcp/" hreflang="uk" lang="uk">Українська</a>
+    <a href="/ja/video-generation-mcp/" hreflang="ja" lang="ja">日本語</a>
+    <a href="/ko/video-generation-mcp/" hreflang="ko" lang="ko">한국어</a>
+    <a href="/zh/video-generation-mcp/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+    <a href="/zh-tw/video-generation-mcp/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+    <a href="/ar/video-generation-mcp/" hreflang="ar" lang="ar">العربية</a>
+    <a href="/he/video-generation-mcp/" hreflang="he" lang="he">עברית</a>
+    <a href="/hi/video-generation-mcp/" hreflang="hi" lang="hi">हिन्दी</a>
+    <a href="/id/video-generation-mcp/" hreflang="id" lang="id">Bahasa Indonesia</a>
+    <a href="/vi/video-generation-mcp/" hreflang="vi" lang="vi">Tiếng Việt</a>
+    <a href="/th/video-generation-mcp/" hreflang="th" lang="th">ไทย</a>
+  </div>
+</nav>
+<!-- /i18n:langs -->
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">
+      <a class="brand" href="/es/" aria-label="Kleo, inicio">
+        <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+          <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
+          <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
+        </svg>
+        Kleo <span class="tag">MCP</span>
+      </a>
+      <span>Dirección humana. Películas hechas por agentes.</span>
+    </div>
+    <div class="links">
+      <a href="/es/connect/">Conectar</a> <a href="/es/integrations/claude/">Claude</a> <a href="/es/integrations/chatgpt/">ChatGPT</a> <a href="/es/video-generation-mcp/">Docs MCP</a> <a href="/es/examples/">Ejemplos</a> <a href="/es/styles.html">Looks</a> <a href="/es/pricing/">Precios</a> <a href="/es/faq/">FAQ</a> <a href="/es/about/">Acerca de</a> <a href="/es/privacy.html">Privacidad</a> <a href="/es/terms.html">Términos</a> <a href="https://github.com/tonnooooo/kleo-mcp">GitHub</a> <a href="mailto:kleooai@gmail.com">kleooai@gmail.com</a>
+    </div>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite">Copiado</div>
+</body>
+</html>
