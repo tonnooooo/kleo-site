@@ -210,19 +210,40 @@
     m.addEventListener('dragstart', function(e){ e.preventDefault(); });
     var v = m.querySelector('video');
     if (!v) return;
+    // Set the properties too: WebKit must see a muted, inline video before play().
+    v.muted = true; v.defaultMuted = true; v.playsInline = true;
     v.addEventListener('play', function(){ m.classList.add('playing'); });
     v.addEventListener('pause', function(){ m.classList.remove('playing'); });
+  });
+  // A wide homepage film can be taller than the visible browser pane. Start it
+  // on entry, rather than requiring 60% of its frame to fit on screen.
+  var visibleFilms = new Set();
+  function playVisibleFilm(v) {
+    if (!visibleFilms.has(v) || document.hidden) { v.pause(); return; }
+    v.muted = true;
+    var p = v.play(); if (p && p.catch) p.catch(function(){});
+  }
+  medias.forEach(function(m){
+    var v = m.querySelector('video'); if (!v) return;
+    v.addEventListener('loadeddata', function(){ playVisibleFilm(v); });
   });
   if ('IntersectionObserver' in window) {
     var vio = new IntersectionObserver(function(entries){
       entries.forEach(function(en){
         var v = en.target.querySelector('video'); if (!v) return;
-        if (en.intersectionRatio >= .6) { var p = v.play(); if (p && p.catch) p.catch(function(){}); }
-        else v.pause();
+        var threshold = v.autoplay ? .05 : .6;
+        if (en.isIntersecting && en.intersectionRatio >= threshold) visibleFilms.add(v);
+        else visibleFilms.delete(v);
+        playVisibleFilm(v);
       });
-    }, {threshold:[0, .6]});
+    }, {threshold:[0, .05, .6]});
     medias.forEach(function(m){ if (m.querySelector('video')) vio.observe(m); });
+  } else {
+    medias.forEach(function(m){
+      var v = m.querySelector('video'); if (v) { visibleFilms.add(v); playVisibleFilm(v); }
+    });
   }
+  document.addEventListener('visibilitychange', function(){ visibleFilms.forEach(playVisibleFilm); });
 
 
   /* ---------- the looks page: the line plays, words light up as they are said, the shots cut on their word ---------- */
