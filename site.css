@@ -825,3 +825,21 @@ a,button{-webkit-tap-highlight-color:transparent}
   .plan .price{display:flex;flex-direction:column;align-items:flex-start;gap:9px}
   .plan .price small{display:block;margin-left:0;font-size:.875rem;line-height:1.45;max-width:100%}
 }
+
+/* The credit comparison is a real three-column table, including on phones.
+   Do not apply the MCP tool-list's stacked mobile layout to numeric prices. */
+.ttable.credit-table table{display:table;table-layout:fixed;min-width:0;width:100%}
+.ttable.credit-table caption{display:table-caption;padding:16px;text-transform:none;letter-spacing:.025em;line-height:1.5}
+.ttable.credit-table thead{display:table-header-group}
+.ttable.credit-table tbody{display:table-row-group}
+.ttable.credit-table tr{display:table-row;border:0}
+.ttable.credit-table th,.ttable.credit-table td{display:table-cell;padding:14px 16px;border-bottom:1px solid var(--line);white-space:normal}
+.ttable.credit-table th:first-child{width:40%}
+.ttable.credit-table th:not(:first-child),.ttable.credit-table td:not(:first-child){text-align:right;font-variant-numeric:tabular-nums}
+.ttable.credit-table tr:last-child td{border-bottom:0}
+.credit-table-note{font-size:.8rem;line-height:1.6;color:var(--mute);margin:12px 0 0}
+@media(max-width:600px){
+  .ttable.credit-table th,.ttable.credit-table td{padding:12px 10px;font-size:.82rem}
+  .ttable.credit-table th{font-size:.65rem;letter-spacing:.025em}
+  .ttable.credit-table caption{padding:14px 10px;font-size:.72rem}
+}
