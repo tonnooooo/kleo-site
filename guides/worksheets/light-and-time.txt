@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Make lighting and time of day coherent
+Guide: https://kleooai.com/guides/light-and-time/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Name the time of day and dominant light source.
+Your decision:
+
+2. Describe any intentional time jump in the treatment.
+Your decision:
+
+3. Compare consecutive shots for unexplained changes in daylight or weather.
+Your decision:
+
+REVIEW
+[ ] Does the apparent time remain stable?
+Evidence / timestamp:
+
+[ ] Are major light sources plausible?
+Evidence / timestamp:
+
+[ ] Is a time jump clear when intended?
+Evidence / timestamp:
+
+PITFALL
+Beautiful individual images can imply different days when cut together. Judge the lighting as a sequence rather than choosing each shot for its isolated appearance.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

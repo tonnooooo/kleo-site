@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Inspect the actual exported video file
+Guide: https://kleooai.com/guides/export-inspection/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Open the full downloaded file in a media player.
+Your decision:
+
+2. Inspect its resolution, frame rate and duration using file information.
+Your decision:
+
+3. Watch the beginning and end, then the entire film with audio.
+Your decision:
+
+REVIEW
+[ ] Does the file play to the end?
+Evidence / timestamp:
+
+[ ] Do actual properties meet the brief?
+Evidence / timestamp:
+
+[ ] Is the edited export distinct from the original render?
+Evidence / timestamp:
+
+PITFALL
+A preview on a webpage may use a different rendition from the downloadable master. Inspect the deliverable you will actually publish or send to the client.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Use landscape framing for narrated explainers
+Guide: https://kleooai.com/guides/landscape-composition/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Decide which relationship requires the wider view.
+Your decision:
+
+2. Place the main action where it remains easy to find.
+Your decision:
+
+3. Use separate shots when two processes cannot be understood simultaneously.
+Your decision:
+
+REVIEW
+[ ] Does the wider frame add information?
+Evidence / timestamp:
+
+[ ] Is the subject obvious at small size?
+Evidence / timestamp:
+
+[ ] Can details be simplified without losing meaning?
+Evidence / timestamp:
+
+PITFALL
+A large canvas is not an instruction to introduce more ideas. The narration and picture should still share one dominant point at any given moment.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

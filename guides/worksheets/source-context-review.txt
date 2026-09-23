@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Check that a source has not lost its context
+Guide: https://kleooai.com/guides/source-context-review/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Read the source around the cited passage.
+Your decision:
+
+2. Check whether the statement applies to the situation shown.
+Your decision:
+
+3. Preserve meaningful uncertainty in narration and publication notes.
+Your decision:
+
+REVIEW
+[ ] Does the scope match?
+Evidence / timestamp:
+
+[ ] Has uncertainty survived the edit?
+Evidence / timestamp:
+
+[ ] Is the source current enough for the claim?
+Evidence / timestamp:
+
+PITFALL
+Shortening a script can remove precisely the qualification that made the original statement accurate. Treat those edits as factual decisions, not merely stylistic ones.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

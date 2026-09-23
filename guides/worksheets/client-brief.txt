@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Collect a client brief for a narrated film
+Guide: https://kleooai.com/guides/client-brief/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Ask the client to approve one objective and one call to action.
+Your decision:
+
+2. List required assets and identify anything that needs a separate editor.
+Your decision:
+
+3. Name the person who can approve the treatment and final export.
+Your decision:
+
+REVIEW
+[ ] Who approves factual claims?
+Evidence / timestamp:
+
+[ ] Are additional editing tasks assigned?
+Evidence / timestamp:
+
+[ ] Is delivery distinct from publication?
+Evidence / timestamp:
+
+PITFALL
+Avoid promising an exact product likeness or authentic business footage when the workflow produces illustrative scenes. Establish that distinction before the client approves the concept.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

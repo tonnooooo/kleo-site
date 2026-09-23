@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Estimate narration length before production
+Guide: https://kleooai.com/guides/narration-timing/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Time a natural reading of the approved narration.
+Your decision:
+
+2. Mark pauses required for the viewer to inspect an image.
+Your decision:
+
+3. Cut low-priority words before asking for a faster delivery.
+Your decision:
+
+REVIEW
+[ ] Does the delivery sound rushed?
+Evidence / timestamp:
+
+[ ] Are pauses included in the estimate?
+Evidence / timestamp:
+
+[ ] Is the closing sentence complete?
+Evidence / timestamp:
+
+PITFALL
+A script that barely fits your own fastest reading leaves little room for a different voice. Reduce information density rather than treating faster speech as the default fix.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

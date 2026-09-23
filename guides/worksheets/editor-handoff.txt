@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Hand a generated film to a human editor
+Guide: https://kleooai.com/guides/editor-handoff/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Supply the downloaded film, approved script and source list.
+Your decision:
+
+2. List additions such as captions, verified text or licensed audio.
+Your decision:
+
+3. Define the checks required before the editor exports the delivery file.
+Your decision:
+
+REVIEW
+[ ] Are pending tasks explicit?
+Evidence / timestamp:
+
+[ ] Are assets and rights documented?
+Evidence / timestamp:
+
+[ ] Is final approval assigned?
+Evidence / timestamp:
+
+PITFALL
+Do not assume an editor can recover separate narration, shot layers or editable project files from a finished MP4. Agree on the actual files available before planning complex changes.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

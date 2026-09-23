@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Adapt dialogue for one narrator
+Guide: https://kleooai.com/guides/one-narrator-dialogue/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Identify what each exchange changes in the story.
+Your decision:
+
+2. Convert nonessential dialogue into concise narration.
+Your decision:
+
+3. Keep any essential quotation clearly attributed and approved.
+Your decision:
+
+REVIEW
+[ ] Is the conflict preserved?
+Evidence / timestamp:
+
+[ ] Can speakers be distinguished in the wording?
+Evidence / timestamp:
+
+[ ] Does the film avoid depending on lip synchronization?
+Evidence / timestamp:
+
+PITFALL
+Removing dialogue can accidentally remove the reason for a character's decision. Keep the causal meaning even when the exact exchange is compressed.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

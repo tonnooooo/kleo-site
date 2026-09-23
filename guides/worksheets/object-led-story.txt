@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Use an object as the center of a film
+Guide: https://kleooai.com/guides/object-led-story/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Choose a distinctive but simple object.
+Your decision:
+
+2. Limit the number of owners or locations.
+Your decision:
+
+3. Give the final appearance a different emotional or practical role.
+Your decision:
+
+REVIEW
+[ ] Is the object identifiable?
+Evidence / timestamp:
+
+[ ] Does every encounter change something?
+Evidence / timestamp:
+
+[ ] Can the ending work without tiny generated lettering?
+Evidence / timestamp:
+
+PITFALL
+Highly intricate patterns make consistency harder to judge. Use a simple identifying feature and avoid making the plot depend on text that must be perfectly legible inside generated imagery.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

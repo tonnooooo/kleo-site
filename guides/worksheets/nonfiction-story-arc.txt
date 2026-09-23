@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Build a factual explainer without invented drama
+Guide: https://kleooai.com/guides/nonfiction-story-arc/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Identify the question your sources actually answer.
+Your decision:
+
+2. Separate recorded events from your interpretation of their significance.
+Your decision:
+
+3. Use a visual explanation instead of a fictional quotation when evidence is limited.
+Your decision:
+
+REVIEW
+[ ] Are dates and causal claims supported?
+Evidence / timestamp:
+
+[ ] Are reconstructions distinguished from records?
+Evidence / timestamp:
+
+[ ] Does the conclusion match the evidence?
+Evidence / timestamp:
+
+PITFALL
+Dramatic dialogue can sound authentic even when invented. Do not put words in a real person's mouth to bridge gaps in your source material.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

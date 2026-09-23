@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Keep an asset and permission record
+Guide: https://kleooai.com/guides/asset-record/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. List every external asset and its original source.
+Your decision:
+
+2. Save the applicable permission or license information.
+Your decision:
+
+3. Identify unresolved uses before the final edit is approved.
+Your decision:
+
+REVIEW
+[ ] Is the original source recorded?
+Evidence / timestamp:
+
+[ ] Are required credits included?
+Evidence / timestamp:
+
+[ ] Are uncertain permissions resolved by the owner?
+Evidence / timestamp:
+
+PITFALL
+This production record is not a legal clearance opinion. When a use is uncertain or consequential, obtain the appropriate permission or qualified advice rather than guessing from a search result.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

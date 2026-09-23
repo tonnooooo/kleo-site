@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Plan a longer explainer in clear chapters
+Guide: https://kleooai.com/guides/longer-explainer/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Divide the subject into a few non-overlapping questions.
+Your decision:
+
+2. Give each section a clear visual purpose and transition.
+Your decision:
+
+3. Read the full narration for repetition before approving the treatment.
+Your decision:
+
+REVIEW
+[ ] Does each section advance the explanation?
+Evidence / timestamp:
+
+[ ] Is the opening proportionate?
+Evidence / timestamp:
+
+[ ] Does the request fit the current duration limit?
+Evidence / timestamp:
+
+PITFALL
+A sequence of unrelated mini-essays can feel longer than its running time. Remove repeated definitions and maintain one overall question through the film.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

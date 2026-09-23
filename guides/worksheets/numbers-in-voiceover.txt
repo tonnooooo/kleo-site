@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Make numbers understandable in voiceover
+Guide: https://kleooai.com/guides/numbers-in-voiceover/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Verify the value, unit and date against the source.
+Your decision:
+
+2. Decide whether the exact figure or an explicitly rounded value is useful.
+Your decision:
+
+3. Avoid placing several unrelated quantities in one sentence.
+Your decision:
+
+REVIEW
+[ ] Are units stated?
+Evidence / timestamp:
+
+[ ] Does rounding change the conclusion?
+Evidence / timestamp:
+
+[ ] Can a listener follow the comparison?
+Evidence / timestamp:
+
+PITFALL
+A numerical claim should not become more certain just because the sentence is shorter. Preserve ranges, dates and uncertainty that matter to the interpretation.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

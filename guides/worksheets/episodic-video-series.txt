@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Design a series with distinct episodes
+Guide: https://kleooai.com/guides/episodic-video-series/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Write the series promise and its boundaries.
+Your decision:
+
+2. Give each episode a question that is not answered by its neighbors.
+Your decision:
+
+3. Keep a small list of recurring visual and narration choices.
+Your decision:
+
+REVIEW
+[ ] Does each episode add something new?
+Evidence / timestamp:
+
+[ ] Can it stand alone?
+Evidence / timestamp:
+
+[ ] Are references and recurring terms consistent?
+Evidence / timestamp:
+
+PITFALL
+Do not claim a process is safe merely because the animation is simple. Technical or hazardous advice needs appropriate sources and review before becoming a film.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

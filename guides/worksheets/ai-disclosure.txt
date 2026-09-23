@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Review AI disclosure before uploading
+Guide: https://kleooai.com/guides/ai-disclosure/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Identify realistic synthetic scenes or depictions that may mislead viewers.
+Your decision:
+
+2. Read the current platform guidance for the specific content.
+Your decision:
+
+3. Complete the disclosure choice accurately during upload and retain your production notes.
+Your decision:
+
+REVIEW
+[ ] Could the scene be mistaken for reality?
+Evidence / timestamp:
+
+[ ] Was the current policy consulted?
+Evidence / timestamp:
+
+[ ] Is the upload setting consistent with the content?
+Evidence / timestamp:
+
+PITFALL
+A note in the description may not replace a platform's required disclosure setting. Review both the editorial explanation and the upload controls.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

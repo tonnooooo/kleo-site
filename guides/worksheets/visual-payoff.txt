@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Set up a visual payoff
+Guide: https://kleooai.com/guides/visual-payoff/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Choose one recurring visual element.
+Your decision:
+
+2. Introduce it clearly while it still has an ordinary purpose.
+Your decision:
+
+3. Change its context in the last scene to complete the idea.
+Your decision:
+
+REVIEW
+[ ] Was the setup visible?
+Evidence / timestamp:
+
+[ ] Is the returning element recognizable?
+Evidence / timestamp:
+
+[ ] Does its new context complete the story?
+Evidence / timestamp:
+
+PITFALL
+Adding an important object only in the last shot makes the ending feel arbitrary. Seed the object naturally and review its continuity across the rendered scenes.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

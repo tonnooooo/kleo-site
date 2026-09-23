@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Plan pauses in a narrated film
+Guide: https://kleooai.com/guides/pause-design/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Mark moments where an image needs time to be read.
+Your decision:
+
+2. Shorten nearby narration to create room.
+Your decision:
+
+3. Check the actual audio and edit rather than assuming punctuation controls exact silence.
+Your decision:
+
+REVIEW
+[ ] Can the viewer register the important action?
+Evidence / timestamp:
+
+[ ] Is silence intentional?
+Evidence / timestamp:
+
+[ ] Does the pause support rather than interrupt the story?
+Evidence / timestamp:
+
+PITFALL
+A written ellipsis is not a reliable timing instruction across voice systems. Use the treatment to communicate intent, then inspect the rendered result.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

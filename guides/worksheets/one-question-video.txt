@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Build a video around one answer
+Guide: https://kleooai.com/guides/one-question-video/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Write the viewer's question in their own words, without a product slogan.
+Your decision:
+
+2. Draft a one-sentence answer; remove any branch that does not support it.
+Your decision:
+
+3. Choose three visible moments that make the answer understandable without adding a second topic.
+Your decision:
+
+REVIEW
+[ ] Can a viewer repeat the answer in one sentence?
+Evidence / timestamp:
+
+[ ] Does each scene support that answer?
+Evidence / timestamp:
+
+[ ] Have unsupported technical claims been removed?
+Evidence / timestamp:
+
+PITFALL
+Avoid promising to explain an entire subject in a Short. If the outline contains five unrelated questions, split the brief before any production credits are spent.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Turn an existing script into a production brief
+Guide: https://kleooai.com/guides/script-to-brief/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Mark exact wording that must survive and passages that can be paraphrased.
+Your decision:
+
+2. Convert visual descriptions into simple scene actions.
+Your decision:
+
+3. Read the shortened script aloud before approving duration.
+Your decision:
+
+REVIEW
+[ ] Are mandatory lines retained?
+Evidence / timestamp:
+
+[ ] Have cuts altered the argument?
+Evidence / timestamp:
+
+[ ] Can the narration be spoken naturally in the proposed duration?
+Evidence / timestamp:
+
+PITFALL
+Pasting a long article and requesting a short film invites silent omissions. Identify the essential claim and review the proposed cuts explicitly.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

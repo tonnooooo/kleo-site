@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Prepare names for narration review
+Guide: https://kleooai.com/guides/names-and-pronunciation/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. List words that may be unfamiliar to the chosen narrator.
+Your decision:
+
+2. Provide reliable pronunciation guidance where you have it.
+Your decision:
+
+3. Review those passages in the actual audio before approving the film.
+Your decision:
+
+REVIEW
+[ ] Are names spelled correctly?
+Evidence / timestamp:
+
+[ ] Has the audio been checked, not just the script?
+Evidence / timestamp:
+
+[ ] Are unverified pronunciations still flagged?
+Evidence / timestamp:
+
+PITFALL
+A phonetic hint may not be interpreted as intended by the voice system. Do not promise perfect pronunciation from spelling changes alone.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

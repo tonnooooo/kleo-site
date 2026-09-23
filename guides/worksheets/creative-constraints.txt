@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Write useful creative constraints
+Guide: https://kleooai.com/guides/creative-constraints/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Separate must-have story events from preferences such as lighting.
+Your decision:
+
+2. Limit visual requirements to details the audience could actually notice.
+Your decision:
+
+3. Explain which requirement takes priority if two requests conflict.
+Your decision:
+
+REVIEW
+[ ] Are requirements observable in the rendered film?
+Evidence / timestamp:
+
+[ ] Are essential facts distinct from stylistic preferences?
+Evidence / timestamp:
+
+[ ] Have competing instructions been resolved?
+Evidence / timestamp:
+
+PITFALL
+Long lists of negative instructions can obscure the central action. State the scene you want first, then a few exclusions that protect the story.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

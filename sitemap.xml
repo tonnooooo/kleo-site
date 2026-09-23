@@ -3,70 +3,430 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://kleooai.com/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-23</lastmod>
   </url>
   <url>
     <loc>https://kleooai.com/pricing/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-23</lastmod>
   </url>
   <url>
     <loc>https://kleooai.com/ai-youtube-video-generator/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-23</lastmod>
   </url>
   <url>
     <loc>https://kleooai.com/connect/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-23</lastmod>
   </url>
   <url>
     <loc>https://kleooai.com/integrations/claude/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-23</lastmod>
   </url>
   <url>
     <loc>https://kleooai.com/integrations/chatgpt/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-23</lastmod>
   </url>
   <url>
     <loc>https://kleooai.com/video-generation-mcp/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-23</lastmod>
   </url>
   <url>
     <loc>https://kleooai.com/examples/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-23</lastmod>
   </url>
   <url>
     <loc>https://kleooai.com/examples/tether/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-23</lastmod>
   </url>
   <url>
     <loc>https://kleooai.com/examples/signal-delay/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-23</lastmod>
   </url>
   <url>
     <loc>https://kleooai.com/examples/octopus/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-23</lastmod>
   </url>
   <url>
     <loc>https://kleooai.com/examples/apex/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-23</lastmod>
   </url>
   <url>
     <loc>https://kleooai.com/styles.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-23</lastmod>
   </url>
   <url>
     <loc>https://kleooai.com/faq/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-23</lastmod>
   </url>
   <url>
     <loc>https://kleooai.com/about/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-23</lastmod>
   </url>
   <url>
     <loc>https://kleooai.com/terms.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-23</lastmod>
   </url>
   <url>
     <loc>https://kleooai.com/privacy.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/one-question-video/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/audience-brief/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/source-pack/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/creative-constraints/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/treatment-approval/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/script-to-brief/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/reference-look/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/revision-notes/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/client-brief/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/one-call-to-action/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/brief-version-control/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/opening-hook/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/three-act-short/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/cause-and-effect/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/visual-payoff/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/nonfiction-story-arc/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/single-location-story/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/object-led-story/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/parallel-storylines/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/ending-without-summary/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/episodic-video-series/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/storyboard-density/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/shot-size/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/camera-movement/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/character-continuity/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/prop-continuity/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/light-and-time/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/color-palette/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/vertical-composition/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/landscape-composition/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/realistic-or-animation/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/complex-actions/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/text-in-generated-scenes/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/write-for-the-ear/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/narration-timing/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/names-and-pronunciation/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/numbers-in-voiceover/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/voice-and-visuals/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/one-narrator-dialogue/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/italian-localization/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/tone-without-hype/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/pause-design/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/source-attribution-spoken/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/audio-review/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/film-or-animatic/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/assistant-handoff/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/render-authorization/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/job-status/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/failed-render/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/credit-planning/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/longer-explainer/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/short-from-long/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/real-interface-demo/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/editor-handoff/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/project-archive/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/factual-review/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/visual-artifact-review/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/mobile-review/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/silent-review/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/brief-compliance/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/source-context-review/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/reconstruction-labels/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/asset-record/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/review-rounds/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/export-inspection/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/release-signoff/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/youtube-upload-checklist/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/youtube-shorts-format/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/honest-video-titles/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/video-description-sources/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/caption-handoff/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/thumbnail-brief/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/ai-disclosure/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/source-links-maintenance/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/repurpose-aspect-ratio/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/channel-series-navigation/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/post-publication-learning/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/free-ai-video-generator/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/free-animatic-maker/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/free-video-planning/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/free-vs-paid-video/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/briefs/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/story/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/visual/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/narration/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/workflows/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/review/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/publishing/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/free/</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kleooai.com/guides/</loc>
+    <lastmod>2026-09-23</lastmod>
   </url>
 </urlset>

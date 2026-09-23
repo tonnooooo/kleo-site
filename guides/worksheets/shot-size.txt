@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Choose shot sizes that explain the action
+Guide: https://kleooai.com/guides/shot-size/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Start with enough context to identify the place.
+Your decision:
+
+2. Move closer when a decision or object becomes important.
+Your decision:
+
+3. Return to a wider view when the consequence changes the scene.
+Your decision:
+
+REVIEW
+[ ] Is the setting established?
+Evidence / timestamp:
+
+[ ] Are important actions large enough to see?
+Evidence / timestamp:
+
+[ ] Does a close view reveal something new?
+Evidence / timestamp:
+
+PITFALL
+Constant close framing can hide spatial relationships. Review the sequence without narration to see whether the audience can understand where the action occurs.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Give revision notes an AI assistant can use
+Guide: https://kleooai.com/guides/revision-notes/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Quote the treatment line or scene number that needs work.
+Your decision:
+
+2. Explain the viewer's confusion rather than only naming a disliked style.
+Your decision:
+
+3. Prioritize story corrections before optional visual polish.
+Your decision:
+
+REVIEW
+[ ] Is every note tied to a scene?
+Evidence / timestamp:
+
+[ ] Is the desired change testable?
+Evidence / timestamp:
+
+[ ] Does the revision preserve already approved material?
+Evidence / timestamp:
+
+PITFALL
+Do not assume an existing render can be edited in place or that another attempt is free. Check the available workflow and cost before commissioning a new version.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

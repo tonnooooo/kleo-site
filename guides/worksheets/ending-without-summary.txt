@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+End a film without repeating every point
+Guide: https://kleooai.com/guides/ending-without-summary/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Return to the opening question.
+Your decision:
+
+2. Choose the single consequence that matters most.
+Your decision:
+
+3. Remove closing narration that merely describes an obvious image.
+Your decision:
+
+REVIEW
+[ ] Does the final image carry meaning?
+Evidence / timestamp:
+
+[ ] Is the opening resolved?
+Evidence / timestamp:
+
+[ ] Has a second ending been removed?
+Evidence / timestamp:
+
+PITFALL
+A sudden stop is not the same as a restrained ending. Give the viewer enough time to register the final action before the export ends.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

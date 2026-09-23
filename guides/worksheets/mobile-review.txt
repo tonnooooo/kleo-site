@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Review a film on a phone
+Guide: https://kleooai.com/guides/mobile-review/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Watch the final export at a realistic phone size.
+Your decision:
+
+2. Check the first scene and closing action without pausing.
+Your decision:
+
+3. Preview platform overlays around important visual information.
+Your decision:
+
+REVIEW
+[ ] Can the subject be identified quickly?
+Evidence / timestamp:
+
+[ ] Is text readable without zooming?
+Evidence / timestamp:
+
+[ ] Do interface overlays hide essential details?
+Evidence / timestamp:
+
+PITFALL
+A vertical aspect ratio alone does not make a video mobile-friendly. Scene complexity, contrast and the position of added text still need review on the intended platform.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

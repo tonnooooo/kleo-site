@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Set a narration tone without exaggerated claims
+Guide: https://kleooai.com/guides/tone-without-hype/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Describe the relationship between narrator and viewer.
+Your decision:
+
+2. Provide a short original sample sentence.
+Your decision:
+
+3. List claims or emotional pressure the script should avoid.
+Your decision:
+
+REVIEW
+[ ] Does the wording match the chosen relationship?
+Evidence / timestamp:
+
+[ ] Are claims supported?
+Evidence / timestamp:
+
+[ ] Is intensity consistent with the subject?
+Evidence / timestamp:
+
+PITFALL
+Adding dramatic adjectives to every sentence usually changes the script more than the performance. Start with clear language and evaluate the actual delivery.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Use real screenshots for a product demonstration
+Guide: https://kleooai.com/guides/real-interface-demo/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Capture the current interface through an approved workflow.
+Your decision:
+
+2. Separate the real demonstration from any conceptual introduction.
+Your decision:
+
+3. Plan the assembly in an editor if the required asset workflow is unavailable.
+Your decision:
+
+REVIEW
+[ ] Are displayed features real?
+Evidence / timestamp:
+
+[ ] Does the recording match the current version?
+Evidence / timestamp:
+
+[ ] Are illustrative scenes clearly distinguished?
+Evidence / timestamp:
+
+PITFALL
+Do not sell a generated interface as evidence of a working product. Check Kleo's current asset capabilities and use real recordings when fidelity is required.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

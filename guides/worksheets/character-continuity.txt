@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Plan character continuity across generated scenes
+Guide: https://kleooai.com/guides/character-continuity/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Write a compact character sheet with age range, hairstyle, clothing and distinguishing features.
+Your decision:
+
+2. Keep the description consistent across the treatment and shot notes.
+Your decision:
+
+3. Review adjacent shots together rather than approving each image alone.
+Your decision:
+
+REVIEW
+[ ] Do face and clothing remain consistent?
+Evidence / timestamp:
+
+[ ] Does the character's apparent age change?
+Evidence / timestamp:
+
+[ ] Are repeated props recognizable?
+Evidence / timestamp:
+
+PITFALL
+Do not advertise perfect identity consistency based on a prompt alone. If likeness is essential, decide in advance what variation is acceptable and when another production approach is needed.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

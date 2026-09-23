@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Choose a film or an animatic before rendering
+Guide: https://kleooai.com/guides/film-or-animatic/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Decide whether you need to test structure or deliver moving footage.
+Your decision:
+
+2. Check the selected product and current quote before starting.
+Your decision:
+
+3. Review the limitations of the preview before treating it as approval of the final film.
+Your decision:
+
+REVIEW
+[ ] Is the chosen product explicit?
+Evidence / timestamp:
+
+[ ] Does the review match what it can demonstrate?
+Evidence / timestamp:
+
+[ ] Is another production step budgeted?
+Evidence / timestamp:
+
+PITFALL
+Do not assume the animatic cost is automatically deducted from a later film or that it guarantees the same final visual behavior. Confirm the current terms and workflow.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

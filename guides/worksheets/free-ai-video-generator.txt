@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Free AI video generation: what Kleo includes
+Guide: https://kleooai.com/guides/free-ai-video-generator/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Decide whether an animatic meets your immediate goal.
+Your decision:
+
+2. Read the current pricing and confirm the product shown in the quote.
+Your decision:
+
+3. Use the starter credits for a deliberate story test rather than assuming every output type is included.
+Your decision:
+
+REVIEW
+[ ] Is the product explicitly an animatic?
+Evidence / timestamp:
+
+[ ] Does the quoted cost fit the balance?
+Evidence / timestamp:
+
+[ ] Are paid requirements explained before an upgrade?
+Evidence / timestamp:
+
+PITFALL
+The word free should describe the actual offer. Do not expect generated moving clips, unlimited retries or a paid film to be included simply because connecting costs nothing.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

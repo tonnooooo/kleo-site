@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Separate planning from permission to render
+Guide: https://kleooai.com/guides/render-authorization/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. State planning only at the start if you are still exploring.
+Your decision:
+
+2. Review the selected product and current cost.
+Your decision:
+
+3. Approve a specific treatment version rather than an open-ended series of attempts.
+Your decision:
+
+REVIEW
+[ ] Is authorization tied to a specific version?
+Evidence / timestamp:
+
+[ ] Is the cost clear?
+Evidence / timestamp:
+
+[ ] Are additional attempts separately approved?
+Evidence / timestamp:
+
+PITFALL
+Broad instructions such as do whatever it takes can leave the intended spending boundary unclear. A short approval sentence is a useful part of the production workflow.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

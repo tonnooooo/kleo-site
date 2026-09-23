@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Prepare a generated film for YouTube upload
+Guide: https://kleooai.com/guides/youtube-upload-checklist/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Download and inspect the actual film.
+Your decision:
+
+2. Prepare an accurate title, description and reviewed captions.
+Your decision:
+
+3. Use YouTube's current upload flow and check visibility before publication.
+Your decision:
+
+REVIEW
+[ ] Is the correct file selected?
+Evidence / timestamp:
+
+[ ] Is visibility intentional?
+Evidence / timestamp:
+
+[ ] Have the upload preview and processing status been checked?
+Evidence / timestamp:
+
+PITFALL
+An upload being accepted is not the same as the intended version being publicly ready. Check the platform preview and settings before sharing the link.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

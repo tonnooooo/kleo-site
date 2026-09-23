@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Attribute a source naturally in narration
+Guide: https://kleooai.com/guides/source-attribution-spoken/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Identify claims whose origin the viewer needs to know.
+Your decision:
+
+2. Use a short, accurate attribution in the script.
+Your decision:
+
+3. Keep the complete citation and relevant passage in the production notes.
+Your decision:
+
+REVIEW
+[ ] Does the source actually support the statement?
+Evidence / timestamp:
+
+[ ] Is interpretation distinguished from evidence?
+Evidence / timestamp:
+
+[ ] Can viewers find the original material?
+Evidence / timestamp:
+
+PITFALL
+Mentioning an institution can sound like sponsorship if phrased carelessly. Attribute the information without implying the institution approved your film or product.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

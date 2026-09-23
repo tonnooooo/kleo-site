@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Choose realistic or animation for your story
+Guide: https://kleooai.com/guides/realistic-or-animation/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Describe the role of imagery: illustrative, fictional or tied to a documented event.
+Your decision:
+
+2. Compare how each look changes the viewer's expectations.
+Your decision:
+
+3. State the chosen look consistently in the approved brief.
+Your decision:
+
+REVIEW
+[ ] Does the look fit the subject?
+Evidence / timestamp:
+
+[ ] Could imagery be mistaken for documentation?
+Evidence / timestamp:
+
+[ ] Are disclosure needs considered?
+Evidence / timestamp:
+
+PITFALL
+Selecting a realistic look does not make a scene authentic footage. Avoid presenting invented visuals as proof that a real event happened exactly as shown.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

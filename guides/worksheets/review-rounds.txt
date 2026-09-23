@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Organize review rounds without conflicting edits
+Guide: https://kleooai.com/guides/review-rounds/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Assign one person to consolidate feedback.
+Your decision:
+
+2. Ask reviewers to identify a timestamp or treatment line.
+Your decision:
+
+3. Close each round with a written decision and a version label.
+Your decision:
+
+REVIEW
+[ ] Is feedback consolidated?
+Evidence / timestamp:
+
+[ ] Are contradictions resolved?
+Evidence / timestamp:
+
+[ ] Does everyone review the same version?
+Evidence / timestamp:
+
+PITFALL
+More reviewers do not automatically improve the result. Give each person a clear remit and preserve a single approved version before moving to the next stage.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

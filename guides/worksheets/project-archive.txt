@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Archive a completed video project
+Guide: https://kleooai.com/guides/project-archive/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Download and open the completed file.
+Your decision:
+
+2. Store the approved brief, script, job identifier and source records beside it.
+Your decision:
+
+3. Keep separate labels for the original render and edited publication version.
+Your decision:
+
+REVIEW
+[ ] Does the saved file play fully?
+Evidence / timestamp:
+
+[ ] Can the published version be identified?
+Evidence / timestamp:
+
+[ ] Are source and permission records recoverable?
+Evidence / timestamp:
+
+PITFALL
+A browser bookmark to a signed download address is not a backup. Save the file while available and confirm your own storage and backup process.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

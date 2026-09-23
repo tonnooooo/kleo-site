@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Maintain sources after a video is published
+Guide: https://kleooai.com/guides/source-links-maintenance/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Store the original source title, URL and access date.
+Your decision:
+
+2. Record the passage used without losing its context.
+Your decision:
+
+3. Update broken links carefully and document any substantive correction.
+Your decision:
+
+REVIEW
+[ ] Does the replacement support the same claim?
+Evidence / timestamp:
+
+[ ] Is the original context preserved?
+Evidence / timestamp:
+
+[ ] Does a change require a public correction?
+Evidence / timestamp:
+
+PITFALL
+Replacing a source silently can obscure that the evidence changed. If the underlying claim is no longer supported, correct the presentation rather than only repairing the hyperlink.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

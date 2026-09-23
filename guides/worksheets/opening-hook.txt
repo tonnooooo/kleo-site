@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Write an opening that earns the next scene
+Guide: https://kleooai.com/guides/opening-hook/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Write the question raised by the first image.
+Your decision:
+
+2. Check that the treatment answers it before the end.
+Your decision:
+
+3. Remove any introductory explanation viewers do not need yet.
+Your decision:
+
+REVIEW
+[ ] Is the question understandable immediately?
+Evidence / timestamp:
+
+[ ] Does the answer arrive?
+Evidence / timestamp:
+
+[ ] Does the hook accurately represent the film?
+Evidence / timestamp:
+
+PITFALL
+Withholding every useful detail creates confusion rather than curiosity. Show enough context for viewers to know what they are waiting to understand.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

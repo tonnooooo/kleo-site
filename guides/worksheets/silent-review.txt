@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Use a silent pass to test visual clarity
+Guide: https://kleooai.com/guides/silent-review/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Watch once without consulting the script.
+Your decision:
+
+2. Write down moments where identity, place or action is unclear.
+Your decision:
+
+3. Decide whether the fix belongs in framing, editing, captions or narration.
+Your decision:
+
+REVIEW
+[ ] Can the main action be followed?
+Evidence / timestamp:
+
+[ ] Are transitions understandable?
+Evidence / timestamp:
+
+[ ] Is essential audio available through reviewed captions?
+Evidence / timestamp:
+
+PITFALL
+Do not remove useful narration merely to pass a silent test. The aim is to discover avoidable ambiguity and plan access to the spoken information.
+
+This worksheet is a planning aid, not a rendered example or automated verification.
