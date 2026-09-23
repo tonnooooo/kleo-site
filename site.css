@@ -817,3 +817,11 @@ a,button{-webkit-tap-highlight-color:transparent}
 .how-with-demo .steps{grid-template-columns:1fr;gap:22px}.how-with-demo .step{display:grid;grid-template-columns:38px 1fr;column-gap:14px;padding:0;border:0;background:none}.how-with-demo .step .num{grid-row:1/4;font-size:1.8rem;opacity:.7}.how-with-demo .step .tc,.how-with-demo .step h3,.how-with-demo .step p{grid-column:2}.how-with-demo .step h3{font-size:1.22rem}.how-with-demo .step p{font-size:.87rem}.workflow-caption{font-size:.7rem;color:var(--mute);text-align:center;margin:14px 0 0}
 @media(max-width:900px){.how-with-demo{grid-template-columns:1fr;gap:36px}.how-with-demo .steps{grid-template-columns:1fr 1fr}.workflow-demo{width:100%;max-width:660px;margin:auto}}
 @media(max-width:600px){.how-with-demo .steps{grid-template-columns:1fr}.cinema-intro .osd{font-size:.57rem;gap:6px;margin-bottom:22px}.workflow-demo .demo-bar{padding:12px}.workflow-demo .demo-title{font-size:.63rem}}
+
+/* Price captions need their own line on phones, not the amount's tall line box. */
+@media(max-width:600px){
+  .plan{min-width:0}
+  .plan .name{flex-wrap:wrap;gap:6px 14px}
+  .plan .price{display:flex;flex-direction:column;align-items:flex-start;gap:9px}
+  .plan .price small{display:block;margin-left:0;font-size:.875rem;line-height:1.45;max-width:100%}
+}
