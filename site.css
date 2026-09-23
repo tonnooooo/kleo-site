@@ -773,3 +773,47 @@ a,button{-webkit-tap-highlight-color:transparent}
   .card:hover,.plan:hover,.btn:hover{transform:none}
   .card:hover .sk-img,.brand:hover svg path:last-child,.btn:hover .arr{transform:none}
 }
+
+/* Homepage: the assistant is the entrance, the finished film is the proof. */
+.cinema-hero{padding:92px 0 80px}
+.cinema-hero::before{opacity:.42;animation:none;background:radial-gradient(45% 32% at 48% 22%,var(--glow),transparent 85%)}
+.cinema-hero::after{opacity:.13}
+.cinema-hero .cinema-wrap{display:block;max-width:1160px}
+.cinema-intro{text-align:center;margin:0 auto 34px}
+.cinema-kicker{font:500 .7rem var(--font-mono);text-transform:uppercase;letter-spacing:.16em;color:var(--accent-text);display:flex;align-items:center;justify-content:center;gap:10px;margin:0 0 24px}
+.cinema-kicker>span:empty{width:6px;height:6px;border-radius:50%;background:var(--amber);box-shadow:0 0 14px var(--glow)}
+.cinema-intro h1{font-size:clamp(3rem,6.7vw,5.75rem);line-height:1.02;letter-spacing:-.065em;font-weight:600}
+.cinema-lede{font-size:1.13rem;line-height:1.65;color:var(--ink-2);margin:24px auto 15px;max-width:610px}
+.cinema-specs{font-size:.75rem;color:var(--mute);margin:0;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.agent-studio{max-width:860px;margin:auto;border:1px solid var(--line-2);border-radius:22px;background:color-mix(in srgb,var(--bg-2) 87%,transparent);box-shadow:0 20px 70px #00000012;overflow:hidden;text-align:left}
+.studio-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:22px 26px 17px}
+.studio-heading h2{font-size:1.06rem;letter-spacing:-.015em}.studio-heading>span{font-size:.75rem;color:var(--mute)}
+.agent-tabs{display:flex;gap:5px;padding:0 20px 18px;flex-wrap:wrap}.agent-tabs[hidden]{display:none}
+.agent-tabs button{display:flex;align-items:center;justify-content:center;gap:8px;flex:1;padding:10px 9px;background:transparent;color:var(--ink-2);border:1px solid transparent;border-radius:9px;font:500 .78rem var(--font-body);cursor:pointer;white-space:nowrap;transition:background .18s,border-color .18s}
+.agent-tabs button:hover{background:var(--glass-2)}.agent-tabs button[aria-selected=true]{background:var(--amber-soft);border-color:color-mix(in srgb,var(--amber) 40%,transparent);color:var(--ink)}
+.agent-mark{width:19px;height:19px;background:currentColor;mask:var(--agent-logo) center/contain no-repeat;-webkit-mask:var(--agent-logo) center/contain no-repeat;flex:none}
+.agent-panel{border-top:1px solid var(--line);margin:0}.agent-panel[hidden]{display:none}.agent-panel>summary{padding:18px 26px;cursor:pointer}.agent-enhanced .agent-panel>summary{display:none}
+.agent-panel-body{padding:20px 26px 21px;min-height:169px}
+.install-label{display:flex;justify-content:space-between;gap:12px;color:var(--mute);font:400 .66rem var(--font-mono);letter-spacing:.035em;margin-bottom:12px}
+.install-auth{font-family:var(--font-body);letter-spacing:0}
+.install-code{display:flex;align-items:flex-start;gap:14px}.install-code pre{flex:1;min-width:0;margin:0;font:400 .82rem/1.65 var(--font-mono);color:var(--ink);overflow:auto;padding:10px 0;white-space:pre-wrap;overflow-wrap:anywhere;background:none;border:0}.install-code code{font:inherit;color:inherit;background:none;padding:0}
+.install-code .btn{font-size:.75rem;padding:10px 15px;border-radius:8px;white-space:nowrap;flex:none;box-shadow:none}
+.install-help{font-size:.76rem;line-height:1.65;color:var(--ink-2);margin:12px 0 0;max-width:760px}.install-help a{white-space:nowrap}
+.starter-prompt{border-top:1px solid var(--line);background:var(--glass);margin:0}.starter-prompt summary{padding:16px 26px;display:flex;justify-content:space-between;gap:14px;cursor:pointer;font-size:.79rem;list-style:none}.starter-prompt summary::-webkit-details-marker{display:none}.starter-prompt summary>span:last-child{font-size:1.1rem;color:var(--accent-text)}.prompt-step{color:var(--mute);margin-right:16px}.starter-body{padding:0 26px 22px;font-size:.82rem}.starter-body>p{color:var(--mute);margin-top:0}.starter-body blockquote{margin:0 0 16px;padding:0 0 0 16px;border-left:2px solid var(--amber);color:var(--ink-2)}.starter-body .btn{font-size:.78rem;padding:9px 14px}
+.studio-footnote{font-size:.72rem;text-align:center;color:var(--mute);margin:16px auto 52px}.studio-footnote>span{display:block;margin-top:3px}.studio-footnote a{color:var(--ink-2);text-decoration:underline;text-underline-offset:3px}
+.apex-feature{margin:0}.apex-heading{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}.apex-heading .cinema-kicker{margin:0;font-size:.66rem}.apex-heading>a{font-size:.78rem;color:var(--ink-2)}
+.apex-feature .style-media{border-radius:16px;aspect-ratio:16/9;position:relative;overflow:hidden;border:1px solid var(--line-2)}
+.apex-tag{position:absolute;bottom:25px;left:30px;font:600 1.4rem var(--font-display);letter-spacing:.22em;color:white;text-shadow:0 2px 14px #000}.apex-tag>span{font:400 .6rem var(--font-mono);letter-spacing:.1em;margin-left:18px}
+.apex-feature figcaption{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:17px 2px;color:var(--ink-2);font-size:.85rem}.apex-feature figcaption strong{color:var(--ink);font-weight:600}.apex-feature figcaption a{font-size:.72rem;color:var(--mute)}
+@media(max-width:820px){.cinema-hero{padding-top:70px}.agent-tabs{gap:5px}.agent-tabs button{flex:0 0 auto;padding:10px 12px}.cinema-intro h1{font-size:clamp(3rem,8.5vw,4.5rem)}}
+@media(max-width:600px){.cinema-hero{padding:54px 0 40px}.cinema-kicker{font-size:.59rem;letter-spacing:.12em;margin-bottom:20px}.cinema-intro h1{font-size:clamp(2.7rem,10.5vw,3.8rem);letter-spacing:-.055em}.cinema-lede{font-size:.98rem;margin-top:20px;max-width:340px}.desktop-break{display:none}.cinema-specs{font-size:.65rem;gap:6px}.cinema-intro{margin-bottom:26px}.studio-heading{padding:19px 17px 14px}.studio-heading h2{font-size:1rem}.studio-heading>span{display:none}.agent-tabs{padding:0 12px 14px;gap:4px}.agent-tabs button{font-size:.72rem;padding:9px 8px;flex:1 0 22%}.agent-mark{width:17px;height:17px}.agent-panel-body{padding:18px 17px;min-height:0}.install-auth{display:none}.install-code{gap:8px;flex-wrap:wrap}.install-code pre{font-size:.72rem;flex-basis:100%;padding:2px 0 5px}.install-code .btn{padding:8px 12px}.install-help{font-size:.72rem}.starter-prompt summary{padding:15px 17px;font-size:.75rem}.prompt-step{display:block;font-size:.65rem;margin-bottom:3px}.starter-body{padding:0 17px 18px}.studio-footnote{font-size:.65rem;max-width:320px;margin:14px auto 34px}.apex-feature .style-media{border-radius:11px}.apex-tag{left:16px;bottom:14px;font-size:1rem}.apex-tag>span{font-size:.48rem;margin-left:10px}.apex-feature figcaption{align-items:flex-start;flex-direction:column;gap:4px;padding-top:12px;font-size:.8rem}.apex-feature figcaption a{font-size:.65rem}.apex-heading>a{font-size:.7rem}}
+/* Keep the compact connection controls independent of the FAQ disclosure styles. */
+.cinema-intro h1{letter-spacing:-.04em}
+.agent-panel,.starter-prompt{padding:0;border-bottom:0}
+.starter-prompt summary::after{display:none}
+.starter-prompt[open] summary>span:last-child{transform:rotate(45deg)}
+.cinema-intro .osd{font-size:.65rem;margin-bottom:27px;gap:8px}
+.how-with-demo{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:56px;align-items:start}
+.how-with-demo .steps{grid-template-columns:1fr;gap:22px}.how-with-demo .step{display:grid;grid-template-columns:38px 1fr;column-gap:14px;padding:0;border:0;background:none}.how-with-demo .step .num{grid-row:1/4;font-size:1.8rem;opacity:.7}.how-with-demo .step .tc,.how-with-demo .step h3,.how-with-demo .step p{grid-column:2}.how-with-demo .step h3{font-size:1.22rem}.how-with-demo .step p{font-size:.87rem}.workflow-caption{font-size:.7rem;color:var(--mute);text-align:center;margin:14px 0 0}
+@media(max-width:900px){.how-with-demo{grid-template-columns:1fr;gap:36px}.how-with-demo .steps{grid-template-columns:1fr 1fr}.workflow-demo{width:100%;max-width:660px;margin:auto}}
+@media(max-width:600px){.how-with-demo .steps{grid-template-columns:1fr}.cinema-intro .osd{font-size:.57rem;gap:6px;margin-bottom:22px}.workflow-demo .demo-bar{padding:12px}.workflow-demo .demo-title{font-size:.63rem}}

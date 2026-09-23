@@ -63,6 +63,35 @@
     catch(err){ say('Copy it by hand: ' + txt); }
   });
 
+  /* The homepage selector enhances real HTML instructions; every client remains readable without JS. */
+  var agentTabs = document.querySelector('.agent-tabs');
+  if (agentTabs) {
+    var tabs = Array.prototype.slice.call(agentTabs.querySelectorAll('[role="tab"]'));
+    var selectAgent = function(tab, focus) {
+      tabs.forEach(function(t) {
+        var active = t === tab, panel = document.getElementById(t.getAttribute('aria-controls'));
+        t.setAttribute('aria-selected', String(active)); t.tabIndex = active ? 0 : -1;
+        panel.hidden = !active; panel.open = true;
+        panel.setAttribute('role', 'tabpanel'); panel.setAttribute('aria-labelledby', t.id);
+      });
+      if (focus) tab.focus();
+    };
+    agentTabs.hidden = false;
+    agentTabs.parentElement.classList.add('agent-enhanced');
+    tabs.forEach(function(tab, i) {
+      tab.addEventListener('click', function() { selectAgent(tab, false); });
+      tab.addEventListener('keydown', function(e) {
+        var next;
+        if (e.key === 'ArrowRight') next = (i + 1) % tabs.length;
+        if (e.key === 'ArrowLeft') next = (i + tabs.length - 1) % tabs.length;
+        if (e.key === 'Home') next = 0;
+        if (e.key === 'End') next = tabs.length - 1;
+        if (next !== undefined) { e.preventDefault(); selectAgent(tabs[next], true); }
+      });
+    });
+    selectAgent(tabs[0], false);
+  }
+
   /* ---------- live MCP address from config.json ---------- */
   fetch('/config.json', {cache:'no-store'}).then(function(r){ return r.ok ? r.json() : null; }).then(function(cfg){
     if(!cfg) return;

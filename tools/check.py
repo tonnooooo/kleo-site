@@ -181,7 +181,7 @@ def main():
             if t == 'link' and a.get('rel') not in ('canonical', 'alternate') and a.get('href', '').startswith('http') and not a['href'].startswith(('https://fonts.googleapis.com', 'https://fonts.gstatic.com')): errors.append('%s: remote resource %s' % (name, a['href']))
             if t == 'script' and a.get('src', '').startswith('http'): errors.append('%s: remote script' % name)
         if any(t == 'style' for t, a in p.tags): errors.append('%s: inline <style> block (use site.css)' % name)
-        if not any(a.get('href') == '/site.js?v=20260915' or a.get('src') == '/site.js?v=20260915' for t, a in p.tags): errors.append('%s: site.js not loaded' % name)
+        if not any(t == 'script' and urlsplit(a.get('src', '')).path == '/site.js' and not urlsplit(a.get('src', '')).netloc for t, a in p.tags): errors.append('%s: site.js not loaded' % name)
         # header/footer identical everywhere
         if p.header and p.footer:
             h, ft = block(sources[f], p.header), block(sources[f], p.footer)
