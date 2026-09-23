@@ -29,7 +29,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="/site.css?v=20260915">
+<link rel="stylesheet" href="/site.css?v=20260923">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -82,7 +82,7 @@
   ]
 }
 </script>
-<script src="/site.js?v=20260915" defer></script>
+<script src="/site.js?v=20260923" defer></script>
 </head>
 <body>
 <div class="progress" id="progress" aria-hidden="true"></div>
@@ -115,72 +115,96 @@
 <main id="main">
 
 <!-- ============ HERO ============ -->
-<section class="hero" id="top">
-  <div class="wrap">
-    <div>
-      <div class="osd"><span class="rec" aria-hidden="true"></span> REC <span class="tcode" id="tcode" aria-hidden="true">00:00:00:00</span> · 4K · 60 fps<span class="osd-more"> · 16:9 and 9:16 · EN / IT</span></div>
-      <h1>Human direction.<br><span class="hl">Agent-made films.</span></h1>
-      <p class="lede">Your brief sets the story. Kleo turns it into a complete narrated film — every shot generated as moving
-        footage, in a realistic or animation look — or into an animatic of the same storyboard, and hands the link to the
-        assistant you already use. Directed by you. Produced through MCP.</p>
-      <div class="cta-row">
-        <a class="btn btn-primary" href="/connect/">Connect Kleo <span class="arr" aria-hidden="true">→</span></a>
-        <a class="btn btn-ghost" href="/examples/">Watch the examples</a>
-      </div>
-      <p class="free-line"><b>Free to start.</b> 7 credits on your account the moment you connect — no sign-up, no card: one animatic. A film starts at 10 credits and a €5 pack.</p>
-      <div class="works">
-        <span>Works with</span>
-        <b>Claude</b><b>ChatGPT</b><b>Grok</b><b>Claude Code</b><b>Cursor</b><b>VS Code</b><b>OpenCode</b><b>Gemini CLI</b>
-      </div>
-    </div>
-
-    <div class="demo" role="figure" aria-label="Example: a conversation with Kleo connected">
-      <div class="demo-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="demo-title">Claude · Kleo connected<span class="clock" id="demoClock" hidden></span></span></div>
-      <div class="demo-body">
-        <div class="msg user">
-          <span class="who">You</span>
-          <p>Make me a 45-second Short about a lighthouse keeper who keeps answering a message in a bottle. Realistic look, English narration.</p>
-        </div>
-        <div class="msg">
-          <span class="who">Claude</span>
-          <p>Treatment ready: a keeper, one bottle a year, the last one answered in person. 23 credits, 9:16. Starting the render.</p>
-          <div class="tool">
-            <div class="tool-head">
-              <span class="tool-name"><b>kleo_create_video</b></span>
-              <span class="tool-state" id="toolState">running</span>
-            </div>
-            <pre class="tool-args">{ "duration_s": 45, "format": "9:16", "style": "realistic", "language": "en",
-  "prompt": "A lighthouse keeper who keeps answering a message in a bottle" }</pre>
-          </div>
-        </div>
-        <div class="render" id="render">
-          <div class="render-head"><span>job <b>kl_7f3k</b> · GPU rented for this job</span><b id="renderPct">58%</b></div>
-          <div class="tracks" id="tracks">
-            <div class="track done"><span>Treatment</span><span class="tbar" style="--c:var(--violet)"></span></div>
-            <div class="track done"><span>Storyboard</span><span class="tbar" style="--c:var(--teal)"></span></div>
-            <div class="track active"><span>Footage</span><span class="tbar" style="--c:var(--amber)"></span></div>
-            <div class="track"><span>Narration</span><span class="tbar" style="--c:var(--rose)"></span></div>
-            <div class="track"><span>Finish</span><span class="tbar" style="--c:var(--blue)"></span></div>
-          </div>
-          <div class="bar"><span id="renderFill"></span></div>
-          <div class="render-status" id="renderStatus">Generating the shots as footage · 8 of 11 · ~12 min left</div>
-          <div class="result" id="result" hidden>
-            <span class="file">lighthouse-keeper.mp4</span>
-            <span class="chip">2160×3840</span><span class="chip">60 fps</span><span class="chip">0:45</span><span class="chip">7 days</span>
-            <span class="dl">Download</span>
-          </div>
-        </div>
-      </div>
-    </div>
+<section class="hero cinema-hero" id="top">
+ <div class="wrap cinema-wrap">
+  <div class="cinema-intro">
+   <div class="osd"><span class="rec" aria-hidden="true"></span> REC <span class="tcode" id="tcode" aria-hidden="true">00:00:00:00</span> · 4K · 60 fps<span class="osd-more"> · 16:9 and 9:16 · EN / IT</span></div>
+   <h1>Your next film.<br><span class="hl">Made in your AI chat.</span></h1>
+   <p class="cinema-lede">Turn an idea into a finished, narrated video with Kleo.<br class="desktop-break"> Direct it from your AI assistant. Download it. Publish it.</p>
+   <p class="cinema-specs">Realistic or animation <span>·</span> 15 seconds to 5 minutes <span>·</span> 4K · 60 fps</p>
   </div>
-  <div class="wrap wrap-stats">
-    <dl class="stats" aria-label="Kleo in numbers">
-      <div><dt>Output</dt><dd>4K · 60 fps</dd></div>
-      <div><dt>A film, brief to link</dt><dd>25–35 min</dd></div>
-      <div><dt>Looks</dt><dd>Realistic · Animation</dd></div>
-      <div><dt>To begin</dt><dd>7 credits, one animatic</dd></div>
-    </dl>
+  <div class="agent-studio" aria-label="Connect Kleo to your AI assistant">
+   <div class="studio-heading"><h2>Start in your assistant.</h2><span>Connect once. Create in chat.</span></div>
+   <div class="agent-tabs" role="tablist" aria-label="Choose your AI assistant" hidden><button type="button" id="agent-chatgpt" role="tab" aria-controls="install-chatgpt" aria-selected="true" tabindex="0"><span class="agent-mark" style="--agent-logo:url(/brand/agents/openai.svg)" aria-hidden="true"></span>ChatGPT</button><button type="button" id="agent-claude" role="tab" aria-controls="install-claude" aria-selected="false" tabindex="-1"><span class="agent-mark" style="--agent-logo:url(/brand/agents/claude.svg)" aria-hidden="true"></span>Claude</button><button type="button" id="agent-grok" role="tab" aria-controls="install-grok" aria-selected="false" tabindex="-1"><span class="agent-mark" style="--agent-logo:url(/brand/agents/grok.svg)" aria-hidden="true"></span>Grok</button><button type="button" id="agent-codex" role="tab" aria-controls="install-codex" aria-selected="false" tabindex="-1"><span class="agent-mark" style="--agent-logo:url(/brand/agents/openai.svg)" aria-hidden="true"></span>Codex</button><button type="button" id="agent-claude-code" role="tab" aria-controls="install-claude-code" aria-selected="false" tabindex="-1"><span class="agent-mark" style="--agent-logo:url(/brand/agents/claude.svg)" aria-hidden="true"></span>Claude Code</button><button type="button" id="agent-opencode" role="tab" aria-controls="install-opencode" aria-selected="false" tabindex="-1"><span class="agent-mark" style="--agent-logo:url(/brand/agents/opencode.svg)" aria-hidden="true"></span>OpenCode</button><button type="button" id="agent-cursor" role="tab" aria-controls="install-cursor" aria-selected="false" tabindex="-1"><span class="agent-mark" style="--agent-logo:url(/brand/agents/cursor.svg)" aria-hidden="true"></span>Cursor</button></div>
+   <details class="agent-panel" id="install-chatgpt" open>
+ <summary>ChatGPT connection</summary><div class="agent-panel-body">
+ <div class="install-label"><span>MCP server URL</span><span class="install-auth">Kleo account · secure sign-in</span></div>
+ <div class="install-code"><pre><code>https://mcp.kleooai.com/mcp</code></pre><button class="btn btn-primary" type="button" data-copy="https://mcp.kleooai.com/mcp" aria-label="Copy ChatGPT connection address">Copy URL</button></div>
+ <p class="install-help">In ChatGPT, enable Developer mode in Settings → Security and login. Add Kleo from Plugins with this server URL, then sign in to Kleo and enable it in your conversation. Availability depends on your account and workspace. <a href="https://developers.openai.com/plugins/deploy/connect-chatgpt" target="_blank" rel="noopener">Setup reference ↗</a></p>
+ </div></details><details class="agent-panel" id="install-claude" >
+ <summary>Claude connection</summary><div class="agent-panel-body">
+ <div class="install-label"><span>MCP server URL</span><span class="install-auth">Kleo account · secure sign-in</span></div>
+ <div class="install-code"><pre><code>https://mcp.kleooai.com/mcp</code></pre><button class="btn btn-primary" type="button" data-copy="https://mcp.kleooai.com/mcp" aria-label="Copy Claude connection address">Copy URL</button></div>
+ <p class="install-help">In Claude, open Settings → Connectors → Add custom connector. Name it Kleo, paste this URL and connect your Kleo account. Enable Kleo in your conversation. <a href="https://support.claude.com/en/articles/11176164" target="_blank" rel="noopener">Setup reference ↗</a></p>
+ </div></details><details class="agent-panel" id="install-grok" >
+ <summary>Grok connection</summary><div class="agent-panel-body">
+ <div class="install-label"><span>MCP server URL</span><span class="install-auth">Kleo account · secure sign-in</span></div>
+ <div class="install-code"><pre><code>https://mcp.kleooai.com/mcp</code></pre><button class="btn btn-primary" type="button" data-copy="https://mcp.kleooai.com/mcp" aria-label="Copy Grok connection address">Copy URL</button></div>
+ <p class="install-help">Open Grok Connectors → New Connector → Custom. Paste this URL, complete the Kleo sign-in and enable its tools. Custom connector access depends on your plan and workspace. <a href="https://docs.x.ai/grok/connectors" target="_blank" rel="noopener">Setup reference ↗</a></p>
+ </div></details><details class="agent-panel" id="install-codex" >
+ <summary>Codex connection</summary><div class="agent-panel-body">
+ <div class="install-label"><span>Run in your terminal</span><span class="install-auth">Kleo account · secure sign-in</span></div>
+ <div class="install-code"><pre><code>codex mcp add kleo --url https://mcp.kleooai.com/mcp
+codex mcp login kleo</code></pre><button class="btn btn-primary" type="button" data-copy="codex mcp add kleo --url https://mcp.kleooai.com/mcp
+codex mcp login kleo" aria-label="Copy Codex connection instructions">Copy commands</button></div>
+ <p class="install-help">Run these commands with Codex CLI installed, finish the browser sign-in, then start a new Codex session with Kleo enabled. <a href="https://developers.openai.com/codex/mcp/" target="_blank" rel="noopener">Setup reference ↗</a></p>
+ </div></details><details class="agent-panel" id="install-claude-code" >
+ <summary>Claude Code connection</summary><div class="agent-panel-body">
+ <div class="install-label"><span>Run in your terminal</span><span class="install-auth">Kleo account · secure sign-in</span></div>
+ <div class="install-code"><pre><code>claude mcp add --transport http kleo https://mcp.kleooai.com/mcp</code></pre><button class="btn btn-primary" type="button" data-copy="claude mcp add --transport http kleo https://mcp.kleooai.com/mcp" aria-label="Copy Claude Code connection instructions">Copy commands</button></div>
+ <p class="install-help">Then open Claude Code, run /mcp, select Kleo and authenticate. The command adds Kleo to the current project. <a href="https://code.claude.com/docs/en/mcp" target="_blank" rel="noopener">Setup reference ↗</a></p>
+ </div></details><details class="agent-panel" id="install-opencode" >
+ <summary>OpenCode connection</summary><div class="agent-panel-body">
+ <div class="install-label"><span>Merge into opencode.json</span><span class="install-auth">Kleo account · secure sign-in</span></div>
+ <div class="install-code"><pre><code>{
+  &quot;mcp&quot;: {
+    &quot;kleo&quot;: {
+      &quot;type&quot;: &quot;remote&quot;,
+      &quot;url&quot;: &quot;https://mcp.kleooai.com/mcp&quot;,
+      &quot;enabled&quot;: true
+    }
+  }
+}</code></pre><button class="btn btn-primary" type="button" data-copy="{
+  &quot;mcp&quot;: {
+    &quot;kleo&quot;: {
+      &quot;type&quot;: &quot;remote&quot;,
+      &quot;url&quot;: &quot;https://mcp.kleooai.com/mcp&quot;,
+      &quot;enabled&quot;: true
+    }
+  }
+}" aria-label="Copy OpenCode connection instructions">Copy config</button></div>
+ <p class="install-help">Merge this entry into your existing configuration, then run opencode mcp auth kleo and complete the browser sign-in. <a href="https://opencode.ai/docs/mcp-servers/" target="_blank" rel="noopener">Setup reference ↗</a></p>
+ </div></details><details class="agent-panel" id="install-cursor" >
+ <summary>Cursor connection</summary><div class="agent-panel-body">
+ <div class="install-label"><span>Merge into .cursor/mcp.json</span><span class="install-auth">Kleo account · secure sign-in</span></div>
+ <div class="install-code"><pre><code>{
+  &quot;mcpServers&quot;: {
+    &quot;kleo&quot;: {
+      &quot;url&quot;: &quot;https://mcp.kleooai.com/mcp&quot;
+    }
+  }
+}</code></pre><button class="btn btn-primary" type="button" data-copy="{
+  &quot;mcpServers&quot;: {
+    &quot;kleo&quot;: {
+      &quot;url&quot;: &quot;https://mcp.kleooai.com/mcp&quot;
+    }
+  }
+}" aria-label="Copy Cursor connection instructions">Copy config</button></div>
+ <p class="install-help">Merge this entry into your project’s .cursor/mcp.json. In Cursor’s MCP settings, connect Kleo and complete sign-in, then use it in Agent. <a href="https://cursor.com/docs/context/mcp" target="_blank" rel="noopener">Setup reference ↗</a></p>
+ </div></details>
+   <details class="starter-prompt"><summary><span><span class="prompt-step">Then, make it yours</span> A first film prompt, ready to copy</span><span aria-hidden="true">+</span></summary><div class="starter-body"><p>After connecting Kleo, paste this into your assistant and change the idea.</p><blockquote>Use Kleo to help me create a 20-second cinematic film, in a realistic look, with English narration and a 16:9 frame. My idea: two cars racing through an amber-lit tunnel onto a coastal road at golden hour. First show me a treatment and the credit cost. Wait for my approval before rendering. After rendering, give me the finished MP4 download link.</blockquote><button class="btn btn-ghost" type="button" data-copy="Use Kleo to help me create a 20-second cinematic film, in a realistic look, with English narration and a 16:9 frame. My idea: two cars racing through an amber-lit tunnel onto a coastal road at golden hour. First show me a treatment and the credit cost. Wait for my approval before rendering. After rendering, give me the finished MP4 download link." aria-label="Copy the first film prompt">Copy film prompt</button></div></details>
+   <noscript><p class="install-help">Expand your assistant above and copy the text manually. <a href="/connect/">Full connection guide →</a></p></noscript>
   </div>
+  <p class="studio-footnote">7 free starter credits for an animatic. <a href="#pricing">Film credits from €5.</a> <span>Requires an assistant with remote MCP support.</span></p>
+  <figure class="apex-feature">
+   <div class="apex-heading"><span class="cinema-kicker">Made with Kleo</span><a href="/examples/">Explore the films <span aria-hidden="true">↗</span></a></div>
+   <div class="style-media wide">
+    <video src="/samples/realistic-apex.mp4" poster="/samples/realistic-apex.jpg" width="1920" height="1080" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" aria-label="Apex: two cars emerge from an amber-lit tunnel onto a coastal road. A 20-second Kleo film, shown muted."></video>
+    <span class="apex-tag">APEX <span>01 / REALISTIC</span></span>
+   </div>
+   <figcaption><div><strong>Apex.</strong> A brief becomes a film.</div><a href="/examples/apex/">20 sec · 4K master · 1080p preview <span aria-hidden="true">↗</span></a></figcaption>
+  </figure>
+ </div>
 </section>
 
 <!-- ============ HOW IT WORKS ============ -->
@@ -192,7 +216,7 @@
         <h2>Your vision. Every frame.</h2>
       </div>
     </div>
-    <div class="steps">
+    <div class="how-with-demo"><div class="steps">
       <div class="step">
         <span class="num" aria-hidden="true">01</span>
         <span class="tc">your words</span>
@@ -224,6 +248,46 @@
           the link to the finished MP4, good for 7 days. Review it and upload it wherever you publish.</p>
       </div>
     </div>
+<div class="workflow-demo">    <div class="demo" role="figure" aria-label="Example: a conversation with Kleo connected">
+      <div class="demo-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="demo-title">Claude · Kleo connected<span class="clock" id="demoClock" hidden></span></span></div>
+      <div class="demo-body">
+        <div class="msg user">
+          <span class="who">You</span>
+          <p>Make me a 45-second Short about a lighthouse keeper who keeps answering a message in a bottle. Realistic look, English narration.</p>
+        </div>
+        <div class="msg">
+          <span class="who">Claude</span>
+          <p>Treatment ready: a keeper, one bottle a year, the last one answered in person. 23 credits, 9:16. You approve. Kleo starts the render.</p>
+          <div class="tool">
+            <div class="tool-head">
+              <span class="tool-name"><b>kleo_create_video</b></span>
+              <span class="tool-state" id="toolState">running</span>
+            </div>
+            <pre class="tool-args">{ "duration_s": 45, "format": "9:16", "style": "realistic", "language": "en",
+  "prompt": "A lighthouse keeper who keeps answering a message in a bottle" }</pre>
+          </div>
+        </div>
+        <div class="render" id="render">
+          <div class="render-head"><span>job <b>kl_7f3k</b> · GPU rented for this job</span><b id="renderPct">58%</b></div>
+          <div class="tracks" id="tracks">
+            <div class="track done"><span>Treatment</span><span class="tbar" style="--c:var(--violet)"></span></div>
+            <div class="track done"><span>Storyboard</span><span class="tbar" style="--c:var(--teal)"></span></div>
+            <div class="track active"><span>Footage</span><span class="tbar" style="--c:var(--amber)"></span></div>
+            <div class="track"><span>Narration</span><span class="tbar" style="--c:var(--rose)"></span></div>
+            <div class="track"><span>Finish</span><span class="tbar" style="--c:var(--blue)"></span></div>
+          </div>
+          <div class="bar"><span id="renderFill"></span></div>
+          <div class="render-status" id="renderStatus">Generating the shots as footage · 8 of 11 · ~12 min left</div>
+          <div class="result" id="result" hidden>
+            <span class="file">lighthouse-keeper.mp4</span>
+            <span class="chip">2160×3840</span><span class="chip">60 fps</span><span class="chip">0:45</span><span class="chip">7 days</span>
+            <span class="dl">Download</span>
+          </div>
+        </div>
+      </div>
+    </div>
+<p class="workflow-caption">Illustrated workflow · progress shown in an accelerated loop.</p></div>
+</div>
   </div>
 </section>
 
