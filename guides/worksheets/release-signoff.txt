@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Approve the whole publication package
+Guide: https://kleooai.com/guides/release-signoff/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Collect the final versions in one review package.
+Your decision:
+
+2. Confirm factual wording and asset credits across all items.
+Your decision:
+
+3. Record who approved release and which version they approved.
+Your decision:
+
+REVIEW
+[ ] Are all materials the final versions?
+Evidence / timestamp:
+
+[ ] Are claims consistent across them?
+Evidence / timestamp:
+
+[ ] Is publication explicitly approved?
+Evidence / timestamp:
+
+PITFALL
+A carefully reviewed video can still be misrepresented by an exaggerated title or thumbnail. Evaluate the package as viewers will encounter it.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Plan an AI video before spending production credits
+Guide: https://kleooai.com/guides/free-video-planning/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Write the audience, subject and intended ending.
+Your decision:
+
+2. Ask for a treatment without starting a render.
+Your decision:
+
+3. Approve a quote only when you are ready for production.
+Your decision:
+
+REVIEW
+[ ] Is the assistant restricted to planning?
+Evidence / timestamp:
+
+[ ] Are unresolved details visible?
+Evidence / timestamp:
+
+[ ] Is a render explicitly authorized only later?
+Evidence / timestamp:
+
+PITFALL
+Free planning is not a promise that every assistant account is free or that external tools never charge. Keep assistant access, Kleo credits and optional editing costs separate.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

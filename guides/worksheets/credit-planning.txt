@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Plan credits for a video project
+Guide: https://kleooai.com/guides/credit-planning/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Choose the product and duration before comparing costs.
+Your decision:
+
+2. Keep story review separate from final production in the budget.
+Your decision:
+
+3. Reserve a decision point for any further render instead of assuming unlimited revisions.
+Your decision:
+
+REVIEW
+[ ] Are all planned jobs included?
+Evidence / timestamp:
+
+[ ] Does the estimate match the current quote?
+Evidence / timestamp:
+
+[ ] Are optional revisions distinguished from approved work?
+Evidence / timestamp:
+
+PITFALL
+A credit balance is not the same as an unrestricted production allowance. Confirm that the account and selected product meet the current requirements before promising delivery.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

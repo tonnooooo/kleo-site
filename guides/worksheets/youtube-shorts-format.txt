@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Plan a film for YouTube Shorts
+Guide: https://kleooai.com/guides/youtube-shorts-format/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Decide whether the idea works as a self-contained vertical film.
+Your decision:
+
+2. Keep the intended duration within the destination's current limits.
+Your decision:
+
+3. Preview the result in the platform rather than assuming an aspect ratio alone determines presentation.
+Your decision:
+
+REVIEW
+[ ] Is the file vertical as intended?
+Evidence / timestamp:
+
+[ ] Does the story stand alone?
+Evidence / timestamp:
+
+[ ] Have current platform requirements been checked?
+Evidence / timestamp:
+
+PITFALL
+Do not infer that every Kleo film duration will qualify as a Short. Product limits and platform classification rules are separate constraints.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

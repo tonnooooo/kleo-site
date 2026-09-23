@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Label illustrative reconstructions clearly
+Guide: https://kleooai.com/guides/reconstruction-labels/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Identify scenes depicting real events that were not actually filmed for this project.
+Your decision:
+
+2. Choose clear wording that describes the images as illustrative.
+Your decision:
+
+3. Review the destination platform's current disclosure requirements.
+Your decision:
+
+REVIEW
+[ ] Could a viewer mistake the scene for evidence?
+Evidence / timestamp:
+
+[ ] Is the label clear where it matters?
+Evidence / timestamp:
+
+[ ] Does the description explain the production method?
+Evidence / timestamp:
+
+PITFALL
+A realistic appearance can strengthen an unintended claim of authenticity. Do not rely solely on a vague disclaimer placed far from the material it explains.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

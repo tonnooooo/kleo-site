@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Try a free animatic with Kleo starter credits
+Guide: https://kleooai.com/guides/free-animatic-maker/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Choose one simple story within the current animatic duration range.
+Your decision:
+
+2. Review the treatment and narration before using the credits.
+Your decision:
+
+3. Judge sequence and pacing while keeping the preview's limitations in mind.
+Your decision:
+
+REVIEW
+[ ] Does the story make sense in sequence?
+Evidence / timestamp:
+
+[ ] Is narration clear?
+Evidence / timestamp:
+
+[ ] Have you saved the result while its link is available?
+Evidence / timestamp:
+
+PITFALL
+An animatic can expose a weak story, but it cannot verify the behavior or quality of every generated clip in a later film. Treat those as separate review stages.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

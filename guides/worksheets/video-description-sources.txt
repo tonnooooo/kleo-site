@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Write a useful video description with sources
+Guide: https://kleooai.com/guides/video-description-sources/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Summarize the film accurately in a short opening.
+Your decision:
+
+2. Label source links by the claim or topic they support.
+Your decision:
+
+3. Include required asset credits and a relevant destination link.
+Your decision:
+
+REVIEW
+[ ] Are links correct and useful?
+Evidence / timestamp:
+
+[ ] Do citations support the film?
+Evidence / timestamp:
+
+[ ] Is the description consistent with the narration?
+Evidence / timestamp:
+
+PITFALL
+A long block of unrelated links does not make a video well sourced. Prefer a small, traceable evidence list over an impressive-looking bibliography.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

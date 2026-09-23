@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Track a video render without starting duplicates
+Guide: https://kleooai.com/guides/job-status/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Save the job identifier returned at submission.
+Your decision:
+
+2. Ask for the existing job's status after an interruption.
+Your decision:
+
+3. Create another job only after deciding what to do with the first.
+Your decision:
+
+REVIEW
+[ ] Are you checking the correct job?
+Evidence / timestamp:
+
+[ ] Has a duplicate request been avoided?
+Evidence / timestamp:
+
+[ ] Is completion confirmed by the result rather than an estimate?
+Evidence / timestamp:
+
+PITFALL
+A progress estimate is not a delivery guarantee. Slow progress does not by itself show that the job has stopped or that another submission is necessary.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

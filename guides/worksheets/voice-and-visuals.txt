@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Make narration and pictures work together
+Guide: https://kleooai.com/guides/voice-and-visuals/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Write the contribution of the image beside each narration line.
+Your decision:
+
+2. Remove spoken description that adds nothing the viewer needs.
+Your decision:
+
+3. Retain verbal context when an essential visual fact would otherwise be inaccessible.
+Your decision:
+
+REVIEW
+[ ] Does each channel add value?
+Evidence / timestamp:
+
+[ ] Are voice and picture synchronized in meaning?
+Evidence / timestamp:
+
+[ ] Is essential information available to the intended audience?
+Evidence / timestamp:
+
+PITFALL
+Complementary storytelling should not leave viewers who cannot see an important image without the key meaning. Plan accessibility as part of the script, not an afterthought.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

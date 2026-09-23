@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Choose how much happens in each scene
+Guide: https://kleooai.com/guides/storyboard-density/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. List the new idea introduced by each scene.
+Your decision:
+
+2. Split shots that combine several sequential actions.
+Your decision:
+
+3. Allow the narration to finish one thought before the visual introduces another.
+Your decision:
+
+REVIEW
+[ ] Can the dominant action be named?
+Evidence / timestamp:
+
+[ ] Are important objects introduced before use?
+Evidence / timestamp:
+
+[ ] Is a pause needed between ideas?
+Evidence / timestamp:
+
+PITFALL
+More shots do not automatically solve overload. If every cut introduces a new fact, reduce the information rather than accelerating the edit.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

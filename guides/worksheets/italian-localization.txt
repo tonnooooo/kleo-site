@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Prepare an Italian narration from an English brief
+Guide: https://kleooai.com/guides/italian-localization/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Translate the meaning with a competent speaker's review.
+Your decision:
+
+2. Adapt idioms and audience assumptions rather than preserving awkward wording.
+Your decision:
+
+3. Retime the narration and check names in the Italian delivery.
+Your decision:
+
+REVIEW
+[ ] Does it sound natural to the audience?
+Evidence / timestamp:
+
+[ ] Are names and idioms correct?
+Evidence / timestamp:
+
+[ ] Has the duration been reviewed again?
+Evidence / timestamp:
+
+PITFALL
+Do not infer support for additional narration languages from the ability to type a prompt in them. Check the product's current language options before promising a localized deliverable.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

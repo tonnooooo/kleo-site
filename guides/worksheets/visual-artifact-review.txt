@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Inspect generated footage for visual artifacts
+Guide: https://kleooai.com/guides/visual-artifact-review/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Watch for changing anatomy, object shape and background lettering.
+Your decision:
+
+2. Compare adjacent shots where identity or location matters.
+Your decision:
+
+3. Classify issues by their impact on comprehension before requesting revisions.
+Your decision:
+
+REVIEW
+[ ] Does the artifact alter the story?
+Evidence / timestamp:
+
+[ ] Is it visible at normal viewing size?
+Evidence / timestamp:
+
+[ ] Does it recur across several shots?
+Evidence / timestamp:
+
+PITFALL
+Do not assume every imperfection needs a full new render. Identify the problem first, then decide whether editing, a different shot or a revised concept is appropriate.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

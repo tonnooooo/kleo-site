@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Review generated narration before publishing
+Guide: https://kleooai.com/guides/audio-review/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Listen for omitted words, repeated phrases and incorrect names.
+Your decision:
+
+2. Check that important statements are audible and complete.
+Your decision:
+
+3. Watch again to identify mismatches between narration and visual action.
+Your decision:
+
+REVIEW
+[ ] Are negations and units intact?
+Evidence / timestamp:
+
+[ ] Is any sentence cut off?
+Evidence / timestamp:
+
+[ ] Does the spoken script match the approved meaning?
+Evidence / timestamp:
+
+PITFALL
+A transcript alone cannot reveal clipping, awkward timing or an incorrect pronunciation. Review the actual downloaded file rather than only the assistant's summary of the job.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

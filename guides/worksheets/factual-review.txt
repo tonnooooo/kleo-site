@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Fact-check a narrated video before release
+Guide: https://kleooai.com/guides/factual-review/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. List factual statements in the final narration.
+Your decision:
+
+2. Compare each one with the approved source material.
+Your decision:
+
+3. Watch for visual claims, including invented charts, uniforms or event details.
+Your decision:
+
+REVIEW
+[ ] Does the final wording match the source?
+Evidence / timestamp:
+
+[ ] Are dates and units correct?
+Evidence / timestamp:
+
+[ ] Do visuals imply unverified facts?
+Evidence / timestamp:
+
+PITFALL
+A citation at the end does not validate every scene. Check each consequential claim, especially when the film concerns real people, history or technical matters.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

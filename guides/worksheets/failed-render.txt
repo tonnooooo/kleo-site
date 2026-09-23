@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Handle a failed render methodically
+Guide: https://kleooai.com/guides/failed-render/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Record the failure message and job state.
+Your decision:
+
+2. Check the account and any cancellation or credit information actually reported.
+Your decision:
+
+3. Retry only after understanding what changed and approving any new charge.
+Your decision:
+
+REVIEW
+[ ] Is the error preserved exactly?
+Evidence / timestamp:
+
+[ ] Is credit status verified?
+Evidence / timestamp:
+
+[ ] Is the next action clearly authorized?
+Evidence / timestamp:
+
+PITFALL
+Do not promise a refund or invent a technical diagnosis from a generic error. Use the information provided by the service and contact support when it is insufficient.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

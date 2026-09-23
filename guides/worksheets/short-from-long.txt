@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Adapt a longer idea into a short film
+Guide: https://kleooai.com/guides/short-from-long/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Choose the strongest question that can stand alone.
+Your decision:
+
+2. Remove context that is not necessary for that answer.
+Your decision:
+
+3. Rebuild the final takeaway around the shorter promise.
+Your decision:
+
+REVIEW
+[ ] Can the short be understood alone?
+Evidence / timestamp:
+
+[ ] Is necessary context retained?
+Evidence / timestamp:
+
+[ ] Has the ending been rewritten for the new scope?
+Evidence / timestamp:
+
+PITFALL
+Kleo's public workflow should not be assumed to import and automatically recut your existing file. Use a separate editor for actual footage editing when that is the task.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

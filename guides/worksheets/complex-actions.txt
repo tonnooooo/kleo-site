@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Simplify actions that are difficult to inspect
+Guide: https://kleooai.com/guides/complex-actions/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Identify the beginning and end state of the action.
+Your decision:
+
+2. Choose the transition the audience truly needs to see.
+Your decision:
+
+3. Replace unnecessary physical detail with a simpler explanatory scene.
+Your decision:
+
+REVIEW
+[ ] Are hands and objects plausible?
+Evidence / timestamp:
+
+[ ] Is cause and effect clear?
+Evidence / timestamp:
+
+[ ] Could viewers mistake illustration for instruction?
+Evidence / timestamp:
+
+PITFALL
+A visually plausible result is not proof of a correct technical process. For instructional work, use verified real demonstrations when precise hand movements or mechanisms are essential.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

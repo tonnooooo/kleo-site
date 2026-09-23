@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Help viewers navigate a video series
+Guide: https://kleooai.com/guides/channel-series-navigation/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Give every episode a self-contained descriptive title.
+Your decision:
+
+2. Identify an appropriate next episode based on its subject.
+Your decision:
+
+3. Keep the source list and next-step links specific to each film.
+Your decision:
+
+REVIEW
+[ ] Can a new viewer start here?
+Evidence / timestamp:
+
+[ ] Is the next link relevant?
+Evidence / timestamp:
+
+[ ] Are episode descriptions meaningfully different?
+Evidence / timestamp:
+
+PITFALL
+Numbering alone can make a useful standalone film appear inaccessible. Tell viewers what they will learn even if it is the first episode they encounter.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

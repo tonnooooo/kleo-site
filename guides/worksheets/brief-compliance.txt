@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Check a rendered film against its approved brief
+Guide: https://kleooai.com/guides/brief-compliance/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Copy the approved requirements into a checklist.
+Your decision:
+
+2. Record the observed result and timestamp for each item.
+Your decision:
+
+3. Resolve critical mismatches before optional polish.
+Your decision:
+
+REVIEW
+[ ] Are requirements observable?
+Evidence / timestamp:
+
+[ ] Are failures tied to timestamps?
+Evidence / timestamp:
+
+[ ] Are must-haves separated from preferences?
+Evidence / timestamp:
+
+PITFALL
+A tool reporting completion means the job finished, not that every creative requirement was fulfilled. Human review remains part of delivery.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

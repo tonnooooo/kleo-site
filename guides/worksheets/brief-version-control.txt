@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Keep a clear history of video briefs
+Guide: https://kleooai.com/guides/brief-version-control/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Give each approved brief a short version name and date.
+Your decision:
+
+2. Keep the treatment, quote and job identifier together.
+Your decision:
+
+3. Record why a revision was made so a later collaborator can understand the choice.
+Your decision:
+
+REVIEW
+[ ] Can the final file be traced to a brief?
+Evidence / timestamp:
+
+[ ] Are rejected versions clearly marked?
+Evidence / timestamp:
+
+[ ] Is the latest approval easy to find?
+Evidence / timestamp:
+
+PITFALL
+Avoid using file names such as final-final-new as your only record. A small decision log is more useful than a folder full of unexplained exports.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

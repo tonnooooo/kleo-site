@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Keep two storylines clear in a short video
+Guide: https://kleooai.com/guides/parallel-storylines/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Assign each thread a different location or recurring object.
+Your decision:
+
+2. Cut between them at matching story moments.
+Your decision:
+
+3. Bring them together through a shared event or explicit comparison.
+Your decision:
+
+REVIEW
+[ ] Can each thread be recognized without labels?
+Evidence / timestamp:
+
+[ ] Is their timing clear?
+Evidence / timestamp:
+
+[ ] Does the connection justify the alternation?
+Evidence / timestamp:
+
+PITFALL
+Avoid adding a third storyline only to increase scale. A short running time leaves little room to recover from identity or timeline confusion.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

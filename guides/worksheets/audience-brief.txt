@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Define the audience for an AI video
+Guide: https://kleooai.com/guides/audience-brief/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Describe the situation in which someone will watch, such as preparing for a first interview.
+Your decision:
+
+2. List two things the audience knows and two things the video must explain.
+Your decision:
+
+3. Choose one action or understanding that should change after viewing.
+Your decision:
+
+REVIEW
+[ ] Are unfamiliar terms explained?
+Evidence / timestamp:
+
+[ ] Does the example match the viewer's situation?
+Evidence / timestamp:
+
+[ ] Is the requested next step realistic?
+Evidence / timestamp:
+
+PITFALL
+Do not ask the assistant to invent audience research or quote conversion rates. Treat the audience description as a working hypothesis until you have feedback from actual viewers.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

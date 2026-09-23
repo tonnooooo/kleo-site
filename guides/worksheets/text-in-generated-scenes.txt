@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Keep critical text out of generated scenery
+Guide: https://kleooai.com/guides/text-in-generated-scenes/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Identify every word or number that must be exact.
+Your decision:
+
+2. Keep those details out of the generated background.
+Your decision:
+
+3. Add verified text in an editor and inspect the final export at viewing size.
+Your decision:
+
+REVIEW
+[ ] Are all critical details added accurately?
+Evidence / timestamp:
+
+[ ] Is text readable on a phone?
+Evidence / timestamp:
+
+[ ] Does it remain long enough to understand?
+Evidence / timestamp:
+
+PITFALL
+Text-free generation is a request, not proof that accidental lettering will never appear. Inspect signs, book covers and background objects before publication.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

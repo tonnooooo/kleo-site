@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Learn from published videos without guessing causes
+Guide: https://kleooai.com/guides/post-publication-learning/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Record the actual title, topic, format and publication context.
+Your decision:
+
+2. Compare similar videos before attributing a result to one word.
+Your decision:
+
+3. Choose a focused change for the next test and document the hypothesis.
+Your decision:
+
+REVIEW
+[ ] Are comparisons reasonably similar?
+Evidence / timestamp:
+
+[ ] Are claims based on observed data?
+Evidence / timestamp:
+
+[ ] Is the next experiment specific?
+Evidence / timestamp:
+
+PITFALL
+Avoid treating a few successful examples as a universal rule. Use the pattern to guide a test while keeping the promise to viewers accurate.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Tell a story in one location
+Guide: https://kleooai.com/guides/single-location-story/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Define the space using two or three recognizable features.
+Your decision:
+
+2. Introduce a problem that can be resolved there.
+Your decision:
+
+3. Change framing and character action instead of adding new locations.
+Your decision:
+
+REVIEW
+[ ] Is the location understandable?
+Evidence / timestamp:
+
+[ ] Do actions create progression?
+Evidence / timestamp:
+
+[ ] Does the set remain consistent between shots?
+Evidence / timestamp:
+
+PITFALL
+One location is not a guarantee of visual continuity. Review furniture, entrances and prop positions, especially when different shots are generated separately.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

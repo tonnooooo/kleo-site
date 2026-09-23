@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Compose a scene for vertical video
+Guide: https://kleooai.com/guides/vertical-composition/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Identify the essential subject and keep its action readable in a narrow frame.
+Your decision:
+
+2. Reduce competing background elements.
+Your decision:
+
+3. Leave room for any captions or interface overlays added during publishing.
+Your decision:
+
+REVIEW
+[ ] Is the main action visible without cropping?
+Evidence / timestamp:
+
+[ ] Are important details near risky edges?
+Evidence / timestamp:
+
+[ ] Has the upload preview been checked?
+Evidence / timestamp:
+
+PITFALL
+There is no single safe-area measurement for every app and device. Preview the finished video on the destination platform before committing to text placement.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

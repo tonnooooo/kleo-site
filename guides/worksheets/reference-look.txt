@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Describe a visual reference without copying it
+Guide: https://kleooai.com/guides/reference-look/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Describe three visual properties instead of requesting an exact replica.
+Your decision:
+
+2. Separate the reference's mood from its characters, logos and distinctive designs.
+Your decision:
+
+3. Choose a sample scene to judge the direction before expanding the idea.
+Your decision:
+
+REVIEW
+[ ] Can the look be described without a brand name?
+Evidence / timestamp:
+
+[ ] Do style choices support the subject?
+Evidence / timestamp:
+
+[ ] Is the desired detail visible at mobile size?
+Evidence / timestamp:
+
+PITFALL
+A visual reference is guidance, not permission to reproduce someone else's material. Review the rights for any actual assets used outside the generated workflow.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

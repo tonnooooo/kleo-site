@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Prepare a source pack for a factual video
+Guide: https://kleooai.com/guides/source-pack/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Make a claim list containing the precise statement, its source URL and any qualification.
+Your decision:
+
+2. Mark disputes and missing evidence explicitly rather than asking the assistant to fill gaps.
+Your decision:
+
+3. Approve the spoken facts before the storyboard adds visual interpretation.
+Your decision:
+
+REVIEW
+[ ] Can every important factual claim be traced?
+Evidence / timestamp:
+
+[ ] Do pictures imply stronger evidence than the narration?
+Evidence / timestamp:
+
+[ ] Are sources suitable for the actual claim?
+Evidence / timestamp:
+
+PITFALL
+A source link by itself is insufficient when a long page contains several different claims. Save the relevant passage and its context with your production notes.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

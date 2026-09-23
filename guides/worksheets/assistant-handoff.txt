@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Keep a video project coherent between assistants
+Guide: https://kleooai.com/guides/assistant-handoff/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Export a clean handoff note without private account credentials.
+Your decision:
+
+2. Include whether a render has already been submitted.
+Your decision:
+
+3. Ask the receiving assistant to summarize the state before taking action.
+Your decision:
+
+REVIEW
+[ ] Is the job state explicit?
+Evidence / timestamp:
+
+[ ] Are approved decisions preserved?
+Evidence / timestamp:
+
+[ ] Have private keys been excluded?
+Evidence / timestamp:
+
+PITFALL
+Switching assistants does not justify creating the same job again. Check the existing job identifier and status before authorizing a new request.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

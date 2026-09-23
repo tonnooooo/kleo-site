@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Use a restrained color palette in a film
+Guide: https://kleooai.com/guides/color-palette/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Choose a base palette for the setting.
+Your decision:
+
+2. Reserve one accent for the element the viewer should track.
+Your decision:
+
+3. Check contrast and meaning after rendering instead of relying on color names alone.
+Your decision:
+
+REVIEW
+[ ] Is the accent still noticeable?
+Evidence / timestamp:
+
+[ ] Do scene colors feel related?
+Evidence / timestamp:
+
+[ ] Is information understandable without distinguishing every hue?
+Evidence / timestamp:
+
+PITFALL
+A palette instruction does not ensure consistent output. Check the actual frames, and avoid making comprehension depend entirely on subtle color differences.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

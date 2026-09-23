@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Use three acts in a short narrated film
+Guide: https://kleooai.com/guides/three-act-short/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Describe the starting situation in one line.
+Your decision:
+
+2. Choose the event that forces a decision.
+Your decision:
+
+3. End on the result of that decision rather than a general moral.
+Your decision:
+
+REVIEW
+[ ] Is something different after the middle?
+Evidence / timestamp:
+
+[ ] Does the protagonist make a decision?
+Evidence / timestamp:
+
+[ ] Is the final image a consequence?
+Evidence / timestamp:
+
+PITFALL
+An outline with three headings can still have no story. If the events could be rearranged without changing the meaning, strengthen the causal connection.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

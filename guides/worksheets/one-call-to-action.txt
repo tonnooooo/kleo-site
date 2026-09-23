@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Choose one call to action for a short film
+Guide: https://kleooai.com/guides/one-call-to-action/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Choose the action that fits the viewer's current level of interest.
+Your decision:
+
+2. Make sure the story supplies a reason to take that action.
+Your decision:
+
+3. Reserve enough time for a calm spoken ending rather than squeezing it into the last instant.
+Your decision:
+
+REVIEW
+[ ] Is there one main action?
+Evidence / timestamp:
+
+[ ] Does the viewer know why it is useful?
+Evidence / timestamp:
+
+[ ] Are destination details verified before upload?
+Evidence / timestamp:
+
+PITFALL
+A call to action is not a performance guarantee. Test whether people understand the invitation before judging whether a different visual effect is needed.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

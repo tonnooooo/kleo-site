@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Give camera movement a narrative purpose
+Guide: https://kleooai.com/guides/camera-movement/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Decide what should become more important during the shot.
+Your decision:
+
+2. Choose one camera action that supports that change.
+Your decision:
+
+3. Explain where the camera should end and what must remain visible.
+Your decision:
+
+REVIEW
+[ ] Does movement reveal or emphasize information?
+Evidence / timestamp:
+
+[ ] Is the subject still readable?
+Evidence / timestamp:
+
+[ ] Is the motion comfortable to watch?
+Evidence / timestamp:
+
+PITFALL
+Complex movement can distract from a simple story and may produce unwanted distortions. Prefer a stable alternative when movement does not carry essential meaning.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

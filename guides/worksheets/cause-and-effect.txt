@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Make scenes connect through cause and effect
+Guide: https://kleooai.com/guides/cause-and-effect/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Write because or therefore between consecutive scenes.
+Your decision:
+
+2. Identify any transition that only means and then.
+Your decision:
+
+3. Add the missing action or remove the disconnected scene.
+Your decision:
+
+REVIEW
+[ ] Why does each scene happen now?
+Evidence / timestamp:
+
+[ ] Can the viewer infer the connection?
+Evidence / timestamp:
+
+[ ] Does narration explain rather than conceal missing action?
+Evidence / timestamp:
+
+PITFALL
+Do not use narration to claim that one event caused another when the visuals show no relationship. Revise the storyboard before adding more explanatory words.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

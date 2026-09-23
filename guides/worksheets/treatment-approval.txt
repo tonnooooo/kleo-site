@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Approve a treatment before rendering
+Guide: https://kleooai.com/guides/treatment-approval/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Ask for a logline and a scene-by-scene explanation of what changes.
+Your decision:
+
+2. Read the ending first and check that the opening sets it up fairly.
+Your decision:
+
+3. Return one consolidated list of changes, then approve the revised treatment and current cost.
+Your decision:
+
+REVIEW
+[ ] Does the ending answer the opening?
+Evidence / timestamp:
+
+[ ] Is every scene necessary?
+Evidence / timestamp:
+
+[ ] Is the quoted product a film or an animatic?
+Evidence / timestamp:
+
+PITFALL
+Do not confuse agreeing with an idea with approving a charge. State explicitly whether the assistant may plan only or may also start production.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

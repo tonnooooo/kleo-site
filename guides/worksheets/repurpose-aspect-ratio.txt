@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Repurpose a film for another aspect ratio
+Guide: https://kleooai.com/guides/repurpose-aspect-ratio/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Identify essential action near the frame edges.
+Your decision:
+
+2. Test a crop on representative moments before editing the entire film.
+Your decision:
+
+3. Replan scenes that cannot survive the new framing.
+Your decision:
+
+REVIEW
+[ ] Does the crop preserve essential action?
+Evidence / timestamp:
+
+[ ] Are added captions repositioned?
+Evidence / timestamp:
+
+[ ] Is a new version authorized if needed?
+Evidence / timestamp:
+
+PITFALL
+A technically valid vertical export can still tell an incomplete story. Review what was lost, not just the final dimensions.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

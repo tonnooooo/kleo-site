@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Prepare captions for a narrated film
+Guide: https://kleooai.com/guides/caption-handoff/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Transcribe or obtain the final spoken track.
+Your decision:
+
+2. Correct names, numbers and meaningful sound information.
+Your decision:
+
+3. Review timing and readability in the destination player.
+Your decision:
+
+REVIEW
+[ ] Does text match the actual audio?
+Evidence / timestamp:
+
+[ ] Are important sounds represented where needed?
+Evidence / timestamp:
+
+[ ] Are timing and readability checked?
+Evidence / timestamp:
+
+PITFALL
+Automatic transcription is a starting point, not final approval. Review especially small words that reverse meaning, such as not, before publishing.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

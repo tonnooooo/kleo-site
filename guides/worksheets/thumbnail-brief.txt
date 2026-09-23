@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Brief a thumbnail without misrepresenting the film
+Guide: https://kleooai.com/guides/thumbnail-brief/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Identify the film's central visual promise.
+Your decision:
+
+2. Choose one focal element and remove competing detail.
+Your decision:
+
+3. Review the thumbnail beside the title for combined meaning.
+Your decision:
+
+REVIEW
+[ ] Is the focal point readable at small size?
+Evidence / timestamp:
+
+[ ] Does the image match the film?
+Evidence / timestamp:
+
+[ ] Do title and thumbnail imply an unsupported claim together?
+Evidence / timestamp:
+
+PITFALL
+An attractive generated image can still be a poor thumbnail if it advertises a different story. Judge relevance before visual polish.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

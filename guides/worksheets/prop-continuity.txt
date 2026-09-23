@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Keep important props consistent
+Guide: https://kleooai.com/guides/prop-continuity/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Give the prop a simple visual identifier.
+Your decision:
+
+2. Track who holds it and whether it is open, full, broken or repaired.
+Your decision:
+
+3. Check every cut where its state matters.
+Your decision:
+
+REVIEW
+[ ] Does the object change color or size?
+Evidence / timestamp:
+
+[ ] Does it move without an action?
+Evidence / timestamp:
+
+[ ] Is the important change visible?
+Evidence / timestamp:
+
+PITFALL
+Minor background variation may be harmless, but a plot-bearing prop changing identity can break the story. Prioritize continuity checks according to narrative importance.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

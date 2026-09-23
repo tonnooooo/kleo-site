@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Write narration that sounds natural aloud
+Guide: https://kleooai.com/guides/write-for-the-ear/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Read each sentence without looking ahead.
+Your decision:
+
+2. Split clauses that require the listener to remember several unfinished ideas.
+Your decision:
+
+3. Replace unnecessary abstractions with a visible action or example.
+Your decision:
+
+REVIEW
+[ ] Can the sentence be understood on first hearing?
+Evidence / timestamp:
+
+[ ] Are pronouns unambiguous?
+Evidence / timestamp:
+
+[ ] Does simplifying language preserve meaning?
+Evidence / timestamp:
+
+PITFALL
+Short sentences are not automatically clear. Several disconnected fragments can be harder to follow than one well-structured thought, so judge the whole passage aloud.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

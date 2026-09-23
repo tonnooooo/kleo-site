@@ -1,0 +1,32 @@
+KLEO PRODUCTION WORKSHEET
+Write a video title that matches the content
+Guide: https://kleooai.com/guides/honest-video-titles/
+
+Project:
+Version:
+Reviewer:
+
+DECISIONS
+1. Write the factual promise of the film in one sentence.
+Your decision:
+
+2. Draft alternatives that emphasize different genuine aspects.
+Your decision:
+
+3. Reject any title that requires evidence the video does not provide.
+Your decision:
+
+REVIEW
+[ ] Does the film fulfill the title?
+Evidence / timestamp:
+
+[ ] Are free and paid conditions clear?
+Evidence / timestamp:
+
+[ ] Would a viewer understand what they will receive?
+Evidence / timestamp:
+
+PITFALL
+A title containing a popular word is not evidence of relevance. Evaluate whether the audience it attracts is looking for the actual content or product you offer.
+
+This worksheet is a planning aid, not a rendered example or automated verification.

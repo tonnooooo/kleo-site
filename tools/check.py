@@ -35,6 +35,8 @@ PAGES = {
     '/terms.html': 'terms.html',
     '/privacy.html': 'privacy.html',
 }
+# Authored guide routes are generated from editorial/*.txt, shared by sitemap and live checks.
+PAGES.update(json.loads((ROOT / 'editorial/routes.json').read_text()))
 NOINDEX = ['404.html']
 # things the product does not do, or the site must not say (case-insensitive regexes over the visible text)
 FORBIDDEN = [
