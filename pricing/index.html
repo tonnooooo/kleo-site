@@ -29,7 +29,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="/site.css?v=2026092303">
+<link rel="stylesheet" href="/site.css?v=2026092304">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -200,14 +200,14 @@
         that have bought a pack. Animatic: 15 to 60 seconds, 5 credits flat, for every account. The same rule applies to the
         realistic and the animation look, in 16:9 or 9:16. Packs are bought separately on your account page.</p>
     </div>
-    <div class="ttable plain">
-      <table>
+    <div class="ttable plain credit-table">
+      <table aria-describedby="credit-table-note">
         <caption>Credit cost by length: film and animatic</caption>
         <thead>
           <tr>
-            <th>Length</th>
-            <th>Film</th>
-            <th>Animatic</th>
+            <th scope="col">Length</th>
+            <th scope="col">Film</th>
+            <th scope="col">Animatic</th>
           </tr>
         </thead>
         <tbody>
@@ -234,7 +234,7 @@
           <tr>
             <td>90 seconds</td>
             <td>45</td>
-            <td>— (animatics run up to 60 s)</td>
+            <td>—</td>
           </tr>
           <tr>
             <td>3 minutes</td>
@@ -249,6 +249,7 @@
         </tbody>
       </table>
     </div>
+    <p id="credit-table-note" class="credit-table-note">Amounts are in credits. — = unavailable: animatics run up to 60 seconds.</p>
   </div>
 </section>
 
