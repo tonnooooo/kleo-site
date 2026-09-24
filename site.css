@@ -214,8 +214,8 @@ h1 .hl{
 @media (prefers-reduced-motion: reduce){ .track.active .tbar::after{animation:none; width:65%} }
 .bar{height:6px; border-radius:3px; background:var(--bg-3); border:1px solid var(--line); overflow:hidden}
 .bar span{display:block; height:100%; background:linear-gradient(90deg, var(--hl-c), var(--amber)); width:64%; transition:width .6s ease; box-shadow:0 0 12px var(--glow)}
-.render-status{font-family:var(--font-mono); font-size:.78rem; color:var(--ink-2); min-height:1.3em}
-.result[hidden]{display:none}
+.render-status{font-family:var(--font-mono); font-size:.78rem; color:var(--ink-2); min-height:3.2em}
+.result[hidden]{display:flex;visibility:hidden}
 .result{display:flex; flex-wrap:wrap; gap:8px 12px; align-items:center; border-top:1px dashed var(--line-2); padding-top:12px; font-family:var(--font-mono); font-size:.76rem; color:var(--ink-2)}
 .result .file{color:var(--ink); font-weight:500}
 .result .chip{border:1px solid var(--line-2); border-radius:4px; padding:1px 6px; color:var(--mute)}
@@ -551,8 +551,9 @@ footer a:hover{color:var(--ink)}
 .style-media .film-cap{margin:0}
 .style-media{position:relative; border-radius:30px; overflow:hidden; background:#000; border:1px solid var(--line-2); aspect-ratio:9/16; box-shadow:var(--shadow); user-select:none; -webkit-user-select:none; -webkit-touch-callout:none}
 .style-media::after{content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none; box-shadow:0 1px 0 rgba(255,255,255,.18) inset, 0 0 0 1px rgba(0,0,0,.4) inset}
-.style-media video{width:100%; height:100%; object-fit:cover; display:block; pointer-events:none}
-.style-media video::-webkit-media-controls, .style-media video::-webkit-media-controls-start-playback-button, .style-media video::-webkit-media-controls-enclosure{display:none !important; -webkit-appearance:none}
+.style-media video{width:100%; height:100%; object-fit:cover; display:block}
+.style-media:not(.watch-media) video{pointer-events:none}
+.style-media:not(.watch-media) video::-webkit-media-controls, .style-media:not(.watch-media) video::-webkit-media-controls-start-playback-button, .style-media:not(.watch-media) video::-webkit-media-controls-enclosure{display:none !important; -webkit-appearance:none}
 .style-live{position:absolute; top:14px; left:14px; display:inline-flex; align-items:center; gap:7px; padding:5px 10px 5px 8px; border-radius:999px; background:rgba(0,0,0,.55); backdrop-filter:blur(8px); color:#fff; font:500 .66rem/1 var(--font-mono); letter-spacing:.12em; text-transform:uppercase; opacity:0; transition:opacity .3s; pointer-events:none}
 .style-live i{width:7px; height:7px; border-radius:50%; background:var(--rose); box-shadow:0 0 8px var(--rose); animation:blink 1.4s steps(2) infinite}
 .style-media.playing .style-live{opacity:1}
@@ -842,4 +843,70 @@ a,button{-webkit-tap-highlight-color:transparent}
   .ttable.credit-table th,.ttable.credit-table td{padding:12px 10px;font-size:.82rem}
   .ttable.credit-table th{font-size:.65rem;letter-spacing:.025em}
   .ttable.credit-table caption{padding:14px 10px;font-size:.72rem}
+}
+
+/* Connection geometry is identical before and after the deferred script runs. */
+.no-js .agent-tabs{display:none}
+html:not(.no-js) .agent-panel>summary{display:none}
+html:not(.no-js) .agent-panel:not([open]){display:none}
+.creation-heading{padding:18px 26px 12px;border-top:1px solid var(--line);color:var(--mute);font:400 .65rem var(--font-mono);letter-spacing:.07em;text-transform:uppercase}
+.starter-prompt summary strong{display:block;font-weight:500;color:var(--ink);font-size:.85rem}
+.creation-cost{display:block;font-size:.71rem;color:var(--mute);margin-top:4px}
+.starter-prompt summary:hover{background:var(--amber-soft)}
+.studio-guide{padding:12px 26px;margin:0;border-top:1px solid var(--line);font-size:.72rem;color:var(--ink-2)}
+.studio-guide a{text-decoration:underline;text-underline-offset:3px}
+.studio-afterword{margin:16px auto 40px;text-align:center}
+.studio-afterword .studio-footnote{margin:0 auto 10px}
+.ambient-control{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:140px;min-height:32px;padding:6px 12px;border:1px solid var(--line);border-radius:99px;background:var(--glass);font:400 .65rem var(--font-mono);color:var(--ink-2);cursor:pointer}
+.ambient-control::before{content:"";width:6px;height:6px;flex:none;border-radius:50%;background:var(--amber)}
+.ambient-control[aria-pressed=true]::before{background:var(--mute)}
+.ambient-control:hover{border-color:var(--accent-text)}
+.no-js .ambient-control{display:none}
+/* Original Kleo light trails: a quiet cinematic layer, with no external library. */
+.cinema-hero{isolation:isolate}
+.cinema-atmosphere{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:-1;mask-image:linear-gradient(#000 0%,#000 45%,transparent 95%)}
+.cinema-halo{position:absolute;inset:0 0 35%;background:radial-gradient(ellipse at 20% 24%,var(--amber-soft),transparent 52%),radial-gradient(ellipse at 82% 50%,color-mix(in srgb,var(--violet) 9%,transparent),transparent 45%);animation:cinema-breathe 16s ease-in-out infinite alternate;animation-play-state:paused}
+.cinema-ribbon{position:absolute;inset:0 auto auto -10%;width:120%;height:850px;max-width:none;stroke:var(--amber);stroke-width:1;opacity:.22;animation:cinema-drift 18s ease-in-out infinite alternate;animation-play-state:paused}
+.cinema-ribbon path+path{opacity:.25}
+.ribbon-two{top:160px;stroke:var(--violet);opacity:.13;animation-duration:23s;animation-direction:alternate-reverse}
+.cinema-hero.is-in-view .cinema-ribbon,.cinema-hero.is-in-view .cinema-halo{animation-play-state:running}
+.ambience-paused .cinema-ribbon,.ambience-paused .cinema-halo,.page-inactive .cinema-ribbon,.page-inactive .cinema-halo{animation-play-state:paused!important}
+@keyframes cinema-drift{from{transform:translate3d(-2%,-15px,0) rotate(-3deg)}to{transform:translate3d(2%,35px,0) rotate(3deg)}}
+@keyframes cinema-breathe{from{transform:translate3d(-3%,0,0);opacity:.65}to{transform:translate3d(3%,2%,0);opacity:1}}
+.agent-studio{position:relative;box-shadow:0 24px 80px #00000018,0 1px 0 var(--glass-2) inset}
+.agent-studio::before{content:"";position:absolute;inset:0;z-index:1;border-radius:inherit;border:1px solid transparent;background:radial-gradient(340px circle at var(--pointer-x,50%) var(--pointer-y,0%),color-mix(in srgb,var(--amber) 60%,transparent),transparent 72%) border-box;mask:linear-gradient(#fff 0 0) padding-box,linear-gradient(#fff 0 0);mask-composite:exclude;pointer-events:none;opacity:.55;transition:opacity .3s}
+.agent-studio:hover::before{opacity:1}
+.apex-feature .style-media{box-shadow:0 24px 90px #00000030,0 0 0 1px var(--glass)}
+.apex-heading a,.apex-feature figcaption a{transition:color .2s}
+.apex-heading a:hover,.apex-feature figcaption a:hover{color:var(--accent-text)}
+/* Individual film pages are watchable; gallery/home remain silent previews. */
+.watch-hero{padding-top:56px;padding-bottom:44px}
+.watch-hero .lede{margin:14px 0 0;max-width:760px}
+.watch-player{margin:24px auto 0;max-width:1040px}
+.watch-media video{pointer-events:auto;object-fit:contain}
+.watch-player.tall .watch-media{width:min(100%,340px,calc(68vh * 608 / 1080));margin:auto;aspect-ratio:608/1080}
+.watch-player .film-cap{color:var(--ink-2)}
+@media(hover:hover) and (pointer:fine){.agent-tabs button:hover .agent-mark{transform:translateY(-2px)}.agent-mark{transition:transform .2s}}
+@media(max-width:600px){
+ .creation-heading{padding:15px 17px 10px;font-size:.6rem}
+ .studio-guide{padding:12px 17px;font-size:.68rem}
+ .studio-afterword{margin:14px auto 30px}
+ .cinema-ribbon{height:740px;opacity:.15}
+ .ribbon-two{opacity:.08}
+ .watch-hero{padding-top:38px;padding-bottom:28px}
+ .watch-player{margin-top:20px}
+ .watch-player.tall .watch-media{max-height:none;width:min(100%,300px)}
+}
+@media(prefers-reduced-motion:reduce){
+ .cinema-ribbon,.cinema-halo{animation:none!important}
+ .agent-mark,.agent-studio::before{transition:none!important;transform:none!important}
+ .ambient-control{display:none}
+}
+
+.mobile-break{display:none}
+@media(max-width:600px){
+ .mobile-break{display:block}
+ .agent-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px}
+ .agent-tabs button{flex-direction:column;gap:6px;padding:10px 2px;font-size:.67rem;white-space:normal}
+ .agent-mark{width:19px;height:19px}
 }

@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>document.documentElement.classList.remove("no-js")</script>
 <title>Create AI Videos with ChatGPT and Kleo — Setup Guide</title>
-<meta name="description" content="Connect Kleo to ChatGPT in Developer mode with OAuth and direct a narrated film from the chat: tested steps, first prompt, production flow, credits, fixes.">
+<meta name="description" content="Connect Kleo to ChatGPT with MCP: setup steps, free animatic or paid film, credit costs, approval and troubleshooting.">
 <link rel="canonical" href="https://kleooai.com/integrations/chatgpt/">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Kleo AI">
 <meta property="og:locale" content="en_US">
 <meta property="og:title" content="Create AI Videos with ChatGPT and Kleo — Setup Guide">
-<meta property="og:description" content="Connect Kleo to ChatGPT in Developer mode with OAuth and direct a narrated film from the chat: tested steps, first prompt, production flow, credits, fixes.">
+<meta property="og:description" content="Connect Kleo to ChatGPT with MCP: setup steps, free animatic or paid film, credit costs, approval and troubleshooting.">
 <meta property="og:url" content="https://kleooai.com/integrations/chatgpt/">
 <meta property="og:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
 <meta property="og:image:alt" content="Kleo AI — Human direction. Agent-made films.">
@@ -20,7 +20,7 @@
 <meta property="og:image:height" content="1260">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Create AI Videos with ChatGPT and Kleo — Setup Guide">
-<meta name="twitter:description" content="Connect Kleo to ChatGPT in Developer mode with OAuth and direct a narrated film from the chat: tested steps, first prompt, production flow, credits, fixes.">
+<meta name="twitter:description" content="Connect Kleo to ChatGPT with MCP: setup steps, free animatic or paid film, credit costs, approval and troubleshooting.">
 <meta name="twitter:image" content="https://kleooai.com/brand/kleo-social-1200x630-2400.png">
 <meta name="theme-color" content="#0A0C10">
 <link rel="icon" href="/brand/kleo-favicon.svg" type="image/svg+xml">
@@ -29,7 +29,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="/site.css?v=20260915">
+<link rel="stylesheet" href="/site.css?v=2026092401">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -46,7 +46,7 @@
       "@id": "https://kleooai.com/integrations/chatgpt/#page",
       "url": "https://kleooai.com/integrations/chatgpt/",
       "name": "Create AI Videos with ChatGPT and Kleo — Setup Guide",
-      "description": "Connect Kleo to ChatGPT in Developer mode with OAuth and direct a narrated film from the chat: tested steps, first prompt, production flow, credits, fixes.",
+      "description": "Connect Kleo to ChatGPT with MCP: setup steps, free animatic or paid film, credit costs, approval and troubleshooting.",
       "inLanguage": "en",
       "isPartOf": {
         "@id": "https://kleooai.com/#website"
@@ -72,7 +72,7 @@
   ]
 }
 </script>
-<script src="/site.js?v=20260915" defer></script>
+<script src="/site.js?v=2026092401" defer></script>
 </head>
 <body>
 <div class="progress" id="progress" aria-hidden="true"></div>
@@ -130,8 +130,7 @@
       </div>
     </div>
     <ul class="defs">
-      <li><b>ChatGPT plan</b><span>Plus, Pro, Business or Enterprise. Kleo is added as a custom connector in Developer mode, and
-        whether Developer mode is offered can depend on the account or workspace.</span></li>
+      <li><b>ChatGPT access</b><span>Access to Developer mode and custom plugins. Availability and permissions depend on your account and workspace; check <a href="https://developers.openai.com/plugins/deploy/connect-chatgpt">OpenAI’s current setup guide</a>.</span></li>
       <li><b>Kleo account</b><span>Nothing to create in advance. Kleo’s page opens during the connection; one click on
         <b>Start free</b> and the account exists, with 7 credits, no form and no card: one animatic.</span></li>
       <li><b>Address</b><span>One server address, the same for every client: <code class="mono">https://mcp.kleooai.com/mcp</code>.</span></li>
@@ -149,24 +148,20 @@
         <div class="eyebrow"><span class="n">02</span>Connect</div>
         <h2>Connect Kleo to ChatGPT.</h2>
       </div>
-      <p class="lede">These are the tested steps. The connector is created once; from then on Kleo is one switch in the
-        + menu of any chat.</p>
+      <p class="lede">Add Kleo once, then enable it in a new conversation. The steps below follow OpenAI’s documentation checked on 24 September 2026; menus and access can vary by account and workspace.</p>
     </div>
     <article class="panel">
       <h3>ChatGPT <small>developer mode</small></h3>
       <ol>
-        <li>Open <b>Settings → Apps &amp; Connectors</b> (called <b>Connectors</b> in older versions), then
-          <b>Advanced settings</b>, and turn on <b>Developer mode</b>.</li>
-        <li>Back in <b>Connectors</b>, choose <b>Create</b>: name it <b>Kleo</b>, paste the address below, set
-          authentication to <b>OAuth</b>, and save.</li>
-        <li>Kleo’s page opens: click <b>Start free</b> and you’re back in ChatGPT. That click is the whole sign-up — the
-          account now exists with 7 credits, with no form and no card.</li>
-        <li>In a chat, turn on Kleo from the <b>+</b> menu and ask for the video. ChatGPT asks you to confirm before it
-          starts a render.</li>
-      </ol>
+          <li>Open <b>Settings → Security and login</b> and enable <b>Developer mode</b>, if available for your account and workspace.</li>
+          <li>Open <b>Plugins</b>, choose <b>+</b> to add a plugin, and enter <code>https://mcp.kleooai.com/mcp</code> as the public MCP server URL.</li>
+          <li>Review the plugin information and complete Kleo’s sign-in when prompted.</li>
+          <li>Start a new conversation and add Kleo to its tools. Choose the animatic or film prompt below and approve the treatment and cost before rendering.</li>
+        </ol>
+        <p>Instructions checked against <a href="https://developers.openai.com/plugins/deploy/connect-chatgpt">OpenAI’s setup guide</a> on 24 September 2026. Access and menus can vary by account and workspace.</p>
       <div class="url-line">Server address <code>https://mcp.kleooai.com/mcp</code> <button class="btn btn-ghost btn-sm" type="button" data-copy="https://mcp.kleooai.com/mcp">Copy</button></div>
       <p>ChatGPT is OpenAI’s assistant. Kleo is a separate service that ChatGPT reaches through a custom connector; the
-        same address works in Claude, Grok, Claude Code, Cursor and any other MCP client — see
+        same address connects from compatible clients including Claude, Claude Code and Cursor — see
         <a href="/connect/">the connection page</a>.</p>
     </article>
   </div>
@@ -178,7 +173,7 @@
     <div class="sec-head">
       <div>
         <div class="eyebrow"><span class="n">03</span>The first film</div>
-        <h2>Ask for the film you want.</h2>
+        <h2>Choose your first creation.</h2>
       </div>
       <p class="lede">Say four things and Kleo can start: the subject, the length, the format and the look. Whatever the
         request leaves out, Kleo asks for in one message before any planning happens — it never picks a subject or a
@@ -186,7 +181,7 @@
     </div>
     <div class="split">
       <div>
-        <p class="style-say copyable">“Use Kleo to make a 30-second film about a tiny boat crossing a quiet lake at dawn. Realistic look, English narration, 16:9 for YouTube. Show me the treatment and the exact credits before you start the render.”<button class="btn btn-ghost btn-sm copy" type="button" data-copy="Use Kleo to make a 30-second film about a tiny boat crossing a quiet lake at dawn. Realistic look, English narration, 16:9 for YouTube. Show me the treatment and the exact credits before you start the render.">Copy</button></p>
+        <p>Choose the product before rendering. <b>Try a free animatic:</b> drawn frames, camera movement and narration, 15–60 seconds, 5 credits. <b>Create a film:</b> generated moving footage, 15 seconds to 5 minutes, with a purchased pack and a quote you approve.</p><h3>Try a free animatic</h3><p class="style-say copyable">“Use Kleo to plan a 30-second animatic about a paper boat returning to its maker. Animation look, English narration, 9:16. Show me the treatment, confirm that the product is an animatic, and check the exact credit cost against my available balance. Wait for my approval before rendering. Do not start a paid film or buy credits.”<button class="btn btn-ghost btn-sm copy" type="button" aria-label="Copy try a free animatic prompt" data-copy="Use Kleo to plan a 30-second animatic about a paper boat returning to its maker. Animation look, English narration, 9:16. Show me the treatment, confirm that the product is an animatic, and check the exact credit cost against my available balance. Wait for my approval before rendering. Do not start a paid film or buy credits.">Copy prompt</button></p><h3>Create a film</h3><p class="style-say copyable">“Use Kleo to plan a 20-second narrated film about two fictional cars leaving an amber-lit tunnel for a coastal road at golden hour. Realistic look, English narration, 16:9. Show me the treatment, the exact film credit cost, my available balance and whether my account is eligible. Wait for my approval before rendering. Do not buy credits. After rendering, give me the finished MP4 download link.”<button class="btn btn-ghost btn-sm copy" type="button" aria-label="Copy create a film prompt" data-copy="Use Kleo to plan a 20-second narrated film about two fictional cars leaving an amber-lit tunnel for a coastal road at golden hour. Realistic look, English narration, 16:9. Show me the treatment, the exact film credit cost, my available balance and whether my account is eligible. Wait for my approval before rendering. Do not buy credits. After rendering, give me the finished MP4 download link.">Copy prompt</button></p>
       </div>
       <ul class="defs">
         <li><b>Subject</b><span>What the film is about, in plain words. Audience, tone and anything that must appear are
@@ -196,8 +191,7 @@
         <li><b>Look</b><span>Realistic — generated live-action footage, cinematic — or animation, a 2D animated film. In a
           film every shot is generated as moving footage from its own frame, in both looks; an animatic of the same
           storyboard keeps the drawn frames under a moving camera, with no generated clip.</span></li>
-        <li><b>Narration</b><span>One narrator, in English or Italian, with a male or female voice. No background music,
-          no captions, no on-screen text.</span></li>
+        <li><b>Narration</b><span>One narrator, in English or Italian. Before approving the render, ask your assistant which music and subtitle options are available and confirm what will be included. The current <a href="/terms.html">Terms</a> specify a small Kleo mark on the video. Review the output conditions before purchasing.</span></li>
       </ul>
     </div>
   </div>
@@ -289,8 +283,7 @@
         <span class="style-live" aria-hidden="true"><i></i>Playing</span>
       </div>
       <div class="film-cap"><b>Tether</b><span>20 s · one shot · 16:9 · 4K 60 fps, shown at 1080p</span></div>
-      <p class="film-note">No narration in this one — only breathing and a low hum.
-        <a href="/examples/tether/">Watch Tether on its own page →</a></p>
+      <p class="film-note">This showcase has no narration: only breathing and a low hum. The current standard offer is described as a narrated film; confirm a silent treatment before ordering. <a href="/examples/tether/">Watch Tether on its own page →</a></p>
     </div>
   </div>
 </section>
@@ -310,8 +303,7 @@
         60 s = 30 · 3 min = 90 · 5 min = 150. A film is made only for accounts that have bought a pack.</span></li>
       <li><b>Per animatic</b><span>5 credits flat, 15 to 60 seconds, whatever the look, for every account.</span></li>
       <li><b>Packs</b><span>€5 = 10 credits · €15 = 35 · €40 = 100. One-off Stripe checkout in EUR, no subscription.</span></li>
-      <li><b>First Short</b><span>The 7 starter credits buy an animatic, never a film; with the €5 pack you have 17, the film
-        opens, and that is enough for a 30-second Short (15 credits).</span></li>
+      <li><b>First Short</b><span>A €5 pack adds 10 purchased credits, the cost of a 20-second film. A 30-second film costs 15. If you used 5 starter credits on an animatic, the same pack brings the total to 12, not enough for that 30-second film. Check eligible credits and the quote first.</span></li>
       <li><b>Account page</b><span>Ask ChatGPT for your Kleo account: <code class="mono">kleo_account</code> gives the balance
         and the checkout links. The Kleo key it shows is private — whoever has it owns the account, so keep it out of
         screenshots.</span></li>
@@ -336,14 +328,11 @@
       <div>
         <details>
           <summary>No Developer mode in Settings.</summary>
-          <p>Custom connectors need ChatGPT Plus, Pro, Business or Enterprise, and availability of Developer mode can
-            depend on the account or workspace. If the option is missing, that is the plan or the workspace, not the
-            address.</p>
+          <p>Developer mode and custom plugin access depend on your account and workspace. Check <a href="https://developers.openai.com/plugins/deploy/connect-chatgpt">OpenAI’s current instructions</a> and any workspace restrictions. If the setting is unavailable, ask your administrator or use a compatible client you can access.</p>
         </details>
         <details>
           <summary>Kleo is not in the + menu.</summary>
-          <p>The connector has to be saved in Connectors with authentication set to OAuth, then turned on in each chat
-            from the + menu. Check that the address is exactly <code class="mono">https://mcp.kleooai.com/mcp</code>.</p>
+          <p>Confirm that Kleo was added through Plugins and its sign-in completed. Start a new conversation and add Kleo to its tools. Check that the server address is exactly <code>https://mcp.kleooai.com/mcp</code>. If the controls differ, follow the current OpenAI setup guide above.</p>
         </details>
         <details>
           <summary>Authorization failed.</summary>
@@ -359,8 +348,7 @@
       <div>
         <details>
           <summary>Not enough credits.</summary>
-          <p>A film costs at least 10 credits and is made only for accounts that have bought a pack; the starter balance is
-            7, which buys an animatic. Ask for your account page and add the €5 pack: 17 credits cover a 30-second Short.</p>
+          <p>A €5 pack adds 10 purchased credits and unlocks film rendering. A 20-second film costs 10 credits; a 30-second film costs 15. After one 5-credit animatic, your 7 starter credits become 2; adding that pack gives a total balance of 12, not enough for a 30-second film. Ask your assistant to confirm the credits eligible for your chosen product and the exact quote before you buy or render. A refused request spends no credits.</p>
         </details>
         <details>
           <summary>The render seems slow.</summary>
@@ -393,8 +381,7 @@
     <div class="grid panels three">
       <article class="panel">
         <h3>Kleo with Claude</h3>
-        <p>The same guide for Claude, app and web: Settings → Connectors → Add custom connector. The free plan allows one
-          custom connector.</p>
+        <p>The guide for Claude, app and web: Settings → Connectors → Add custom connector. Access and limits depend on your account and workspace.</p>
         <a class="more" href="/integrations/claude/">Claude guide <span class="arr" aria-hidden="true">→</span></a>
       </article>
       <article class="panel">
@@ -419,9 +406,7 @@
     <div>
       <div class="eyebrow"><span class="n">10</span>Start</div>
       <h2>ChatGPT is where you direct the film.</h2>
-      <p class="lede">The connector is created once; from then on Kleo is one switch in the + menu of any chat. Connecting
-        and planning cost nothing: credits are spent only when a render is accepted, and ChatGPT asks you to confirm
-        before that happens.</p>
+      <p class="lede">Add Kleo once, enable it in a new conversation, then choose an animatic or film. Review the treatment, product, usable balance and exact cost before approving a render.</p>
       <div class="cta-row">
         <a class="btn btn-primary" href="#connect">Connection steps <span class="arr" aria-hidden="true">→</span></a>
         <a class="btn btn-ghost" href="/integrations/claude/">Using Claude instead? →</a>

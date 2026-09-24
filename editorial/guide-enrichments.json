@@ -1,0 +1,221 @@
+{
+  "free-ai-video-generator": {
+    "reviewed": "2026-09-24",
+    "sources": [
+      ["Kleo Terms", "/terms.html", "Published credit eligibility, output conditions and service limits."],
+      ["Kleo connection guide", "/connect/", "Assistant setup; access conditions belong to the selected assistant."]
+    ],
+    "sections": [
+      {
+        "id": "free-offer",
+        "title": "What is actually free?",
+        "paragraphs": [
+          "The useful starting question is what you can finish without buying a Kleo credit pack. A new account receives 7 starter credits. One animatic costs 5, leaving 2 if nothing else has been spent. An animatic is a narrated sequence of drawn frames with camera movement; it is not a film made from generated moving clips.",
+          "Connecting Kleo and paying for an assistant are separate decisions. A compatible assistant may have its own plan, workspace permissions or usage limits. Check those before choosing a workflow."
+        ],
+        "table": {
+          "caption": "The free starting offer and its boundaries",
+          "headers": ["What you want", "What the starting offer covers"],
+          "rows": [
+            ["Connect Kleo", "Kleo does not charge a connection fee. Your assistant’s access conditions still apply."],
+            ["Try one story preview", "One 15–60-second animatic at 5 credits, covered by an unused 7-credit starter balance."],
+            ["Generate moving footage", "A film requires a credit-pack purchase and enough eligible credits for its quoted length."],
+            ["Render another version", "A separate accepted render has its own cost. The starter offer does not include unlimited retries."],
+            ["Publish the result", "Review, download and upload it yourself. Kleo does not post to your channel."]
+          ]
+        }
+      },
+      {
+        "id": "first-result",
+        "title": "Choose the first result you need",
+        "paragraphs": [
+          "Choose an animatic when the next decision is about your story: whether the opening is understandable, whether the scene order makes sense, or whether the narration is clear. Choose a film when generated motion is essential to the deliverable. A preview can help you approve the story, but it cannot prove how a later motion clip will behave.",
+          "For a paid first film, the €5 pack contains 10 purchased credits, the cost of a 20-second film. A 30-second film costs 15 credits. Do not assume starter credits make up the difference: check the credits eligible for the film against the published Terms before buying or rendering."
+        ],
+        "links": [
+          ["/guides/free-animatic-maker/", "Make a deliberate first animatic"],
+          ["/guides/free-vs-paid-video/", "Compare an animatic with a film"],
+          ["/guides/credit-planning/", "Plan the full credit budget"]
+        ]
+      },
+      {
+        "id": "free-questions",
+        "title": "Before you start",
+        "questions": [
+          ["Is a free animatic the same as a free AI film?", "No. Both are video files, but their pictures move differently. An animatic moves a camera over drawn frames; the film generates moving footage. Kleo’s starter credits cover the former, while the latter requires a pack purchase."],
+          ["Can I keep the result?", "Download and save the MP4 within 7 days. Inspect it before publishing and read the Terms for the Kleo mark and permitted uses. A download link is temporary storage, not a permanent archive."]
+        ]
+      }
+    ],
+    "worksheet_fields": ["Assistant and access requirements checked:", "Selected product:", "Current balance:", "Quoted job cost:", "What I want to learn from this first result:", "Approved treatment version:", "Download deadline:"]
+  },
+  "free-animatic-maker": {
+    "reviewed": "2026-09-24",
+    "sources": [
+      ["Kleo Terms", "/terms.html", "Starter-credit conditions, ownership, output mark and temporary file storage."],
+      ["Kleo Privacy", "/privacy.html", "Separate retention periods for finished files and production records."]
+    ],
+    "sections": [
+      {
+        "id": "animatic-plan",
+        "title": "Give the preview one job",
+        "paragraphs": [
+          "Use the first animatic to answer a small creative question. For example: can a viewer understand that a paper boat has returned to the person who made it? That is a story test you can judge from scene order, narration and recognisable visual details. It does not require a promise that a generated character or object will stay identical across future motion clips.",
+          "The outline below is a fictional planning example, not an executed prompt or a report of a Kleo render. Ask your assistant to turn it into a treatment, then check that the chosen product is an animatic before approving production."
+        ],
+        "table": {
+          "caption": "A 30-second paper-boat story to plan before rendering",
+          "headers": ["Approximate beat", "Picture intention", "What to check"],
+          "rows": [
+            ["0–8 seconds: departure", "A maker folds a paper boat beside a window. Give the boat one simple identifying detail.", "Can the viewer identify the maker and the boat without a long explanation?"],
+            ["8–21 seconds: journey", "Two clear locations suggest the boat’s journey. Narration connects them rather than listing unrelated scenes.", "Does each scene move the same story forward? Is the route understandable?"],
+            ["21–30 seconds: return", "The boat reappears at the original window. Repeat the identifying detail and resolve the opening.", "Does the ending make the return clear, rather than merely showing another boat?"]
+          ]
+        }
+      },
+      {
+        "id": "animatic-review",
+        "title": "Watch in three separate passes",
+        "steps": [
+          "Watch the sequence without trying to evaluate every detail. Write one sentence describing what happened. If it differs from your intended story, revise the treatment before investing in generated footage.",
+          "Listen to the narration and compare it with the approved wording. Note unclear names, missing words and awkward pacing with timestamps. Good written narration is not proof of accurate audio delivery.",
+          "Inspect framing and continuity. Check whether the subject remains visible, the intended visual detail survives, and the camera movement helps rather than distracts. Record defects as observations; do not mark an unrendered future clip as passed."
+        ],
+        "paragraphs": [
+          "Accept the animatic when it answers your chosen question, revise the plan when it does not, or stop if the story needs a different approach. A film is a separate job with a separate quote; approving this preview does not authorize it."
+        ]
+      },
+      {
+        "id": "animatic-next",
+        "title": "After the first preview",
+        "paragraphs": [
+          "With an otherwise untouched starter account, one 5-credit animatic leaves 2 credits. That is not enough for another 5-credit animatic. If you want another version, check the reported job status, balance and new quote first; do not assume revisions are included.",
+          "Save the MP4 within its 7-day download period. Keep the approved treatment and your timestamped observations beside it, but keep your private Kleo key out of shared worksheets. The finished-file deadline is different from the retention of prompts and account records described in Privacy."
+        ],
+        "links": [
+          ["/guides/free-vs-paid-video/", "Decide whether the story now needs a film"],
+          ["/guides/project-archive/", "Save a usable project archive"]
+        ]
+      }
+    ],
+    "worksheet_fields": ["The single question this animatic should answer:", "Opening / journey / ending:", "Identifying visual detail:", "Approved narration:", "Product confirmed as animatic:", "Current balance and quoted cost:", "Story observation and timestamp:", "Audio observation and timestamp:", "Picture observation and timestamp:", "Next decision: accept / revise plan / stop:", "Saved MP4 location:"]
+  },
+  "free-vs-paid-video": {
+    "reviewed": "2026-09-24",
+    "sources": [
+      ["Kleo Terms", "/terms.html", "Published credit eligibility, usage permissions and output conditions."]
+    ],
+    "sections": [
+      {
+        "id": "deliverable-comparison",
+        "title": "Compare the output, not just the price",
+        "paragraphs": [
+          "An animatic and a film answer different production questions. An animatic helps you judge the planned sequence and narration. A film adds generated moving footage that must be reviewed in its own right. Paying for that footage does not guarantee the story, facts or visual continuity will be correct."
+        ],
+        "table": {
+          "caption": "Kleo animatic and generated-footage film",
+          "headers": ["Decision", "Animatic", "Film"],
+          "rows": [
+            ["How the picture moves", "Camera movement over drawn frames.", "Generated moving clips built from the shot frames."],
+            ["Current duration range", "15–60 seconds.", "15 seconds–5 minutes."],
+            ["Production cost", "5 credits per accepted render.", "1 credit per 2 seconds, rounded up, with a 10-credit minimum."],
+            ["New-account access", "An unused 7-credit starter balance covers one.", "A credit-pack purchase and enough eligible film credits are required."],
+            ["Best question to review", "Is the story sequence and narration worth taking forward?", "Does the actual motion, narration and finished result meet the approved brief?"],
+            ["What it does not prove", "How later generated clips will handle movement or continuity.", "That every detail is accurate, cleared for use or ready for a particular platform."],
+            ["Next action", "Accept, revise the plan or obtain a separate film quote.", "Inspect, download and prepare the final upload yourself."]
+          ]
+        }
+      },
+      {
+        "id": "same-brief",
+        "title": "Use the same brief when comparing",
+        "paragraphs": [
+          "Suppose your story follows a lighthouse keeper noticing a signal, searching the shore and answering it. Keep that sequence, the language, the aspect ratio and the intended ending fixed. In an animatic, you can judge whether the clue and response are understandable. In a film, you also inspect whether the keeper’s action, the light and the shoreline move plausibly.",
+          "If you change the story, duration and look between the two jobs, a better result does not tell you which change helped. Keep a short comparison record: approved brief, product, quote, actual result, observations and the next decision. This is an editorial comparison method, not a claim that this lighthouse story has been rendered."
+        ],
+        "steps": [
+          "Write what the deliverable must contain: the story outcome, narration language, framing and whether generated motion is essential.",
+          "Ask for each product’s current quote separately. Specify which one you are approving, rather than saying “make the video” after discussing both.",
+          "Compare the actual downloaded result with the same approved brief. Keep changes to the story separate from defects in the pictures or audio."
+        ]
+      },
+      {
+        "id": "separate-jobs",
+        "title": "Budget two jobs if you want both",
+        "paragraphs": [
+          "A 30-second animatic costs 5 credits and a 30-second film costs 15, so the two planned renders total 20 credits. This is a production-cost sum, not proof that all credits in an account can pay for either product. Film eligibility and the usable balance must be checked separately.",
+          "The animatic fee is not described as a deposit automatically deducted from a later film. Do not promise a conversion, discount or shared render unless the actual quote states it. Check sound, captions and graphic options before approving the treatment, and read the Terms for the Kleo mark and uses that require permission."
+        ],
+        "links": [
+          ["/guides/free-animatic-maker/", "Plan the first animatic"],
+          ["/guides/credit-planning/", "Budget the jobs and possible revisions"]
+        ]
+      }
+    ],
+    "worksheet_fields": ["Required final deliverable:", "Generated motion essential? Why:", "Brief details held constant:", "Animatic quote and approval:", "Film quote, eligibility and approval:", "What the animatic actually showed:", "What remains untested until the film:", "Film observations and timestamps:", "Separate editing or publication tasks:", "Chosen next action:"]
+  },
+  "credit-planning": {
+    "reviewed": "2026-09-24",
+    "sources": [
+      ["Kleo Terms", "/terms.html", "Eligibility of purchased and starter credits, refund conditions and cancellation rules."]
+    ],
+    "sections": [
+      {
+        "id": "render-cost",
+        "title": "Calculate each render before choosing a pack",
+        "paragraphs": [
+          "At the current tariff, a film costs one credit per two seconds, rounded up, with a minimum of 10 credits. In a spreadsheet, that is MAX(10, ROUNDUP(duration_seconds / 2, 0)). An animatic costs 5 credits at any supported length from 15 to 60 seconds. These calculations price a job; they do not buy credits or confirm account eligibility.",
+          "Use the intended duration, not an earlier rough idea. Keep an optional new version on a separate budget line so discussing it cannot be confused with approving it."
+        ],
+        "table": {
+          "caption": "Worked production budgets at the published credit tariff",
+          "headers": ["Planned jobs", "Calculation", "Total production credits"],
+          "rows": [
+            ["One 30-second animatic", "One animatic at the flat rate", "5"],
+            ["One 20-second film", "20 / 2; the minimum is 10", "10"],
+            ["One 30-second film", "30 / 2", "15"],
+            ["One 60-second film", "60 / 2", "30"],
+            ["One animatic, then one 30-second film", "5 + 15; two separately approved jobs", "20"],
+            ["One 30-second film, plus an optional new 30-second render", "15 approved + 15 only if separately approved", "15 now; 30 if both are rendered"]
+          ]
+        }
+      },
+      {
+        "id": "balance-eligibility",
+        "title": "Keep total balance and film eligibility separate",
+        "paragraphs": [
+          "The €5 pack adds 10 purchased credits, €15 adds 35 and €40 adds 100. A €5 pack therefore provides the purchased credits for a 20-second film. A 30-second film costs 15 credits; do not treat an unused starter balance as a guarantee that the difference can be spent on film.",
+          "The public Terms restrict how credits that were given rather than bought may be used. Before checkout, ask Kleo to confirm the usable film balance as well as whether the account has bought a pack. If the account’s answer and the Terms disagree, ask support to clarify before committing to the order."
+        ],
+        "table": {
+          "caption": "The same €5 pack produces different total balances",
+          "headers": ["Starting situation", "Total after the pack", "What the total does not establish"],
+          "rows": [
+            ["All 7 starter credits remain", "7 starter + 10 purchased = 17", "It does not prove that all 17 are eligible for a film."],
+            ["One 5-credit starter animatic has been used", "2 starter + 10 purchased = 12", "A 30-second film costs 15, exceeding even this total."],
+            ["No credits remain", "0 + 10 purchased = 10", "A new 20-second film uses the full purchased pack; another render needs its own budget."]
+          ]
+        }
+      },
+      {
+        "id": "budget-approval",
+        "title": "Approve a specific job, not an open-ended allowance",
+        "steps": [
+          "Record product, duration, look, language, aspect ratio and any requested options beside the quote. Make the treatment version identifiable before production starts.",
+          "Confirm the available balance and film eligibility, then approve only the named job and its exact cost. Keep any later render, editing expense or costs charged by your assistant outside that approval.",
+          "After the job, record its identifier, reported charge and result. If it fails or is cancelled, check the actual returned credits before replanning; do not spend an expected refund in advance."
+        ],
+        "paragraphs": [
+          "Terms states a full credit refund when a render fails or is cancelled before the machine starts; part-way cancellation returns the unspent portion. A completed render that you want to change is a different situation. The budget above does not assume an unlimited revision allowance or cash refund.",
+          "Use the pricing calculator for the current per-render cost, and your account for the actual balance and checkout. This worksheet records a decision; it does not authorize a purchase or a render."
+        ],
+        "links": [
+          ["/pricing/", "Open the current pricing calculator"],
+          ["/guides/treatment-approval/", "Approve a treatment before production"],
+          ["/guides/failed-render/", "Check the facts after a failed job"]
+        ]
+      }
+    ],
+    "worksheet_fields": ["Current total balance:", "Purchased credits confirmed:", "Film eligibility confirmed:", "Job 1 product / duration / quote:", "Job 2 product / duration / quote, if separately approved:", "Approved treatment version:", "Maximum authorized job cost:", "Optional render left unapproved:", "Job identifier and actual reported charge:", "Refund actually reported, if any:", "Next balance checked:"]
+  }
+}

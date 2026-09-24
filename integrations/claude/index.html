@@ -29,7 +29,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="/site.css?v=20260915">
+<link rel="stylesheet" href="/site.css?v=2026092401">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -72,7 +72,7 @@
   ]
 }
 </script>
-<script src="/site.js?v=20260915" defer></script>
+<script src="/site.js?v=2026092401" defer></script>
 </head>
 <body>
 <div class="progress" id="progress" aria-hidden="true"></div>
@@ -138,10 +138,7 @@
     </div>
     <div class="split">
       <div>
-        <p class="lede">Kleo is a remote MCP server. There is no app to install and no sign-up form: Claude reaches it
-          through a custom connector, and connecting is one button on Kleo’s own page. The steps below are the same in
-          the Claude app and on the web, and they work on every Claude plan; the free plan allows one custom
-          connector.</p>
+        <p class="lede">Kleo is a remote MCP server that Claude reaches through a custom connector. Add it from Claude’s connector settings and complete Kleo’s sign-in. Custom connector access and limits depend on your account and workspace; check the options available to you before starting.</p>
       </div>
       <div class="panel">
         <ol>
@@ -155,7 +152,7 @@
         </ol>
         <div class="url-line">Server address <code>https://mcp.kleooai.com/mcp</code> <button class="btn btn-ghost btn-sm" type="button" data-copy="https://mcp.kleooai.com/mcp">Copy</button></div>
         <p>Claude is Anthropic’s assistant. Kleo is a separate service that Claude reaches through a custom connector;
-          the same address works in ChatGPT, Grok, Claude Code, Cursor and any other MCP client — see
+          the same address connects from compatible clients including ChatGPT, Claude Code and Cursor — see
           <a href="/connect/">the connection page</a>.</p>
       </div>
     </div>
@@ -168,7 +165,7 @@
     <div class="sec-head">
       <div>
         <div class="eyebrow"><span class="n">02</span>First prompt</div>
-        <h2>Ask for the film you want.</h2>
+        <h2>Choose your first creation.</h2>
       </div>
       <p class="lede">Say the subject, the length, the format and the look in one message. Audience, tone and anything
         that must appear in the film are optional. Whatever your request leaves out, Claude asks for before it plans
@@ -176,14 +173,14 @@
     </div>
     <div class="split">
       <div>
-        <p class="style-say copyable">“Use Kleo to make a 30-second film about a small wooden boat crossing a quiet lake at dawn. Realistic look, 16:9, English narration, a calm tone. Show me the treatment and the exact credits before you start the render.”<button class="btn btn-ghost btn-sm copy" type="button" data-copy="Use Kleo to make a 30-second film about a small wooden boat crossing a quiet lake at dawn. Realistic look, 16:9, English narration, a calm tone. Show me the treatment and the exact credits before you start the render.">Copy</button></p>
+        <p>Choose the product before rendering. <b>Try a free animatic:</b> drawn frames, camera movement and narration, 15–60 seconds, 5 credits. <b>Create a film:</b> generated moving footage, 15 seconds to 5 minutes, with a purchased pack and a quote you approve.</p><h3>Try a free animatic</h3><p class="style-say copyable">“Use Kleo to plan a 30-second animatic about a paper boat returning to its maker. Animation look, English narration, 9:16. Show me the treatment, confirm that the product is an animatic, and check the exact credit cost against my available balance. Wait for my approval before rendering. Do not start a paid film or buy credits.”<button class="btn btn-ghost btn-sm copy" type="button" aria-label="Copy try a free animatic prompt" data-copy="Use Kleo to plan a 30-second animatic about a paper boat returning to its maker. Animation look, English narration, 9:16. Show me the treatment, confirm that the product is an animatic, and check the exact credit cost against my available balance. Wait for my approval before rendering. Do not start a paid film or buy credits.">Copy prompt</button></p><h3>Create a film</h3><p class="style-say copyable">“Use Kleo to plan a 20-second narrated film about two fictional cars leaving an amber-lit tunnel for a coastal road at golden hour. Realistic look, English narration, 16:9. Show me the treatment, the exact film credit cost, my available balance and whether my account is eligible. Wait for my approval before rendering. Do not buy credits. After rendering, give me the finished MP4 download link.”<button class="btn btn-ghost btn-sm copy" type="button" aria-label="Copy create a film prompt" data-copy="Use Kleo to plan a 20-second narrated film about two fictional cars leaving an amber-lit tunnel for a coastal road at golden hour. Realistic look, English narration, 16:9. Show me the treatment, the exact film credit cost, my available balance and whether my account is eligible. Wait for my approval before rendering. Do not buy credits. After rendering, give me the finished MP4 download link.">Copy prompt</button></p>
       </div>
       <ul class="defs">
         <li><b>Looks</b><span>Two looks are available: <b>realistic</b>, generated live-action footage with a cinematic
           feel, and <b>animation</b>, a 2D animated film. <a href="/styles.html">See the film looks →</a></span></li>
         <li><b>Formats</b><span>16:9 for YouTube or 9:16 for a Short.</span></li>
         <li><b>Lengths</b><span>15 seconds to 5 minutes.</span></li>
-        <li><b>Narration</b><span>English or Italian.</span></li>
+        <li><b>Narration</b><span>One narrator, in English or Italian. Before approving the render, ask your assistant which music and subtitle options are available and confirm what will be included. The current <a href="/terms.html">Terms</a> specify a small Kleo mark on the video. Review the output conditions before purchasing.</span></li>
       </ul>
     </div>
   </div>
@@ -256,8 +253,7 @@
       <li><b>Products</b><span>The film, or an animatic of the same storyboard: the drawn frames under a moving camera,
         the same narrator and graphic layer, no generated clip. Every account can order animatics; a film is made only
         for accounts that have bought a pack.</span></li>
-      <li><b>Narration</b><span>One narrator, English or Italian. No background music, no captions, no on-screen
-        text.</span></li>
+      <li><b>Narration</b><span>One narrator, in English or Italian. Before approving the render, ask your assistant which music and subtitle options are available and confirm what will be included. The current <a href="/terms.html">Terms</a> specify a small Kleo mark on the video. Review the output conditions before purchasing.</span></li>
       <li><b>Credits</b><span>A film: 1 credit = 2 seconds, rounded up, 10 credits minimum: 15 s = 10, 30 s = 15, 60 s
         = 30, 5 min = 150. An animatic: 5 credits flat. You start with 7 credits; packs are €5 = 10, €15 = 35, €40 = 100,
         paid once, no subscription.</span></li>
@@ -283,8 +279,7 @@
           <summary>Kleo does not appear in Claude.</summary>
           <p>Check the address you pasted: it is exactly https://mcp.kleooai.com/mcp, with https and nothing after /mcp.
             Add the connector again with the name Kleo. Once it is added, it is still off in a chat until you turn it
-            on: open a new chat and switch Kleo on from the tools menu. On the free plan one custom connector is
-            allowed, so Kleo has to be that one.</p>
+            on: open a new chat and switch Kleo on from the tools menu. Custom connector access and limits depend on your account and workspace.</p>
         </details>
         <details>
           <summary>Kleo’s page never opened, or the window was blocked.</summary>
@@ -294,11 +289,7 @@
         </details>
         <details>
           <summary>Not enough credits.</summary>
-          <p>Connecting gives you 7 credits: they buy an animatic (5), never a film. A film is made only for accounts that
-            have bought a pack, and a 30-second film is 15 credits: with the €5 pack (10 credits) you have 17 and the
-            render can start. Ask Claude for your Kleo account page (kleo_account): it shows the balance and the checkout links
-            (€5 = 10 credits, €15 = 35, €40 = 100; a one-off payment in EUR, no subscription). The refused call
-            charged nothing.</p>
+          <p>A €5 pack adds 10 purchased credits and unlocks film rendering. A 20-second film costs 10 credits; a 30-second film costs 15. After one 5-credit animatic, your 7 starter credits become 2; adding that pack gives a total balance of 12, not enough for a 30-second film. Ask your assistant to confirm the credits eligible for your chosen product and the exact quote before you buy or render. Ask Claude for your account page to review the balance and checkout links. A refused request spends no credits.</p>
         </details>
       </div>
       <div>

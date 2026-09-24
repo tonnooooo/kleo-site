@@ -39,8 +39,11 @@ lines = ['# Kleo AI', '',
 for route, path in PAGES.items():
     t, d = meta(path)
     lines.append('- [%s](%s%s): %s' % (t, SITE_URL, route, d))
-lines += ['', '## Facts (deployed server, 14 September 2026)', '',
-    '15 seconds to 5 minutes; 16:9 or 9:16; English or Italian narration; realistic or animation look; 4K 60 fps MP4; no background music, no captions, no automatic publishing; a render takes about 25–35 minutes on a rented GPU. 1 credit = 2 seconds of film, rounded up, 10 credits minimum. 7 credits on connecting; packs €5 = 10 credits, €15 = 35, €40 = 100, one-off, no subscription. MCP endpoint: https://mcp.kleooai.com/mcp (Streamable HTTP, OAuth 2.1). Contact: kleooai@gmail.com. Source: https://github.com/tonnooooo/kleo-mcp',
+lines += ['', '## Published product information (checked 24 September 2026)', '',
+    'Film: generated moving footage, 15 seconds to 5 minutes, realistic or animation look, 16:9 or 9:16, English or Italian narration. Published output: 4K 60 fps MP4. Animatic: drawn frames with camera movement and narration, 15–60 seconds, 5 credits. Confirm music, subtitle and graphic options in the quote; public showcase features do not establish what every new order includes.',
+    'New accounts receive 7 starter credits, enough for one 5-credit animatic. Films require a credit-pack purchase and enough eligible credits: max(10, ceil(duration_seconds / 2)). Packs: €5 = 10 purchased credits, €15 = 35, €40 = 100; one-off purchases. A 20-second film costs 10 credits; 30 seconds costs 15. After one starter animatic then a €5 pack, the total is 12, not enough for a 30-second film. Confirm usable film credits rather than assuming gifted credits are eligible. Treatment and exact cost are reviewed before rendering.',
+    'Download and save files within 7 days; publishing is manual. Current Terms specify a small Kleo mark and require permission before reselling output as your own service. Privacy lists prompts, storyboards and account activity as retained until deletion is requested. Read the full Terms and Privacy for conditions. These are summaries of published policies, not independent production tests.',
+    'MCP endpoint: https://mcp.kleooai.com/mcp (Streamable HTTP, OAuth). Custom connector access depends on the assistant, account and workspace. Support: kleooai@gmail.com. Sources: https://kleooai.com/pricing/ https://kleooai.com/faq/ https://kleooai.com/terms.html https://kleooai.com/privacy.html https://kleooai.com/connect/',
     '']
 (ROOT / 'llms.txt').write_text('\n'.join(lines), encoding='utf-8')
 print('sitemap.xml: %d urls; llms.txt: %d pages' % (len(urls), len(PAGES)))

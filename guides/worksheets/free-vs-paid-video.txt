@@ -30,3 +30,89 @@ PITFALL
 A cheaper preview can be useful even when it is not the final deliverable. Conversely, paying for footage will not automatically fix an unclear brief, unsupported claim or inconsistent story.
 
 This worksheet is a planning aid, not a rendered example or automated verification.
+
+PROJECT RECORD
+Required final deliverable:
+
+Generated motion essential? Why:
+
+Brief details held constant:
+
+Animatic quote and approval:
+
+Film quote, eligibility and approval:
+
+What the animatic actually showed:
+
+What remains untested until the film:
+
+Film observations and timestamps:
+
+Separate editing or publication tasks:
+
+Chosen next action:
+
+EXAMPLE BRIEF — ADAPT BEFORE USE
+Help me compare an animatic and a film for a 30-second fictional story: a lighthouse keeper notices a signal, searches the shore and answers it. Keep the English narration, realistic look and 16:9 format consistent. Compare the pictures I would receive, the questions each result can answer and each job’s exact quote. Check film eligibility and usable credits separately from the total balance. Do not buy credits or render either version; let me choose one first.
+
+REFERENCE NOTES
+COMPARE THE OUTPUT, NOT JUST THE PRICE
+
+An animatic and a film answer different production questions. An animatic helps you judge the planned sequence and narration. A film adds generated moving footage that must be reviewed in its own right. Paying for that footage does not guarantee the story, facts or visual continuity will be correct.
+
+Kleo animatic and generated-footage film
+
+Decision: How the picture moves
+Animatic: Camera movement over drawn frames.
+Film: Generated moving clips built from the shot frames.
+
+Decision: Current duration range
+Animatic: 15–60 seconds.
+Film: 15 seconds–5 minutes.
+
+Decision: Production cost
+Animatic: 5 credits per accepted render.
+Film: 1 credit per 2 seconds, rounded up, with a 10-credit minimum.
+
+Decision: New-account access
+Animatic: An unused 7-credit starter balance covers one.
+Film: A credit-pack purchase and enough eligible film credits are required.
+
+Decision: Best question to review
+Animatic: Is the story sequence and narration worth taking forward?
+Film: Does the actual motion, narration and finished result meet the approved brief?
+
+Decision: What it does not prove
+Animatic: How later generated clips will handle movement or continuity.
+Film: That every detail is accurate, cleared for use or ready for a particular platform.
+
+Decision: Next action
+Animatic: Accept, revise the plan or obtain a separate film quote.
+Film: Inspect, download and prepare the final upload yourself.
+
+USE THE SAME BRIEF WHEN COMPARING
+
+Suppose your story follows a lighthouse keeper noticing a signal, searching the shore and answering it. Keep that sequence, the language, the aspect ratio and the intended ending fixed. In an animatic, you can judge whether the clue and response are understandable. In a film, you also inspect whether the keeper’s action, the light and the shoreline move plausibly.
+
+If you change the story, duration and look between the two jobs, a better result does not tell you which change helped. Keep a short comparison record: approved brief, product, quote, actual result, observations and the next decision. This is an editorial comparison method, not a claim that this lighthouse story has been rendered.
+
+1. Write what the deliverable must contain: the story outcome, narration language, framing and whether generated motion is essential.
+
+2. Ask for each product’s current quote separately. Specify which one you are approving, rather than saying “make the video” after discussing both.
+
+3. Compare the actual downloaded result with the same approved brief. Keep changes to the story separate from defects in the pictures or audio.
+
+BUDGET TWO JOBS IF YOU WANT BOTH
+
+A 30-second animatic costs 5 credits and a 30-second film costs 15, so the two planned renders total 20 credits. This is a production-cost sum, not proof that all credits in an account can pay for either product. Film eligibility and the usable balance must be checked separately.
+
+The animatic fee is not described as a deposit automatically deducted from a later film. Do not promise a conversion, discount or shared render unless the actual quote states it. Check sound, captions and graphic options before approving the treatment, and read the Terms for the Kleo mark and uses that require permission.
+
+Plan the first animatic: https://kleooai.com/guides/free-animatic-maker/
+
+Budget the jobs and possible revisions: https://kleooai.com/guides/credit-planning/
+
+SOURCES
+Kleo FAQ: https://kleooai.com/faq/
+Kleo pricing: https://kleooai.com/pricing/
+Kleo Terms: https://kleooai.com/terms.html

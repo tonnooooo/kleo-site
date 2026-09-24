@@ -38,6 +38,12 @@ PAGES = {
 # Authored guide routes are generated from editorial/*.txt, shared by sitemap and live checks.
 PAGES.update(json.loads((ROOT / 'editorial/routes.json').read_text()))
 NOINDEX = ['404.html']
+# The four dedicated watch pages have one accessible primary player. All other
+# videos remain silent previews without controls, including the homepage Apex.
+WATCH_PAGES = {
+    'examples/apex/index.html', 'examples/tether/index.html',
+    'examples/octopus/index.html', 'examples/signal-delay/index.html',
+}
 # things the product does not do, or the site must not say (case-insensitive regexes over the visible text)
 FORBIDDEN = [
     (r'\b8[ -]?min', 'films are 15 s to 5 min'),
@@ -56,12 +62,13 @@ VOID = {'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'met
 
 
 class Page(HTMLParser):
-    def __init__(self, source):
+    def __init__(self, source, watch_page=False):
         super().__init__(convert_charrefs=True)
         self.tags, self.ids, self.links, self.stack, self.errors, self.jsonld = [], set(), [], [], [], []
         self.text, self._record, self._buf, self._skip = [], False, '', 0
         self.header, self.footer, self._grab = None, None, None
         self.h1 = 0
+        self.watch_page, self.watch_count = watch_page, 0
         self.feed(source)
 
     def handle_starttag(self, tag, attrs):
@@ -78,7 +85,18 @@ class Page(HTMLParser):
             if a.get(k): self.links.append(a[k])
         if tag == 'img' and 'alt' not in a: self.errors.append('img without alt: ' + a.get('src', '?'))
         if tag == 'video':
-            if 'controls' in a: self.errors.append('video with controls (owner rule: shown, not handed over)')
+            watch = 'data-watch-player' in a
+            if watch:
+                self.watch_count += 1
+                if not self.watch_page or 'main' not in self.stack:
+                    self.errors.append('watch player outside a dedicated watch page main element')
+                if 'controls' not in a: self.errors.append('watch player without accessible native controls')
+                if 'playsinline' not in a: self.errors.append('watch player without inline playback')
+                if 'nofullscreen' in a.get('controlslist', '').split(): self.errors.append('watch player blocks full screen')
+                if 'autoplay' in a or 'loop' in a: self.errors.append('watch player must respect user-controlled playback')
+                if not a.get('src') or not a.get('poster'): self.errors.append('watch player without source or poster')
+            elif 'controls' in a:
+                self.errors.append('preview video with controls (controls are limited to dedicated watch players)')
             if 'muted' not in a: self.errors.append('video not muted')
             if a.get('preload') != 'none': self.errors.append('video without preload="none"')
             if 'aria-label' not in a: self.errors.append('video without aria-label')
@@ -117,13 +135,15 @@ def main():
     errors = []
     files = sorted(p for p in ROOT.rglob('*.html') if '.git' not in p.parts and 'node_modules' not in p.parts)
     sources = {f: f.read_text(encoding='utf-8') for f in files}
-    parsed = {f: Page(s) for f, s in sources.items()}
+    parsed = {f: Page(s, str(f.relative_to(ROOT)) in WATCH_PAGES) for f, s in sources.items()}
     rel = lambda f: str(f.relative_to(ROOT))
     titles, descs, canonicals = {}, {}, {}
     header_ref = footer_ref = None
     for f, p in parsed.items():
         name = rel(f)
         errors += ['%s: %s' % (name, e) for e in p.errors]
+        if p.watch_page and p.watch_count != 1:
+            errors.append('%s: expected exactly one primary watch player, got %d' % (name, p.watch_count))
         if p.stack: errors.append('%s: unclosed %s' % (name, p.stack))
         if p.h1 != 1: errors.append('%s: %d h1' % (name, p.h1))
         for link in p.links:
