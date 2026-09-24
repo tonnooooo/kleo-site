@@ -43,10 +43,10 @@ descriptions), `6d501967255b4889a19297ad25fe6c51.txt` (the IndexNow key, public 
   (`data-copy`, toast, an aria-label that says what is copied), the `config.json` override below, reveal on scroll,
   the progress hairline, the REC timecode and the render loop on the home (real stages: treatment, storyboard,
   footage, narration, finish), the pricing calculator (`#duration` → `#credit-result`, the server's rule), the sample
-  films (they play muted while in view and are only fetched then; no controls, no menu, no drag: shown, not handed
-  over), the Italian hash map, the looks page tint. No analytics, no cookies, no remote code: the privacy page
+  previews (they play muted while in view and are only fetched then); the four individual film pages instead use
+  native playback, sound and fullscreen controls, identified by `data-watch-player` and `.watch-media`, the Italian hash map, the looks page tint. No analytics, no cookies, no remote code: the privacy page
   promises that.
-- Both are linked with `?v=20260915`; bump it when you change either, so nobody reads a new page with an old
+- Assets carry dated `?v=` versions; bump them on updated pages when changing shared assets, so nobody reads a new page with an old
   stylesheet from the cache. The only remote resources on the site are the three Google Fonts faces.
 
 ## The server address
@@ -60,9 +60,13 @@ and on `/connect/` (`#server-note`); keep it true to the product (it says what a
 
 - The pages may only promise what the deployed server does. Today: two products from one storyboard — the FILM,
   realistic or animation, every shot generated as moving footage (kie.ai), 15 s to 5 min, 16:9 or 9:16, English or
-  Italian, 4K 60 fps, no music, no captions, no automatic publishing; 1 credit = 2 s, 10 credits minimum, made only for
+  Italian, 4K 60 fps, no automatic publishing; 1 credit = 2 s, 10 credits minimum, made only for
   accounts that have bought a pack — and the ANIMATIC, the same storyboard's drawn frames under a moving camera, no
   generated clip, 15–60 s, 5 credits flat, for every account. 7 credits on connecting (one animatic), packs €5/€15/€40.
+  Confirm music, subtitle and graphic options against the deployed version before promising them. Current Terms
+  specify a Kleo mark and a permission requirement for service resale; preserve those until the operator updates them.
+  A €5 pack buys 10 credits: enough for a 20-second film. Do not promise a 30-second film from a 12-credit balance
+  after a starter animatic. Gift-credit eligibility must be aligned by the operator before advertising its film use.
   When the server changes, change the pages the same day — and `tools/check.py` (its `FORBIDDEN` list) refuses the
   words that were wrong before ("8 minutes", "free film", "template", …).
 - Every page has a unique title and description, an absolute canonical, Open Graph/Twitter tags and pretty-printed
@@ -89,3 +93,22 @@ After a deploy: `python3 tools/livecheck.py` proves every page is live with the 
 the discovery files and the films are served; then `python3 tools/indexnow.py --since <previous live commit>` (dry run)
 and `--submit` send the changed URLs to IndexNow once the live pages match the repo byte for byte. Google does not use IndexNow: after a change to
 the sitemap, ask Search Console to re-read it, and inspect the priority pages once.
+
+## Website improvement release — 24 September 2026
+
+The homepage retains the original graphite/amber palette, type, REC and rendering demo. Original animated light
+trails add ambience without remote code or media. Their motion pauses offscreen, respects reduced motion, and has
+a pause control. The connection studio ships its final geometry before its deferred enhancement to avoid layout
+shifts. Without JavaScript the native disclosures still show the connection instructions.
+
+The four `/examples/<film>/` pages deliberately allow native video controls and fullscreen. The old no-controls
+rule still applies to silent previews in the home/gallery/other pages. `tools/check.py` enforces both modes and
+prevents marking arbitrary preview pages as watch players. The main film source/poster/VideoObject remain in HTML;
+playback is initiated by the visitor and volume is not reset by the autoplay script. Hiding download UI is not DRM.
+
+Home and connection pages distinguish the 5-credit starter animatic from paid films, with approval required in
+each copied prompt. Product policy and backend changes remain the operator’s responsibility; this website release
+does not modify the engine, MCP worker, account system, Terms, Privacy or prices.
+
+The homepage serves the original font families from `brand/fonts/` with their OFL licenses and source URLs,
+preloading its display and body faces. Inner pages retain their existing Google Fonts loading.

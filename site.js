@@ -92,6 +92,54 @@
     selectAgent(tabs[0], false);
   }
 
+  /* A linked creation choice opens as a native disclosure, including after Back. */
+  function revealCreation(){
+    var id = location.hash.slice(1);
+    if (id !== 'try-animatic' && id !== 'create-film') return;
+    var choice = document.getElementById(id);
+    if (choice) choice.open = true;
+  }
+  window.addEventListener('hashchange', revealCreation);
+  revealCreation();
+  document.addEventListener('click', function(e){
+    var link = e.target.closest && e.target.closest('a[href="#try-animatic"],a[href="#create-film"]');
+    if (link) { var choice = document.getElementById(link.hash.slice(1)); if(choice) choice.open = true; }
+  });
+
+  /* Ambient light stays decorative: no layout movement or tracking, and pauses offscreen. */
+  var cinema = document.querySelector('.cinema-hero');
+  if (cinema) {
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function(entries){
+        cinema.classList.toggle('is-in-view', entries[0].isIntersecting);
+      }, {threshold:0}).observe(cinema);
+    } else cinema.classList.add('is-in-view');
+    var ambient = document.querySelector('.ambient-control');
+    if (ambient) ambient.addEventListener('click', function(){
+      var paused = document.body.classList.toggle('ambience-paused');
+      ambient.setAttribute('aria-pressed', String(paused));
+      ambient.textContent = paused ? 'Resume ambience' : 'Pause ambience';
+    });
+    document.addEventListener('visibilitychange', function(){
+      document.body.classList.toggle('page-inactive', document.hidden);
+    });
+    var studio = document.querySelector('.agent-studio');
+    if (studio && !reduce && window.matchMedia('(hover:hover) and (pointer:fine)').matches) {
+      var pointerFrame = 0, px = 0, py = 0;
+      studio.addEventListener('pointermove', function(e){
+        var box = studio.getBoundingClientRect(); px = e.clientX - box.left; py = e.clientY - box.top;
+        if (!pointerFrame) pointerFrame = requestAnimationFrame(function(){
+          studio.style.setProperty('--pointer-x', px + 'px');
+          studio.style.setProperty('--pointer-y', py + 'px'); pointerFrame = 0;
+        });
+      }, {passive:true});
+      studio.addEventListener('pointerleave', function(){
+        if(pointerFrame) cancelAnimationFrame(pointerFrame); pointerFrame=0;
+        studio.style.removeProperty('--pointer-x'); studio.style.removeProperty('--pointer-y');
+      });
+    }
+  }
+
   /* ---------- live MCP address from config.json ---------- */
   fetch('/config.json', {cache:'no-store'}).then(function(r){ return r.ok ? r.json() : null; }).then(function(cfg){
     if(!cfg) return;
@@ -200,11 +248,11 @@
     duration.addEventListener('input', update); update();
   }
 
-  /* ---------- sample films: shown, not handed over ----------
+  /* ---------- silent previews (individual watch players keep native controls) ----------
      A film plays by itself while it is in front of you, muted, and is only fetched then; it stops when it is not.
      There is nothing to click: the tag has no controls, the frame takes no pointer, no menu, no drag. The film is
      the content of these pages, not decoration, so it plays under prefers-reduced-motion too — in view only. */
-  var medias = Array.prototype.slice.call(document.querySelectorAll('.style-media'));
+  var medias = Array.prototype.slice.call(document.querySelectorAll('.style-media:not(.watch-media)'));
   medias.forEach(function(m){
     m.addEventListener('contextmenu', function(e){ e.preventDefault(); });
     m.addEventListener('dragstart', function(e){ e.preventDefault(); });

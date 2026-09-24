@@ -29,7 +29,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="/site.css?v=20260915">
+<link rel="stylesheet" href="/site.css?v=2026092401">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -50,6 +50,9 @@
       "inLanguage": "en",
       "isPartOf": {
         "@id": "https://kleooai.com/#website"
+      },
+      "mainEntity": {
+        "@id": "https://kleooai.com/examples/octopus/#video"
       }
     },
     {
@@ -83,12 +86,16 @@
       "contentUrl": "https://kleooai.com/samples/animation-octopus.mp4",
       "duration": "PT32S",
       "uploadDate": "2026-09-15T12:06:00+12:00",
-      "inLanguage": "en"
+      "inLanguage": "en",
+      "@id": "https://kleooai.com/examples/octopus/#video",
+      "mainEntityOfPage": {
+        "@id": "https://kleooai.com/examples/octopus/#page"
+      }
     }
   ]
 }
 </script>
-<script src="/site.js?v=20260915" defer></script>
+<script src="/site.js?v=2026092401" defer></script>
 </head>
 <body>
 <div class="progress" id="progress" aria-hidden="true"></div>
@@ -121,42 +128,39 @@
 <main id="main">
 
 <!-- ============ HERO ============ -->
-<section class="page-hero hero" id="top">
+<section class="page-hero hero watch-hero" id="top">
   <div class="wrap">
     <div>
       <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">›</span><a href="/examples/">Examples</a><span aria-hidden="true">›</span><span>Octopus</span></nav>
-      <h1>Three hearts,<br><span class="hl">blue blood.</span></h1>
-      <p class="lede">A 32-second vertical Short in Kleo’s animation look, made from one sentence by a connected assistant on
-        its own: a painted red octopus, one narrator, chapter pills and captions that light up on the spoken word. It plays
-        here muted, by itself, while it is in view.</p>
+      <h1>Three hearts, <span class="hl">blue blood.</span></h1>
+      <p class="lede">Watch a 32-second animation showcase made on 10 September 2026: illustrated frames, camera movement and an English narrator.</p>
+      <div class="player watch-player tall" id="film">
+        <div class="style-media watch-media">
+          <video data-watch-player controls aria-describedby="watch-help" src="/samples/animation-octopus.mp4" poster="/samples/animation-octopus.jpg" width="608" height="1080" muted playsinline preload="none" disablepictureinpicture disableremoteplayback controlslist="nodownload noremoteplayback" aria-label="Why Octopuses Have 3 Hearts and Blue Blood, a 32-second animated Short by Kleo: a painted red octopus, chapter pills and big captions cut on the words."></video>
+        </div>
+        <div class="film-cap"><b>Why Octopuses Have 3 Hearts and Blue Blood</b><span>32-second showcase · 9:16 · illustrated frames with camera movement</span></div>
+        <p class="film-note watch-help" id="watch-help">Press play, then turn on sound with the player controls. Full screen is available.</p>
+        <p class="film-note watch-context">An earlier showcase. Its moving-camera treatment illustrates the animatic approach; today’s animation films generate moving footage. The chapters and captions shown here are specific to this example.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ============ THE FILM ============ -->
-<section id="film">
+<section id="film-context">
   <div class="wrap">
     <div class="sec-head one">
       <div>
-        <div class="eyebrow"><span class="n">01</span>The film</div>
+        <div class="eyebrow"><span class="n">01</span>About this example</div>
         <h2>Why Octopuses Have 3 Hearts and Blue Blood.</h2>
       </div>
     </div>
-    <div class="player tall">
-      <div class="style-media">
-        <video src="/samples/animation-octopus.mp4" poster="/samples/animation-octopus.jpg" width="608" height="1080" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" aria-label="Why Octopuses Have 3 Hearts and Blue Blood, a 32-second animated Short by Kleo: a painted red octopus, chapter pills and big captions cut on the words. Plays muted while in view."></video>
-        <span class="style-live" aria-hidden="true"><i></i>Playing</span>
-      </div>
-      <div class="film-cap"><b>Why Octopuses Have 3 Hearts and Blue Blood</b><span>32 s · 9:16 · animation · 4K 60 fps, shown at 1080p</span></div>
+    <div class="player-context">
       <p class="film-note">Four chapters in half a minute: <em>three hearts?</em>, <em>the hearts</em>, <em>blue blood</em>,
         <em>tired swimmer</em>. A painted red octopus fills every frame, each picture drawn for its line and given a slow
         camera move, a chapter pill in the corner, a big fitted title with one word in yellow, and karaoke captions under
         it that light up as the narrator says them. Copper, not iron: that is why the blood is blue.</p>
-      <p class="film-note">The copy on this page is 1080p at 60 fps, taken from the 4K master, and it plays muted: the English
-        narration is in the master. This Short was made on 10 September 2026 by OpenCode running unattended — it read
-        Kleo’s guide, wrote the storyboard, started the render and waited for the link. The animation look on the server
-        today goes one step further: in a film every shot is generated as moving footage from its drawn frame. What this
-        sample shows — the drawn frames under a moving camera — is what an animatic delivers today, at 5 credits.</p>
+      <p class="film-note">This vertical preview is 608 × 1080 pixels. Made on 10 September 2026 using OpenCode, this earlier showcase uses illustrated frames under a moving camera. That approach is now offered as an animatic for 5 credits; animation films generate moving footage. Confirm the available chapter, music and subtitle options for a new order.</p>
     </div>
   </div>
 </section>
@@ -181,7 +185,7 @@
           length, format, look; audience, tone and what must appear are optional), asks for whatever is missing, and
           returns the treatment: logline, angle, opening, acts, ending, look, pacing, narrator.
           <code>kleo_storyboard_guide</code> then sets out how the storyboard is written, and <code>kleo_create_video</code>
-          checks everything, states the exact credits — 20 for a 40-second Short, 1 credit for every 2 seconds — and
+          checks everything, states the product and exact credits before you approve the render. At the current tariff, a 40-second film costs 20 credits, while a 40-second animatic costs 5. After approval it
           starts the render on a GPU rented for that job. Nothing is charged until that call accepts the job.</p>
       </div>
     </div>
@@ -198,13 +202,13 @@
       </div>
     </div>
     <ul class="style-facts auto">
-      <li><b>Look</b><span>Animation: a 2D animated film, painted backgrounds, a character kept the same from shot to shot. Kleo’s other look, realistic, is generated live-action footage; <a href="/examples/tether/">Tether</a> and <a href="/examples/signal-delay/">Signal Delay</a> are in it.</span></li>
+      <li><b>Look</b><span>An earlier animation showcase: painted frames with camera movement and a character carried across shots. Kleo’s other look, realistic, is generated live-action footage; <a href="/examples/tether/">Tether</a> and <a href="/examples/signal-delay/">Signal Delay</a> are in it.</span></li>
       <li><b>Chapters</b><span>Four, each with its pill in the corner: the question, the answer, the colour of the blood, the tired swimmer.</span></li>
       <li><b>On the frame</b><span>A big fitted title per chapter with one word in yellow, and captions that light up word by word as the narrator speaks — the treatment of this Short asked for them.</span></li>
-      <li><b>Narration</b><span>One English narrator. Muted on this page.</span></li>
+      <li><b>Narration</b><span>One English narrator. Turn on sound in the player to listen.</span></li>
       <li><b>Master</b><span>4K (2160×3840) at 60 fps, 9:16. Shown here at 1080p, 60 fps.</span></li>
       <li><b>Length</b><span>32 seconds. A Kleo film runs from 15 seconds to 5 minutes.</span></li>
-      <li><b>Made by</b><span>An assistant on its own: OpenCode read the guide, wrote the storyboard, started the render and waited for the link — the same path any connected client takes.</span></li>
+      <li><b>Made by</b><span>An assistant on its own: OpenCode read the guide, wrote the storyboard, started the render and waited for the link — the documented workflow for this earlier example.</span></li>
     </ul>
   </div>
 </section>

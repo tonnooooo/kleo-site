@@ -29,7 +29,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="/site.css?v=20260915">
+<link rel="stylesheet" href="/site.css?v=2026092401">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -50,6 +50,9 @@
       "inLanguage": "en",
       "isPartOf": {
         "@id": "https://kleooai.com/#website"
+      },
+      "mainEntity": {
+        "@id": "https://kleooai.com/examples/signal-delay/#video"
       }
     },
     {
@@ -83,12 +86,16 @@
       "contentUrl": "https://kleooai.com/samples/realistic-signal.mp4",
       "duration": "PT1M2S",
       "uploadDate": "2026-09-14T22:13:11+12:00",
-      "inLanguage": "en"
+      "inLanguage": "en",
+      "@id": "https://kleooai.com/examples/signal-delay/#video",
+      "mainEntityOfPage": {
+        "@id": "https://kleooai.com/examples/signal-delay/#page"
+      }
     }
   ]
 }
 </script>
-<script src="/site.js?v=20260915" defer></script>
+<script src="/site.js?v=2026092401" defer></script>
 </head>
 <body>
 <div class="progress" id="progress" aria-hidden="true"></div>
@@ -121,55 +128,50 @@
 <main id="main">
 
 <!-- ============ HERO ============ -->
-<section class="page-hero hero" id="top">
+<section class="page-hero hero watch-hero" id="top">
   <div class="wrap">
     <div>
       <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">›</span><a href="/examples/">Examples</a><span aria-hidden="true">›</span><span>Signal Delay</span></nav>
-      <h1>Signal Delay.<br><span class="hl">Five months of mission logs.</span></h1>
-      <p class="lede">The opening minute of a 6 min 55 s documentary on Voyager 1, told by one narrator and rendered with
-        Kleo’s realistic look. The site shows 0:00–1:02, up to the title; the full film is not published here.</p>
-      <div class="cta-row">
-        <a class="btn btn-primary" href="/connect/">Connect Kleo <span class="arr" aria-hidden="true">→</span></a>
-        <a class="btn btn-ghost" href="/examples/tether/">Watch Tether</a>
-        <a class="btn btn-ghost" href="/examples/">All examples <span class="arr" aria-hidden="true">→</span></a>
+      <h1>Signal Delay. <span class="hl">Mission logs.</span></h1>
+      <p class="lede">Watch the 62-second opening of a documentary about Voyager 1, with narration, diagrams and subtitles.</p>
+      <div class="player watch-player" id="film">
+        <div class="style-media watch-media wide">
+          <video data-watch-player controls aria-describedby="watch-help" src="/samples/realistic-signal.mp4" poster="/samples/realistic-signal.jpg" width="1920" height="1080" muted playsinline preload="none" disablepictureinpicture disableremoteplayback controlslist="nodownload noremoteplayback" aria-label="Signal Delay, the opening minute: a documentary on Voyager 1 rendered with Kleo’s realistic look, photographic stills with a slow push-in, hand-drawn amber diagrams, dates on black and two clocks in the corner"></video>
+        </div>
+        <div class="film-cap"><b>Signal Delay</b><span>62-second excerpt · realistic look · 16:9 · 1080p preview</span></div>
+        <p class="film-note watch-help" id="watch-help">Press play, then turn on sound with the player controls. Full screen is available.</p>
+        <p class="film-note watch-context">The full documentary runs 6 min 55 s and is not published here. This showcase exceeds the current standard film limit of five minutes; the player contains only its opening excerpt.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============ THE FILM ============ -->
-<section id="film">
+<section id="film-context">
   <div class="wrap">
     <div class="sec-head">
       <div>
-        <div class="eyebrow"><span class="n">01</span>The film</div>
+        <div class="eyebrow"><span class="n">01</span>About this example</div>
         <h2>The film.</h2>
       </div>
       <p class="lede">A documentary told as five months of mission logs. On November 14, 2023, Voyager 1 started repeating one
         pattern of ones and zeros, and every question cost forty-five hours of light-time. One narrator walks through the
         readout, the dead chip and the code moved by hand in 1970s assembly.</p>
     </div>
-    <div class="player">
-      <div class="style-media wide">
-        <video src="/samples/realistic-signal.mp4" poster="/samples/realistic-signal.jpg" width="1920" height="1080" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" aria-label="Signal Delay, the opening minute: a documentary on Voyager 1 rendered with Kleo’s realistic look, photographic stills with a slow push-in, hand-drawn amber diagrams, dates on black and two clocks in the corner"></video>
-        <span class="style-live" aria-hidden="true"><i></i>Playing</span>
-      </div>
-      <div class="film-cap"><b>Signal Delay</b><span>6 min 55 s · opening 0:00–1:02 · realistic look · 4K 60 fps, shown at 1080p</span></div>
-      <p class="film-note">The opening 0:00–1:02 of Signal Delay, up to the title. Muted on the site and playing by itself while
-        it is in view; the subtitles are part of the film.</p>
+    <div class="player-context">
+      <p class="film-note">The player contains the opening 0:00–1:02, up to the title. Turn on sound to hear the narration; the subtitles are already part of this excerpt.</p>
     </div>
     <div class="prose">
       <p>What sits on the frame was decided by this film’s treatment: photographic stills with a slow push-in, hand-drawn
         amber diagrams, terminal windows, dates on black, two clocks in the corner, 35 mm grain, a 2.39:1 frame, a quiet
-        music bed and subtitles. They are choices made for this documentary, not a standard part of every Kleo film. The
-        standard film has one narrator and nothing else: no background music, no captions and no on-screen text.</p>
+        music bed and subtitles. They are choices made for this documentary, not a standard part of every Kleo film. For a new film, confirm the narration, music and subtitle options with your assistant before approving the render.</p>
     </div>
     <ul class="style-facts auto">
       <li><b>Film</b><span>Signal Delay, a documentary, 6 min 55 s in full</span></li>
       <li><b>On this page</b><span>The opening, 0:00–1:02, up to the title; the full film is not on the site</span></li>
       <li><b>Look</b><span>Rendered with Kleo’s realistic look</span></li>
       <li><b>Narration</b><span>One narrator</span></li>
-      <li><b>Master</b><span>4K at 60 fps in a 16:9 file, the picture letterboxed to 2.39:1; shown here as a 1080p 60 fps copy, muted</span></li>
+      <li><b>Master</b><span>4K at 60 fps in a 16:9 file, the picture letterboxed to 2.39:1; shown here as a 1080p 60 fps copy</span></li>
     </ul>
     <div class="prose">
       <p><a href="/examples/tether/">Watch Tether, the other realistic film →</a></p>
@@ -193,21 +195,18 @@
       <div class="step">
         <span class="num" aria-hidden="true">01</span>
         <h3>One narrator</h3>
-        <p>A single voice walks through the readout, the dead chip and the code moved by hand in 1970s assembly. Every Kleo
-          film has one narrator, in English or Italian.</p>
+        <p>A single voice walks through the readout, the dead chip and the code moved by hand in 1970s assembly. For your own film, choose English or Italian narration.</p>
       </div>
       <div class="step">
         <span class="num" aria-hidden="true">02</span>
         <h3>A frame decided by the treatment</h3>
         <p>The dates on black, the amber diagrams, the terminal windows, the two clocks and the subtitles were asked for by
-          this documentary’s treatment. The standard Kleo film puts nothing on the frame: no background music, no captions,
-          no on-screen text.</p>
+          this documentary’s treatment. These choices describe this documentary; confirm the options available for your own order.</p>
       </div>
       <div class="step">
         <span class="num" aria-hidden="true">03</span>
         <h3>4K 60 fps master, shown at 1080p</h3>
-        <p>The master is 4K at 60 frames per second. The copy on this page is 1080p at 60 fps, muted, and it plays only
-          while it is in view.</p>
+        <p>The master is 4K at 60 frames per second. The preview on this page is 1080p at 60 fps. Use the player to listen, pause or view it full screen.</p>
       </div>
     </div>
     <div class="prose">
@@ -235,7 +234,7 @@
       <div class="prose">
         <p>A 2-minute film is 60 credits, and a film is made only for accounts that have bought a pack; a 60-second animatic
           of the same storyboard is 5 credits, for every account. The animation look, a 2D animated film on the same
-          workflow, costs the same per second; <a href="/examples/octopus/">its sample is the octopus Short</a>.</p>
+          workflow, costs the same per second; <a href="/examples/octopus/">see the earlier octopus animation showcase</a>.</p>
       </div>
       <div class="cta-row">
         <a class="btn btn-primary" href="/connect/">Connect Kleo <span class="arr" aria-hidden="true">→</span></a>

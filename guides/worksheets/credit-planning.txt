@@ -30,3 +30,105 @@ PITFALL
 A credit balance is not the same as an unrestricted production allowance. Confirm that the account and selected product meet the current requirements before promising delivery.
 
 This worksheet is a planning aid, not a rendered example or automated verification.
+
+PROJECT RECORD
+Current total balance:
+
+Purchased credits confirmed:
+
+Film eligibility confirmed:
+
+Job 1 product / duration / quote:
+
+Job 2 product / duration / quote, if separately approved:
+
+Approved treatment version:
+
+Maximum authorized job cost:
+
+Optional render left unapproved:
+
+Job identifier and actual reported charge:
+
+Refund actually reported, if any:
+
+Next balance checked:
+
+EXAMPLE BRIEF — ADAPT BEFORE USE
+Prepare a Kleo estimate for one 30-second animatic and one 30-second film. List the two jobs separately, confirm current prices, and distinguish my total balance from credits eligible for film. Show an optional second film render as unapproved, with its own cost. Tell me which assumptions need confirmation. Do not buy credits or start any render.
+
+REFERENCE NOTES
+CALCULATE EACH RENDER BEFORE CHOOSING A PACK
+
+At the current tariff, a film costs one credit per two seconds, rounded up, with a minimum of 10 credits. In a spreadsheet, that is MAX(10, ROUNDUP(duration_seconds / 2, 0)). An animatic costs 5 credits at any supported length from 15 to 60 seconds. These calculations price a job; they do not buy credits or confirm account eligibility.
+
+Use the intended duration, not an earlier rough idea. Keep an optional new version on a separate budget line so discussing it cannot be confused with approving it.
+
+Worked production budgets at the published credit tariff
+
+Planned jobs: One 30-second animatic
+Calculation: One animatic at the flat rate
+Total production credits: 5
+
+Planned jobs: One 20-second film
+Calculation: 20 / 2; the minimum is 10
+Total production credits: 10
+
+Planned jobs: One 30-second film
+Calculation: 30 / 2
+Total production credits: 15
+
+Planned jobs: One 60-second film
+Calculation: 60 / 2
+Total production credits: 30
+
+Planned jobs: One animatic, then one 30-second film
+Calculation: 5 + 15; two separately approved jobs
+Total production credits: 20
+
+Planned jobs: One 30-second film, plus an optional new 30-second render
+Calculation: 15 approved + 15 only if separately approved
+Total production credits: 15 now; 30 if both are rendered
+
+KEEP TOTAL BALANCE AND FILM ELIGIBILITY SEPARATE
+
+The €5 pack adds 10 purchased credits, €15 adds 35 and €40 adds 100. A €5 pack therefore provides the purchased credits for a 20-second film. A 30-second film costs 15 credits; do not treat an unused starter balance as a guarantee that the difference can be spent on film.
+
+The public Terms restrict how credits that were given rather than bought may be used. Before checkout, ask Kleo to confirm the usable film balance as well as whether the account has bought a pack. If the account’s answer and the Terms disagree, ask support to clarify before committing to the order.
+
+The same €5 pack produces different total balances
+
+Starting situation: All 7 starter credits remain
+Total after the pack: 7 starter + 10 purchased = 17
+What the total does not establish: It does not prove that all 17 are eligible for a film.
+
+Starting situation: One 5-credit starter animatic has been used
+Total after the pack: 2 starter + 10 purchased = 12
+What the total does not establish: A 30-second film costs 15, exceeding even this total.
+
+Starting situation: No credits remain
+Total after the pack: 0 + 10 purchased = 10
+What the total does not establish: A new 20-second film uses the full purchased pack; another render needs its own budget.
+
+APPROVE A SPECIFIC JOB, NOT AN OPEN-ENDED ALLOWANCE
+
+Terms states a full credit refund when a render fails or is cancelled before the machine starts; part-way cancellation returns the unspent portion. A completed render that you want to change is a different situation. The budget above does not assume an unlimited revision allowance or cash refund.
+
+Use the pricing calculator for the current per-render cost, and your account for the actual balance and checkout. This worksheet records a decision; it does not authorize a purchase or a render.
+
+1. Record product, duration, look, language, aspect ratio and any requested options beside the quote. Make the treatment version identifiable before production starts.
+
+2. Confirm the available balance and film eligibility, then approve only the named job and its exact cost. Keep any later render, editing expense or costs charged by your assistant outside that approval.
+
+3. After the job, record its identifier, reported charge and result. If it fails or is cancelled, check the actual returned credits before replanning; do not spend an expected refund in advance.
+
+Open the current pricing calculator: https://kleooai.com/pricing/
+
+Approve a treatment before production: https://kleooai.com/guides/treatment-approval/
+
+Check the facts after a failed job: https://kleooai.com/guides/failed-render/
+
+SOURCES
+Kleo FAQ: https://kleooai.com/faq/
+Kleo pricing: https://kleooai.com/pricing/
+Kleo Terms: https://kleooai.com/terms.html

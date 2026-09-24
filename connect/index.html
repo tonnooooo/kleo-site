@@ -29,7 +29,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="/site.css?v=20260915">
+<link rel="stylesheet" href="/site.css?v=2026092401">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -72,7 +72,7 @@
   ]
 }
 </script>
-<script src="/site.js?v=20260915" defer></script>
+<script src="/site.js?v=2026092401" defer></script>
 </head>
 <body>
 <div class="progress" id="progress" aria-hidden="true"></div>
@@ -110,7 +110,7 @@
     <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">›</span><span>Connect</span></nav>
     <h1>Your chat.<br><span class="hl">Your studio.</span></h1>
     <p class="lede">Kleo is a remote MCP server. It speaks the Model Context Protocol over Streamable HTTP with OAuth 2.1, so the
-      same address works in every client, and connecting is a single button on Kleo’s own page — no sign-up form, no
+      same address connects from compatible clients, and connecting is a single button on Kleo’s own page — no sign-up form, no
       password, no card. It is free to start: 7 credits on your account the moment you connect, one animatic. Add it to
       your assistant and describe the film you want to make.</p>
     <p class="mono" id="mcpStatus" hidden></p>
@@ -131,8 +131,7 @@
         <h2>Choose your assistant.</h2>
       </div>
       <p class="lede">Every client below uses the same address and the same one-button start: paste the address, Kleo’s page
-        opens, you click <b>Start free</b>, and you are back in the client with 7 credits on the account. These are the
-        steps we tested.</p>
+        opens, you click <b>Start free</b>, and you are back in the client with 7 credits on the account. Follow the instructions for your client. Connector access and menus can vary by account, workspace and version.</p>
     </div>
     <div class="grid panels">
 
@@ -142,9 +141,9 @@
         <ol>
           <li>Open <b>Settings → Connectors</b> and choose <b>Add custom connector</b>.</li>
           <li>Name it <b>Kleo</b>, paste the address above, and confirm. Kleo’s page opens: click <b>Start free</b> and you’re back in Claude.</li>
-          <li>In a new chat, turn on Kleo from the tools menu and ask: <i>Make me a 45-second Short about…</i></li>
+          <li>In a new chat, turn on Kleo from the tools menu and choose the free animatic or film prompt below.</li>
         </ol>
-        <p>The free Claude plan allows one custom connector.</p>
+        <p>Custom connector access and limits depend on your account and workspace.</p>
         <a class="more" href="/integrations/claude/">Full Claude guide <span class="arr" aria-hidden="true">→</span></a>
       </article>
 
@@ -152,11 +151,13 @@
         <h3>ChatGPT <small>developer mode</small></h3>
         <div class="url-line">Server address <code>https://mcp.kleooai.com/mcp</code> <button class="btn btn-ghost btn-sm" type="button" data-copy="https://mcp.kleooai.com/mcp">Copy</button></div>
         <ol>
-          <li>Open <b>Settings → Apps &amp; Connectors</b> (called <b>Connectors</b> in older versions), then <b>Advanced settings</b>, and turn on <b>Developer mode</b>.</li>
-          <li>Back in <b>Connectors</b>, choose <b>Create</b>: name it <b>Kleo</b>, paste the address, set authentication to <b>OAuth</b>, and save. Kleo’s page opens: click <b>Start free</b> and you’re back in ChatGPT.</li>
-          <li>In chat, turn on Kleo from the <b>+</b> menu and ask for the video. ChatGPT asks you to confirm before it starts a render.</li>
+          <li>Open <b>Settings → Security and login</b> and enable <b>Developer mode</b>, if available for your account and workspace.</li>
+          <li>Open <b>Plugins</b>, choose <b>+</b> to add a plugin, and enter <code>https://mcp.kleooai.com/mcp</code> as the public MCP server URL.</li>
+          <li>Review the plugin information and complete Kleo’s sign-in when prompted.</li>
+          <li>Start a new conversation and add Kleo to its tools. Choose the animatic or film prompt below and approve the treatment and cost before rendering.</li>
         </ol>
-        <p>Requires ChatGPT Plus, Pro, Business, or Enterprise.</p>
+        <p>Instructions checked against <a href="https://developers.openai.com/plugins/deploy/connect-chatgpt">OpenAI’s setup guide</a> on 24 September 2026. Access and menus can vary by account and workspace.</p>
+        <p>Custom plugin access depends on your account and workspace settings.</p>
         <a class="more" href="/integrations/chatgpt/">Full ChatGPT guide <span class="arr" aria-hidden="true">→</span></a>
       </article>
 
@@ -170,6 +171,13 @@
         </ol>
       </article>
 
+      <article class="panel" id="codex">
+        <h3>Codex <small>CLI</small></h3>
+        <p>With Codex CLI installed, add Kleo and complete its browser sign-in:</p>
+        <div class="code">codex mcp add kleo --url https://mcp.kleooai.com/mcp
+codex mcp login kleo<button class="btn btn-ghost btn-sm copy" type="button" aria-label="Copy Codex setup commands" data-copy="codex mcp add kleo --url https://mcp.kleooai.com/mcp&#10;codex mcp login kleo">Copy</button></div>
+        <p>Start a new Codex session and confirm that Kleo’s tools are available. Then choose the animatic or film prompt below. <a href="https://developers.openai.com/codex/mcp">Codex MCP documentation →</a></p>
+      </article>
       <article class="panel">
         <h3>Claude Code <small>cli</small></h3>
         <div class="code"><span class="cm"># add Kleo once (add --scope user to have it in every project)</span>
@@ -265,7 +273,7 @@ gemini mcp add --transport http kleo https://mcp.kleooai.com/mcp<button class="b
     </div>
     <div class="split">
       <div>
-        <p class="style-say copyable">“Use Kleo to plan a 30-second film about a lighthouse keeper discovering a message in a bottle. Realistic look, English narration, 9:16. Show me the outline and the credit cost before rendering.”<button class="btn btn-ghost btn-sm copy" type="button" data-copy="Use Kleo to plan a 30-second film about a lighthouse keeper discovering a message in a bottle. Realistic look, English narration, 9:16. Show me the outline and the credit cost before rendering.">Copy</button></p>
+        <p>Choose the product before rendering. <b>Try a free animatic:</b> drawn frames, camera movement and narration, 15–60 seconds, 5 credits. <b>Create a film:</b> generated moving footage, 15 seconds to 5 minutes, with a purchased pack and a quote you approve.</p><h3 id="try-animatic">Try a free animatic</h3><p class="style-say copyable">“Use Kleo to plan a 30-second animatic about a paper boat returning to its maker. Animation look, English narration, 9:16. Show me the treatment, confirm that the product is an animatic, and check the exact credit cost against my available balance. Wait for my approval before rendering. Do not start a paid film or buy credits.”<button class="btn btn-ghost btn-sm copy" type="button" aria-label="Copy try a free animatic prompt" data-copy="Use Kleo to plan a 30-second animatic about a paper boat returning to its maker. Animation look, English narration, 9:16. Show me the treatment, confirm that the product is an animatic, and check the exact credit cost against my available balance. Wait for my approval before rendering. Do not start a paid film or buy credits.">Copy prompt</button></p><h3 id="create-film">Create a film</h3><p class="style-say copyable">“Use Kleo to plan a 20-second narrated film about two fictional cars leaving an amber-lit tunnel for a coastal road at golden hour. Realistic look, English narration, 16:9. Show me the treatment, the exact film credit cost, my available balance and whether my account is eligible. Wait for my approval before rendering. Do not buy credits. After rendering, give me the finished MP4 download link.”<button class="btn btn-ghost btn-sm copy" type="button" aria-label="Copy create a film prompt" data-copy="Use Kleo to plan a 20-second narrated film about two fictional cars leaving an amber-lit tunnel for a coastal road at golden hour. Realistic look, English narration, 16:9. Show me the treatment, the exact film credit cost, my available balance and whether my account is eligible. Wait for my approval before rendering. Do not buy credits. After rendering, give me the finished MP4 download link.">Copy prompt</button></p>
       </div>
       <div class="prose">
         <p>Two looks are available on the server: <b>realistic</b>, generated live-action footage, and <b>animation</b>, a 2D
@@ -284,9 +292,7 @@ gemini mcp add --transport http kleo https://mcp.kleooai.com/mcp<button class="b
         <div class="eyebrow"><span class="n">03</span>Credits</div>
         <h2>Check your balance before production.</h2>
       </div>
-      <p class="lede">Connecting includes 7 credits: an animatic of your storyboard costs 5 and every account can order one. A
-        film is made only for accounts that have bought a pack, any pack, and a 30-second film costs 15 credits, so the
-        first film starts with the €5 pack: 7 + 10 = 17 credits, enough for a 30-second Short.</p>
+      <p class="lede">A €5 pack adds 10 purchased credits and unlocks film rendering. A 20-second film costs 10 credits; a 30-second film costs 15. After one 5-credit animatic, your 7 starter credits become 2; adding that pack gives a total balance of 12, not enough for a 30-second film. Ask your assistant to confirm the credits eligible for your chosen product and the exact quote before you buy or render.</p>
     </div>
     <div class="prose">
       <p>Ask the assistant for your account page to buy credits, then confirm when you want the render to start. Nothing is

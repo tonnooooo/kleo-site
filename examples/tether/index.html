@@ -29,7 +29,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="/site.css?v=20260915">
+<link rel="stylesheet" href="/site.css?v=2026092401">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -50,6 +50,9 @@
       "inLanguage": "en",
       "isPartOf": {
         "@id": "https://kleooai.com/#website"
+      },
+      "mainEntity": {
+        "@id": "https://kleooai.com/examples/tether/#video"
       }
     },
     {
@@ -82,12 +85,16 @@
       "thumbnailUrl": "https://kleooai.com/samples/realistic-tether.jpg",
       "contentUrl": "https://kleooai.com/samples/realistic-tether.mp4",
       "duration": "PT20S",
-      "uploadDate": "2026-09-14T13:03:21+12:00"
+      "uploadDate": "2026-09-14T13:03:21+12:00",
+      "@id": "https://kleooai.com/examples/tether/#video",
+      "mainEntityOfPage": {
+        "@id": "https://kleooai.com/examples/tether/#page"
+      }
     }
   ]
 }
 </script>
-<script src="/site.js?v=20260915" defer></script>
+<script src="/site.js?v=2026092401" defer></script>
 </head>
 <body>
 <div class="progress" id="progress" aria-hidden="true"></div>
@@ -120,40 +127,39 @@
 <main id="main">
 
 <!-- ============ HERO ============ -->
-<section class="page-hero hero" id="top">
+<section class="page-hero hero watch-hero" id="top">
   <div class="wrap">
     <div>
       <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">›</span><a href="/examples/">Examples</a><span aria-hidden="true">›</span><span>Tether</span></nav>
-      <h1>Tether.<br><span class="hl">One shot, no words.</span></h1>
-      <p class="lede">A 20-second film in Kleo’s realistic look: one continuous pull-back from an astronaut’s face inside
-        his helmet to the station he is tethered to. Every frame is generated footage. It plays here muted, by itself,
-        while it is in view.</p>
+      <h1>Tether. <span class="hl">One shot, no words.</span></h1>
+      <p class="lede">Watch a 20-second Kleo film: one continuous pull-back from an astronaut’s face to the station he is tethered to. This brief uses breathing and a low hum, without a narrator.</p>
+      <div class="player watch-player" id="film">
+        <div class="style-media watch-media wide">
+          <video data-watch-player controls aria-describedby="watch-help" src="/samples/realistic-tether.mp4" poster="/samples/realistic-tether.jpg" width="1920" height="1080" muted playsinline preload="none" disablepictureinpicture disableremoteplayback controlslist="nodownload noremoteplayback" aria-label="Tether, a 20-second film in Kleo’s realistic look: one unbroken pull-back from an astronaut’s face inside his helmet to the station he is tethered to."></video>
+        </div>
+        <div class="film-cap"><b>Tether</b><span>20-second film · realistic look · 16:9 · 1080p preview</span></div>
+        <p class="film-note watch-help" id="watch-help">Press play, then turn on sound with the player controls. Full screen is available.</p>
+        <p class="film-note watch-context">A specific creative treatment without narration. Confirm the available sound options for your own film before approving its treatment and credit cost.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ============ THE FILM ============ -->
-<section id="film">
+<section id="film-context">
   <div class="wrap">
     <div class="sec-head one">
       <div>
-        <div class="eyebrow"><span class="n">01</span>The film</div>
+        <div class="eyebrow"><span class="n">01</span>About this example</div>
         <h2>One unbroken pull-back.</h2>
       </div>
     </div>
-    <div class="player">
-      <div class="style-media wide">
-        <video src="/samples/realistic-tether.mp4" poster="/samples/realistic-tether.jpg" width="1920" height="1080" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" aria-label="Tether, a 20-second film in Kleo’s realistic look: one unbroken pull-back from an astronaut’s face inside his helmet to the station he is tethered to. Plays muted while in view."></video>
-        <span class="style-live" aria-hidden="true"><i></i>Playing</span>
-      </div>
-      <div class="film-cap"><b>Tether</b><span>20 s · one shot · 16:9 · 4K 60 fps, shown at 1080p</span></div>
+    <div class="player-context">
       <p class="film-note">One unbroken pull-back. It opens inside the helmet, on the astronaut’s face and his breath on the
         glass; a gloved hand comes up, the visor floods red, and the camera keeps backing away as he drifts, arms open,
         until the gold line running up from his pack meets the station and its solar arrays. Every frame is generated
         footage. No words at all: only his breathing and a low hum.</p>
-      <p class="film-note">The copy on this page is 1080p at 60 fps, taken from the 4K master, and it plays muted: the breathing
-        and the hum are in the master. Tether has no narrator because the brief asked for none. The standard Kleo film has
-        one, in English or Italian, and no background music, no captions and no on-screen text.</p>
+      <p class="film-note">This 1080p preview is taken from the 4K master. Tether has no narrator because its brief asked for none. For your own film, confirm narration, music and subtitle options before approving the render.</p>
     </div>
   </div>
 </section>
@@ -198,9 +204,9 @@
       <li><b>One shot</b><span>A single generated take from the first frame to the last: no cut, no slideshow of stills.</span></li>
       <li><b>Camera</b><span>One continuous movement, a pull-back that starts inside the helmet and ends at the station, with the astronaut drifting through the frame as it goes.</span></li>
       <li><b>Continuity</b><span>One subject held through one movement: the face, the visor, the glove and the gold tether stay the same from the helmet to the station.</span></li>
-      <li><b>Look</b><span>Realistic: generated live-action footage, cinematic. Kleo’s other look, animation, is a 2D animated film made through the same workflow; <a href="/examples/octopus/">its sample is the octopus Short</a>.</span></li>
+      <li><b>Look</b><span>Realistic: generated live-action footage, cinematic. Kleo’s other look, animation, is a 2D animated film made through the same workflow; <a href="/examples/octopus/">see the earlier octopus animation showcase</a>.</span></li>
       <li><b>Master</b><span>4K (3840×2160) at 60 fps, 16:9. Shown here at 1080p, 60 fps.</span></li>
-      <li><b>Sound</b><span>No narrator, no music: his breathing and a low hum. Muted on this page.</span></li>
+      <li><b>Sound</b><span>No narrator, no music: his breathing and a low hum. Turn on sound in the player to listen.</span></li>
       <li><b>Length</b><span>20 seconds. A Kleo film runs from 15 seconds to 5 minutes.</span></li>
       <li><b>Credits</b><span>10, the minimum a film costs: 1 credit is 2 seconds of film, rounded up, 10 credits minimum. An animatic of the same storyboard would be 5.</span></li>
     </ul>
@@ -216,7 +222,7 @@
       <p class="lede">Connect Kleo to Claude, ChatGPT, Claude Code, Cursor or another MCP client, then describe your film
         in one message: the subject, the length, the format and the look. Connecting gives you 7 credits, with no form
         and no card: one 5-credit animatic. A film is made only for accounts that have bought a pack and starts at 10
-        credits, so the €5 pack of 10 covers a 20-second film like this one with 7 to spare. A render typically takes
+        credits, so the €5 pack of 10 covers a 20-second film like this one using the purchased credits. A render typically takes
         25–35 minutes on a GPU rented for that job, and the finished MP4 comes back as a link that stays good for 7 days.</p>
       <div class="cta-row">
         <a class="btn btn-primary" href="/connect/">Connect Kleo <span class="arr" aria-hidden="true">→</span></a>

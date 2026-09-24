@@ -26,10 +26,10 @@
 <link rel="icon" href="/brand/kleo-favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/brand/kleo-favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="/brand/kleo-icon-dark-192.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="/site.css?v=2026092303">
+<link rel="preload" href="/brand/fonts/bricolage-grotesque-400-800-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/brand/fonts/instrument-sans-400-600-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/brand/fonts/kleo-fonts.css?v=2026092401">
+<link rel="stylesheet" href="/site.css?v=2026092401">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -82,9 +82,9 @@
   ]
 }
 </script>
-<script src="/site.js?v=2026092302" defer></script>
+<script src="/site.js?v=2026092401" defer onerror="document.documentElement.classList.add('no-js')"></script>
 </head>
-<body>
+<body class="kleo-home">
 <div class="progress" id="progress" aria-hidden="true"></div>
 
 <!-- ============ NAV ============ -->
@@ -116,16 +116,21 @@
 
 <!-- ============ HERO ============ -->
 <section class="hero cinema-hero" id="top">
+ <div class="cinema-atmosphere" aria-hidden="true">
+  <div class="cinema-halo"></div>
+  <svg class="cinema-ribbon ribbon-one" viewBox="0 0 1440 760" fill="none" preserveAspectRatio="none"><path d="M-120 590C180 760 320 130 650 270S1120 600 1580 130"/><path d="M-120 610C180 780 320 150 650 290S1120 620 1580 150"/></svg>
+  <svg class="cinema-ribbon ribbon-two" viewBox="0 0 1440 760" fill="none" preserveAspectRatio="none"><path d="M-100 170C230-20 480 580 840 380S1270 200 1560 600"/></svg>
+ </div>
  <div class="wrap cinema-wrap">
   <div class="cinema-intro">
    <div class="osd"><span class="rec" aria-hidden="true"></span> REC <span class="tcode" id="tcode" aria-hidden="true">00:00:00:00</span> · 4K · 60 fps<span class="osd-more"> · 16:9 and 9:16 · EN / IT</span></div>
-   <h1>Your next film.<br><span class="hl">Made in your AI chat.</span></h1>
-   <p class="cinema-lede">Turn an idea into a finished, narrated video with Kleo.<br class="desktop-break"> Direct it from your AI assistant. Download it. Publish it.</p>
+   <h1>Your next film.<br><span class="hl">Made in your <br class="mobile-break">AI chat.</span></h1>
+   <p class="cinema-lede">Describe your idea. Review the treatment. Let Kleo render the film.<br class="desktop-break"> From your AI assistant to a finished video, ready to publish.</p>
    <p class="cinema-specs">Realistic or animation <span>·</span> 15 seconds to 5 minutes <span>·</span> 4K · 60 fps</p>
   </div>
   <div class="agent-studio" aria-label="Connect Kleo to your AI assistant">
    <div class="studio-heading"><h2>Start in your assistant.</h2><span>Connect once. Create in chat.</span></div>
-   <div class="agent-tabs" role="tablist" aria-label="Choose your AI assistant" hidden><button type="button" id="agent-chatgpt" role="tab" aria-controls="install-chatgpt" aria-selected="true" tabindex="0"><span class="agent-mark" style="--agent-logo:url(/brand/agents/openai.svg)" aria-hidden="true"></span>ChatGPT</button><button type="button" id="agent-claude" role="tab" aria-controls="install-claude" aria-selected="false" tabindex="-1"><span class="agent-mark" style="--agent-logo:url(/brand/agents/claude.svg)" aria-hidden="true"></span>Claude</button><button type="button" id="agent-grok" role="tab" aria-controls="install-grok" aria-selected="false" tabindex="-1"><span class="agent-mark" style="--agent-logo:url(/brand/agents/grok.svg)" aria-hidden="true"></span>Grok</button><button type="button" id="agent-codex" role="tab" aria-controls="install-codex" aria-selected="false" tabindex="-1"><span class="agent-mark" style="--agent-logo:url(/brand/agents/openai.svg)" aria-hidden="true"></span>Codex</button><button type="button" id="agent-claude-code" role="tab" aria-controls="install-claude-code" aria-selected="false" tabindex="-1"><span class="agent-mark" style="--agent-logo:url(/brand/agents/claude.svg)" aria-hidden="true"></span>Claude Code</button><button type="button" id="agent-opencode" role="tab" aria-controls="install-opencode" aria-selected="false" tabindex="-1"><span class="agent-mark" style="--agent-logo:url(/brand/agents/opencode.svg)" aria-hidden="true"></span>OpenCode</button><button type="button" id="agent-cursor" role="tab" aria-controls="install-cursor" aria-selected="false" tabindex="-1"><span class="agent-mark" style="--agent-logo:url(/brand/agents/cursor.svg)" aria-hidden="true"></span>Cursor</button></div>
+   <div class="agent-tabs" role="tablist" aria-label="Choose your AI assistant"><button type="button" id="agent-chatgpt" role="tab" aria-controls="install-chatgpt" aria-selected="true" tabindex="0"><span class="agent-mark" style="--agent-logo:url(/brand/agents/openai.svg)" aria-hidden="true"></span>ChatGPT</button><button type="button" id="agent-claude" role="tab" aria-controls="install-claude" aria-selected="false" tabindex="-1"><span class="agent-mark" style="--agent-logo:url(/brand/agents/claude.svg)" aria-hidden="true"></span>Claude</button><button type="button" id="agent-grok" role="tab" aria-controls="install-grok" aria-selected="false" tabindex="-1"><span class="agent-mark" style="--agent-logo:url(/brand/agents/grok.svg)" aria-hidden="true"></span>Grok</button><button type="button" id="agent-codex" role="tab" aria-controls="install-codex" aria-selected="false" tabindex="-1"><span class="agent-mark" style="--agent-logo:url(/brand/agents/openai.svg)" aria-hidden="true"></span>Codex</button><button type="button" id="agent-claude-code" role="tab" aria-controls="install-claude-code" aria-selected="false" tabindex="-1"><span class="agent-mark" style="--agent-logo:url(/brand/agents/claude.svg)" aria-hidden="true"></span>Claude Code</button><button type="button" id="agent-opencode" role="tab" aria-controls="install-opencode" aria-selected="false" tabindex="-1"><span class="agent-mark" style="--agent-logo:url(/brand/agents/opencode.svg)" aria-hidden="true"></span>OpenCode</button><button type="button" id="agent-cursor" role="tab" aria-controls="install-cursor" aria-selected="false" tabindex="-1"><span class="agent-mark" style="--agent-logo:url(/brand/agents/cursor.svg)" aria-hidden="true"></span>Cursor</button></div>
    <details class="agent-panel" id="install-chatgpt" open>
  <summary>ChatGPT connection</summary><div class="agent-panel-body">
  <div class="install-label"><span>MCP server URL</span><span class="install-auth">Kleo account · secure sign-in</span></div>
@@ -192,17 +197,20 @@ codex mcp login kleo" aria-label="Copy Codex connection instructions">Copy comma
 }" aria-label="Copy Cursor connection instructions">Copy config</button></div>
  <p class="install-help">Merge this entry into your project’s .cursor/mcp.json. In Cursor’s MCP settings, connect Kleo and complete sign-in, then use it in Agent. <a href="https://cursor.com/docs/context/mcp" target="_blank" rel="noopener">Setup reference ↗</a></p>
  </div></details>
-   <details class="starter-prompt"><summary><span><span class="prompt-step">Then, make it yours</span> A first film prompt, ready to copy</span><span aria-hidden="true">+</span></summary><div class="starter-body"><p>After connecting Kleo, paste this into your assistant and change the idea.</p><blockquote>Use Kleo to help me create a 20-second cinematic film, in a realistic look, with English narration and a 16:9 frame. My idea: two cars racing through an amber-lit tunnel onto a coastal road at golden hour. First show me a treatment and the credit cost. Wait for my approval before rendering. After rendering, give me the finished MP4 download link.</blockquote><button class="btn btn-ghost" type="button" data-copy="Use Kleo to help me create a 20-second cinematic film, in a realistic look, with English narration and a 16:9 frame. My idea: two cars racing through an amber-lit tunnel onto a coastal road at golden hour. First show me a treatment and the credit cost. Wait for my approval before rendering. After rendering, give me the finished MP4 download link." aria-label="Copy the first film prompt">Copy film prompt</button></div></details>
+   <div class="creation-heading">Then, choose your first creation.</div>
+   <details class="starter-prompt" id="try-animatic" name="first-creation"><summary><span><strong>Try a free animatic</strong><span class="creation-cost">5 credits · covered by your starter balance</span></span><span aria-hidden="true">+</span></summary><div class="starter-body"><p>Plan the story with drawn frames, camera movement and narration. 15–60 seconds. Paste this brief into your connected assistant and make it yours.</p><blockquote>Use Kleo to plan a 30-second animatic about a paper boat returning to its maker. Animation look, English narration, 9:16. Show me the treatment, confirm that the product is an animatic, and check the exact credit cost against my available balance. Wait for my approval before rendering. Do not start a paid film or buy credits.</blockquote><button class="btn btn-ghost" type="button" data-copy="Use Kleo to plan a 30-second animatic about a paper boat returning to its maker. Animation look, English narration, 9:16. Show me the treatment, confirm that the product is an animatic, and check the exact credit cost against my available balance. Wait for my approval before rendering. Do not start a paid film or buy credits." aria-label="Copy animatic prompt">Copy animatic prompt</button></div></details>
+   <details class="starter-prompt" id="create-film" name="first-creation"><summary><span><strong>Create a film</strong><span class="creation-cost">Moving footage · credit packs from €5</span></span><span aria-hidden="true">+</span></summary><div class="starter-body"><p>Generate a complete narrated film, from 15 seconds to 5 minutes. A paid credit pack and enough eligible credits are required. Paste this brief into your connected assistant and make it yours.</p><blockquote>Use Kleo to plan a 20-second narrated film about two fictional cars leaving an amber-lit tunnel for a coastal road at golden hour. Realistic look, English narration, 16:9. Show me the treatment, the exact film credit cost, my usable film balance and whether my account is eligible. Wait for my approval before rendering. Do not buy credits. After rendering, give me the finished MP4 download link.</blockquote><button class="btn btn-ghost" type="button" data-copy="Use Kleo to plan a 20-second narrated film about two fictional cars leaving an amber-lit tunnel for a coastal road at golden hour. Realistic look, English narration, 16:9. Show me the treatment, the exact film credit cost, my usable film balance and whether my account is eligible. Wait for my approval before rendering. Do not buy credits. After rendering, give me the finished MP4 download link." aria-label="Copy film prompt">Copy film prompt</button></div></details>
+   <p class="studio-guide"><a href="/connect/">Need a hand? Full connection guide <span aria-hidden="true">↗</span></a></p>
    <noscript><p class="install-help">Expand your assistant above and copy the text manually. <a href="/connect/">Full connection guide →</a></p></noscript>
   </div>
-  <p class="studio-footnote">7 free starter credits for an animatic. <a href="#pricing">Film credits from €5.</a> <span>Requires an assistant with remote MCP support.</span></p>
+  <div class="studio-afterword"><p class="studio-footnote">7 starter credits. One free animatic. <a href="#pricing">Film packs from €5.</a> <span>Remote MCP support required. Account and workspace access may vary.</span></p><button type="button" class="ambient-control" aria-pressed="false">Pause ambience</button></div>
   <figure class="apex-feature">
    <div class="apex-heading"><span class="cinema-kicker">Made with Kleo</span><a href="/examples/">Explore the films <span aria-hidden="true">↗</span></a></div>
    <div class="style-media wide">
     <video src="/samples/realistic-apex.mp4" poster="/samples/realistic-apex.jpg" width="1920" height="1080" autoplay muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" aria-label="Apex: two cars emerge from an amber-lit tunnel onto a coastal road. A 20-second Kleo film, shown muted."></video>
     <span class="apex-tag">APEX <span>01 / REALISTIC</span></span>
    </div>
-   <figcaption><div><strong>Apex.</strong> A brief becomes a film.</div><a href="/examples/apex/">20 sec · 4K master · 1080p preview <span aria-hidden="true">↗</span></a></figcaption>
+   <figcaption><div><strong>Apex.</strong> A brief becomes a film.</div><a href="/examples/apex/">Watch with sound · 20 sec <span aria-hidden="true">↗</span></a></figcaption>
   </figure>
  </div>
 </section>
@@ -299,9 +307,7 @@ codex mcp login kleo" aria-label="Copy Codex connection instructions">Copy comma
         <div class="eyebrow"><span class="n">02</span>Films</div>
         <h2>Films by Kleo.</h2>
       </div>
-      <p class="lede">Tether, twenty seconds in a single shot, Apex, two cars out of a tunnel, and the opening minute of Signal
-        Delay, a documentary, in the realistic look — and <a href="/examples/octopus/">an animated Short on why octopuses have three hearts</a> in the
-        animation look. All 4K 60 fps masters shown at 1080p; each plays on its own page, muted, nothing to click.</p>
+      <p class="lede">Tether, a single shot in space. Apex, two cars out of a tunnel. Signal Delay, a documentary excerpt. And an <a href="/examples/octopus/">earlier animated octopus showcase</a>. Open any film to watch with sound and full screen. Each page explains the treatment and how it relates to the current offer.</p>
     </div>
     <div class="films-row">
       <a class="poster" href="/examples/tether/">
@@ -370,7 +376,7 @@ codex mcp login kleo" aria-label="Copy Codex connection instructions">Copy comma
       <li><b>Treatment</b><span>Your brief becomes a logline, an angle, an opening, acts and an ending — shown to you before a frame is made.</span></li>
       <li><b>Storyboard</b><span>Direction, scenes and shots, written under that treatment; the exact credits are stated before anything is charged.</span></li>
       <li><b>Footage</b><span>In a film, every shot generated as moving footage from its own frame, in the realistic or animation look. In an animatic, the same drawn frames with the camera moving over each — no generated clip.</span></li>
-      <li><b>Narration</b><span>One narrator, in English or Italian, carries the film. No music, no captions, no on-screen text.</span></li>
+      <li><b>Narration</b><span>One narrator, in English or Italian, carries the film. Confirm available music and caption options before approving the render. The <a href="/terms.html">current Terms</a> specify a small Kleo mark on exported videos.</span></li>
       <li><b>Finish</b><span>An MP4 at 4K 60 fps, 16:9 or 9:16, on a link your assistant hands you — good for 7 days.</span></li>
     </ul>
     <p class="style-say copyable">“Use Kleo to make a 60-second narrated film about how coffee travels from farm to cup. Realistic look, English
@@ -396,7 +402,7 @@ codex mcp login kleo" aria-label="Copy Codex connection instructions">Copy comma
           <li>The free plan is the account itself: connect once and you have 7 credits — no form, no card, nothing to cancel</li>
           <li>An animatic is 5 credits flat, 15–60 s: the same treatment, storyboard and drawn frames, the camera moving over each, the same narrator and graphic layer, 4K 60 fps, no generated clip. Also the preview of a film</li>
           <li>A film is priced by length: 1 credit = 2 seconds, from 10 credits (20 s = 10 · 30 s = 15 · 60 s = 30 · 90 s = 45 · 5 min = 150)</li>
-          <li>Free credits never buy a film: its clips are generated at Kleo’s expense, so a film is made only for accounts that have bought a pack. Add the €5 pack and you have 17 — the film opens, a 30-second Short</li>
+          <li>Films require a credit-pack purchase. The €5 pack adds 10 purchased credits, enough for a 20-second film. A 30-second film costs 15 credits. Check your usable film balance before rendering</li>
         </ul>
         <a class="btn btn-primary" href="/connect/">Connect and start</a>
       </div>
@@ -405,7 +411,7 @@ codex mcp login kleo" aria-label="Copy Codex connection instructions">Copy comma
         <div class="price">€5–40<small>one-off, no subscription</small></div>
         <ul>
           <li>€5 — 10 credits · €15 — 35 · €40 — 100</li>
-          <li>Any pack opens the film. €5 plus your starter credits = 17, a 30-second Short; €15 = 35 credits, a minute and ten seconds of film; €40 = 100 credits, three minutes twenty</li>
+          <li>Any pack unlocks film rendering. €5 adds 10 credits, €15 adds 35 and €40 adds 100. A 20-second film costs 10 credits; 30 seconds costs 15; 60 seconds costs 30. Approve the exact cost before the render starts</li>
           <li>Checkout through Stripe: ask your assistant for your account page and buy the pack from there</li>
         </ul>
         <a class="btn btn-ghost" href="/pricing/">Calculate the credits</a>
@@ -435,19 +441,19 @@ codex mcp login kleo" aria-label="Copy Codex connection instructions">Copy comma
         <ol>
           <li>Open <b>Settings → Connectors</b> and choose <b>Add custom connector</b>.</li>
           <li>Name it <b>Kleo</b>, paste the address above, and confirm. Kleo’s page opens: click <b>Start free</b> and you’re back in Claude.</li>
-          <li>In a new chat, turn on Kleo from the tools menu and ask: <i>Make me a 45-second Short about…</i></li>
+          <li>In a new chat, turn on Kleo and choose the <a href="#try-animatic">free animatic</a> or <a href="#create-film">film prompt</a>. Approve the treatment and cost before rendering.</li>
         </ol>
-        <p>The free Claude plan allows one custom connector.</p>
+        <p>Custom connector access and menus can vary by account and workspace.</p>
         <a class="more" href="/integrations/claude/">Full Claude guide <span class="arr" aria-hidden="true">→</span></a>
       </article>
       <article class="panel">
         <h3>ChatGPT <small>developer mode</small></h3>
         <ol>
-          <li>Open <b>Settings → Apps &amp; Connectors</b> (called <b>Connectors</b> in older versions), then <b>Advanced settings</b>, and turn on <b>Developer mode</b>.</li>
-          <li>Back in <b>Connectors</b>, choose <b>Create</b>: name it <b>Kleo</b>, paste the address, set authentication to <b>OAuth</b>, and save. Kleo’s page opens: click <b>Start free</b> and you’re back in ChatGPT.</li>
-          <li>In chat, turn on Kleo from the <b>+</b> menu and ask for the video. ChatGPT asks you to confirm before it starts a render.</li>
+          <li>In <b>Settings → Security and login</b>, enable <b>Developer mode</b>, if available for your account and workspace.</li>
+          <li>Open <b>Plugins → +</b>, name it <b>Kleo</b> and paste the server address. Review the tools and complete Kleo’s sign-in.</li>
+          <li>Start a new conversation, add Kleo to its tools and use the <a href="#try-animatic">animatic prompt</a> or <a href="#create-film">film prompt</a>. Review the treatment and cost before approving a render.</li>
         </ol>
-        <p>Requires ChatGPT Plus, Pro, Business, or Enterprise.</p>
+        <p>Access depends on your account and workspace. <a href="https://developers.openai.com/plugins/deploy/connect-chatgpt" target="_blank" rel="noopener">OpenAI setup guide ↗</a></p>
         <a class="more" href="/integrations/chatgpt/">Full ChatGPT guide <span class="arr" aria-hidden="true">→</span></a>
       </article>
     </div>
@@ -481,17 +487,13 @@ codex mcp login kleo" aria-label="Copy Codex connection instructions">Copy comma
         </details>
         <details>
           <summary>Is there a free plan?</summary>
-          <p>Yes: connecting is free and gives every new account 7 credits, with no sign-up and no card — enough for one
-            animatic at 5. Free credits never buy a film: a film costs at least 10 credits (1 credit = 2 seconds) and is made
-            only for accounts that have bought a pack, because its clips are generated at Kleo’s expense. Add the €5 pack of
-            10 credits and a new account has 17: the film opens, and a 30-second Short costs 15.</p>
+          <p>Yes. New accounts receive 7 starter credits, with no card required. One animatic costs 5, leaving 2. A film requires a credit-pack purchase: the €5 pack adds 10 purchased credits, enough for a 20-second film. After that animatic and pack, the total balance is 12, not enough for a 30-second film at 15 credits. Confirm your usable film balance and quote before rendering.</p>
         </details>
       </div>
       <div>
         <details>
           <summary>Does Kleo include narration, music and captions?</summary>
-          <p>One narrator, in English or Italian. No background music, no captions and no on-screen text in the film; add
-            those in your editor if your platform needs them.</p>
+          <p>Choose English or Italian narration. Ask your assistant which music and subtitle options are available, and confirm what will be included before approving the render. The <a href="/terms.html">current Terms</a> specify a small Kleo mark on the video.</p>
         </details>
         <details>
           <summary>Will Kleo publish to my channel automatically?</summary>

@@ -29,7 +29,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="/site.css?v=20260915">
+<link rel="stylesheet" href="/site.css?v=2026092401">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -100,14 +100,15 @@
       },
       "citation": [
         "https://kleooai.com/faq/",
-        "https://kleooai.com/pricing/"
+        "https://kleooai.com/pricing/",
+        "https://kleooai.com/terms.html"
       ]
     }
   ]
 }
 </script>
-<script src="/site.js?v=20260915" defer></script>
-<link rel="stylesheet" href="/guides/library.css">
+<script src="/site.js?v=2026092401" defer></script>
+<link rel="stylesheet" href="/guides/library.css?v=2026092401">
 </head>
 <body>
 <div class="progress" id="progress" aria-hidden="true"></div>
@@ -138,21 +139,49 @@
 <section class="page-hero hero"><div class="wrap">
 <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> <span aria-hidden="true">›</span> <a href="/guides/">Guides</a> <span aria-hidden="true">›</span> <a href="/guides/workflows/">Production workflows</a> <span aria-hidden="true">›</span> <span>Plan credits for a video project</span></nav>
 <h1>Plan credits for a video project</h1><p class="lede">Credit planning should include the intended product, duration and possible additional production steps. Use Kleo&#x27;s current pricing page and the quote shown before submission as the source of truth, especially if the project has changed since planning.</p>
-<p class="guide-meta">Kleo production guides · English · Editorial review 2026-09-23</p>
+<p class="guide-meta">Kleo production guides · English · Editorial review 2026-09-24</p>
 <div class="cta-row"><a class="btn btn-primary" href="/connect/">Connect Kleo</a><a class="btn btn-ghost" href="/pricing/">Check current pricing</a></div>
 </div></section>
 <section><div class="wrap"><article class="prose guide-body">
 <nav class="guide-toc" aria-label="On this page"><a href="#method">Method</a><a href="#brief">Example brief</a><a href="#review">Review checklist</a><a href="#sources">Sources and scope</a></nav>
+<nav class="guide-toc guide-toc-details" aria-label="Guide details"><a href="#render-cost">Calculate each render before choosing a pack</a><a href="#balance-eligibility">Keep total balance and film eligibility separate</a><a href="#budget-approval">Approve a specific job, not an open-ended allowance</a></nav>
+<section class="guide-detail" aria-labelledby="render-cost"><h2 id="render-cost">Calculate each render before choosing a pack</h2>
+<p>At the current tariff, a film costs one credit per two seconds, rounded up, with a minimum of 10 credits. In a spreadsheet, that is MAX(10, ROUNDUP(duration_seconds / 2, 0)). An animatic costs 5 credits at any supported length from 15 to 60 seconds. These calculations price a job; they do not buy credits or confirm account eligibility.</p>
+<p>Use the intended duration, not an earlier rough idea. Keep an optional new version on a separate budget line so discussing it cannot be confused with approving it.</p>
+<div class="guide-table-wrap" role="region" aria-label="Worked production budgets at the published credit tariff" tabindex="0"><table class="guide-table"><caption>Worked production budgets at the published credit tariff</caption><thead><tr><th scope="col">Planned jobs</th><th scope="col">Calculation</th><th scope="col">Total production credits</th></tr></thead><tbody>
+<tr><th scope="row">One 30-second animatic</th><td>One animatic at the flat rate</td><td>5</td></tr>
+<tr><th scope="row">One 20-second film</th><td>20 / 2; the minimum is 10</td><td>10</td></tr>
+<tr><th scope="row">One 30-second film</th><td>30 / 2</td><td>15</td></tr>
+<tr><th scope="row">One 60-second film</th><td>60 / 2</td><td>30</td></tr>
+<tr><th scope="row">One animatic, then one 30-second film</th><td>5 + 15; two separately approved jobs</td><td>20</td></tr>
+<tr><th scope="row">One 30-second film, plus an optional new 30-second render</th><td>15 approved + 15 only if separately approved</td><td>15 now; 30 if both are rendered</td></tr>
+</tbody></table></div><p class="guide-table-hint">Scroll the table sideways to compare all columns.</p>
+</section>
+<section class="guide-detail" aria-labelledby="balance-eligibility"><h2 id="balance-eligibility">Keep total balance and film eligibility separate</h2>
+<p>The €5 pack adds 10 purchased credits, €15 adds 35 and €40 adds 100. A €5 pack therefore provides the purchased credits for a 20-second film. A 30-second film costs 15 credits; do not treat an unused starter balance as a guarantee that the difference can be spent on film.</p>
+<p>The public Terms restrict how credits that were given rather than bought may be used. Before checkout, ask Kleo to confirm the usable film balance as well as whether the account has bought a pack. If the account’s answer and the Terms disagree, ask support to clarify before committing to the order.</p>
+<div class="guide-table-wrap" role="region" aria-label="The same €5 pack produces different total balances" tabindex="0"><table class="guide-table"><caption>The same €5 pack produces different total balances</caption><thead><tr><th scope="col">Starting situation</th><th scope="col">Total after the pack</th><th scope="col">What the total does not establish</th></tr></thead><tbody>
+<tr><th scope="row">All 7 starter credits remain</th><td>7 starter + 10 purchased = 17</td><td>It does not prove that all 17 are eligible for a film.</td></tr>
+<tr><th scope="row">One 5-credit starter animatic has been used</th><td>2 starter + 10 purchased = 12</td><td>A 30-second film costs 15, exceeding even this total.</td></tr>
+<tr><th scope="row">No credits remain</th><td>0 + 10 purchased = 10</td><td>A new 20-second film uses the full purchased pack; another render needs its own budget.</td></tr>
+</tbody></table></div><p class="guide-table-hint">Scroll the table sideways to compare all columns.</p>
+</section>
+<section class="guide-detail" aria-labelledby="budget-approval"><h2 id="budget-approval">Approve a specific job, not an open-ended allowance</h2>
+<p>Terms states a full credit refund when a render fails or is cancelled before the machine starts; part-way cancellation returns the unspent portion. A completed render that you want to change is a different situation. The budget above does not assume an unlimited revision allowance or cash refund.</p>
+<p>Use the pricing calculator for the current per-render cost, and your account for the actual balance and checkout. This worksheet records a decision; it does not authorize a purchase or a render.</p>
+<ol><li>Record product, duration, look, language, aspect ratio and any requested options beside the quote. Make the treatment version identifiable before production starts.</li><li>Confirm the available balance and film eligibility, then approve only the named job and its exact cost. Keep any later render, editing expense or costs charged by your assistant outside that approval.</li><li>After the job, record its identifier, reported charge and result. If it fails or is cancelled, check the actual returned credits before replanning; do not spend an expected refund in advance.</li></ol>
+<ul><li><a href="/pricing/">Open the current pricing calculator</a></li><li><a href="/guides/treatment-approval/">Approve a treatment before production</a></li><li><a href="/guides/failed-render/">Check the facts after a failed job</a></li></ul>
+</section>
 <img class="guide-diagram" src="/guides/media/workflows.svg" width="1000" height="520" loading="lazy" alt="Planning sequence: Plan, then Approve, then Render, then Save.">
 <h2 id="method">A practical method</h2><ol><li>Choose the product and duration before comparing costs.</li><li>Keep story review separate from final production in the budget.</li><li>Reserve a decision point for any further render instead of assuming unlimited revisions.</li></ol>
 <h2 id="brief">An example brief to adapt</h2><p class="guide-meta">Written illustration of this method; not a report of a rendered film or a customer result.</p>
-<div class="panel"><p class="style-say">Prepare a production estimate for one short animatic review and one final film. Use the current Kleo prices, list each job separately and state assumptions. Do not buy credits or start either job. Explain which part of the estimate must be reconfirmed before rendering.</p></div>
+<div class="panel"><p class="style-say">Prepare a Kleo estimate for one 30-second animatic and one 30-second film. List the two jobs separately, confirm current prices, and distinguish my total balance from credits eligible for film. Show an optional second film render as unapproved, with its own cost. Tell me which assumptions need confirmation. Do not buy credits or start any render.</p><button class="btn btn-ghost btn-sm copy guide-prompt-copy" type="button" data-copy="Prepare a Kleo estimate for one 30-second animatic and one 30-second film. List the two jobs separately, confirm current prices, and distinguish my total balance from credits eligible for film. Show an optional second film render as unapproved, with its own cost. Tell me which assumptions need confirmation. Do not buy credits or start any render." aria-label="Copy the example brief">Copy the brief</button></div>
 <h2 id="review">Review before moving on</h2><ul><li>Are all planned jobs included?</li><li>Does the estimate match the current quote?</li><li>Are optional revisions distinguished from approved work?</li></ul>
 <p>Record a concrete observation beside each check: a line in the treatment, a source passage or a timestamp in the downloaded film. If you cannot inspect an item yet, leave it open. A request in a brief is an intention; the result is what must be reviewed.</p>
 <p><a href="/guides/worksheets/credit-planning.txt">Download this guide’s editable text worksheet</a></p>
 <h2>What to avoid</h2><p>A credit balance is not the same as an unrestricted production allowance. Confirm that the account and selected product meet the current requirements before promising delivery.</p>
-<h2 id="sources">Sources and scope</h2><p>The method and fictional brief are original editorial guidance for planning and review. They do not establish a measured performance gain or guarantee a particular render. Product statements follow Kleo’s public pages, checked on 2026-09-23; official platform guidance is linked where relevant.</p>
-<ul><li><a href="/faq/">Kleo FAQ</a> — Product capabilities and limitations; reconfirm before production.</li><li><a href="/pricing/">Kleo pricing</a> — Current starter offer, product conditions and quoted credit costs.</li></ul>
+<h2 id="sources">Sources and scope</h2><p>The method and fictional brief are original editorial guidance for planning and review. They do not establish a measured performance gain or guarantee a particular render. Product statements follow Kleo’s public pages, checked on 2026-09-24; official platform guidance is linked where relevant.</p>
+<ul><li><a href="/faq/">Kleo FAQ</a> — Product capabilities and limitations; reconfirm before production.</li><li><a href="/pricing/">Kleo pricing</a> — Current starter offer, product conditions and quoted credit costs.</li><li><a href="/terms.html">Kleo Terms</a> — Eligibility of purchased and starter credits, refund conditions and cancellation rules.</li></ul>
 <p><a href="/examples/">See the published Kleo examples</a> to inspect actual showcased work. Example films may reflect a different production setup; check the current offer for your own job.</p>
 <h2>Continue your production plan</h2><ul><li><a href="/guides/longer-explainer/">Plan a longer explainer in clear chapters</a></li><li><a href="/guides/short-from-long/">Adapt a longer idea into a short film</a></li><li><a href="/guides/brief-compliance/">Check a rendered film against its approved brief</a></li><li><a href="/guides/workflows/">Production workflows — all guides</a></li></ul>
 </article></div></section>

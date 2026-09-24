@@ -3,10 +3,14 @@
 Edit editorial/*.txt, then run this script and tools/sitemap.py. Does not touch DNS or the MCP service.
 """
 from pathlib import Path
-import html,json,re,csv
+import argparse,html,json,re,csv
 ROOT=Path(__file__).resolve().parent.parent
 BASE='https://kleooai.com'
 REVIEWED='2026-09-23'
+parser=argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--guides-only',action='store_true',help='Regenerate the library without rewriting existing site footers or the YouTube guide entrance.')
+args=parser.parse_args()
+ENRICHMENTS=json.loads((ROOT/'editorial/guide-enrichments.json').read_text())
 e=lambda v:html.escape(str(v),quote=True)
 GROUPS={
  'briefs':('Video briefs','Turn an idea into an approved production brief.','A useful brief gives the production conversation a decision to make. Start with the viewer, the question and the intended ending. The guides here cover different inputs to that decision: factual evidence, visual references, client requirements and revision history. Use the downloadable worksheet on each guide to record your own choices. These are editorial methods, not promises that a prompt will control every generated detail.','Audience','Question','Treatment','Approval'),
@@ -33,9 +37,10 @@ footer=re.search(r'<footer.*?</footer>',source,re.S).group()
 if 'href="/guides/"' not in footer:
  footer=footer.replace('<a href="/faq/">FAQ</a>','<a href="/faq/">FAQ</a>\n      <a href="/guides/">Guides</a>')
 assert 'href="/guides/"' in footer
-for p in ROOT.rglob('*.html'):
- if '.git' in p.parts:continue
- t=p.read_text(); t=re.sub(r'<footer.*?</footer>',lambda _:footer,t,flags=re.S);p.write_text(t)
+if not args.guides_only:
+ for p in ROOT.rglob('*.html'):
+  if '.git' in p.parts:continue
+  t=p.read_text(); t=re.sub(r'<footer.*?</footer>',lambda _:footer,t,flags=re.S);p.write_text(t)
 articles=[]
 for group in GROUPS:
  for line in (ROOT/'editorial'/f'{group}.txt').read_text().splitlines():
@@ -45,10 +50,12 @@ for group in GROUPS:
   articles.append(dict(group=group,slug=slug,title=title,answer=answer,steps=steps.split('~'),example=example,checks=checks.split('~'),pitfall=pitfall,route=f'/guides/{slug}/'))
 assert len(articles)==81
 assert len({a['slug'] for a in articles})==81
+assert set(ENRICHMENTS)<=set(a['slug'] for a in articles),'Enrichment refers to an unknown guide'
 routes={}
 manifest=[]
 css='''/* Scoped additions for the production guide library; existing pages retain their layout. */
 .guide-body{max-width:78ch;margin-inline:auto}.guide-body h2{font-size:clamp(1.65rem,3vw,2.2rem);margin:44px 0 18px}.guide-body h2:first-child{margin-top:0}.guide-body .panel{margin:24px 0}.guide-body li{margin-bottom:12px}.guide-body .style-say{font-size:1rem;line-height:1.75}.guide-diagram{display:block;width:100%;height:auto;border-radius:18px;margin:26px 0}.guide-meta{color:var(--mute);font-size:.875rem;margin-top:18px}.guide-toc{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:22px}.guide-toc a,.guide-body a{text-decoration:underline;text-underline-offset:3px}.guide-body a:hover{color:var(--amber)}.guide-body .btn{text-decoration:none}.guide-cards .panel h2{font-size:1.35rem}.guide-cards .panel p{line-height:1.65}.guide-body pre{white-space:pre-wrap;overflow-wrap:anywhere}.guide-body ul{padding-left:24px}@media(max-width:600px){.guide-body .panel{padding:20px 18px}.guide-toc{display:grid;gap:12px}.guide-diagram{border-radius:12px}}
+.guide-body .guide-detail{padding:0;margin:40px 0;border:0}.guide-body h2[id]{scroll-margin-top:110px}.guide-table-hint{display:none}.guide-table-wrap{max-width:100%;margin:24px 0;overflow-x:auto;border:1px solid var(--line);border-radius:14px}.guide-table-wrap:focus-visible{outline:2px solid var(--amber);outline-offset:3px}.guide-table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:.9rem;line-height:1.6}.guide-table caption{text-align:left;padding:16px 18px;color:var(--ink);font-weight:600}.guide-table th,.guide-table td{text-align:left;vertical-align:top;padding:15px 16px;border-top:1px solid var(--line);overflow-wrap:anywhere}.guide-table thead th{background:var(--bg-2);color:var(--ink);font-weight:600}.guide-table tbody th{font-weight:500;color:var(--ink)}.guide-table td{color:var(--ink-2)}.guide-questions h3{font-size:1.1rem;margin:24px 0 10px}.guide-prompt-copy{position:static;margin-top:14px}.guide-toc-details{padding-bottom:16px;border-bottom:1px solid var(--line)}@media(max-width:600px){.guide-body .guide-table-hint{display:block;color:var(--mute);font-size:.8rem}.guide-table{font-size:.8rem;min-width:560px}.guide-table th,.guide-table td{padding:12px}.guide-table caption{padding:12px}.guide-table-wrap{border-radius:10px}.guide-prompt-copy{max-width:100%;white-space:normal}}
 '''
 (ROOT/'guides').mkdir(exist_ok=True)
 (ROOT/'guides/library.css').write_text(css)
@@ -62,7 +69,35 @@ for g,data in GROUPS.items():
   parts += [f'<rect x="{x}" y="{y}" width="436" height="154" rx="20" fill="#1b222c" stroke="#3e4857"/>',f'<text x="{x+26}" y="{y+48}" fill="#ffc277" font-family="monospace" font-size="25">0{i+1}</text>',f'<text x="{x+26}" y="{y+103}" fill="#f4f1eb" font-family="sans-serif" font-size="32">{e(label)}</text>']
  parts.append('</svg>');(ROOT/f'guides/media/{g}.svg').write_text('\n'.join(parts))
 def link(route,label):return f'<a href="{e(route)}">{e(label)}</a>'
-def page(route,title,desc,answer,body,crumbs,extra=None):
+def enrichment_html(data):
+ parts=[]
+ for s in data.get('sections',[]):
+  parts.append(f'<section class="guide-detail" aria-labelledby="{e(s["id"])}"><h2 id="{e(s["id"])}">{e(s["title"])}</h2>')
+  parts.extend('<p>'+e(p)+'</p>' for p in s.get('paragraphs',[]))
+  if 'table' in s:
+   t=s['table'];assert all(len(row)==len(t['headers']) for row in t['rows']),s['id']
+   parts.append(f'<div class="guide-table-wrap" role="region" aria-label="{e(t["caption"])}" tabindex="0"><table class="guide-table"><caption>{e(t["caption"])}</caption><thead><tr>'+''.join('<th scope="col">'+e(h)+'</th>' for h in t['headers'])+'</tr></thead><tbody>')
+   for row in t['rows']:
+    parts.append('<tr><th scope="row">'+e(row[0])+'</th>'+''.join('<td>'+e(v)+'</td>' for v in row[1:])+'</tr>')
+   parts.append('</tbody></table></div><p class="guide-table-hint">Scroll the table sideways to compare all columns.</p>')
+  if s.get('steps'):parts.append('<ol>'+''.join('<li>'+e(p)+'</li>' for p in s['steps'])+'</ol>')
+  if s.get('questions'):
+   parts.append('<div class="guide-questions">'+''.join('<h3>'+e(q)+'</h3><p>'+e(a)+'</p>' for q,a in s['questions'])+'</div>')
+  if s.get('links'):parts.append('<ul>'+''.join('<li>'+link(u,l)+'</li>' for u,l in s['links'])+'</ul>')
+  parts.append('</section>')
+ return '\n'.join(parts)
+def enrichment_text(data):
+ parts=[]
+ for s in data.get('sections',[]):
+  parts.extend([s['title'].upper(),*s.get('paragraphs',[])])
+  if 'table' in s:
+   t=s['table'];parts.append(t['caption'])
+   for row in t['rows']:parts.append('\n'.join(h+': '+v for h,v in zip(t['headers'],row)))
+  parts.extend(f'{i+1}. {step}' for i,step in enumerate(s.get('steps',[])))
+  parts.extend(q+'\n'+a for q,a in s.get('questions',[]))
+  parts.extend(label+': '+(BASE+url if url.startswith('/') else url) for url,label in s.get('links',[]))
+ return '\n\n'.join(parts)
+def page(route,title,desc,answer,body,crumbs,extra=None,reviewed=REVIEWED):
  title=title+' | Kleo';desc=desc if len(desc)<=165 else desc[:162].rsplit(' ',1)[0]+'.'
  h=re.sub(r'<title>.*?</title>',f'<title>{e(title)}</title>',head,flags=re.S)
  for attr,key,val in [('name','description',desc),('property','og:title',title),('property','og:description',desc),('property','og:url',BASE+route),('name','twitter:title',title),('name','twitter:description',desc)]:
@@ -81,7 +116,7 @@ def page(route,title,desc,answer,body,crumbs,extra=None):
 <section class="page-hero hero"><div class="wrap">
 <nav class="crumbs" aria-label="Breadcrumb">{crumb}</nav>
 <h1>{e(title[:-7])}</h1><p class="lede">{e(answer)}</p>
-<p class="guide-meta">Kleo production guides · English · Editorial review {REVIEWED}</p>
+<p class="guide-meta">Kleo production guides · English · Editorial review {reviewed}</p>
 <div class="cta-row"><a class="btn btn-primary" href="/connect/">Connect Kleo</a><a class="btn btn-ghost" href="/pricing/">Check current pricing</a></div>
 </div></section>
 {body}
@@ -89,13 +124,22 @@ def page(route,title,desc,answer,body,crumbs,extra=None):
 {footer}
 <div class="toast" id="toast" role="status" aria-live="polite">Copied</div>
 </body></html>'''
- path=route.strip('/')+'/index.html';p=ROOT/path;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(out)
+ path=route.strip('/')+'/index.html';p=ROOT/path;p.parent.mkdir(parents=True,exist_ok=True)
+ # Preserve unchanged pages when the only difference is a shared asset cache version.
+ # Their content date must not jump merely because a different guide was reviewed.
+ if p.exists():
+  old=p.read_text()
+  without_asset_versions=lambda text:re.sub(r'(/(?:site\.(?:css|js)|guides/library\.css))(?:\?v=\d+)?',r'\1',text)
+  if without_asset_versions(old)==without_asset_versions(out):out=old
+ p.write_text(out)
  routes[route]=path
  manifest.append({'route':route,'title':title,'description':desc,'file':path})
 def cards(items):
  return '<div class="grid panels guide-cards">'+''.join(f'<article class="panel"><h2>{link(a[0],a[1])}</h2><p>{e(a[2])}</p></article>' for a in items)+'</div>'
 for a in articles:
  g=a['group'];group=GROUPS[g];r=a['route'];slug=a['slug']
+ enrichment=ENRICHMENTS.get(slug,{})
+ reviewed=enrichment.get('reviewed',REVIEWED)
  siblings=[x for x in articles if x['group']==g];idx=siblings.index(a)
  related=[siblings[(idx+1)%len(siblings)],siblings[(idx+2)%len(siblings)]]
  # Add a meaningful cross-stage link in addition to the adjacent subject guides.
@@ -104,25 +148,31 @@ for a in articles:
  if candidate!=a and candidate not in related:related.append(candidate)
  refs=[('Kleo FAQ','/faq/','Product capabilities and limitations; reconfirm before production.'),('Kleo pricing','/pricing/','Current starter offer, product conditions and quoted credit costs.')]
  refs+=EXTERNAL.get(slug,[])
+ refs+=enrichment.get('sources',[])
  worksheet=f'KLEO PRODUCTION WORKSHEET\n{a["title"]}\nGuide: {BASE+r}\n\nProject:\nVersion:\nReviewer:\n\nDECISIONS\n'+''.join(f'{i+1}. {s}\nYour decision:\n\n' for i,s in enumerate(a['steps']))+'REVIEW\n'+''.join(f'[ ] {s}\nEvidence / timestamp:\n\n' for s in a['checks'])+'PITFALL\n'+a['pitfall']+'\n\nThis worksheet is a planning aid, not a rendered example or automated verification.\n'
+ if enrichment:
+  worksheet+='\nPROJECT RECORD\n'+''.join(field+'\n\n' for field in enrichment.get('worksheet_fields',[]))+'EXAMPLE BRIEF — ADAPT BEFORE USE\n'+a['example']+'\n\nREFERENCE NOTES\n'+enrichment_text(enrichment)+'\n\nSOURCES\n'+''.join(label+': '+(BASE+url if url.startswith('/') else url)+'\n' for label,url,_ in refs)
  (ROOT/f'guides/worksheets/{slug}.txt').write_text(worksheet)
+ detail_toc='<nav class="guide-toc guide-toc-details" aria-label="Guide details">'+''.join(link('#'+s['id'],s['title']) for s in enrichment.get('sections',[]))+'</nav>' if enrichment else ''
+ detail_content=detail_toc+'\n'+enrichment_html(enrichment)+'\n' if enrichment else ''
+ prompt_copy=f'<button class="btn btn-ghost btn-sm copy guide-prompt-copy" type="button" data-copy="{e(a["example"])}" aria-label="Copy the example brief">Copy the brief</button>' if enrichment else ''
  body=f'''<section><div class="wrap"><article class="prose guide-body">
 <nav class="guide-toc" aria-label="On this page"><a href="#method">Method</a><a href="#brief">Example brief</a><a href="#review">Review checklist</a><a href="#sources">Sources and scope</a></nav>
-<img class="guide-diagram" src="/guides/media/{g}.svg" width="1000" height="520" loading="lazy" alt="Planning sequence: {e(', then '.join(group[3:]))}.">
+{detail_content}<img class="guide-diagram" src="/guides/media/{g}.svg" width="1000" height="520" loading="lazy" alt="Planning sequence: {e(', then '.join(group[3:]))}.">
 <h2 id="method">A practical method</h2><ol>{''.join('<li>'+e(s)+'</li>' for s in a['steps'])}</ol>
 <h2 id="brief">An example brief to adapt</h2><p class="guide-meta">Written illustration of this method; not a report of a rendered film or a customer result.</p>
-<div class="panel"><p class="style-say">{e(a['example'])}</p></div>
+<div class="panel"><p class="style-say">{e(a['example'])}</p>{prompt_copy}</div>
 <h2 id="review">Review before moving on</h2><ul>{''.join('<li>'+e(s)+'</li>' for s in a['checks'])}</ul>
 <p>Record a concrete observation beside each check: a line in the treatment, a source passage or a timestamp in the downloaded film. If you cannot inspect an item yet, leave it open. A request in a brief is an intention; the result is what must be reviewed.</p>
 <p>{link('/guides/worksheets/'+slug+'.txt','Download this guide’s editable text worksheet')}</p>
 <h2>What to avoid</h2><p>{e(a['pitfall'])}</p>
-<h2 id="sources">Sources and scope</h2><p>The method and fictional brief are original editorial guidance for planning and review. They do not establish a measured performance gain or guarantee a particular render. Product statements follow Kleo’s public pages, checked on {REVIEWED}; official platform guidance is linked where relevant.</p>
+<h2 id="sources">Sources and scope</h2><p>The method and fictional brief are original editorial guidance for planning and review. They do not establish a measured performance gain or guarantee a particular render. Product statements follow Kleo’s public pages, checked on {reviewed}; official platform guidance is linked where relevant.</p>
 <ul>{''.join('<li>'+link(url,label)+' — '+e(scope)+'</li>' for label,url,scope in refs)}</ul>
 <p>{link('/examples/','See the published Kleo examples')} to inspect actual showcased work. Example films may reflect a different production setup; check the current offer for your own job.</p>
 <h2>Continue your production plan</h2><ul>{''.join('<li>'+link(x['route'],x['title'])+'</li>' for x in related)}<li>{link('/guides/'+g+'/',group[0]+' — all guides')}</li></ul>
 </article></div></section>'''
  extra=[{'@type':'Article','@id':BASE+r+'#article','headline':a['title'],'mainEntityOfPage':{'@id':BASE+r+'#page'},'inLanguage':'en','author':{'@type':'Organization','name':'Kleo AI','url':BASE+'/about/'},'publisher':{'@type':'Organization','name':'Kleo AI','url':BASE+'/'},'citation':[BASE+u if u.startswith('/') else u for _,u,_ in refs]}]
- page(r,a['title'],a['title']+'. A practical Kleo guide with an example brief, clear steps and an editable review worksheet.',a['answer'],body,[('Home','/'),('Guides','/guides/'),(group[0],'/guides/'+g+'/'),(a['title'],r)],extra)
+ page(r,a['title'],a['title']+'. A practical Kleo guide with an example brief, clear steps and an editable review worksheet.',a['answer'],body,[('Home','/'),('Guides','/guides/'),(group[0],'/guides/'+g+'/'),(a['title'],r)],extra,reviewed)
 for g,data in GROUPS.items():
  members=[a for a in articles if a['group']==g];r='/guides/'+g+'/'
  content=f'<section><div class="wrap"><div class="prose guide-body"><h2>Choose the decision you need to make</h2><p>{e(data[2])}</p><img class="guide-diagram" src="/guides/media/{g}.svg" width="1000" height="520" alt="{e(", then ".join(data[3:]))}." loading="lazy"></div>'+cards([(a['route'],a['title'],a['answer']) for a in members])+f'<div class="prose guide-body"><h2>Move through the production</h2><p>{link("/guides/","Browse all production topics")} or {link("/ai-youtube-video-generator/","read the complete Kleo workflow")}. Choose guides by the decision at hand, then keep your approved choices with the project.</p></div></div></section>'
@@ -136,9 +186,10 @@ p=ROOT/'ai-youtube-video-generator/index.html';t=p.read_text()
 block='''<!-- KLEO_GUIDE_ENTRANCE_START -->
 <section id="production-guides"><div class="wrap"><div class="sec-head one"><h2>Plan the details of your film.</h2></div><div class="prose"><p>Use the <a href="/guides/">production guide library</a> for practical briefs, story structure, narration and quality review. Start with <a href="/guides/free-ai-video-generator/">what the free starter offer includes</a>, or <a href="/guides/treatment-approval/">how to approve a treatment</a> before rendering.</p></div></div></section>
 <!-- KLEO_GUIDE_ENTRANCE_END -->'''
-if '<!-- KLEO_GUIDE_ENTRANCE_START -->' in t:t=re.sub(r'<!-- KLEO_GUIDE_ENTRANCE_START -->.*?<!-- KLEO_GUIDE_ENTRANCE_END -->',lambda _:block,t,flags=re.S)
-else:t=t.replace('</main>',block+'\n</main>')
-p.write_text(t)
+if not args.guides_only:
+ if '<!-- KLEO_GUIDE_ENTRANCE_START -->' in t:t=re.sub(r'<!-- KLEO_GUIDE_ENTRANCE_START -->.*?<!-- KLEO_GUIDE_ENTRANCE_END -->',lambda _:block,t,flags=re.S)
+ else:t=t.replace('</main>',block+'\n</main>')
+ p.write_text(t)
 (ROOT/'editorial/routes.json').write_text(json.dumps(routes,indent=2)+'\n')
 (ROOT/'editorial/manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
 with (ROOT/'editorial/page-inventory.csv').open('w') as f:

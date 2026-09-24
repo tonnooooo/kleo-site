@@ -29,7 +29,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="/site.css?v=20260915">
+<link rel="stylesheet" href="/site.css?v=2026092401">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -72,7 +72,7 @@
   ]
 }
 </script>
-<script src="/site.js?v=20260915" defer></script>
+<script src="/site.js?v=2026092401" defer></script>
 </head>
 <body>
 <div class="progress" id="progress" aria-hidden="true"></div>
@@ -136,11 +136,7 @@
         </details>
         <details>
           <summary>Which looks can I choose?</summary>
-          <p>Two: realistic, generated live-action footage with a cinematic feel, and animation, a 2D animated film. The look is
-            part of your request; if you leave it open, your assistant asks before the treatment is written, and the treatment
-            then fixes it. Both looks cost the same credits and render at the same resolution. The two film pages on the site are
-            realistic; the animation look has its own sample, an octopus Short.
-            <a href="/examples/octopus/">Watch the animation sample →</a></p>
+          <p>Two: realistic, generated live-action footage with a cinematic feel, and animation, a 2D animated look. Both cost the same credits for a given length. The gallery contains four showcases: Tether, Apex, the opening of Signal Delay and an octopus Short. The dated octopus sample uses drawn frames with camera movement, like today’s animatic; today’s animation film generates moving clips. <a href="/examples/">Explore the films and their notes →</a></p>
         </details>
         <details>
           <summary>How long can a video be?</summary>
@@ -157,8 +153,7 @@
         </details>
         <details>
           <summary>Does Kleo include narration, music and captions?</summary>
-          <p>One narrator, with a male or a female voice, in English or Italian. No background music, no captions or subtitles,
-            and no on-screen text in the film. If your channel needs those, add them in your own editor after the download.</p>
+          <p>One narrator, in English or Italian. Before approving the render, ask your assistant which music and subtitle options are available and confirm what will be included. The current <a href="/terms.html">Terms</a> specify a small Kleo mark on the video. Review the output conditions before purchasing.</p>
         </details>
         <details>
           <summary>Do I need an editing timeline?</summary>
@@ -184,18 +179,11 @@
       <div>
         <details>
           <summary>Is there a free plan?</summary>
-          <p>Yes, and it is included for everyone: connecting is free and gives every new account 7 credits, with no form and
-            no card — one animatic, at 5, with 2 left. Free credits never buy a film: a film costs at least 10 credits and is
-            made only for accounts that have bought a pack. Add the €5 pack of 10 credits and a new account has 17: the film
-            opens, and a 30-second Short costs 15.</p>
+          <p>Yes. A new account receives 7 starter credits with no card required. One animatic costs 5, leaving 2. A generated-footage film requires a purchased credit pack and enough eligible credits for its duration. A €5 pack adds 10 purchased credits, the cost of a 20-second film. A 30-second film costs 15. Check your usable film balance before approving a render.</p>
         </details>
         <details>
           <summary>Who can order a film, and who an animatic?</summary>
-          <p>Every account can order animatics. A film is made only for accounts that have bought a credit pack — any pack, from
-            €5 — because its clips are generated at Kleo’s expense: free or gifted credits never buy one. Your assistant sees
-            this in <code class="mono">kleo_account</code> (<code class="mono">has_paid</code>) and chooses the product in
-            <code class="mono">kleo_create_video</code> (<code class="mono">product: "film"</code> or
-            <code class="mono">"animatic"</code>).</p>
+          <p>Every account with enough credits can order an animatic. Film rendering also requires at least one credit-pack purchase. Ask your assistant to check your eligibility, usable balance and the exact cost before you approve a render. Packs start at €5 and are one-off purchases.</p>
         </details>
         <details>
           <summary>How are credits calculated?</summary>
@@ -223,8 +211,11 @@
         </details>
         <details>
           <summary>Who owns the video?</summary>
-          <p>You do. Publish it, monetize it, edit it. Kleo keeps the file for 7 days so you can download it, then deletes
-            it.</p>
+          <p>Kleo’s <a href="/terms.html">Terms</a> say the video is yours to publish, monetize and edit. They also require permission before reselling Kleo’s output as your own service. If you plan to deliver videos to paying clients, describe your intended use to <a href="mailto:kleooai@gmail.com">kleooai@gmail.com</a> before committing to the work. Download the MP4 within 7 days and keep your own copy.</p>
+        </details>
+        <details>
+          <summary>How long does Kleo keep my data?</summary>
+          <p>Finished MP4 files are deleted after 7 days. Account records, prompts, storyboards, render costs and activity logs are kept until you request deletion, as described in <a href="/privacy.html">Privacy</a>. The assistant’s permission to connect lasts until you remove Kleo from that assistant. To request a copy, correction or deletion, email <a href="mailto:kleooai@gmail.com">kleooai@gmail.com</a> with your account number. Never send your private Kleo key.</p>
         </details>
         <details>
           <summary>Can I use my own voice, logo or clips?</summary>
@@ -280,8 +271,7 @@
             the assistant leaves it to it). In a film, the footage of every shot is generated by kie.ai’s video models from
             Kleo’s frames and prompts; an animatic orders no clip — its frames are Kleo’s own, with the camera moving over them.
             An open neural voice narrates in English or Italian; Kleo’s own engine cuts and renders the film on a GPU rented
-            for the job. Kleo never trains anything on your prompts or your files, and keeps them only as long
-            as the video — see the <a href="/privacy.html">privacy page</a>.</p>
+            for the job. Finished MP4 files are deleted after 7 days. Prompts, storyboards and account activity records are kept until you ask for deletion. The connected assistant and production providers process requests under their own policies; see <a href="/privacy.html">Privacy</a> for the full details.</p>
         </details>
       </div>
     </div>
@@ -301,11 +291,7 @@
       <div>
         <details>
           <summary>Which assistants work with Kleo?</summary>
-          <p>Eight clients have tested, step-by-step connection guides: Claude (app and web), ChatGPT, Grok, Claude Code, Cursor,
-            VS Code, OpenCode and Gemini CLI. Windsurf and the Gemini app accept the same address, and so does any MCP client that
-            supports Streamable HTTP with OAuth. Some clients need a paid plan for custom connectors: ChatGPT requires Plus, Pro,
-            Business or Enterprise, the Gemini app Google AI Pro or Ultra; Claude’s free plan allows one custom connector.
-            <a href="/connect/">See the connection steps →</a></p>
+          <p>Kleo connects through remote MCP with Streamable HTTP and OAuth. The connection guide covers assistants and developer tools including Claude, ChatGPT, Codex, Claude Code, Cursor and OpenCode. Custom connector access depends on the client, account and workspace. Follow the current setup instructions and confirm that Kleo’s tools are available before planning a render. <a href="/connect/">See the connection steps →</a></p>
         </details>
       </div>
       <div>

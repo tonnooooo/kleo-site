@@ -30,3 +30,71 @@ PITFALL
 The word free should describe the actual offer. Do not expect generated moving clips, unlimited retries or a paid film to be included simply because connecting costs nothing.
 
 This worksheet is a planning aid, not a rendered example or automated verification.
+
+PROJECT RECORD
+Assistant and access requirements checked:
+
+Selected product:
+
+Current balance:
+
+Quoted job cost:
+
+What I want to learn from this first result:
+
+Approved treatment version:
+
+Download deadline:
+
+EXAMPLE BRIEF — ADAPT BEFORE USE
+Use Kleo to plan a 30-second animatic about a paper boat returning to its maker. Animation look, English narration, 9:16. Show me the treatment, confirm that the product is an animatic, and check the exact credit cost against my available balance. Ask me about any remaining options. Wait for my approval before rendering. Do not start a paid film or buy credits.
+
+REFERENCE NOTES
+WHAT IS ACTUALLY FREE?
+
+The useful starting question is what you can finish without buying a Kleo credit pack. A new account receives 7 starter credits. One animatic costs 5, leaving 2 if nothing else has been spent. An animatic is a narrated sequence of drawn frames with camera movement; it is not a film made from generated moving clips.
+
+Connecting Kleo and paying for an assistant are separate decisions. A compatible assistant may have its own plan, workspace permissions or usage limits. Check those before choosing a workflow.
+
+The free starting offer and its boundaries
+
+What you want: Connect Kleo
+What the starting offer covers: Kleo does not charge a connection fee. Your assistant’s access conditions still apply.
+
+What you want: Try one story preview
+What the starting offer covers: One 15–60-second animatic at 5 credits, covered by an unused 7-credit starter balance.
+
+What you want: Generate moving footage
+What the starting offer covers: A film requires a credit-pack purchase and enough eligible credits for its quoted length.
+
+What you want: Render another version
+What the starting offer covers: A separate accepted render has its own cost. The starter offer does not include unlimited retries.
+
+What you want: Publish the result
+What the starting offer covers: Review, download and upload it yourself. Kleo does not post to your channel.
+
+CHOOSE THE FIRST RESULT YOU NEED
+
+Choose an animatic when the next decision is about your story: whether the opening is understandable, whether the scene order makes sense, or whether the narration is clear. Choose a film when generated motion is essential to the deliverable. A preview can help you approve the story, but it cannot prove how a later motion clip will behave.
+
+For a paid first film, the €5 pack contains 10 purchased credits, the cost of a 20-second film. A 30-second film costs 15 credits. Do not assume starter credits make up the difference: check the credits eligible for the film against the published Terms before buying or rendering.
+
+Make a deliberate first animatic: https://kleooai.com/guides/free-animatic-maker/
+
+Compare an animatic with a film: https://kleooai.com/guides/free-vs-paid-video/
+
+Plan the full credit budget: https://kleooai.com/guides/credit-planning/
+
+BEFORE YOU START
+
+Is a free animatic the same as a free AI film?
+No. Both are video files, but their pictures move differently. An animatic moves a camera over drawn frames; the film generates moving footage. Kleo’s starter credits cover the former, while the latter requires a pack purchase.
+
+Can I keep the result?
+Download and save the MP4 within 7 days. Inspect it before publishing and read the Terms for the Kleo mark and permitted uses. A download link is temporary storage, not a permanent archive.
+
+SOURCES
+Kleo FAQ: https://kleooai.com/faq/
+Kleo pricing: https://kleooai.com/pricing/
+Kleo Terms: https://kleooai.com/terms.html
+Kleo connection guide: https://kleooai.com/connect/
