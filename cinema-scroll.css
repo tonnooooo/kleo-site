@@ -7,7 +7,7 @@
 .kleo-home.ambience-paused .cinema-ribbon path,.kleo-home.page-inactive .cinema-ribbon path{animation-play-state:paused!important}
 @keyframes cinema-sweep{0%{transform:translate3d(-5%,-50px,0) rotate(-8deg) scaleY(.8)}50%{transform:translate3d(1%,10px,0) rotate(1deg) scaleY(1.08)}100%{transform:translate3d(5%,75px,0) rotate(8deg) scaleY(.92)}}
 @keyframes cinema-trace{to{stroke-dashoffset:-924}}
-.film-stage{position:relative;height:155vh;min-height:1000px;padding:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:radial-gradient(ellipse at 50% 45%,var(--amber-soft),transparent 65%),var(--bg);isolation:isolate}
+.film-stage{position:relative;height:130vh;min-height:800px;padding:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:radial-gradient(ellipse at 50% 45%,var(--amber-soft),transparent 65%),var(--bg);isolation:isolate}
 .film-sticky{position:sticky;top:0;height:100svh;min-height:620px;max-height:1100px;overflow:hidden}
 .film-stage-copy{position:absolute;top:100px;left:0;right:0;z-index:1;pointer-events:none;text-align:center}
 .film-stage-copy h2{font-size:clamp(2rem,4vw,4rem);line-height:1.04;letter-spacing:-.045em;margin:15px 0}
@@ -25,7 +25,7 @@
 .no-js .film-sticky{position:relative;height:800px;min-height:0}
 @media(max-width:600px){
  .kleo-home .cinema-ribbon{opacity:.28}.kleo-home .ribbon-two{opacity:.18}
- .film-stage{height:125svh;min-height:800px}
+ .film-stage{height:105svh;min-height:700px}
  .film-sticky{height:90svh;min-height:600px}
  .film-stage-copy{top:100px}.film-stage-copy p{font-size:.8rem;max-width:270px;margin:auto}
  .film-canvas{inset:245px -8% 55px}
@@ -38,3 +38,10 @@
  .film-canvas canvas{display:none}.film-fallback{display:block!important}
  .film-motion,.film-scroll-hint{display:none!important}
 }
+
+.film-fallback{object-fit:contain;padding:40px;opacity:1}
+@media(max-width:600px){.film-fallback{padding:20px}}
+
+/* Limit the drawing surface to the film row, rather than the whole section. */
+.film-canvas{inset:38% 0 auto;height:45%}
+@media(max-width:600px){.film-canvas{inset:40% -8% auto;height:45%}}
