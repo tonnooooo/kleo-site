@@ -1,0 +1,40 @@
+/* Homepage only. Keep connection controls and text flat, crisp, and usable. */
+.kleo-home .cinema-ribbon{stroke-width:1.4;opacity:.4;animation:cinema-sweep 8s ease-in-out infinite alternate;animation-play-state:paused;will-change:transform}
+.kleo-home .ribbon-two{opacity:.24;animation-duration:11s;animation-direction:alternate-reverse}
+.kleo-home .cinema-ribbon path{stroke-dasharray:180 24 3 24;animation:cinema-trace 9s linear infinite;animation-play-state:paused}
+.kleo-home .cinema-ribbon path+path{stroke-dasharray:none;opacity:.35;animation:none}
+.kleo-home .cinema-hero.is-in-view .cinema-ribbon,.kleo-home .cinema-hero.is-in-view .cinema-ribbon path{animation-play-state:running}
+.kleo-home.ambience-paused .cinema-ribbon path,.kleo-home.page-inactive .cinema-ribbon path{animation-play-state:paused!important}
+@keyframes cinema-sweep{0%{transform:translate3d(-5%,-50px,0) rotate(-8deg) scaleY(.8)}50%{transform:translate3d(1%,10px,0) rotate(1deg) scaleY(1.08)}100%{transform:translate3d(5%,75px,0) rotate(8deg) scaleY(.92)}}
+@keyframes cinema-trace{to{stroke-dashoffset:-924}}
+.film-stage{position:relative;height:155vh;min-height:1000px;padding:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:radial-gradient(ellipse at 50% 45%,var(--amber-soft),transparent 65%),var(--bg);isolation:isolate}
+.film-sticky{position:sticky;top:0;height:100svh;min-height:620px;max-height:1100px;overflow:hidden}
+.film-stage-copy{position:absolute;top:100px;left:0;right:0;z-index:1;pointer-events:none;text-align:center}
+.film-stage-copy h2{font-size:clamp(2rem,4vw,4rem);line-height:1.04;letter-spacing:-.045em;margin:15px 0}
+.film-stage-copy p{font-size:.95rem;color:var(--ink-2);margin:0}
+.film-canvas{position:absolute;inset:210px 0 40px;pointer-events:none}
+.film-canvas canvas{display:block;width:100%;height:100%;opacity:0;transition:opacity .6s}
+.film-fallback{position:absolute;inset:0;width:100%;height:100%;max-width:720px;margin:auto;opacity:.6}
+.film-stage[data-render=ready]:not(.motion-static) canvas{opacity:1}
+.film-stage[data-render=ready]:not(.motion-static) .film-fallback{display:none}
+.film-stage-bottom{position:absolute;bottom:24px;left:0;right:0;display:flex;align-items:center;justify-content:space-between;gap:16px;color:var(--mute);font:400 .65rem var(--font-mono);letter-spacing:.07em}
+.film-motion{display:none}
+.film-stage[data-render=ready] .film-motion{display:inline-flex}
+.film-scroll-hint span{display:inline-block;color:var(--amber);margin-left:12px}
+.no-js .film-stage{height:800px;min-height:0}
+.no-js .film-sticky{position:relative;height:800px;min-height:0}
+@media(max-width:600px){
+ .kleo-home .cinema-ribbon{opacity:.28}.kleo-home .ribbon-two{opacity:.18}
+ .film-stage{height:125svh;min-height:800px}
+ .film-sticky{height:90svh;min-height:600px}
+ .film-stage-copy{top:100px}.film-stage-copy p{font-size:.8rem;max-width:270px;margin:auto}
+ .film-canvas{inset:245px -8% 55px}
+ .film-stage-bottom{bottom:24px;flex-wrap:wrap;justify-content:center;gap:12px}
+ .film-caption{display:none}.film-scroll-hint{font-size:.55rem}
+}
+@media(prefers-reduced-motion:reduce){
+ .kleo-home .cinema-ribbon,.kleo-home .cinema-ribbon path{animation:none!important;will-change:auto}
+ .film-stage{height:800px;min-height:0}.film-sticky{position:relative;height:800px;min-height:0}
+ .film-canvas canvas{display:none}.film-fallback{display:block!important}
+ .film-motion,.film-scroll-hint{display:none!important}
+}

@@ -112,3 +112,9 @@ does not modify the engine, MCP worker, account system, Terms, Privacy or prices
 
 The homepage serves the original font families from `brand/fonts/` with their OFL licenses and source URLs,
 preloading its display and body faces. Inner pages retain their existing Google Fonts loading.
+
+## Homepage cinematic interlude
+
+`cinema-scroll.css` makes the existing amber curves more expressive. `cinema-scroll.js` lazily loads locally hosted Three.js 0.180.0 (`vendor/three/`, MIT) within 250 px of the decorative film stage, after Apex. No build step or CDN. The camera, reels and film strip are original procedural geometry, not a product render or new product capability.
+
+The scene rotates with ordinary page scroll, without scroll interception. Rendering is capped at 30 fps with pixel ratio capped at 1.25 on phones / 1.5 elsewhere. It pauses offscreen, in hidden tabs and via the synchronized ambience controls. Reduced motion and Save-Data skip the Three.js download; static inline SVG remains available without JavaScript, WebGL, or successful module loading. Reduced-motion preference changes are handled live. Keep all meaningful copy outside the decorative canvas.
