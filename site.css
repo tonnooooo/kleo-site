@@ -915,3 +915,21 @@ html:not(.no-js) .agent-panel:not([open]){display:none}
 .kleo-ad-feature{grid-template-columns:200px minmax(0,1fr);max-width:850px;margin:0 auto 40px;gap:40px}
 .kleo-ad-feature .poster{width:100%}
 @media(max-width:600px){.kleo-ad-feature{grid-template-columns:110px minmax(0,1fr);gap:20px}.kleo-ad-feature h2{font-size:1.5rem}.kleo-ad-feature .style-lead{font-size:.85rem}.kleo-ad-feature .play{left:6px;bottom:8px;padding:5px;font-size:.5rem;letter-spacing:0}.kleo-ad-feature .play i{width:18px;height:18px}.kleo-ad-feature .btn{font-size:.8rem;padding:10px 12px}}
+
+/* The brand film is a featured editorial moment, directly after connection. */
+.hero-film-link{display:inline-flex;align-items:center;gap:10px;margin:20px 0 4px;font-size:.88rem;color:var(--accent-text);text-underline-offset:5px}
+.hero-film-link:hover{text-decoration:underline}
+.ad-spotlight{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:64px;align-items:center;max-width:1040px;margin:44px auto 88px;padding:48px 56px;border:1px solid var(--line-2);border-radius:32px;background:radial-gradient(ellipse at 100% 40%,var(--amber-soft),transparent 65%),var(--bg-2);box-shadow:0 24px 80px #00000012;text-align:left;scroll-margin-top:100px}
+.ad-spotlight h2{font-size:clamp(2.3rem,4.5vw,4.3rem);line-height:1.02;letter-spacing:-.055em;margin:20px 0 24px}
+.ad-spotlight-lede{max-width:380px;color:var(--ink-2);font-size:1.05rem;line-height:1.65;margin:0 0 28px}
+.ad-watch{gap:12px;white-space:normal;text-align:center}
+.ad-spotlight-meta{font:400 .67rem var(--font-mono);color:var(--mute);margin:16px 0 34px}.ad-spotlight-meta span{padding:0 8px}
+.ad-spotlight-notes{display:grid;gap:14px;padding-top:24px;border-top:1px solid var(--line);font-size:.8rem;color:var(--ink-2)}
+.ad-spotlight-notes b{font:400 .63rem var(--font-mono);color:var(--accent-text);margin-right:16px}
+.ad-spotlight-screen{position:relative;display:block;min-width:0;border-radius:24px;box-shadow:0 24px 60px #00000035;isolation:isolate}
+.ad-spotlight-screen .style-media{border-radius:24px;max-width:none;aspect-ratio:9/16}
+.ad-spotlight-screen video{object-fit:contain}
+.ad-play-label{position:absolute;bottom:16px;left:14px;right:14px;display:flex;justify-content:space-between;align-items:center;gap:8px;padding:12px 14px;border:1px solid #ffffff30;border-radius:99px;background:#11151ddd;color:#fff;backdrop-filter:blur(12px);font:500 .7rem var(--font-body);transition:background .2s}
+.ad-spotlight-screen:hover .ad-play-label{background:#2c2519ee}
+@media(max-width:850px){.ad-spotlight{grid-template-columns:minmax(0,1fr) 260px;gap:30px;padding:32px}.ad-spotlight h2{font-size:2.8rem}}
+@media(max-width:600px){.ad-spotlight{grid-template-columns:minmax(0,1fr);gap:28px;padding:28px 22px;margin:32px 0 48px;border-radius:26px}.ad-spotlight h2{font-size:2.65rem;margin:14px 0 18px}.ad-spotlight .cinema-kicker{font-size:.58rem}.ad-spotlight-lede{font-size:.95rem;margin-bottom:20px}.ad-spotlight-meta{margin-bottom:0}.ad-spotlight-notes{display:none}.ad-spotlight-screen{width:min(100%,280px);justify-self:center}.hero-film-link{font-size:.8rem}}
