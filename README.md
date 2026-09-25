@@ -115,9 +115,9 @@ preloading its display and body faces. Inner pages retain their existing Google 
 
 ## Homepage cinematic interlude
 
-`cinema-scroll.css` makes the existing amber curves more expressive. `cinema-scroll.js` lazily loads locally hosted Three.js 0.180.0 (`vendor/three/`, MIT) within 250 px of the decorative film stage, after Apex. No build step or CDN. The scene is a moving storyboard with three existing film posters, subtle perspective and thin amber rails.
+`cinema-scroll.css` animates the amber curves. The film sequence now has three independent, clickable image planes. Three.js core Matrix4/Quaternion transforms place and rotate each plane; CSS perspective and the browser compositor draw them, with no WebGL render loop. A pinned section advances Signal Delay → Apex → Tether as the visitor scrolls. Progress is measured over the actual sticky travel, from 0 to 1, and the selected film is labeled 01/03–03/03.
 
-The scene rotates with ordinary page scroll, without scroll interception. Three.js draws the scene on initialization and resize, at pixel ratio 1, using 11 draw calls and unlit materials. Scroll motion uses time-based smoothing and compositor transforms of that rendered layer, avoiding a WebGL redraw every frame. It pauses offscreen, in hidden tabs and via the synchronized ambience controls. Reduced motion and Save-Data skip the Three.js download; a static film poster remains available without JavaScript, WebGL, or successful module loading. Reduced-motion preference changes are handled live. Keep all meaningful copy outside the decorative canvas.
+The local MIT-licensed Three.js core loads near the section. No scroll interception. Motion uses time-based smoothing and stops after settling, while paused, offscreen or in a hidden tab. Reduced motion, Save-Data, JavaScript absence or module failure show ordinary image links. Images and text remain HTML, and the active plane is keyboard reachable. Film assets, metadata, copy and MCP are unchanged.
 
 ## Kleo vertical ad showcase
 

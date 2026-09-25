@@ -7,41 +7,38 @@
 .kleo-home.ambience-paused .cinema-ribbon path,.kleo-home.page-inactive .cinema-ribbon path{animation-play-state:paused!important}
 @keyframes cinema-sweep{0%{transform:translate3d(-5%,-50px,0) rotate(-8deg) scaleY(.8)}50%{transform:translate3d(1%,10px,0) rotate(1deg) scaleY(1.08)}100%{transform:translate3d(5%,75px,0) rotate(8deg) scaleY(.92)}}
 @keyframes cinema-trace{to{stroke-dashoffset:-924}}
-.film-stage{position:relative;height:130vh;min-height:800px;padding:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:radial-gradient(ellipse at 50% 45%,var(--amber-soft),transparent 65%),var(--bg);isolation:isolate}
-.film-sticky{position:sticky;top:0;height:100svh;min-height:620px;max-height:1100px;overflow:hidden}
-.film-stage-copy{position:absolute;top:100px;left:0;right:0;z-index:1;pointer-events:none;text-align:center}
+/* Three independent film planes, held in view while page scroll advances them. */
+.film-stage{position:relative;height:240svh;min-height:1400px;padding:0;border-block:1px solid var(--line);background:radial-gradient(ellipse at 50% 45%,var(--amber-soft),transparent 65%),var(--bg);isolation:isolate}
+.film-sticky{position:sticky;top:0;height:100svh;min-height:620px;overflow:hidden}
+.film-stage-copy{position:absolute;top:100px;left:0;right:0;z-index:4;text-align:center;pointer-events:none}
 .film-stage-copy h2{font-size:clamp(2rem,4vw,4rem);line-height:1.04;letter-spacing:-.045em;margin:15px 0}
 .film-stage-copy p{font-size:.95rem;color:var(--ink-2);margin:0}
-.film-canvas{position:absolute;inset:210px 0 40px;pointer-events:none}
-.film-canvas canvas{display:block;width:100%;height:100%;opacity:0;transition:opacity .6s}
-.film-fallback{position:absolute;inset:0;width:100%;height:100%;max-width:720px;margin:auto;opacity:.6}
-.film-stage[data-render=ready]:not(.motion-static) canvas{opacity:1}
-.film-stage[data-render=ready]:not(.motion-static) .film-fallback{display:none}
-.film-stage-bottom{position:absolute;bottom:24px;left:0;right:0;display:flex;align-items:center;justify-content:space-between;gap:16px;color:var(--mute);font:400 .65rem var(--font-mono);letter-spacing:.07em}
-.film-motion{display:none}
-.film-stage[data-render=ready] .film-motion{display:inline-flex}
-.film-scroll-hint span{display:inline-block;color:var(--amber);margin-left:12px}
-.no-js .film-stage{height:800px;min-height:0}
-.no-js .film-sticky{position:relative;height:800px;min-height:0}
+.film-frames{--frame-width:min(58vw,640px);position:absolute;inset:38% 0 auto;height:48%;perspective:1100px;transform-style:preserve-3d;pointer-events:none}
+.film-frame{position:absolute;left:50%;top:50%;width:var(--frame-width);margin-left:calc(var(--frame-width) / -2);margin-top:calc(var(--frame-width) * -.28125 - 20px);display:block;background:var(--bg-2);border:1px solid var(--line-2);border-radius:16px;box-shadow:0 22px 60px #00000045;overflow:hidden;backface-visibility:hidden;pointer-events:auto;will-change:transform}
+.film-frame img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+.film-frame>span{display:flex;justify-content:space-between;gap:12px;padding:15px 18px;font:400 .7rem var(--font-mono);color:var(--ink-2)}
+.film-frame b{font-weight:400;color:var(--accent-text)}
+.film-frame:nth-child(2){transform:translate3d(85%,20px,-180px) rotateY(-24deg)}
+.film-frame:nth-child(3){transform:translate3d(170%,40px,-360px) rotateY(-40deg)}
+.film-stage-bottom{position:absolute;bottom:28px;left:0;right:0;display:flex;align-items:center;justify-content:space-between;gap:16px;color:var(--mute);font:400 .65rem var(--font-mono);letter-spacing:.07em}
+.film-motion{display:none}.film-stage[data-render=ready] .film-motion{display:inline-flex}
+.film-scroll-hint span{color:var(--amber);margin-left:12px}
+.film-current{min-width:180px;text-align:right;color:var(--accent-text)}
 @media(max-width:600px){
  .kleo-home .cinema-ribbon{opacity:.28}.kleo-home .ribbon-two{opacity:.18}
- .film-stage{height:105svh;min-height:700px}
- .film-sticky{height:90svh;min-height:600px}
+ .film-stage{height:230svh;min-height:1300px}.film-sticky{min-height:600px}
  .film-stage-copy{top:100px}.film-stage-copy p{font-size:.8rem;max-width:270px;margin:auto}
- .film-canvas{inset:245px -8% 55px}
- .film-stage-bottom{bottom:24px;flex-wrap:wrap;justify-content:center;gap:12px}
- .film-caption{display:none}.film-scroll-hint{font-size:.55rem}
+ .film-frames{--frame-width:78vw;inset:39% 0 auto;height:48%}
+ .film-frame>span{padding:11px 10px;font-size:.55rem;gap:6px}
+ .film-stage-bottom{bottom:25px;flex-wrap:wrap;justify-content:center;gap:14px}.film-scroll-hint{font-size:.55rem}
+ .film-current{width:100%;text-align:center;order:-1}
 }
-@media(prefers-reduced-motion:reduce){
- .kleo-home .cinema-ribbon,.kleo-home .cinema-ribbon path{animation:none!important;will-change:auto}
- .film-stage{height:800px;min-height:0}.film-sticky{position:relative;height:800px;min-height:0}
- .film-canvas canvas{display:none}.film-fallback{display:block!important}
- .film-motion,.film-scroll-hint{display:none!important}
-}
-
-.film-fallback{object-fit:contain;padding:40px;opacity:1}
-@media(max-width:600px){.film-fallback{padding:20px}}
-
-/* Limit the drawing surface to the film row, rather than the whole section. */
-.film-canvas{inset:38% 0 auto;height:45%}
-@media(max-width:600px){.film-canvas{inset:40% -8% auto;height:45%}}
+/* Readable native links when animation is unavailable or intentionally disabled. */
+.no-js .film-stage,.film-stage.motion-static{height:auto;min-height:0}
+.no-js .film-sticky,.motion-static .film-sticky{position:relative;height:auto;min-height:0;padding:90px 20px 30px}
+.no-js .film-stage-copy,.motion-static .film-stage-copy{position:relative;top:auto}
+.no-js .film-frames,.motion-static .film-frames{position:relative;inset:auto;height:auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;max-width:1100px;margin:35px auto;perspective:none}
+.no-js .film-frame,.motion-static .film-frame{position:relative;inset:auto;margin:0;width:100%;transform:none!important;opacity:1!important;will-change:auto}
+.no-js .film-stage-bottom,.motion-static .film-stage-bottom{display:none}
+@media(max-width:600px){.no-js .film-frames,.motion-static .film-frames{grid-template-columns:1fr;max-width:350px}}
+@media(prefers-reduced-motion:reduce){.kleo-home .cinema-ribbon,.kleo-home .cinema-ribbon path{animation:none!important;will-change:auto}}
