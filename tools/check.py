@@ -29,6 +29,7 @@ PAGES = {
     '/examples/signal-delay/': 'examples/signal-delay/index.html',
     '/examples/octopus/': 'examples/octopus/index.html',
     '/examples/apex/': 'examples/apex/index.html',
+    '/examples/kleo-ad/': 'examples/kleo-ad/index.html',
     '/styles.html': 'styles.html',
     '/faq/': 'faq/index.html',
     '/about/': 'about/index.html',
@@ -41,6 +42,7 @@ NOINDEX = ['404.html']
 # The four dedicated watch pages have one accessible primary player. All other
 # videos remain silent previews without controls, including the homepage Apex.
 WATCH_PAGES = {
+    'examples/kleo-ad/index.html',
     'examples/apex/index.html', 'examples/tether/index.html',
     'examples/octopus/index.html', 'examples/signal-delay/index.html',
 }

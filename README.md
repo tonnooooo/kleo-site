@@ -118,3 +118,7 @@ preloading its display and body faces. Inner pages retain their existing Google 
 `cinema-scroll.css` makes the existing amber curves more expressive. `cinema-scroll.js` lazily loads locally hosted Three.js 0.180.0 (`vendor/three/`, MIT) within 250 px of the decorative film stage, after Apex. No build step or CDN. The scene is a moving storyboard with three existing film posters, subtle perspective and thin amber rails.
 
 The scene rotates with ordinary page scroll, without scroll interception. Three.js draws the scene on initialization and resize, at pixel ratio 1, using 11 draw calls and unlit materials. Scroll motion uses time-based smoothing and compositor transforms of that rendered layer, avoiding a WebGL redraw every frame. It pauses offscreen, in hidden tabs and via the synchronized ambience controls. Reduced motion and Save-Data skip the Three.js download; a static film poster remains available without JavaScript, WebGL, or successful module loading. Reduced-motion preference changes are handled live. Keep all meaningful copy outside the decorative canvas.
+
+## Kleo vertical ad showcase
+
+`/examples/kleo-ad/` contains the supplied 30-second English Kleo ad. Original master: 2160×3840, 60 fps, 528,631,814 bytes. Web MP4: 1080×1920, 60 fps, H.264 + AAC, faststart, 24,831,787 bytes. Poster extracted at 28 seconds. The original master stays outside the repository; no download of the 504 MB original is imposed on visitors. Homepage and example gallery link to the native controlled watch player.
