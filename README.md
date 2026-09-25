@@ -18,7 +18,7 @@ updates within a few minutes.
 | `/styles.html` | `styles.html` | The two looks, realistic and animation. Historical route, keep the `.html`. |
 | `/pricing/` | `pricing/index.html` | Packs, the calculator (`#duration` → `#credit-result`, same rules as the server; the film/animatic switch is the pair of `.chip[data-product]` buttons), the cost table. |
 | `/faq/`, `/about/` | `faq/index.html`, `about/index.html` | |
-| `/legal.html`, `/privacy.html`, `/terms.html` | | Historical routes. Operator: Kevyn Wahuzue trading as Kanaky Tech, NZBN 9429053554017. |
+| `/legal.html`, `/privacy.html`, `/terms.html` | | Historical routes. Operator: Kanaky Tech, NZBN 9429053554017. |
 | `/404.html` | | Served by GitHub Pages with a real 404 for any unknown path. `noindex`. |
 
 Every page works with JavaScript switched off (the menu, the address, the films' posters, the calculator's table
@@ -125,7 +125,7 @@ The local MIT-licensed Three.js core loads near the section. No scroll intercept
 
 ## ChatGPT publication and publisher identity — 25 September 2026
 
-The common footer and `/legal.html` identify Kevyn Wahuzue trading as Kanaky Tech, NZBN 9429053554017.
+The common footer and `/legal.html` identify Kanaky Tech, NZBN 9429053554017.
 Privacy now covers reference pictures (30 days after last use), Stripe checkout email, image generation through
 kie.ai for both products, hosting, fonts and overseas processing. Terms preserve mandatory consumer rights.
 
@@ -138,3 +138,5 @@ a fetch failure keeps the existing setup available. Never put a private preview 
 After publication, also update the static ChatGPT guide requirements and fallback markup to the actual public
 connection steps, then verify the link in a fresh account and on mobile. Changing a config URL does not submit,
 approve, publish or silently connect a plugin; users still approve the sign-in in ChatGPT.
+
+The public site identifies only Kanaky Tech. Keep personal names and personal email addresses out of public pages and metadata. The shared footer groups Create, Connect, Resources and Legal & support links, with social links under the brand and the NZBN in a separate bottom line.

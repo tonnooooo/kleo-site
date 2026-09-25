@@ -935,6 +935,44 @@ html:not(.no-js) .agent-panel:not([open]){display:none}
 @media(max-width:600px){.ad-spotlight{grid-template-columns:minmax(0,1fr);gap:28px;padding:28px 22px;margin:32px 0 48px;border-radius:26px}.ad-spotlight h2{font-size:2.65rem;margin:14px 0 18px}.ad-spotlight .cinema-kicker{font-size:.58rem}.ad-spotlight-lede{font-size:.95rem;margin-bottom:20px}.ad-spotlight-meta{margin-bottom:0}.ad-spotlight-notes{display:none}.ad-spotlight-screen{width:min(100%,280px);justify-self:center}.hero-film-link{font-size:.8rem}}
 
 /* Publisher identity and the ChatGPT connection entry point. */
-.publisher-line{width:100%;border-top:1px solid var(--line);padding-top:22px;margin:28px 0 0;line-height:1.8;font-size:.78rem}
-.chatgpt-entry{margin:0 0 20px;padding:18px;border:1px solid var(--line);border-radius:14px;background:var(--panel)}
+.chatgpt-entry{margin:0 0 20px;padding:18px;border:1px solid var(--line);border-radius:14px;background:var(--bg-2)}
 .chatgpt-entry p{margin:12px 0 0;color:var(--ink-2);font-size:.85rem;line-height:1.6}
+
+/* Site-wide directory footer. */
+.site-footer{padding:64px 0 0;background:var(--bg);font-size:.84rem}
+.site-footer .footer-main{display:grid;grid-template-columns:minmax(250px,1.55fr) repeat(4,minmax(115px,1fr));gap:30px;align-items:start;padding-bottom:54px}
+.site-footer .brand{font-size:1.5rem;letter-spacing:-.04em;gap:10px}
+.footer-tagline{font-size:1rem;line-height:1.6;color:var(--ink-2);margin:22px 0 10px}
+.footer-description{font-size:.8rem;line-height:1.7;color:var(--mute);margin:0 0 22px}
+.footer-socials{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.site-footer .social-link{width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:11px;background:var(--bg-2);transition:color .2s,border-color .2s,transform .2s}
+.site-footer .social-link:hover{color:var(--amber);border-color:var(--line-2);transform:translateY(-2px)}
+.site-footer .footer-contact{color:var(--accent-text);font-size:.78rem}
+.footer-contact span{margin-left:6px}
+.footer-group h2{margin:7px 0 22px;font:600 .68rem/1.5 var(--font-body);letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.footer-group ul{list-style:none;padding:0;margin:0;display:grid;gap:13px}
+.footer-group li{margin:0;padding:0;line-height:1.6}
+.site-footer .footer-group a{color:var(--ink-2);text-decoration:none;text-underline-offset:5px}
+.site-footer .footer-group a:hover{color:var(--ink);text-decoration:underline}
+.footer-base{border-top:1px solid var(--line)}
+.site-footer .footer-bottom{display:flex;align-items:baseline;justify-content:space-between;gap:16px 30px;padding-top:22px;padding-bottom:24px}
+.footer-copyright{margin:0;color:var(--mute);font-size:.74rem;white-space:nowrap}
+.site-footer .publisher-line{margin:0;color:var(--mute);font-size:.72rem;line-height:1.8;text-align:right}
+.publisher-line span{white-space:nowrap}
+.site-footer a:focus-visible{outline:2px solid var(--amber);outline-offset:5px;border-radius:4px}
+@media(max-width:1050px){
+ .site-footer .footer-main{grid-template-columns:1.4fr 1fr 1fr;gap:34px 30px}
+ .footer-identity{grid-row:span 2}
+}
+@media(max-width:700px){
+ .site-footer{padding-top:42px}
+ .site-footer .footer-main{grid-template-columns:1fr 1fr;gap:34px 24px;padding-bottom:36px}
+ .footer-identity{grid-column:1/-1;grid-row:auto;padding-bottom:26px;border-bottom:1px solid var(--line)}
+ .footer-description br{display:none}
+ .footer-tagline{margin-top:18px}
+ .footer-group h2{margin-top:0;margin-bottom:16px}
+ .footer-group ul{gap:12px}
+ .site-footer .footer-bottom{display:block;padding-top:20px;padding-bottom:24px}
+ .site-footer .publisher-line{text-align:left;margin-top:10px;max-width:38em}
+}
+@media(prefers-reduced-motion:reduce){.site-footer .social-link{transition:none}.site-footer .social-link:hover{transform:none}}
