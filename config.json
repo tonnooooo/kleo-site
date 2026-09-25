@@ -1,1 +1,5 @@
-{ "mcp_url": "https://mcp.kleooai.com/mcp", "note": "Open beta · one click, 7 credits included, no sign-up" }
+{
+  "mcp_url": "https://mcp.kleooai.com/mcp",
+  "note": "Open beta · one click, 7 credits included, no sign-up",
+  "chatgpt_url": null
+}

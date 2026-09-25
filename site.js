@@ -143,6 +143,26 @@
   /* ---------- live MCP address from config.json ---------- */
   fetch('/config.json', {cache:'no-store'}).then(function(r){ return r.ok ? r.json() : null; }).then(function(cfg){
     if(!cfg) return;
+    // Populate only with the published directory URL obtained from OpenAI.
+    // An empty or invalid URL retains the working manual setup instructions.
+    if (typeof cfg.chatgpt_url === 'string') {
+      try {
+        var appUrl = new URL(cfg.chatgpt_url);
+        if (appUrl.origin === 'https://chatgpt.com' && !appUrl.username && !appUrl.password &&
+            /^\/(apps|plugins)\/[^/]+(?:\/[^/]+)?\/?$/.test(appUrl.pathname) && !appUrl.search && !appUrl.hash) {
+          document.querySelectorAll('[data-chatgpt-launch]').forEach(function(a){
+            a.href = appUrl.href;
+            a.textContent = 'Connect with ChatGPT ↗';
+            a.target = '_blank';
+            a.rel = 'noopener noreferrer';
+          });
+          document.querySelectorAll('[data-chatgpt-status]').forEach(function(p){
+            p.textContent = 'Open Kleo in ChatGPT, choose Connect and approve the Kleo sign-in. Then select Kleo in your conversation. No server address to copy.';
+          });
+          document.querySelectorAll('[data-chatgpt-manual]').forEach(function(el){ el.hidden = true; });
+        }
+      } catch (_) { /* Leave the manual connection available. */ }
+    }
     var note = document.getElementById('mcpStatus'); if(note){ note.textContent = cfg.note || ''; note.hidden = !cfg.note; }
     if(!cfg.mcp_url || !/^https:\/\/\S+$/.test(cfg.mcp_url)) return;
     var ph = SHIPPED, live = cfg.mcp_url;

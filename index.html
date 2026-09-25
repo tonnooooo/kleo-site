@@ -29,7 +29,7 @@
 <link rel="preload" href="/brand/fonts/bricolage-grotesque-400-800-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/brand/fonts/instrument-sans-400-600-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/brand/fonts/kleo-fonts.css?v=2026092503">
-<link rel="stylesheet" href="/site.css?v=2026092503">
+<link rel="stylesheet" href="/site.css?v=20260925-legal">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -82,7 +82,7 @@
   ]
 }
 </script>
-<script src="/site.js?v=2026092503" defer onerror="document.documentElement.classList.add('no-js')"></script>
+<script src="/site.js?v=20260925-legal" defer onerror="document.documentElement.classList.add('no-js')"></script>
 <link rel="stylesheet" href="/cinema-scroll.css?v=2026092503">
 <script type="module" src="/cinema-scroll.js?v=2026092503"></script>
 </head>
@@ -136,10 +136,15 @@
    <div class="agent-tabs" role="tablist" aria-label="Choose your AI assistant"><button type="button" id="agent-chatgpt" role="tab" aria-controls="install-chatgpt" aria-selected="true" tabindex="0"><span class="agent-mark" style="--agent-logo:url(/brand/agents/openai.svg)" aria-hidden="true"></span>ChatGPT</button><button type="button" id="agent-claude" role="tab" aria-controls="install-claude" aria-selected="false" tabindex="-1"><span class="agent-mark" style="--agent-logo:url(/brand/agents/claude.svg)" aria-hidden="true"></span>Claude</button><button type="button" id="agent-grok" role="tab" aria-controls="install-grok" aria-selected="false" tabindex="-1"><span class="agent-mark" style="--agent-logo:url(/brand/agents/grok.svg)" aria-hidden="true"></span>Grok</button><button type="button" id="agent-codex" role="tab" aria-controls="install-codex" aria-selected="false" tabindex="-1"><span class="agent-mark" style="--agent-logo:url(/brand/agents/openai.svg)" aria-hidden="true"></span>Codex</button><button type="button" id="agent-claude-code" role="tab" aria-controls="install-claude-code" aria-selected="false" tabindex="-1"><span class="agent-mark" style="--agent-logo:url(/brand/agents/claude.svg)" aria-hidden="true"></span>Claude Code</button><button type="button" id="agent-opencode" role="tab" aria-controls="install-opencode" aria-selected="false" tabindex="-1"><span class="agent-mark" style="--agent-logo:url(/brand/agents/opencode.svg)" aria-hidden="true"></span>OpenCode</button><button type="button" id="agent-cursor" role="tab" aria-controls="install-cursor" aria-selected="false" tabindex="-1"><span class="agent-mark" style="--agent-logo:url(/brand/agents/cursor.svg)" aria-hidden="true"></span>Cursor</button></div>
    <details class="agent-panel" id="install-chatgpt" open>
  <summary>ChatGPT connection</summary><div class="agent-panel-body">
+<div class="chatgpt-entry">
+  <a class="btn btn-primary" data-chatgpt-launch href="/integrations/chatgpt/#connect">Set up in ChatGPT <span aria-hidden="true">↗</span></a>
+  <p data-chatgpt-status>Connect Kleo once, then create from your conversation. Manual setup is currently available for accounts with Developer mode.</p>
+</div>
+<div data-chatgpt-manual>
  <div class="install-label"><span>MCP server URL</span><span class="install-auth">Kleo account · secure sign-in</span></div>
  <div class="install-code"><pre><code>https://mcp.kleooai.com/mcp</code></pre><button class="btn btn-primary" type="button" data-copy="https://mcp.kleooai.com/mcp" aria-label="Copy ChatGPT connection address">Copy URL</button></div>
  <p class="install-help">In ChatGPT, enable Developer mode in Settings → Security and login. Add Kleo from Plugins with this server URL, then sign in to Kleo and enable it in your conversation. Availability depends on your account and workspace. <a href="https://developers.openai.com/plugins/deploy/connect-chatgpt" target="_blank" rel="noopener">Setup reference ↗</a></p>
- </div></details><details class="agent-panel" id="install-claude" >
+ </div></div></details><details class="agent-panel" id="install-claude" >
  <summary>Claude connection</summary><div class="agent-panel-body">
  <div class="install-label"><span>MCP server URL</span><span class="install-auth">Kleo account · secure sign-in</span></div>
  <div class="install-code"><pre><code>https://mcp.kleooai.com/mcp</code></pre><button class="btn btn-primary" type="button" data-copy="https://mcp.kleooai.com/mcp" aria-label="Copy Claude connection address">Copy URL</button></div>
@@ -589,6 +594,7 @@ codex mcp login kleo" aria-label="Copy Codex connection instructions">Copy comma
       <a href="/faq/">FAQ</a>
       <a href="/guides/">Guides</a>
       <a href="/about/">About</a>
+      <a href="/legal.html">Legal notice</a>
       <a href="/privacy.html">Privacy</a>
       <a href="/terms.html">Terms</a>
       <a href="https://github.com/tonnooooo/kleo-mcp">GitHub</a>
@@ -599,6 +605,7 @@ codex mcp login kleo" aria-label="Copy Codex connection instructions">Copy comma
       <a href="mailto:kleooai@gmail.com">kleooai@gmail.com</a>
     </div>
   </div>
+  <div class="wrap"><p class="publisher-line">Kleo is a service operated by <a href="/legal.html">Kevyn Wahuzue trading as Kanaky Tech</a> · New Zealand · NZBN 9429053554017.</p></div>
 </footer>
 <div class="toast" id="toast" role="status" aria-live="polite">Copied</div>
 </body>

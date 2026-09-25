@@ -18,7 +18,7 @@ updates within a few minutes.
 | `/styles.html` | `styles.html` | The two looks, realistic and animation. Historical route, keep the `.html`. |
 | `/pricing/` | `pricing/index.html` | Packs, the calculator (`#duration` → `#credit-result`, same rules as the server; the film/animatic switch is the pair of `.chip[data-product]` buttons), the cost table. |
 | `/faq/`, `/about/` | `faq/index.html`, `about/index.html` | |
-| `/privacy.html`, `/terms.html` | | Historical routes. Legal wording is the owner's; only product facts get corrected. |
+| `/legal.html`, `/privacy.html`, `/terms.html` | | Historical routes. Operator: Kevyn Wahuzue trading as Kanaky Tech, NZBN 9429053554017. |
 | `/404.html` | | Served by GitHub Pages with a real 404 for any unknown path. `noindex`. |
 
 Every page works with JavaScript switched off (the menu, the address, the films' posters, the calculator's table
@@ -122,3 +122,19 @@ The local MIT-licensed Three.js core loads near the section. No scroll intercept
 ## Kleo vertical ad showcase
 
 `/examples/kleo-ad/` contains the supplied 30-second English Kleo ad. Original master: 2160×3840, 60 fps, 528,631,814 bytes. Web MP4: 1080×1920, 60 fps, H.264 + AAC, faststart, 24,831,787 bytes. Poster extracted at 28 seconds. The original master stays outside the repository; no download of the 504 MB original is imposed on visitors. Homepage and example gallery link to the native controlled watch player.
+
+## ChatGPT publication and publisher identity — 25 September 2026
+
+The common footer and `/legal.html` identify Kevyn Wahuzue trading as Kanaky Tech, NZBN 9429053554017.
+Privacy now covers reference pictures (30 days after last use), Stripe checkout email, image generation through
+kie.ai for both products, hosting, fonts and overseas processing. Terms preserve mandatory consumer rights.
+
+`config.json` contains `chatgpt_url: null` until OpenAI approves and the publisher publishes the plugin.
+Set it ONLY to the real public Kleo directory URL copied from the publication portal. The home, connection hub
+and ChatGPT guide then show **Connect with ChatGPT** and hide their manual setup block. The URL is restricted
+to HTTPS ChatGPT directory paths and must contain no credentials, query string or fragment. Invalid config or
+a fetch failure keeps the existing setup available. Never put a private preview URL or OAuth token here.
+
+After publication, also update the static ChatGPT guide requirements and fallback markup to the actual public
+connection steps, then verify the link in a fresh account and on mobile. Changing a config URL does not submit,
+approve, publish or silently connect a plugin; users still approve the sign-in in ChatGPT.

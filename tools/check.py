@@ -35,6 +35,7 @@ PAGES = {
     '/about/': 'about/index.html',
     '/terms.html': 'terms.html',
     '/privacy.html': 'privacy.html',
+    '/legal.html': 'legal.html',
 }
 # Authored guide routes are generated from editorial/*.txt, shared by sitemap and live checks.
 PAGES.update(json.loads((ROOT / 'editorial/routes.json').read_text()))

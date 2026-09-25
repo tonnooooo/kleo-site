@@ -933,3 +933,8 @@ html:not(.no-js) .agent-panel:not([open]){display:none}
 .ad-spotlight-screen:hover .ad-play-label{background:#2c2519ee}
 @media(max-width:850px){.ad-spotlight{grid-template-columns:minmax(0,1fr) 260px;gap:30px;padding:32px}.ad-spotlight h2{font-size:2.8rem}}
 @media(max-width:600px){.ad-spotlight{grid-template-columns:minmax(0,1fr);gap:28px;padding:28px 22px;margin:32px 0 48px;border-radius:26px}.ad-spotlight h2{font-size:2.65rem;margin:14px 0 18px}.ad-spotlight .cinema-kicker{font-size:.58rem}.ad-spotlight-lede{font-size:.95rem;margin-bottom:20px}.ad-spotlight-meta{margin-bottom:0}.ad-spotlight-notes{display:none}.ad-spotlight-screen{width:min(100%,280px);justify-self:center}.hero-film-link{font-size:.8rem}}
+
+/* Publisher identity and the ChatGPT connection entry point. */
+.publisher-line{width:100%;border-top:1px solid var(--line);padding-top:22px;margin:28px 0 0;line-height:1.8;font-size:.78rem}
+.chatgpt-entry{margin:0 0 20px;padding:18px;border:1px solid var(--line);border-radius:14px;background:var(--panel)}
+.chatgpt-entry p{margin:12px 0 0;color:var(--ink-2);font-size:.85rem;line-height:1.6}

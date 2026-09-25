@@ -29,7 +29,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="/site.css?v=2026092401">
+<link rel="stylesheet" href="/site.css?v=20260925-legal">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -72,7 +72,7 @@
   ]
 }
 </script>
-<script src="/site.js?v=2026092401" defer></script>
+<script src="/site.js?v=20260925-legal" defer></script>
 </head>
 <body>
 <div class="progress" id="progress" aria-hidden="true"></div>
@@ -113,7 +113,7 @@
       <p class="lede">ChatGPT is where you direct the film. Kleo generates the footage, the narration and the finished 4K video,
         and ChatGPT hands you the link.</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="#connect">Connection steps <span class="arr" aria-hidden="true">→</span></a>
+        <a class="btn btn-primary" data-chatgpt-launch href="#connect">Connection steps <span class="arr" aria-hidden="true">→</span></a>
         <a class="btn btn-ghost" href="/integrations/claude/">Using Claude instead? →</a>
       </div>
     </div>
@@ -151,7 +151,12 @@
       <p class="lede">Add Kleo once, then enable it in a new conversation. The steps below follow OpenAI’s documentation checked on 24 September 2026; menus and access can vary by account and workspace.</p>
     </div>
     <article class="panel">
-      <h3>ChatGPT <small>developer mode</small></h3>
+      <h3>ChatGPT</h3>
+<div class="chatgpt-entry">
+  <a class="btn btn-primary" data-chatgpt-launch href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer">Open ChatGPT <span aria-hidden="true">↗</span></a>
+  <p data-chatgpt-status>Connect Kleo once, then create from your conversation. Manual setup is currently available for accounts with Developer mode.</p>
+</div>
+<div data-chatgpt-manual>
       <ol>
           <li>Open <b>Settings → Security and login</b> and enable <b>Developer mode</b>, if available for your account and workspace.</li>
           <li>Open <b>Plugins</b>, choose <b>+</b> to add a plugin, and enter <code>https://mcp.kleooai.com/mcp</code> as the public MCP server URL.</li>
@@ -163,6 +168,7 @@
       <p>ChatGPT is OpenAI’s assistant. Kleo is a separate service that ChatGPT reaches through a custom connector; the
         same address connects from compatible clients including Claude, Claude Code and Cursor — see
         <a href="/connect/">the connection page</a>.</p>
+    </div>
     </article>
   </div>
 </section>
@@ -408,7 +414,7 @@
       <h2>ChatGPT is where you direct the film.</h2>
       <p class="lede">Add Kleo once, enable it in a new conversation, then choose an animatic or film. Review the treatment, product, usable balance and exact cost before approving a render.</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="#connect">Connection steps <span class="arr" aria-hidden="true">→</span></a>
+        <a class="btn btn-primary" data-chatgpt-launch href="#connect">Connection steps <span class="arr" aria-hidden="true">→</span></a>
         <a class="btn btn-ghost" href="/integrations/claude/">Using Claude instead? →</a>
       </div>
     </div>
@@ -441,6 +447,7 @@
       <a href="/faq/">FAQ</a>
       <a href="/guides/">Guides</a>
       <a href="/about/">About</a>
+      <a href="/legal.html">Legal notice</a>
       <a href="/privacy.html">Privacy</a>
       <a href="/terms.html">Terms</a>
       <a href="https://github.com/tonnooooo/kleo-mcp">GitHub</a>
@@ -451,6 +458,7 @@
       <a href="mailto:kleooai@gmail.com">kleooai@gmail.com</a>
     </div>
   </div>
+  <div class="wrap"><p class="publisher-line">Kleo is a service operated by <a href="/legal.html">Kevyn Wahuzue trading as Kanaky Tech</a> · New Zealand · NZBN 9429053554017.</p></div>
 </footer>
 <div class="toast" id="toast" role="status" aria-live="polite">Copied</div>
 </body>
