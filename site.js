@@ -159,6 +159,7 @@
           document.querySelectorAll('[data-chatgpt-status]').forEach(function(p){
             p.textContent = 'Open Kleo in ChatGPT, choose Connect and approve the Kleo sign-in. Then select Kleo in your conversation. No server address to copy.';
           });
+          document.querySelectorAll('[data-chatgpt-entry]').forEach(function(el){ el.hidden = false; });
           document.querySelectorAll('[data-chatgpt-manual]').forEach(function(el){ el.hidden = true; });
         }
       } catch (_) { /* Leave the manual connection available. */ }

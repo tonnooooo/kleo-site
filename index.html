@@ -82,7 +82,7 @@
   ]
 }
 </script>
-<script src="/site.js?v=20260925-footer" defer onerror="document.documentElement.classList.add('no-js')"></script>
+<script src="/site.js?v=20260925-chatgpt-pending" defer onerror="document.documentElement.classList.add('no-js')"></script>
 <link rel="stylesheet" href="/cinema-scroll.css?v=2026092503">
 <script type="module" src="/cinema-scroll.js?v=2026092503"></script>
 </head>
@@ -136,7 +136,7 @@
    <div class="agent-tabs" role="tablist" aria-label="Choose your AI assistant"><button type="button" id="agent-chatgpt" role="tab" aria-controls="install-chatgpt" aria-selected="true" tabindex="0"><span class="agent-mark" style="--agent-logo:url(/brand/agents/openai.svg)" aria-hidden="true"></span>ChatGPT</button><button type="button" id="agent-claude" role="tab" aria-controls="install-claude" aria-selected="false" tabindex="-1"><span class="agent-mark" style="--agent-logo:url(/brand/agents/claude.svg)" aria-hidden="true"></span>Claude</button><button type="button" id="agent-grok" role="tab" aria-controls="install-grok" aria-selected="false" tabindex="-1"><span class="agent-mark" style="--agent-logo:url(/brand/agents/grok.svg)" aria-hidden="true"></span>Grok</button><button type="button" id="agent-codex" role="tab" aria-controls="install-codex" aria-selected="false" tabindex="-1"><span class="agent-mark" style="--agent-logo:url(/brand/agents/openai.svg)" aria-hidden="true"></span>Codex</button><button type="button" id="agent-claude-code" role="tab" aria-controls="install-claude-code" aria-selected="false" tabindex="-1"><span class="agent-mark" style="--agent-logo:url(/brand/agents/claude.svg)" aria-hidden="true"></span>Claude Code</button><button type="button" id="agent-opencode" role="tab" aria-controls="install-opencode" aria-selected="false" tabindex="-1"><span class="agent-mark" style="--agent-logo:url(/brand/agents/opencode.svg)" aria-hidden="true"></span>OpenCode</button><button type="button" id="agent-cursor" role="tab" aria-controls="install-cursor" aria-selected="false" tabindex="-1"><span class="agent-mark" style="--agent-logo:url(/brand/agents/cursor.svg)" aria-hidden="true"></span>Cursor</button></div>
    <details class="agent-panel" id="install-chatgpt" open>
  <summary>ChatGPT connection</summary><div class="agent-panel-body">
-<div class="chatgpt-entry">
+<div class="chatgpt-entry" data-chatgpt-entry hidden>
   <a class="btn btn-primary" data-chatgpt-launch href="/integrations/chatgpt/#connect">Set up in ChatGPT <span aria-hidden="true">↗</span></a>
   <p data-chatgpt-status>Connect Kleo once, then create from your conversation. Manual setup is currently available for accounts with Developer mode.</p>
 </div>

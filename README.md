@@ -130,8 +130,10 @@ Privacy now covers reference pictures (30 days after last use), Stripe checkout 
 kie.ai for both products, hosting, fonts and overseas processing. Terms preserve mandatory consumer rights.
 
 `config.json` contains `chatgpt_url: null` until OpenAI approves and the publisher publishes the plugin.
-Set it ONLY to the real public Kleo directory URL copied from the publication portal. The home, connection hub
-and ChatGPT guide then show **Connect with ChatGPT** and hide their manual setup block. The URL is restricted
+The ChatGPT install promotion is hidden by default on the home, connection hub and ChatGPT guide, as requested
+by the publisher. It must remain hidden until the app is approved and publicly available. Set the URL ONLY to
+the real public Kleo directory URL copied from the publication portal. The promotion then becomes visible as
+**Connect with ChatGPT** and the manual setup block is hidden. The URL is restricted
 to HTTPS ChatGPT directory paths and must contain no credentials, query string or fragment. Invalid config or
 a fetch failure keeps the existing setup available. Never put a private preview URL or OAuth token here.
 
