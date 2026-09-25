@@ -33,6 +33,6 @@ while q:
   if nxt in graph and nxt not in seen:seen.add(nxt);q.append(nxt)
 for r in PAGES:
  if r not in seen:errors.append(r+': unreachable from home')
-if len(routes)!=90 or len(PAGES)!=107 or len(prompts)!=81:errors.append('Unexpected inventory; update the explicit delivery expectation when adding pages.')
+if len(routes)!=90 or len(PAGES)!=108 or len(prompts)!=81:errors.append('Unexpected inventory; update the explicit delivery expectation when adding pages.')
 print(json.dumps({'pages':len(PAGES),'new_pages':len(routes),'authored_guides':len(prompts),'worksheets':len(list((ROOT/'guides/worksheets').glob('*.txt'))),'unique_editorial_words_min':min(words),'unique_editorial_words_total':sum(words),'reachable_from_home':len(seen),'errors':errors},indent=2))
 sys.exit(bool(errors))

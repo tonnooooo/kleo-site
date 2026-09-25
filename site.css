@@ -910,3 +910,8 @@ html:not(.no-js) .agent-panel:not([open]){display:none}
  .agent-tabs button{flex-direction:column;gap:6px;padding:10px 2px;font-size:.67rem;white-space:normal}
  .agent-mark{width:19px;height:19px}
 }
+
+/* Compact promotion of the vertical Kleo ad, preserving its complete frame. */
+.kleo-ad-feature{grid-template-columns:200px minmax(0,1fr);max-width:850px;margin:0 auto 40px;gap:40px}
+.kleo-ad-feature .poster{width:100%}
+@media(max-width:600px){.kleo-ad-feature{grid-template-columns:110px minmax(0,1fr);gap:20px}.kleo-ad-feature h2{font-size:1.5rem}.kleo-ad-feature .style-lead{font-size:.85rem}.kleo-ad-feature .play{left:6px;bottom:8px;padding:5px;font-size:.5rem;letter-spacing:0}.kleo-ad-feature .play i{width:18px;height:18px}.kleo-ad-feature .btn{font-size:.8rem;padding:10px 12px}}
