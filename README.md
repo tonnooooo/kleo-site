@@ -59,11 +59,17 @@ and on `/connect/` (`#server-note`); keep it true to the product (it says what a
 ## Rules
 
 - The pages may only promise what the deployed server does. Today: two products from one storyboard — the FILM,
-  realistic or animation, every shot generated as moving footage (kie.ai), 15 s to 5 min, 16:9 or 9:16, English or
-  Italian, 4K 60 fps, no automatic publishing; 1 credit = 2 s, 10 credits minimum, made only for
+  realistic or animation, every frame drawn by Google Nano Banana Pro and every shot generated as moving footage by
+  ByteDance Seedance 2.5, 15 s to 5 min, 16:9 or 9:16, English (default) or Italian, 4K 60 fps, an optional AI upscale
+  (Real-ESRGAN + RIFE, film only, the film's credits again with a minimum of 5, refunded automatically if it cannot be
+  applied), a music track (Suno) and burned-in subtitles on request, no automatic publishing; 1 credit = 2 s, 10 credits minimum, made only for
   accounts that have bought a pack — and the ANIMATIC, the same storyboard's drawn frames under a moving camera, no
   generated clip, 15–60 s, 5 credits flat, for every account. 7 credits on connecting (one animatic), packs €5/€15/€40.
-  Confirm music, subtitle and graphic options against the deployed version before promising them. Current Terms
+  The intake asks in one message: look, film or animatic, AI upscale (film only), music, subtitles, narration
+  language. A vision model checks every picture against the request; the user's photos become character references.
+  Public texts name Seedance 2.5 and Nano Banana Pro and never name the retired clip provider. The privacy page must
+  still name every processor truthfully: pictures, clips and music go through the ePhone AI gateway (PULSE AI
+  SINGAPORE PTE. LTD.) to Google, ByteDance and Suno. Current Terms
   specify a Kleo mark and a permission requirement for service resale; preserve those until the operator updates them.
   A €5 pack buys 10 credits: enough for a 20-second film. Do not promise a 30-second film from a 12-credit balance
   after a starter animatic. Gift-credit eligibility must be aligned by the operator before advertising its film use.
@@ -127,7 +133,8 @@ The local MIT-licensed Three.js core loads near the section. No scroll intercept
 
 The common footer and `/legal.html` identify Kanaky Tech, NZBN 9429053554017.
 Privacy now covers reference pictures (30 days after last use), Stripe checkout email, image generation through
-kie.ai for both products, hosting, fonts and overseas processing. Terms preserve mandatory consumer rights.
+the model gateway for both products, hosting, fonts and overseas processing (updated 26 September 2026: ePhone AI
+routing to Google, ByteDance and Suno). Terms preserve mandatory consumer rights.
 
 `config.json` contains `chatgpt_url: null` until OpenAI approves and the publisher publishes the plugin.
 The ChatGPT install promotion is hidden by default on the home, connection hub and ChatGPT guide, as requested
