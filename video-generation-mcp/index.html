@@ -110,7 +110,8 @@
     <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">›</span><span>MCP documentation</span></nav>
     <h1>A video production<br><span class="hl">MCP server.</span></h1>
     <p class="lede">Kleo exposes one film workflow to any MCP client: intake, treatment, storyboard, a render on a GPU rented for the
-      job, and the links to a finished narrated film in 4K at 60 fps. One narrator, two looks, two products: a film, 15 seconds to 5 minutes, or an animatic of the same storyboard, 15 to 60 seconds. There is no app and no dashboard; the assistant does the
+      job, and the links to a finished narrated film in 4K at 60 fps — frames by Google Nano Banana Pro, moving footage by ByteDance
+      Seedance 2.5. One narrator, two looks, two products: a film, 15 seconds to 5 minutes, or an animatic of the same storyboard, 15 to 60 seconds. There is no app and no dashboard; the assistant does the
       work through the tools below.</p>
     <p class="mono" id="mcpStatus" hidden></p>
     <div class="address"><code>https://mcp.kleooai.com/mcp</code><button class="btn btn-ghost btn-sm" type="button" data-copy="https://mcp.kleooai.com/mcp">Copy address</button></div>
@@ -195,7 +196,11 @@ claude mcp add --transport http kleo https://mcp.kleooai.com/mcp
           <tbody>
             <tr>
               <td>kleo_adapt_prompt</td>
-              <td>Reads the request against the intake (subject, length, format, look; optional audience, tone, what must appear), asks for what is missing, then returns the treatment: logline, angle, opening, acts, ending, look, pacing, narrator.</td>
+              <td>Reads the request against the intake (subject, length, format, look, film or animatic, AI upscale, music, subtitles, narration language; optional audience, tone, what must appear), asks for what is missing in one message, then returns the spec every picture is checked against and the treatment: logline, angle, opening, acts, ending, look, pacing, narrator.</td>
+            </tr>
+            <tr>
+              <td>kleo_upload_link</td>
+              <td>Gives the user a link to upload their own photos (up to 8, valid 48 hours); Kleo draws the characters from them.</td>
             </tr>
             <tr>
               <td>kleo_storyboard_guide</td>
@@ -268,9 +273,17 @@ claude mcp add --transport http kleo https://mcp.kleooai.com/mcp
       <li><b>format</b><span><code class="mono">16:9</code> for YouTube and landscape, <code class="mono">9:16</code> for a Short and
         vertical.</span></li>
       <li><b>style</b><span><code class="mono">realistic</code> (generated live-action footage, cinematic) or
-        <code class="mono">animation</code> (a 2D animated film). In a film every shot is generated as moving footage from its own
-        frame; an animatic keeps the look in its drawn frames.</span></li>
-      <li><b>language</b><span><code>en</code> or <code>it</code> narration. Confirm the available music and subtitle options before approving the treatment.</span></li>
+        <code class="mono">animation</code> (a 2D animated film). Nano Banana Pro draws every frame in that look; in a film
+        Seedance 2.5 turns each frame into moving footage, an animatic keeps the look in its drawn frames.</span></li>
+      <li><b>language</b><span><code>en</code> (the default) or <code>it</code> narration.</span></li>
+      <li><b>music</b><span>The user’s answer: <code class="mono">no</code>, <code class="mono">yes</code> or the kind of
+        track they want, an instrumental bed under the narration.</span></li>
+      <li><b>subtitles</b><span><code class="mono">yes</code> for burned-in subtitles, <code class="mono">no</code> for none; an
+        .srt file comes with the film either way.</span></li>
+      <li><b>ai_upscale</b><span>Film only: <code class="mono">yes</code> for Real-ESRGAN + RIFE on every shot, for the film’s
+        credits again (at least 5), refunded automatically if it cannot be applied; otherwise the classic 4K 60 fps finish.</span></li>
+      <li><b>references</b><span>Optional: the handles of the user’s pictures, from <code class="mono">kleo_adapt_prompt</code>
+        or a <code class="mono">kleo_upload_link</code> upload.</span></li>
       <li><b>voice</b><span>Optional: <code class="mono">narrator-en-m</code>, <code class="mono">narrator-en-f</code>,
         <code class="mono">narrator-it-m</code> or <code class="mono">narrator-it-f</code>.</span></li>
       <li><b>treatment</b><span>Optional: the treatment returned by <code class="mono">kleo_adapt_prompt</code> (logline, angle,
@@ -301,11 +314,11 @@ claude mcp add --transport http kleo https://mcp.kleooai.com/mcp
         <h2>A finished video as the output.</h2>
       </div>
       <p class="lede">One MP4: 4K (3840×2160 or 2160×3840) at 60 fps, 16:9 or 9:16, with one narrator in English or Italian and,
-        in a film, every shot generated as moving footage. <code class="mono">kleo_get_result</code> hands the assistant a link to
+        in a film, every shot generated as moving footage by Seedance 2.5. <code class="mono">kleo_get_result</code> hands the assistant a link to
         the file; the link is good for 7 days.</p>
     </div>
     <div class="prose">
-      <p>Kleo never publishes to YouTube, TikTok or another channel. Confirm the available music, subtitle and graphic options before approving the treatment. The current <a href="/terms.html">Terms</a> specify a small Kleo mark on the video. Review the output conditions before purchasing. Two looks are available: realistic and animation. <a href="/styles.html">See the looks and sample notes</a>.</p>
+      <p>Kleo never publishes to YouTube, TikTok or another channel. The film carries the music track and burned-in subtitles the user asked for in the intake. The current <a href="/terms.html">Terms</a> specify a small Kleo mark on the video. Review the output conditions before purchasing. Two looks are available: realistic and animation. <a href="/styles.html">See the looks and sample notes</a>.</p>
       <p><a href="/examples/">Watch the realistic samples →</a></p>
     </div>
   </div>
