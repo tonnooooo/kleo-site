@@ -72,7 +72,7 @@
   ]
 }
 </script>
-<script src="/site.js?v=20260925-footer" defer></script>
+<script src="/site.js?v=20260927-growth" defer></script>
 </head>
 <body>
 <div class="progress" id="progress" aria-hidden="true"></div>
@@ -137,7 +137,9 @@
       <li><b>Endpoint</b><span><code class="mono">https://mcp.kleooai.com/mcp</code></span></li>
       <li><b>Transport</b><span>Streamable HTTP; the same address in every client.</span></li>
       <li><b>Auth</b><span>OAuth 2.1. During authorization the client opens Kleo’s own page; you click <b>Start free</b> and you
-        are back in the client with 7 credits on the account. No form, no card.</span></li>
+        are back in the client with 5 credits on the account. No form, no card. The address also takes
+        <code class="mono">?src=&lt;channel&gt;</code> (for example <code class="mono">?src=producthunt</code>): Kleo notes the
+        channel on the new account, and the address works the same without it.</span></li>
       <li><b>Without a token</b><span>A GET on the endpoint answers <code class="mono">401</code> and carries the OAuth resource
         metadata. It is a protocol endpoint, not a web page: opening it in a browser is not the connection process.</span></li>
       <li><b>Clients</b><span>Claude, ChatGPT, Grok, Claude Code, Cursor, VS Code, OpenCode, Gemini CLI, Windsurf, the Gemini
@@ -235,7 +237,12 @@ claude mcp add --transport http kleo https://mcp.kleooai.com/mcp
             <tr>
               <td>kleo_account</td>
               <td>Shows the credits, whether the account has paid (<code class="mono">has_paid</code>, which decides if a film
-                can be ordered), the link to the account page, and the private Kleo key.</td>
+                can be ordered), the link to the account page, the referral link, and the private Kleo key.</td>
+            </tr>
+            <tr>
+              <td>kleo_redeem</td>
+              <td>Redeems a launch code: one film of up to 15 seconds for an account that has not bought a pack, once per
+                account. A used-up or unknown code is refused in words and charges nothing.</td>
             </tr>
             <tr>
               <td>kleo_generate_thumbnail</td>
@@ -268,7 +275,7 @@ claude mcp add --transport http kleo https://mcp.kleooai.com/mcp
       <li><b>prompt</b><span>The request in the user’s own words.</span></li>
       <li><b>product</b><span><code class="mono">film</code> (the default: every shot a generated clip, priced by length, for accounts
         that have bought a pack) or <code class="mono">animatic</code> (the drawn frames under a moving camera, no generated clip,
-        5 credits flat, 15 to 60 seconds, for every account).</span></li>
+        5 credits up to 20 seconds and 10 up to 60, 15 to 60 seconds, for every account).</span></li>
       <li><b>duration_s</b><span>15 to 300 seconds for a film, 15 to 60 for an animatic.</span></li>
       <li><b>format</b><span><code class="mono">16:9</code> for YouTube and landscape, <code class="mono">9:16</code> for a Short and
         vertical.</span></li>
@@ -293,7 +300,13 @@ claude mcp add --transport http kleo https://mcp.kleooai.com/mcp
     </ul>
     <div class="prose">
       <h3>Price</h3>
-      <p>A film costs one credit per two seconds, rounded up, with a 10-credit minimum: 20 s = 10, 30 s = 15, 60 s = 30, 3 min = 90, 5 min = 150. An animatic is 5 credits flat, 15–60 seconds. Packs are one-off: €5 = 10 credits, €15 = 35, €40 = 100. A €5 pack adds 10 purchased credits and unlocks film rendering. A 20-second film costs 10 credits; a 30-second film costs 15. After one 5-credit animatic, your 7 starter credits become 2; adding that pack gives a total balance of 12, not enough for a 30-second film. Ask your assistant to confirm the credits eligible for your chosen product and the exact quote before you buy or render.</p>
+      <p>A film costs one credit per 1.5 seconds, rounded up, with a 10-credit minimum: 15 s = 10, 20 s = 14, 30 s = 20, 60 s = 40, 3 min = 120, 5 min = 200. An animatic is 5 credits up to 20 seconds and 10 up to 60. Packs are one-off: €5 = 10 credits, €15 = 35, €40 = 100. A €5 pack adds 10 purchased credits and unlocks film rendering: exactly one 15-second film. A 20-second film costs 14 credits and a 30-second film 20. Your 5 starter credits buy one animatic of up to 20 seconds. A launch code opens one free 15-second film before any pack. Ask your assistant to confirm the credits for your chosen product and the exact quote before you buy or render.</p>
+      <h3>Launch codes, referral, email</h3>
+      <p><code>kleo_redeem</code> takes a launch code (PRODUCTHUNT, HN, REDDIT, X, TIKTOK): one film of up to 15 seconds
+        for an account that has not bought a pack, once per account, 30 accounts per code. <code>kleo_account</code> shows
+        the account’s referral link: a new account made through it that buys its first pack gets 5 extra credits on that
+        pack, and the referrer 10. A verified email, added on the account page, adds 3 credits once and receives the links
+        of every finished video.</p>
       <h3>Nothing is charged until the job is accepted</h3>
       <p><code>kleo_create_video</code> answers with the exact credits first; a refused call charges nothing, and
         <code>kleo_cancel_job</code> refunds the credits a stopped render had not spent.</p>

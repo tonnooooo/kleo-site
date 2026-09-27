@@ -11,7 +11,8 @@ updates within a few minutes.
 |---|---|---|
 | `/` | `index.html` | Home: the promise, how it works, the address, price, five FAQ answers. Section ids `how`, `template` (use cases — the word never appears in the text), `engine`, `pricing`, `connect`, `faq`, `account` are stable: links already shared point at them, and `site.js` maps the four old Italian ids (`#come #connetti #prezzi #quinte`). |
 | `/ai-youtube-video-generator/` | `ai-youtube-video-generator/index.html` | The guide: brief → treatment → storyboard → render → download. |
-| `/connect/` | `connect/index.html` | The hub: one card per client with the tested steps and copyable config. |
+| `/connect/` | `connect/index.html` | The hub: one card per client with the tested steps and copyable config (Claude first). |
+| `/launch/` | `launch/index.html` | The landing page for Product Hunt / Hacker News visitors: what Kleo is in one screen, the 30 s ad and Apex, Claude in three steps, the launch codes. |
 | `/integrations/claude/`, `/integrations/chatgpt/` | `integrations/*/index.html` | The two long guides. |
 | `/video-generation-mcp/` | `video-generation-mcp/index.html` | The server documented: endpoint, OAuth, the tools in the order they run, the parameters of a render. |
 | `/examples/`, `/examples/tether/`, `/examples/signal-delay/` | `examples/**` | The gallery and one page per real film. |
@@ -44,8 +45,13 @@ descriptions), `6d501967255b4889a19297ad25fe6c51.txt` (the IndexNow key, public 
   the progress hairline, the REC timecode and the render loop on the home (real stages: treatment, storyboard,
   footage, narration, finish), the pricing calculator (`#duration` → `#credit-result`, the server's rule), the sample
   previews (they play muted while in view and are only fetched then); the four individual film pages instead use
-  native playback, sound and fullscreen controls, identified by `data-watch-player` and `.watch-media`, the Italian hash map, the looks page tint. No analytics, no cookies, no remote code: the privacy page
-  promises that.
+  native playback, sound and fullscreen controls, identified by `data-watch-player` and `.watch-media`, the Italian hash map, the looks page tint. No cookies, no remote code, no third party: the privacy page
+  promises that. The one report is a first-party page count (since 27 September 2026): one `navigator.sendBeacon` per
+  page view to `https://mcp.kleooai.com/b` with `p` (path), `r` (referrer host only), `s` (`utm_source`, or `ref`)
+  and `l` (language), skipped under Do Not Track / Global Privacy Control and off kleooai.com; the Worker keeps daily
+  totals only (`#site-counts` on the privacy page). The same `utm_source` is carried into links to `/connect/` and
+  `/launch/`, and appended to every copy of the MCP address as `?src=<channel>` (quoted inside shell commands, where
+  zsh would read the `?`).
 - Assets carry dated `?v=` versions; bump them on updated pages when changing shared assets, so nobody reads a new page with an old
   stylesheet from the cache. The only remote resources on the site are the three Google Fonts faces.
 
@@ -62,17 +68,20 @@ and on `/connect/` (`#server-note`); keep it true to the product (it says what a
   realistic or animation, every frame drawn by Google Nano Banana Pro and every shot generated as moving footage by
   ByteDance Seedance 2.5, 15 s to 5 min, 16:9 or 9:16, English (default) or Italian, 4K 60 fps, an optional AI upscale
   (Real-ESRGAN + RIFE, film only, the film's credits again with a minimum of 5, refunded automatically if it cannot be
-  applied), a music track (Suno) and burned-in subtitles on request, no automatic publishing; 1 credit = 2 s, 10 credits minimum, made only for
-  accounts that have bought a pack — and the ANIMATIC, the same storyboard's drawn frames under a moving camera, no
-  generated clip, 15–60 s, 5 credits flat, for every account. 7 credits on connecting (one animatic), packs €5/€15/€40.
+  applied), a music track (Suno) and burned-in subtitles on request, no automatic publishing; 1 credit = 1.5 s (rounded up), 10 credits minimum (= 15 s), made
+  only for accounts that have bought a pack — or, once, up to 15 s, redeemed a launch code (PRODUCTHUNT, HN, REDDIT,
+  X, TIKTOK; 30 accounts per code; `kleo_redeem` or the account page) — and the ANIMATIC, the same storyboard's drawn
+  frames under a moving camera, no generated clip, each picture drawn once, 15–60 s, 5 credits up to 20 s and 10 up
+  to 60, for every account. 5 credits on connecting (one animatic of up to 20 s), +3 for a verified email, referral
+  +10 to the referrer and +5 to the referred on the referred account's first real payment, packs €5/€15/€40.
   The intake asks in one message: look, film or animatic, AI upscale (film only), music, subtitles, narration
   language. A vision model checks every picture against the request; the user's photos become character references.
   Public texts name Seedance 2.5 and Nano Banana Pro and never name the retired clip provider. The privacy page must
   still name every processor truthfully: pictures, clips and music go through the ePhone AI gateway (PULSE AI
   SINGAPORE PTE. LTD.) to Google, ByteDance and Suno. Current Terms
   specify a Kleo mark and a permission requirement for service resale; preserve those until the operator updates them.
-  A €5 pack buys 10 credits: enough for a 20-second film. Do not promise a 30-second film from a 12-credit balance
-  after a starter animatic. Gift-credit eligibility must be aligned by the operator before advertising its film use.
+  A €5 pack buys 10 credits: exactly a 15-second film. The Terms keep given credits (starter, bonuses) for animatics
+  on an account that has not paid; do not advertise them as film credits until the operator aligns that policy.
   When the server changes, change the pages the same day — and `tools/check.py` (its `FORBIDDEN` list) refuses the
   words that were wrong before ("8 minutes", "free film", "template", …).
 - Every page has a unique title and description, an absolute canonical, Open Graph/Twitter tags and pretty-printed

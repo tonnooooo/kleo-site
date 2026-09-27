@@ -1,7 +1,8 @@
 (function(){
   'use strict';
-  /* One script for every page of kleooai.com. Nothing here reports anything to anybody: no analytics, no cookies,
-     no remote code. Each block looks for its own elements and does nothing on a page that lacks them. */
+  /* One script for every page of kleooai.com. No cookies, no remote code, no third party. The one report it makes is
+     the cookie-less page count below (the privacy page describes it). Each block looks for its own elements and does
+     nothing on a page that lacks them. */
 
   /* The address written into the markup. config.json still overrides it at load time, so the server moves by
      editing config.json alone — but a reader whose JavaScript never runs sees an address that actually answers. */
@@ -140,6 +141,67 @@
     }
   }
 
+  /* ---------- where the visitor came from: ?utm_source= (or ?ref=) on the page's own address ----------
+     Only a short lowercase channel name is kept (producthunt, hn, reddit, x, tiktok, ...); anything else is dropped. It
+     is read from this page's URL alone: nothing is stored, so it travels only in the links written below. */
+  var SOURCE = (function(){
+    try {
+      var q = new URLSearchParams(location.search), v = (q.get('utm_source') || q.get('ref') || '').toLowerCase();
+      return /^[a-z0-9][a-z0-9._-]{0,31}$/.test(v) ? v : '';
+    } catch (_) { return ''; }
+  })();
+
+  /* ---------- the page count: first-party, cookie-less, aggregated ----------
+     One beacon per page view to Kleo's own server with the path, the referring site's host (never the full address),
+     the utm_source and the browser's language. No cookie, no identifier, no IP kept (the server counts per day and
+     page). Skipped when the browser sends Do Not Track or Global Privacy Control, and off kleooai.com (previews). */
+  (function(){
+    try {
+      if (navigator.doNotTrack === '1' || window.doNotTrack === '1' || navigator.globalPrivacyControl === true) return;
+      if (!navigator.sendBeacon || location.hostname !== 'kleooai.com') return;
+      var ref = '';
+      try { ref = document.referrer ? new URL(document.referrer).hostname : ''; } catch (_) {}
+      var q = new URLSearchParams({ p: location.pathname.slice(0, 200), r: ref.slice(0, 100), s: SOURCE,
+        l: ((navigator.language || '').split('-')[0] || '').toLowerCase().slice(0, 8) });
+      navigator.sendBeacon('https://mcp.kleooai.com/b?' + q.toString(), q);
+    } catch (_) { /* counting is never worth an error on the page */ }
+  })();
+
+  /* A visitor who arrived with a source keeps it on the way to the connect page, so the address shown there can carry
+     it. Written into the links themselves: nothing is stored. */
+  if (SOURCE) Array.prototype.forEach.call(document.querySelectorAll('a[href^="/connect/"], a[href^="/launch/"]'), function(a){
+    try {
+      var u = new URL(a.getAttribute('href'), location.origin);
+      if (!u.searchParams.has('utm_source')) { u.searchParams.set('utm_source', SOURCE); a.setAttribute('href', u.pathname + u.search + u.hash); }
+    } catch (_) {}
+  });
+
+  /* ---------- the MCP address: config.json's live one, plus ?src=<channel> ----------
+     The server records the channel at sign-up (?src= on the MCP address; the address answers the same without it).
+     Inside a shell command (a code block where the address follows a space) it is quoted, because zsh reads a bare
+     "?" as a pattern; inside JSON it already sits between quotes, and an address alone on its line stays bare. */
+  var currentAddress = SHIPPED;
+  function srcAddress(base){ return SOURCE ? base + (base.indexOf('?') === -1 ? '?' : '&') + 'src=' + encodeURIComponent(SOURCE) : base; }
+  function inCode(el){ return !!(el && el.closest && el.closest('.code, .install-code')); }
+  function swap(str, from, to, code){
+    return str.split(from).map(function(part, i, all){
+      if (i === all.length - 1) return part;
+      var quote = code && to.indexOf('?') !== -1 && part.slice(-1) === ' ';
+      return part + (quote ? '"' + to + '"' : to);
+    }).join('');
+  }
+  function setAddress(next){
+    var from = currentAddress;
+    if (next === from) return;
+    document.querySelectorAll('[data-copy]').forEach(function(b){
+      var v = b.getAttribute('data-copy'); if (v.indexOf(from) !== -1) b.setAttribute('data-copy', swap(v, from, next, inCode(b)));
+    });
+    var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT), n;
+    while((n = walker.nextNode())){ if(n.nodeValue.indexOf(from) !== -1) n.nodeValue = swap(n.nodeValue, from, next, inCode(n.parentElement)); }
+    currentAddress = next;
+  }
+  setAddress(srcAddress(SHIPPED));
+
   /* ---------- live MCP address from config.json ---------- */
   fetch('/config.json', {cache:'no-store'}).then(function(r){ return r.ok ? r.json() : null; }).then(function(cfg){
     if(!cfg) return;
@@ -165,12 +227,8 @@
       } catch (_) { /* Leave the manual connection available. */ }
     }
     var note = document.getElementById('mcpStatus'); if(note){ note.textContent = cfg.note || ''; note.hidden = !cfg.note; }
-    if(!cfg.mcp_url || !/^https:\/\/\S+$/.test(cfg.mcp_url)) return;
-    var ph = SHIPPED, live = cfg.mcp_url;
-    if (ph === live) return;   // the markup already ships the live address: nothing to rewrite
-    document.querySelectorAll('[data-copy]').forEach(function(b){ b.setAttribute('data-copy', b.getAttribute('data-copy').split(ph).join(live)); });
-    var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT), n;
-    while((n = walker.nextNode())){ if(n.nodeValue.indexOf(ph) !== -1) n.nodeValue = n.nodeValue.split(ph).join(live); }
+    if(!cfg.mcp_url || !/^https:\/\/[^\s"'<>?#]+$/.test(cfg.mcp_url)) return;
+    setAddress(srcAddress(cfg.mcp_url));   // a no-op when the markup already ships the live address
   }).catch(function(){});
 
   /* ---------- reveal on scroll ---------- */
@@ -240,16 +298,17 @@
     else { var si = 3; paint(stages[si]); setInterval(function(){ si = (si + 1) % stages.length; paint(stages[si]); }, 2400); }
   }
 
-  /* ---------- the credit calculator on /pricing/: the server's own rules ----------
-     film: max(10, ceil(seconds / 2)) over 15-300 s (src/templates.ts filmBase); animatic: 5 credits flat over 15-60 s
-     (ANIMATIC_CREDITS, ANIMATIC_MAX_S). The product switch is the pair of .chip buttons above the field. */
+  /* ---------- the credit calculator on /pricing/: the server's own rules (27 September 2026) ----------
+     film: 1 credit = 1.5 s, max(10, ceil(seconds / 1.5)) over 15-300 s (src/templates.ts filmCredits), computed as
+     ceil(2s / 3) in whole numbers so 30 s is exactly 20; animatic: 5 credits up to 20 s, 10 credits up to 60 s.
+     The product switch is the pair of .chip buttons above the field. */
   var duration = document.getElementById('duration');
   if (duration) {
     var output = document.getElementById('credit-result');
     var chips = Array.prototype.slice.call(document.querySelectorAll('.calculator .chip[data-product]'));
     var rules = {
-      film:     { min: 15, max: 300, credits: function(s){ return Math.max(10, Math.ceil(s / 2)); } },
-      animatic: { min: 15, max: 60,  credits: function(){ return 5; } }
+      film:     { min: 15, max: 300, credits: function(s){ return Math.max(10, Math.ceil(2 * s / 3)); } },
+      animatic: { min: 15, max: 60,  credits: function(s){ return s <= 20 ? 5 : 10; } }
     };
     var product = 'film';
     var update = function(){

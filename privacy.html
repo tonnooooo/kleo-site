@@ -72,7 +72,7 @@
   ]
 }
 </script>
-<script src="/site.js?v=20260925-footer" defer></script>
+<script src="/site.js?v=20260927-growth" defer></script>
 </head>
 <body>
 <div class="progress" id="progress" aria-hidden="true"></div>
@@ -111,7 +111,7 @@
       <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">›</span><span>Privacy</span></nav>
       <div class="eyebrow"><span class="n">Kleo AI</span>Privacy</div>
       <h1>What Kleo knows<br><span class="hl">about you.</span></h1>
-      <p class="doc-date">Last updated <time datetime="2026-09-26">26 September 2026</time></p>
+      <p class="doc-date">Last updated <time datetime="2026-09-27">27 September 2026</time></p>
     </div>
   </div>
 </section>
@@ -122,8 +122,8 @@
 
     <div class="short">
       <p><b>Kleo is operated by Kanaky Tech, New Zealand, NZBN 9429053554017.</b> This notice covers kleooai.com, the Kleo server and its assistant integrations.</p>
-      <p>Connecting does not require an email or password. Kleo receives the requests your assistant sends to it, the images you choose to supply, and the information needed to render videos and manage credits. Buying credits or contacting support can also provide your email.</p>
-      <p>The public website has no analytics, advertising or tracking cookies. The account service uses an essential sign-in cookie.</p>
+      <p>Connecting does not require an email or password. Kleo receives the requests your assistant sends to it, the images you choose to supply, and the information needed to render videos and manage credits. Buying credits, adding the optional email on your account page or contacting support can also provide your email.</p>
+      <p>The public website sets no cookies and has no advertising and no third-party analytics. It counts its own page views without cookies or identifiers, <a href="#site-counts">as described below</a>. The account service uses an essential sign-in cookie.</p>
     </div>
     <h2 id="collection">What we collect and why</h2>
     <ul>
@@ -132,6 +132,8 @@
       <li><b>Render records:</b> progress, outputs, errors, credit charges and refunds, to deliver files, control usage and resolve problems.</li>
       <li><b>Payment records:</b> Stripe transaction identifiers, amount, currency, status, purchased credits and the checkout email and country when provided. Stripe processes card details; Kleo does not receive the full card number.</li>
       <li><b>Support:</b> the messages and contact details you choose to send, to answer requests and handle complaints.</li>
+      <li><b>Where you came from:</b> the channel in the server address you connected with (for example <code>?src=producthunt</code> on the MCP address), the launch code you redeem, and the referral link an account was created through, to learn which launch channels work and to credit referral bonuses. None of this is shown to other users.</li>
+      <li><b>Optional email:</b> the address you add on your account page and whether you confirmed it, to <a href="#email">deliver your video links and Kleo news</a>.</li>
       <li><b>Security:</b> the application uses a keyed fingerprint of the connecting IP address for account-creation limits. Hosting and network providers necessarily process connection information, and may keep their own security logs.</li>
     </ul>
     <p>Kleo receives only information sent to its tools or service, not unrestricted access to your entire ChatGPT or other assistant history. A tool request may include text or images from the conversation. Do not submit sensitive information that is unnecessary for your video, and only supply pictures or information about others when you have the right to do so.</p>
@@ -141,12 +143,19 @@
     <h2 id="account">Your account and cookies</h2>
     <p>The server uses an essential cookie called <code>kleo_id</code>, lasting up to about 400 days, to remember a signed account identifier. An anonymous account can contain an internal placeholder email ending in <code>@anon.kleo.invalid</code>; it is not a contact address.</p>
     <p>Your private Kleo key can restore access in another browser. Anyone holding it can use your account and spend credits. Keep it private; do not paste it into public conversations or support messages. Clearing the cookie without keeping access to your key can make the account inaccessible.</p>
+    <h2 id="site-counts">Page counts on kleooai.com</h2>
+    <p>The website counts its own visits. On each page view, the site’s script sends Kleo’s server the page path, the host of the referring site (for example <code>news.ycombinator.com</code>, never the full address), the source named in the link (<code>utm_source</code> or <code>ref</code>) and the browser’s language; the server adds the country from its hosting provider’s connection header. These are stored only as totals per day, page, referring host, source and country.</p>
+    <p>No cookie is set, no identifier is created, the IP address is not stored, and a count is never linked to an account. The script sends nothing when your browser signals Do Not Track or Global Privacy Control, or when JavaScript is off.</p>
+    <h2 id="email">Optional email</h2>
+    <p>You can add an email address on your account page. Kleo sends one link to confirm it; the address is then used only to send the links of your finished videos and occasional Kleo news. Every message carries an unsubscribe link, and you can ask for the address to be removed at any time. The emails are sent through Resend. An unconfirmed address receives nothing else.</p>
     <h2 id="retention">How long information is kept</h2>
     <div class="tablewrap"><table><caption>Kleo's current retention rules</caption><thead><tr><th scope="col">Information</th><th scope="col">Retention</th></tr></thead><tbody>
       <tr><td>Rendered files and their download links</td><td>7 days; expired files are removed by the scheduled cleanup. Download what you want to keep.</td></tr>
       <tr><td>Uploaded or linked reference pictures</td><td>30 days after their last use, then removed by scheduled cleanup. Reusing a reference restarts that period.</td></tr>
       <tr><td>Upload authorisation links</td><td>Valid for 48 hours. Uploaded pictures follow the reference-picture period above.</td></tr>
       <tr><td>Account, prompts, storyboards and activity records</td><td>Retained with the account in the current service. Request access, correction or deletion using the contact below; these records do not share the 7-day output expiry.</td></tr>
+      <tr><td>Optional email address</td><td>With the account until you remove it or ask for deletion. Unsubscribing stops the messages.</td></tr>
+      <tr><td>Daily page counts</td><td>Kept as aggregated totals, which contain no personal information.</td></tr>
       <tr><td>Payment, support and security records</td><td>As needed for the transaction, support, fraud prevention and applicable legal record-keeping obligations. Required records may remain after an account-deletion request.</td></tr>
     </tbody></table></div>
     <h2 id="providers">Who processes information</h2>
@@ -157,6 +166,7 @@
       <li><b>Google (Nano Banana Pro), ByteDance (Seedance 2.5) and Suno:</b> through ePhone AI, Google generates the pictures and character sheets, ByteDance the moving footage of a film, and Suno the music track when you ask for one.</li>
       <li><b>GitHub Pages:</b> public website hosting and associated connection requests.</li>
       <li><b>Stripe:</b> checkout, payment processing, fraud prevention and payment records.</li>
+      <li><b>Resend:</b> sending the confirmation and delivery emails, only when you add an email address.</li>
       <li><b>Your chosen assistant provider, including OpenAI for ChatGPT:</b> your conversation, tool requests and results under that provider's own terms and privacy notice.</li>
       <li><b>Google Fonts:</b> some pages load fonts from Google's servers, which receive normal browser connection information. The homepage serves its fonts locally.</li>
     </ul>

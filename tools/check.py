@@ -21,6 +21,7 @@ PAGES = {
     '/pricing/': 'pricing/index.html',
     '/ai-youtube-video-generator/': 'ai-youtube-video-generator/index.html',
     '/connect/': 'connect/index.html',
+    '/launch/': 'launch/index.html',
     '/integrations/claude/': 'integrations/claude/index.html',
     '/integrations/chatgpt/': 'integrations/chatgpt/index.html',
     '/video-generation-mcp/': 'video-generation-mcp/index.html',
@@ -50,7 +51,7 @@ WATCH_PAGES = {
 # things the product does not do, or the site must not say (case-insensitive regexes over the visible text)
 FORBIDDEN = [
     (r'\b8[ -]?min', 'films are 15 s to 5 min'),
-    (r'\bfree film\b|\bfilm (is|for) free\b|\bone film free\b|\bfree short\b', 'the starter credits do not buy a film'),
+    (r'\bfree films?\b|\bfilms? (is|are|for) free\b|\bone film free\b|\bfree shorts?\b', 'the starter credits buy an animatic; only a launch code opens one 15-second film without a pack'),
     (r'\bapple\b', 'no Apple reference'),
     (r'\bviral\b', 'no virality claims'),
     (r'\btemplates?\b', 'the product has no templates (one workflow, film)'),
@@ -58,7 +59,11 @@ FORBIDDEN = [
     (r'(?<!full of )\bstock footage\b(?! is| —|,)', 'no stock footage'),
     (r'\b#1\b|\bnumber one\b|\bbest ai\b|\brank(s|ed|ing)? first\b', 'no ranking claims'),
     (r'\btestimonial|\bcustomers? (say|love)|\brated\b', 'no testimonials or ratings'),
-    (r'\bcookies? (banner|consent)|(?<!\bno )\banalytics\b(?! is| are| —| of)', 'no analytics on the site'),
+    # 27 Sep 2026: the site counts page views itself (site.js beacon to mcp.kleooai.com/b: path, referrer host, source,
+    # language; no cookie, no identifier). Third-party analytics, ad pixels and cookie banners stay out.
+    (r'\bcookies? (banner|consent)|\bgoogle analytics\b|(?<!\bno )\bthird-party analytics\b|(?<!\bno )\btracking (pixel|cookie)s?\b|(?<!\bno )\bad pixels?\b', 'only first-party, cookie-less, aggregated page counts'),
+    # the tariff before 27 Sep 2026 (1 credit = 2 s, 7 starter credits, animatic 5 credits flat at any length)
+    (r'\b1 credit (=|is|for every|per|buys) 2 s|\bone credit (per|for every|covers|buys) two seconds|\b(7|seven)[ -](starter[ -])?credits?\b|\b5 credits flat\b|\b20-second film costs 10\b', 'old tariff: 1 credit = 1.5 s, 5-credit gift, animatic 5/10 credits by length'),
     (r'(?<!\bno )(?<!\bwithout a )\bsubscription\b(?! is not| free)', 'packs are one-off — say "no subscription" only'),
 ]
 VOID = {'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'param', 'source', 'track', 'wbr'}
