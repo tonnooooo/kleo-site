@@ -71,12 +71,12 @@ Animatic: 15–60 seconds.
 Film: 15 seconds–5 minutes.
 
 Decision: Production cost
-Animatic: 5 credits per accepted render.
-Film: 1 credit per 2 seconds, rounded up, with a 10-credit minimum.
+Animatic: 5 credits up to 20 seconds, 10 up to 60, per accepted render.
+Film: 1 credit per 1.5 seconds, rounded up, with a 10-credit minimum.
 
 Decision: New-account access
-Animatic: An unused 7-credit starter balance covers one.
-Film: A credit-pack purchase and enough eligible film credits are required.
+Animatic: The 5-credit starter balance covers one of up to 20 seconds.
+Film: A credit-pack purchase and enough eligible film credits are required; a launch code opens one 15-second film.
 
 Decision: Best question to review
 Animatic: Is the story sequence and narration worth taking forward?
@@ -104,7 +104,7 @@ If you change the story, duration and look between the two jobs, a better result
 
 BUDGET TWO JOBS IF YOU WANT BOTH
 
-A 30-second animatic costs 5 credits and a 30-second film costs 15, so the two planned renders total 20 credits. This is a production-cost sum, not proof that all credits in an account can pay for either product. Film eligibility and the usable balance must be checked separately.
+A 30-second animatic costs 10 credits and a 30-second film costs 20, so the two planned renders total 30 credits. This is a production-cost sum, not proof that all credits in an account can pay for either product. Film eligibility and the usable balance must be checked separately.
 
 The animatic fee is not described as a deposit automatically deducted from a later film. Do not promise a conversion, discount or shared render unless the actual quote states it. Check sound, captions and graphic options before approving the treatment, and read the Terms for the Kleo mark and uses that require permission.
 

@@ -72,7 +72,7 @@
   ]
 }
 </script>
-<script src="/site.js?v=20260925-footer" defer></script>
+<script src="/site.js?v=20260927-growth" defer></script>
 </head>
 <body>
 <div class="progress" id="progress" aria-hidden="true"></div>
@@ -183,17 +183,29 @@
       <div>
         <details>
           <summary>Is there a free plan?</summary>
-          <p>Yes. A new account receives 7 starter credits with no card required. One animatic costs 5, leaving 2. A generated-footage film requires a purchased credit pack and enough eligible credits for its duration. A €5 pack adds 10 purchased credits, the cost of a 20-second film. A 30-second film costs 15. Check your usable film balance before approving a render.</p>
+          <p>Yes. A new account receives 5 starter credits with no card required: one animatic of up to 20 seconds. A generated-footage film requires a purchased credit pack and enough eligible credits for its duration. A €5 pack adds 10 purchased credits, the cost of a 15-second film; a 30-second film costs 20. During the launch, a code opens one free 15-second film before any pack. Check your usable film balance before approving a render.</p>
+        </details>
+        <details id="launch-code">
+          <summary>How do I use a launch code?</summary>
+          <p>Tell your assistant “redeem PRODUCTHUNT” (or HN, REDDIT, X, TIKTOK), or type the code on your account page. It
+            opens one film of up to 15 seconds for an account that has not bought a pack. Each code works for its first 30
+            accounts, once per account; a used-up code says so and charges nothing.</p>
+        </details>
+        <details id="referral">
+          <summary>How does the referral link work?</summary>
+          <p>Your account page and <code class="mono">kleo_account</code> show your link. A friend who connects through it is
+            linked to you; when they buy their first pack they get 5 extra credits on it and you get 10. Only a real payment
+            counts, once per friend.</p>
         </details>
         <details>
           <summary>Who can order a film, and who an animatic?</summary>
-          <p>Every account with enough credits can order an animatic. Film rendering also requires at least one credit-pack purchase. Ask your assistant to check your eligibility, usable balance and the exact cost before you approve a render. Packs start at €5 and are one-off purchases.</p>
+          <p>Every account with enough credits can order an animatic. Film rendering also requires at least one credit-pack purchase, or a launch code for one 15-second film. Ask your assistant to check your eligibility, usable balance and the exact cost before you approve a render. Packs start at €5 and are one-off purchases.</p>
         </details>
         <details>
           <summary>How are credits calculated?</summary>
-          <p>A film is priced by length: one credit covers two seconds, rounded up, with a 10-credit minimum — 15 or 20 seconds
-            cost 10 credits, 30 seconds 15, 60 seconds 30, 90 seconds 45, 3 minutes 90 and 5 minutes 150. An animatic is 5
-            credits flat, at any length from 15 to 60 seconds. Packs are one-off purchases in EUR through a Stripe checkout,
+          <p>A film is priced by length: one credit covers 1.5 seconds, rounded up, with a 10-credit minimum — 15 seconds
+            cost 10 credits, 20 seconds 14, 30 seconds 20, 60 seconds 40, 90 seconds 60, 3 minutes 120 and 5 minutes 200. An
+            animatic is 5 credits up to 20 seconds and 10 credits up to 60. Packs are one-off purchases in EUR through a Stripe checkout,
             with no subscription: €5 for 10 credits, €15 for 35, €40 for 100. Nothing is charged until
             <code class="mono">kleo_create_video</code> accepts the job, and it states the exact credits first.
             <a href="/pricing/">See the pricing →</a></p>
@@ -203,7 +215,7 @@
         <details>
           <summary>Do I need an account?</summary>
           <p>There is no sign-up form and no password. While your client connects to Kleo, it opens Kleo’s own page; you press
-            one button, Start free, and land back in the chat with 7 credits on your account. Ask the assistant for your account
+            one button, Start free, and land back in the chat with 5 credits on your account. Ask the assistant for your account
             page whenever you want the balance and the checkout links. A limited number of new accounts open each day.</p>
         </details>
         <details>

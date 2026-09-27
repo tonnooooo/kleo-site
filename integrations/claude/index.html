@@ -72,7 +72,7 @@
   ]
 }
 </script>
-<script src="/site.js?v=20260925-footer" defer></script>
+<script src="/site.js?v=20260927-growth" defer></script>
 </head>
 <body>
 <div class="progress" id="progress" aria-hidden="true"></div>
@@ -144,10 +144,11 @@
         <ol>
           <li>Open <b>Settings → Connectors</b> in Claude and choose <b>Add custom connector</b>.</li>
           <li>Name it <b>Kleo</b>, paste the address below and confirm.</li>
-          <li>Kleo’s page opens: click <b>Start free</b>. You are back in Claude, with 7 credits on your new Kleo
-            account. No form, no password, no card: enough for a 5-credit animatic. A film is made only for accounts
-            that have bought a pack and costs 10 credits minimum, so the €5 pack (10 credits) goes on before the first
-            film; a 30-second film is 15.</li>
+          <li>Kleo’s page opens: click <b>Start free</b>. You are back in Claude, with 5 credits on your new Kleo
+            account. No form, no password, no card: enough for an animatic of up to 20 seconds. A film is made only for
+            accounts that have bought a pack and costs 10 credits minimum, so the €5 pack (10 credits, a 15-second film)
+            goes on before the first film; a 30-second film is 20. A launch code (“redeem PRODUCTHUNT”) opens one free
+            15-second film before any pack.</li>
           <li>In a new chat, turn Kleo on from the tools menu and ask for the film.</li>
         </ol>
         <div class="url-line">Server address <code>https://mcp.kleooai.com/mcp</code> <button class="btn btn-ghost btn-sm" type="button" data-copy="https://mcp.kleooai.com/mcp">Copy</button></div>
@@ -173,7 +174,7 @@
     </div>
     <div class="split">
       <div>
-        <p>Choose the product before rendering. <b>Try a free animatic:</b> drawn frames, camera movement and narration, 15–60 seconds, 5 credits. <b>Create a film:</b> generated moving footage, 15 seconds to 5 minutes, with a purchased pack and a quote you approve.</p><h3>Try a free animatic</h3><p class="style-say copyable">“Use Kleo to plan a 30-second animatic about a paper boat returning to its maker. Animation look, English narration, 9:16. Show me the treatment, confirm that the product is an animatic, and check the exact credit cost against my available balance. Wait for my approval before rendering. Do not start a paid film or buy credits.”<button class="btn btn-ghost btn-sm copy" type="button" aria-label="Copy try a free animatic prompt" data-copy="Use Kleo to plan a 30-second animatic about a paper boat returning to its maker. Animation look, English narration, 9:16. Show me the treatment, confirm that the product is an animatic, and check the exact credit cost against my available balance. Wait for my approval before rendering. Do not start a paid film or buy credits.">Copy prompt</button></p><h3>Create a film</h3><p class="style-say copyable">“Use Kleo to plan a 20-second narrated film about two fictional cars leaving an amber-lit tunnel for a coastal road at golden hour. Realistic look, English narration, 16:9. Show me the treatment, the exact film credit cost, my available balance and whether my account is eligible. Wait for my approval before rendering. Do not buy credits. After rendering, give me the finished MP4 download link.”<button class="btn btn-ghost btn-sm copy" type="button" aria-label="Copy create a film prompt" data-copy="Use Kleo to plan a 20-second narrated film about two fictional cars leaving an amber-lit tunnel for a coastal road at golden hour. Realistic look, English narration, 16:9. Show me the treatment, the exact film credit cost, my available balance and whether my account is eligible. Wait for my approval before rendering. Do not buy credits. After rendering, give me the finished MP4 download link.">Copy prompt</button></p>
+        <p>Choose the product before rendering. <b>Try a free animatic:</b> drawn frames, camera movement and narration, 5 credits up to 20 seconds (10 up to 60). <b>Create a film:</b> generated moving footage, 15 seconds to 5 minutes, with a purchased pack (or a launch code for one 15-second film) and a quote you approve.</p><h3>Try a free animatic</h3><p class="style-say copyable">“Use Kleo to plan a 20-second animatic about a paper boat returning to its maker. Animation look, English narration, 9:16. Show me the treatment, confirm that the product is an animatic, and check the exact credit cost against my available balance. Wait for my approval before rendering. Do not start a paid film or buy credits.”<button class="btn btn-ghost btn-sm copy" type="button" aria-label="Copy try a free animatic prompt" data-copy="Use Kleo to plan a 20-second animatic about a paper boat returning to its maker. Animation look, English narration, 9:16. Show me the treatment, confirm that the product is an animatic, and check the exact credit cost against my available balance. Wait for my approval before rendering. Do not start a paid film or buy credits.">Copy prompt</button></p><h3>Create a film</h3><p class="style-say copyable">“Use Kleo to plan a 20-second narrated film about two fictional cars leaving an amber-lit tunnel for a coastal road at golden hour. Realistic look, English narration, 16:9. Show me the treatment, the exact film credit cost, my available balance and whether my account is eligible. Wait for my approval before rendering. Do not buy credits. After rendering, give me the finished MP4 download link.”<button class="btn btn-ghost btn-sm copy" type="button" aria-label="Copy create a film prompt" data-copy="Use Kleo to plan a 20-second narrated film about two fictional cars leaving an amber-lit tunnel for a coastal road at golden hour. Realistic look, English narration, 16:9. Show me the treatment, the exact film credit cost, my available balance and whether my account is eligible. Wait for my approval before rendering. Do not buy credits. After rendering, give me the finished MP4 download link.">Copy prompt</button></p>
       </div>
       <ul class="defs">
         <li><b>Looks</b><span>Two looks are available: <b>realistic</b>, generated live-action footage with a cinematic
@@ -255,9 +256,8 @@
         the same narrator and graphic layer, no generated clip. Every account can order animatics; a film is made only
         for accounts that have bought a pack.</span></li>
       <li><b>Narration</b><span>One narrator, in English (the default) or Italian; a music track and burned-in subtitles when you ask for them in the intake. The current <a href="/terms.html">Terms</a> specify a small Kleo mark on the video.</span></li>
-      <li><b>Credits</b><span>A film: 1 credit = 2 seconds, rounded up, 10 credits minimum: 15 s = 10, 30 s = 15, 60 s
-        = 30, 5 min = 150. An animatic: 5 credits flat. You start with 7 credits; packs are €5 = 10, €15 = 35, €40 = 100,
-        paid once, no subscription.</span></li>
+      <li><b>Credits</b><span>A film: 1 credit = 1.5 seconds, rounded up, 10 credits minimum: 15 s = 10, 30 s = 20, 60 s
+        = 40, 5 min = 200. An animatic: 5 credits up to 20 seconds, 10 up to 60. You start with 5 credits; packs are €5 = 10, €15 = 35, €40 = 100, paid once, no subscription.</span></li>
       <li><b>Time</b><span>A render typically takes 25–35 minutes on a rented GPU; Kleo tells you the estimate in the
         chat.</span></li>
     </ul>
@@ -290,7 +290,7 @@
         </details>
         <details>
           <summary>Not enough credits.</summary>
-          <p>A €5 pack adds 10 purchased credits and unlocks film rendering. A 20-second film costs 10 credits; a 30-second film costs 15. After one 5-credit animatic, your 7 starter credits become 2; adding that pack gives a total balance of 12, not enough for a 30-second film. Ask your assistant to confirm the credits eligible for your chosen product and the exact quote before you buy or render. Ask Claude for your account page to review the balance and checkout links. A refused request spends no credits.</p>
+          <p>A €5 pack adds 10 purchased credits and unlocks film rendering: exactly one 15-second film. A 20-second film costs 14 credits and a 30-second film 20. Your 5 starter credits buy one animatic of up to 20 seconds. A launch code opens one free 15-second film before any pack. Ask your assistant to confirm the credits for your chosen product and the exact quote before you buy or render. Ask Claude for your account page to review the balance and checkout links. A refused request spends no credits.</p>
         </details>
       </div>
       <div>
