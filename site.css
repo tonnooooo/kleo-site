@@ -985,3 +985,10 @@ html:not(.no-js) .agent-panel:not([open]){display:none}
  .site-footer .publisher-line{text-align:left;margin-top:10px;max-width:38em}
 }
 @media(prefers-reduced-motion:reduce){.site-footer .social-link{transition:none}.site-footer .social-link:hover{transform:none}}
+/* footer variant of the payment badges: a compact, muted, left-aligned row under the contact link, same marks as pricing */
+.paymarks.paymarks--foot{justify-items:start;gap:10px;margin:24px 0 0}
+.paymarks--foot p{margin:0;font:600 .68rem/1.5 var(--font-body);letter-spacing:.12em;text-transform:uppercase;color:var(--mute);text-align:left}
+.paymarks--foot ul{justify-content:flex-start;gap:6px;max-width:none}
+.paymarks--foot svg{width:34px;height:22px;border-radius:4px;box-shadow:0 0 0 1px var(--line);opacity:.82;transition:opacity .2s}
+.paymarks--foot ul:hover svg{opacity:1}
+@media(prefers-reduced-motion:reduce){.paymarks--foot svg{transition:none}}
