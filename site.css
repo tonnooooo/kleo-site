@@ -362,6 +362,15 @@ h1 .hl{
   background:var(--amber-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.2l2.3 2.3 4.7-4.7' fill='none' stroke='%23F3B53F' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px no-repeat}
 .plan .btn{justify-self:start}
 
+/* ---------- payment-method badges (pricing): one light card per brand mark, a centered row that wraps on phones ---------- */
+.paymarks{display:grid; justify-items:center; gap:12px; margin:36px 0}
+.paymarks ul{margin:0; padding:0; list-style:none; display:flex; flex-wrap:wrap; justify-content:center; gap:8px}
+.paymarks li{display:block; line-height:0}
+.paymarks svg{display:block; width:44px; height:28px; border-radius:5px; background:#FFFFFF; box-shadow:0 0 0 1px var(--line-2), 0 2px 6px rgba(0,0,0,.18)}
+.paymarks p{margin:0; color:var(--mute); font-size:.875rem; line-height:1.5; text-align:center; text-wrap:balance}
+/* too narrow for six in a row: two even rows of three instead of five and an orphan */
+@media (max-width:359px){ .paymarks ul{max-width:148px} }
+
 /* ---------- faq ---------- */
 .faq{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 40px}
 @media (max-width:820px){ .faq{grid-template-columns:1fr} }

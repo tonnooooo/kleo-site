@@ -52,7 +52,7 @@ WATCH_PAGES = {
 FORBIDDEN = [
     (r'\b8[ -]?min', 'films are 15 s to 5 min'),
     (r'\bfree films?\b|\bfilms? (is|are|for) free\b|\bone film free\b|\bfree shorts?\b', 'the starter credits buy an animatic; only a launch code opens one 15-second film without a pack'),
-    (r'\bapple\b', 'no Apple reference'),
+    (r'\bapple\b(?! pay\b)', 'no Apple reference (Apple Pay as a checkout method is the one exception)'),
     (r'\bviral\b', 'no virality claims'),
     (r'\btemplates?\b', 'the product has no templates (one workflow, film)'),
     (r'\bcartoon\.mp4|cyber\.mp4', 'retired samples (the owner keeps Cinema and Stickman on the looks page, 15 Sep)'),
