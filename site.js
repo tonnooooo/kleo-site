@@ -405,7 +405,7 @@
 
   /* ---------- the wall (home + /gallery/): many silent films at once ----------
      Each preview plays muted while it is in view and is fetched only then. A card opens the viewer: the 1080p copy,
-     still silent and without controls, with the prompt beside it. The filter pills of /gallery/ hide cards by data-tags. */
+     still silent and without controls, with the prompt beside it. */
   var wallItems = Array.prototype.slice.call(document.querySelectorAll('.wall-item'));
   if (wallItems.length) {
     var wallPlay = function(v, on){
@@ -439,12 +439,12 @@
       vVideo.addEventListener('contextmenu', function(e){ e.preventDefault(); });
       var openViewer = function(it){
         opener = it.querySelector('.wall-open');
-        var copy = it.querySelector('[data-copy]');
+        var prompt = it.getAttribute('data-prompt') || '';
         vTitle.textContent = it.querySelector('.wall-cap b').textContent;
-        vMeta.textContent = it.querySelector('.wall-cap span').textContent;
-        vPrompt.textContent = copy ? copy.getAttribute('data-copy') : '';
-        if (copy) vCopy.setAttribute('data-copy', copy.getAttribute('data-copy'));
-        vCopy.hidden = !copy; vPrompt.hidden = !copy;
+        vMeta.textContent = it.getAttribute('data-meta') || '';
+        vPrompt.textContent = prompt;
+        vCopy.setAttribute('data-copy', prompt);
+        vCopy.hidden = !prompt; vPrompt.hidden = !prompt;
         vVideo.poster = it.getAttribute('data-poster') || '';
         vVideo.src = it.getAttribute('data-full');
         viewer.showModal();
@@ -459,16 +459,6 @@
       viewer.addEventListener('close', function(){ vVideo.pause(); vVideo.removeAttribute('src'); vVideo.load(); if (opener) opener.focus(); });
     }
 
-    var pills = Array.prototype.slice.call(document.querySelectorAll('.wall-filters button'));
-    pills.forEach(function(b){
-      b.addEventListener('click', function(){
-        var tag = b.getAttribute('data-filter');
-        pills.forEach(function(o){ o.setAttribute('aria-pressed', String(o === b)); });
-        wallItems.forEach(function(it){
-          it.hidden = tag !== 'all' && (' ' + (it.getAttribute('data-tags') || '') + ' ').indexOf(' ' + tag + ' ') === -1;
-        });
-      });
-    });
   }
 
   /* ---------- the looks page: the hero takes the colour of the look you point at ---------- */
