@@ -25,6 +25,7 @@ PAGES = {
     '/integrations/claude/': 'integrations/claude/index.html',
     '/integrations/chatgpt/': 'integrations/chatgpt/index.html',
     '/video-generation-mcp/': 'video-generation-mcp/index.html',
+    '/gallery/': 'gallery/index.html',
     '/examples/': 'examples/index.html',
     '/examples/tether/': 'examples/tether/index.html',
     '/examples/signal-delay/': 'examples/signal-delay/index.html',

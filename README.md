@@ -16,6 +16,7 @@ updates within a few minutes.
 | `/integrations/claude/`, `/integrations/chatgpt/` | `integrations/*/index.html` | The two long guides. |
 | `/video-generation-mcp/` | `video-generation-mcp/index.html` | The server documented: endpoint, OAuth, the tools in the order they run, the parameters of a render. |
 | `/examples/`, `/examples/tether/`, `/examples/signal-delay/` | `examples/**` | The gallery and one page per real film. |
+| `/gallery/` | `gallery/index.html` | The video wall: short films and shots made by the Kleo team with Seedance 2.5 (not through Kleo, and the page says so), filter pills, a silent 1080p viewer, a copyable Kleo prompt per film. The home carries a slice of it (`#gallery`). Cards are generated from `gallery/films.json` by `tools/gallery.py`; the video files live on Cloudflare R2 (bucket `kleo-media`, `https://media.kleooai.com/gallery/<slug>.mp4`, `<slug>-p.mp4` loop, `<slug>.jpg` poster), never in this repo. |
 | `/styles.html` | `styles.html` | The two looks, realistic and animation. Historical route, keep the `.html`. |
 | `/pricing/` | `pricing/index.html` | Packs, the calculator (`#duration` → `#credit-result`, same rules as the server; the film/animatic switch is the pair of `.chip[data-product]` buttons), the cost table. |
 | `/faq/`, `/about/` | `faq/index.html`, `about/index.html` | |
