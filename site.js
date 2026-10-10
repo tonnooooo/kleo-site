@@ -403,6 +403,64 @@
     } else playLine();
   }
 
+  /* ---------- the wall (home + /gallery/): many silent films at once ----------
+     Each preview plays muted while it is in view and is fetched only then. A card opens the viewer: the 1080p copy,
+     still silent and without controls, with the prompt beside it. */
+  var wallItems = Array.prototype.slice.call(document.querySelectorAll('.wall-item'));
+  if (wallItems.length) {
+    var wallPlay = function(v, on){
+      if (on && !document.hidden) { v.muted = true; var p = v.play(); if (p && p.catch) p.catch(function(){}); }
+      else v.pause();
+    };
+    var inView = new Set();
+    wallItems.forEach(function(it){
+      it.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+      it.addEventListener('dragstart', function(e){ e.preventDefault(); });
+      var v = it.querySelector('.wall-media video');
+      if (v) { v.muted = true; v.defaultMuted = true; v.playsInline = true; }
+    });
+    if ('IntersectionObserver' in window) {
+      var wio = new IntersectionObserver(function(entries){
+        entries.forEach(function(en){
+          var v = en.target.querySelector('.wall-media video'); if (!v) return;
+          if (en.isIntersecting) { inView.add(v); if (v.preload === 'none') v.preload = 'auto'; } else inView.delete(v);
+          wallPlay(v, en.isIntersecting);
+        });
+      }, {threshold:.25, rootMargin:'120px 0px'});
+      wallItems.forEach(function(it){ wio.observe(it); });
+    } else wallItems.forEach(function(it){ var v = it.querySelector('.wall-media video'); if (v) { inView.add(v); wallPlay(v, true); } });
+    document.addEventListener('visibilitychange', function(){ inView.forEach(function(v){ wallPlay(v, true); }); });
+
+    var viewer = document.getElementById('viewer');
+    if (viewer && typeof viewer.showModal === 'function') {
+      var vVideo = viewer.querySelector('video'), vTitle = viewer.querySelector('h3'), vMeta = viewer.querySelector('.viewer-meta'),
+          vPrompt = viewer.querySelector('blockquote'), vCopy = viewer.querySelector('[data-copy]'), opener = null;
+      vVideo.muted = true; vVideo.defaultMuted = true; vVideo.playsInline = true;
+      vVideo.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+      var openViewer = function(it){
+        opener = it.querySelector('.wall-open');
+        var prompt = it.getAttribute('data-prompt') || '';
+        vTitle.textContent = it.querySelector('.wall-cap b').textContent;
+        vMeta.textContent = it.getAttribute('data-meta') || '';
+        vPrompt.textContent = prompt;
+        vCopy.setAttribute('data-copy', prompt);
+        vCopy.hidden = !prompt; vPrompt.hidden = !prompt;
+        vVideo.poster = it.getAttribute('data-poster') || '';
+        vVideo.src = it.getAttribute('data-full');
+        viewer.showModal();
+        var p = vVideo.play(); if (p && p.catch) p.catch(function(){});
+      };
+      wallItems.forEach(function(it){
+        var b = it.querySelector('.wall-open'); if (b) b.addEventListener('click', function(){ openViewer(it); });
+      });
+      var closeViewer = function(){ viewer.close(); };
+      viewer.querySelector('.viewer-close').addEventListener('click', closeViewer);
+      viewer.addEventListener('click', function(e){ if (e.target === viewer) closeViewer(); });
+      viewer.addEventListener('close', function(){ vVideo.pause(); vVideo.removeAttribute('src'); vVideo.load(); if (opener) opener.focus(); });
+    }
+
+  }
+
   /* ---------- the looks page: the hero takes the colour of the look you point at ---------- */
   var shero = document.querySelector('.styles-hero');
   if (shero) Array.prototype.forEach.call(document.querySelectorAll('.look'), function(l){
