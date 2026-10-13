@@ -1,7 +1,9 @@
 # Kleo — the website
 
-Static site for Kleo, the remote MCP server that makes complete narrated films (realistic or animation) from inside
-Claude, ChatGPT, Grok, Claude Code, Cursor, VS Code, OpenCode and Gemini CLI. Served by GitHub Pages at
+Static site for Kleo, the AI creative studio you use by chatting (the app at https://app.kleooai.com: video, pictures,
+audio, apps and complete narrated films), which also works inside Claude, ChatGPT, Grok, Claude Code, Cursor, VS Code,
+OpenCode and Gemini CLI as a remote MCP server. The site's main call to action is the big **Open Kleo** button
+(`.btn-xl`, full width on phones) to the app; the connector is the secondary way in. Served by GitHub Pages at
 https://kleooai.com/ (CNAME + .nojekyll); no build step: edit the HTML, run the checks, push to `main`, the site
 updates within a few minutes.
 
@@ -9,7 +11,7 @@ updates within a few minutes.
 
 | Route | File | What it is |
 |---|---|---|
-| `/` | `index.html` | Home: the promise, how it works, the address, price, five FAQ answers. Section ids `how`, `template` (use cases — the word never appears in the text), `engine`, `pricing`, `connect`, `faq`, `account` are stable: links already shared point at them, and `site.js` maps the four old Italian ids (`#come #connetti #prezzi #quinte`). |
+| `/` | `index.html` | Home: the promise and the big Open Kleo button, the app (`#studio`: chat, video, image, audio, apps, films), the films made with Kleo (`#showcase`), how a film is made, price, the connector for assistants (`#connect`), six FAQ answers. Section ids `how`, `template` (use cases — the word never appears in the text), `engine`, `pricing`, `connect`, `faq`, `account` are stable: links already shared point at them, and `site.js` maps the four old Italian ids (`#come #connetti #prezzi #quinte`). |
 | `/ai-youtube-video-generator/` | `ai-youtube-video-generator/index.html` | The guide: brief → treatment → storyboard → render → download. |
 | `/connect/` | `connect/index.html` | The hub: one card per client with the tested steps and copyable config (Claude first). |
 | `/launch/` | `launch/index.html` | The landing page for Product Hunt / Hacker News visitors: what Kleo is in one screen, the 30 s ad and Apex, Claude in three steps, the launch codes. |
@@ -65,7 +67,15 @@ and on `/connect/` (`#server-note`); keep it true to the product (it says what a
 
 ## Rules
 
-- The pages may only promise what the deployed server does. Today: two products from one storyboard — the FILM,
+- The pages may only promise what the deployed services do. The app (since 13–14 October 2026, kleo-mcp
+  `docs/STUDIO.md`): a chat that proposes a card with the model, settings and exact credit price, charged only on
+  Generate; video Seedance 2.5 (default) / 2.0 / 2.0 Fast and Google Veo 3.1 / Veo 3.1 Fast, pictures Nano Banana Pro /
+  Nano Banana 2 / Seedream 5 / FLUX.2 Pro in sets of 1, 2 or 4, audio (voiceover, music, sound FX), the apps (Face Swap,
+  Video Face Swap, Talking Photo, Lipsync, Motion Control, Outfit Swap, Edit Video, Upscale Video), films ordered from the
+  chat, a library, e-mail sign-in (Google/Microsoft only once configured: do not promise them). Example prices: Seedance
+  2.0 Fast 5 s 480p = 1, Seedance 2.5 5 s 720p = 4, Veo 3.1 Fast 8 s = 3, Veo 3.1 8 s = 7; anything else "is shown before
+  you generate". Free credits work with Seedance 2.0 Fast and every picture model except Nano Banana Pro; the first pack
+  opens every model. The product name is just "Kleo" (never "Kleo Studio"). The films: two products from one storyboard — the FILM,
   realistic or animation, every frame drawn by Google Nano Banana Pro and every shot generated as moving footage by
   ByteDance Seedance 2.5, 15 s to 5 min, 16:9 or 9:16, English (default) or Italian, 4K 60 fps, an optional AI upscale
   (Real-ESRGAN + RIFE, film only, the film's credits again with a minimum of 5, refunded automatically if it cannot be
