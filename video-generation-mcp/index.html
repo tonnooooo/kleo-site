@@ -29,7 +29,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="/site.css?v=20261013-gallery">
+<link rel="stylesheet" href="/site.css?v=20261014-open-kleo">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -85,7 +85,7 @@
         <path d="M27 0H73A27 27 0 0 1 100 27V73A27 27 0 0 1 73 100H0V27A27 27 0 0 1 27 0Z" fill="var(--amber)"/>
         <path d="M39 30L69 50L39 70Z" fill="var(--amber-ink)" stroke="var(--amber-ink)" stroke-width="9" stroke-linejoin="round"/>
       </svg>
-      Kleo <span class="tag">MCP</span>
+      Kleo <span class="tag">AI</span>
     </a>
     <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-menu">
       <svg class="bars" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 5h14M2 9h14M2 13h14"/></svg>
@@ -100,7 +100,7 @@
       <a href="/faq/">FAQ</a>
       <a href="/connect/">Connect</a>
     </div>
-    <a class="btn btn-primary btn-sm" href="https://app.kleooai.com/">Open Studio</a>
+    <a class="btn btn-primary btn-sm" href="https://app.kleooai.com/">Open Kleo</a>
   </div>
 </nav>
 
@@ -113,12 +113,14 @@
     <h1>A video production<br><span class="hl">MCP server.</span></h1>
     <p class="lede">Kleo exposes one film workflow to any MCP client: intake, treatment, storyboard, a render on a GPU rented for the
       job, and the links to a finished narrated film in 4K at 60 fps — frames by Google Nano Banana Pro, moving footage by ByteDance
-      Seedance 2.5. One narrator, two looks, two products: a film, 15 seconds to 5 minutes, or an animatic of the same storyboard, 15 to 60 seconds. There is no app and no dashboard; the assistant does the
-      work through the tools below.</p>
+      Seedance 2.5. One narrator, two looks, two products: a film, 15 seconds to 5 minutes, or an animatic of the same storyboard, 15 to 60 seconds. In an assistant there is nothing else to set up: it does
+      the work through the tools below. The MCP server is one way to use Kleo; the other is the
+      <a href="https://app.kleooai.com/">Kleo app</a>, with the same account and credits.</p>
     <p class="mono" id="mcpStatus" hidden></p>
     <div class="address"><code>https://mcp.kleooai.com/mcp</code><button class="btn btn-ghost btn-sm" type="button" data-copy="https://mcp.kleooai.com/mcp">Copy address</button></div>
     <div class="cta-row">
       <a class="btn btn-primary" href="/connect/">Connect Kleo <span class="arr" aria-hidden="true">→</span></a>
+      <a class="btn btn-ghost" href="https://app.kleooai.com/">Open Kleo</a>
       <a class="btn btn-ghost" href="https://github.com/tonnooooo/kleo-mcp">Public repository</a>
     </div>
   </div>
@@ -132,7 +134,7 @@
         <div class="eyebrow"><span class="n">01</span>Endpoint</div>
         <h2>Connect over HTTPS.</h2>
       </div>
-      <p class="lede">Kleo is a remote MCP server: one address, the Streamable HTTP transport, OAuth 2.1. Configure the address in
+      <p class="lede">Kleo’s connector is a remote MCP server: one address, the Streamable HTTP transport, OAuth 2.1. Configure the address in
         your MCP client and finish the authorization in the browser; there is no sign-up form and no password.</p>
     </div>
     <ul class="defs">
@@ -370,8 +372,8 @@ claude mcp add --transport http kleo https://mcp.kleooai.com/mcp
         </svg>
         Kleo
       </a>
-      <p class="footer-tagline">Human direction.<br>Agent-made films.</p>
-      <p class="footer-description">From your first idea to the final frame,<br> inside the AI assistant you already use.</p>
+      <p class="footer-tagline">Describe it.<br>Kleo makes it.</p>
+      <p class="footer-description">Video, pictures, voice and films by chatting,<br> in the Kleo app or inside your AI assistant.</p>
       <div class="footer-socials" aria-label="Kleo social channels">
         <a href="https://www.instagram.com/kleooai/" class="social-link" aria-label="Kleo on Instagram" rel="me"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg></a>
         <a href="https://x.com/kleooai" class="social-link" aria-label="Kleo on X" rel="me"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l10 16h-4L5 4Zm14 0L5 20"/></svg></a>
@@ -395,6 +397,7 @@ claude mcp add --transport http kleo https://mcp.kleooai.com/mcp
     <div class="footer-group">
       <h2>Create</h2>
       <ul>
+        <li><a href="https://app.kleooai.com/">Open Kleo</a></li>
         <li><a href="/ai-youtube-video-generator/">Create videos</a></li>
         <li><a href="/gallery/">Video gallery</a></li>
         <li><a href="/examples/">Explore examples</a></li>
