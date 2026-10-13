@@ -1067,3 +1067,8 @@ html:not(.no-js) .agent-panel:not([open]){display:none}
 .home-wall .wall-head h2{font-size:clamp(2rem,4vw,3.2rem); margin:12px 0 0}
 .home-wall .hl{background:linear-gradient(92deg, var(--hl-a) 0%, var(--hl-b) 55%, var(--hl-c) 110%); -webkit-background-clip:text; background-clip:text; color:transparent}
 @media (max-width:600px){ .home-wall{margin:0 0 48px} }
+
+/* Kleo Studio call to action in the home hero (13 Oct 2026) */
+.hero-studio{display:flex; flex-wrap:wrap; align-items:center; gap:12px 16px; margin:22px 0 6px}
+.hero-studio-note{color:var(--ink-2); font-size:.875rem; max-width:300px; line-height:1.4}
+.hero-studio-note strong{color:var(--ink)}
