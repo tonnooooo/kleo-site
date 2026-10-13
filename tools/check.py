@@ -17,7 +17,7 @@ ROOT = Path(__file__).resolve().parent.parent
 SITE_URL = 'https://kleooai.com'
 # the indexable pages: route → file. The sitemap must list exactly these.
 PAGES = {
-    '/': 'index.html',
+    '/mcp': 'index.html',
     '/pricing/': 'pricing/index.html',
     '/ai-youtube-video-generator/': 'ai-youtube-video-generator/index.html',
     '/connect/': 'connect/index.html',
@@ -162,6 +162,7 @@ def main():
                 continue
             path = unquote(u.path)
             if not path: target = f
+            elif path in ('/mcp', '/mcp/'): target = ROOT / 'index.html'  # the site's home is served at /mcp (kleooai.com is the Kleo app)
             elif path.startswith('/'): target = ROOT / path.lstrip('/')
             else: target = f.parent / path
             if target.is_dir(): target = target / 'index.html'
