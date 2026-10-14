@@ -18,7 +18,7 @@ updates within a few minutes.
 | `/integrations/claude/`, `/integrations/chatgpt/` | `integrations/*/index.html` | The two long guides. |
 | `/video-generation-mcp/` | `video-generation-mcp/index.html` | The server documented: endpoint, OAuth, the tools in the order they run, the parameters of a render. |
 | `/examples/`, `/examples/tether/`, `/examples/signal-delay/` | `examples/**` | The gallery and one page per real film. |
-| `/gallery/` | `gallery/index.html` | The video wall: short films and shots made by the Kleo team with Seedance 2.5 (not through Kleo, and the page says so), in sections of identical cards (16:9 films, 9:16 Shorts, one character in three shots), a silent 1080p viewer, a copyable Kleo prompt per film. The home carries one row of each format (`#gallery`). Cards are generated from `gallery/films.json` by `tools/gallery.py`; the video files live on Cloudflare R2 (bucket `kleo-media`, `https://media.kleooai.com/gallery/<slug>.mp4`, `<slug>-p.mp4` loop, `<slug>.jpg` poster), never in this repo. |
+| `/gallery/` | `gallery/index.html` | The video wall: the Kleo team's own ads and spots (16:9 two per row, 9:16 four per row), then short films and shots made by the Kleo team with Seedance 2.5 (not through Kleo, and the page says so), in sections of identical cards (16:9 films, 9:16 Shorts, one character in three shots), a silent 1080p viewer, a copyable Kleo prompt per film. The home carries one row of each format (`#gallery`). Cards are generated from `gallery/films.json` by `tools/gallery.py`; the video files live on Cloudflare R2 (bucket `kleo-media`, `https://media.kleooai.com/gallery/<slug>.mp4`, `<slug>-p.mp4` loop, `<slug>-h1.mp4`… extra loops, `<slug>.jpg` poster), never in this repo. |
 | `/styles.html` | `styles.html` | The two looks, realistic and animation. Historical route, keep the `.html`. |
 | `/pricing/` | `pricing/index.html` | Packs, the calculator (`#duration` → `#credit-result`, same rules as the server; the film/animatic switch is the pair of `.chip[data-product]` buttons), the cost table. |
 | `/faq/`, `/about/` | `faq/index.html`, `about/index.html` | |
@@ -57,6 +57,31 @@ descriptions), `6d501967255b4889a19297ad25fe6c51.txt` (the IndexNow key, public 
   zsh would read the `?`).
 - Assets carry dated `?v=` versions; bump them on updated pages when changing shared assets, so nobody reads a new page with an old
   stylesheet from the cache. The only remote resources on the site are the three Google Fonts faces.
+
+## Videos on every page (since 14 October 2026)
+
+Almost every page carries looping videos, Higgsfield-style: a showcase loop in the hero (`.page-hero.has-vid`,
+`vid-wide` or `vid-tall`; on the home it sits beside the app card, `.hero-duo`) and, in most sections, a heading line
+(title, one sentence, a button) over a row of identical cards (`.vstrip` > `.wall-grid.wide|tall.strip`: 3 wide or
+4 tall, never both in one row). The guides get a hero loop and a closing row automatically. Everything comes from
+`gallery/films.json` through `tools/gallery.py`: a page names its videos in markers (`<!-- vids:hero slug -->`,
+`<!-- vids:grid slug slug:h2 … -->`, `<!-- vids:viewer -->`, each closed by `<!-- /vids -->`) and the script writes
+the cards; run it after any change to films.json and after `tools/build_guides.py`. Rules it keeps:
+
+- Media only from `https://media.kleooai.com` (R2), and no new script, inline handler or inline style: the page’s
+  Content-Security-Policy stays strict. A preview is ≤ 8 s, ≤ 960 px, silent.
+- Only the hero loop has `autoplay`; every other card is `preload="none"` and `site.js` (the wall block) fetches and
+  plays it only while it is on screen, and pauses it off screen or in a hidden tab.
+- Phones (≤ 600 px): a row shows its first two cards only, so a screen never holds more than about two videos; no
+  horizontal scroll.
+- Labels: the cards say what the Kleo team made and how (`by` in films.json, shown in the viewer); never "Made with
+  Kleo" for a video that did not go through Kleo.
+- A loop is listed in an entry's `hl` only when it shows nothing the site must not say. Some full cuts still show the
+  earlier 7-credit gift, a price per film that is no longer right, or shots the owner keeps out of marketing (moon,
+  dunes, cameraman): those entries have `"full": false`, so their card loops the safe part and never opens the full
+  cut (`kleo-ad-v2-lighthouse`, `kleo-connector-tutorial-ad`, `apex-in-claude-35s`, `this-film-cost-5-euro`,
+  `films-in-claude-52s`, `connect-once-tall`, `type-the-film-30s`). `this-film-cost-5-euro` uses its own poster
+  (`this-film-cost-5-euro-nocar.jpg`), because the usual frame reads "This film cost €5".
 
 ## The server address
 
