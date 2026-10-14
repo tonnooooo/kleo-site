@@ -21,6 +21,7 @@ PAGES = {
     '/pricing/': 'pricing/index.html',
     '/ai-youtube-video-generator/': 'ai-youtube-video-generator/index.html',
     '/connect/': 'connect/index.html',
+    '/mcp/': 'mcp/index.html',
     '/launch/': 'launch/index.html',
     '/integrations/claude/': 'integrations/claude/index.html',
     '/integrations/chatgpt/': 'integrations/chatgpt/index.html',
