@@ -434,14 +434,32 @@
     var viewer = document.getElementById('viewer');
     if (viewer && typeof viewer.showModal === 'function') {
       var vVideo = viewer.querySelector('video'), vTitle = viewer.querySelector('h3'), vMeta = viewer.querySelector('.viewer-meta'),
-          vPrompt = viewer.querySelector('blockquote'), vCopy = viewer.querySelector('[data-copy]'), opener = null;
+          vPrompt = viewer.querySelector('blockquote'), vCopy = viewer.querySelector('[data-copy]'), opener = null,
+          vOpen = viewer.querySelector('.viewer-actions a'), vBase = vOpen ? vOpen.getAttribute('href') : null;
       vVideo.muted = true; vVideo.defaultMuted = true; vVideo.playsInline = true;
       vVideo.addEventListener('contextmenu', function(e){ e.preventDefault(); });
       var openViewer = function(it){
         opener = it.querySelector('.wall-open');
         var prompt = it.getAttribute('data-prompt') || '';
         vTitle.textContent = it.querySelector('.wall-cap b').textContent;
-        vMeta.textContent = it.getAttribute('data-meta') || '';
+        // The facts as two plain lines ("61 seconds · 16:9" / "Made by the Kleo team with …"), never small capitals.
+        var bits = (it.getAttribute('data-meta') || '').split(' · ');
+        var kind = bits.shift() || '', secs = (bits.shift() || '').replace(/^(\d+) s$/, '$1 seconds'), ratio = bits.shift() || '';
+        var who = bits.join(' · ');
+        vMeta.textContent = '';
+        [ [secs, ratio].filter(Boolean).join(' · '), who ? who.charAt(0).toUpperCase() + who.slice(1) : '' ].forEach(function(t){
+          if (!t) return; var s = document.createElement('span'); s.textContent = t; vMeta.appendChild(s);
+        });
+        // In the app: a film is recreated from its prompt (the form filled, nothing charged); an ad opens Explore.
+        var clean = prompt.replace(/^\s*Use Kleo to (?:make|create)\b[\s\S]*?(?<!\d):(?!\d)\s*/i, '');
+        clean = clean.charAt(0).toUpperCase() + clean.slice(1);
+        var appBase = (vBase || 'https://app.kleooai.com/').replace(/\/+$/, '');
+        if (vOpen) {
+          vOpen.className = 'btn btn-primary btn-sm';
+          vOpen.textContent = clean ? 'Recreate in Kleo' : 'Open Kleo';
+          vOpen.href = clean ? appBase + '/video?prompt=' + encodeURIComponent(clean) + (/^(16:9|9:16|1:1)$/.test(ratio) ? '&aspect=' + ratio : '') : appBase + '/explore';
+        }
+        vCopy.className = 'btn btn-ghost btn-sm';
         vPrompt.textContent = prompt;
         vCopy.setAttribute('data-copy', prompt);
         vCopy.hidden = !prompt; vPrompt.hidden = !prompt;
@@ -460,6 +478,38 @@
     }
 
   }
+
+
+  /* ---------- "Watch …" buttons: the film plays right here, with sound (14 October 2026) ---------- */
+  var watchers = document.querySelectorAll('[data-watch]');
+  if (watchers.length && typeof HTMLDialogElement === 'function') {
+    var wd = document.createElement('dialog');
+    wd.className = 'watch'; wd.setAttribute('aria-label', 'Film player');
+    var wClose = document.createElement('button');
+    wClose.type = 'button'; wClose.className = 'viewer-close'; wClose.setAttribute('aria-label', 'Close the player'); wClose.textContent = '×';
+    var wv = document.createElement('video');
+    wv.controls = true; wv.playsInline = true; wv.preload = 'none';
+    wd.appendChild(wClose); wd.appendChild(wv); document.body.appendChild(wd);
+    var wOpener = null;
+    Array.prototype.forEach.call(watchers, function(el){
+      el.addEventListener('click', function(e){
+        e.preventDefault(); wOpener = el;
+        wv.poster = el.getAttribute('data-watch-poster') || '';
+        wv.src = el.getAttribute('data-watch');
+        wv.muted = false;
+        wd.showModal();
+        var p = wv.play(); if (p && p.catch) p.catch(function(){});
+      });
+    });
+    wClose.addEventListener('click', function(){ wd.close(); });
+    wd.addEventListener('click', function(e){ if (e.target === wd) wd.close(); });
+    wd.addEventListener('close', function(){ wv.pause(); wv.removeAttribute('src'); wv.load(); if (wOpener) wOpener.focus(); });
+  }
+
+  /* The ad page's player starts muted (no page plays sound by itself); pressing play is the request to hear it. */
+  Array.prototype.forEach.call(document.querySelectorAll('video[data-watch-player]'), function(v){
+    v.addEventListener('play', function(){ if (!v.getAttribute('data-heard')) { v.setAttribute('data-heard', '1'); v.muted = false; } });
+  });
 
   /* ---------- the looks page: the hero takes the colour of the look you point at ---------- */
   var shero = document.querySelector('.styles-hero');

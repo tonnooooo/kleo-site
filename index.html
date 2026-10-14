@@ -29,7 +29,7 @@
 <link rel="preload" href="/brand/fonts/bricolage-grotesque-400-800-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/brand/fonts/instrument-sans-400-600-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/brand/fonts/kleo-fonts.css?v=2026092503">
-<link rel="stylesheet" href="/site.css?v=20261014-videos">
+<link rel="stylesheet" href="/site.css?v=20261014-iphone">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -82,9 +82,9 @@
   ]
 }
 </script>
-<script src="/site.js?v=20261010-gallery" defer onerror="document.documentElement.classList.add('no-js')"></script>
-<link rel="stylesheet" href="/cinema-scroll.css?v=2026092503">
-<script type="module" src="/cinema-scroll.js?v=2026092503"></script>
+<script src="/site.js?v=20261014-iphone" defer onerror="document.documentElement.classList.add('no-js')"></script>
+<link rel="stylesheet" href="/cinema-scroll.css?v=20261014-iphone">
+<script type="module" src="/cinema-scroll.js?v=20261014-iphone"></script>
 </head>
 <body class="kleo-home">
 <div class="progress" id="progress" aria-hidden="true"></div>
@@ -127,7 +127,6 @@
  </div>
  <div class="wrap cinema-wrap">
   <div class="cinema-intro">
-   <div class="osd"><span class="rec" aria-hidden="true"></span> REC <span class="tcode" id="tcode" aria-hidden="true">00:00:00:00</span> · Video · Image · Audio<span class="osd-more"> · Films in 4K 60 fps</span></div>
    <h1>Your AI studio.<br><span class="hl">Just chat <br class="mobile-break">to create.</span></h1>
    <p class="cinema-lede">Videos, pictures, voiceovers, music and complete narrated films, in one chat. Describe what you want: Kleo proposes the model, the settings and the exact price, and nothing is charged until you tap Generate.</p>
    <div class="hero-open">
@@ -136,7 +135,7 @@
    </div>
    <div class="hero-alt">
     <a class="btn btn-ghost btn-sm" href="#connect">Use Kleo in Claude or ChatGPT</a>
-    <a class="hero-film-link" href="#kleo-film"><span aria-hidden="true">▶</span> Watch Kleo in 30 seconds <span aria-hidden="true">↓</span></a>
+    <a class="hero-film-link" href="/examples/kleo-ad/" data-watch="/samples/kleo-ad-en.mp4" data-watch-poster="/samples/kleo-ad-en.jpg"><span aria-hidden="true">▶</span> Watch Kleo in 30 seconds</a>
    </div>
    <p class="cinema-specs">Seedance 2.5 <span>·</span> Veo 3.1 <span>·</span> Nano Banana Pro <span>·</span> Seedream 5 <span>·</span> FLUX.2 Pro</p>
   </div>
@@ -154,7 +153,7 @@
       <div class="tool app-card">
        <div class="tool-head"><span class="tool-name"><b>Video</b> · Seedance 2.5</span><span class="tool-state app-price">4 credits</span></div>
        <ul class="app-card-specs"><li>5 s</li><li>720p</li><li>Prompt Enhance</li></ul>
-       <div class="app-card-foot"><span class="app-card-note">Nothing is charged until you tap Generate.</span><span class="app-card-go" aria-hidden="true">Generate</span></div>
+       <div class="app-card-foot"><span class="app-card-note">Nothing is charged until you tap Generate.</span><a class="app-card-go" href="https://app.kleooai.com/video?prompt=A%20paper%20boat%20sailing%20down%20a%20rainy%20street%20at%20night.%20Five%20seconds%2C%20cinematic.&amp;aspect=16:9">Generate</a></div>
       </div>
      </div>
     </div>
@@ -167,7 +166,6 @@
    </figure>
    <!-- /vids -->
   </div>
-  <div class="studio-afterword"><p class="studio-footnote">5 free credits for a new account. <a href="#pricing">Packs from €5, paid once.</a> <span>Sign in with your e-mail. <a href="#connect">Kleo also works inside your AI assistant.</a></span></p><button type="button" class="ambient-control" aria-pressed="false">Pause ambience</button></div>
  </div>
 </section>
 
@@ -304,11 +302,10 @@
     <span class="cinema-kicker">The Kleo showcase · 30 seconds</span>
     <h2 id="ad-spotlight-title">See Kleo.<br><span class="hl">Made with Kleo.</span></h2>
     <p class="ad-spotlight-lede">Our own ad, generated with Kleo. From one conversation to a film ready to share.</p>
-    <a class="btn btn-primary ad-watch" href="/examples/kleo-ad/"><span aria-hidden="true">▶</span> Watch the film with sound</a>
+    <a class="btn btn-primary ad-watch" href="/examples/kleo-ad/" data-watch="/samples/kleo-ad-en.mp4" data-watch-poster="/samples/kleo-ad-en.jpg"><span aria-hidden="true">▶</span> Watch the film with sound</a>
     <p class="ad-spotlight-meta">30 sec <span>·</span> English <span>·</span> Vertical film</p>
-    <div class="ad-spotlight-notes"><span><b>01</b> The conversation</span><span><b>02</b> The cinematic shots</span><span><b>03</b> The final film</span></div>
    </div>
-   <a class="ad-spotlight-screen" href="/examples/kleo-ad/" aria-label="Watch Kleo’s 30-second film with sound">
+   <a class="ad-spotlight-screen" href="/examples/kleo-ad/" data-watch="/samples/kleo-ad-en.mp4" data-watch-poster="/samples/kleo-ad-en.jpg" aria-label="Watch Kleo’s 30-second film with sound">
     <div class="style-media">
      <video src="/samples/kleo-ad-en.mp4" poster="/samples/kleo-ad-en.jpg" width="1080" height="1920" autoplay muted loop playsinline preload="none" aria-label="Silent preview of the 30-second vertical ad generated with Kleo."></video>
     </div>
@@ -358,11 +355,11 @@
  <div class="film-sticky">
   <div class="film-stage-copy wrap"><span class="cinema-kicker">From imagination to the final cut</span><h2 id="film-stage-title">Think like a director.<br><span class="hl">Create with Kleo.</span></h2><p>You direct the story. Kleo brings the shots together.</p></div>
   <div class="film-canvas film-frames" aria-label="Explore three Kleo films">
-   <a class="film-frame" href="/examples/signal-delay/" data-title="Signal Delay"><img src="/samples/realistic-signal.jpg" width="1920" height="1080" alt="Signal Delay: a mission control room" loading="lazy"><span><b>01 / SIGNAL DELAY</b> Watch the film ↗</span></a>
-   <a class="film-frame" href="/examples/apex/" data-title="Apex"><img src="/samples/realistic-apex.jpg" width="1920" height="1080" alt="Apex: two cars in an amber-lit tunnel" loading="lazy"><span><b>02 / APEX</b> Watch the film ↗</span></a>
-   <a class="film-frame" href="/examples/tether/" data-title="Tether"><img src="/samples/realistic-tether.jpg" width="1920" height="1080" alt="Tether: an astronaut inside his helmet" loading="lazy"><span><b>03 / TETHER</b> Watch the film ↗</span></a>
+   <a class="film-frame" href="/examples/signal-delay/" data-title="Signal Delay"><img src="/samples/realistic-signal.jpg" width="1920" height="1080" alt="Signal Delay: a mission control room" loading="lazy"><span><b>Signal Delay</b> Watch the film ↗</span></a>
+   <a class="film-frame" href="/examples/apex/" data-title="Apex"><img src="/samples/realistic-apex.jpg" width="1920" height="1080" alt="Apex: two cars in an amber-lit tunnel" loading="lazy"><span><b>Apex</b> Watch the film ↗</span></a>
+   <a class="film-frame" href="/examples/tether/" data-title="Tether"><img src="/samples/realistic-tether.jpg" width="1920" height="1080" alt="Tether: an astronaut inside his helmet" loading="lazy"><span><b>Tether</b> Watch the film ↗</span></a>
   </div>
-  <div class="film-stage-bottom wrap"><span class="film-scroll-hint">SCROLL TO EXPLORE <span aria-hidden="true">↓</span></span><button class="film-motion ambient-control" type="button" aria-pressed="false">Pause ambience</button><span class="film-caption film-current">01 / 03 · Signal Delay</span></div>
+  <div class="film-stage-bottom wrap"><span class="film-caption film-current">Signal Delay</span></div>
  </div>
 </section>
 
