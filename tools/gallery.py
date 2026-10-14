@@ -36,7 +36,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 BASE = 'https://media.kleooai.com/gallery/'
-APP = 'https://app.kleooai.com/'
+APP = '/'  # kleooai.com is the Kleo app; this site lives at /mcp
 WIDE = {'wide', 'ads-wide'}
 SECTIONS = ('ads-wide', 'ads-tall', 'wide', 'tall', 'series')
 GRIDS = {
