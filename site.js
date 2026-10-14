@@ -511,6 +511,30 @@
     v.addEventListener('play', function(){ if (!v.getAttribute('data-heard')) { v.setAttribute('data-heard', '1'); v.muted = false; } });
   });
 
+  /* ---------- /mcp/: the assistant tabs change the headline, the install button and the steps ---------- */
+  var mcpTabs = Array.prototype.slice.call(document.querySelectorAll('.mcp-tab'));
+  if (mcpTabs.length) {
+    var nameEl = document.querySelector('[data-client-name]'), iconEl = document.querySelector('[data-client-icon]');
+    var pick = function(tab, focus) {
+      mcpTabs.forEach(function(t){
+        var on = t === tab, panel = document.getElementById(t.getAttribute('aria-controls'));
+        t.setAttribute('aria-selected', String(on)); t.tabIndex = on ? 0 : -1; if (panel) panel.hidden = !on;
+      });
+      if (nameEl) nameEl.textContent = tab.getAttribute('data-client');
+      if (iconEl) { var svg = tab.querySelector('svg'); iconEl.innerHTML = ''; if (svg) iconEl.appendChild(svg.cloneNode(true)); }
+      if (focus) tab.focus();
+    };
+    mcpTabs.forEach(function(t, i){
+      t.addEventListener('click', function(){ pick(t, false); });
+      t.addEventListener('keydown', function(e){
+        if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+        e.preventDefault(); pick(mcpTabs[(i + (e.key === 'ArrowRight' ? 1 : mcpTabs.length - 1)) % mcpTabs.length], true);
+      });
+    });
+    var want = (location.hash.match(/^#(chatgpt|claude|claude-code|cursor|other)$/) || [])[1];
+    if (want) pick(document.getElementById('mcp-tab-' + want), false);
+  }
+
   /* ---------- the looks page: the hero takes the colour of the look you point at ---------- */
   var shero = document.querySelector('.styles-hero');
   if (shero) Array.prototype.forEach.call(document.querySelectorAll('.look'), function(l){

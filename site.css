@@ -1149,3 +1149,50 @@ dialog.watch video { display: block; max-width: min(96vw, 1100px); max-height: 8
 dialog.watch .viewer-close { position: absolute; top: -14px; right: -14px; z-index: 2; }
 .app-card-go { text-decoration: none; }
 .viewer-actions [hidden] { display: none; }
+
+/* ── kleooai.com/mcp/ — install Kleo in your assistant, the Higgsfield way (14 October 2026) ─────────────────── */
+.mcp-hero { position: relative; overflow: hidden; padding: 64px 0 72px; text-align: center; }
+.mcp-dots { position: absolute; inset: 0; pointer-events: none;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, .16) 1.2px, transparent 1.6px); background-size: 14px 14px;
+  -webkit-mask-image: radial-gradient(70% 60% at 50% 45%, #000 20%, transparent 75%); mask-image: radial-gradient(70% 60% at 50% 45%, #000 20%, transparent 75%); }
+.mcp-hero .wrap { position: relative; }
+.mcp-tabs { display: inline-flex; flex-wrap: wrap; justify-content: center; gap: 6px; padding: 5px; border-radius: 999px; background: rgba(255, 255, 255, .05); border: 1px solid var(--line); margin-bottom: 34px; }
+.mcp-tab { display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 16px; border-radius: 999px; border: 0; background: transparent; color: var(--ink-2); font: 600 1rem var(--font-body); cursor: pointer; }
+.mcp-tab svg { width: 18px; height: 18px; }
+.mcp-tab:hover { color: var(--ink); background: rgba(255, 255, 255, .06); }
+.mcp-tab[aria-selected="true"] { background: var(--ink); color: var(--bg); }
+.mcp-title { font-family: var(--font-display); font-weight: 800; font-size: clamp(2.2rem, 6vw, 4.6rem); line-height: 1.05; letter-spacing: -.035em; margin: 0 auto 30px; max-width: none; }
+.mcp-l1, .mcp-l2 { display: block; }
+@media (min-width: 761px) { .mcp-l2 { white-space: nowrap; } .mcp-title { font-size: clamp(2.2rem, 5.2vw, 4.4rem); } }
+.mcp-chip { display: inline-grid; place-items: center; width: 1.05em; height: 1.05em; border-radius: .26em; vertical-align: -.16em; margin: 0 .16em 0 .08em; }
+.mcp-chip svg { width: 62%; height: 62%; }
+.mcp-chip-client { background: #2a2f3a; color: #fff; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .12); }
+.mcp-chip-kleo { background: transparent; }
+.mcp-chip-kleo svg { width: 100%; height: 100%; }
+.mcp-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+.mcp-install { display: inline-flex; align-items: center; gap: 10px; }
+.mcp-install svg { width: 20px; height: 20px; }
+.mcp-code { display: inline-block; margin-top: 16px; padding: 10px 14px; border-radius: 12px; background: rgba(255, 255, 255, .06); font-size: 1rem; color: var(--ink); word-break: break-all; }
+.mcp-steps { list-style: none; counter-reset: s; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; max-width: 980px; margin: 40px auto 0; padding: 0; text-align: left; scroll-margin-top: 90px; }
+.mcp-steps li { counter-increment: s; position: relative; padding: 18px 18px 18px 58px; border-radius: 18px; background: rgba(255, 255, 255, .04); border: 1px solid var(--line); font-size: 1.0625rem; line-height: 1.5; color: var(--ink-2); }
+.mcp-steps li::before { content: counter(s); position: absolute; left: 16px; top: 16px; width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; background: var(--amber); color: var(--amber-ink); font-weight: 800; }
+.mcp-url { display: inline-flex; align-items: center; gap: 10px; margin-top: 30px; padding: 10px 16px; border-radius: 999px; border: 1px solid var(--line); background: transparent; color: var(--ink-2); font: 500 1.0625rem var(--font-body); cursor: pointer; }
+.mcp-url svg { width: 18px; height: 18px; }
+.mcp-url:hover { color: var(--ink); border-color: var(--line-2); }
+.mcp-more { padding: 30px 0 90px; text-align: center; }
+.mcp-more h2 { font-size: clamp(1.8rem, 3.6vw, 2.8rem); margin-bottom: 12px; }
+.mcp-lede { max-width: 640px; margin: 0 auto 28px; color: var(--ink-2); font-size: 1.0625rem; }
+.mcp-vids { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+.mcp-vid { margin: 0; text-align: left; }
+.mcp-vid video { width: 100%; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 18px; background: #000; display: block; }
+.mcp-vid figcaption { margin-top: 10px; font-size: 1.0625rem; font-weight: 600; color: var(--ink); }
+.mcp-cta { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 34px; }
+@media (max-width: 760px) {
+  .mcp-hero { padding: 40px 0 56px; }
+  .mcp-steps { grid-template-columns: minmax(0, 1fr); }
+  .mcp-vids { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .mcp-actions .btn { width: 100%; justify-content: center; }
+  .mcp-tab { padding: 0 12px; }
+}
+
+@media (max-width: 760px) { .mcp-tabs { border-radius: 22px; } }
