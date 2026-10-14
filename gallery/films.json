@@ -42,6 +42,80 @@
   "line": "Sunglasses on, a black dragon rising behind."
  },
  {
+  "id": "C01",
+  "slug": "tether-film",
+  "title": "Tether",
+  "kind": "Film",
+  "dur": 20,
+  "w": 1920,
+  "h": 1080,
+  "home": false,
+  "alt": "An astronaut lit by the two lamps of his helmet, then a small figure on one tether below the sunlit underside of a space station",
+  "prompt": "Use Kleo to make a 20-second 16:9 film, realistic look: a lone astronaut in low Earth orbit, from a close-up of his face inside the helmet, lit by the two lamps of his suit, pulling back as he drifts on a single tether below the sunlit underside of the space station.",
+  "section": "wide",
+  "line": "An astronaut on one tether, under the station.",
+  "hl": [
+   "h1",
+   "h2"
+  ]
+ },
+ {
+  "id": "C02",
+  "slug": "signal-delay",
+  "title": "Signal Delay",
+  "kind": "Film",
+  "dur": 62,
+  "w": 1920,
+  "h": 1080,
+  "home": false,
+  "alt": "A radio dish in the dark, the Milky Way, a room of engineers at their terminals and the title Signal Delay",
+  "prompt": "Use Kleo to make a one-minute 16:9 documentary, realistic look: November 2023, Voyager 1 starts sending nonsense from 24 billion kilometres away. A radio dish in the dark, columns of corrupted data, a record player, the Milky Way, a room of engineers at their terminals, 45 hours for every question and its answer, and the title Signal Delay.",
+  "section": "wide",
+  "line": "Voyager 1 goes silent, 24 billion km away.",
+  "hl": [
+   "h1",
+   "h2",
+   "h3"
+  ]
+ },
+ {
+  "id": "C03",
+  "slug": "apex-film",
+  "title": "Apex",
+  "kind": "Film",
+  "dur": 20,
+  "w": 1920,
+  "h": 1080,
+  "home": false,
+  "alt": "A yellow hypercar and a pale-blue classic sports car in a lit tunnel, then side by side on a cliff road above the sea at golden hour",
+  "prompt": "Use Kleo to make a 20-second 16:9 film, realistic look: a yellow hypercar and a pale-blue classic 911 race side by side through a lit tunnel, burst out onto a cliff road above the sea at golden hour, and the classic takes the lead in the low sun.",
+  "section": "wide",
+  "line": "A hypercar and a classic 911, tunnel to cliff road.",
+  "hl": [
+   "h1",
+   "h2"
+  ]
+ },
+ {
+  "id": "C04",
+  "slug": "venice-high-water",
+  "title": "Venice, high water",
+  "kind": "Film",
+  "dur": 20,
+  "w": 1280,
+  "h": 720,
+  "home": false,
+  "alt": "People wading across a flooded Venice square, a speedboat on the lagoon, piles under the water, waves on a gate and gulls at sunset",
+  "prompt": "Use Kleo to make a 20-second 16:9 film, realistic look: Venice at high water. People wade across a flooded square, a speedboat cuts across the lagoon past the domes, the wooden piles stand under clear green water with fish, waves break over an iron gate, and gulls rise over the city at sunset.",
+  "section": "wide",
+  "line": "High water, a speedboat, the lagoon at sunset.",
+  "hl": [
+   "h1",
+   "h2",
+   "h3"
+  ]
+ },
+ {
   "id": "V175",
   "slug": "kitten-sunglasses-dragon",
   "title": "Kitten in Sunglasses",
@@ -96,6 +170,24 @@
   "prompt": "Use Kleo to make a 15-second vertical film, realistic look: a static ultra-wide fisheye dash-cam view inside a car at night. A real raccoon in a backwards baseball cap drives; a second raccoon in small dark sunglasses and a gold chain sits beside him among pizza boxes. A police officer leans in: \"License and registration, please.\" The driver hands him a warm slice of pizza.",
   "section": "tall",
   "line": "Two raccoons, one cop, a slice of pizza."
+ },
+ {
+  "id": "C08",
+  "slug": "octopus-facts",
+  "title": "Octopus, three hearts",
+  "kind": "Film",
+  "dur": 32,
+  "w": 608,
+  "h": 1080,
+  "home": false,
+  "alt": "An illustrated orange octopus on a teal sea with big captions: three hearts, blue blood, copper not iron",
+  "prompt": "Use Kleo to make a 30-second 9:16 animated explainer in a bold illustrated style: why does an octopus have three hearts and blue blood? Two hearts pump blood to the gills, its blood carries copper, not iron, and its main heart stops when it swims, with big captions word by word.",
+  "section": "tall",
+  "line": "Three hearts, blue blood: an animated explainer.",
+  "hl": [
+   "h1",
+   "h2"
+  ]
  },
  {
   "id": "V083",
@@ -343,6 +435,26 @@
   "full": false
  },
  {
+  "id": "A21",
+  "slug": "lighthouse-sketch-ad",
+  "title": "Sketch to Film",
+  "kind": "Ad",
+  "dur": 52,
+  "w": 1920,
+  "h": 1080,
+  "home": false,
+  "alt": "A woman sketches a lighthouse at night, connects Kleo in Claude, and the sketch becomes a film of a lighthouse keeper in a storm",
+  "prompt": "",
+  "section": "ads-wide",
+  "line": "A pencil sketch becomes a film, inside Claude.",
+  "by": "in After Effects, with Seedance 2.5 footage",
+  "hl": [
+   "h1",
+   "h2",
+   "h3"
+  ]
+ },
+ {
   "id": "A09",
   "slug": "claude-chat-to-film-30s",
   "title": "An idea. A chat. A film.",
@@ -573,6 +685,63 @@
   "hl": []
  },
  {
+  "id": "A22",
+  "slug": "ai-is-not-creative",
+  "title": "AI is not creative",
+  "kind": "Reel",
+  "dur": 15,
+  "w": 1080,
+  "h": 1920,
+  "home": false,
+  "alt": "Bold motion-graphics cards in orange, blue and lime under the headline AI is not creative",
+  "prompt": "",
+  "section": "ads-tall",
+  "line": "Motion graphics made by Claude Opus 5.5 and Kleo.",
+  "by": "with Claude Opus 5.5 and Kleo",
+  "hl": [
+   "h1"
+  ]
+ },
+ {
+  "id": "A23",
+  "slug": "one-sentence-r6",
+  "title": "One sentence. One film.",
+  "kind": "Ad",
+  "dur": 30,
+  "w": 1080,
+  "h": 1920,
+  "home": false,
+  "alt": "One sentence typed on a cream page becomes a film: an astronaut, a cinema, an octopus and two cars",
+  "prompt": "",
+  "section": "ads-tall",
+  "line": "One sentence, four looks, one film.",
+  "by": "in After Effects, cut from Kleo films",
+  "full": false,
+  "hl": [
+   "h1",
+   "h2"
+  ]
+ },
+ {
+  "id": "A24",
+  "slug": "it-writes-it-directs-r5",
+  "title": "It writes. It directs.",
+  "kind": "Ad",
+  "dur": 30,
+  "w": 1080,
+  "h": 1920,
+  "home": false,
+  "alt": "A request typed to Kleo in a dark chat card, then an astronaut and two sports cars in 4K",
+  "prompt": "",
+  "section": "ads-tall",
+  "line": "One message, and Kleo writes and directs the film.",
+  "by": "in After Effects, cut from Kleo films",
+  "full": false,
+  "hl": [
+   "h1"
+  ]
+ },
+ {
   "id": "B01",
   "slug": "diver-bowling",
   "title": "The Diver",
@@ -751,6 +920,62 @@
   ]
  },
  {
+  "id": "C05",
+  "slug": "puppy-knight",
+  "title": "The Puppy Knight",
+  "kind": "Film",
+  "dur": 30,
+  "w": 1920,
+  "h": 1080,
+  "home": false,
+  "alt": "A golden retriever puppy in armour and a white cape in a field of red poppies at sunrise, a black dragon landing behind it",
+  "prompt": "",
+  "section": "wide",
+  "line": "A puppy knight in a poppy field, and a dragon.",
+  "by": "with Seedance 2.5",
+  "hl": [
+   "h1",
+   "h2"
+  ]
+ },
+ {
+  "id": "C06",
+  "slug": "knights-and-goblins",
+  "title": "Knights and Goblins",
+  "kind": "Film",
+  "dur": 11,
+  "w": 960,
+  "h": 720,
+  "home": false,
+  "alt": "Two cartoon knights grin and drink in a tavern, duel at sunset, and two little goblins share a glowing fruit by a lake",
+  "prompt": "",
+  "section": "wide",
+  "line": "Two knights, a tavern and two little goblins by a lake.",
+  "by": "and cut with Codex",
+  "hl": [
+   "h1"
+  ]
+ },
+ {
+  "id": "C07",
+  "slug": "tuna-smart-tv",
+  "title": "Your Smart TV Is Watching",
+  "kind": "Explainer",
+  "dur": 273,
+  "w": 1920,
+  "h": 1080,
+  "home": false,
+  "alt": "Dark motion-graphics cards: a TV that reports every 15 seconds, a 2024 study, a court case in Texas and the settings that turn it off",
+  "prompt": "",
+  "section": "wide",
+  "line": "How smart TVs watch what you watch, and how to stop it.",
+  "by": "in After Effects",
+  "hl": [
+   "h1",
+   "h2"
+  ]
+ },
+ {
   "id": "B11",
   "slug": "venice-whale",
   "title": "A Whale in Venice",
@@ -764,5 +989,23 @@
   "section": "tall",
   "line": "A humpback breaches out of the Grand Canal, and it never happened.",
   "by": ""
+ },
+ {
+  "id": "C09",
+  "slug": "corgi-knight-reel",
+  "title": "The Corgi Knight, the reel",
+  "kind": "Film",
+  "dur": 12,
+  "w": 1080,
+  "h": 1920,
+  "home": false,
+  "alt": "A corgi in armour with a sword on a castle wall in the snow, then on an ice throne before an army of knights",
+  "prompt": "",
+  "section": "tall",
+  "line": "A corgi knight takes the ice throne.",
+  "by": "with Seedance 2.5",
+  "hl": [
+   "h1"
+  ]
  }
 ]
