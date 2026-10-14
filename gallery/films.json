@@ -98,22 +98,17 @@
  },
  {
   "id": "C04",
-  "slug": "venice-high-water",
+  "slug": "venice-high-water-kleo",
   "title": "Venice, high water",
   "kind": "Film",
-  "dur": 20,
+  "dur": 5,
   "w": 1280,
   "h": 720,
   "home": false,
-  "alt": "People wading across a flooded Venice square, a speedboat on the lagoon, piles under the water, waves on a gate and gulls at sunset",
-  "prompt": "Use Kleo to make a 20-second 16:9 film, realistic look: Venice at high water. People wade across a flooded square, a speedboat cuts across the lagoon past the domes, the wooden piles stand under clear green water with fish, waves break over an iron gate, and gulls rise over the city at sunset.",
+  "alt": "Venice at sunset: people wading across a flooded square, a boat on the lagoon, the piles under clear green water, a gate in the waves and gulls over San Giorgio",
+  "prompt": "Use Kleo to make a 5-second 16:9 clip, realistic look: Venice at high water. People wade across a flooded square, a speedboat cuts across the lagoon past the domes, the wooden piles stand under clear green water with fish, waves break over an iron gate, and gulls rise over the city at sunset.",
   "section": "wide",
-  "line": "High water, a speedboat, the lagoon at sunset.",
-  "hl": [
-   "h1",
-   "h2",
-   "h3"
-  ]
+  "line": "High water, a boat on the lagoon, gulls at sunset."
  },
  {
   "id": "V175",
