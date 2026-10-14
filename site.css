@@ -1097,3 +1097,36 @@ html:not(.no-js) .agent-panel:not([open]){display:none}
   .studio-cta{margin-top:32px}
   .showcase{padding-top:48px}
 }
+
+/* Videos everywhere (14 Oct 2026): a showcase loop in the hero of each page and rows of identical cards in its
+   sections, all from media.kleooai.com and all written by tools/gallery.py from gallery/films.json. Only the hero loop
+   starts at once (autoplay); site.js fetches and plays every other card only while it is on screen. A card that may
+   not open the viewer (.loop-only) just loops. Phones: two cards per row at most, see the end of this block. */
+.wall-media.w{--ar:16/9}
+.wall-grid.wide2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.wall-item.loop-only{cursor:default}
+.vstrip{margin-top:56px}
+.vstrip .wall-head h3{font-size:clamp(1.3rem,2.2vw,1.7rem); letter-spacing:-.02em; margin:0}
+.vsection{padding:16px 0 80px}
+.vsection .wall-head h2{font-size:clamp(1.5rem,2.6vw,2.1rem)}
+.page-hero.has-vid .wrap, .styles-hero.has-vid .wrap{grid-template-columns:minmax(0,1fr) minmax(0,300px); gap:56px; align-items:center}
+.page-hero.has-vid.vid-wide .wrap, .styles-hero.has-vid.vid-wide .wrap{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)}
+.vhero{align-self:center}
+.vhero .wall-media, .vhero .wall-open{border-radius:20px}
+.vhero .wall-media{box-shadow:var(--shadow)}
+.hero-duo{display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); gap:28px; align-items:center; margin-top:8px; text-align:left}
+.hero-duo .app-preview{max-width:none; margin:0}
+@media (max-width:900px){
+  .page-hero.has-vid .wrap, .page-hero.has-vid.vid-wide .wrap, .styles-hero.has-vid .wrap, .styles-hero.has-vid.vid-wide .wrap{grid-template-columns:minmax(0,1fr); gap:32px}
+  .has-vid.vid-tall .vhero{width:100%; max-width:300px}
+  .hero-duo{grid-template-columns:minmax(0,1fr)}
+  .hero-duo .app-preview{width:100%; max-width:640px; margin:0 auto}
+}
+@media (max-width:600px){
+  .vstrip{margin-top:40px}
+  .vsection{padding:0 0 48px}
+  .wall-grid.strip > .wall-item:nth-child(n+3){display:none}
+  .wall-grid.wide2{grid-template-columns:minmax(0,1fr)}
+  .has-vid.vid-tall .vhero{max-width:58%; justify-self:center}
+  .vhero .wall-media, .vhero .wall-open{border-radius:14px}
+}
