@@ -48,7 +48,7 @@ function build(T){
    card.tabIndex=i===Math.round(focus)?0:-1;
   });
   const active=Math.round(focus);
-  if(active!==selected){selected=active;label.textContent='0'+(active+1)+' / 03 · '+cards[active].dataset.title;}
+  if(active!==selected){selected=active;label.textContent=cards[active].dataset.title;}
   stage.dataset.progress=progress.toFixed(3);
   if(progress!==target)frame=requestAnimationFrame(paint);
  }
@@ -65,6 +65,6 @@ function build(T){
  window.addEventListener('resize',measure,{passive:true});
  document.addEventListener('visibilitychange',update);motion.addEventListener('change',update);
  new MutationObserver(update).observe(document.body,{attributes:true,attributeFilter:['class']});
- stage.querySelector('.film-motion').addEventListener('click',()=>document.body.classList.toggle('ambience-paused'));
+ stage.querySelector('.film-motion')?.addEventListener('click',()=>document.body.classList.toggle('ambience-paused'));
  stage.dataset.render='ready';measure();update();
 }
