@@ -79,9 +79,7 @@ the cards; run it after any change to films.json and after `tools/build_guides.p
 - A loop is listed in an entry's `hl` only when it shows nothing the site must not say. Some full cuts still show the
   earlier 7-credit gift, a price per film that is no longer right, or shots the owner keeps out of marketing (moon,
   dunes, cameraman): those entries have `"full": false`, so their card loops the safe part and never opens the full
-  cut (`kleo-ad-v2-lighthouse`, `kleo-connector-tutorial-ad`, `apex-in-claude-35s`, `this-film-cost-5-euro`,
-  `films-in-claude-52s`, `connect-once-tall`, `type-the-film-30s`). `this-film-cost-5-euro` uses its own poster
-  (`this-film-cost-5-euro-nocar.jpg`), because the usual frame reads "This film cost €5".
+  cut (`kleo-connector-tutorial-ad`).
 
 ## The server address
 

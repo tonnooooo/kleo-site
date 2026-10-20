@@ -20,7 +20,7 @@ not say, such as an old price, is simply left out) and `full: false` when the fu
    `home-wide` (the first 3 "wide" films with "home": true) and `home-tall` (the first 4 "tall" ones).
 2. Every other placement is written in the page itself, as a marker naming the loops it shows:
        <!-- vids:hero kleo-x-claude-ad -->      one card that starts at once (autoplay): the page's showcase loop
-       <!-- vids:grid tether-not-filmed-wide:h2 kleo-reel-r3-wide films-in-claude-52s:h1 -->   a row of cards
+       <!-- vids:grid kleo-x-claude-ad:h2 kleo-reel-r3-wide lighthouse-sketch-ad:h1 -->   a row of cards
        <!-- vids:viewer -->                     the larger silent viewer the cards open
    each closed by <!-- /vids -->. `slug` alone is the -p loop, `slug:h2` the -h2 loop. Only the hero autoplays; the
    other cards are fetched and played by site.js only while they are on screen. This script rewrites what is between
