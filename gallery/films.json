@@ -1002,5 +1002,88 @@
   "hl": [
    "h1"
   ]
+ },
+ {
+  "id": "D01",
+  "slug": "forged-in-fire-ad",
+  "title": "Forged in Fire",
+  "kind": "Ad",
+  "dur": 25,
+  "w": 1920,
+  "h": 1080,
+  "home": false,
+  "alt": "A knife-maker at her forge types one message to Kleo; her launch film of a Damascus knife in flames renders, gets 1.2 million views and the knives sell out",
+  "prompt": "",
+  "section": "ads-wide",
+  "line": "A knife-maker sends one message; her launch film sells the knives out.",
+  "by": "in After Effects",
+  "hl": [
+   "h1",
+   "h2",
+   "h3"
+  ]
+ },
+ {
+  "id": "D02",
+  "slug": "rocket-car",
+  "title": "Rocket Car",
+  "kind": "Film",
+  "dur": 21.6,
+  "w": 1440,
+  "h": 1080,
+  "home": false,
+  "alt": "A white coupe on rocket jets hovers by a cliff-side window, blasts through a car wash, drifts on a runway, crashes into a pool party, spins on snow and lifts off",
+  "prompt": "",
+  "section": "wide",
+  "line": "A white coupe on rocket jets, from a cliff-side window to lift-off over the snow.",
+  "by": "with Kling",
+  "hl": [
+   "h1",
+   "h2"
+  ]
+ },
+ {
+  "id": "D03",
+  "slug": "vacuuming-the-desert",
+  "title": "Vacuuming the Desert",
+  "kind": "Film",
+  "dur": 10,
+  "w": 854,
+  "h": 480,
+  "home": false,
+  "alt": "A woman in a red top, tartan skirt and red tights vacuums the sand of an endless desert with a red vacuum cleaner",
+  "prompt": "Use Kleo to make a 10-second 16:9 film, realistic look: a woman with a black bob, a red top, a tartan skirt and red tights vacuums the sand of an endless desert with a red canister vacuum cleaner, in hazy midday light, a static wide shot.",
+  "section": "wide",
+  "line": "A woman hoovers the dunes, one patch of sand at a time.",
+  "by": "with Seedance 2.5"
+ },
+ {
+  "id": "D04",
+  "slug": "sweeping-the-sea",
+  "title": "Sweeping the Sea",
+  "kind": "Film",
+  "dur": 10,
+  "w": 480,
+  "h": 854,
+  "home": false,
+  "alt": "On a grey windy beach a woman in a green parka and brown boots pushes the incoming waves back with a broom",
+  "prompt": "Use Kleo to make a 10-second 9:16 film, realistic look: on a grey, windy beach a woman in a green parka, a white skirt, jeans and brown boots tries to sweep the incoming waves back into the sea with a wooden push broom, foam swirling round her boots, handheld from behind.",
+  "section": "tall",
+  "line": "A woman tries to broom the waves back into the sea.",
+  "by": "with Seedance 2.5"
+ },
+ {
+  "id": "D05",
+  "slug": "hello-kitten",
+  "title": "Hello, Kitten",
+  "kind": "Film",
+  "dur": 6,
+  "w": 1080,
+  "h": 1920,
+  "home": false,
+  "alt": "A tiny ginger tabby kitten on a pale studio backdrop trots toward the camera and meows",
+  "prompt": "Use Kleo to make a 6-second 9:16 film, realistic look: a tiny ginger tabby kitten on a seamless pale lilac studio backdrop walks straight toward the camera and meows, the lens slowly pushing in until its face fills the frame.",
+  "section": "tall",
+  "line": "A ginger kitten trots up to the lens and meows."
  }
 ]
