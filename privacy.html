@@ -113,7 +113,7 @@
       <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">›</span><span>Privacy</span></nav>
       <div class="eyebrow"><span class="n">Kleo AI</span>Privacy</div>
       <h1>What Kleo knows<br><span class="hl">about you.</span></h1>
-      <p class="doc-date">Last updated <time datetime="2026-10-23">23 October 2026</time></p>
+      <p class="doc-date">Last updated <time datetime="2026-10-25">25 October 2026</time></p>
     </div>
   </div>
 </section>
@@ -125,7 +125,7 @@
     <div class="short">
       <p><b>Kleo is operated by Kanaky Tech, New Zealand, NZBN 9429053554017.</b> This notice covers kleooai.com, the Kleo server and its assistant integrations.</p>
       <p>Connecting does not require an email or password. Kleo receives the requests your assistant sends to it, the images you choose to supply, and the information needed to render videos and manage credits. Buying credits, adding the optional email on your account page or contacting support can also provide your email.</p>
-      <p>The public website sets no cookies and has no advertising and no third-party analytics. It counts its own page views without cookies or identifiers, <a href="#site-counts">as described below</a>. The account service uses an essential sign-in cookie.</p>
+      <p>The public website sets no cookies and has no advertising and no third-party analytics. It counts its own page views without cookies or identifiers, <a href="#site-counts">as described below</a>. The account service uses an essential sign-in cookie. The Kleo app also keeps one short-lived cookie that remembers where your first visit came from, <a href="#account">as described below</a>.</p>
     </div>
     <h2 id="collection">What we collect and why</h2>
     <ul>
@@ -134,7 +134,7 @@
       <li><b>Render records:</b> progress, outputs, errors, credit charges and refunds, to deliver files, control usage and resolve problems.</li>
       <li><b>Payment records:</b> Stripe transaction identifiers, amount, currency, status, purchased credits and the checkout email and country when provided. Stripe processes card and wallet payments (Apple Pay, Google Pay); Kleo does not receive the full card number.</li>
       <li><b>Support:</b> the messages and contact details you choose to send, to answer requests and handle complaints.</li>
-      <li><b>Where you came from:</b> the channel in the server address you connected with (for example <code>?src=producthunt</code> on the MCP address), the launch code you redeem, and the referral link an account was created through, to learn which launch channels work and to credit referral bonuses. None of this is shown to other users.</li>
+      <li><b>Where you came from:</b> the channel in the server address you connected with (for example <code>?src=producthunt</code> on the MCP address), the launch code you redeem, and the referral link an account was created through, to learn which launch channels work and to credit referral bonuses. In the Kleo app (<code>app.kleooai.com</code>), where your first visit came from: the network or site, the tags in the link (<code>utm_source</code>, <code>utm_medium</code>, <code>utm_campaign</code>, <code>utm_content</code> or <code>src</code>), the code of a Kleo short link, the host of the referring site (never the full address), the first page you opened (without its query) and the name of the app whose built-in browser you used, such as Instagram or TikTok. When a visit has no tag and no referring site, the network is guessed from that name. This is stored with your account when you open one, to learn which posts and links bring people to Kleo. None of this is shown to other users.</li>
       <li><b>Optional email:</b> the address you add on your account page and whether you confirmed it, to <a href="#email">deliver your video links and Kleo news</a>.</li>
       <li><b>Security:</b> the application uses a keyed fingerprint of the connecting IP address for account-creation limits. When you sign up, sign in, connect an assistant or open a payment in the Kleo app, it also records the IP address, the approximate place your connection provider reports for it (country, region, city), the network and the browser name, to prevent fraud and abuse; these records are deleted after 90 days. Hosting and network providers necessarily process connection information, and may keep their own security logs.</li>
     </ul>
@@ -145,6 +145,7 @@
     <h2 id="account">Your account and cookies</h2>
     <p>The server uses an essential cookie called <code>kleo_id</code>, lasting up to about 400 days, to remember a signed account identifier. An anonymous account can contain an internal placeholder email ending in <code>@anon.kleo.invalid</code>; it is not a contact address.</p>
     <p>Opening a friend's referral link (<code>mcp.kleooai.com/r/…</code>) sets a second cookie on the server, <code>kleo_ref</code>, holding only that referral code. It lasts 30 days, is read once when an account is created, to link the new account to the friend who invited it and credit the referral bonus, and is set only when a referral link is opened.</p>
+    <p>The Kleo app (<code>app.kleooai.com</code>) sets a cookie called <code>__Host-kleo_src</code> on the first page you open there, or when you open one of Kleo's short links (<code>app.kleooai.com/r/…</code>). It holds only where that visit came from, as listed under <a href="#collection">Where you came from</a>, and no identifier. It lasts 7 days, is read once when you open an account, is stored with that account, and is then deleted. It is not set when you are already signed in, or when your browser signals Do Not Track or Global Privacy Control. The app also counts first visits and short-link clicks per day, network and link; these counts are totals with no cookie value, IP address or identifier in them, and are never linked to an account.</p>
     <p>Your private Kleo key can restore access in another browser. Anyone holding it can use your account and spend credits. Keep it private; do not paste it into public conversations or support messages. Clearing the cookie without keeping access to your key can make the account inaccessible.</p>
     <h2 id="site-counts">Page counts on kleooai.com</h2>
     <p>The website counts its own visits. On each page view, the site’s script sends Kleo’s server the page path, the host of the referring site (for example <code>news.ycombinator.com</code>, never the full address), the source named in the link (<code>utm_source</code> or <code>ref</code>) and the browser’s language; the server adds the country from its hosting provider’s connection header. These are stored only as totals per day, page, referring host, source and country.</p>
@@ -159,7 +160,8 @@
       <tr><td>Account, prompts, storyboards and activity records</td><td>Retained with the account in the current service. Request access, correction or deletion using the contact below; these records do not share the 7-day output expiry.</td></tr>
       <tr><td>IP address and approximate place of sign-ins and payments in the app</td><td>90 days, then deleted automatically.</td></tr>
       <tr><td>Optional email address</td><td>With the account until you remove it or ask for deletion. Unsubscribing stops the messages.</td></tr>
-      <tr><td>Daily page counts</td><td>Kept as aggregated totals, which contain no personal information.</td></tr>
+      <tr><td>Where an account came from (first visit)</td><td>With the account, and deleted with it. The cookie itself lasts at most 7 days.</td></tr>
+      <tr><td>Daily page counts, first-visit counts and short-link clicks</td><td>Kept as aggregated totals, which contain no personal information.</td></tr>
       <tr><td>Payment, support and security records</td><td>As needed for the transaction, support, fraud prevention and applicable legal record-keeping obligations. Required records may remain after an account-deletion request.</td></tr>
     </tbody></table></div>
     <h2 id="providers">Who processes information</h2>
