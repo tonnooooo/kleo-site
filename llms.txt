@@ -4,7 +4,7 @@
 
 ## Pages
 - [Kleo AI — Your AI Studio for Video, Pictures, Voice and Films](https://kleooai.com/): Chat with Kleo to make videos with Seedance 2.5 and Veo 3.1, pictures with Nano Banana Pro, voiceovers, music and narrated 4K films. Also inside Claude and ChatGPT.
-- [Kleo AI Pricing — Credit Packs and Video Cost Calculator](https://kleooai.com/pricing/): Kleo credits: 5 free, then packs from €5, one-off, no subscription. A 5 s Seedance 2.0 Fast clip costs 2 credits, 8 s of Veo 3.1 costs 7, a film 1 credit per 1.5 s.
+- [Kleo AI Pricing — Credit Packs and Video Cost Calculator](https://kleooai.com/pricing/): Kleo credits: 5 free, then packs from €5 or a monthly plan from €9. A 5 s Seedance 2.0 Fast clip costs 4 credits, 8 s of Veo 3.1 costs 12, a 15 s template from 10, a film 1 credit per 1.5 s.
 - [AI YouTube Video Generator — Narrated Films from a Brief | Kleo](https://kleooai.com/ai-youtube-video-generator/): Make a narrated YouTube video (16:9) or Short (9:16) from a brief with Kleo: realistic or animation, 4K 60 fps, 15 s to 5 min, from 10 credits, or a 5-credit animatic.
 - [Connect Kleo AI — one address, any assistant](https://kleooai.com/connect/): Add Kleo to Claude, ChatGPT, Grok, Claude Code, Cursor, VS Code, OpenCode or Gemini CLI: one MCP address, one Start free button, 5 credits to begin.
 - [Kleo MCP — make videos and pictures in ChatGPT, Claude, Claude Code and Cursor](https://kleooai.com/mcp/): Install Kleo in ChatGPT, Claude, Claude Code or Cursor in one click: Seedance and Veo videos, pictures, voices and narrated films, right in your chat.
