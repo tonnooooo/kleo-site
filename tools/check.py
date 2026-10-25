@@ -66,7 +66,8 @@ FORBIDDEN = [
     (r'\bcookies? (banner|consent)|\bgoogle analytics\b|(?<!\bno )\bthird-party analytics\b|(?<!\bno )\btracking (pixel|cookie)s?\b|(?<!\bno )\bad pixels?\b', 'only first-party, cookie-less, aggregated page counts'),
     # the tariff before 27 Sep 2026 (1 credit = 2 s, 7 starter credits, animatic 5 credits flat at any length)
     (r'\b1 credit (=|is|for every|per|buys) 2 s|\bone credit (per|for every|covers|buys) two seconds|\b(7|seven)[ -](starter[ -])?credits?\b|\b5 credits flat\b|\b20-second film costs 10\b', 'old tariff: 1 credit = 1.5 s, 5-credit gift, animatic 5/10 credits by length'),
-    (r'(?<!\bno )(?<!\bwithout a )\bsubscription\b(?! is not| free)', 'packs are one-off — say "no subscription" only'),
+    # 19 Oct 2026: monthly and yearly plans are sold in the app next to the one-off packs (terms.html #plans).
+    (r'\bno subscriptions?\b|\bwithout (a )?subscription\b|\bsubscription is not\b', 'plans are subscriptions since 19 Oct 2026 — never say there is none'),
 ]
 VOID = {'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'param', 'source', 'track', 'wbr'}
 
