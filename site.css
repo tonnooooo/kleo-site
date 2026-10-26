@@ -848,7 +848,7 @@ a,button{-webkit-tap-highlight-color:transparent}
 .cinema-intro{text-align:center;margin:0 auto 34px}
 .cinema-kicker{font:500 0.9375rem var(--font-mono);letter-spacing:0;color:var(--accent-text);display:flex;align-items:center;justify-content:center;gap:10px;margin:0 0 24px}
 .cinema-kicker>span:empty{width:6px;height:6px;border-radius:50%;background:var(--amber);box-shadow:0 0 14px var(--glow)}
-.cinema-intro h1{font-size:clamp(3rem,6.7vw,5.75rem);line-height:1.02;letter-spacing:-.065em;font-weight:600}
+.cinema-intro h1{font-size:clamp(2.25rem,5vw,4rem);line-height:1.02;letter-spacing:-.065em;font-weight:600}
 .cinema-lede{font-size:1.13rem;line-height:1.65;color:var(--ink-2);margin:24px auto 15px;max-width:610px}
 .cinema-specs{font-size:1rem;color:var(--mute);margin:0;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 .agent-studio{max-width:860px;margin:auto;border:1px solid var(--line-2);border-radius:22px;background:color-mix(in srgb,var(--bg-2) 87%,transparent);box-shadow:0 20px 70px #00000012;overflow:hidden;text-align:left}
@@ -871,8 +871,8 @@ a,button{-webkit-tap-highlight-color:transparent}
 .apex-feature .style-media{border-radius:16px;aspect-ratio:16/9;position:relative;overflow:hidden;border:1px solid var(--line-2)}
 .apex-tag{position:absolute;bottom:25px;left:30px;font:600 1.4rem var(--font-display);letter-spacing:0;color:white;text-shadow:0 2px 14px #000}.apex-tag>span{font:400 0.9375rem var(--font-mono);letter-spacing:0;margin-left:18px}
 .apex-feature figcaption{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:17px 2px;color:var(--ink-2);font-size:1rem}.apex-feature figcaption strong{color:var(--ink);font-weight:600}.apex-feature figcaption a{font-size:0.9375rem;color:var(--mute)}
-@media(max-width:820px){.cinema-hero{padding-top:70px}.agent-tabs{gap:5px}.agent-tabs button{flex:0 0 auto;padding:10px 12px}.cinema-intro h1{font-size:clamp(3rem,8.5vw,4.5rem)}}
-@media(max-width:600px){.cinema-hero{padding:54px 0 40px}.cinema-kicker{font-size:0.9375rem;letter-spacing:0;margin-bottom:20px}.cinema-intro h1{font-size:clamp(2.7rem,10.5vw,3.8rem);letter-spacing:-.055em}.cinema-lede{font-size:1.0625rem;margin-top:20px;max-width:340px}.desktop-break{display:none}.cinema-specs{font-size:0.9375rem;gap:6px}.cinema-intro{margin-bottom:26px}.studio-heading{padding:19px 17px 14px}.studio-heading h2{font-size:1rem}.studio-heading>span{display:none}.agent-tabs{padding:0 12px 14px;gap:4px}.agent-tabs button{font-size:0.9375rem;padding:9px 8px;flex:1 0 22%}.agent-mark{width:17px;height:17px}.agent-panel-body{padding:18px 17px;min-height:0}.install-auth{display:none}.install-code{gap:8px;flex-wrap:wrap}.install-code pre{font-size:0.9375rem;flex-basis:100%;padding:2px 0 5px}.install-code .btn{padding:8px 12px}.install-help{font-size:0.9375rem}.starter-prompt summary{padding:15px 17px;font-size:1rem}.prompt-step{display:block;font-size:0.9375rem;margin-bottom:3px}.starter-body{padding:0 17px 18px}.studio-footnote{font-size:0.9375rem;max-width:320px;margin:14px auto 34px}.apex-feature .style-media{border-radius:11px}.apex-tag{left:16px;bottom:14px;font-size:1rem}.apex-tag>span{font-size:0.9375rem;margin-left:10px}.apex-feature figcaption{align-items:flex-start;flex-direction:column;gap:4px;padding-top:12px;font-size:1rem}.apex-feature figcaption a{font-size:0.9375rem}.apex-heading>a{font-size:0.9375rem}}
+@media(max-width:820px){.cinema-hero{padding-top:70px}.agent-tabs{gap:5px}.agent-tabs button{flex:0 0 auto;padding:10px 12px}.cinema-intro h1{font-size:clamp(2.25rem,7vw,3.25rem)}}
+@media(max-width:600px){.cinema-hero{padding:54px 0 40px}.cinema-kicker{font-size:0.9375rem;letter-spacing:0;margin-bottom:20px}.cinema-intro h1{font-size:clamp(2.25rem,9vw,2.75rem);letter-spacing:-.055em}.cinema-lede{font-size:1.0625rem;margin-top:20px;max-width:340px}.desktop-break{display:none}.cinema-specs{font-size:0.9375rem;gap:6px}.cinema-intro{margin-bottom:26px}.studio-heading{padding:19px 17px 14px}.studio-heading h2{font-size:1rem}.studio-heading>span{display:none}.agent-tabs{padding:0 12px 14px;gap:4px}.agent-tabs button{font-size:0.9375rem;padding:9px 8px;flex:1 0 22%}.agent-mark{width:17px;height:17px}.agent-panel-body{padding:18px 17px;min-height:0}.install-auth{display:none}.install-code{gap:8px;flex-wrap:wrap}.install-code pre{font-size:0.9375rem;flex-basis:100%;padding:2px 0 5px}.install-code .btn{padding:8px 12px}.install-help{font-size:0.9375rem}.starter-prompt summary{padding:15px 17px;font-size:1rem}.prompt-step{display:block;font-size:0.9375rem;margin-bottom:3px}.starter-body{padding:0 17px 18px}.studio-footnote{font-size:0.9375rem;max-width:320px;margin:14px auto 34px}.apex-feature .style-media{border-radius:11px}.apex-tag{left:16px;bottom:14px;font-size:1rem}.apex-tag>span{font-size:0.9375rem;margin-left:10px}.apex-feature figcaption{align-items:flex-start;flex-direction:column;gap:4px;padding-top:12px;font-size:1rem}.apex-feature figcaption a{font-size:0.9375rem}.apex-heading>a{font-size:0.9375rem}}
 /* Keep the compact connection controls independent of the FAQ disclosure styles. */
 .cinema-intro h1{letter-spacing:-.04em}
 .agent-panel,.starter-prompt{padding:0;border-bottom:0}
@@ -1078,6 +1078,10 @@ html:not(.no-js) .agent-panel:not([open]){display:none}
 .hero-open-note strong{color:var(--ink)}
 .hero-alt{display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:10px 22px; margin:6px 0 18px}
 .hero-alt .hero-film-link{margin:0}
+/* 26 Oct 2026: Open Kleo sits right under a smaller, plain headline. A predicted-attention test (Foveacast,
+   marketing/foveacast) gave the button 2.1% of the first 3 s below the lede and 12.1% here (iPhone: 0% and 9.7%). */
+.cinema-intro h1 .hl{background:none; color:var(--ink)}
+.cinema-intro .hero-open{margin:10px 0 4px}
 .app-preview{max-width:640px; margin:0 auto; text-align:left}
 .app-card-specs{list-style:none; margin:0; padding:12px 12px 2px; display:flex; flex-wrap:wrap; gap:8px}
 .app-card-specs li{font-family:var(--font-mono); font-size:0.9375rem; color:var(--ink-2); border:1px solid var(--line-2); border-radius:999px; padding:4px 10px}
@@ -1093,6 +1097,7 @@ html:not(.no-js) .agent-panel:not([open]){display:none}
 @media (max-width:600px){
   .btn-xl{display:flex; width:100%; justify-content:center; padding:18px 24px; font-size:1.125rem}
   .hero-open{align-items:stretch; margin:24px 0 6px}
+  .cinema-intro .hero-open{margin:10px 0 4px}
   .hero-alt{flex-direction:column; gap:12px}
   .app-card-foot{flex-direction:column; align-items:flex-start}
   .studio-cta{margin-top:32px}
