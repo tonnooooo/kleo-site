@@ -113,7 +113,7 @@
       <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">›</span><span>Privacy</span></nav>
       <div class="eyebrow"><span class="n">Kleo AI</span>Privacy</div>
       <h1>What Kleo knows<br><span class="hl">about you.</span></h1>
-      <p class="doc-date">Last updated <time datetime="2026-10-25">25 October 2026</time></p>
+      <p class="doc-date">Last updated <time datetime="2026-10-27">27 October 2026</time></p>
     </div>
   </div>
 </section>
@@ -135,7 +135,8 @@
       <li><b>Payment records:</b> Stripe transaction identifiers, amount, currency, status, purchased credits and the checkout email and country when provided. For a plan, also the Stripe customer and subscription identifiers, the plan, its billing period and monthly credits, the date it is paid up to, whether it is active or cancelled, and when its next credits are due, to renew the plan, add its credits and handle a cancellation. Stripe processes card and wallet payments (Apple Pay, Google Pay); Kleo does not receive the full card number.</li>
       <li><b>Support:</b> the messages and contact details you choose to send, to answer requests and handle complaints.</li>
       <li><b>Where you came from:</b> the channel in the server address you connected with (for example <code>?src=producthunt</code> on the MCP address), the launch code you redeem, and the referral link an account was created through, to learn which launch channels work and to credit referral bonuses. In the Kleo app (<code>app.kleooai.com</code>), where your first visit came from: the network or site, the tags in the link (<code>utm_source</code>, <code>utm_medium</code>, <code>utm_campaign</code>, <code>utm_content</code> or <code>src</code>), the code of a Kleo short link, the host of the referring site (never the full address), the first page you opened (without its query) and the name of the app whose built-in browser you used, such as Instagram or TikTok. When a visit has no tag and no referring site, the network is guessed from that name. This is stored with your account when you open one, to learn which posts and links bring people to Kleo. None of this is shown to other users.</li>
-      <li><b>Optional email:</b> the address you add on your account page and whether you confirmed it, to <a href="#email">deliver your video links and Kleo news</a>.</li>
+      <li><b>Email:</b> the address of your account (the one you sign up or sign in with, or add on your account page) and whether you confirmed it, to send <a href="#email">your welcome e-mails and your video links</a>, together with a record of each e-mail sent and whether you unsubscribed.</li>
+      <li><b>Business contacts:</b> for businesses whose work is short-form video, the business address they publish on their own website, the business's name, website, city and country, the page where the address appears, and any reply, to send <a href="#email">a short business introduction</a> and to stop at the first answer.</li>
       <li><b>Security:</b> the application uses a keyed fingerprint of the connecting IP address for account-creation limits. When you sign up, sign in, connect an assistant or open a payment in the Kleo app, it also records the IP address, the approximate place your connection provider reports for it (country, region, city), the network and the browser name, to prevent fraud and abuse; these records are deleted after 90 days. Hosting and network providers necessarily process connection information, and may keep their own security logs.</li>
     </ul>
     <p>Kleo receives only information sent to its tools or service, not unrestricted access to your entire ChatGPT or other assistant history. A tool request may include text or images from the conversation. Do not submit sensitive information that is unnecessary for your video, and only supply pictures or information about others when you have the right to do so.</p>
@@ -150,8 +151,10 @@
     <h2 id="site-counts">Page counts on kleooai.com</h2>
     <p>The website counts its own visits. On each page view, the site’s script sends Kleo’s server the page path, the host of the referring site (for example <code>news.ycombinator.com</code>, never the full address), the source named in the link (<code>utm_source</code> or <code>ref</code>) and the browser’s language; the server adds the country from its hosting provider’s connection header. These are stored only as totals per day, page, referring host, source and country.</p>
     <p>No cookie is set, no identifier is created, the IP address is not stored, and a count is never linked to an account. The script sends nothing when your browser signals Do Not Track or Global Privacy Control, or when JavaScript is off.</p>
-    <h2 id="email">Optional email</h2>
-    <p>Kleo does not send email today, and no email address is needed to use it. The account page may show a field for an optional address; an address saved there receives nothing until email delivery is switched on, and this page will be updated, naming the email provider, before that happens. You can ask for a saved address to be removed at any time.</p>
+    <h2 id="email">Email</h2>
+    <p><b>Welcome e-mails.</b> Kleo writes to the address of your account from <code>hello@kleooai.com</code>: one short e-mail a day in your first week, with what Kleo does and how to get a good first video, and a note if a first video failed. An account opened before these e-mails began may get one or two notes instead. They go out only between 9:00 and 20:00 where you signed in from. Every one has an unsubscribe link, and the unsubscribe button your mail app shows; one click stops them for good, and nothing else about your account changes. An address that bounces is not written to again.</p>
+    <p><b>Business introductions.</b> Kleo sends a short e-mail, with at most two follow-ups, to businesses whose work is short-form video, at the business address they publish on their own website, in the United States, Canada, the United Kingdom, Australia and New Zealand. These come from a separate Kleo mailbox, which is also where Kleo reads the replies, so that it stops writing at the first answer. To be removed, reply "no", use the link in the e-mail, or write to <a href="mailto:hello@kleooai.com">hello@kleooai.com</a>.</p>
+    <p>Kleo keeps a stop list of the addresses that unsubscribed, said no or bounced, and never writes to them again, from any part of Kleo.</p>
     <h2 id="retention">How long information is kept</h2>
     <div class="tablewrap"><table><caption>Kleo's current retention rules</caption><thead><tr><th scope="col">Information</th><th scope="col">Retention</th></tr></thead><tbody>
       <tr><td>Rendered files and their download links</td><td>7 days; expired files are removed by the scheduled cleanup. Download what you want to keep.</td></tr>
@@ -159,7 +162,9 @@
       <tr><td>Upload authorisation links</td><td>Valid for 48 hours. Uploaded pictures follow the reference-picture period above.</td></tr>
       <tr><td>Account, prompts, storyboards and activity records</td><td>Retained with the account in the current service. Request access, correction or deletion using the contact below; these records do not share the 7-day output expiry.</td></tr>
       <tr><td>IP address and approximate place of sign-ins and payments in the app</td><td>90 days, then deleted automatically.</td></tr>
-      <tr><td>Optional email address</td><td>With the account until you remove it or ask for deletion. Unsubscribing stops the messages.</td></tr>
+      <tr><td>Your account's email address and the record of e-mails sent</td><td>With the account until you remove it or ask for deletion. Unsubscribing stops the e-mails at once.</td></tr>
+      <tr><td>Business contacts and replies to introductions</td><td>Kept with Kleo's outreach records; ask for their deletion at any time. An address that said no stays only on the stop list.</td></tr>
+      <tr><td>Stop list (unsubscribed, declined and bounced addresses)</td><td>Kept so that the address is never written to again. Write to us if you want to hear from Kleo again.</td></tr>
       <tr><td>Where an account came from (first visit)</td><td>With the account, and deleted with it. The cookie itself lasts at most 7 days.</td></tr>
       <tr><td>Daily page counts, first-visit counts and short-link clicks</td><td>Kept as aggregated totals, which contain no personal information.</td></tr>
       <tr><td>Payment, support and security records</td><td>As needed for the transaction, support, fraud prevention and applicable legal record-keeping obligations. Required records may remain after an account-deletion request.</td></tr>
@@ -173,7 +178,8 @@
       <li><b>GitHub Pages:</b> public website hosting and associated connection requests.</li>
       <li><b>Stripe:</b> checkout, payment processing, fraud prevention and payment records.</li>
       <li><b>PayPal:</b> only when you choose PayPal at checkout, to complete that payment in your PayPal account.</li>
-      <li><b>Resend:</b> sending the confirmation and delivery emails, only when you add an email address.</li>
+      <li><b>Cloudflare Email Service:</b> sending Kleo's e-mails from kleooai.com: the welcome e-mails, confirmations and video links. Workers AI, also Cloudflare's, sorts the replies to business introductions.</li>
+      <li><b>Google Workspace:</b> the separate mailbox that sends business introductions and receives their replies.</li>
       <li><b>Your chosen assistant provider, including OpenAI for ChatGPT:</b> your conversation, tool requests and results under that provider's own terms and privacy notice.</li>
       <li><b>Google Fonts:</b> some pages load fonts from Google's servers, which receive normal browser connection information. The homepage serves its fonts locally.</li>
     </ul>
