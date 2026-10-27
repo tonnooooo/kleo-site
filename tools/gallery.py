@@ -13,7 +13,8 @@ films.json, one entry per video: slug, title, line (one sentence under the card)
 (seconds), w and h, section, prompt (a copyable Kleo prompt, or ""), and for the newer entries `by` (how the Kleo
 team made it, shown in the viewer), `hl` (the -hN loops that may be shown; a loop that shows something the site must
 not say, such as an old price, is simply left out) and `full: false` when the full copy must not open in the viewer
-(the card then loops without the button and the badge).
+(the card then loops without the button and the badge). A Kleo Templates result (kind "Template") also carries `app`,
+the template's key in the app ("trend-window-peeper"): the site ignores it, the app's Explore opens that template.
 
 1. The gallery: every section is a grid of identical cards ("ads-wide" 2 per row, "ads-tall" 4, "wide" 3, "tall" 4,
    "series" 3) between <!-- wall:<section>:start --> and <!-- wall:<section>:end --> on /gallery/; the home keeps
