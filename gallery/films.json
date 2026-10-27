@@ -485,27 +485,6 @@
   "by": "with Blender"
  },
  {
-  "id": "B04",
-  "slug": "level-one-film",
-  "title": "Level One",
-  "kind": "Film",
-  "dur": 76,
-  "w": 1920,
-  "h": 1080,
-  "home": false,
-  "alt": "A Level 1 newcomer walks into the ring against four titans.",
-  "prompt": "",
-  "section": "wide",
-  "line": "A Level 1 newcomer walks into the ring against four titans.",
-  "by": "with Wan 2.2 + RealVisXL on Vast.ai",
-  "hl": [
-   "h1",
-   "h2",
-   "h3",
-   "h4"
-  ]
- },
- {
   "id": "B05",
   "slug": "made-in-kleo-ai-queen",
   "title": "Queen of the Nile",
